@@ -1,0 +1,203 @@
+{
+  "target_id": "5bd2db3f57aa175e4317bb93",
+  "sample_id": "boxed-05",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "尺寸界线"
+  },
+  "learner_answer": {
+    "answer": "尺寸界线（细实线）"
+  },
+  "task_manifest": {
+    "task_id": "boxed-05",
+    "task_type": "line_role",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true,
+    "protocol": "boxed-minimal-v1"
+  },
+  "task": {
+    "task_id": "boxed-05",
+    "query": "框内是什么线？",
+    "answer_format": {
+      "answer": "short text"
+    }
+  },
+  "source": {
+    "source_id": "pdf-120",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 120,
+    "sha256": "a0a3f638ab1f6fd1aad23cfcbb9bc2db759aaad8a142e1de0b4a03dbe33ef7f9",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "框内是什么线？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            750,
+            199,
+            755,
+            248
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "框内细实线从安装板右侧轮廓向上延伸，与90尺寸线的右端相接；框内线段位于尺寸箭头与实体轮廓之间。",
+      "expected_answer": "尺寸界线",
+      "answer_kind": "text",
+      "accepted_answers": [
+        "尺寸界线",
+        "尺寸延长线",
+        "extension line"
+      ],
+      "bad_pattern_tags": [],
+      "confidence": 0.99,
+      "ambiguity_notes": "模型拟定标签，需人工复核。",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "尺寸界线（细实线）",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "框内竖直细线为90毫米尺寸右端的尺寸界线。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 103.98,
+    "observations": 3,
+    "findings": 1,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "尺寸界线"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt",
+    "accepted_answers": {
+      "answer": [
+        "extension line",
+        "extension line(细实线)",
+        "尺寸延伸线",
+        "尺寸延伸线(细实线)",
+        "尺寸延长线",
+        "尺寸延长线(细实线)",
+        "尺寸界线",
+        "尺寸界线(细实线)"
+      ]
+    },
+    "alias_policy": "engineering-line-terms-v1"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:37:52.500Z",
+      "payload": {
+        "observation_id": "d8a918ed8f4940acace712a07c63b4e7",
+        "intent": "查看图片中框内的线条类型",
+        "source_sha256": "6716c33baeb44aff1f41248d92d08eed1027b2794bd910c8f7b2914d04160a7e",
+        "sha256": "6716c33baeb44aff1f41248d92d08eed1027b2794bd910c8f7b2914d04160a7e",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:38:07.920Z",
+      "payload": {
+        "observation_id": "531b89b93622406b8f7c8855464cfcd7",
+        "intent": "放大查看红框标记处的线条细节",
+        "source_sha256": "6716c33baeb44aff1f41248d92d08eed1027b2794bd910c8f7b2914d04160a7e",
+        "sha256": "52f8b1273732b06e58debfdd55cba9c46dc45a0d9d6f71e5283a34b67afd72b9",
+        "crop": [
+          1830,
+          240,
+          2010,
+          520
+        ],
+        "dimensions": [
+          180,
+          280
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:38:35.323Z",
+      "payload": {
+        "observation_id": "9fd8eb8f5b9445e6b7dff5c1e6073006",
+        "intent": "查看A视图整体，确定红框竖线与零件轮廓、尺寸界线的关系",
+        "source_sha256": "6716c33baeb44aff1f41248d92d08eed1027b2794bd910c8f7b2914d04160a7e",
+        "sha256": "d83db738426edd2bb769a6f2e1b882954dab59e81582824bcd1d7660881d2b1c",
+        "crop": [
+          1400,
+          180,
+          2100,
+          760
+        ],
+        "dimensions": [
+          700,
+          580
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:39:05.364Z",
+      "payload": {
+        "observation_id": "9fd8eb8f5b9445e6b7dff5c1e6073006",
+        "public_conclusion": "红框内是A视图中尺寸90右端引出的竖直细实线，连接零件右上角轮廓与尺寸线，属于尺寸界线（细实线绘制）。"
+      }
+    }
+  ],
+  "input_images": [
+    "assets/boxed-05/input-01.png"
+  ],
+  "asset_base": "assets/boxed-05",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/boxed-05/record.json"
+    }
+  ]
+}

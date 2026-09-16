@@ -1,0 +1,38 @@
+{
+  "input_path": "[private value removed]",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 732,
+  "operation_manifest": [
+    {
+      "operation_id": "rear_channel_cut",
+      "operation_type": "boolean_subtract",
+      "feature_id": "rear_longitudinal_channel",
+      "intent": "Cut rear6 wide pocket10 deep, open at lower end and extending46.5 along length",
+      "parameters": {
+        "x": [
+          7.75,
+          13.75
+        ],
+        "y": [
+          0,
+          46.5
+        ],
+        "z": [
+          0,
+          10
+        ],
+        "width": 6,
+        "depth": 10,
+        "expected_volume": 27725.2
+      },
+      "parent_operation_ids": [
+        "front_channel_cut"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    }
+  ],
+  "capture_boolean_lineage": true
+}

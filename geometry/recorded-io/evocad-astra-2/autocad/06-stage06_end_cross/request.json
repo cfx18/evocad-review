@@ -1,0 +1,66 @@
+{
+  "input_path": "[private value removed]",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 915,
+  "operation_manifest": [
+    {
+      "operation_id": "end_vertical_slot",
+      "operation_type": "boolean_subtract",
+      "feature_id": "vertical_end_groove",
+      "intent": "Cut3 wide vertical groove in upper end face to1.5 depth",
+      "parameters": {
+        "x": [
+          9.25,
+          12.25
+        ],
+        "y": [
+          62.5,
+          64
+        ],
+        "z": [
+          0,
+          16.1
+        ],
+        "width": 3,
+        "depth": 1.5
+      },
+      "parent_operation_ids": [
+        "rail_gap_cut"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    },
+    {
+      "operation_id": "end_cross_cut",
+      "operation_type": "boolean_subtract",
+      "feature_id": "horizontal_end_groove",
+      "intent": "Cut3 wide horizontal end groove centered9.1 from rear to1.5 depth",
+      "parameters": {
+        "x": [
+          0,
+          23
+        ],
+        "y": [
+          62.5,
+          64
+        ],
+        "z": [
+          7.6,
+          10.6
+        ],
+        "width": 3,
+        "depth": 1.5,
+        "expected_volume": 26965.15
+      },
+      "parent_operation_ids": [
+        "end_vertical_slot"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    }
+  ],
+  "capture_boolean_lineage": true
+}

@@ -1,0 +1,214 @@
+{
+  "target_id": "e54f6fceb2af809095ba2b25",
+  "sample_id": "boxed-13",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "中心线"
+  },
+  "learner_answer": {
+    "answer": "细点画线（中心线/轴线）"
+  },
+  "task_manifest": {
+    "task_id": "boxed-13",
+    "task_type": "line_role",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true,
+    "protocol": "boxed-minimal-v1"
+  },
+  "task": {
+    "task_id": "boxed-13",
+    "query": "框内是什么线？",
+    "answer_format": {
+      "answer": "short text"
+    }
+  },
+  "source": {
+    "source_id": "pdf-202",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 202,
+    "sha256": "964f48e97ada053bfa92004c8270356f5dfdedc095310bc4b1bccadafffa1913",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "框内是什么线？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            305,
+            227,
+            414,
+            236
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "框内横向细点画线位于顶尖内部，沿回转件轴心延伸，与上、下实体轮廓分离。",
+      "expected_answer": "中心线",
+      "answer_kind": "text",
+      "accepted_answers": [
+        "中心线",
+        "轴线",
+        "centerline"
+      ],
+      "bad_pattern_tags": [],
+      "confidence": 0.95,
+      "ambiguity_notes": "模型拟定，需人工复核框位及点画线图样的完整性。",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "轴线（细点画线）",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "框内水平细点画线穿过顶尖中心。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "answer_review_required",
+    "passed": null,
+    "score": null,
+    "elapsed_seconds": 102.5,
+    "observations": 3,
+    "findings": 1,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "review_reason": "Unlisted free-text answer; lexical mismatch is not a verified semantic error.",
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "中心线"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt",
+    "accepted_answers": {
+      "answer": [
+        "centerline",
+        "centerline(细点划线)",
+        "centerline(细点画线)",
+        "centre line",
+        "centre line(细点划线)",
+        "centre line(细点画线)",
+        "中心线",
+        "中心线(细点划线)",
+        "中心线(细点画线)",
+        "细点划线",
+        "细点划线(细点划线)",
+        "细点划线(细点画线)",
+        "细点画线",
+        "细点画线(细点划线)",
+        "细点画线(细点画线)",
+        "轴线",
+        "轴线(细点划线)",
+        "轴线(细点画线)"
+      ]
+    },
+    "alias_policy": "engineering-line-terms-v1"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:02:25.957Z",
+      "payload": {
+        "observation_id": "731beb75098944129d68aca0fea1d56d",
+        "intent": "查看整个图片，找出框内的线是什么类型（直线、曲线、折线、波浪线等）",
+        "source_sha256": "a1eeac65aa680aa7af88b3adb545f42922ee1bcdbf797958d1ae9c1aecbb6478",
+        "sha256": "a1eeac65aa680aa7af88b3adb545f42922ee1bcdbf797958d1ae9c1aecbb6478",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:02:43.820Z",
+      "payload": {
+        "observation_id": "9793b452edc94c2f98fc0a794d1a1764",
+        "intent": "放大查看红框内部的线，判断是粗实线、细实线、虚线、点画线（中心线）还是波浪线等",
+        "source_sha256": "a1eeac65aa680aa7af88b3adb545f42922ee1bcdbf797958d1ae9c1aecbb6478",
+        "sha256": "e7e4d27d2a5a53f636da22081ff834caba7748bf317427538a6009e262be0495",
+        "crop": [
+          740,
+          400,
+          1140,
+          470
+        ],
+        "dimensions": [
+          400,
+          70
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:03:09.526Z",
+      "payload": {
+        "observation_id": "84a288de5c3643e4aa6592b60f7f6157",
+        "intent": "进一步放大红框内那条水平线的线型细节，看它是连续实线、虚线（等长短线）还是点画线（长短线交替的中心线）",
+        "source_sha256": "a1eeac65aa680aa7af88b3adb545f42922ee1bcdbf797958d1ae9c1aecbb6478",
+        "sha256": "860f4d184459bfa246840ccd93a1a536a5e6e45e9e6137ae95b05aa1e92cdefa",
+        "crop": [
+          770,
+          415,
+          1130,
+          455
+        ],
+        "dimensions": [
+          360,
+          40
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T12:03:29.672Z",
+      "payload": {
+        "observation_id": "84a288de5c3643e4aa6592b60f7f6157",
+        "public_conclusion": "红框内是一条沿顶尖轴线方向的水平线，线型为长画与短画（点）交替的细点画线，即中心线/轴线，不是连续实线也不是等长虚线。"
+      }
+    }
+  ],
+  "input_images": [
+    "assets/boxed-13/input-01.png"
+  ],
+  "asset_base": "assets/boxed-13",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/boxed-13/record.json"
+    }
+  ]
+}

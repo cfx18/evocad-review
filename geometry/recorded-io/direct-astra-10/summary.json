@@ -1,0 +1,47 @@
+{
+  "campaign": "direct-codex-astra-ultra-omnimech10-https-20260914",
+  "sample_id": "omnimech:10",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "ultra",
+  "score": 100.0,
+  "passed": true,
+  "selected_attempt_id": "a001",
+  "phases": [
+    {
+      "name": "a001/action",
+      "directory": "raw/campaign/omnimech-10/gpt-6-astra/attempts/a001"
+    }
+  ],
+  "counts": {
+    "cli_events": 53,
+    "agent_message": 6,
+    "command_execution": 11,
+    "mcp_tool_call": 11,
+    "mcp_audit_calls": 11,
+    "native_jobs": 4,
+    "timeline_records": 55
+  },
+  "mcp_tools": {
+    "autocad_set_run_context": 1,
+    "autocad_core_start": 4,
+    "autocad_core_status": 4,
+    "autocad_topology_start": 1,
+    "autocad_topology_status": 1
+  },
+  "warnings": [],
+  "condition": "native-codex",
+  "source_result_rows": 1,
+  "selected_run_id": "direct-codex-astra-ultra-omnimech10-https-20260914-gpt-6-astra-ultra",
+  "elapsed_seconds": 705.037,
+  "scope": "All locally captured trial I/O, not a model-service HTTP dump or private reasoning trace",
+  "ordering": "Phase order and original stream line order; CLI events do not carry wall-clock timestamps",
+  "deduplication": "Decision-turn streams are canonical; copied reflection events remain in raw files only",
+  "limitations": [
+    "No model-service hidden prompts, private reasoning, or exact serialized HTTP requests",
+    "Images are original input files, not the service's internal visual token representation",
+    "Any output truncation already present in source logs cannot be reconstructed",
+    "Interrupted calls may have a start event without a recorded result",
+    "Tool schemas are available in frozen source snapshots, not a captured tools/list transcript",
+    "Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded."
+  ]
+}

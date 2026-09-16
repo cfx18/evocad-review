@@ -1,0 +1,249 @@
+{
+  "target_id": "cce1dcbf6037a04c3c051ad6",
+  "sample_id": "drawing-13",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "base_holes_17"
+  },
+  "learner_answer": {
+    "answer": "base_holes_17"
+  },
+  "task_manifest": {
+    "task_id": "drawing-13",
+    "task_type": "cross_view",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true
+  },
+  "task": {
+    "task_id": "drawing-13",
+    "query": "区域 A 的 E—E 图中，圆角长底板两端、中心距标为155的两个圆孔，对应其它剖视图中的哪组孔？",
+    "answer_format": {
+      "answer": "one option value"
+    },
+    "options": [
+      {
+        "value": "base_holes_17",
+        "label": "A—A 剖视图底座上标注为2×φ17的孔。"
+      },
+      {
+        "value": "upper_flange_holes_15",
+        "label": "B—B 剖视图顶部法兰上标注为2×φ15的孔。"
+      },
+      {
+        "value": "top_thread_27",
+        "label": "A—A 剖视图顶部标注为M27×2-7H的孔。"
+      },
+      {
+        "value": "side_threads_39",
+        "label": "B—B 剖视图左侧标注为M39×2-7H的孔。"
+      }
+    ],
+    "unit": "none",
+    "absolute_tolerance": 0
+  },
+  "source": {
+    "source_id": "pdf-162",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 162,
+    "sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "区域 A 的 E—E 图中，圆角长底板两端、中心距标为155的两个圆孔，对应其它剖视图中的哪组孔？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            267,
+            631,
+            581,
+            907
+          ]
+        },
+        {
+          "label": "B",
+          "bbox": [
+            83,
+            461,
+            423,
+            606
+          ]
+        },
+        {
+          "label": "C",
+          "bbox": [
+            595,
+            116,
+            795,
+            239
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "E—E 显示底板及中间支承截面，两端圆孔对应 A—A 底座两端的竖向孔；该孔组在 A—A 标为2×φ17。2×φ15属于顶部法兰。",
+      "expected_answer": "base_holes_17",
+      "answer_kind": "choice",
+      "bad_pattern_tags": [
+        "cross_view_hole_group_swap",
+        "nearby_callout_attachment"
+      ],
+      "confidence": 0.99,
+      "ambiguity_notes": "",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "base_holes_17",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "E—E 的两个端部孔位于长底板上，与 A—A 底座两端标注的 2×φ17 孔对应。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 108.53,
+    "observations": 4,
+    "findings": 2,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "base_holes_17"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:30:25.771Z",
+      "payload": {
+        "observation_id": "e25f1721109e4cbabed8529968de0f85",
+        "intent": "Inspect region A (E—E view) to see the rounded long base plate with two holes at ends and center distance 155",
+        "source_sha256": "006f295ca2fa5f5db4e102fd6421ce2af1aeefde9455414ec2f9e021d4858d3a",
+        "sha256": "006f295ca2fa5f5db4e102fd6421ce2af1aeefde9455414ec2f9e021d4858d3a",
+        "crop": null,
+        "dimensions": [
+          805,
+          501
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:30:26.025Z",
+      "payload": {
+        "observation_id": "f6858d6cd75c452696ba3025b0aa7e4f",
+        "intent": "Get an overall view of the drawing to understand the layout of views (A—A, B—B, E—E sections)",
+        "source_sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+        "sha256": "f26c60dc73bec1f6698c42da47c7219af3c2a88f3ba6117e22127a57952916e8",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:30:57.885Z",
+      "payload": {
+        "observation_id": "84f6a560714e4e1bb1b26971c3275db7",
+        "intent": "Inspect the bottom of the A—A section view where the E cutting plane and 2×φ17 label are located, to confirm correspondence with E—E base holes",
+        "source_sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+        "sha256": "c1da1d03fb75434f8e44a3795a3aaaf93124fa10f29fd9a1a5a713a30753d69a",
+        "crop": [
+          180,
+          600,
+          1000,
+          1160
+        ],
+        "dimensions": [
+          820,
+          560
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:30:58.052Z",
+      "payload": {
+        "observation_id": "699028225cff4438bc7f648b1fedd853",
+        "intent": "Inspect region B to see what part of the drawing it covers (likely the E plane / base area of A—A view)",
+        "source_sha256": "1d7939befb1fb773f5b87ed3d84ce98ffb54c0d05c69e0931cd1f6d892364cbe",
+        "sha256": "1d7939befb1fb773f5b87ed3d84ce98ffb54c0d05c69e0931cd1f6d892364cbe",
+        "crop": null,
+        "dimensions": [
+          871,
+          264
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:31:28.473Z",
+      "payload": {
+        "observation_id": "e25f1721109e4cbabed8529968de0f85",
+        "public_conclusion": "Region A is the E—E view: a rounded oblong base plate (overall 195, width 60, corner R10) with one round through-hole at each end; the two holes' center distance is dimensioned 155."
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:31:28.514Z",
+      "payload": {
+        "observation_id": "699028225cff4438bc7f648b1fedd853",
+        "public_conclusion": "Region B (bottom of A—A section) shows the same horizontal base plate cut by the E—E plane: cutting-plane markers labeled \"E\" sit at the base, and the base holes are explicitly labeled \"2×φ17\" with an Ra25 surface note; the left end of the base shows an unsectioned hole."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/drawing-13/input-01.png",
+    "assets/drawing-13/input-02.png",
+    "assets/drawing-13/input-03.png",
+    "assets/drawing-13/input-04.png"
+  ],
+  "asset_base": "assets/drawing-13",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/drawing-13/record.json"
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "target_id": "caf505d2e3abeef51a38a4a5",
+  "sample_id": "boxed-08",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": 24
+  },
+  "learner_answer": null,
+  "task_manifest": {
+    "task_id": "boxed-08",
+    "task_type": "dimension_chain",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true,
+    "protocol": "boxed-minimal-v1"
+  },
+  "task": {
+    "task_id": "boxed-08",
+    "query": "框内竖直边的长度是多少毫米？",
+    "answer_format": {
+      "answer": "number"
+    }
+  },
+  "source": {
+    "source_id": "web-2679-01",
+    "origin": "public_web_drawing",
+    "article_url": "https://xifengboke.com/post/2679.html",
+    "sha256": "5985018b095635dd755d04b34e0be97e9d5badc8a524ad662fa3afeb00530df6",
+    "dimensions": [
+      2480,
+      3507
+    ],
+    "rights": {
+      "status": "permission_required",
+      "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+      "training_eligible": false,
+      "redistribution_eligible": false
+    }
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "框内竖直边的长度是多少毫米？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            452,
+            236,
+            462,
+            309
+          ]
+        }
+      ],
+      "unit": "mm",
+      "answer_evidence": "框内竖直边上端为右侧台阶肩面，下端为底板上表面。总高48、顶部至肩面16、底板厚8分别确定这两个端点的高度。",
+      "expected_answer": 24,
+      "answer_kind": "number",
+      "accepted_answers": [],
+      "bad_pattern_tags": [],
+      "confidence": 0.98,
+      "ambiguity_notes": "框内斜肋在竖直边中途相接，所求为肩面到底板上表面的完整竖直边；模型拟定标签，需人工复核。",
+      "derivation": {
+        "expression": "H - h - t",
+        "inputs": [
+          {
+            "symbol": "H",
+            "value": 48,
+            "drawing_evidence": "左侧48尺寸连接顶部与底板底面。"
+          },
+          {
+            "symbol": "h",
+            "value": 16,
+            "drawing_evidence": "16尺寸连接顶部与台阶肩面。"
+          },
+          {
+            "symbol": "t",
+            "value": 8,
+            "drawing_evidence": "左下方8尺寸连接底板上表面与底面。"
+          }
+        ]
+      }
+    },
+    "blind_audit": {
+      "answer": 24,
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.98,
+      "evidence": "竖边从台阶面延至底座上表面，长度为48−16−8=24。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "timeout",
+    "passed": null,
+    "elapsed_seconds": 600.38,
+    "observations": 5,
+    "findings": 0,
+    "timeout_seconds": 600,
+    "timed_out": true,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": 24
+    },
+    "absolute_tolerance": 0.05,
+    "label_status": "model_proposed_not_gt",
+    "accepted_answers": {
+      "answer": []
+    },
+    "alias_policy": "engineering-line-terms-v1"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:43:42.398Z",
+      "payload": {
+        "observation_id": "b3e8f50276a84b78953e8f23152886ea",
+        "intent": "查看图纸，找出框内竖直边的长度标注（毫米）",
+        "source_sha256": "40939e1d25e0846e1cb0603cb4f912f3ff3d3ec1ee40fb1cb3443d61ae0900ee",
+        "sha256": "40939e1d25e0846e1cb0603cb4f912f3ff3d3ec1ee40fb1cb3443d61ae0900ee",
+        "crop": null,
+        "dimensions": [
+          2480,
+          3507
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:44:00.389Z",
+      "payload": {
+        "observation_id": "d553248201264c21af4fa0e4b86eab4b",
+        "intent": "放大主视图中红框标注的竖直边区域，查看其尺寸",
+        "source_sha256": "40939e1d25e0846e1cb0603cb4f912f3ff3d3ec1ee40fb1cb3443d61ae0900ee",
+        "sha256": "bfa9b817df6ecaa82eca68c390a907e04d82df0bd42214da41a92e8bfd30d462",
+        "crop": [
+          900,
+          700,
+          1500,
+          1250
+        ],
+        "dimensions": [
+          600,
+          550
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:44:34.931Z",
+      "payload": {
+        "observation_id": "9ed0b9076f4e4c7e8c75805230a6d93f",
+        "intent": "查看主视图全部尺寸标注，理解红框竖直边的高度",
+        "source_sha256": "40939e1d25e0846e1cb0603cb4f912f3ff3d3ec1ee40fb1cb3443d61ae0900ee",
+        "sha256": "e7b5f3bcd5859250147c14f626cb0d88efece2f897798b505babf21bb5777fbb",
+        "crop": [
+          330,
+          430,
+          1420,
+          1360
+        ],
+        "dimensions": [
+          1090,
+          930
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:46:49.598Z",
+      "payload": {
+        "observation_id": "6ba9eaced3824b19a698f5e246c455dc",
+        "intent": "放大红框竖直边及其上下端连接的台阶与尺寸3的区域，确定竖直边上下端位置",
+        "source_sha256": "40939e1d25e0846e1cb0603cb4f912f3ff3d3ec1ee40fb1cb3443d61ae0900ee",
+        "sha256": "8bd475d16004a5b198d306aa8945587a819a5ccfc50349de566d3eb65984afa1",
+        "crop": [
+          1000,
+          800,
+          1450,
+          1350
+        ],
+        "dimensions": [
+          450,
+          550
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:52:28.343Z",
+      "payload": {
+        "observation_id": "eb8e1561dfe444198b2f1b03ec1403dd",
+        "intent": "精确查看红框竖直边的上下端点位置及相邻台阶线",
+        "source_sha256": "40939e1d25e0846e1cb0603cb4f912f3ff3d3ec1ee40fb1cb3443d61ae0900ee",
+        "sha256": "a5a25a45ca9273faca097d126f5ad0969f71677ef83a85b32890353eb0f0fb28",
+        "crop": [
+          1080,
+          820,
+          1300,
+          1180
+        ],
+        "dimensions": [
+          220,
+          360
+        ],
+        "image": "receipts/005.png"
+      }
+    }
+  ],
+  "input_images": [
+    "assets/boxed-08/input-01.png"
+  ],
+  "asset_base": "assets/boxed-08",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/boxed-08/record.json"
+    }
+  ]
+}

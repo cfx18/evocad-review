@@ -1,0 +1,184 @@
+{
+  "target_id": "f9be260d93513a6cdc8cf076",
+  "sample_id": "hard-15",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "实体"
+  },
+  "learner_answer": {
+    "answer": "空腔"
+  },
+  "task_manifest": {
+    "task_id": "hard-15",
+    "task_type": "section_reasoning",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true,
+    "protocol": "boxed-minimal-v1"
+  },
+  "task": {
+    "task_id": "hard-15",
+    "query": "框内是实体还是空腔？",
+    "answer_format": {
+      "answer": "short text"
+    }
+  },
+  "source": {
+    "source_id": "pdf-202",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 202,
+    "sha256": "964f48e97ada053bfa92004c8270356f5dfdedc095310bc4b1bccadafffa1913",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "框内是实体还是空腔？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            234,
+            444,
+            263,
+            469
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "框内位于主视图左侧斜外轮廓与局部剖视分界曲线之间，是支承壁保留外观的区域。斜壁上方的剖面线、A-A中的侧壁以及B-B中连续的U形支承壁共同确认这里有实体材料。局部剖视没有给这部分外观填画剖面线，不能据此将它当成支架内部空腔。",
+      "expected_answer": "实体",
+      "answer_kind": "text",
+      "accepted_answers": [
+        "实体材料",
+        "实心材料",
+        "solid"
+      ],
+      "bad_pattern_tags": [
+        "unhatched_region_assumed_void",
+        "local_section_boundary_ignored",
+        "support_wall_as_open_cavity",
+        "cross_view_continuity_ignored"
+      ],
+      "confidence": 0.95,
+      "ambiguity_notes": "框选局部剖视中保留外观的支承实体，不以缺少剖面线判空。模型拟定标签，须人工复核。",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "实体",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.97,
+      "evidence": "框内位于局部剖视分界线外的未剖本体表面，未画剖面线不表示空腔。",
+      "ambiguity_notes": "按该视图中的未剖表面判断。",
+      "evidence_scope": "section_convention",
+      "difficulty_evidence": "需结合局部剖视范围及本体连续性判断，不能仅凭区域留白认定为空腔。"
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "answer_review_required",
+    "passed": null,
+    "score": null,
+    "elapsed_seconds": 86.23,
+    "observations": 2,
+    "findings": 1,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "review_reason": "Unlisted free-text answer; lexical mismatch is not a verified semantic error.",
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "实体"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt",
+    "accepted_answers": {
+      "answer": [
+        "solid",
+        "实体材料",
+        "实心材料"
+      ]
+    },
+    "alias_policy": "engineering-line-terms-v1"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:10:37.361Z",
+      "payload": {
+        "observation_id": "ba4364ad54c74ec6897751206087411c",
+        "intent": "查看整张工程图，判断框内区域是实体还是空腔",
+        "source_sha256": "daca3df19f3f8e489ae639294e2c0929ae8e8306a950ff92b8d686b81d4341db",
+        "sha256": "daca3df19f3f8e489ae639294e2c0929ae8e8306a950ff92b8d686b81d4341db",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:11:11.990Z",
+      "payload": {
+        "observation_id": "363cecb30f694128ae12a478145351a1",
+        "intent": "放大查看红框所在区域及其周围的剖面线情况，判断框内是实体还是空腔",
+        "source_sha256": "daca3df19f3f8e489ae639294e2c0929ae8e8306a950ff92b8d686b81d4341db",
+        "sha256": "9d34d57f7d8ed94c4a905cd0ff1c7e5b28c29f435deed15697aee0eea121dc59",
+        "crop": [
+          300,
+          550,
+          1100,
+          1050
+        ],
+        "dimensions": [
+          800,
+          500
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T14:11:35.836Z",
+      "payload": {
+        "observation_id": "363cecb30f694128ae12a478145351a1",
+        "public_conclusion": "主视图为全剖视图，红框所在区域无剖面线，被两侧带剖面线的壁板包围，内部仅有表示铸造内腔轮廓的细弧线；结合A-A剖视图中两腿之间为空白区域，可判定红框内为空腔而非实体。"
+      }
+    }
+  ],
+  "input_images": [
+    "assets/hard-15/input-01.png"
+  ],
+  "asset_base": "assets/hard-15",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/hard-15/record.json"
+    }
+  ]
+}

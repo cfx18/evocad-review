@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.0009,
+  "region_count": 1,
+  "regions": [
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 36,
+      "sample_fraction": 0.0018,
+      "estimated_area": 12.482393,
+      "estimated_area_fraction": 0.0018,
+      "centroid": [
+        3.638656,
+        -0.055834,
+        7.549941
+      ],
+      "centroid_bbox_position": [
+        0.6516,
+        0.4984,
+        0.1987
+      ],
+      "bbox": {
+        "min": [
+          3.188721,
+          -1.039102,
+          6.226233
+        ],
+        "max": [
+          4.000001,
+          1.175182,
+          8.796207
+        ]
+      },
+      "mean_distance_normalized": 0.012349,
+      "p95_distance_normalized": 0.023837,
+      "max_distance_normalized": 0.025252,
+      "mean_normal_offset_normalized": 0.012349,
+      "mean_normal_disagreement": 0.922861,
+      "dominant_source_normal": [
+        -0.889,
+        -0.458,
+        0.0
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          4.000001,
+          -0.415997,
+          6.82463
+        ],
+        [
+          3.37912,
+          -0.359401,
+          6.399229
+        ],
+        [
+          4.000001,
+          0.298282,
+          7.492835
+        ],
+        [
+          3.352495,
+          0.549146,
+          7.239291
+        ],
+        [
+          4.000001,
+          0.283719,
+          8.710711
+        ],
+        [
+          3.397171,
+          0.096904,
+          6.81053
+        ],
+        [
+          3.397171,
+          -0.102311,
+          7.914622
+        ],
+        [
+          4.000001,
+          -0.789488,
+          7.531334
+        ],
+        [
+          3.304545,
+          -0.788688,
+          8.542557
+        ]
+      ],
+      "region_id": "excess-01",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "2EC",
+          "face_id": "f3",
+          "face_fingerprint": "07523e7fb9b0e2ea6837c6ba6d0e7104d5d8608c5e3cb9a495fcd0a3acc3df93",
+          "surface_type": "cylinder",
+          "area": 320.4424506661589,
+          "aligned_bounds": {
+            "min": [
+              -3.3999989999999976,
+              -3.4000000000000004,
+              0.0
+            ],
+            "max": [
+              3.400001000000003,
+              3.3999999999999986,
+              15.0
+            ]
+          },
+          "bbox_distance_normalized": 0.0,
+          "bbox_overlap": 0.260428,
+          "exact_query_hits": 5,
+          "exact_query_fraction": 0.555556,
+          "minimum_trimmed_face_distance_normalized": 2.3e-05,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "2EC",
+          "face_id": "f5",
+          "face_fingerprint": "9497c5068928c1f019ba165d7e9625ad890be675d6e7cf3dc29a4fde1ad224e5",
+          "surface_type": "plane",
+          "area": 8.55298599939821,
+          "aligned_bounds": {
+            "min": [
+              4.0000009999999975,
+              -1.6500000000000004,
+              5.850000000000001
+            ],
+            "max": [
+              4.0000009999999975,
+              1.6499999999999986,
+              9.149999999999999
+            ]
+          },
+          "bbox_distance_normalized": 0.0,
+          "bbox_overlap": 0.0,
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-2EC-f3",
+          "kind": "hole_candidate",
+          "confidence": "medium",
+          "entity_handle": "2EC",
+          "face_ids": [
+            "f3"
+          ],
+          "face_fingerprints": [
+            "07523e7fb9b0e2ea6837c6ba6d0e7104d5d8608c5e3cb9a495fcd0a3acc3df93"
+          ],
+          "parameters": {
+            "radius": 3.4,
+            "axis": [
+              1,
+              -2.2204460492503126e-16,
+              4.9303806576313216e-32
+            ],
+            "origin": [
+              19.000000000000007,
+              11.999999999999995,
+              17.5
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    }
+  ],
+  "native_topology": {
+    "protocol": "evocad-native-feature-localization-v1",
+    "entity_count": 1,
+    "face_count": 21,
+    "adjacency_count": 48,
+    "feature_candidate_count": 6,
+    "export_errors": [],
+    "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+    "exact_face_query_count": 9
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [],
+    "ground_truth_to_candidate": []
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

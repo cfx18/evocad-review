@@ -1,0 +1,7280 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.049225,
+  "region_count": 10,
+  "regions": [
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 1022,
+      "sample_fraction": 0.0511,
+      "estimated_area": 0.043409,
+      "estimated_area_fraction": 0.0511,
+      "centroid": [
+        -7e-05,
+        0.055595,
+        0.148924
+      ],
+      "centroid_bbox_position": [
+        0.4997,
+        0.0741,
+        0.2007
+      ],
+      "bbox": {
+        "min": [
+          -0.068073,
+          -0.0,
+          0.013005
+        ],
+        "max": [
+          0.067836,
+          0.126109,
+          0.297525
+        ]
+      },
+      "mean_distance_normalized": 0.013899,
+      "p95_distance_normalized": 0.022014,
+      "max_distance_normalized": 0.028471,
+      "mean_normal_offset_normalized": 0.006431,
+      "mean_normal_disagreement": 0.411516,
+      "dominant_source_normal": [
+        -0.0304,
+        -0.9536,
+        0.2994
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.058997,
+          0.116208,
+          0.074513
+        ],
+        [
+          0.03125,
+          0.034183,
+          0.224213
+        ],
+        [
+          -0.025941,
+          0.010042,
+          0.119931
+        ],
+        [
+          -0.021916,
+          0.022244,
+          0.224006
+        ],
+        [
+          0.013603,
+          0.035793,
+          0.245105
+        ],
+        [
+          0.004266,
+          0.024601,
+          0.084125
+        ],
+        [
+          -0.000736,
+          0.078125,
+          0.074573
+        ],
+        [
+          -0.006204,
+          0.078125,
+          0.111435
+        ],
+        [
+          -0.067598,
+          0.125591,
+          0.083726
+        ]
+      ],
+      "region_id": "excess-01",
+      "counterpart_region_ids": [
+        "missing-01"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "473",
+          "face_id": "f36",
+          "face_fingerprint": "ac5713a905a93f4b6c5436890a94b53443d515b62d422e5242b0ddef2ff4bb93",
+          "surface_type": "cylinder",
+          "area": 0.021215467376145998,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f36",
+            "entity_handle": "473",
+            "face_id": "f36",
+            "face_fingerprint": "ac5713a905a93f4b6c5436890a94b53443d515b62d422e5242b0ddef2ff4bb93",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 1e-06,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f37",
+          "face_fingerprint": "a790da89378b37c1110e3218b083adbd72a2a439c2c4ff66003779a57e3f6701",
+          "surface_type": "plane",
+          "area": 0.00425578125,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f37",
+            "entity_handle": "473",
+            "face_id": "f37",
+            "face_fingerprint": "a790da89378b37c1110e3218b083adbd72a2a439c2c4ff66003779a57e3f6701",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f25",
+          "face_fingerprint": "b26271f10635fe6d7d9e0169d84f84d035feeec84fb227939678603a5198326d",
+          "surface_type": "plane",
+          "area": 0.004329993911474944,
+          "aligned_bounds": {
+            "min": [
+              0.05859524999999999,
+              0.08593650000000008,
+              0.07031150000000008
+            ],
+            "max": [
+              0.10156399999999999,
+              0.13281250000000008,
+              0.13840400000000008
+            ]
+          },
+          "bbox_distance_normalized": 0.0,
+          "bbox_overlap": 0.184303,
+          "boolean_lineage": {
+            "node_id": "473:f25",
+            "entity_handle": "473",
+            "face_id": "f25",
+            "face_fingerprint": "b26271f10635fe6d7d9e0169d84f84d035feeec84fb227939678603a5198326d",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f21",
+          "face_fingerprint": "e52b8b07050e2b4d9d2655d7da1e4e431e3d377e08abe88af2418a5f9b0eb5ab",
+          "surface_type": "plane",
+          "area": 0.14310195463003403,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f21",
+            "entity_handle": "473",
+            "face_id": "f21",
+            "face_fingerprint": "e52b8b07050e2b4d9d2655d7da1e4e431e3d377e08abe88af2418a5f9b0eb5ab",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-473-f36",
+          "kind": "boss_candidate",
+          "confidence": "medium",
+          "entity_handle": "473",
+          "face_ids": [
+            "f36"
+          ],
+          "face_fingerprints": [
+            "ac5713a905a93f4b6c5436890a94b53443d515b62d422e5242b0ddef2ff4bb93"
+          ],
+          "parameters": {
+            "radius": 0.14538806625029443,
+            "axis": [
+              0,
+              -1,
+              -2.2204460492503126e-16
+            ],
+            "origin": [
+              0.15081899999999995,
+              0.031249999999999965,
+              0.15625
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_revert_housing_station",
+          "intent": "Revert only the locally regressed a007 rearward housing shift to the better a006 station while preserving verified radius and sweep.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.1484375,
+              0.15625
+            ],
+            "new_center": [
+              0.150819,
+              0.15625
+            ],
+            "arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_housing_recenter",
+            "a006_intermediate_radius_housing"
+          ]
+        },
+        {
+          "operation_id": "a008_widen_shoulder_end",
+          "intent": "Retain the improved early shoulder start and modestly widen only its platform-end boundary to recover bilateral missing shoulder surfaces.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_extrude",
+          "feature_id": "rear_bridge",
+          "editable_parameters": {
+            "transition_start": 0.0859375,
+            "transition_end": 0.1328125,
+            "start_width": 0.0625,
+            "end_width": 0.1484375,
+            "z_min": 0.0703125,
+            "z_max": 0.138405
+          },
+          "parent_operation_ids": [
+            "a007_shoulder_redistribution"
+          ]
+        },
+        {
+          "operation_id": "a008_advance_connector_upper",
+          "intent": "Advance only the upper connector endpoint to reduce the remaining paired longitudinal displacement while preserving its lower attachment.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "upper_point": [
+              0.6875,
+              0.0703125
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward"
+          ]
+        },
+        {
+          "operation_id": "a008_retract_lever_notch",
+          "intent": "Move only the notch transition rearward to correct the high-confidence paired displacement on face f38 while preserving the other improved a007 lever vertices.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "upright_lever",
+          "editable_parameters": {
+            "bottom_start": 0.60546875,
+            "bottom_outer": 0.65625,
+            "mid_outer": 0.73828125,
+            "inner_lower": 0.625,
+            "old_notch_transition": 0.71875,
+            "new_notch_transition": 0.703125,
+            "top_outer": 0.75,
+            "overall_height": 0.742105,
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_lever_edge_balance"
+          ]
+        },
+        {
+          "operation_id": "a008_final_union",
+          "intent": "Fuse the preserved and locally corrected components into one native editable solid without annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105
+          },
+          "parent_operation_ids": [
+            "a008_revert_housing_station",
+            "a008_widen_shoulder_end",
+            "a008_advance_connector_upper",
+            "a008_retract_lever_notch"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 124,
+      "sample_fraction": 0.0062,
+      "estimated_area": 0.005267,
+      "estimated_area_fraction": 0.0062,
+      "centroid": [
+        0.00023,
+        0.652273,
+        0.045569
+      ],
+      "centroid_bbox_position": [
+        0.5009,
+        0.8697,
+        0.0614
+      ],
+      "bbox": {
+        "min": [
+          -0.03125,
+          0.617188,
+          0.006577
+        ],
+        "max": [
+          0.03125,
+          0.687342,
+          0.070313
+        ]
+      },
+      "mean_distance_normalized": 0.011202,
+      "p95_distance_normalized": 0.017377,
+      "max_distance_normalized": 0.021101,
+      "mean_normal_offset_normalized": 0.00081,
+      "mean_normal_disagreement": 0.604519,
+      "dominant_source_normal": [
+        0.0,
+        0.8142,
+        -0.5805
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.03125,
+          0.657383,
+          0.052755
+        ],
+        [
+          0.012196,
+          0.686722,
+          0.06979
+        ],
+        [
+          0.000255,
+          0.629029,
+          0.030989
+        ],
+        [
+          0.003771,
+          0.617188,
+          0.008337
+        ],
+        [
+          -0.000332,
+          0.62225,
+          0.026431
+        ],
+        [
+          0.011216,
+          0.668125,
+          0.057283
+        ],
+        [
+          -0.003046,
+          0.666347,
+          0.056087
+        ],
+        [
+          -0.000865,
+          0.655334,
+          0.04868
+        ],
+        [
+          -0.03125,
+          0.659727,
+          0.060258
+        ]
+      ],
+      "region_id": "excess-02",
+      "counterpart_region_ids": [
+        "missing-04"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "473",
+          "face_id": "f38",
+          "face_fingerprint": "d6de5ea0f334901b4bf4d4523f8cc832c32ef81981bb0dd4c51193e0d5a018f7",
+          "surface_type": "plane",
+          "area": 0.005295852750269694,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f38",
+            "entity_handle": "473",
+            "face_id": "f38",
+            "face_fingerprint": "d6de5ea0f334901b4bf4d4523f8cc832c32ef81981bb0dd4c51193e0d5a018f7",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 6,
+          "exact_query_fraction": 0.666667,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f45",
+          "face_fingerprint": "938d131e3ef0fd7d70525f74dfc1384f2026db8bc40861251c6511824dc41c83",
+          "surface_type": "plane",
+          "area": 0.14310195463003406,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f45",
+            "entity_handle": "473",
+            "face_id": "f45",
+            "face_fingerprint": "938d131e3ef0fd7d70525f74dfc1384f2026db8bc40861251c6511824dc41c83",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f18",
+          "face_fingerprint": "1787da0a31d84fb7bbc11985c8fd2b324885c2fe98a33c0ab7c6e3819d12d4fa",
+          "surface_type": "plane",
+          "area": 0.006116281249999999,
+          "aligned_bounds": {
+            "min": [
+              1.4999999999876223e-06,
+              0.6171865000000001,
+              -9.999999999177334e-07
+            ],
+            "max": [
+              0.2656265,
+              0.6171865000000001,
+              0.023025000000000073
+            ]
+          },
+          "bbox_distance_normalized": 1e-06,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "473:f18",
+            "entity_handle": "473",
+            "face_id": "f18",
+            "face_fingerprint": "1787da0a31d84fb7bbc11985c8fd2b324885c2fe98a33c0ab7c6e3819d12d4fa",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_revert_housing_station",
+          "intent": "Revert only the locally regressed a007 rearward housing shift to the better a006 station while preserving verified radius and sweep.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.1484375,
+              0.15625
+            ],
+            "new_center": [
+              0.150819,
+              0.15625
+            ],
+            "arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_housing_recenter",
+            "a006_intermediate_radius_housing"
+          ]
+        },
+        {
+          "operation_id": "a008_widen_shoulder_end",
+          "intent": "Retain the improved early shoulder start and modestly widen only its platform-end boundary to recover bilateral missing shoulder surfaces.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_extrude",
+          "feature_id": "rear_bridge",
+          "editable_parameters": {
+            "transition_start": 0.0859375,
+            "transition_end": 0.1328125,
+            "start_width": 0.0625,
+            "end_width": 0.1484375,
+            "z_min": 0.0703125,
+            "z_max": 0.138405
+          },
+          "parent_operation_ids": [
+            "a007_shoulder_redistribution"
+          ]
+        },
+        {
+          "operation_id": "a008_advance_connector_upper",
+          "intent": "Advance only the upper connector endpoint to reduce the remaining paired longitudinal displacement while preserving its lower attachment.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "upper_point": [
+              0.6875,
+              0.0703125
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward"
+          ]
+        },
+        {
+          "operation_id": "a008_retract_lever_notch",
+          "intent": "Move only the notch transition rearward to correct the high-confidence paired displacement on face f38 while preserving the other improved a007 lever vertices.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "upright_lever",
+          "editable_parameters": {
+            "bottom_start": 0.60546875,
+            "bottom_outer": 0.65625,
+            "mid_outer": 0.73828125,
+            "inner_lower": 0.625,
+            "old_notch_transition": 0.71875,
+            "new_notch_transition": 0.703125,
+            "top_outer": 0.75,
+            "overall_height": 0.742105,
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_lever_edge_balance"
+          ]
+        },
+        {
+          "operation_id": "a008_final_union",
+          "intent": "Fuse the preserved and locally corrected components into one native editable solid without annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105
+          },
+          "parent_operation_ids": [
+            "a008_revert_housing_station",
+            "a008_widen_shoulder_end",
+            "a008_advance_connector_upper",
+            "a008_retract_lever_notch"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 36,
+      "sample_fraction": 0.0018,
+      "estimated_area": 0.001529,
+      "estimated_area_fraction": 0.0018,
+      "centroid": [
+        0.002766,
+        0.699416,
+        0.546732
+      ],
+      "centroid_bbox_position": [
+        0.5104,
+        0.9326,
+        0.7367
+      ],
+      "bbox": {
+        "min": [
+          -0.020662,
+          0.695446,
+          0.528715
+        ],
+        "max": [
+          0.0245,
+          0.703027,
+          0.5625
+        ]
+      },
+      "mean_distance_normalized": 0.00667,
+      "p95_distance_normalized": 0.007327,
+      "max_distance_normalized": 0.007751,
+      "mean_normal_offset_normalized": -0.005898,
+      "mean_normal_disagreement": 0.071488,
+      "dominant_source_normal": [
+        0.0,
+        -0.9911,
+        0.1329
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.013069,
+          0.696006,
+          0.531175
+        ],
+        [
+          -0.006639,
+          0.698281,
+          0.541187
+        ],
+        [
+          0.0245,
+          0.702578,
+          0.560094
+        ],
+        [
+          0.00782,
+          0.699577,
+          0.546889
+        ],
+        [
+          0.015691,
+          0.697348,
+          0.537083
+        ],
+        [
+          0.010324,
+          0.697968,
+          0.539811
+        ],
+        [
+          -0.006297,
+          0.700845,
+          0.55247
+        ],
+        [
+          -0.020076,
+          0.700482,
+          0.550872
+        ],
+        [
+          -0.008485,
+          0.699339,
+          0.545842
+        ]
+      ],
+      "region_id": "excess-03",
+      "counterpart_region_ids": [
+        "missing-05"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "473",
+          "face_id": "f39",
+          "face_fingerprint": "2413e259b2ff77be1dd268faa322f83df200de6387784df2c1f433ff349fa481",
+          "surface_type": "plane",
+          "area": 0.026162926483330365,
+          "aligned_bounds": {
+            "min": [
+              0.10156400000000011,
+              0.6103518937543566,
+              0.15430173251916895
+            ],
+            "max": [
+              0.1640640000000001,
+              0.7031240000000001,
+              0.5624990000000001
+            ]
+          },
+          "bbox_distance_normalized": 0.07083,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "473:f39",
+            "entity_handle": "473",
+            "face_id": "f39",
+            "face_fingerprint": "2413e259b2ff77be1dd268faa322f83df200de6387784df2c1f433ff349fa481",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_revert_housing_station",
+          "intent": "Revert only the locally regressed a007 rearward housing shift to the better a006 station while preserving verified radius and sweep.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.1484375,
+              0.15625
+            ],
+            "new_center": [
+              0.150819,
+              0.15625
+            ],
+            "arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_housing_recenter",
+            "a006_intermediate_radius_housing"
+          ]
+        },
+        {
+          "operation_id": "a008_widen_shoulder_end",
+          "intent": "Retain the improved early shoulder start and modestly widen only its platform-end boundary to recover bilateral missing shoulder surfaces.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_extrude",
+          "feature_id": "rear_bridge",
+          "editable_parameters": {
+            "transition_start": 0.0859375,
+            "transition_end": 0.1328125,
+            "start_width": 0.0625,
+            "end_width": 0.1484375,
+            "z_min": 0.0703125,
+            "z_max": 0.138405
+          },
+          "parent_operation_ids": [
+            "a007_shoulder_redistribution"
+          ]
+        },
+        {
+          "operation_id": "a008_advance_connector_upper",
+          "intent": "Advance only the upper connector endpoint to reduce the remaining paired longitudinal displacement while preserving its lower attachment.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "upper_point": [
+              0.6875,
+              0.0703125
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward"
+          ]
+        },
+        {
+          "operation_id": "a008_retract_lever_notch",
+          "intent": "Move only the notch transition rearward to correct the high-confidence paired displacement on face f38 while preserving the other improved a007 lever vertices.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "upright_lever",
+          "editable_parameters": {
+            "bottom_start": 0.60546875,
+            "bottom_outer": 0.65625,
+            "mid_outer": 0.73828125,
+            "inner_lower": 0.625,
+            "old_notch_transition": 0.71875,
+            "new_notch_transition": 0.703125,
+            "top_outer": 0.75,
+            "overall_height": 0.742105,
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_lever_edge_balance"
+          ]
+        },
+        {
+          "operation_id": "a008_final_union",
+          "intent": "Fuse the preserved and locally corrected components into one native editable solid without annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105
+          },
+          "parent_operation_ids": [
+            "a008_revert_housing_station",
+            "a008_widen_shoulder_end",
+            "a008_advance_connector_upper",
+            "a008_retract_lever_notch"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 16,
+      "sample_fraction": 0.0008,
+      "estimated_area": 0.00068,
+      "estimated_area_fraction": 0.0008,
+      "centroid": [
+        0.000422,
+        0.742953,
+        0.634108
+      ],
+      "centroid_bbox_position": [
+        0.5016,
+        0.9906,
+        0.8545
+      ],
+      "bbox": {
+        "min": [
+          -0.021237,
+          0.742574,
+          0.628291
+        ],
+        "max": [
+          0.023561,
+          0.743433,
+          0.641454
+        ]
+      },
+      "mean_distance_normalized": 0.006374,
+      "p95_distance_normalized": 0.006577,
+      "max_distance_normalized": 0.006588,
+      "mean_normal_offset_normalized": -0.006374,
+      "mean_normal_disagreement": 0.003515,
+      "dominant_source_normal": [
+        0.0,
+        0.9979,
+        -0.0651
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.016767,
+          0.742574,
+          0.628291
+        ],
+        [
+          -0.020991,
+          0.742914,
+          0.63351
+        ],
+        [
+          -0.008354,
+          0.742748,
+          0.630964
+        ],
+        [
+          0.003429,
+          0.743395,
+          0.640875
+        ],
+        [
+          0.010082,
+          0.742832,
+          0.632251
+        ],
+        [
+          0.01096,
+          0.742817,
+          0.63202
+        ],
+        [
+          0.003681,
+          0.742623,
+          0.629048
+        ],
+        [
+          0.000654,
+          0.743032,
+          0.63531
+        ],
+        [
+          0.023561,
+          0.743127,
+          0.636765
+        ]
+      ],
+      "region_id": "excess-04",
+      "counterpart_region_ids": [
+        "missing-06"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "473",
+          "face_id": "f43",
+          "face_fingerprint": "379e07f4117da239275c2eced160c15eb2512c67c09812e75111206d2de1f4bb",
+          "surface_type": "plane",
+          "area": 0.011249181415802431,
+          "aligned_bounds": {
+            "min": [
+              0.10156400000000011,
+              0.7382802500000001,
+              0.5624990000000001
+            ],
+            "max": [
+              0.1640640000000001,
+              0.7499990000000001,
+              0.7421040000000001
+            ]
+          },
+          "bbox_distance_normalized": 0.071693,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "473:f43",
+            "entity_handle": "473",
+            "face_id": "f43",
+            "face_fingerprint": "379e07f4117da239275c2eced160c15eb2512c67c09812e75111206d2de1f4bb",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_revert_housing_station",
+          "intent": "Revert only the locally regressed a007 rearward housing shift to the better a006 station while preserving verified radius and sweep.",
+          "evidence": [
+            "entity_handle"
+          ],
+          "confidence": "low",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.1484375,
+              0.15625
+            ],
+            "new_center": [
+              0.150819,
+              0.15625
+            ],
+            "arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_housing_recenter",
+            "a006_intermediate_radius_housing"
+          ]
+        },
+        {
+          "operation_id": "a008_widen_shoulder_end",
+          "intent": "Retain the improved early shoulder start and modestly widen only its platform-end boundary to recover bilateral missing shoulder surfaces.",
+          "evidence": [
+            "entity_handle"
+          ],
+          "confidence": "low",
+          "operation_type": "replace_profile_extrude",
+          "feature_id": "rear_bridge",
+          "editable_parameters": {
+            "transition_start": 0.0859375,
+            "transition_end": 0.1328125,
+            "start_width": 0.0625,
+            "end_width": 0.1484375,
+            "z_min": 0.0703125,
+            "z_max": 0.138405
+          },
+          "parent_operation_ids": [
+            "a007_shoulder_redistribution"
+          ]
+        },
+        {
+          "operation_id": "a008_advance_connector_upper",
+          "intent": "Advance only the upper connector endpoint to reduce the remaining paired longitudinal displacement while preserving its lower attachment.",
+          "evidence": [
+            "entity_handle"
+          ],
+          "confidence": "low",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "upper_point": [
+              0.6875,
+              0.0703125
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward"
+          ]
+        },
+        {
+          "operation_id": "a008_retract_lever_notch",
+          "intent": "Move only the notch transition rearward to correct the high-confidence paired displacement on face f38 while preserving the other improved a007 lever vertices.",
+          "evidence": [
+            "entity_handle"
+          ],
+          "confidence": "low",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "upright_lever",
+          "editable_parameters": {
+            "bottom_start": 0.60546875,
+            "bottom_outer": 0.65625,
+            "mid_outer": 0.73828125,
+            "inner_lower": 0.625,
+            "old_notch_transition": 0.71875,
+            "new_notch_transition": 0.703125,
+            "top_outer": 0.75,
+            "overall_height": 0.742105,
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_lever_edge_balance"
+          ]
+        },
+        {
+          "operation_id": "a008_final_union",
+          "intent": "Fuse the preserved and locally corrected components into one native editable solid without annotations.",
+          "evidence": [
+            "entity_handle"
+          ],
+          "confidence": "low",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105
+          },
+          "parent_operation_ids": [
+            "a008_revert_housing_station",
+            "a008_widen_shoulder_end",
+            "a008_advance_connector_upper",
+            "a008_retract_lever_notch"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 395,
+      "sample_fraction": 0.01975,
+      "estimated_area": 0.016499,
+      "estimated_area_fraction": 0.01975,
+      "centroid": [
+        -0.001178,
+        0.043341,
+        0.15995
+      ],
+      "centroid_bbox_position": [
+        0.4956,
+        0.0578,
+        0.2155
+      ],
+      "bbox": {
+        "min": [
+          -0.03125,
+          0.007621,
+          0.012702
+        ],
+        "max": [
+          0.03125,
+          0.115824,
+          0.290201
+        ]
+      },
+      "mean_distance_normalized": 0.012647,
+      "p95_distance_normalized": 0.018335,
+      "max_distance_normalized": 0.018466,
+      "mean_normal_offset_normalized": -0.009909,
+      "mean_normal_disagreement": 0.432849,
+      "dominant_source_normal": [
+        -0.0116,
+        -0.9428,
+        0.3332
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.031164,
+          0.020869,
+          0.034782
+        ],
+        [
+          0.007475,
+          0.025728,
+          0.147557
+        ],
+        [
+          0.003566,
+          0.110278,
+          0.287774
+        ],
+        [
+          0.022214,
+          0.072997,
+          0.263155
+        ],
+        [
+          -0.013704,
+          0.041095,
+          0.221089
+        ],
+        [
+          -0.012362,
+          0.028794,
+          0.186266
+        ],
+        [
+          -0.003139,
+          0.030076,
+          0.119503
+        ],
+        [
+          -0.013386,
+          0.039769,
+          0.092881
+        ],
+        [
+          -0.03125,
+          0.032472,
+          0.038936
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-16828b5745eb",
+          "sample_fraction": 0.43038,
+          "surface_type": "cylinder",
+          "radius": 0.145388
+        },
+        {
+          "face_id": "face-bd785ba25b73",
+          "sample_fraction": 0.35443,
+          "surface_type": "cylinder",
+          "radius": 0.145388
+        },
+        {
+          "face_id": "face-588eb426461a",
+          "sample_fraction": 0.101266,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-23dd45881a0c",
+          "sample_fraction": 0.083544,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-f30991d46a09",
+          "sample_fraction": 0.020253,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-01",
+      "counterpart_region_ids": [
+        "excess-01"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "473",
+          "face_id": "f36",
+          "face_fingerprint": "ac5713a905a93f4b6c5436890a94b53443d515b62d422e5242b0ddef2ff4bb93",
+          "surface_type": "cylinder",
+          "area": 0.021215467376145998,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f36",
+            "entity_handle": "473",
+            "face_id": "f36",
+            "face_fingerprint": "ac5713a905a93f4b6c5436890a94b53443d515b62d422e5242b0ddef2ff4bb93",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 0.007131,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f45",
+          "face_fingerprint": "938d131e3ef0fd7d70525f74dfc1384f2026db8bc40861251c6511824dc41c83",
+          "surface_type": "plane",
+          "area": 0.14310195463003406,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f45",
+            "entity_handle": "473",
+            "face_id": "f45",
+            "face_fingerprint": "938d131e3ef0fd7d70525f74dfc1384f2026db8bc40861251c6511824dc41c83",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.007456,
+          "query_methods": [
+            "surface_boundary",
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f21",
+          "face_fingerprint": "e52b8b07050e2b4d9d2655d7da1e4e431e3d377e08abe88af2418a5f9b0eb5ab",
+          "surface_type": "plane",
+          "area": 0.14310195463003403,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f21",
+            "entity_handle": "473",
+            "face_id": "f21",
+            "face_fingerprint": "e52b8b07050e2b4d9d2655d7da1e4e431e3d377e08abe88af2418a5f9b0eb5ab",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.008305,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f8",
+          "face_fingerprint": "c7386f99a82ee1815964cbc28dd362e508b32cdee98c2bc3b4d587e88478d257",
+          "surface_type": "plane",
+          "area": 0.0140380859375,
+          "aligned_bounds": {
+            "min": [
+              1.4999999999876223e-06,
+              -9.999999999177334e-07,
+              0.023025000000000073
+            ],
+            "max": [
+              0.2656265,
+              0.07812400000000008,
+              0.023025000000000073
+            ]
+          },
+          "bbox_distance_normalized": 0.0,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "473:f8",
+            "entity_handle": "473",
+            "face_id": "f8",
+            "face_fingerprint": "c7386f99a82ee1815964cbc28dd362e508b32cdee98c2bc3b4d587e88478d257",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.010805,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-473-f36",
+          "kind": "boss_candidate",
+          "confidence": "medium",
+          "entity_handle": "473",
+          "face_ids": [
+            "f36"
+          ],
+          "face_fingerprints": [
+            "ac5713a905a93f4b6c5436890a94b53443d515b62d422e5242b0ddef2ff4bb93"
+          ],
+          "parameters": {
+            "radius": 0.14538806625029443,
+            "axis": [
+              0,
+              -1,
+              -2.2204460492503126e-16
+            ],
+            "origin": [
+              0.15081899999999995,
+              0.031249999999999965,
+              0.15625
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_revert_housing_station",
+          "intent": "Revert only the locally regressed a007 rearward housing shift to the better a006 station while preserving verified radius and sweep.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.1484375,
+              0.15625
+            ],
+            "new_center": [
+              0.150819,
+              0.15625
+            ],
+            "arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_housing_recenter",
+            "a006_intermediate_radius_housing"
+          ]
+        },
+        {
+          "operation_id": "a008_widen_shoulder_end",
+          "intent": "Retain the improved early shoulder start and modestly widen only its platform-end boundary to recover bilateral missing shoulder surfaces.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_extrude",
+          "feature_id": "rear_bridge",
+          "editable_parameters": {
+            "transition_start": 0.0859375,
+            "transition_end": 0.1328125,
+            "start_width": 0.0625,
+            "end_width": 0.1484375,
+            "z_min": 0.0703125,
+            "z_max": 0.138405
+          },
+          "parent_operation_ids": [
+            "a007_shoulder_redistribution"
+          ]
+        },
+        {
+          "operation_id": "a008_advance_connector_upper",
+          "intent": "Advance only the upper connector endpoint to reduce the remaining paired longitudinal displacement while preserving its lower attachment.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "upper_point": [
+              0.6875,
+              0.0703125
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward"
+          ]
+        },
+        {
+          "operation_id": "a008_retract_lever_notch",
+          "intent": "Move only the notch transition rearward to correct the high-confidence paired displacement on face f38 while preserving the other improved a007 lever vertices.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "upright_lever",
+          "editable_parameters": {
+            "bottom_start": 0.60546875,
+            "bottom_outer": 0.65625,
+            "mid_outer": 0.73828125,
+            "inner_lower": 0.625,
+            "old_notch_transition": 0.71875,
+            "new_notch_transition": 0.703125,
+            "top_outer": 0.75,
+            "overall_height": 0.742105,
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_lever_edge_balance"
+          ]
+        },
+        {
+          "operation_id": "a008_final_union",
+          "intent": "Fuse the preserved and locally corrected components into one native editable solid without annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105
+          },
+          "parent_operation_ids": [
+            "a008_revert_housing_station",
+            "a008_widen_shoulder_end",
+            "a008_advance_connector_upper",
+            "a008_retract_lever_notch"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 103,
+      "sample_fraction": 0.00515,
+      "estimated_area": 0.004302,
+      "estimated_area_fraction": 0.00515,
+      "centroid": [
+        -0.039914,
+        0.124526,
+        0.105865
+      ],
+      "centroid_bbox_position": [
+        0.3497,
+        0.166,
+        0.1427
+      ],
+      "bbox": {
+        "min": [
+          -0.065158,
+          0.095827,
+          0.078127
+        ],
+        "max": [
+          -0.03125,
+          0.132812,
+          0.131565
+        ]
+      },
+      "mean_distance_normalized": 0.014589,
+      "p95_distance_normalized": 0.025298,
+      "max_distance_normalized": 0.028628,
+      "mean_normal_offset_normalized": -0.014589,
+      "mean_normal_disagreement": 0.642755,
+      "dominant_source_normal": [
+        -0.7139,
+        -0.7002,
+        0.0
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.055924,
+          0.132812,
+          0.080999
+        ],
+        [
+          -0.03125,
+          0.120536,
+          0.081747
+        ],
+        [
+          -0.0432,
+          0.132812,
+          0.084286
+        ],
+        [
+          -0.052861,
+          0.132812,
+          0.118611
+        ],
+        [
+          -0.046643,
+          0.132812,
+          0.131565
+        ],
+        [
+          -0.038351,
+          0.132812,
+          0.120516
+        ],
+        [
+          -0.058527,
+          0.132812,
+          0.13154
+        ],
+        [
+          -0.03125,
+          0.09596,
+          0.085336
+        ],
+        [
+          -0.057238,
+          0.132812,
+          0.101179
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-f30991d46a09",
+          "sample_fraction": 0.504854,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-30940416656d",
+          "sample_fraction": 0.495146,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-02",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "473",
+          "face_id": "f25",
+          "face_fingerprint": "b26271f10635fe6d7d9e0169d84f84d035feeec84fb227939678603a5198326d",
+          "surface_type": "plane",
+          "area": 0.004329993911474944,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f25",
+            "entity_handle": "473",
+            "face_id": "f25",
+            "face_fingerprint": "b26271f10635fe6d7d9e0169d84f84d035feeec84fb227939678603a5198326d",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.006225,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f24",
+          "face_fingerprint": "e29a4cbc5b07a472945e68d79ffb29b62fb379c499895c981afa9154a01f6ec9",
+          "surface_type": "plane",
+          "area": 0.09557531818181816,
+          "aligned_bounds": {
+            "min": [
+              0.015626499999999988,
+              0.08593650000000008,
+              0.13840400000000005
+            ],
+            "max": [
+              0.2500015,
+              0.6718740000000001,
+              0.13840400000000005
+            ]
+          },
+          "bbox_distance_normalized": 0.043541,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "473:f24",
+            "entity_handle": "473",
+            "face_id": "f24",
+            "face_fingerprint": "e29a4cbc5b07a472945e68d79ffb29b62fb379c499895c981afa9154a01f6ec9",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.006287,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f23",
+          "face_fingerprint": "9ba0a411edcaf45865c56bf4e9b12a866fbd070fbdb1e02f5c8513af5eb227b0",
+          "surface_type": "plane",
+          "area": 0.04733274218750001,
+          "aligned_bounds": {
+            "min": [
+              0.015626499999999988,
+              0.08593650000000008,
+              0.07031150000000008
+            ],
+            "max": [
+              0.101564,
+              0.6718740000000001,
+              0.07031150000000008
+            ]
+          },
+          "bbox_distance_normalized": 0.043679,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "473:f23",
+            "entity_handle": "473",
+            "face_id": "f23",
+            "face_fingerprint": "9ba0a411edcaf45865c56bf4e9b12a866fbd070fbdb1e02f5c8513af5eb227b0",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.009822,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f45",
+          "face_fingerprint": "938d131e3ef0fd7d70525f74dfc1384f2026db8bc40861251c6511824dc41c83",
+          "surface_type": "plane",
+          "area": 0.14310195463003406,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f45",
+            "entity_handle": "473",
+            "face_id": "f45",
+            "face_fingerprint": "938d131e3ef0fd7d70525f74dfc1384f2026db8bc40861251c6511824dc41c83",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.010509,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_revert_housing_station",
+          "intent": "Revert only the locally regressed a007 rearward housing shift to the better a006 station while preserving verified radius and sweep.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.1484375,
+              0.15625
+            ],
+            "new_center": [
+              0.150819,
+              0.15625
+            ],
+            "arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_housing_recenter",
+            "a006_intermediate_radius_housing"
+          ]
+        },
+        {
+          "operation_id": "a008_widen_shoulder_end",
+          "intent": "Retain the improved early shoulder start and modestly widen only its platform-end boundary to recover bilateral missing shoulder surfaces.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_extrude",
+          "feature_id": "rear_bridge",
+          "editable_parameters": {
+            "transition_start": 0.0859375,
+            "transition_end": 0.1328125,
+            "start_width": 0.0625,
+            "end_width": 0.1484375,
+            "z_min": 0.0703125,
+            "z_max": 0.138405
+          },
+          "parent_operation_ids": [
+            "a007_shoulder_redistribution"
+          ]
+        },
+        {
+          "operation_id": "a008_advance_connector_upper",
+          "intent": "Advance only the upper connector endpoint to reduce the remaining paired longitudinal displacement while preserving its lower attachment.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "upper_point": [
+              0.6875,
+              0.0703125
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward"
+          ]
+        },
+        {
+          "operation_id": "a008_retract_lever_notch",
+          "intent": "Move only the notch transition rearward to correct the high-confidence paired displacement on face f38 while preserving the other improved a007 lever vertices.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "upright_lever",
+          "editable_parameters": {
+            "bottom_start": 0.60546875,
+            "bottom_outer": 0.65625,
+            "mid_outer": 0.73828125,
+            "inner_lower": 0.625,
+            "old_notch_transition": 0.71875,
+            "new_notch_transition": 0.703125,
+            "top_outer": 0.75,
+            "overall_height": 0.742105,
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_lever_edge_balance"
+          ]
+        },
+        {
+          "operation_id": "a008_final_union",
+          "intent": "Fuse the preserved and locally corrected components into one native editable solid without annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105
+          },
+          "parent_operation_ids": [
+            "a008_revert_housing_station",
+            "a008_widen_shoulder_end",
+            "a008_advance_connector_upper",
+            "a008_retract_lever_notch"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 92,
+      "sample_fraction": 0.0046,
+      "estimated_area": 0.003843,
+      "estimated_area_fraction": 0.0046,
+      "centroid": [
+        0.039793,
+        0.124012,
+        0.10519
+      ],
+      "centroid_bbox_position": [
+        0.6498,
+        0.1653,
+        0.1417
+      ],
+      "bbox": {
+        "min": [
+          0.03125,
+          0.095722,
+          0.077049
+        ],
+        "max": [
+          0.065161,
+          0.132812,
+          0.130949
+        ]
+      },
+      "mean_distance_normalized": 0.014035,
+      "p95_distance_normalized": 0.025175,
+      "max_distance_normalized": 0.028238,
+      "mean_normal_offset_normalized": -0.010891,
+      "mean_normal_disagreement": 0.414032,
+      "dominant_source_normal": [
+        0.6757,
+        -0.7372,
+        0.0
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          0.03125,
+          0.10113,
+          0.078986
+        ],
+        [
+          0.054554,
+          0.132812,
+          0.13062
+        ],
+        [
+          0.053471,
+          0.132812,
+          0.110104
+        ],
+        [
+          0.045556,
+          0.132812,
+          0.110834
+        ],
+        [
+          0.03125,
+          0.101259,
+          0.126209
+        ],
+        [
+          0.042322,
+          0.132812,
+          0.091057
+        ],
+        [
+          0.038013,
+          0.132812,
+          0.089964
+        ],
+        [
+          0.035947,
+          0.132812,
+          0.077049
+        ],
+        [
+          0.03125,
+          0.100248,
+          0.087773
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-8f5d97800ba9",
+          "sample_fraction": 0.521739,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-e726c000eb78",
+          "sample_fraction": 0.478261,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-03",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "473",
+          "face_id": "f26",
+          "face_fingerprint": "39aa3603de28baac71c96406f2ec27f77645a0eb536e4edef086f3187a95de7d",
+          "surface_type": "plane",
+          "area": 0.004329993911474944,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f26",
+            "entity_handle": "473",
+            "face_id": "f26",
+            "face_fingerprint": "39aa3603de28baac71c96406f2ec27f77645a0eb536e4edef086f3187a95de7d",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 0.008888,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f22",
+          "face_fingerprint": "a835e8ab150e4625e803bde94e2152130b74fc30b2ef3d6c847bb5331f421d36",
+          "surface_type": "plane",
+          "area": 0.0473327421875,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f22",
+            "entity_handle": "473",
+            "face_id": "f22",
+            "face_fingerprint": "a835e8ab150e4625e803bde94e2152130b74fc30b2ef3d6c847bb5331f421d36",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.006191,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f24",
+          "face_fingerprint": "e29a4cbc5b07a472945e68d79ffb29b62fb379c499895c981afa9154a01f6ec9",
+          "surface_type": "plane",
+          "area": 0.09557531818181816,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f24",
+            "entity_handle": "473",
+            "face_id": "f24",
+            "face_fingerprint": "e29a4cbc5b07a472945e68d79ffb29b62fb379c499895c981afa9154a01f6ec9",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.007156,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f21",
+          "face_fingerprint": "e52b8b07050e2b4d9d2655d7da1e4e431e3d377e08abe88af2418a5f9b0eb5ab",
+          "surface_type": "plane",
+          "area": 0.14310195463003403,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f21",
+            "entity_handle": "473",
+            "face_id": "f21",
+            "face_fingerprint": "e52b8b07050e2b4d9d2655d7da1e4e431e3d377e08abe88af2418a5f9b0eb5ab",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.007971,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_revert_housing_station",
+          "intent": "Revert only the locally regressed a007 rearward housing shift to the better a006 station while preserving verified radius and sweep.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.1484375,
+              0.15625
+            ],
+            "new_center": [
+              0.150819,
+              0.15625
+            ],
+            "arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_housing_recenter",
+            "a006_intermediate_radius_housing"
+          ]
+        },
+        {
+          "operation_id": "a008_widen_shoulder_end",
+          "intent": "Retain the improved early shoulder start and modestly widen only its platform-end boundary to recover bilateral missing shoulder surfaces.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_extrude",
+          "feature_id": "rear_bridge",
+          "editable_parameters": {
+            "transition_start": 0.0859375,
+            "transition_end": 0.1328125,
+            "start_width": 0.0625,
+            "end_width": 0.1484375,
+            "z_min": 0.0703125,
+            "z_max": 0.138405
+          },
+          "parent_operation_ids": [
+            "a007_shoulder_redistribution"
+          ]
+        },
+        {
+          "operation_id": "a008_advance_connector_upper",
+          "intent": "Advance only the upper connector endpoint to reduce the remaining paired longitudinal displacement while preserving its lower attachment.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "upper_point": [
+              0.6875,
+              0.0703125
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward"
+          ]
+        },
+        {
+          "operation_id": "a008_retract_lever_notch",
+          "intent": "Move only the notch transition rearward to correct the high-confidence paired displacement on face f38 while preserving the other improved a007 lever vertices.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "upright_lever",
+          "editable_parameters": {
+            "bottom_start": 0.60546875,
+            "bottom_outer": 0.65625,
+            "mid_outer": 0.73828125,
+            "inner_lower": 0.625,
+            "old_notch_transition": 0.71875,
+            "new_notch_transition": 0.703125,
+            "top_outer": 0.75,
+            "overall_height": 0.742105,
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_lever_edge_balance"
+          ]
+        },
+        {
+          "operation_id": "a008_final_union",
+          "intent": "Fuse the preserved and locally corrected components into one native editable solid without annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105
+          },
+          "parent_operation_ids": [
+            "a008_revert_housing_station",
+            "a008_widen_shoulder_end",
+            "a008_advance_connector_upper",
+            "a008_retract_lever_notch"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 125,
+      "sample_fraction": 0.00625,
+      "estimated_area": 0.005221,
+      "estimated_area_fraction": 0.00625,
+      "centroid": [
+        0.000727,
+        0.643497,
+        0.029877
+      ],
+      "centroid_bbox_position": [
+        0.5027,
+        0.858,
+        0.0403
+      ],
+      "bbox": {
+        "min": [
+          -0.03125,
+          0.62448,
+          -0.0
+        ],
+        "max": [
+          0.03125,
+          0.665148,
+          0.070312
+        ]
+      },
+      "mean_distance_normalized": 0.013197,
+      "p95_distance_normalized": 0.02154,
+      "max_distance_normalized": 0.021967,
+      "mean_normal_offset_normalized": 0.007284,
+      "mean_normal_disagreement": 0.507828,
+      "dominant_source_normal": [
+        0.0116,
+        0.798,
+        -0.6026
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.029473,
+          0.63087,
+          -0.0
+        ],
+        [
+          -0.025445,
+          0.642285,
+          0.016067
+        ],
+        [
+          0.03125,
+          0.638989,
+          0.025766
+        ],
+        [
+          0.018038,
+          0.665148,
+          0.070312
+        ],
+        [
+          -0.008329,
+          0.664535,
+          0.070312
+        ],
+        [
+          0.026441,
+          0.640828,
+          0.007738
+        ],
+        [
+          0.012012,
+          0.628076,
+          -0.0
+        ],
+        [
+          -0.023395,
+          0.637489,
+          -0.0
+        ],
+        [
+          -0.03125,
+          0.627589,
+          0.018091
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-128ad171706e",
+          "sample_fraction": 0.288,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-aa5a3340271a",
+          "sample_fraction": 0.272,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-fc0006dccf55",
+          "sample_fraction": 0.096,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-b7f1e09637b9",
+          "sample_fraction": 0.096,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-c176b20e43f8",
+          "sample_fraction": 0.08,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-04",
+      "counterpart_region_ids": [
+        "excess-02"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "473",
+          "face_id": "f38",
+          "face_fingerprint": "d6de5ea0f334901b4bf4d4523f8cc832c32ef81981bb0dd4c51193e0d5a018f7",
+          "surface_type": "plane",
+          "area": 0.005295852750269694,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f38",
+            "entity_handle": "473",
+            "face_id": "f38",
+            "face_fingerprint": "d6de5ea0f334901b4bf4d4523f8cc832c32ef81981bb0dd4c51193e0d5a018f7",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.009093,
+          "query_methods": [
+            "trim_boundary",
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f9",
+          "face_fingerprint": "46201607dcc6da1b6bf1bad641e5100fa6248f47d34363aa151b5c5ab06080a8",
+          "surface_type": "plane",
+          "area": 0.060791015625,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f9",
+            "entity_handle": "473",
+            "face_id": "f9",
+            "face_fingerprint": "46201607dcc6da1b6bf1bad641e5100fa6248f47d34363aa151b5c5ab06080a8",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.010008,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f18",
+          "face_fingerprint": "1787da0a31d84fb7bbc11985c8fd2b324885c2fe98a33c0ab7c6e3819d12d4fa",
+          "surface_type": "plane",
+          "area": 0.006116281249999999,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f18",
+            "entity_handle": "473",
+            "face_id": "f18",
+            "face_fingerprint": "1787da0a31d84fb7bbc11985c8fd2b324885c2fe98a33c0ab7c6e3819d12d4fa",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.012576,
+          "query_methods": [
+            "surface_boundary",
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f33",
+          "face_fingerprint": "79a655131fb2089b725eb1a4c7f20b095de27c97880af277dee2d211c87ca00e",
+          "surface_type": "plane",
+          "area": 0.0009765625,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f33",
+            "entity_handle": "473",
+            "face_id": "f33",
+            "face_fingerprint": "79a655131fb2089b725eb1a4c7f20b095de27c97880af277dee2d211c87ca00e",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006183,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f32",
+          "face_fingerprint": "f412af61def5931766770db4ace745837901daf98a8d0cfd2f4500a7f30930a0",
+          "surface_type": "plane",
+          "area": 0.0159591796875,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f32",
+            "entity_handle": "473",
+            "face_id": "f32",
+            "face_fingerprint": "f412af61def5931766770db4ace745837901daf98a8d0cfd2f4500a7f30930a0",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006746,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        },
+        {
+          "entity_handle": "473",
+          "face_id": "f45",
+          "face_fingerprint": "938d131e3ef0fd7d70525f74dfc1384f2026db8bc40861251c6511824dc41c83",
+          "surface_type": "plane",
+          "area": 0.14310195463003406,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "473:f45",
+            "entity_handle": "473",
+            "face_id": "f45",
+            "face_fingerprint": "938d131e3ef0fd7d70525f74dfc1384f2026db8bc40861251c6511824dc41c83",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.009099,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "low",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_revert_housing_station",
+          "intent": "Revert only the locally regressed a007 rearward housing shift to the better a006 station while preserving verified radius and sweep.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.1484375,
+              0.15625
+            ],
+            "new_center": [
+              0.150819,
+              0.15625
+            ],
+            "arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_housing_recenter",
+            "a006_intermediate_radius_housing"
+          ]
+        },
+        {
+          "operation_id": "a008_widen_shoulder_end",
+          "intent": "Retain the improved early shoulder start and modestly widen only its platform-end boundary to recover bilateral missing shoulder surfaces.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_extrude",
+          "feature_id": "rear_bridge",
+          "editable_parameters": {
+            "transition_start": 0.0859375,
+            "transition_end": 0.1328125,
+            "start_width": 0.0625,
+            "end_width": 0.1484375,
+            "z_min": 0.0703125,
+            "z_max": 0.138405
+          },
+          "parent_operation_ids": [
+            "a007_shoulder_redistribution"
+          ]
+        },
+        {
+          "operation_id": "a008_advance_connector_upper",
+          "intent": "Advance only the upper connector endpoint to reduce the remaining paired longitudinal displacement while preserving its lower attachment.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "upper_point": [
+              0.6875,
+              0.0703125
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward"
+          ]
+        },
+        {
+          "operation_id": "a008_retract_lever_notch",
+          "intent": "Move only the notch transition rearward to correct the high-confidence paired displacement on face f38 while preserving the other improved a007 lever vertices.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "upright_lever",
+          "editable_parameters": {
+            "bottom_start": 0.60546875,
+            "bottom_outer": 0.65625,
+            "mid_outer": 0.73828125,
+            "inner_lower": 0.625,
+            "old_notch_transition": 0.71875,
+            "new_notch_transition": 0.703125,
+            "top_outer": 0.75,
+            "overall_height": 0.742105,
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_lever_edge_balance"
+          ]
+        },
+        {
+          "operation_id": "a008_final_union",
+          "intent": "Fuse the preserved and locally corrected components into one native editable solid without annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105
+          },
+          "parent_operation_ids": [
+            "a008_revert_housing_station",
+            "a008_widen_shoulder_end",
+            "a008_advance_connector_upper",
+            "a008_retract_lever_notch"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 37,
+      "sample_fraction": 0.00185,
+      "estimated_area": 0.001545,
+      "estimated_area_fraction": 0.00185,
+      "centroid": [
+        -0.001893,
+        0.690487,
+        0.538425
+      ],
+      "centroid_bbox_position": [
+        0.4929,
+        0.9206,
+        0.7255
+      ],
+      "bbox": {
+        "min": [
+          -0.030025,
+          0.687902,
+          0.524984
+        ],
+        "max": [
+          0.028266,
+          0.693837,
+          0.555845
+        ]
+      },
+      "mean_distance_normalized": 0.006396,
+      "p95_distance_normalized": 0.006809,
+      "max_distance_normalized": 0.006908,
+      "mean_normal_offset_normalized": 0.006396,
+      "mean_normal_disagreement": 0.044376,
+      "dominant_source_normal": [
+        0.0,
+        -0.982,
+        0.1888
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.029592,
+          0.690569,
+          0.538852
+        ],
+        [
+          -0.002538,
+          0.693463,
+          0.553902
+        ],
+        [
+          0.023598,
+          0.692859,
+          0.550763
+        ],
+        [
+          0.028266,
+          0.691491,
+          0.543646
+        ],
+        [
+          0.024978,
+          0.689867,
+          0.535201
+        ],
+        [
+          0.011571,
+          0.691117,
+          0.541705
+        ],
+        [
+          -0.013748,
+          0.691096,
+          0.541595
+        ],
+        [
+          -0.020088,
+          0.688488,
+          0.528032
+        ],
+        [
+          -0.030025,
+          0.691948,
+          0.546023
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-8b1f83019229",
+          "sample_fraction": 0.567568,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-5ebabb91d9d1",
+          "sample_fraction": 0.432432,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-05",
+      "counterpart_region_ids": [
+        "excess-03"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "473",
+          "face_id": "f39",
+          "face_fingerprint": "2413e259b2ff77be1dd268faa322f83df200de6387784df2c1f433ff349fa481",
+          "surface_type": "plane",
+          "area": 0.026162926483330365,
+          "aligned_bounds": {
+            "min": [
+              0.10156400000000011,
+              0.6103518937543566,
+              0.15430173251916895
+            ],
+            "max": [
+              0.1640640000000001,
+              0.7031240000000001,
+              0.5624990000000001
+            ]
+          },
+          "bbox_distance_normalized": 0.067369,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "473:f39",
+            "entity_handle": "473",
+            "face_id": "f39",
+            "face_fingerprint": "2413e259b2ff77be1dd268faa322f83df200de6387784df2c1f433ff349fa481",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch",
+              "a008_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.006097,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_revert_housing_station",
+          "intent": "Revert only the locally regressed a007 rearward housing shift to the better a006 station while preserving verified radius and sweep.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.1484375,
+              0.15625
+            ],
+            "new_center": [
+              0.150819,
+              0.15625
+            ],
+            "arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_housing_recenter",
+            "a006_intermediate_radius_housing"
+          ]
+        },
+        {
+          "operation_id": "a008_widen_shoulder_end",
+          "intent": "Retain the improved early shoulder start and modestly widen only its platform-end boundary to recover bilateral missing shoulder surfaces.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_extrude",
+          "feature_id": "rear_bridge",
+          "editable_parameters": {
+            "transition_start": 0.0859375,
+            "transition_end": 0.1328125,
+            "start_width": 0.0625,
+            "end_width": 0.1484375,
+            "z_min": 0.0703125,
+            "z_max": 0.138405
+          },
+          "parent_operation_ids": [
+            "a007_shoulder_redistribution"
+          ]
+        },
+        {
+          "operation_id": "a008_advance_connector_upper",
+          "intent": "Advance only the upper connector endpoint to reduce the remaining paired longitudinal displacement while preserving its lower attachment.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "upper_point": [
+              0.6875,
+              0.0703125
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward"
+          ]
+        },
+        {
+          "operation_id": "a008_retract_lever_notch",
+          "intent": "Move only the notch transition rearward to correct the high-confidence paired displacement on face f38 while preserving the other improved a007 lever vertices.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "upright_lever",
+          "editable_parameters": {
+            "bottom_start": 0.60546875,
+            "bottom_outer": 0.65625,
+            "mid_outer": 0.73828125,
+            "inner_lower": 0.625,
+            "old_notch_transition": 0.71875,
+            "new_notch_transition": 0.703125,
+            "top_outer": 0.75,
+            "overall_height": 0.742105,
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_lever_edge_balance"
+          ]
+        },
+        {
+          "operation_id": "a008_final_union",
+          "intent": "Fuse the preserved and locally corrected components into one native editable solid without annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105
+          },
+          "parent_operation_ids": [
+            "a008_revert_housing_station",
+            "a008_widen_shoulder_end",
+            "a008_advance_connector_upper",
+            "a008_retract_lever_notch"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 19,
+      "sample_fraction": 0.00095,
+      "estimated_area": 0.000794,
+      "estimated_area_fraction": 0.00095,
+      "centroid": [
+        0.006398,
+        0.749828,
+        0.63409
+      ],
+      "centroid_bbox_position": [
+        0.5241,
+        0.9998,
+        0.8544
+      ],
+      "bbox": {
+        "min": [
+          -0.030667,
+          0.74907,
+          0.626265
+        ],
+        "max": [
+          0.030907,
+          0.75,
+          0.641434
+        ]
+      },
+      "mean_distance_normalized": 0.006306,
+      "p95_distance_normalized": 0.006563,
+      "max_distance_normalized": 0.006607,
+      "mean_normal_offset_normalized": 0.006306,
+      "mean_normal_disagreement": 0.003099,
+      "dominant_source_normal": [
+        0.0,
+        0.999,
+        -0.0455
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.02954,
+          0.75,
+          0.636563
+        ],
+        [
+          -0.013999,
+          0.749405,
+          0.628181
+        ],
+        [
+          -0.017538,
+          0.75,
+          0.632722
+        ],
+        [
+          -0.002672,
+          0.75,
+          0.632524
+        ],
+        [
+          0.013591,
+          0.75,
+          0.63169
+        ],
+        [
+          0.00983,
+          0.749729,
+          0.630029
+        ],
+        [
+          0.022074,
+          0.75,
+          0.634804
+        ],
+        [
+          0.020645,
+          0.75,
+          0.63565
+        ],
+        [
+          0.030329,
+          0.75,
+          0.641434
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-4d013bb0e5f2",
+          "sample_fraction": 0.473684,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-f643ddacaf4f",
+          "sample_fraction": 0.263158,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-ed72c9f2ad28",
+          "sample_fraction": 0.157895,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-77d9cc9571a5",
+          "sample_fraction": 0.105263,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-06",
+      "counterpart_region_ids": [
+        "excess-04"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "473",
+          "face_id": "f43",
+          "face_fingerprint": "379e07f4117da239275c2eced160c15eb2512c67c09812e75111206d2de1f4bb",
+          "surface_type": "plane",
+          "area": 0.011249181415802431,
+          "aligned_bounds": {
+            "min": [
+              0.10156400000000011,
+              0.7382802500000001,
+              0.5624990000000001
+            ],
+            "max": [
+              0.1640640000000001,
+              0.7499990000000001,
+              0.7421040000000001
+            ]
+          },
+          "bbox_distance_normalized": 0.064941,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "473:f43",
+            "entity_handle": "473",
+            "face_id": "f43",
+            "face_fingerprint": "379e07f4117da239275c2eced160c15eb2512c67c09812e75111206d2de1f4bb",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.006024,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_revert_housing_station",
+          "intent": "Revert only the locally regressed a007 rearward housing shift to the better a006 station while preserving verified radius and sweep.",
+          "evidence": [
+            "entity_handle"
+          ],
+          "confidence": "low",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.1484375,
+              0.15625
+            ],
+            "new_center": [
+              0.150819,
+              0.15625
+            ],
+            "arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_housing_recenter",
+            "a006_intermediate_radius_housing"
+          ]
+        },
+        {
+          "operation_id": "a008_widen_shoulder_end",
+          "intent": "Retain the improved early shoulder start and modestly widen only its platform-end boundary to recover bilateral missing shoulder surfaces.",
+          "evidence": [
+            "entity_handle"
+          ],
+          "confidence": "low",
+          "operation_type": "replace_profile_extrude",
+          "feature_id": "rear_bridge",
+          "editable_parameters": {
+            "transition_start": 0.0859375,
+            "transition_end": 0.1328125,
+            "start_width": 0.0625,
+            "end_width": 0.1484375,
+            "z_min": 0.0703125,
+            "z_max": 0.138405
+          },
+          "parent_operation_ids": [
+            "a007_shoulder_redistribution"
+          ]
+        },
+        {
+          "operation_id": "a008_advance_connector_upper",
+          "intent": "Advance only the upper connector endpoint to reduce the remaining paired longitudinal displacement while preserving its lower attachment.",
+          "evidence": [
+            "entity_handle"
+          ],
+          "confidence": "low",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "upper_point": [
+              0.6875,
+              0.0703125
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward"
+          ]
+        },
+        {
+          "operation_id": "a008_retract_lever_notch",
+          "intent": "Move only the notch transition rearward to correct the high-confidence paired displacement on face f38 while preserving the other improved a007 lever vertices.",
+          "evidence": [
+            "entity_handle"
+          ],
+          "confidence": "low",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "upright_lever",
+          "editable_parameters": {
+            "bottom_start": 0.60546875,
+            "bottom_outer": 0.65625,
+            "mid_outer": 0.73828125,
+            "inner_lower": 0.625,
+            "old_notch_transition": 0.71875,
+            "new_notch_transition": 0.703125,
+            "top_outer": 0.75,
+            "overall_height": 0.742105,
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a007_lever_edge_balance"
+          ]
+        },
+        {
+          "operation_id": "a008_final_union",
+          "intent": "Fuse the preserved and locally corrected components into one native editable solid without annotations.",
+          "evidence": [
+            "entity_handle"
+          ],
+          "confidence": "low",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105
+          },
+          "parent_operation_ids": [
+            "a008_revert_housing_station",
+            "a008_widen_shoulder_end",
+            "a008_advance_connector_upper",
+            "a008_retract_lever_notch"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    }
+  ],
+  "native_topology": {
+    "protocol": "evocad-native-feature-localization-v1",
+    "entity_count": 1,
+    "face_count": 45,
+    "adjacency_count": 123,
+    "feature_candidate_count": 1,
+    "export_errors": [],
+    "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+    "boolean_lineage": {
+      "schema_version": "1.0",
+      "protocol": "evocad-boolean-face-lineage-v2",
+      "snapshot_comparison": {
+        "parent_face_count": 44,
+        "current_face_count": 45,
+        "inherited_face_count": 27,
+        "created_or_modified_face_count": 18,
+        "deleted_or_modified_parent_face_count": 17,
+        "captured_job_count": 1,
+        "lineage_mode": "multi_job_fingerprint_chain"
+      },
+      "operation_graph": {
+        "nodes": [
+          {
+            "operation_id": "a008_revert_housing_station",
+            "intent": "Revert only the locally regressed a007 rearward housing shift to the better a006 station while preserving verified radius and sweep.",
+            "operation_type": "replace_arc_profile",
+            "feature_id": "rear_housing",
+            "parameters": {
+              "radius": 0.145388,
+              "old_center": [
+                0.1484375,
+                0.15625
+              ],
+              "new_center": [
+                0.150819,
+                0.15625
+              ],
+              "arc_start": [
+                0.185431,
+                0.297458
+              ],
+              "arc_lower": [
+                0.024909,
+                0.083556
+              ],
+              "width": 0.0625
+            },
+            "parent_operation_ids": [
+              "a007_housing_recenter",
+              "a006_intermediate_radius_housing"
+            ],
+            "mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          {
+            "operation_id": "a008_widen_shoulder_end",
+            "intent": "Retain the improved early shoulder start and modestly widen only its platform-end boundary to recover bilateral missing shoulder surfaces.",
+            "operation_type": "replace_profile_extrude",
+            "feature_id": "rear_bridge",
+            "parameters": {
+              "transition_start": 0.0859375,
+              "transition_end": 0.1328125,
+              "start_width": 0.0625,
+              "end_width": 0.1484375,
+              "z_min": 0.0703125,
+              "z_max": 0.138405
+            },
+            "parent_operation_ids": [
+              "a007_shoulder_redistribution"
+            ],
+            "mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          {
+            "operation_id": "a008_advance_connector_upper",
+            "intent": "Advance only the upper connector endpoint to reduce the remaining paired longitudinal displacement while preserving its lower attachment.",
+            "operation_type": "replace_profile_edge",
+            "feature_id": "lower_forward_connector",
+            "parameters": {
+              "lower_point": [
+                0.617188,
+                0.023026
+              ],
+              "upper_point": [
+                0.6875,
+                0.0703125
+              ],
+              "width": 0.0625
+            },
+            "parent_operation_ids": [
+              "a007_connector_forward"
+            ],
+            "mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          {
+            "operation_id": "a008_retract_lever_notch",
+            "intent": "Move only the notch transition rearward to correct the high-confidence paired displacement on face f38 while preserving the other improved a007 lever vertices.",
+            "operation_type": "replace_profile_edge",
+            "feature_id": "upright_lever",
+            "parameters": {
+              "bottom_start": 0.60546875,
+              "bottom_outer": 0.65625,
+              "mid_outer": 0.73828125,
+              "inner_lower": 0.625,
+              "old_notch_transition": 0.71875,
+              "new_notch_transition": 0.703125,
+              "top_outer": 0.75,
+              "overall_height": 0.742105,
+              "width": 0.0625
+            },
+            "parent_operation_ids": [
+              "a007_lever_edge_balance"
+            ],
+            "mcp_job_id": "6370f66393a944998a97a323337968b7"
+          },
+          {
+            "operation_id": "a008_final_union",
+            "intent": "Fuse the preserved and locally corrected components into one native editable solid without annotations.",
+            "operation_type": "union",
+            "feature_id": "final_solid",
+            "parameters": {
+              "expected_solid_count": 1,
+              "overall_length": 0.75,
+              "overall_width": 0.265625,
+              "overall_height": 0.742105
+            },
+            "parent_operation_ids": [
+              "a008_revert_housing_station",
+              "a008_widen_shoulder_end",
+              "a008_advance_connector_upper",
+              "a008_retract_lever_notch"
+            ],
+            "mcp_job_id": "6370f66393a944998a97a323337968b7"
+          }
+        ],
+        "edges": [
+          {
+            "source": "a007_housing_recenter",
+            "target": "a008_revert_housing_station",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a006_intermediate_radius_housing",
+            "target": "a008_revert_housing_station",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a007_shoulder_redistribution",
+            "target": "a008_widen_shoulder_end",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a007_connector_forward",
+            "target": "a008_advance_connector_upper",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a007_lever_edge_balance",
+            "target": "a008_retract_lever_notch",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a008_revert_housing_station",
+            "target": "a008_final_union",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a008_widen_shoulder_end",
+            "target": "a008_final_union",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a008_advance_connector_upper",
+            "target": "a008_final_union",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a008_retract_lever_notch",
+            "target": "a008_final_union",
+            "relation": "declared_parent"
+          }
+        ]
+      },
+      "deleted_parent_face_examples": [
+        {
+          "node_id": "430:f19",
+          "entity_handle": "430",
+          "face_id": "f19",
+          "face_fingerprint": "cfcacc3b3adaaea00fc78e33bbad0122861aa5b8cf82ecb1ec1d521a179c1e40"
+        },
+        {
+          "node_id": "430:f20",
+          "entity_handle": "430",
+          "face_id": "f20",
+          "face_fingerprint": "e9c352ac0a8daa3ca80b26d7a4505467e82110d36fb3f61a126a1b410db1f8c5"
+        },
+        {
+          "node_id": "430:f21",
+          "entity_handle": "430",
+          "face_id": "f21",
+          "face_fingerprint": "e4694ac3eda895981a5a6131c172b808ff6355310bf0b8f1620c39cbce2186e6"
+        },
+        {
+          "node_id": "430:f22",
+          "entity_handle": "430",
+          "face_id": "f22",
+          "face_fingerprint": "92b5954f4737e007fac21142f6e6c8137f1c4b2c2a178f418ad5b6852792a9d5"
+        },
+        {
+          "node_id": "430:f23",
+          "entity_handle": "430",
+          "face_id": "f23",
+          "face_fingerprint": "4967d97a8149c2af9d5dce576881afdc27aff66e7b8a30c3b0a1b672d8ec21c0"
+        },
+        {
+          "node_id": "430:f24",
+          "entity_handle": "430",
+          "face_id": "f24",
+          "face_fingerprint": "d8f4f0518368f99b0170a7aabc72540b7fa92576dc8a0104259636d55965799b"
+        },
+        {
+          "node_id": "430:f25",
+          "entity_handle": "430",
+          "face_id": "f25",
+          "face_fingerprint": "41286cdb84f4ef51c40fc2f0076a1d648f1ccede36784b8f1181d8ff3863ad03"
+        },
+        {
+          "node_id": "430:f26",
+          "entity_handle": "430",
+          "face_id": "f26",
+          "face_fingerprint": "63fdcdbd5ac9aad31b241acde8025b0123eae944f90f8c4ed5725659eea9c81e"
+        },
+        {
+          "node_id": "430:f28",
+          "entity_handle": "430",
+          "face_id": "f28",
+          "face_fingerprint": "baf2d46f048e184566d5c647ea4ce70d2ef4c35ce7e2d807ee702447218889bf"
+        },
+        {
+          "node_id": "430:f32",
+          "entity_handle": "430",
+          "face_id": "f32",
+          "face_fingerprint": "367651a5b2c9a9afdf6f4dea8804b648a862d2cd093bbcaa12dca160f1f96a3a"
+        },
+        {
+          "node_id": "430:f33",
+          "entity_handle": "430",
+          "face_id": "f33",
+          "face_fingerprint": "02c98423ed466e3128d39aec5cd4b7312532c53c27ec225a108b57dd26abd647"
+        },
+        {
+          "node_id": "430:f34",
+          "entity_handle": "430",
+          "face_id": "f34",
+          "face_fingerprint": "256b6ddd2a1f2a5aee874902e0dd40ed8ee794ad4f824e1434d6c08ff120b0ed"
+        },
+        {
+          "node_id": "430:f35",
+          "entity_handle": "430",
+          "face_id": "f35",
+          "face_fingerprint": "56e034f32eab4efc7d3fdc08918d091c466db3e4da1e19871d6b56ee34358c07"
+        },
+        {
+          "node_id": "430:f37",
+          "entity_handle": "430",
+          "face_id": "f37",
+          "face_fingerprint": "2997489ade34b75a327885bccd3177be24df8ba2e063c8c9598b0348ceaa5b46"
+        },
+        {
+          "node_id": "430:f38",
+          "entity_handle": "430",
+          "face_id": "f38",
+          "face_fingerprint": "4a27821bd6205d702e989b29a7d80f0af81dd11de47ff0f62cbf7c2cf5a03be2"
+        },
+        {
+          "node_id": "430:f39",
+          "entity_handle": "430",
+          "face_id": "f39",
+          "face_fingerprint": "7e867f906a9e197575539599cc6895a7368b009a3e44a505895e68f10220f82b"
+        },
+        {
+          "node_id": "430:f44",
+          "entity_handle": "430",
+          "face_id": "f44",
+          "face_fingerprint": "5ad4fa3affa57f909d2805952f2b8547adfcd4d87feb56009fa511f3be8b6099"
+        }
+      ],
+      "interpretation": "Stable fingerprints prove inheritance. Snapshot-delta faces identify the operation group that changed topology; multiple operations in one job remain causally ambiguous."
+    },
+    "exact_face_query_count": 90
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [
+      {
+        "point": [
+          0.000103,
+          0.078125,
+          0.091796
+        ],
+        "distance_normalized": 0.028627,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.00037,
+          0.083109,
+          0.070313
+        ],
+        "distance_normalized": 0.028382,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.000468,
+          0.083145,
+          0.070313
+        ],
+        "distance_normalized": 0.028292,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.001799,
+          0.078125,
+          0.072502
+        ],
+        "distance_normalized": 0.027069,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.002459,
+          0.085937,
+          0.126741
+        ],
+        "distance_normalized": 0.026462,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.005395,
+          0.078125,
+          0.106825
+        ],
+        "distance_normalized": 0.023764,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.005887,
+          0.082566,
+          0.138405
+        ],
+        "distance_normalized": 0.023311,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.007412,
+          0.085937,
+          0.116175
+        ],
+        "distance_normalized": 0.02191,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.003732,
+          0.046659,
+          0.023622
+        ],
+        "distance_normalized": 0.021711,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008429,
+          0.078125,
+          0.098738
+        ],
+        "distance_normalized": 0.020975,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008841,
+          0.078125,
+          0.128096
+        ],
+        "distance_normalized": 0.020596,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.053648,
+          0.110372,
+          0.109962
+        ],
+        "distance_normalized": 0.020586,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.053164,
+          0.109845,
+          0.08743
+        ],
+        "distance_normalized": 0.020142,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.00963,
+          0.621599,
+          0.025993
+        ],
+        "distance_normalized": 0.019871,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.054528,
+          0.111332,
+          0.087026
+        ],
+        "distance_normalized": 0.019743,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.010112,
+          0.085937,
+          0.126898
+        ],
+        "distance_normalized": 0.019428,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.055192,
+          0.112057,
+          0.136733
+        ],
+        "distance_normalized": 0.019076,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.011019,
+          0.085937,
+          0.120683
+        ],
+        "distance_normalized": 0.018594,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.004669,
+          0.005814,
+          0.1667
+        ],
+        "distance_normalized": 0.018463,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.010368,
+          0.00548,
+          0.156278
+        ],
+        "distance_normalized": 0.018424,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.021374,
+          0.005673,
+          0.163682
+        ],
+        "distance_normalized": 0.018415,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.027851,
+          0.005509,
+          0.152589
+        ],
+        "distance_normalized": 0.01841,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.005037,
+          0.0055,
+          0.15365
+        ],
+        "distance_normalized": 0.018384,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.022198,
+          0.006098,
+          0.169645
+        ],
+        "distance_normalized": 0.018376,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.019137,
+          0.006134,
+          0.170005
+        ],
+        "distance_normalized": 0.018364,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.024233,
+          0.006065,
+          0.142818
+        ],
+        "distance_normalized": 0.018348,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.003282,
+          0.005942,
+          0.144385
+        ],
+        "distance_normalized": 0.018339,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.026383,
+          0.005797,
+          0.146717
+        ],
+        "distance_normalized": 0.018335,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.019949,
+          0.007758,
+          0.182082
+        ],
+        "distance_normalized": 0.018293,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.021082,
+          0.007667,
+          0.181503
+        ],
+        "distance_normalized": 0.018288,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.022415,
+          0.007556,
+          0.180791
+        ],
+        "distance_normalized": 0.018283,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.015359,
+          0.007125,
+          0.178036
+        ],
+        "distance_normalized": 0.018281,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.016602,
+          0.007215,
+          0.17861
+        ],
+        "distance_normalized": 0.018269,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.056012,
+          0.112952,
+          0.099373
+        ],
+        "distance_normalized": 0.018254,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.027311,
+          0.006535,
+          0.138796
+        ],
+        "distance_normalized": 0.01823,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.011532,
+          0.006901,
+          0.135663
+        ],
+        "distance_normalized": 0.018227,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.025427,
+          0.006575,
+          0.138456
+        ],
+        "distance_normalized": 0.01822,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.011508,
+          0.078125,
+          0.138194
+        ],
+        "distance_normalized": 0.018145,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.050971,
+          0.107451,
+          0.079634
+        ],
+        "distance_normalized": 0.018125,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008223,
+          0.00991,
+          0.191916
+        ],
+        "distance_normalized": 0.018062,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.019741,
+          0.009973,
+          0.192148
+        ],
+        "distance_normalized": 0.01805,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.007068,
+          0.174627
+        ],
+        "distance_normalized": 0.017978,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.017725,
+          0.010594,
+          0.19445
+        ],
+        "distance_normalized": 0.017944,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.024793,
+          0.011179,
+          0.196614
+        ],
+        "distance_normalized": 0.017936,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008828,
+          0.011194,
+          0.19667
+        ],
+        "distance_normalized": 0.017936,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.020371,
+          0.009251,
+          0.123375
+        ],
+        "distance_normalized": 0.017885,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.056404,
+          0.113379,
+          0.101513
+        ],
+        "distance_normalized": 0.017861,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.011845,
+          0.085937,
+          0.09876
+        ],
+        "distance_normalized": 0.017835,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.007756,
+          0.009961,
+          0.120273
+        ],
+        "distance_normalized": 0.017823,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.012184,
+          0.010053,
+          0.119893
+        ],
+        "distance_normalized": 0.017821,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.004127,
+          0.009905,
+          0.120518
+        ],
+        "distance_normalized": 0.017821,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.019189,
+          0.010329,
+          0.118928
+        ],
+        "distance_normalized": 0.017779,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.002769,
+          0.011805,
+          0.113783
+        ],
+        "distance_normalized": 0.017556,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.002705,
+          0.014961,
+          0.207888
+        ],
+        "distance_normalized": 0.017536,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.00601,
+          0.012725,
+          0.110887
+        ],
+        "distance_normalized": 0.017478,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.001765,
+          0.012868,
+          0.110475
+        ],
+        "distance_normalized": 0.017458,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.015512,
+          0.015941,
+          0.210398
+        ],
+        "distance_normalized": 0.017409,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.031217,
+          0.016786,
+          0.21256
+        ],
+        "distance_normalized": 0.017386,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.016107,
+          0.014115,
+          0.106877
+        ],
+        "distance_normalized": 0.017281,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.049994,
+          0.106944,
+          0.070313
+        ],
+        "distance_normalized": 0.017228,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.026819,
+          0.018041,
+          0.215356
+        ],
+        "distance_normalized": 0.017215,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.009773,
+          0.016345,
+          0.101123
+        ],
+        "distance_normalized": 0.017024,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.000238,
+          0.042523,
+          0.03502
+        ],
+        "distance_normalized": 0.016953,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.018784,
+          0.017228,
+          0.098963
+        ],
+        "distance_normalized": 0.016906,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.029093,
+          0.01727,
+          0.098859
+        ],
+        "distance_normalized": 0.0169,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.014277,
+          0.017319,
+          0.098739
+        ],
+        "distance_normalized": 0.016893,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.049601,
+          0.108201,
+          0.138405
+        ],
+        "distance_normalized": 0.016867,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.012987,
+          0.085937,
+          0.074806
+        ],
+        "distance_normalized": 0.016785,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.00631,
+          0.018936,
+          0.095173
+        ],
+        "distance_normalized": 0.016719,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.029773,
+          0.023042,
+          0.225536
+        ],
+        "distance_normalized": 0.01668,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008651,
+          0.023779,
+          0.226948
+        ],
+        "distance_normalized": 0.01665,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.003049,
+          0.626424,
+          0.029238
+        ],
+        "distance_normalized": 0.016446,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.025723,
+          0.021575,
+          0.089711
+        ],
+        "distance_normalized": 0.016406,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.030827,
+          0.027695,
+          0.233557
+        ],
+        "distance_normalized": 0.016221,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.013647,
+          0.085937,
+          0.090087
+        ],
+        "distance_normalized": 0.016179,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.003431,
+          0.024274,
+          0.084728
+        ],
+        "distance_normalized": 0.01607,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.005163,
+          0.024507,
+          0.084298
+        ],
+        "distance_normalized": 0.016041,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.058266,
+          0.11541,
+          0.114201
+        ],
+        "distance_normalized": 0.015994,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.014094,
+          0.078125,
+          0.108312
+        ],
+        "distance_normalized": 0.015768,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.003498,
+          0.041949,
+          0.0366
+        ],
+        "distance_normalized": 0.015754,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.019955,
+          0.032569,
+          0.240809
+        ],
+        "distance_normalized": 0.015693,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.058831,
+          0.116027,
+          0.072171
+        ],
+        "distance_normalized": 0.015428,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.047828,
+          0.112634,
+          0.070313
+        ],
+        "distance_normalized": 0.015237,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.019312,
+          0.212572
+        ],
+        "distance_normalized": 0.015218,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.014693,
+          0.085937,
+          0.103116
+        ],
+        "distance_normalized": 0.015218,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.059278,
+          0.116514,
+          0.089519
+        ],
+        "distance_normalized": 0.01498,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.005684,
+          0.042076,
+          0.252749
+        ],
+        "distance_normalized": 0.014653,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.006798,
+          0.042728,
+          0.253446
+        ],
+        "distance_normalized": 0.014571,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.059708,
+          0.116983,
+          0.077693
+        ],
+        "distance_normalized": 0.014549,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.012197,
+          0.183932
+        ],
+        "distance_normalized": 0.014543,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.00145,
+          0.044172,
+          0.254988
+        ],
+        "distance_normalized": 0.01439,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.054044,
+          0.117306,
+          0.138405
+        ],
+        "distance_normalized": 0.014252,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.021153,
+          0.045545,
+          0.256455
+        ],
+        "distance_normalized": 0.014218,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.019621,
+          0.047634,
+          0.258662
+        ],
+        "distance_normalized": 0.014034,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.029719,
+          0.687089,
+          0.070036
+        ],
+        "distance_normalized": 0.013986,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.046376,
+          0.102439,
+          0.114495
+        ],
+        "distance_normalized": 0.013902,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.017643,
+          0.203321
+        ],
+        "distance_normalized": 0.013902,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.020117,
+          0.686831,
+          0.069863
+        ],
+        "distance_normalized": 0.013752,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.016334,
+          0.044286,
+          0.023026
+        ],
+        "distance_normalized": 0.01371,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.046051,
+          0.112782,
+          0.070313
+        ],
+        "distance_normalized": 0.013604,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.017195,
+          0.051762,
+          0.262618
+        ],
+        "distance_normalized": 0.013519,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.01658,
+          0.085937,
+          0.119556
+        ],
+        "distance_normalized": 0.013483,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.008045,
+          0.05306,
+          0.263862
+        ],
+        "distance_normalized": 0.013427,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.010953,
+          0.05332,
+          0.264091
+        ],
+        "distance_normalized": 0.013398,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.029678,
+          0.07779
+        ],
+        "distance_normalized": 0.013395,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.016772,
+          0.054727,
+          0.2653
+        ],
+        "distance_normalized": 0.013222,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.031264,
+          0.233225
+        ],
+        "distance_normalized": 0.013211,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.016941,
+          0.078125,
+          0.079765
+        ],
+        "distance_normalized": 0.013151,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.017498,
+          0.055525,
+          0.265985
+        ],
+        "distance_normalized": 0.013123,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.045445,
+          0.254275
+        ],
+        "distance_normalized": 0.013064,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.015971,
+          0.056697,
+          0.266992
+        ],
+        "distance_normalized": 0.012977,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.061328,
+          0.118751,
+          0.090718
+        ],
+        "distance_normalized": 0.012924,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.005594,
+          0.057591,
+          0.26776
+        ],
+        "distance_normalized": 0.012866,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.06145,
+          0.118884,
+          0.072959
+        ],
+        "distance_normalized": 0.012802,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.061473,
+          0.118908,
+          0.122751
+        ],
+        "distance_normalized": 0.012779,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.017354,
+          0.085937,
+          0.096868
+        ],
+        "distance_normalized": 0.012772,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.04512,
+          0.101068,
+          0.091792
+        ],
+        "distance_normalized": 0.012748,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.024912,
+          0.092191
+        ],
+        "distance_normalized": 0.012667,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.011583,
+          0.667055,
+          0.056563
+        ],
+        "distance_normalized": 0.012637,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.023981,
+          0.060283,
+          0.269966
+        ],
+        "distance_normalized": 0.012602,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.062009,
+          0.119493,
+          0.117596
+        ],
+        "distance_normalized": 0.012242,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.027294,
+          0.063173,
+          0.272189
+        ],
+        "distance_normalized": 0.012242,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.048276,
+          0.256364
+        ],
+        "distance_normalized": 0.012211,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.062081,
+          0.119572,
+          0.093086
+        ],
+        "distance_normalized": 0.01217,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.022973,
+          0.684838,
+          0.070313
+        ],
+        "distance_normalized": 0.011915,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.062484,
+          0.120011,
+          0.084656
+        ],
+        "distance_normalized": 0.011766,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.026985,
+          0.684642,
+          0.070313
+        ],
+        "distance_normalized": 0.011734,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.020806,
+          0.068173,
+          0.275799
+        ],
+        "distance_normalized": 0.011687,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.002067,
+          0.668916,
+          0.057814
+        ],
+        "distance_normalized": 0.011487,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.026316,
+          0.218983
+        ],
+        "distance_normalized": 0.011472,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.024396,
+          0.070256,
+          0.277228
+        ],
+        "distance_normalized": 0.011427,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.018917,
+          0.078125,
+          0.08334
+        ],
+        "distance_normalized": 0.011335,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.04355,
+          0.111734,
+          0.138405
+        ],
+        "distance_normalized": 0.011305,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.008474,
+          0.029165,
+          0.071828
+        ],
+        "distance_normalized": 0.01098,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.007635,
+          0.633529,
+          0.034016
+        ],
+        "distance_normalized": 0.010772,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.010296,
+          0.076064,
+          0.280888
+        ],
+        "distance_normalized": 0.010768,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.006676,
+          0.076439,
+          0.281117
+        ],
+        "distance_normalized": 0.010721,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.055878,
+          0.12122,
+          0.070313
+        ],
+        "distance_normalized": 0.010655,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.021102,
+          0.201481
+        ],
+        "distance_normalized": 0.010357,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.042513,
+          0.098225,
+          0.116539
+        ],
+        "distance_normalized": 0.010352,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.025909,
+          0.000708,
+          0.023026
+        ],
+        "distance_normalized": 0.01033,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.005968,
+          0.080397,
+          0.283398
+        ],
+        "distance_normalized": 0.010294,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.013824,
+          0.080842,
+          0.283637
+        ],
+        "distance_normalized": 0.010238,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.006603,
+          0.68246,
+          0.066923
+        ],
+        "distance_normalized": 0.010215,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.0098,
+          0.029533,
+          0.070815
+        ],
+        "distance_normalized": 0.010211,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.047132,
+          0.25121
+        ],
+        "distance_normalized": 0.010113,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.040029,
+          0.241061
+        ],
+        "distance_normalized": 0.010006,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.056799,
+          0.262383
+        ],
+        "distance_normalized": 0.009997,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.019952,
+          0.026496,
+          0.023026
+        ],
+        "distance_normalized": 0.009994,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.027294,
+          0.68207,
+          0.066661
+        ],
+        "distance_normalized": 0.009953,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.034827,
+          0.078906
+        ],
+        "distance_normalized": 0.009865,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.0031,
+          0.085394,
+          0.28608
+        ],
+        "distance_normalized": 0.009728,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03028,
+          0.001529,
+          0.023026
+        ],
+        "distance_normalized": 0.009683,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.083356,
+          0.284552
+        ],
+        "distance_normalized": 0.009593,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.034097,
+          0.230191
+        ],
+        "distance_normalized": 0.009576,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.022619,
+          -0.0,
+          0.020188
+        ],
+        "distance_normalized": 0.009546,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.041592,
+          0.09722,
+          0.086984
+        ],
+        "distance_normalized": 0.009506,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.027945,
+          -0.0,
+          0.020066
+        ],
+        "distance_normalized": 0.009489,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.013032,
+          0.635153,
+          0.035108
+        ],
+        "distance_normalized": 0.009474,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.017162,
+          0.02994,
+          0.069693
+        ],
+        "distance_normalized": 0.00936,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.030795,
+          0.088431,
+          0.287515
+        ],
+        "distance_normalized": 0.009348,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.01893,
+          -0.0,
+          0.019725
+        ],
+        "distance_normalized": 0.009328,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.07313,
+          0.276288
+        ],
+        "distance_normalized": 0.0091,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.024715,
+          0.090523,
+          0.288495
+        ],
+        "distance_normalized": 0.00908,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.013823,
+          0.68034,
+          0.065498
+        ],
+        "distance_normalized": 0.008951,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.026862,
+          0.030135,
+          0.069155
+        ],
+        "distance_normalized": 0.008951,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.007105,
+          0.673234,
+          0.060718
+        ],
+        "distance_normalized": 0.008906,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.040842,
+          0.10195,
+          0.070313
+        ],
+        "distance_normalized": 0.008816,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.021716,
+          0.085937,
+          0.121737
+        ],
+        "distance_normalized": 0.008763,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.016311,
+          -0.0,
+          0.018527
+        ],
+        "distance_normalized": 0.008761,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.077625,
+          0.279099
+        ],
+        "distance_normalized": 0.008589,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.02226,
+          -0.0,
+          0.01811
+        ],
+        "distance_normalized": 0.008564,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.002902,
+          0.038422,
+          0.04632
+        ],
+        "distance_normalized": 0.008378,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.022135,
+          0.043245,
+          0.033029
+        ],
+        "distance_normalized": 0.008377,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.029618,
+          0.674773,
+          0.061753
+        ],
+        "distance_normalized": 0.008305,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.040251,
+          0.105562,
+          0.138405
+        ],
+        "distance_normalized": 0.008273,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.026798,
+          0.097624,
+          0.291506
+        ],
+        "distance_normalized": 0.008244,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.022304,
+          0.085937,
+          0.112544
+        ],
+        "distance_normalized": 0.008223,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008787,
+          0.675349,
+          0.062141
+        ],
+        "distance_normalized": 0.008161,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.037783,
+          0.233472
+        ],
+        "distance_normalized": 0.008092,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.019847,
+          0.676327,
+          0.062798
+        ],
+        "distance_normalized": 0.008027,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.025215,
+          -0.0,
+          0.016835
+        ],
+        "distance_normalized": 0.007961,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.066298,
+          0.124172,
+          0.114338
+        ],
+        "distance_normalized": 0.007941,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.016985,
+          0.102855,
+          0.293445
+        ],
+        "distance_normalized": 0.007649,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.059092,
+          0.124498,
+          0.070313
+        ],
+        "distance_normalized": 0.007642,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.01128,
+          0.030845,
+          0.0672
+        ],
+        "distance_normalized": 0.007468,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.657888,
+          0.058159
+        ],
+        "distance_normalized": 0.007457,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.011179,
+          0.022821,
+          0.023026
+        ],
+        "distance_normalized": 0.007097,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.027895,
+          0.031023,
+          0.06671
+        ],
+        "distance_normalized": 0.007096,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.023612,
+          0.085937,
+          0.135472
+        ],
+        "distance_normalized": 0.00702,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.018757,
+          0.701181,
+          0.553947
+        ],
+        "distance_normalized": 0.006958,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.012367,
+          0.700606,
+          0.551415
+        ],
+        "distance_normalized": 0.006878,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.673517,
+          0.063046
+        ],
+        "distance_normalized": 0.006847,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.003647,
+          0.700239,
+          0.549803
+        ],
+        "distance_normalized": 0.006828,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.00255,
+          0.022478,
+          0.023026
+        ],
+        "distance_normalized": 0.006827,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.028344,
+          0.110038,
+          0.295752
+        ],
+        "distance_normalized": 0.006796,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.014299,
+          0.699455,
+          0.546352
+        ],
+        "distance_normalized": 0.006719,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.002585,
+          0.699249,
+          0.545445
+        ],
+        "distance_normalized": 0.00669,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.662769,
+          0.063038
+        ],
+        "distance_normalized": 0.006686,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.018277,
+          0.699206,
+          0.545255
+        ],
+        "distance_normalized": 0.006684,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.067577,
+          0.125568,
+          0.071014
+        ],
+        "distance_normalized": 0.006659,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.038445,
+          0.099456,
+          0.138405
+        ],
+        "distance_normalized": 0.006613,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.067633,
+          0.125629,
+          0.097126
+        ],
+        "distance_normalized": 0.006602,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.038382,
+          0.093718,
+          0.090775
+        ],
+        "distance_normalized": 0.006555,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.007678,
+          0.113446,
+          0.296715
+        ],
+        "distance_normalized": 0.006372,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.038148,
+          0.108962,
+          0.138405
+        ],
+        "distance_normalized": 0.00634,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.029698,
+          0.098811
+        ],
+        "distance_normalized": 0.006294,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.024404,
+          0.702656,
+          0.560437
+        ],
+        "distance_normalized": 0.006292,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.046362,
+          0.243125
+        ],
+        "distance_normalized": 0.006274,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.063664,
+          0.125992,
+          0.070313
+        ],
+        "distance_normalized": 0.006269,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.003216,
+          0.115415,
+          0.297253
+        ],
+        "distance_normalized": 0.006185,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.012406,
+          0.115555,
+          0.297284
+        ],
+        "distance_normalized": 0.006166,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.024542,
+          0.028301,
+          0.023026
+        ],
+        "distance_normalized": 0.006165,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.658978,
+          0.063627
+        ],
+        "distance_normalized": 0.006145,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.004965,
+          0.695211,
+          0.527681
+        ],
+        "distance_normalized": 0.006129,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.045267,
+          0.241095
+        ],
+        "distance_normalized": 0.006031,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.003127,
+          0.694397,
+          0.524098
+        ],
+        "distance_normalized": 0.006016,
+        "region_id": "excess-03"
+      }
+    ],
+    "ground_truth_to_candidate": [
+      {
+        "point": [
+          0.03125,
+          0.132242,
+          0.09976
+        ],
+        "distance_normalized": 0.027066,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.04002,
+          0.132812,
+          0.102566
+        ],
+        "distance_normalized": 0.02317,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.125984,
+          0.114181
+        ],
+        "distance_normalized": 0.022264,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.120696,
+          0.108069
+        ],
+        "distance_normalized": 0.021587,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.038122,
+          0.132812,
+          0.114993
+        ],
+        "distance_normalized": 0.021518,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.04441,
+          0.132812,
+          0.110054
+        ],
+        "distance_normalized": 0.020196,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.016554,
+          0.638781,
+          -0.0
+        ],
+        "distance_normalized": 0.019846,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.045065,
+          0.132812,
+          0.09928
+        ],
+        "distance_normalized": 0.019752,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.116868,
+          0.111492
+        ],
+        "distance_normalized": 0.01921,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.046132,
+          0.132812,
+          0.093652
+        ],
+        "distance_normalized": 0.019029,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.021665,
+          0.642067,
+          0.014818
+        ],
+        "distance_normalized": 0.019021,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.026183,
+          0.637777,
+          -0.0
+        ],
+        "distance_normalized": 0.018924,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.007655,
+          0.025579,
+          0.151789
+        ],
+        "distance_normalized": 0.018436,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.00141,
+          0.025644,
+          0.149946
+        ],
+        "distance_normalized": 0.018391,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.002859,
+          0.026645,
+          0.173661
+        ],
+        "distance_normalized": 0.018347,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.00394,
+          0.025937,
+          0.144732
+        ],
+        "distance_normalized": 0.018345,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.000655,
+          0.028628,
+          0.185496
+        ],
+        "distance_normalized": 0.018137,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.006346,
+          0.028451,
+          0.184675
+        ],
+        "distance_normalized": 0.018134,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.00228,
+          0.029099,
+          0.187675
+        ],
+        "distance_normalized": 0.018043,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.009701,
+          0.02781,
+          0.130008
+        ],
+        "distance_normalized": 0.017988,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.00514,
+          0.029412,
+          0.189126
+        ],
+        "distance_normalized": 0.017973,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.003868,
+          0.030411,
+          0.192991
+        ],
+        "distance_normalized": 0.0179,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.005334,
+          0.028466,
+          0.12648
+        ],
+        "distance_normalized": 0.017853,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.004218,
+          0.028541,
+          0.126077
+        ],
+        "distance_normalized": 0.017837,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.00426,
+          0.029059,
+          0.123781
+        ],
+        "distance_normalized": 0.017777,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.000861,
+          0.652822,
+          0.070312
+        ],
+        "distance_normalized": 0.017512,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.03125,
+          0.132774,
+          0.119436
+        ],
+        "distance_normalized": 0.017435,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.012353,
+          0.02559,
+          0.16064
+        ],
+        "distance_normalized": 0.017368,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.023312,
+          0.635998,
+          -0.0
+        ],
+        "distance_normalized": 0.017289,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.010199,
+          0.03211,
+          0.11233
+        ],
+        "distance_normalized": 0.017269,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.012797,
+          0.026443,
+          0.171891
+        ],
+        "distance_normalized": 0.01696,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.010789,
+          0.035892,
+          0.101761
+        ],
+        "distance_normalized": 0.016677,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.004775,
+          0.040301,
+          0.21949
+        ],
+        "distance_normalized": 0.01656,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.009516,
+          0.635043,
+          -0.0
+        ],
+        "distance_normalized": 0.016411,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.013412,
+          0.044502,
+          0.083828
+        ],
+        "distance_normalized": 0.016395,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.112253,
+          0.090485
+        ],
+        "distance_normalized": 0.016344,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.004234,
+          0.042082,
+          0.088296
+        ],
+        "distance_normalized": 0.016323,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.025144,
+          0.642816,
+          0.019099
+        ],
+        "distance_normalized": 0.01614,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.013701,
+          0.025595,
+          0.16098
+        ],
+        "distance_normalized": 0.01613,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.013706,
+          0.025952,
+          0.166843
+        ],
+        "distance_normalized": 0.016125,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.043076,
+          0.132812,
+          0.08778
+        ],
+        "distance_normalized": 0.016055,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.013811,
+          0.025498,
+          0.154273
+        ],
+        "distance_normalized": 0.016028,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.033311,
+          0.132812,
+          0.087734
+        ],
+        "distance_normalized": 0.016012,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.012817,
+          0.044847,
+          0.228065
+        ],
+        "distance_normalized": 0.015922,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.013968,
+          0.04379,
+          0.085041
+        ],
+        "distance_normalized": 0.015884,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.014231,
+          0.025598,
+          0.161224
+        ],
+        "distance_normalized": 0.015642,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.005508,
+          0.634199,
+          -0.0
+        ],
+        "distance_normalized": 0.015636,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.051193,
+          0.132812,
+          0.108559
+        ],
+        "distance_normalized": 0.0156,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.051369,
+          0.132812,
+          0.091038
+        ],
+        "distance_normalized": 0.015481,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.014409,
+          0.03526,
+          0.207936
+        ],
+        "distance_normalized": 0.015478,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.003257,
+          0.045554,
+          0.075924
+        ],
+        "distance_normalized": 0.015444,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.110605,
+          0.10798
+        ],
+        "distance_normalized": 0.01532,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.051682,
+          0.132812,
+          0.088288
+        ],
+        "distance_normalized": 0.015268,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.011857,
+          0.05012,
+          0.236584
+        ],
+        "distance_normalized": 0.015218,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.014811,
+          0.027594,
+          0.131169
+        ],
+        "distance_normalized": 0.015109,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.016746,
+          0.023567,
+          0.039279
+        ],
+        "distance_normalized": 0.014938,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.109648,
+          0.119602
+        ],
+        "distance_normalized": 0.014726,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.013691,
+          0.044995,
+          0.074992
+        ],
+        "distance_normalized": 0.014669,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.015322,
+          0.026906,
+          0.135716
+        ],
+        "distance_normalized": 0.01464,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.000837,
+          0.054369,
+          0.242585
+        ],
+        "distance_normalized": 0.014633,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.025071,
+          0.023924,
+          0.039874
+        ],
+        "distance_normalized": 0.014546,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.015678,
+          0.031703,
+          0.197638
+        ],
+        "distance_normalized": 0.014312,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.015757,
+          0.036412,
+          0.10047
+        ],
+        "distance_normalized": 0.01424,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.015786,
+          0.030315,
+          0.192631
+        ],
+        "distance_normalized": 0.014213,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.115041,
+          0.123022
+        ],
+        "distance_normalized": 0.014139,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.016545,
+          0.026035,
+          0.143585
+        ],
+        "distance_normalized": 0.013515,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.01684,
+          0.035956,
+          0.209777
+        ],
+        "distance_normalized": 0.013244,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.016895,
+          0.029189,
+          0.188095
+        ],
+        "distance_normalized": 0.013194,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.031483,
+          0.132812,
+          0.084641
+        ],
+        "distance_normalized": 0.013169,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.008596,
+          0.067684,
+          0.258059
+        ],
+        "distance_normalized": 0.012808,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.006368,
+          0.068284,
+          0.258646
+        ],
+        "distance_normalized": 0.01273,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.017743,
+          0.025512,
+          0.155202
+        ],
+        "distance_normalized": 0.012415,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.00981,
+          0.630554,
+          -0.0
+        ],
+        "distance_normalized": 0.012286,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.125026,
+          0.083569
+        ],
+        "distance_normalized": 0.012184,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.01821,
+          0.025815,
+          0.1647
+        ],
+        "distance_normalized": 0.011985,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.105192,
+          0.1205
+        ],
+        "distance_normalized": 0.011958,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.018322,
+          0.031425,
+          0.196769
+        ],
+        "distance_normalized": 0.011883,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.01845,
+          0.065992,
+          0.256273
+        ],
+        "distance_normalized": 0.011765,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.018525,
+          0.043656,
+          0.225937
+        ],
+        "distance_normalized": 0.011695,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.01854,
+          0.032986,
+          0.10968
+        ],
+        "distance_normalized": 0.011682,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.014556,
+          0.076541,
+          0.266224
+        ],
+        "distance_normalized": 0.011608,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.057121,
+          0.132812,
+          0.085208
+        ],
+        "distance_normalized": 0.011583,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.014607,
+          0.07681,
+          0.266458
+        ],
+        "distance_normalized": 0.011571,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.118587,
+          0.12607
+        ],
+        "distance_normalized": 0.011337,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.018455,
+          0.042541,
+          0.070902
+        ],
+        "distance_normalized": 0.011266,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.057591,
+          0.132812,
+          0.086111
+        ],
+        "distance_normalized": 0.011265,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.019006,
+          0.028071,
+          0.128605
+        ],
+        "distance_normalized": 0.011253,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.111002,
+          0.126237
+        ],
+        "distance_normalized": 0.011183,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.018107,
+          0.644136,
+          0.026644
+        ],
+        "distance_normalized": 0.011063,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.029572,
+          0.629168,
+          -0.0
+        ],
+        "distance_normalized": 0.011012,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.031024,
+          0.644164,
+          0.026804
+        ],
+        "distance_normalized": 0.010955,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.038524,
+          0.132812,
+          0.081809
+        ],
+        "distance_normalized": 0.010567,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.117711,
+          0.081794
+        ],
+        "distance_normalized": 0.010553,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.037945,
+          0.132812,
+          0.08177
+        ],
+        "distance_normalized": 0.01053,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.643347,
+          0.02683
+        ],
+        "distance_normalized": 0.010517,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.025091,
+          0.628423,
+          -0.0
+        ],
+        "distance_normalized": 0.010326,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.019096,
+          0.026994,
+          0.04499
+        ],
+        "distance_normalized": 0.010291,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.059073,
+          0.132812,
+          0.094833
+        ],
+        "distance_normalized": 0.010261,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.020114,
+          0.026047,
+          0.168321
+        ],
+        "distance_normalized": 0.010235,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.017524,
+          0.628206,
+          -0.0
+        ],
+        "distance_normalized": 0.010127,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.017145,
+          0.644442,
+          0.028388
+        ],
+        "distance_normalized": 0.00989,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.010164,
+          0.041503,
+          0.069172
+        ],
+        "distance_normalized": 0.009827,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.00154,
+          0.661358,
+          0.070312
+        ],
+        "distance_normalized": 0.009666,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.004404,
+          0.091696,
+          0.277543
+        ],
+        "distance_normalized": 0.009572,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.008413,
+          0.091928,
+          0.27769
+        ],
+        "distance_normalized": 0.009541,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.004012,
+          0.092014,
+          0.277744
+        ],
+        "distance_normalized": 0.009529,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.020898,
+          0.068542,
+          0.258893
+        ],
+        "distance_normalized": 0.009514,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.060245,
+          0.132812,
+          0.097072
+        ],
+        "distance_normalized": 0.009467,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.060422,
+          0.132812,
+          0.103318
+        ],
+        "distance_normalized": 0.009347,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.627181,
+          0.000704
+        ],
+        "distance_normalized": 0.009185,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.018163,
+          0.094727,
+          0.279464
+        ],
+        "distance_normalized": 0.009156,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.021353,
+          0.057255,
+          0.246311
+        ],
+        "distance_normalized": 0.009097,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.018483,
+          0.626739,
+          -0.0
+        ],
+        "distance_normalized": 0.008779,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.039052,
+          0.132812,
+          0.079807
+        ],
+        "distance_normalized": 0.008726,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.014711,
+          0.644779,
+          0.030319
+        ],
+        "distance_normalized": 0.00859,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.021908,
+          0.650892,
+          0.065249
+        ],
+        "distance_normalized": 0.008587,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.008686,
+          0.649243,
+          0.055827
+        ],
+        "distance_normalized": 0.008574,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.051153,
+          0.132812,
+          0.129184
+        ],
+        "distance_normalized": 0.008475,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.004073,
+          0.649213,
+          0.055655
+        ],
+        "distance_normalized": 0.008459,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.099169,
+          0.083772
+        ],
+        "distance_normalized": 0.008217,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.03125,
+          0.099124,
+          0.127988
+        ],
+        "distance_normalized": 0.00819,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.09811,
+          0.084272
+        ],
+        "distance_normalized": 0.00756,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.023099,
+          0.095721,
+          0.280094
+        ],
+        "distance_normalized": 0.007491,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.013416,
+          0.008096,
+          0.013494
+        ],
+        "distance_normalized": 0.007441,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.063287,
+          0.132812,
+          0.089601
+        ],
+        "distance_normalized": 0.007406,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.020607,
+          0.645135,
+          0.032349
+        ],
+        "distance_normalized": 0.007224,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.023472,
+          0.035452,
+          0.102856
+        ],
+        "distance_normalized": 0.007149,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.029296,
+          0.645191,
+          0.032669
+        ],
+        "distance_normalized": 0.007009,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.023638,
+          0.062933,
+          0.253042
+        ],
+        "distance_normalized": 0.006996,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.00812,
+          0.111414,
+          0.288276
+        ],
+        "distance_normalized": 0.006956,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.005035,
+          0.693591,
+          0.55457
+        ],
+        "distance_normalized": 0.006929,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.003214,
+          0.693671,
+          0.554983
+        ],
+        "distance_normalized": 0.006909,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.000629,
+          0.693285,
+          0.552976
+        ],
+        "distance_normalized": 0.006879,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.029947,
+          0.692761,
+          0.550251
+        ],
+        "distance_normalized": 0.006794,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.000334,
+          0.691679,
+          0.544627
+        ],
+        "distance_normalized": 0.006618,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.000649,
+          0.114303,
+          0.289552
+        ],
+        "distance_normalized": 0.006549,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.062266,
+          0.132812,
+          0.077436
+        ],
+        "distance_normalized": 0.006547,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.024307,
+          0.69088,
+          0.54047
+        ],
+        "distance_normalized": 0.006487,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.027821,
+          0.690597,
+          0.539
+        ],
+        "distance_normalized": 0.006441,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.014293,
+          0.006925,
+          0.011541
+        ],
+        "distance_normalized": 0.006365,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.023478,
+          0.690082,
+          0.53632
+        ],
+        "distance_normalized": 0.006357,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.024357,
+          0.026314,
+          0.140302
+        ],
+        "distance_normalized": 0.006336,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.023954,
+          0.116078,
+          0.290299
+        ],
+        "distance_normalized": 0.006333,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.002247,
+          0.689739,
+          0.534538
+        ],
+        "distance_normalized": 0.006301,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.03125,
+          0.113591,
+          0.131569
+        ],
+        "distance_normalized": 0.006283,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.022673,
+          0.116746,
+          0.290555
+        ],
+        "distance_normalized": 0.006273,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.00556,
+          0.688901,
+          0.530177
+        ],
+        "distance_normalized": 0.006165,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.007023,
+          0.623894,
+          -0.0
+        ],
+        "distance_normalized": 0.006164,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.024548,
+          0.049095,
+          0.235027
+        ],
+        "distance_normalized": 0.00616,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.024553,
+          0.112322,
+          0.288677
+        ],
+        "distance_normalized": 0.006156,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.01854,
+          0.688143,
+          0.526239
+        ],
+        "distance_normalized": 0.006041,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.03125,
+          0.095797,
+          0.13184
+        ],
+        "distance_normalized": 0.006034,
+        "region_id": "missing-03"
+      }
+    ]
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

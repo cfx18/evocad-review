@@ -1,0 +1,326 @@
+{
+  "target_id": "19dd054afc500886dedc6abc",
+  "sample_id": "hard-09",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "连通"
+  },
+  "learner_answer": null,
+  "task_manifest": {
+    "task_id": "hard-09",
+    "task_type": "cross_view",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true,
+    "protocol": "boxed-minimal-v1"
+  },
+  "task": {
+    "task_id": "hard-09",
+    "query": "框内孔在A—A中是否与底部凹槽连通？",
+    "answer_format": {
+      "answer": "short text"
+    }
+  },
+  "source": {
+    "source_id": "pdf-178",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 178,
+    "sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "框内孔在A—A中是否与底部凹槽连通？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            274,
+            797,
+            311,
+            848
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "框住俯视图中位于中央管颈下方的独立孔口。其轴线与管颈轴线的22间距，将它对应到A—A右侧底座上的M12×1.25螺纹孔；外围浅沉台对应Ø19深1标注。A—A显示该竖孔下端通入底部Ø60H8凹槽，孔与凹槽之间没有实体封底。它不是俯视图中央管颈孔，也不是四个安装孔之一。",
+      "expected_answer": "连通",
+      "answer_kind": "text",
+      "accepted_answers": [
+        "相通",
+        "是",
+        "yes",
+        "connected"
+      ],
+      "bad_pattern_tags": [
+        "wrong_opening_matched_across_views",
+        "recess_floor_mistaken_for_blind_hole_bottom",
+        "connectivity_inferred_from_plan_circles_only"
+      ],
+      "confidence": 0.97,
+      "ambiguity_notes": "框选内侧孔口，外侧沉台及定位尺寸仍可在完整图纸中查看。标签需人工复核。",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "连通",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.98,
+      "evidence": "框内孔对应A—A右侧M12×1.25-7H孔；该孔下端开向底部凹槽，中间没有封闭材料。",
+      "ambiguity_notes": "",
+      "evidence_scope": "cross_view",
+      "difficulty_evidence": "需将框内孔匹配到A—A中的螺纹孔，再检查孔底与凹槽的交接。"
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "timeout",
+    "passed": null,
+    "elapsed_seconds": 600.42,
+    "observations": 9,
+    "findings": 0,
+    "timeout_seconds": 600,
+    "timed_out": true,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "连通"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt",
+    "accepted_answers": {
+      "answer": [
+        "connected",
+        "yes",
+        "是",
+        "相通"
+      ]
+    },
+    "alias_policy": "engineering-line-terms-v1"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:42:25.345Z",
+      "payload": {
+        "observation_id": "cde4077b3ee244bfb99959d8e085d5c6",
+        "intent": "View the entire engineering drawing to understand its views, including the A-A section and the boxed hole region.",
+        "source_sha256": "9f9318ba20d7af43fb743e66074719d4d874dfac7ed927e0681c58ab1b7ac369",
+        "sha256": "9f9318ba20d7af43fb743e66074719d4d874dfac7ed927e0681c58ab1b7ac369",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:42:46.638Z",
+      "payload": {
+        "observation_id": "e74ea765b40b4f59bf6a8a9a06dfb392",
+        "intent": "Zoom into the bottom circular view where the red box marks a hole, to identify which hole is boxed.",
+        "source_sha256": "9f9318ba20d7af43fb743e66074719d4d874dfac7ed927e0681c58ab1b7ac369",
+        "sha256": "30af95e571bd3f713a3533a1c092aa6735a8399331cdf9191e2bec01e9e92556",
+        "crop": [
+          350,
+          780,
+          1100,
+          1330
+        ],
+        "dimensions": [
+          750,
+          550
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:42:46.792Z",
+      "payload": {
+        "observation_id": "32538ed68b0b4c80ae0ea4b1a42664b4",
+        "intent": "Zoom into the A-A section view to inspect the hole and whether it connects to the bottom groove (φ60H8 / M12x1.25 recess at the bottom).",
+        "source_sha256": "9f9318ba20d7af43fb743e66074719d4d874dfac7ed927e0681c58ab1b7ac369",
+        "sha256": "860e7f17207fcd3d5fc17a6a3365b45ac27fa9e0cade5041c01ff4408f044628",
+        "crop": [
+          1050,
+          150,
+          2200,
+          800
+        ],
+        "dimensions": [
+          1150,
+          650
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:44:55.598Z",
+      "payload": {
+        "observation_id": "99f49e94226e41ada4c5a92f3abce3c5",
+        "intent": "View the full bottom view to clearly see the red-boxed hole, its position relative to center and to the φ60 recess circles.",
+        "source_sha256": "9f9318ba20d7af43fb743e66074719d4d874dfac7ed927e0681c58ab1b7ac369",
+        "sha256": "53c1e7ead0d67066ae8284b2e3fad4ba66f4f9321f52aa92885d41aa2dc0e2d0",
+        "crop": [
+          400,
+          1000,
+          1200,
+          1700
+        ],
+        "dimensions": [
+          800,
+          700
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:44:55.736Z",
+      "payload": {
+        "observation_id": "5d3364c52319421c9d073da79184ee5f",
+        "intent": "View the lower part of the A-A section showing the bottom recess (φ60H8), M12 threaded hole, and any vertical hole connecting to the bottom groove.",
+        "source_sha256": "9f9318ba20d7af43fb743e66074719d4d874dfac7ed927e0681c58ab1b7ac369",
+        "sha256": "beb770572f8d2a9db8c8808566aa949b1b50138b77f37f342070185eb5b9ac5e",
+        "crop": [
+          1150,
+          550,
+          2150,
+          1090
+        ],
+        "dimensions": [
+          1000,
+          540
+        ],
+        "image": "receipts/005.png"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:47:00.799Z",
+      "payload": {
+        "observation_id": "2359cb476d094b34a63d4b19235b886d",
+        "intent": "Zoom tightly into the vertical hole feature on the right side of the A-A section (the boxed hole at 22mm offset) and the φ60H8 bottom recess floor, to check whether the hole breaks through into the recess (connected) or stops above it.",
+        "source_sha256": "9f9318ba20d7af43fb743e66074719d4d874dfac7ed927e0681c58ab1b7ac369",
+        "sha256": "0af44a4d8bd0f53b4cb668a0f7ff46c8d7d61bac8f939a24f74151fbb57a1b49",
+        "crop": [
+          1700,
+          650,
+          2050,
+          1000
+        ],
+        "dimensions": [
+          350,
+          350
+        ],
+        "image": "receipts/006.png"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:47:00.931Z",
+      "payload": {
+        "observation_id": "265435b5c8714515b62f59587466380d",
+        "intent": "Zoom into the red-boxed hole in the bottom view at full fidelity to confirm it is a threaded hole (two concentric circles) and see its relation to the central φ60 recess circle.",
+        "source_sha256": "9f9318ba20d7af43fb743e66074719d4d874dfac7ed927e0681c58ab1b7ac369",
+        "sha256": "6d02cdb55e981fc23e482f318c6df7882a440e11c0d34e791fac134e78db9eb5",
+        "crop": [
+          620,
+          1180,
+          900,
+          1450
+        ],
+        "dimensions": [
+          280,
+          270
+        ],
+        "image": "receipts/007.png"
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:49:40.407Z",
+      "payload": {
+        "observation_id": "829d61c674204508853d1903c776336d",
+        "intent": "Tight zoom on the bottom of the M12 hole feature where it meets the φ60H8 recess floor, to determine whether the hole is open into the recess (connected) or closed by a floor (not connected).",
+        "source_sha256": "9f9318ba20d7af43fb743e66074719d4d874dfac7ed927e0681c58ab1b7ac369",
+        "sha256": "86cff2a91a95758265997bb8bd4e23edbd6158c54ec8305290a6a1797cf44462",
+        "crop": [
+          1920,
+          760,
+          2070,
+          950
+        ],
+        "dimensions": [
+          150,
+          190
+        ],
+        "image": "receipts/008.png"
+      }
+    },
+    {
+      "sequence": 10,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:49:40.535Z",
+      "payload": {
+        "observation_id": "f1312dfa015f43ecb19d699a16544b48",
+        "intent": "See the red-boxed hole in the bottom view itself at full fidelity to confirm its identity (threaded hole circles).",
+        "source_sha256": "9f9318ba20d7af43fb743e66074719d4d874dfac7ed927e0681c58ab1b7ac369",
+        "sha256": "0023cff30fc4137bae34b38479ea3ac9088bfccc10ba08a521b143081df1e541",
+        "crop": [
+          640,
+          1360,
+          880,
+          1600
+        ],
+        "dimensions": [
+          240,
+          240
+        ],
+        "image": "receipts/009.png"
+      }
+    }
+  ],
+  "input_images": [
+    "assets/hard-09/input-01.png"
+  ],
+  "asset_base": "assets/hard-09",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/hard-09/record.json"
+    }
+  ]
+}

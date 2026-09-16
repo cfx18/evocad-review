@@ -1,0 +1,248 @@
+{
+  "target_id": "a9e8d41cac2ea19a524a09c9",
+  "sample_id": "hard-03",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "可见"
+  },
+  "learner_answer": {
+    "answer": "可见边"
+  },
+  "task_manifest": {
+    "task_id": "hard-03",
+    "task_type": "line_role",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true,
+    "protocol": "boxed-minimal-v1"
+  },
+  "task": {
+    "task_id": "hard-03",
+    "query": "框中线表示可见边、不可见边，还是非几何线？",
+    "answer_format": {
+      "answer": "short text"
+    }
+  },
+  "source": {
+    "source_id": "pdf-065",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 65,
+    "sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "框中线表示可见边、不可见边，还是非几何线？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            298,
+            272,
+            302,
+            342
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "框中竖线位于左侧视图轮缘右边界的内侧，向上下延续并接入轮缘截面。下方局部放大图显示轮缘窄壁及其圆角连接，右侧整轮视图提供对应的轮缘环带。该线表示轮缘窄壁的几何边界；它偏离轮缘截面中心，且不通向尺寸箭头，故不能因线细而判为中心线或尺寸辅助线。",
+      "expected_answer": "可见",
+      "answer_kind": "text",
+      "accepted_answers": [
+        "可见边",
+        "可见轮廓线",
+        "visible edge"
+      ],
+      "bad_pattern_tags": [
+        "thin_visible_edge_as_auxiliary",
+        "ignore_endpoint_attachments",
+        "ignore_rim_detail_correspondence"
+      ],
+      "confidence": 0.9,
+      "ambiguity_notes": "该内部轮缘边界的对应关系为模型判读，需结合局部放大图人工复核。",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "可见边",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.96,
+      "evidence": "框内竖线沿轮缘侧面延续，与上下轮缘轮廓相接。",
+      "ambiguity_notes": "",
+      "evidence_scope": "contextual_semantics",
+      "difficulty_evidence": "需追踪竖线与轮缘轮廓的连接；孤立的实线不足以排除尺寸界线。"
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 424.61,
+    "observations": 5,
+    "findings": 1,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "可见"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt",
+    "accepted_answers": {
+      "answer": [
+        "visible edge",
+        "可见轮廓线",
+        "可见边"
+      ]
+    },
+    "alias_policy": "engineering-line-terms-v1"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:29:09.912Z",
+      "payload": {
+        "observation_id": "8a2a624851cf4ce5a5eebc8b35cb3099",
+        "intent": "Inspect the engineering drawing and especially the boxed line to classify whether it denotes a visible edge, hidden/invisible edge, or a non-geometric line (such as centerline, dimension, or construction).",
+        "source_sha256": "0fb330166f196222ae53e396eaf479ef9e9d381083e7398260ab848a9ff6b638",
+        "sha256": "0fb330166f196222ae53e396eaf479ef9e9d381083e7398260ab848a9ff6b638",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:29:37.684Z",
+      "payload": {
+        "observation_id": "cf873e99d2b9429bb6a8895495072f49",
+        "intent": "Zoom into the red boxed vertical line segment in the left sectional side view to see its line style and context: whether it is a solid object edge, a hidden dashed edge, or a center/section/dimension non-geometric line.",
+        "source_sha256": "0fb330166f196222ae53e396eaf479ef9e9d381083e7398260ab848a9ff6b638",
+        "sha256": "951edaee6c6697e330300f88e92cb33f3f567f3eff1f60241940a412012c65ef",
+        "crop": [
+          900,
+          430,
+          1080,
+          700
+        ],
+        "dimensions": [
+          180,
+          270
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:30:06.967Z",
+      "payload": {
+        "observation_id": "04b5e51f59e84ced88aa326e0ad8add5",
+        "intent": "View the left sectional side view around the red box with surrounding geometry, dimensions, and section markers to identify what feature the boxed vertical line belongs to.",
+        "source_sha256": "0fb330166f196222ae53e396eaf479ef9e9d381083e7398260ab848a9ff6b638",
+        "sha256": "075ed1025f38aabfe45997d98b9d9800d999e4f54b10937bbf96b91a0a5c665e",
+        "crop": [
+          620,
+          250,
+          1150,
+          950
+        ],
+        "dimensions": [
+          530,
+          700
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:30:56.626Z",
+      "payload": {
+        "observation_id": "d236006313444323ac48f5c88c33f7ef",
+        "intent": "High-zoom crop of the red boxed segment and the adjacent parallel vertical lines to determine exact line style and whether it coincides with a real edge of the handwheel rim/spoke or a construction/section line.",
+        "source_sha256": "0fb330166f196222ae53e396eaf479ef9e9d381083e7398260ab848a9ff6b638",
+        "sha256": "d0c10c07665dd416ff5e35d6a78f614d268d92649d5e4bc1846951365ba06f2f",
+        "crop": [
+          720,
+          420,
+          830,
+          700
+        ],
+        "dimensions": [
+          110,
+          280
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:34:31.813Z",
+      "payload": {
+        "observation_id": "af88588040e948c68609a557303dc68a",
+        "intent": "Inspect the full vertical extent and endpoints of the boxed line and adjacent parallel lines, including their connection to the rim cross-section and dimension extension lines, to distinguish object edge from annotation/extension line.",
+        "source_sha256": "0fb330166f196222ae53e396eaf479ef9e9d381083e7398260ab848a9ff6b638",
+        "sha256": "7009b3af18771fb9cb8d4c34bc9e34367301d5880902e73d9d73d24a6e2e8e3f",
+        "crop": [
+          700,
+          120,
+          840,
+          760
+        ],
+        "dimensions": [
+          140,
+          640
+        ],
+        "image": "receipts/005.png"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T13:35:39.881Z",
+      "payload": {
+        "observation_id": "af88588040e948c68609a557303dc68a",
+        "public_conclusion": "The red-boxed segment is a continuous solid object contour connected to the rim/spoke geometry; it is not dashed like a hidden edge and not a center/dimension/extension line."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/hard-03/input-01.png"
+  ],
+  "asset_base": "assets/hard-03",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/hard-03/record.json"
+    }
+  ]
+}

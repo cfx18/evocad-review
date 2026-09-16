@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.0019,
+  "region_count": 1,
+  "regions": [
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 76,
+      "sample_fraction": 0.0038,
+      "estimated_area": 66.146505,
+      "estimated_area_fraction": 0.0038,
+      "centroid": [
+        9.656633,
+        0.060465,
+        -13.498917
+      ],
+      "centroid_bbox_position": [
+        0.6207,
+        0.502,
+        0.2923
+      ],
+      "bbox": {
+        "min": [
+          7.900231,
+          -2.099347,
+          -15.779342
+        ],
+        "max": [
+          12.086368,
+          2.071309,
+          -11.484802
+        ]
+      },
+      "mean_distance_normalized": 0.026179,
+      "p95_distance_normalized": 0.042144,
+      "max_distance_normalized": 0.045599,
+      "mean_normal_offset_normalized": -0.026179,
+      "mean_normal_disagreement": 0.773233,
+      "dominant_source_normal": [
+        0.4589,
+        -0.0073,
+        -0.8884
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          7.949086,
+          -0.44874,
+          -14.627518
+        ],
+        [
+          9.012918,
+          1.363027,
+          -12.250539
+        ],
+        [
+          10.289371,
+          1.702014,
+          -12.27656
+        ],
+        [
+          10.973812,
+          1.860143,
+          -14.448869
+        ],
+        [
+          11.926721,
+          -0.834284,
+          -13.68176
+        ],
+        [
+          9.393616,
+          -0.601729,
+          -11.751584
+        ],
+        [
+          8.267537,
+          -1.186642,
+          -13.254323
+        ],
+        [
+          8.103529,
+          -0.901323,
+          -14.750245
+        ],
+        [
+          8.035426,
+          -0.740615,
+          -13.062833
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-23a8c2f3dc40",
+          "sample_fraction": 0.342105,
+          "surface_type": "cylinder",
+          "radius": 2.1
+        },
+        {
+          "face_id": "face-3f1022a28f16",
+          "sample_fraction": 0.302632,
+          "surface_type": "cylinder",
+          "radius": 2.1
+        },
+        {
+          "face_id": "face-4b132484ffc4",
+          "sample_fraction": 0.236842,
+          "surface_type": "cone",
+          "reference_radius": 2.1,
+          "semi_angle": 1.029744
+        },
+        {
+          "face_id": "face-f155f4259313",
+          "sample_fraction": 0.118421,
+          "surface_type": "cone",
+          "reference_radius": 2.1,
+          "semi_angle": 1.029744
+        }
+      ],
+      "region_id": "missing-01"
+    }
+  ],
+  "visualization": {
+    "candidate_to_ground_truth": [],
+    "ground_truth_to_candidate": [
+      {
+        "point": [
+          10.643178,
+          0.2391,
+          -11.650959
+        ],
+        "distance_normalized": 0.044347,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.332722,
+          -0.648307,
+          -11.797545
+        ],
+        "distance_normalized": 0.040536,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          8.149919,
+          0.967468,
+          -12.492996
+        ],
+        "distance_normalized": 0.037325,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          10.025699,
+          1.139492,
+          -11.923627
+        ],
+        "distance_normalized": 0.03596,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.302342,
+          1.270886,
+          -12.109735
+        ],
+        "distance_normalized": 0.034736,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.929791,
+          -0.827479,
+          -12.796506
+        ],
+        "distance_normalized": 0.034498,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.240423,
+          1.334369,
+          -12.333816
+        ],
+        "distance_normalized": 0.034145,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          7.932031,
+          -0.361625,
+          -13.034082
+        ],
+        "distance_normalized": 0.032285,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.365598,
+          1.621204,
+          -12.285047
+        ],
+        "distance_normalized": 0.031473,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.148946,
+          1.919494,
+          -12.973449
+        ],
+        "distance_normalized": 0.028695,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          10.64118,
+          -1.999174,
+          -12.954378
+        ],
+        "distance_normalized": 0.027952,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          12.047305,
+          0.464552,
+          -14.036183
+        ],
+        "distance_normalized": 0.02295,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          8.093434,
+          -0.878952,
+          -15.387246
+        ],
+        "distance_normalized": 0.010365,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          8.730678,
+          -1.67215,
+          -15.40317
+        ],
+        "distance_normalized": 0.010217,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          10.830652,
+          -1.928094,
+          -15.510748
+        ],
+        "distance_normalized": 0.009215,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.931753,
+          0.823131,
+          -15.795122
+        ],
+        "distance_normalized": 0.006566,
+        "region_id": "missing-01"
+      }
+    ]
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

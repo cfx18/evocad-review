@@ -1,0 +1,242 @@
+{
+  "target_id": "9f95cf993dcf7214462234e4",
+  "sample_id": "drawing-11",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "centerline"
+  },
+  "learner_answer": {
+    "answer": "centerline"
+  },
+  "task_manifest": {
+    "task_id": "drawing-11",
+    "task_type": "line_role",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true
+  },
+  "task": {
+    "task_id": "drawing-11",
+    "query": "区域 A 中，A—A 剖视图最右端空白孔腔内，φ43 文字右侧、孔腔高度中部那段有间断的细水平线，属于哪类图线？",
+    "answer_format": {
+      "answer": "one option value"
+    },
+    "options": [
+      {
+        "value": "visible_edge",
+        "label": "可见轮廓线"
+      },
+      {
+        "value": "hidden_edge",
+        "label": "不可见轮廓线"
+      },
+      {
+        "value": "centerline",
+        "label": "中心线"
+      },
+      {
+        "value": "dimension_line",
+        "label": "尺寸线"
+      },
+      {
+        "value": "extension_line",
+        "label": "尺寸界线"
+      },
+      {
+        "value": "cutting_plane",
+        "label": "剖切位置指示线"
+      }
+    ],
+    "unit": "none",
+    "absolute_tolerance": 0
+  },
+  "source": {
+    "source_id": "pdf-162",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 162,
+    "sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "区域 A 中，A—A 剖视图最右端空白孔腔内，φ43 文字右侧、孔腔高度中部那段有间断的细水平线，属于哪类图线？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            295,
+            245,
+            429,
+            409
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "该细点画线通过右端孔腔中部，与左侧水平孔的中心位置对齐；上下孔壁另以粗实线表示。",
+      "expected_answer": "centerline",
+      "answer_kind": "choice",
+      "bad_pattern_tags": [
+        "dashed_line_as_hidden_edge",
+        "centerline_as_dimension_line"
+      ],
+      "confidence": 0.99,
+      "ambiguity_notes": "",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "centerline",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "该细点画线沿右端孔腔的轴线水平延伸，没有尺寸箭头。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 192.67,
+    "observations": 4,
+    "findings": 2,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "centerline"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:25:26.815Z",
+      "payload": {
+        "observation_id": "3eab7e8225214863ad78460a1c882569",
+        "intent": "Inspect the A-A section view, specifically the rightmost blank hole cavity, the φ43 text, and the thin horizontal broken line at the middle height of the hole cavity to the right of φ43. Determine the line type (solid, dashed/hidden, centerline chain, dimension, extension, or cutting plane).",
+        "source_sha256": "4fbb8d824997a285f886b978b96dda911ca45b92256777f777a198441448f9cd",
+        "sha256": "4fbb8d824997a285f886b978b96dda911ca45b92256777f777a198441448f9cd",
+        "crop": null,
+        "dimensions": [
+          344,
+          299
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:25:27.065Z",
+      "payload": {
+        "observation_id": "4182796f176d440c95d0b4f00f141b5b",
+        "intent": "Get overall context of the CAD drawing, locate region A (source pixels [755,443,1099,742]) and the A-A section view, understand the part and the hole labeled φ43.",
+        "source_sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+        "sha256": "f26c60dc73bec1f6698c42da47c7219af3c2a88f3ba6117e22127a57952916e8",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:27:13.185Z",
+      "payload": {
+        "observation_id": "47c4c8a09b4b437cb25fa07a484df6b2",
+        "intent": "Zoom into the middle-height horizontal thin line inside the blank hole cavity, to the right of the φ43 text and around the φ52 text. Determine the dash pattern: uniform short dashes (hidden edge) vs long-dash short-dash chain (centerline) vs solid. Also check whether it carries arrowheads (dimension line) or is a cutting-plane mark.",
+        "source_sha256": "4fbb8d824997a285f886b978b96dda911ca45b92256777f777a198441448f9cd",
+        "sha256": "c0dcf115a6f22e945164440e844316df84d6226434c629bd14cefa935866846b",
+        "crop": [
+          80,
+          120,
+          240,
+          178
+        ],
+        "dimensions": [
+          160,
+          58
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:27:13.338Z",
+      "payload": {
+        "observation_id": "5f157d1a45cb48b6b7e3c1a365454593",
+        "intent": "Zoom the left part of the blank cavity to see the φ43 dimension text and the horizontal thin line immediately to its right at mid-height of the cavity; identify the line's dash pattern and whether it is the hole axis.",
+        "source_sha256": "4fbb8d824997a285f886b978b96dda911ca45b92256777f777a198441448f9cd",
+        "sha256": "d5ccfeb2f97779025376047eef87a70bb368c28efd53fdeb568d31317e1457eb",
+        "crop": [
+          40,
+          100,
+          200,
+          200
+        ],
+        "dimensions": [
+          160,
+          100
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:27:49.431Z",
+      "payload": {
+        "observation_id": "47c4c8a09b4b437cb25fa07a484df6b2",
+        "public_conclusion": "At the blank hole cavity mid-height, the thin horizontal line shows a long-dash → gap → short dash(dot) → gap → long-dash chain pattern ending at the solid vertical cavity wall, with the φ52 text just to the right. This long-dash/short-dash thin chain with no arrowheads is a centerline (axis), not a solid edge, uniform dashed hidden line, or dimension line."
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:27:49.439Z",
+      "payload": {
+        "observation_id": "5f157d1a45cb48b6b7e3c1a365454593",
+        "public_conclusion": "Immediately to the right of the vertical φ43 dimension text, at the middle height of the hole cavity, the thin horizontal segment repeats the same long-dash–dot (chain) pattern. It lies on the cylinder/hole axis and carries no arrowheads, confirming it is the centerline rather than a hidden edge, dimension line, extension line, or cutting-plane mark."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/drawing-11/input-01.png",
+    "assets/drawing-11/input-02.png"
+  ],
+  "asset_base": "assets/drawing-11",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/drawing-11/record.json"
+    }
+  ]
+}

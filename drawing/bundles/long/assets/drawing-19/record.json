@@ -1,0 +1,302 @@
+{
+  "target_id": "ba36ce6101647f2c97b0d2c8",
+  "sample_id": "drawing-19",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "right_axis_lower_end"
+  },
+  "learner_answer": {
+    "answer": "right_axis_lower_end"
+  },
+  "task_manifest": {
+    "task_id": "drawing-19",
+    "task_type": "cross_view",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true
+  },
+  "task": {
+    "task_id": "drawing-19",
+    "query": "区域 A 的右上视图中，最右侧沿水平方向伸出箱体的轴端，在区域 B 的左下剖视图中对应哪一处？",
+    "answer_format": {
+      "answer": "one option value"
+    },
+    "options": [
+      {
+        "value": "left_axis_upper_end",
+        "label": "左侧轴线的上端。"
+      },
+      {
+        "value": "right_axis_lower_end",
+        "label": "右侧轴线的下端。"
+      },
+      {
+        "value": "left_axis_lower_end",
+        "label": "左侧轴线的下端。"
+      },
+      {
+        "value": "right_axis_upper_end",
+        "label": "右侧轴线的上端。"
+      }
+    ],
+    "unit": "none",
+    "absolute_tolerance": 0
+  },
+  "source": {
+    "source_id": "web-1936-01",
+    "origin": "public_web_drawing",
+    "article_url": "https://xifengboke.com/post/1936.html",
+    "sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+    "dimensions": [
+      919,
+      586
+    ],
+    "rights": {
+      "status": "permission_required",
+      "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+      "training_eligible": false,
+      "redistribution_eligible": false
+    }
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "区域 A 的右上视图中，最右侧沿水平方向伸出箱体的轴端，在区域 B 的左下剖视图中对应哪一处？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            559,
+            21,
+            919,
+            476
+          ]
+        },
+        {
+          "label": "B",
+          "bbox": [
+            80,
+            481,
+            416,
+            989
+          ]
+        },
+        {
+          "label": "C",
+          "bbox": [
+            82,
+            76,
+            409,
+            385
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "右上图右端为较粗的带键槽伸出轴端，对应左下图右侧轴线向下伸出的同形轴端；左下图左侧向上伸出的较细轴端对应右上图左端。",
+      "expected_answer": "right_axis_lower_end",
+      "answer_kind": "choice",
+      "bad_pattern_tags": [
+        "cross_view_direction_swap",
+        "input_output_shaft_swap"
+      ],
+      "confidence": 0.96,
+      "ambiguity_notes": "The source is low resolution; correspondence uses the large shaft outlines and projection layout, without relying on small item numbers.",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "right_axis_lower_end",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.98,
+      "evidence": "右上视图右侧较粗的伸出轴，其轴肩和端部轮廓对应左下剖视图右侧轴线向下伸出的轴端。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 583.94,
+    "observations": 6,
+    "findings": 3,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "right_axis_lower_end"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:46:31.434Z",
+      "payload": {
+        "observation_id": "628f0663d1d44f94bb47ab7f7798bd02",
+        "intent": "Inspect the full drawing to understand all views and layout.",
+        "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+        "sha256": "04b1fc17909c69d4f8ece1bf28f5c422236cd3018cbbb45bdc0a9aeeed03919c",
+        "crop": null,
+        "dimensions": [
+          919,
+          586
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:46:31.582Z",
+      "payload": {
+        "observation_id": "0211ecda2cc74422b9359ad16c54e13c",
+        "intent": "Inspect region A: upper-right view; find the rightmost horizontally protruding shaft end from the box body.",
+        "source_sha256": "18dc78eb7957d0b749180d44bea68d5006b2cb9612c41963c6eccb9685e042f9",
+        "sha256": "18dc78eb7957d0b749180d44bea68d5006b2cb9612c41963c6eccb9685e042f9",
+        "crop": null,
+        "dimensions": [
+          332,
+          267
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:46:31.708Z",
+      "payload": {
+        "observation_id": "f6fec40712f148d0aafb3a33d3505242",
+        "intent": "Inspect region B: lower-left sectional view; identify left/right axis lines and their upper/lower ends.",
+        "source_sha256": "43a865265cf39c2d4d166bd4842593ca303322bdc90b846efcb9c92a01511484",
+        "sha256": "43a865265cf39c2d4d166bd4842593ca303322bdc90b846efcb9c92a01511484",
+        "crop": null,
+        "dimensions": [
+          310,
+          299
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:50:05.260Z",
+      "payload": {
+        "observation_id": "61a80343db624b7e8c15f3355163187f",
+        "intent": "Inspect region C (upper-left main view): locate the two circular bosses and the left/right protruding shaft ends.",
+        "source_sha256": "bdc6c604e45f5ea2d45e399c62a4bfcb4432ce116f1e35cae51cd1dfe1cfa0c0",
+        "sha256": "bdc6c604e45f5ea2d45e399c62a4bfcb4432ce116f1e35cae51cd1dfe1cfa0c0",
+        "crop": null,
+        "dimensions": [
+          301,
+          182
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:50:05.411Z",
+      "payload": {
+        "observation_id": "87d2bac7ab91440a9e2fd3ce12a7713e",
+        "intent": "Crop the left and right protruding shaft ends in region A to compare their shapes.",
+        "source_sha256": "18dc78eb7957d0b749180d44bea68d5006b2cb9612c41963c6eccb9685e042f9",
+        "sha256": "2899fcd3fa9cb07b4688fb6fff5cb3172e8452e9e6cdf2291c0ba921d5b8f358",
+        "crop": [
+          0,
+          90,
+          332,
+          160
+        ],
+        "dimensions": [
+          332,
+          70
+        ],
+        "image": "receipts/005.png"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:50:05.534Z",
+      "payload": {
+        "observation_id": "238e1c042ab946848a0e39f17f45be55",
+        "intent": "Crop top and bottom ends of the two vertical axes in region B to identify shaft ends.",
+        "source_sha256": "43a865265cf39c2d4d166bd4842593ca303322bdc90b846efcb9c92a01511484",
+        "sha256": "234456cd9b04e9455ba49f14e30f05523c324fd74872907a351a5a562250391b",
+        "crop": [
+          50,
+          0,
+          260,
+          299
+        ],
+        "dimensions": [
+          210,
+          299
+        ],
+        "image": "receipts/006.png"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:55:29.964Z",
+      "payload": {
+        "observation_id": "87d2bac7ab91440a9e2fd3ce12a7713e",
+        "public_conclusion": "In region A (the side/left view at upper right of the drawing), the horizontal shaft line at parting-plane height has two protruding ends: a long thin one on the LEFT and a shorter, thicker stepped one on the RIGHT (rightmost shaft end). A round oil-indicator cover sits lower-center on the box face."
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:55:29.973Z",
+      "payload": {
+        "observation_id": "238e1c042ab946848a0e39f17f45be55",
+        "public_conclusion": "In region B (horizontal sectional top view), the LEFT vertical axis carries the pinion with a long upward-protruding shaft end (input shaft 23, 6204/Ø20), while the RIGHT vertical axis carries the large gear with a shorter downward-protruding keyed shaft end (output shaft 20, Ø30m6, 6206/Ø62; leaders 18/19/20 point there)."
+      }
+    },
+    {
+      "sequence": 10,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:55:29.982Z",
+      "payload": {
+        "observation_id": "628f0663d1d44f94bb47ab7f7798bd02",
+        "public_conclusion": "Layout is first-angle projection (Chinese GB): region C is the front view, region A on its right is the left view, region B below is the (sectional) top view. Working-principle text: input shaft 23 (belt-driven) and output shaft 20 on 6204/6206 bearings. In the left view, drawing-right corresponds to the object's front side where the output shaft 20 protrudes; this matches the thicker right protrusion (Ø30 output end) vs the thinner left protrusion (input shaft 23 end)."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/drawing-19/input-01.png",
+    "assets/drawing-19/input-02.png",
+    "assets/drawing-19/input-03.png",
+    "assets/drawing-19/input-04.png"
+  ],
+  "asset_base": "assets/drawing-19",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/drawing-19/record.json"
+    }
+  ]
+}

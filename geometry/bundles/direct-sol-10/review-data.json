@@ -1,0 +1,1757 @@
+{
+  "schema_version": "1.0",
+  "review_ui_version": "1.0",
+  "campaign": {
+    "campaign_id": "direct-codex-sol-ultra-omnimech10-https-20260914",
+    "campaign_manifest_sha256": "b59aa818f21ad3472db34706c12963da759d84e98e038d3655497902c1ea23ec",
+    "declared_manifest_sha256": null,
+    "source_manifest_sha256": "01672e0fc8abbfebecfe352a4e4a88ee93a383b849d5b8213a6b08acc6c8c280",
+    "protocol": "evocad-geometry-v2",
+    "agent_loop_protocol": "native-codex-single-conversation-v1",
+    "benchmark_split": null,
+    "execution": null
+  },
+  "models": [
+    "gpt-5.6-sol"
+  ],
+  "render_geometry": true,
+  "feature_backfill": null,
+  "runs": [
+    {
+      "target_id": "2b28eac200a3cd9d12e6",
+      "run_id": "direct-codex-sol-ultra-omnimech10-https-20260914-gpt-5-6-sol-ultra",
+      "sample_id": "omnimech:10",
+      "sample_key": "omnimech / 10",
+      "dataset": "omnimech",
+      "category": "automation_equipment",
+      "task": "Reconstruct the dimensioned mechanical part as one editable 3D CAD solid.",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "ultra",
+      "status": "passed",
+      "score": 100.0,
+      "passed": true,
+      "selected_attempt_id": "a001",
+      "stop_reason": "agent_stop",
+      "agent_requested_continue": false,
+      "selected_evidence_sha256": "27c5928048811fe90342f6e9c6f3ddcf2d13861f369fe0ba0858e1a569509fd7",
+      "candidate_sha256": "4dfb2ca5c41c351460235c81af4d6a32be99d4c1517206f9eb506157aa7bf921",
+      "ground_truth_sha256": "68c1a9c0d2a214fe4bc3f244a0e19e614c2bb18ef8621ad77a809f2e70668ef6",
+      "integrity": {
+        "ok": true,
+        "checked_files": 41,
+        "events": 27,
+        "errors": []
+      },
+      "input_images": [
+        "assets/omnimech-10/gpt-5-6-sol/input-01.png"
+      ],
+      "input_evidence": [
+        {
+          "path": "assets/omnimech-10/gpt-5-6-sol/input-01.png",
+          "sha256": "65060dcbfb0960e50c984d9c9f5bd87f1d8dbecdc12bf0e7189546aab7565124",
+          "bytes": 225255
+        }
+      ],
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "a001",
+          "score": 100.0,
+          "passed": true,
+          "elapsed_seconds": 981.899,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": "stop",
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": null,
+          "decision_recovered": null,
+          "images": {
+            "candidate": "assets/omnimech-10/gpt-5-6-sol/a001-candidate.png",
+            "overlay": "assets/omnimech-10/gpt-5-6-sol/a001-overlay.png",
+            "ground_truth": "assets/omnimech-10/gpt-5-6-sol/ground-truth.png"
+          },
+          "geometry": {
+            "candidate": "assets/omnimech-10/gpt-5-6-sol/a001-candidate.stl",
+            "ground_truth": "assets/omnimech-10/gpt-5-6-sol/ground-truth.stl",
+            "localization": "assets/omnimech-10/gpt-5-6-sol/a001-localization.json",
+            "topology": "assets/omnimech-10/gpt-5-6-sol/a001-topology.json",
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": {
+            "schema_version": "1.0",
+            "protocol": "evocad-surface-localization-v1",
+            "coordinate_frame": "aligned-ground-truth-world",
+            "uses_evaluator_ground_truth": true,
+            "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+            "distance_threshold_normalized": 0.006,
+            "cluster_radius_normalized": 0.025,
+            "surface_samples_per_direction": 20000,
+            "localized_sample_fraction": 0.00215,
+            "region_count": 2,
+            "regions": [
+              {
+                "direction": "candidate_to_ground_truth",
+                "error_type": "candidate_excess_or_displaced_surface",
+                "sample_count": 10,
+                "sample_fraction": 0.0005,
+                "estimated_area": 8.695871,
+                "estimated_area_fraction": 0.0005,
+                "centroid": [
+                  10.03882,
+                  0.04123,
+                  -16.5
+                ],
+                "centroid_bbox_position": [
+                  0.6255,
+                  0.5014,
+                  0.2462
+                ],
+                "bbox": {
+                  "min": [
+                    8.95819,
+                    -1.183291,
+                    -16.5
+                  ],
+                  "max": [
+                    11.072694,
+                    0.979292,
+                    -16.5
+                  ]
+                },
+                "mean_distance_normalized": 0.009888,
+                "p95_distance_normalized": 0.013881,
+                "max_distance_normalized": 0.014109,
+                "mean_normal_offset_normalized": 0.009888,
+                "mean_normal_disagreement": 1.0,
+                "dominant_source_normal": [
+                  0.0,
+                  0.0,
+                  -1.0
+                ],
+                "confidence": "medium",
+                "source_surface_query_points": [
+                  [
+                    9.856873,
+                    -1.183291,
+                    -16.5
+                  ],
+                  [
+                    9.365883,
+                    -0.078886,
+                    -16.5
+                  ],
+                  [
+                    10.103321,
+                    -0.989931,
+                    -16.5
+                  ],
+                  [
+                    10.893395,
+                    0.904081,
+                    -16.5
+                  ],
+                  [
+                    10.899868,
+                    -0.871628,
+                    -16.5
+                  ],
+                  [
+                    11.072694,
+                    -0.248929,
+                    -16.5
+                  ],
+                  [
+                    8.95819,
+                    0.961329,
+                    -16.5
+                  ],
+                  [
+                    10.214771,
+                    0.543964,
+                    -16.5
+                  ],
+                  [
+                    9.873534,
+                    0.979292,
+                    -16.5
+                  ]
+                ],
+                "region_id": "excess-01",
+                "counterpart_region_ids": [
+                  "missing-01"
+                ]
+              },
+              {
+                "direction": "ground_truth_to_candidate",
+                "error_type": "candidate_missing_or_displaced_surface",
+                "sample_count": 76,
+                "sample_fraction": 0.0038,
+                "estimated_area": 66.146505,
+                "estimated_area_fraction": 0.0038,
+                "centroid": [
+                  9.656633,
+                  0.060465,
+                  -13.498917
+                ],
+                "centroid_bbox_position": [
+                  0.6207,
+                  0.502,
+                  0.2923
+                ],
+                "bbox": {
+                  "min": [
+                    7.900231,
+                    -2.099347,
+                    -15.779342
+                  ],
+                  "max": [
+                    12.086368,
+                    2.071309,
+                    -11.484802
+                  ]
+                },
+                "mean_distance_normalized": 0.026179,
+                "p95_distance_normalized": 0.042144,
+                "max_distance_normalized": 0.045599,
+                "mean_normal_offset_normalized": -0.026179,
+                "mean_normal_disagreement": 0.773233,
+                "dominant_source_normal": [
+                  0.4589,
+                  -0.0073,
+                  -0.8884
+                ],
+                "confidence": "high",
+                "source_surface_query_points": [
+                  [
+                    7.949086,
+                    -0.44874,
+                    -14.627518
+                  ],
+                  [
+                    9.012918,
+                    1.363027,
+                    -12.250539
+                  ],
+                  [
+                    10.289371,
+                    1.702014,
+                    -12.27656
+                  ],
+                  [
+                    10.973812,
+                    1.860143,
+                    -14.448869
+                  ],
+                  [
+                    11.926721,
+                    -0.834284,
+                    -13.68176
+                  ],
+                  [
+                    9.393616,
+                    -0.601729,
+                    -11.751584
+                  ],
+                  [
+                    8.267537,
+                    -1.186642,
+                    -13.254323
+                  ],
+                  [
+                    8.103529,
+                    -0.901323,
+                    -14.750245
+                  ],
+                  [
+                    8.035426,
+                    -0.740615,
+                    -13.062833
+                  ]
+                ],
+                "source_brep_faces": [
+                  {
+                    "face_id": "face-23a8c2f3dc40",
+                    "sample_fraction": 0.342105,
+                    "surface_type": "cylinder",
+                    "radius": 2.1
+                  },
+                  {
+                    "face_id": "face-3f1022a28f16",
+                    "sample_fraction": 0.302632,
+                    "surface_type": "cylinder",
+                    "radius": 2.1
+                  },
+                  {
+                    "face_id": "face-4b132484ffc4",
+                    "sample_fraction": 0.236842,
+                    "surface_type": "cone",
+                    "reference_radius": 2.1,
+                    "semi_angle": 1.029744
+                  },
+                  {
+                    "face_id": "face-f155f4259313",
+                    "sample_fraction": 0.118421,
+                    "surface_type": "cone",
+                    "reference_radius": 2.1,
+                    "semi_angle": 1.029744
+                  }
+                ],
+                "region_id": "missing-01",
+                "counterpart_region_ids": [
+                  "excess-01"
+                ]
+              }
+            ],
+            "visualization_surface_samples_per_direction": 4000,
+            "region_summary_source": "geometry-verdict.json"
+          },
+          "localization_error": null,
+          "verdict": {
+            "schema_version": "1.0",
+            "protocol": "evocad-geometry-v2",
+            "sample_id": "omnimech:10",
+            "passed": true,
+            "quality_tier": "strict",
+            "score": 100.0,
+            "coverage": 100.0,
+            "checks": {
+              "candidate_watertight": true,
+              "voxel_iou": true,
+              "normalized_chamfer": true,
+              "bbox_relative_error": true,
+              "volume_relative_error": true
+            },
+            "acceptable_checks": {
+              "candidate_watertight": true,
+              "voxel_iou": true,
+              "normalized_chamfer": true,
+              "bbox_relative_error": true,
+              "volume_relative_error": true
+            },
+            "metrics": {
+              "voxel_iou": 0.999824,
+              "chamfer_distance": 0.47068,
+              "normalized_chamfer": 0.004384,
+              "bbox_relative_error": 0.0,
+              "volume_relative_error": 0.000459,
+              "surface_area_relative_error": 0.000875
+            },
+            "mismatch": {
+              "candidate_to_ground_truth": {
+                "p50_normalized": 0.0,
+                "p95_normalized": 0.0,
+                "max_normalized": 0.014109,
+                "worst_point_bbox_position": [
+                  0.6277,
+                  0.5181,
+                  0.2462
+                ]
+              },
+              "ground_truth_to_candidate": {
+                "p50_normalized": 0.0,
+                "p95_normalized": 0.0,
+                "max_normalized": 0.045599,
+                "worst_point_bbox_position": [
+                  0.6174,
+                  0.5001,
+                  0.3215
+                ]
+              },
+              "localization": {
+                "schema_version": "1.0",
+                "protocol": "evocad-surface-localization-v1",
+                "coordinate_frame": "aligned-ground-truth-world",
+                "uses_evaluator_ground_truth": true,
+                "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+                "distance_threshold_normalized": 0.006,
+                "cluster_radius_normalized": 0.025,
+                "surface_samples_per_direction": 20000,
+                "localized_sample_fraction": 0.00215,
+                "region_count": 2,
+                "regions": [
+                  {
+                    "direction": "candidate_to_ground_truth",
+                    "error_type": "candidate_excess_or_displaced_surface",
+                    "sample_count": 10,
+                    "sample_fraction": 0.0005,
+                    "estimated_area": 8.695871,
+                    "estimated_area_fraction": 0.0005,
+                    "centroid": [
+                      10.03882,
+                      0.04123,
+                      -16.5
+                    ],
+                    "centroid_bbox_position": [
+                      0.6255,
+                      0.5014,
+                      0.2462
+                    ],
+                    "bbox": {
+                      "min": [
+                        8.95819,
+                        -1.183291,
+                        -16.5
+                      ],
+                      "max": [
+                        11.072694,
+                        0.979292,
+                        -16.5
+                      ]
+                    },
+                    "mean_distance_normalized": 0.009888,
+                    "p95_distance_normalized": 0.013881,
+                    "max_distance_normalized": 0.014109,
+                    "mean_normal_offset_normalized": 0.009888,
+                    "mean_normal_disagreement": 1.0,
+                    "dominant_source_normal": [
+                      0.0,
+                      0.0,
+                      -1.0
+                    ],
+                    "confidence": "medium",
+                    "source_surface_query_points": [
+                      [
+                        9.856873,
+                        -1.183291,
+                        -16.5
+                      ],
+                      [
+                        9.365883,
+                        -0.078886,
+                        -16.5
+                      ],
+                      [
+                        10.103321,
+                        -0.989931,
+                        -16.5
+                      ],
+                      [
+                        10.893395,
+                        0.904081,
+                        -16.5
+                      ],
+                      [
+                        10.899868,
+                        -0.871628,
+                        -16.5
+                      ],
+                      [
+                        11.072694,
+                        -0.248929,
+                        -16.5
+                      ],
+                      [
+                        8.95819,
+                        0.961329,
+                        -16.5
+                      ],
+                      [
+                        10.214771,
+                        0.543964,
+                        -16.5
+                      ],
+                      [
+                        9.873534,
+                        0.979292,
+                        -16.5
+                      ]
+                    ],
+                    "region_id": "excess-01",
+                    "counterpart_region_ids": [
+                      "missing-01"
+                    ]
+                  },
+                  {
+                    "direction": "ground_truth_to_candidate",
+                    "error_type": "candidate_missing_or_displaced_surface",
+                    "sample_count": 76,
+                    "sample_fraction": 0.0038,
+                    "estimated_area": 66.146505,
+                    "estimated_area_fraction": 0.0038,
+                    "centroid": [
+                      9.656633,
+                      0.060465,
+                      -13.498917
+                    ],
+                    "centroid_bbox_position": [
+                      0.6207,
+                      0.502,
+                      0.2923
+                    ],
+                    "bbox": {
+                      "min": [
+                        7.900231,
+                        -2.099347,
+                        -15.779342
+                      ],
+                      "max": [
+                        12.086368,
+                        2.071309,
+                        -11.484802
+                      ]
+                    },
+                    "mean_distance_normalized": 0.026179,
+                    "p95_distance_normalized": 0.042144,
+                    "max_distance_normalized": 0.045599,
+                    "mean_normal_offset_normalized": -0.026179,
+                    "mean_normal_disagreement": 0.773233,
+                    "dominant_source_normal": [
+                      0.4589,
+                      -0.0073,
+                      -0.8884
+                    ],
+                    "confidence": "high",
+                    "source_surface_query_points": [
+                      [
+                        7.949086,
+                        -0.44874,
+                        -14.627518
+                      ],
+                      [
+                        9.012918,
+                        1.363027,
+                        -12.250539
+                      ],
+                      [
+                        10.289371,
+                        1.702014,
+                        -12.27656
+                      ],
+                      [
+                        10.973812,
+                        1.860143,
+                        -14.448869
+                      ],
+                      [
+                        11.926721,
+                        -0.834284,
+                        -13.68176
+                      ],
+                      [
+                        9.393616,
+                        -0.601729,
+                        -11.751584
+                      ],
+                      [
+                        8.267537,
+                        -1.186642,
+                        -13.254323
+                      ],
+                      [
+                        8.103529,
+                        -0.901323,
+                        -14.750245
+                      ],
+                      [
+                        8.035426,
+                        -0.740615,
+                        -13.062833
+                      ]
+                    ],
+                    "source_brep_faces": [
+                      {
+                        "face_id": "face-23a8c2f3dc40",
+                        "sample_fraction": 0.342105,
+                        "surface_type": "cylinder",
+                        "radius": 2.1
+                      },
+                      {
+                        "face_id": "face-3f1022a28f16",
+                        "sample_fraction": 0.302632,
+                        "surface_type": "cylinder",
+                        "radius": 2.1
+                      },
+                      {
+                        "face_id": "face-4b132484ffc4",
+                        "sample_fraction": 0.236842,
+                        "surface_type": "cone",
+                        "reference_radius": 2.1,
+                        "semi_angle": 1.029744
+                      },
+                      {
+                        "face_id": "face-f155f4259313",
+                        "sample_fraction": 0.118421,
+                        "surface_type": "cone",
+                        "reference_radius": 2.1,
+                        "semi_angle": 1.029744
+                      }
+                    ],
+                    "region_id": "missing-01",
+                    "counterpart_region_ids": [
+                      "excess-01"
+                    ]
+                  }
+                ]
+              }
+            },
+            "candidate_geometry": {
+              "vertices": 480,
+              "triangles": 972,
+              "watertight": true,
+              "volume": 62816.22631,
+              "surface_area": 17391.742783,
+              "extents": [
+                79.999999,
+                30.000001,
+                64.999999
+              ]
+            },
+            "ground_truth_geometry": {
+              "vertices": 1635,
+              "triangles": 3284,
+              "watertight": false,
+              "volume": 62845.085378,
+              "surface_area": 17406.974999,
+              "extents": [
+                80.0,
+                30.0,
+                65.0
+              ]
+            },
+            "thresholds": {
+              "voxel_iou_min": 0.99,
+              "normalized_chamfer_max": 0.006,
+              "bbox_relative_error_max": 0.002,
+              "volume_relative_error_max": 0.005,
+              "candidate_watertight": true
+            },
+            "acceptable_thresholds": {
+              "voxel_iou_min": 0.95,
+              "normalized_chamfer_max": 0.01,
+              "bbox_relative_error_max": 0.01,
+              "volume_relative_error_max": 0.02,
+              "candidate_watertight": true
+            },
+            "alignment": {
+              "type": "right-handed-axis-permutation-plus-translation",
+              "rotation": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -1.0
+                ]
+              ],
+              "candidate_center": [
+                40.0,
+                15.000001,
+                32.5
+              ],
+              "ground_truth_center": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale_allowed": false
+            },
+            "rubrics": [
+              {
+                "id": "watertight",
+                "status": "passed",
+                "actual": true,
+                "expected": true
+              },
+              {
+                "id": "voxel_iou",
+                "status": "passed",
+                "actual": 0.999824,
+                "minimum": 0.99
+              },
+              {
+                "id": "normalized_chamfer",
+                "status": "passed",
+                "actual": 0.004384,
+                "maximum": 0.006
+              },
+              {
+                "id": "bbox_relative_error",
+                "status": "passed",
+                "actual": 0.0,
+                "maximum": 0.002
+              },
+              {
+                "id": "volume_relative_error",
+                "status": "passed",
+                "actual": 0.000459,
+                "maximum": 0.005
+              }
+            ],
+            "eqc": {
+              "eqc": 100.0,
+              "success": true,
+              "coverage": 100.0
+            }
+          },
+          "evidence": {
+            "candidate": {
+              "sha256": "4312a1018bcf3de0e06bbd5bc6c4f08a7dcc972a85f38046b32a318628dbeedb",
+              "bytes": 48684
+            },
+            "verdict": {
+              "sha256": "03466b56eaa8f34df2ef3258a2712ab48cda6d4f8f01718e5109f8babb4f9365",
+              "bytes": 9524
+            },
+            "reflection": null,
+            "feedback_packet": null,
+            "codex_events": {
+              "sha256": "81bf72cec09eb137e9a2bf42905bc5265159264a58a076c0ff6b71e3e8246f9b",
+              "bytes": 151439
+            },
+            "reflection_events": null,
+            "reflection_stderr": null,
+            "mcp_audit": {
+              "sha256": "9c7ebfaa3ef0e3a1edbe6e607707ef1659a95ced88269edda710422aeb62996a",
+              "bytes": 53736
+            },
+            "render_images": {
+              "candidate": {
+                "sha256": "3a559f90d740a89ba88b72128b31f063e6142b983bbbb77d612cf6b04b3e7ed7",
+                "bytes": 11131
+              },
+              "overlay": {
+                "sha256": "3b2fb2e499e987797cbbe78067428eb43b6a1be97168b3f47d43cf149d85ed93",
+                "bytes": 11920
+              },
+              "ground_truth": {
+                "sha256": "fc552b0701afa31708893eec4e73e5938011120943760beaaff7746b89059cfb",
+                "bytes": 10832
+              }
+            },
+            "geometry_assets": {
+              "candidate": {
+                "sha256": "d04ab0457fdbd529cd660c7fa9dc991022deb1adc1f86a46fa3013d6a6a8ca89",
+                "bytes": 48684
+              },
+              "ground_truth": {
+                "sha256": "84fd858d851dba918b808aaf55f8121e7a28126150a4145701e24d1804776c25",
+                "bytes": 164284
+              },
+              "localization": {
+                "sha256": "bfd288fd0757692865a4750e5cae5e11b52dad1c0fc5fef4a70bc06887b1d70a",
+                "bytes": 4661
+              },
+              "topology": {
+                "sha256": "54332b52132bce05cb1271b6637f642e95082818063ef36e48831ce33bad90e3",
+                "bytes": 58402
+              },
+              "face_query": null
+            }
+          },
+          "evidence_sha256": "27c5928048811fe90342f6e9c6f3ddcf2d13861f369fe0ba0858e1a569509fd7",
+          "reflection": null,
+          "feedback_packet": null,
+          "public_events": [
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "I’m using the AutoCAD image-modeling skill for this reconstruction. I’ll inspect `task.json` and the supplied drawing, build the solid in isolated Core Console runs, then inspect the resulting geometry and revise it before saving `candidate.a001.dwg`."
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-ChildItem -LiteralPath '.\\\\input_files' | Select-Object Name,Length | Format-Table -AutoSize\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -Raw '[private value removed]\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -Raw '.\\\\task.json'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_set_run_context",
+              "server": "autocad",
+              "arguments": {
+                "sample_id": "omnimech:10",
+                "run_id": "direct-codex-sol-ultra-omnimech10-https-20260914-gpt-5-6-sol-ultra",
+                "attempt_id": "a001"
+              },
+              "error": null
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The drawing resolves into three joined regions: a lower slotted flange, a 10 mm central vertical web, and an upper flange. I’m zooming the plan and end views now because they encode several stepped edges that are easy to miss in the isometric view."
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command 'Add-Type -AssemblyName System.Drawing; $img=[System.Drawing.Image]::FromFile((Resolve-Path '\"'.\\\\input_files\\\\input-01.png')); \"'$rects=@(@{n='\"'crop-upper.png';x=570;y=180;w=520;h=280},@{n='crop-mid.png';x=700;y=430;w=760;h=390},@{n='crop-lower.png';x=680;y=790;w=430;h=260},@{n='crop-iso.png';x=180;y=750;w=430;h=390}); foreach(\"'$r in $rects){$bmp=New-Object System.Drawing.Bitmap($r.w,$r.h); $g=[System.Drawing.Graphics]::FromImage($bmp); $g.DrawImage($img,[System.Drawing.Rectangle]::new(0,0,$r.w,$r.h),[System.Drawing.Rectangle]::new($r.x,$r.y,$r.w,$r.h),[System.Drawing.GraphicsUnit]::Pixel); $g.Dispose(); $bmp.Save((Join-Path (Get-Location) $r.n),[System.Drawing.Imaging.ImageFormat]::Png); $bmp.Dispose()}; $img.Dispose()'",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"FILEDIA\" 0)\n(setvar \"CMDDIA\" 0)\n(setvar \"INSUNITS\" 4)\n(setvar \"DELOBJ\" 1)\n(command \"_.UCS\" \"_World\")\n(defun mkprism (pts z h / data pl reg sol)\n  (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(410 . \"Model\") '(100 . \"AcDbPolyline\") (cons 90 (length pts)) '(70 . 1) (cons 38 z)))\n  (foreach p pts (setq data (append data (list (cons 10 p)))))\n  (setq pl (entmakex data))\n  (if (null pl) (progn (princ \"\\nERROR: polyline creation failed\") (quit)))\n  (command \"_.REGION\" pl \"\")\n  (setq reg (entlast))\n  (command \"_.EXTRUDE\" reg \"\" h)\n  (setq sol (entlast))\n  sol\n)\n(setq lowerPts '((8.0 -15.0) (77.0 -15.0) (80.0 -12.0) (80.0 12.0) (77.0 15.0) (8.0 15.0) (5.0 12.0) (5.0 9.5) (0.0 9.5) (0.0 5.5) (13.0 5.5) (13.0 -5.5) (0.0 -5.5) (0.0 -9.5) (5.0 -9.5) (5.0 -12.0)))\n(setq landPts '((8.6213 -13.5) (76.3787 -13.5) (78.5 -11.3787) (78.5 11.3787) (76.3787 13.5) (8.6213 13.5) (6.5 11.3787) (6.5 8.0) (1.5 8.0) (1.5 7.0) (14.5 7.0) (14.5 -7.0) (1.5 -7.0) (1.5 -8.0) (6.5 -8.0) (6.5 -11.3787)))\n(setq topPts '((33.0 -15.0) (77.0 -15.0) (80.0 -12.0) (80.0 12.0) (77.0 15.0) (33.0 15.0) (30.0 12.0) (30.0 -12.0)))\n(mkprism landPts 0.0 3.0)\n(mkprism lowerPts 3.0 12.0)\n(mkprism '((30.0 -5.0) (80.0 -5.0) (80.0 5.0) (30.0 5.0)) 15.0 38.0)\n(mkprism topPts 53.0 12.0)\n(setq pos (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(command \"_.UNION\" pos \"\")\n(setq body (entlast))\n(setq cutters (ssadd))\n(foreach c '((30.0 -10.0 -1.0) (30.0 10.0 -1.0) (45.0 -10.0 -1.0) (45.0 10.0 -1.0))\n  (command \"_.CYLINDER\" \"_non\" c 1.7 17.0)\n  (ssadd (entlast) cutters)\n)\n(command \"_.CYLINDER\" \"_non\" '(50.0 0.0 49.0) 2.5 17.0)\n(ssadd (entlast) cutters)\n(setq target (ssadd body))\n(command \"_.SUBTRACT\" target \"\" cutters \"\")\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(if (/= (sslength solids) 1) (progn (princ (strcat \"\\nERROR: expected one solid, got \" (itoa (sslength solids)))) (quit)))\n(command \"_.AUDIT\" \"_Yes\")\n(princ (strcat \"\\nFINAL_3DSOLID_COUNT=\" (itoa (sslength solids))))\n(princ \"\\nMODEL_BOUNDS_EXPECTED=0,-15,0 to 80,15,65\")\n(princ)\n)",
+                "output_path": "[private value removed]",
+                "timeout": 120,
+                "capture_boolean_lineage": true,
+                "operation_manifest": [
+                  {
+                    "operation_id": "op_lower_land",
+                    "feature_id": "lower_underside_land",
+                    "intent": "Create 3 mm underside land, 27 mm wide at the main body",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "height": 3,
+                      "width": 27
+                    }
+                  },
+                  {
+                    "operation_id": "op_lower_flange",
+                    "feature_id": "lower_flange",
+                    "intent": "Create lower forked flange with dimensioned slot and plan chamfers",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "z0": 3,
+                      "height": 12,
+                      "width": 30,
+                      "length": 80,
+                      "slot_width": 11,
+                      "slot_depth_from_shoulder": 8
+                    }
+                  },
+                  {
+                    "operation_id": "op_web",
+                    "feature_id": "central_web",
+                    "intent": "Create 10 mm thick vertical web from lower to upper flange",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "x0": 30,
+                      "x1": 80,
+                      "width": 10,
+                      "z0": 15,
+                      "height": 38
+                    }
+                  },
+                  {
+                    "operation_id": "op_top_flange",
+                    "feature_id": "upper_flange",
+                    "intent": "Create 50 by 30 by 12 upper flange with four C3 corners",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "length": 50,
+                      "width": 30,
+                      "height": 12,
+                      "chamfer": 3
+                    }
+                  },
+                  {
+                    "operation_id": "op_union",
+                    "feature_id": "main_body",
+                    "intent": "Union all touching positive solids into one body",
+                    "operation_type": "union",
+                    "parent_operation_ids": [
+                      "op_lower_land",
+                      "op_lower_flange",
+                      "op_web",
+                      "op_top_flange"
+                    ]
+                  },
+                  {
+                    "operation_id": "op_lower_holes",
+                    "feature_id": "four_mounting_holes",
+                    "intent": "Subtract four diameter 3.4 through holes in lower flange",
+                    "operation_type": "subtract",
+                    "parameters": {
+                      "diameter": 3.4,
+                      "centers": [
+                        [
+                          30,
+                          -10
+                        ],
+                        [
+                          30,
+                          10
+                        ],
+                        [
+                          45,
+                          -10
+                        ],
+                        [
+                          45,
+                          10
+                        ]
+                      ]
+                    },
+                    "parent_operation_ids": [
+                      "op_union"
+                    ]
+                  },
+                  {
+                    "operation_id": "op_m5_hole",
+                    "feature_id": "m5_blind_hole",
+                    "intent": "Subtract nominal diameter 5 blind hole to depth 16",
+                    "operation_type": "subtract",
+                    "parameters": {
+                      "diameter": 5,
+                      "depth": 16,
+                      "center": [
+                        50,
+                        0
+                      ]
+                    },
+                    "parent_operation_ids": [
+                      "op_lower_holes"
+                    ]
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "3c236e1d8a2348e8ab1882a5fc70fa0f"
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "9fa0bfd9e4dc4e3889fb9116fa20b042"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command 'Add-Type -AssemblyName System.Drawing; $img=[System.Drawing.Image]::FromFile((Resolve-Path '\"'.\\\\crop-upper.png')); \"'$bmp=New-Object System.Drawing.Bitmap(2080,1120); $g=[System.Drawing.Graphics]::FromImage($bmp); $g.InterpolationMode=[System.Drawing.Drawing2D.InterpolationMode]::NearestNeighbor; $g.PixelOffsetMode=[System.Drawing.Drawing2D.PixelOffsetMode]::Half; $g.DrawImage($img,0,0,2080,1120); $g.Dispose(); $bmp.Save((Join-Path (Get-Location) '\"'crop-upper-4x.png'),[System.Drawing.Imaging.ImageFormat]::Png); \"'$bmp.Dispose(); $img.Dispose()'",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The zoomed view resolved two important ambiguities. The lower feature is a stepped T-slot: an 11 mm entrance for 5 mm, followed by a 19 mm pocket for 8 mm. The 3 mm underside detail is a 27 mm wide recess that leaves two narrow longitudinal feet. I’m rebuilding the intermediate solid with those corrections."
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"FILEDIA\" 0)\n(setvar \"CMDDIA\" 0)\n(setvar \"INSUNITS\" 4)\n(setvar \"DELOBJ\" 1)\n(command \"_.UCS\" \"_World\")\n(setq old (ssget \"_X\" '((410 . \"Model\"))))\n(if old (command \"_.ERASE\" old \"\"))\n(defun mkprism (pts z h / data pl reg sol)\n  (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(410 . \"Model\") '(100 . \"AcDbPolyline\") (cons 90 (length pts)) '(70 . 1) (cons 38 z)))\n  (foreach p pts (setq data (append data (list (cons 10 p)))))\n  (setq pl (entmakex data))\n  (if (null pl) (progn (princ \"\\nERROR: polyline creation failed\") (quit)))\n  (command \"_.REGION\" pl \"\")\n  (setq reg (entlast))\n  (command \"_.EXTRUDE\" reg \"\" h)\n  (entlast)\n)\n(setq basePts '((3.0 -15.0) (77.0 -15.0) (80.0 -12.0) (80.0 12.0) (77.0 15.0) (3.0 15.0) (0.0 12.0) (0.0 -12.0)))\n(setq topPts '((33.0 -15.0) (77.0 -15.0) (80.0 -12.0) (80.0 12.0) (77.0 15.0) (33.0 15.0) (30.0 12.0) (30.0 -12.0)))\n(mkprism basePts 0.0 15.0)\n(mkprism '((30.0 -5.0) (80.0 -5.0) (80.0 5.0) (30.0 5.0)) 15.0 38.0)\n(mkprism topPts 53.0 12.0)\n(setq pos (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(command \"_.UNION\" pos \"\")\n(setq body (entlast))\n(setq cutters (ssadd))\n(command \"_.BOX\" \"_non\" '(-1.0 -13.5 0.0) \"_non\" '(81.0 13.5 0.0) 3.0)\n(ssadd (entlast) cutters)\n(command \"_.BOX\" \"_non\" '(-1.0 -5.5 -1.0) \"_non\" '(5.0 5.5 -1.0) 17.0)\n(ssadd (entlast) cutters)\n(command \"_.BOX\" \"_non\" '(5.0 -9.5 -1.0) \"_non\" '(13.0 9.5 -1.0) 17.0)\n(ssadd (entlast) cutters)\n(foreach c '((30.0 -10.0 -1.0) (30.0 10.0 -1.0) (45.0 -10.0 -1.0) (45.0 10.0 -1.0))\n  (command \"_.CYLINDER\" \"_non\" c 1.7 17.0)\n  (ssadd (entlast) cutters)\n)\n(command \"_.CYLINDER\" \"_non\" '(50.0 0.0 49.0) 2.5 17.0)\n(ssadd (entlast) cutters)\n(setq target (ssadd body))\n(command \"_.SUBTRACT\" target \"\" cutters \"\")\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(if (or (null solids) (/= (sslength solids) 1)) (progn (princ \"\\nERROR: expected exactly one model-space 3DSOLID\") (quit)))\n(command \"_.AUDIT\" \"_Yes\")\n(princ (strcat \"\\nFINAL_3DSOLID_COUNT=\" (itoa (sslength solids))))\n(princ \"\\nEXPECTED_EXTENTS=0,-15,0 to 80,15,65\")\n(princ \"\\nEXPECTED_VOLUME_NOMINAL=62813.58\")\n(princ)\n)",
+                "timeout": 120,
+                "capture_boolean_lineage": true,
+                "operation_manifest": [
+                  {
+                    "operation_id": "rev2_base",
+                    "feature_id": "lower_flange",
+                    "intent": "Create 80 by 30 by 15 lower plate with four C3 plan corners",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "length": 80,
+                      "width": 30,
+                      "height": 15,
+                      "chamfer": 3
+                    }
+                  },
+                  {
+                    "operation_id": "rev2_web",
+                    "feature_id": "web",
+                    "intent": "Create centered 10 mm web from x30 to80 and z15 to53",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "length": 50,
+                      "width": 10,
+                      "height": 38
+                    }
+                  },
+                  {
+                    "operation_id": "rev2_top",
+                    "feature_id": "upper_flange",
+                    "intent": "Create 50 by30 by12 top flange with four C3 corners",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "length": 50,
+                      "width": 30,
+                      "height": 12,
+                      "chamfer": 3
+                    }
+                  },
+                  {
+                    "operation_id": "rev2_union",
+                    "feature_id": "body",
+                    "intent": "Union flange and web volumes",
+                    "operation_type": "union",
+                    "parent_operation_ids": [
+                      "rev2_base",
+                      "rev2_web",
+                      "rev2_top"
+                    ]
+                  },
+                  {
+                    "operation_id": "rev2_recess",
+                    "feature_id": "underside_recess",
+                    "intent": "Subtract x-through central underside recess, 27 mm wide and 3 mm deep, leaving longitudinal side feet",
+                    "operation_type": "subtract",
+                    "parameters": {
+                      "width": 27,
+                      "depth": 3
+                    },
+                    "parent_operation_ids": [
+                      "rev2_union"
+                    ]
+                  },
+                  {
+                    "operation_id": "rev2_tslot",
+                    "feature_id": "stepped_t_slot",
+                    "intent": "Subtract 11 mm wide entrance for 5 mm then 19 mm wide pocket for 8 mm",
+                    "operation_type": "subtract",
+                    "parameters": {
+                      "entrance_width": 11,
+                      "entrance_depth": 5,
+                      "pocket_width": 19,
+                      "pocket_depth": 8,
+                      "total_depth": 13
+                    },
+                    "parent_operation_ids": [
+                      "rev2_recess"
+                    ]
+                  },
+                  {
+                    "operation_id": "rev2_mount_holes",
+                    "feature_id": "four_mounting_holes",
+                    "intent": "Subtract four diameter3.4 lower flange holes",
+                    "operation_type": "subtract",
+                    "parameters": {
+                      "diameter": 3.4,
+                      "centers": [
+                        [
+                          30,
+                          -10
+                        ],
+                        [
+                          30,
+                          10
+                        ],
+                        [
+                          45,
+                          -10
+                        ],
+                        [
+                          45,
+                          10
+                        ]
+                      ]
+                    },
+                    "parent_operation_ids": [
+                      "rev2_tslot"
+                    ]
+                  },
+                  {
+                    "operation_id": "rev2_m5",
+                    "feature_id": "m5_blind_hole",
+                    "intent": "Subtract nominal diameter5 blind hole 16 deep from top",
+                    "operation_type": "subtract",
+                    "parameters": {
+                      "diameter": 5,
+                      "depth": 16,
+                      "center": [
+                        50,
+                        0
+                      ]
+                    },
+                    "parent_operation_ids": [
+                      "rev2_mount_holes"
+                    ]
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "df63e1c3ea8e4b5a893c6775c6025caf"
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "27ec4c05eee34335b5e42c15951a2fa9"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -Raw '.\\\\stage2.topology.json'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command '$j=Get-Content -Raw '\"'.\\\\stage2.topology.json' | ConvertFrom-Json; \"'$e=$j.entities[0]; [pscustomobject]@{EntityCount=$j.entities.Count; Type=$e.type; Min=($e.bounds.min -join '\"','); Max=(\"'$e.bounds.max -join '\"','); Volume=\"'$e.mass_properties.volume; SurfaceArea=$e.mass_properties.surface_area; FaceCount=$e.faces.Count; EdgeCount=$e.edges.Count; VertexCount=$e.vertices.Count; CylFaces=($e.faces|Where-Object{$_.surface.type -eq '\"'cylinder'}).Count} | Format-List\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"import trimesh, matplotlib; print('trimesh',trimesh.__version__)\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(progn\n(setvar \"CMDECHO\" 1)\n(setvar \"FILEDIA\" 0)\n(setvar \"FACETRES\" 10.0)\n(setq ss (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(command \"_.STLOUT\" ss \"\" \"_No\" \"[private value removed]\")\n(princ \"\\nSTL_EXPORT_ATTEMPTED\")\n(princ)\n)",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "ee2214f507194965bcd8c160c8ea384c"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Item '.\\\\stage2-inspect.stl' | Select-Object FullName,Length | Format-List\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The revised native topology is healthy: one `3DSOLID`, exact 80 × 30 × 65 mm bounds, five cylindrical cut faces, and a computed volume of 62,813.54 mm³, matching the dimension-based calculation. I’m exporting a tessellated inspection copy to review the fork, rails, and blind hole visually before the final DWG save."
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"import trimesh, matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt; from mpl_toolkits.mplot3d.art3d import Poly3DCollection; m=trimesh.load_mesh(r'.\\\\stage2-inspect.stl',process=False); tri=m.vertices[m.faces]; fig=plt.figure(figsize=(14,5),dpi=170); views=[(24,-132,'Isometric'),(90,-90,'Top'),(-24,-132,'Underside')]; c=m.bounds.mean(axis=0); span=90; \nfor i,(e,a,t) in enumerate(views,1):\n ax=fig.add_subplot(1,3,i,projection='3d'); pc=Poly3DCollection(tri,facecolor='#bfc6d4',edgecolor='#252525',linewidth=0.08); ax.add_collection3d(pc); ax.set_xlim(c[0]-span/2,c[0]+span/2); ax.set_ylim(c[1]-span/2,c[1]+span/2); ax.set_zlim(c[2]-span/2,c[2]+span/2); ax.set_box_aspect((1,1,1)); ax.view_init(elev=e,azim=a); ax.set_axis_off(); ax.set_title(t)\nfig.tight_layout(); fig.savefig(r'.\\\\stage2-review.png',bbox_inches='tight',pad_inches=0.05)\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The visual review matches the drawing’s isometric: the centered web joins both flanges, the left opening has the stepped T profile, the lower plate has the two 3 mm feet, and all five holes appear in the intended faces. I’m now saving the checked native solid to the required submission path and running a final independent topology export on that DWG."
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"INSUNITS\" 4)\n(command \"_.UCS\" \"_World\")\n(setq allmodel (ssget \"_X\" '((410 . \"Model\"))))\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(if (or (null allmodel) (/= (sslength allmodel) 1)) (progn (princ \"\\nERROR: model space must contain exactly one entity\") (quit)))\n(if (or (null solids) (/= (sslength solids) 1)) (progn (princ \"\\nERROR: model space entity must be exactly one 3DSOLID\") (quit)))\n(setq e (ssname solids 0))\n(setq d (entget e))\n(if (/= (cdr (assoc 0 d)) \"3DSOLID\") (progn (princ \"\\nERROR: final entity is not 3DSOLID\") (quit)))\n(if (/= (cdr (assoc 410 d)) \"Model\") (progn (princ \"\\nERROR: solid is not in model space\") (quit)))\n(command \"_.AUDIT\" \"_Yes\")\n(princ \"\\nFINAL_VALIDATION=ONE_NATIVE_3DSOLID_IN_MODELSPACE\")\n(princ \"\\nFINAL_FEATURES=STEPPED_T_SLOT,UNDERSIDE_RECESS,4X_D3.4,M5X16,8X_C3\")\n(princ)\n)",
+                "timeout": 120,
+                "capture_boolean_lineage": true,
+                "operation_manifest": [
+                  {
+                    "operation_id": "final_validation",
+                    "feature_ids": [
+                      "lower_flange",
+                      "underside_recess",
+                      "stepped_t_slot",
+                      "four_mounting_holes",
+                      "web",
+                      "upper_flange",
+                      "m5_blind_hole"
+                    ],
+                    "intent": "Validate one native editable model-space 3DSOLID and audit before final save",
+                    "operation_type": "validate"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "42818748e4f44aeb89ab3c9573ea327f"
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "331be4f4831a4ed8b401782c237047df"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command '$f=Get-Item '\"'.\\\\candidate.a001.dwg'; \"'$j=Get-Content -Raw '\"'.\\\\candidate.a001.topology.json' | ConvertFrom-Json; \"'$s=Get-Content -Raw '\"'.\\\\stage2.topology.json' | ConvertFrom-Json; \"'$e=$j.entities[0]; $cyl=$e.faces | Where-Object {$_.surface.type -eq '\"'cylinder'} | ForEach-Object {[pscustomobject]@{Radius=\"'$_.surface.radius; Min=($_.bounds.min -join '\"','); Max=(\"'$_.bounds.max -join '\"',')}}; [pscustomobject]@{File=\"'$f.FullName; Bytes=$f.Length; SHA256=(Get-FileHash $f.FullName -Algorithm SHA256).Hash; Entities=$j.entities.Count; Type=$e.type; BoundsMin=($e.bounds.min -join '\"','); BoundsMax=(\"'$e.bounds.max -join '\"','); Volume=[math]::Round(\"'$e.mass_properties.volume,6); Faces=$e.faces.Count; Cylinders=$cyl.Count; FingerprintMatchesStage2=($e.fingerprint -eq $s.entities[0].fingerprint); Errors=$j.errors.Count} | Format-List; $cyl | Sort-Object Radius,Min | Format-Table -AutoSize'",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "Created [candidate.a001.dwg]([private value removed]\n\nChecks performed:\n\n- Final Core Console job `42818748e4f44aeb89ab3c9573ea327f` succeeded.\n- Exactly one editable model-space `3DSOLID`; no drawing annotations.\n- Bounds: `80 × 30 × 65 mm`.\n- Verified four Ø3.4 through-holes and one Ø5 blind hole, 16 mm deep.\n- Topology export succeeded with zero errors; volume `62,813.539 mm³`.\n- Visually checked the stepped T-slot, underside recess/feet, web, and eight C3 corners.\n\nRemaining uncertainty: the M5 feature is represented by its nominal Ø5 diameter; a manufacturing model could instead use the tap-drill diameter."
+            }
+          ],
+          "mcp_events": [
+            {
+              "event_id": "0d06165be64541348db01fb80f76dbfd",
+              "timestamp": "2026-09-14T14:16:09Z",
+              "tool": "autocad_set_run_context",
+              "status": "pass",
+              "duration_ms": 0.045,
+              "arguments": {
+                "sample_id": "omnimech:10",
+                "run_id": "direct-codex-sol-ultra-omnimech10-https-20260914-gpt-5-6-sol-ultra",
+                "attempt_id": "a001"
+              },
+              "error": null
+            },
+            {
+              "event_id": "a6d9d6c243af48b39d49d160a3064aac",
+              "timestamp": "2026-09-14T14:21:46Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 3.931,
+              "arguments": {
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"FILEDIA\" 0)\n(setvar \"CMDDIA\" 0)\n(setvar \"INSUNITS\" 4)\n(setvar \"DELOBJ\" 1)\n(command \"_.UCS\" \"_World\")\n(defun mkprism (pts z h / data pl reg sol)\n  (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(410 . \"Model\") '(100 . \"AcDbPolyline\") (cons 90 (length pts)) '(70 . 1) (cons 38 z)))\n  (foreach p pts (setq data (append data (list (cons 10 p)))))\n  (setq pl (entmakex data))\n  (if (null pl) (progn (princ \"\\nERROR: polyline creation failed\") (quit)))\n  (command \"_.REGION\" pl \"\")\n  (setq reg (entlast))\n  (command \"_.EXTRUDE\" reg \"\" h)\n  (setq sol (entlast))\n  sol\n)\n(setq lowerPts '((8.0 -15.0) (77.0 -15.0) (80.0 -12.0) (80.0 12.0) (77.0 15.0) (8.0 15.0) (5.0 12.0) (5.0 9.5) (0.0 9.5) (0.0 5.5) (13.0 5.5) (13.0 -5.5) (0.0 -5.5) (0.0 -9.5) (5.0 -9.5) (5.0 -12.0)))\n(setq landPts '((8.6213 -13.5) (76.3787 -13.5) (78.5 -11.3787) (78.5 11.3787) (76.3787 13.5) (8.6213 13.5) (6.5 11.3787) (6.5 8.0) (1.5 8.0) (1.5 7.0) (14.5 7.0) (14.5 -7.0) (1.5 -7.0) (1.5 -8.0) (6.5 -8.0) (6.5 -11.3787)))\n(setq topPts '((33.0 -15.0) (77.0 -15.0) (80.0 -12.0) (80.0 12.0) (77.0 15.0) (33.0 15.0) (30.0 12.0) (30.0 -12.0)))\n(mkprism landPts 0.0 3.0)\n(mkprism lowerPts 3.0 12.0)\n(mkprism '((30.0 -5.0) (80.0 -5.0) (80.0 5.0) (30.0 5.0)) 15.0 38.0)\n(mkprism topPts 53.0 12.0)\n(setq pos (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(command \"_.UNION\" pos \"\")\n(setq body (entlast))\n(setq cutters (ssadd))\n(foreach c '((30.0 -10.0 -1.0) (30.0 10.0 -1.0) (45.0 -10.0 -1.0) (45.0 10.0 -1.0))\n  (command \"_.CYLINDER\" \"_non\" c 1.7 17.0)\n  (ssadd (entlast) cutters)\n)\n(command \"_.CYLINDER\" \"_non\" '(50.0 0.0 49.0) 2.5 17.0)\n(ssadd (entlast) cutters)\n(setq target (ssadd body))\n(command \"_.SUBTRACT\" target \"\" cutters \"\")\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(if (/= (sslength solids) 1) (progn (princ (strcat \"\\nERROR: expected one solid, got \" (itoa (sslength solids)))) (quit)))\n(command \"_.AUDIT\" \"_Yes\")\n(princ (strcat \"\\nFINAL_3DSOLID_COUNT=\" (itoa (sslength solids))))\n(princ \"\\nMODEL_BOUNDS_EXPECTED=0,-15,0 to 80,15,65\")\n(princ)\n)",
+                "output_path": "[private value removed]",
+                "timeout": 120,
+                "capture_boolean_lineage": true,
+                "operation_manifest": [
+                  {
+                    "operation_id": "op_lower_land",
+                    "feature_id": "lower_underside_land",
+                    "intent": "Create 3 mm underside land, 27 mm wide at the main body",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "height": 3,
+                      "width": 27
+                    }
+                  },
+                  {
+                    "operation_id": "op_lower_flange",
+                    "feature_id": "lower_flange",
+                    "intent": "Create lower forked flange with dimensioned slot and plan chamfers",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "z0": 3,
+                      "height": 12,
+                      "width": 30,
+                      "length": 80,
+                      "slot_width": 11,
+                      "slot_depth_from_shoulder": 8
+                    }
+                  },
+                  {
+                    "operation_id": "op_web",
+                    "feature_id": "central_web",
+                    "intent": "Create 10 mm thick vertical web from lower to upper flange",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "x0": 30,
+                      "x1": 80,
+                      "width": 10,
+                      "z0": 15,
+                      "height": 38
+                    }
+                  },
+                  {
+                    "operation_id": "op_top_flange",
+                    "feature_id": "upper_flange",
+                    "intent": "Create 50 by 30 by 12 upper flange with four C3 corners",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "length": 50,
+                      "width": 30,
+                      "height": 12,
+                      "chamfer": 3
+                    }
+                  },
+                  {
+                    "operation_id": "op_union",
+                    "feature_id": "main_body",
+                    "intent": "Union all touching positive solids into one body",
+                    "operation_type": "union",
+                    "parent_operation_ids": [
+                      "op_lower_land",
+                      "op_lower_flange",
+                      "op_web",
+                      "op_top_flange"
+                    ]
+                  },
+                  {
+                    "operation_id": "op_lower_holes",
+                    "feature_id": "four_mounting_holes",
+                    "intent": "Subtract four diameter 3.4 through holes in lower flange",
+                    "operation_type": "subtract",
+                    "parameters": {
+                      "diameter": 3.4,
+                      "centers": [
+                        [
+                          30,
+                          -10
+                        ],
+                        [
+                          30,
+                          10
+                        ],
+                        [
+                          45,
+                          -10
+                        ],
+                        [
+                          45,
+                          10
+                        ]
+                      ]
+                    },
+                    "parent_operation_ids": [
+                      "op_union"
+                    ]
+                  },
+                  {
+                    "operation_id": "op_m5_hole",
+                    "feature_id": "m5_blind_hole",
+                    "intent": "Subtract nominal diameter 5 blind hole to depth 16",
+                    "operation_type": "subtract",
+                    "parameters": {
+                      "diameter": 5,
+                      "depth": 16,
+                      "center": [
+                        50,
+                        0
+                      ]
+                    },
+                    "parent_operation_ids": [
+                      "op_lower_holes"
+                    ]
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "7d67197e77c842f1869a86ee314043fe",
+              "timestamp": "2026-09-14T14:22:02Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.097,
+              "arguments": {
+                "job_id": "3c236e1d8a2348e8ab1882a5fc70fa0f"
+              },
+              "error": null
+            },
+            {
+              "event_id": "bb551dcf480c495395f3454af2630bf2",
+              "timestamp": "2026-09-14T14:22:24Z",
+              "tool": "autocad_topology_start",
+              "status": "pass",
+              "duration_ms": 2.225,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "event_id": "053e145bafc345c0ac347d2a4b825bdb",
+              "timestamp": "2026-09-14T14:22:43Z",
+              "tool": "autocad_topology_status",
+              "status": "pass",
+              "duration_ms": 0.049,
+              "arguments": {
+                "job_id": "9fa0bfd9e4dc4e3889fb9116fa20b042"
+              },
+              "error": null
+            },
+            {
+              "event_id": "a889676eba7041abb48665e7091db460",
+              "timestamp": "2026-09-14T14:25:34Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 3.176,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"FILEDIA\" 0)\n(setvar \"CMDDIA\" 0)\n(setvar \"INSUNITS\" 4)\n(setvar \"DELOBJ\" 1)\n(command \"_.UCS\" \"_World\")\n(setq old (ssget \"_X\" '((410 . \"Model\"))))\n(if old (command \"_.ERASE\" old \"\"))\n(defun mkprism (pts z h / data pl reg sol)\n  (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(410 . \"Model\") '(100 . \"AcDbPolyline\") (cons 90 (length pts)) '(70 . 1) (cons 38 z)))\n  (foreach p pts (setq data (append data (list (cons 10 p)))))\n  (setq pl (entmakex data))\n  (if (null pl) (progn (princ \"\\nERROR: polyline creation failed\") (quit)))\n  (command \"_.REGION\" pl \"\")\n  (setq reg (entlast))\n  (command \"_.EXTRUDE\" reg \"\" h)\n  (entlast)\n)\n(setq basePts '((3.0 -15.0) (77.0 -15.0) (80.0 -12.0) (80.0 12.0) (77.0 15.0) (3.0 15.0) (0.0 12.0) (0.0 -12.0)))\n(setq topPts '((33.0 -15.0) (77.0 -15.0) (80.0 -12.0) (80.0 12.0) (77.0 15.0) (33.0 15.0) (30.0 12.0) (30.0 -12.0)))\n(mkprism basePts 0.0 15.0)\n(mkprism '((30.0 -5.0) (80.0 -5.0) (80.0 5.0) (30.0 5.0)) 15.0 38.0)\n(mkprism topPts 53.0 12.0)\n(setq pos (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(command \"_.UNION\" pos \"\")\n(setq body (entlast))\n(setq cutters (ssadd))\n(command \"_.BOX\" \"_non\" '(-1.0 -13.5 0.0) \"_non\" '(81.0 13.5 0.0) 3.0)\n(ssadd (entlast) cutters)\n(command \"_.BOX\" \"_non\" '(-1.0 -5.5 -1.0) \"_non\" '(5.0 5.5 -1.0) 17.0)\n(ssadd (entlast) cutters)\n(command \"_.BOX\" \"_non\" '(5.0 -9.5 -1.0) \"_non\" '(13.0 9.5 -1.0) 17.0)\n(ssadd (entlast) cutters)\n(foreach c '((30.0 -10.0 -1.0) (30.0 10.0 -1.0) (45.0 -10.0 -1.0) (45.0 10.0 -1.0))\n  (command \"_.CYLINDER\" \"_non\" c 1.7 17.0)\n  (ssadd (entlast) cutters)\n)\n(command \"_.CYLINDER\" \"_non\" '(50.0 0.0 49.0) 2.5 17.0)\n(ssadd (entlast) cutters)\n(setq target (ssadd body))\n(command \"_.SUBTRACT\" target \"\" cutters \"\")\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(if (or (null solids) (/= (sslength solids) 1)) (progn (princ \"\\nERROR: expected exactly one model-space 3DSOLID\") (quit)))\n(command \"_.AUDIT\" \"_Yes\")\n(princ (strcat \"\\nFINAL_3DSOLID_COUNT=\" (itoa (sslength solids))))\n(princ \"\\nEXPECTED_EXTENTS=0,-15,0 to 80,15,65\")\n(princ \"\\nEXPECTED_VOLUME_NOMINAL=62813.58\")\n(princ)\n)",
+                "timeout": 120,
+                "capture_boolean_lineage": true,
+                "operation_manifest": [
+                  {
+                    "operation_id": "rev2_base",
+                    "feature_id": "lower_flange",
+                    "intent": "Create 80 by 30 by 15 lower plate with four C3 plan corners",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "length": 80,
+                      "width": 30,
+                      "height": 15,
+                      "chamfer": 3
+                    }
+                  },
+                  {
+                    "operation_id": "rev2_web",
+                    "feature_id": "web",
+                    "intent": "Create centered 10 mm web from x30 to80 and z15 to53",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "length": 50,
+                      "width": 10,
+                      "height": 38
+                    }
+                  },
+                  {
+                    "operation_id": "rev2_top",
+                    "feature_id": "upper_flange",
+                    "intent": "Create 50 by30 by12 top flange with four C3 corners",
+                    "operation_type": "extrude",
+                    "parameters": {
+                      "length": 50,
+                      "width": 30,
+                      "height": 12,
+                      "chamfer": 3
+                    }
+                  },
+                  {
+                    "operation_id": "rev2_union",
+                    "feature_id": "body",
+                    "intent": "Union flange and web volumes",
+                    "operation_type": "union",
+                    "parent_operation_ids": [
+                      "rev2_base",
+                      "rev2_web",
+                      "rev2_top"
+                    ]
+                  },
+                  {
+                    "operation_id": "rev2_recess",
+                    "feature_id": "underside_recess",
+                    "intent": "Subtract x-through central underside recess, 27 mm wide and 3 mm deep, leaving longitudinal side feet",
+                    "operation_type": "subtract",
+                    "parameters": {
+                      "width": 27,
+                      "depth": 3
+                    },
+                    "parent_operation_ids": [
+                      "rev2_union"
+                    ]
+                  },
+                  {
+                    "operation_id": "rev2_tslot",
+                    "feature_id": "stepped_t_slot",
+                    "intent": "Subtract 11 mm wide entrance for 5 mm then 19 mm wide pocket for 8 mm",
+                    "operation_type": "subtract",
+                    "parameters": {
+                      "entrance_width": 11,
+                      "entrance_depth": 5,
+                      "pocket_width": 19,
+                      "pocket_depth": 8,
+                      "total_depth": 13
+                    },
+                    "parent_operation_ids": [
+                      "rev2_recess"
+                    ]
+                  },
+                  {
+                    "operation_id": "rev2_mount_holes",
+                    "feature_id": "four_mounting_holes",
+                    "intent": "Subtract four diameter3.4 lower flange holes",
+                    "operation_type": "subtract",
+                    "parameters": {
+                      "diameter": 3.4,
+                      "centers": [
+                        [
+                          30,
+                          -10
+                        ],
+                        [
+                          30,
+                          10
+                        ],
+                        [
+                          45,
+                          -10
+                        ],
+                        [
+                          45,
+                          10
+                        ]
+                      ]
+                    },
+                    "parent_operation_ids": [
+                      "rev2_tslot"
+                    ]
+                  },
+                  {
+                    "operation_id": "rev2_m5",
+                    "feature_id": "m5_blind_hole",
+                    "intent": "Subtract nominal diameter5 blind hole 16 deep from top",
+                    "operation_type": "subtract",
+                    "parameters": {
+                      "diameter": 5,
+                      "depth": 16,
+                      "center": [
+                        50,
+                        0
+                      ]
+                    },
+                    "parent_operation_ids": [
+                      "rev2_mount_holes"
+                    ]
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "1eeddb180c594ceda1536de44733adf2",
+              "timestamp": "2026-09-14T14:25:48Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.106,
+              "arguments": {
+                "job_id": "df63e1c3ea8e4b5a893c6775c6025caf"
+              },
+              "error": null
+            },
+            {
+              "event_id": "13fab7f73db6477892d40748c616f280",
+              "timestamp": "2026-09-14T14:26:03Z",
+              "tool": "autocad_topology_start",
+              "status": "pass",
+              "duration_ms": 2.092,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "event_id": "97e7612fc21c4eecb65e61631f61ccd2",
+              "timestamp": "2026-09-14T14:26:15Z",
+              "tool": "autocad_topology_status",
+              "status": "pass",
+              "duration_ms": 0.052,
+              "arguments": {
+                "job_id": "27ec4c05eee34335b5e42c15951a2fa9"
+              },
+              "error": null
+            },
+            {
+              "event_id": "524ca4ce18174cc782449840070b5a78",
+              "timestamp": "2026-09-14T14:27:32Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.792,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(progn\n(setvar \"CMDECHO\" 1)\n(setvar \"FILEDIA\" 0)\n(setvar \"FACETRES\" 10.0)\n(setq ss (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(command \"_.STLOUT\" ss \"\" \"_No\" \"[private value removed]\")\n(princ \"\\nSTL_EXPORT_ATTEMPTED\")\n(princ)\n)",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "event_id": "b302bba191004ce198e6d51040dd0ab4",
+              "timestamp": "2026-09-14T14:27:50Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.059,
+              "arguments": {
+                "job_id": "ee2214f507194965bcd8c160c8ea384c"
+              },
+              "error": null
+            },
+            {
+              "event_id": "a41caa1a6da344eab3e4203984659016",
+              "timestamp": "2026-09-14T14:29:31Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.999,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"INSUNITS\" 4)\n(command \"_.UCS\" \"_World\")\n(setq allmodel (ssget \"_X\" '((410 . \"Model\"))))\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(if (or (null allmodel) (/= (sslength allmodel) 1)) (progn (princ \"\\nERROR: model space must contain exactly one entity\") (quit)))\n(if (or (null solids) (/= (sslength solids) 1)) (progn (princ \"\\nERROR: model space entity must be exactly one 3DSOLID\") (quit)))\n(setq e (ssname solids 0))\n(setq d (entget e))\n(if (/= (cdr (assoc 0 d)) \"3DSOLID\") (progn (princ \"\\nERROR: final entity is not 3DSOLID\") (quit)))\n(if (/= (cdr (assoc 410 d)) \"Model\") (progn (princ \"\\nERROR: solid is not in model space\") (quit)))\n(command \"_.AUDIT\" \"_Yes\")\n(princ \"\\nFINAL_VALIDATION=ONE_NATIVE_3DSOLID_IN_MODELSPACE\")\n(princ \"\\nFINAL_FEATURES=STEPPED_T_SLOT,UNDERSIDE_RECESS,4X_D3.4,M5X16,8X_C3\")\n(princ)\n)",
+                "timeout": 120,
+                "capture_boolean_lineage": true,
+                "operation_manifest": [
+                  {
+                    "operation_id": "final_validation",
+                    "feature_ids": [
+                      "lower_flange",
+                      "underside_recess",
+                      "stepped_t_slot",
+                      "four_mounting_holes",
+                      "web",
+                      "upper_flange",
+                      "m5_blind_hole"
+                    ],
+                    "intent": "Validate one native editable model-space 3DSOLID and audit before final save",
+                    "operation_type": "validate"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "a78c6c448a704697aad1cccbc7a49865",
+              "timestamp": "2026-09-14T14:29:51Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.065,
+              "arguments": {
+                "job_id": "42818748e4f44aeb89ab3c9573ea327f"
+              },
+              "error": null
+            },
+            {
+              "event_id": "00d05f16af574ce58ef9b066203f9d32",
+              "timestamp": "2026-09-14T14:30:06Z",
+              "tool": "autocad_topology_start",
+              "status": "pass",
+              "duration_ms": 1.975,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "event_id": "0eb7a46ac3bb453baca496a9f51a203c",
+              "timestamp": "2026-09-14T14:30:23Z",
+              "tool": "autocad_topology_status",
+              "status": "pass",
+              "duration_ms": 0.052,
+              "arguments": {
+                "job_id": "331be4f4831a4ed8b401782c237047df"
+              },
+              "error": null
+            }
+          ],
+          "derived_feature_backfill": {
+            "applied": false,
+            "record_sha256": null
+          }
+        }
+      ]
+    }
+  ],
+  "public_export_notice": "Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded.",
+  "source_bundle_sha256": "9cd0fd2a67068151a974c6b27e390d83d389450d808ef2dcfa06fd83bd628247",
+  "bundle_sha256": "1f2036958000aa26c2dceb9f77ebee727c77bb045702a2afc32f4e88a9be4265"
+}

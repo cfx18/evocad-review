@@ -1,0 +1,1174 @@
+{
+  "schema_version": "1.0",
+  "review_ui_version": "1.0",
+  "campaign": {
+    "campaign_id": "direct-codex-astra-ultra-omnimech10-https-20260914",
+    "campaign_manifest_sha256": "c41a2eeaa8eeed8129f849938df271502d1533619bda76f781e23b5aab991268",
+    "declared_manifest_sha256": null,
+    "source_manifest_sha256": "01672e0fc8abbfebecfe352a4e4a88ee93a383b849d5b8213a6b08acc6c8c280",
+    "protocol": "evocad-geometry-v2",
+    "agent_loop_protocol": "native-codex-single-conversation-v1",
+    "benchmark_split": null,
+    "execution": null
+  },
+  "models": [
+    "gpt-6-astra"
+  ],
+  "render_geometry": true,
+  "feature_backfill": null,
+  "runs": [
+    {
+      "target_id": "c37d4f291e5fe25b840b",
+      "run_id": "direct-codex-astra-ultra-omnimech10-https-20260914-gpt-6-astra-ultra",
+      "sample_id": "omnimech:10",
+      "sample_key": "omnimech / 10",
+      "dataset": "omnimech",
+      "category": "automation_equipment",
+      "task": "Reconstruct the dimensioned mechanical part as one editable 3D CAD solid.",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "status": "passed",
+      "score": 100.0,
+      "passed": true,
+      "selected_attempt_id": "a001",
+      "stop_reason": "agent_stop",
+      "agent_requested_continue": false,
+      "selected_evidence_sha256": "2532e17b1cbf2c80e89574242a4486b22fc5afd70e711c12eac62b225895152e",
+      "candidate_sha256": "7f5dcdf16257e2fd631b33486713024277fc5b9f389b98d1211bfcf32694d6fb",
+      "ground_truth_sha256": "68c1a9c0d2a214fe4bc3f244a0e19e614c2bb18ef8621ad77a809f2e70668ef6",
+      "integrity": {
+        "ok": true,
+        "checked_files": 41,
+        "events": 23,
+        "errors": []
+      },
+      "input_images": [
+        "assets/omnimech-10/gpt-6-astra/input-01.png"
+      ],
+      "input_evidence": [
+        {
+          "path": "assets/omnimech-10/gpt-6-astra/input-01.png",
+          "sha256": "65060dcbfb0960e50c984d9c9f5bd87f1d8dbecdc12bf0e7189546aab7565124",
+          "bytes": 225255
+        }
+      ],
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "a001",
+          "score": 100.0,
+          "passed": true,
+          "elapsed_seconds": 705.037,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": "stop",
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": null,
+          "decision_recovered": null,
+          "images": {
+            "candidate": "assets/omnimech-10/gpt-6-astra/a001-candidate.png",
+            "overlay": "assets/omnimech-10/gpt-6-astra/a001-overlay.png",
+            "ground_truth": "assets/omnimech-10/gpt-6-astra/ground-truth.png"
+          },
+          "geometry": {
+            "candidate": "assets/omnimech-10/gpt-6-astra/a001-candidate.stl",
+            "ground_truth": "assets/omnimech-10/gpt-6-astra/ground-truth.stl",
+            "localization": "assets/omnimech-10/gpt-6-astra/a001-localization.json",
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": {
+            "schema_version": "1.0",
+            "protocol": "evocad-surface-localization-v1",
+            "coordinate_frame": "aligned-ground-truth-world",
+            "uses_evaluator_ground_truth": true,
+            "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+            "distance_threshold_normalized": 0.006,
+            "cluster_radius_normalized": 0.025,
+            "surface_samples_per_direction": 20000,
+            "localized_sample_fraction": 0.0019,
+            "region_count": 1,
+            "regions": [
+              {
+                "direction": "ground_truth_to_candidate",
+                "error_type": "candidate_missing_or_displaced_surface",
+                "sample_count": 76,
+                "sample_fraction": 0.0038,
+                "estimated_area": 66.146505,
+                "estimated_area_fraction": 0.0038,
+                "centroid": [
+                  9.656633,
+                  0.060465,
+                  -13.498917
+                ],
+                "centroid_bbox_position": [
+                  0.6207,
+                  0.502,
+                  0.2923
+                ],
+                "bbox": {
+                  "min": [
+                    7.900231,
+                    -2.099347,
+                    -15.779342
+                  ],
+                  "max": [
+                    12.086368,
+                    2.071309,
+                    -11.484802
+                  ]
+                },
+                "mean_distance_normalized": 0.026179,
+                "p95_distance_normalized": 0.042144,
+                "max_distance_normalized": 0.045599,
+                "mean_normal_offset_normalized": -0.026179,
+                "mean_normal_disagreement": 0.773233,
+                "dominant_source_normal": [
+                  0.4589,
+                  -0.0073,
+                  -0.8884
+                ],
+                "confidence": "high",
+                "source_surface_query_points": [
+                  [
+                    7.949086,
+                    -0.44874,
+                    -14.627518
+                  ],
+                  [
+                    9.012918,
+                    1.363027,
+                    -12.250539
+                  ],
+                  [
+                    10.289371,
+                    1.702014,
+                    -12.27656
+                  ],
+                  [
+                    10.973812,
+                    1.860143,
+                    -14.448869
+                  ],
+                  [
+                    11.926721,
+                    -0.834284,
+                    -13.68176
+                  ],
+                  [
+                    9.393616,
+                    -0.601729,
+                    -11.751584
+                  ],
+                  [
+                    8.267537,
+                    -1.186642,
+                    -13.254323
+                  ],
+                  [
+                    8.103529,
+                    -0.901323,
+                    -14.750245
+                  ],
+                  [
+                    8.035426,
+                    -0.740615,
+                    -13.062833
+                  ]
+                ],
+                "source_brep_faces": [
+                  {
+                    "face_id": "face-23a8c2f3dc40",
+                    "sample_fraction": 0.342105,
+                    "surface_type": "cylinder",
+                    "radius": 2.1
+                  },
+                  {
+                    "face_id": "face-3f1022a28f16",
+                    "sample_fraction": 0.302632,
+                    "surface_type": "cylinder",
+                    "radius": 2.1
+                  },
+                  {
+                    "face_id": "face-4b132484ffc4",
+                    "sample_fraction": 0.236842,
+                    "surface_type": "cone",
+                    "reference_radius": 2.1,
+                    "semi_angle": 1.029744
+                  },
+                  {
+                    "face_id": "face-f155f4259313",
+                    "sample_fraction": 0.118421,
+                    "surface_type": "cone",
+                    "reference_radius": 2.1,
+                    "semi_angle": 1.029744
+                  }
+                ],
+                "region_id": "missing-01"
+              }
+            ],
+            "visualization_surface_samples_per_direction": 4000,
+            "region_summary_source": "geometry-verdict.json"
+          },
+          "localization_error": null,
+          "verdict": {
+            "schema_version": "1.0",
+            "protocol": "evocad-geometry-v2",
+            "sample_id": "omnimech:10",
+            "passed": true,
+            "quality_tier": "strict",
+            "score": 100.0,
+            "coverage": 100.0,
+            "checks": {
+              "candidate_watertight": true,
+              "voxel_iou": true,
+              "normalized_chamfer": true,
+              "bbox_relative_error": true,
+              "volume_relative_error": true
+            },
+            "acceptable_checks": {
+              "candidate_watertight": true,
+              "voxel_iou": true,
+              "normalized_chamfer": true,
+              "bbox_relative_error": true,
+              "volume_relative_error": true
+            },
+            "metrics": {
+              "voxel_iou": 0.999824,
+              "chamfer_distance": 0.472261,
+              "normalized_chamfer": 0.004399,
+              "bbox_relative_error": 0.0,
+              "volume_relative_error": 0.000459,
+              "surface_area_relative_error": 0.000875
+            },
+            "mismatch": {
+              "candidate_to_ground_truth": {
+                "p50_normalized": 0.0,
+                "p95_normalized": 0.0,
+                "max_normalized": 0.014378,
+                "worst_point_bbox_position": [
+                  0.6243,
+                  0.5184,
+                  0.2462
+                ]
+              },
+              "ground_truth_to_candidate": {
+                "p50_normalized": 0.0,
+                "p95_normalized": 0.0,
+                "max_normalized": 0.045599,
+                "worst_point_bbox_position": [
+                  0.6174,
+                  0.5001,
+                  0.3215
+                ]
+              },
+              "localization": {
+                "schema_version": "1.0",
+                "protocol": "evocad-surface-localization-v1",
+                "coordinate_frame": "aligned-ground-truth-world",
+                "uses_evaluator_ground_truth": true,
+                "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+                "distance_threshold_normalized": 0.006,
+                "cluster_radius_normalized": 0.025,
+                "surface_samples_per_direction": 20000,
+                "localized_sample_fraction": 0.0019,
+                "region_count": 1,
+                "regions": [
+                  {
+                    "direction": "ground_truth_to_candidate",
+                    "error_type": "candidate_missing_or_displaced_surface",
+                    "sample_count": 76,
+                    "sample_fraction": 0.0038,
+                    "estimated_area": 66.146505,
+                    "estimated_area_fraction": 0.0038,
+                    "centroid": [
+                      9.656633,
+                      0.060465,
+                      -13.498917
+                    ],
+                    "centroid_bbox_position": [
+                      0.6207,
+                      0.502,
+                      0.2923
+                    ],
+                    "bbox": {
+                      "min": [
+                        7.900231,
+                        -2.099347,
+                        -15.779342
+                      ],
+                      "max": [
+                        12.086368,
+                        2.071309,
+                        -11.484802
+                      ]
+                    },
+                    "mean_distance_normalized": 0.026179,
+                    "p95_distance_normalized": 0.042144,
+                    "max_distance_normalized": 0.045599,
+                    "mean_normal_offset_normalized": -0.026179,
+                    "mean_normal_disagreement": 0.773233,
+                    "dominant_source_normal": [
+                      0.4589,
+                      -0.0073,
+                      -0.8884
+                    ],
+                    "confidence": "high",
+                    "source_surface_query_points": [
+                      [
+                        7.949086,
+                        -0.44874,
+                        -14.627518
+                      ],
+                      [
+                        9.012918,
+                        1.363027,
+                        -12.250539
+                      ],
+                      [
+                        10.289371,
+                        1.702014,
+                        -12.27656
+                      ],
+                      [
+                        10.973812,
+                        1.860143,
+                        -14.448869
+                      ],
+                      [
+                        11.926721,
+                        -0.834284,
+                        -13.68176
+                      ],
+                      [
+                        9.393616,
+                        -0.601729,
+                        -11.751584
+                      ],
+                      [
+                        8.267537,
+                        -1.186642,
+                        -13.254323
+                      ],
+                      [
+                        8.103529,
+                        -0.901323,
+                        -14.750245
+                      ],
+                      [
+                        8.035426,
+                        -0.740615,
+                        -13.062833
+                      ]
+                    ],
+                    "source_brep_faces": [
+                      {
+                        "face_id": "face-23a8c2f3dc40",
+                        "sample_fraction": 0.342105,
+                        "surface_type": "cylinder",
+                        "radius": 2.1
+                      },
+                      {
+                        "face_id": "face-3f1022a28f16",
+                        "sample_fraction": 0.302632,
+                        "surface_type": "cylinder",
+                        "radius": 2.1
+                      },
+                      {
+                        "face_id": "face-4b132484ffc4",
+                        "sample_fraction": 0.236842,
+                        "surface_type": "cone",
+                        "reference_radius": 2.1,
+                        "semi_angle": 1.029744
+                      },
+                      {
+                        "face_id": "face-f155f4259313",
+                        "sample_fraction": 0.118421,
+                        "surface_type": "cone",
+                        "reference_radius": 2.1,
+                        "semi_angle": 1.029744
+                      }
+                    ],
+                    "region_id": "missing-01"
+                  }
+                ]
+              }
+            },
+            "candidate_geometry": {
+              "vertices": 480,
+              "triangles": 972,
+              "watertight": true,
+              "volume": 62816.22631,
+              "surface_area": 17391.742783,
+              "extents": [
+                79.999999,
+                30.000001,
+                64.999999
+              ]
+            },
+            "ground_truth_geometry": {
+              "vertices": 1635,
+              "triangles": 3284,
+              "watertight": false,
+              "volume": 62845.085378,
+              "surface_area": 17406.974999,
+              "extents": [
+                80.0,
+                30.0,
+                65.0
+              ]
+            },
+            "thresholds": {
+              "voxel_iou_min": 0.99,
+              "normalized_chamfer_max": 0.006,
+              "bbox_relative_error_max": 0.002,
+              "volume_relative_error_max": 0.005,
+              "candidate_watertight": true
+            },
+            "acceptable_thresholds": {
+              "voxel_iou_min": 0.95,
+              "normalized_chamfer_max": 0.01,
+              "bbox_relative_error_max": 0.01,
+              "volume_relative_error_max": 0.02,
+              "candidate_watertight": true
+            },
+            "alignment": {
+              "type": "right-handed-axis-permutation-plus-translation",
+              "rotation": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -1.0
+                ]
+              ],
+              "candidate_center": [
+                40.0,
+                15.000001,
+                32.5
+              ],
+              "ground_truth_center": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale_allowed": false
+            },
+            "rubrics": [
+              {
+                "id": "watertight",
+                "status": "passed",
+                "actual": true,
+                "expected": true
+              },
+              {
+                "id": "voxel_iou",
+                "status": "passed",
+                "actual": 0.999824,
+                "minimum": 0.99
+              },
+              {
+                "id": "normalized_chamfer",
+                "status": "passed",
+                "actual": 0.004399,
+                "maximum": 0.006
+              },
+              {
+                "id": "bbox_relative_error",
+                "status": "passed",
+                "actual": 0.0,
+                "maximum": 0.002
+              },
+              {
+                "id": "volume_relative_error",
+                "status": "passed",
+                "actual": 0.000459,
+                "maximum": 0.005
+              }
+            ],
+            "eqc": {
+              "eqc": 100.0,
+              "success": true,
+              "coverage": 100.0
+            }
+          },
+          "evidence": {
+            "candidate": {
+              "sha256": "84b2507c4cc0c12c0a54effca7f5f6bc8f51bf880774db32bedade7c821be22f",
+              "bytes": 48684
+            },
+            "verdict": {
+              "sha256": "8a28f1e1a06f9ab9d38969a34cd425b26e70156bbc587456259a70c3bd0852bd",
+              "bytes": 7195
+            },
+            "reflection": null,
+            "feedback_packet": null,
+            "codex_events": {
+              "sha256": "f6dafc8bf2db88ef207eb775cb4f2055c3977c4d1eb26c0a2861311e091dec36",
+              "bytes": 85926
+            },
+            "reflection_events": null,
+            "reflection_stderr": null,
+            "mcp_audit": {
+              "sha256": "c2dac4f0b75eaf6f485fcbde6b1eac18e72da5a809a093e246103311d7234137",
+              "bytes": 33204
+            },
+            "render_images": {
+              "candidate": {
+                "sha256": "0ff92bfce3f12056063d3a051054bd58533470f8b12519ef2ea330dca5eb31aa",
+                "bytes": 10902
+              },
+              "overlay": {
+                "sha256": "2c35d8a006f7d30d76a20f236adeefb78a401ccad75bbb8a3aae86011de8f32c",
+                "bytes": 11756
+              },
+              "ground_truth": {
+                "sha256": "fc552b0701afa31708893eec4e73e5938011120943760beaaff7746b89059cfb",
+                "bytes": 10832
+              }
+            },
+            "geometry_assets": {
+              "candidate": {
+                "sha256": "756ec327c924e02c3c5c8695196d4db5293c95bbb8dd97e8c71aed108f3e49a8",
+                "bytes": 48684
+              },
+              "ground_truth": {
+                "sha256": "84fd858d851dba918b808aaf55f8121e7a28126150a4145701e24d1804776c25",
+                "bytes": 164284
+              },
+              "localization": {
+                "sha256": "17b5276f0e1b719b4be0835aa5470a7f7086ebeafce894e61568bd3a316f7ae4",
+                "bytes": 3687
+              },
+              "topology": null,
+              "face_query": null
+            }
+          },
+          "evidence_sha256": "2532e17b1cbf2c80e89574242a4486b22fc5afd70e711c12eac62b225895152e",
+          "reflection": null,
+          "feedback_packet": null,
+          "public_events": [
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "I’ll use the AutoCAD modeling skill, inspect the supplied dimensions, and build the part in isolated Core Console jobs with recoverable DWG checkpoints.\n"
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath '[private value removed]\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath 'task.json'; Get-ChildItem -LiteralPath 'input_files' -File | Select-Object Name,Length\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_set_run_context",
+              "server": "autocad",
+              "arguments": {
+                "sample_id": "omnimech:10",
+                "run_id": "direct-codex-astra-ultra-omnimech10-https-20260914-gpt-6-astra-ultra",
+                "attempt_id": "a001"
+              },
+              "error": null
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The views indicate an 80 × 30 × 65 mm part with a 15 mm base, a 12 mm top flange, and a 10 mm web. I’ve also resolved the end slot, the underside recess, four Ø3.4 holes, and eight C3 corners. I’ll represent the M5 blind hole with a nominal Ø5 bore, 16 mm deep.\n"
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "output_path": "[private value removed]",
+                "lisp": "\n(defun c:buildbody (/ base top web solids)\n  (setvar \"CMDECHO\" 0)\n  (setvar \"OSMODE\" 0)\n  (setvar \"INSUNITS\" 4)\n  (setvar \"LUNITS\" 2)\n  (setvar \"LUPREC\" 6)\n  (setvar \"DELOBJ\" 1)\n  (setvar \"SOLIDHIST\" 1)\n  (command \"_.UCS\" \"_World\")\n  (defun prism (pts z height / ent)\n    (entmake (append (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length pts)) '(70 . 1) (cons 38 z)) (mapcar '(lambda (p) (cons 10 p)) pts)))\n    (setq ent (entlast))\n    (command \"_.EXTRUDE\" ent \"\" height)\n    (if (/= (cdr (assoc 0 (entget (entlast)))) \"3DSOLID\") (progn (princ \"\\nPRISM_FAILED\") (exit)))\n    (entlast)\n  )\n  (setq base (prism '((0 -12) (3 -15) (77 -15) (80 -12) (80 12) (77 15) (3 15) (0 12)) 0 15))\n  (setq top (prism '((30 -12) (33 -15) (77 -15) (80 -12) (80 12) (77 15) (33 15) (30 12)) 53 12))\n  (setq web (prism '((30 -5) (80 -5) (80 5) (30 5)) 15 38))\n  (command \"_.UNION\" base top web \"\")\n  (setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n  (princ (strcat \"\\nBODY_SOLID_COUNT=\" (itoa (sslength solids))))\n  (command \"_.MASSPROP\" solids \"\" \"_No\")\n  (command \"_.VPOINT\" '(-1 -1 0.7))\n  (command \"_.ZOOM\" \"_Extents\")\n  (princ)\n)\n(c:buildbody)\n",
+                "timeout": 120,
+                "operation_manifest": [
+                  {
+                    "operation_id": "body",
+                    "operation_type": "union",
+                    "intent": "Construct base, top flange and web with eight C3 vertical corner chamfers",
+                    "parameters": {
+                      "base": [
+                        80,
+                        30,
+                        15
+                      ],
+                      "top": [
+                        50,
+                        30,
+                        12
+                      ],
+                      "web": [
+                        50,
+                        10,
+                        38
+                      ],
+                      "height": 65,
+                      "top_start_x": 30,
+                      "corner_chamfer": 3
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "0cba1a2fa0c84b3e8fb72404104089ad"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"import importlib.util; print({m: importlib.util.find_spec(m) is not None for m in ['numpy','matplotlib','PIL','trimesh']})\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "\n(defun c:cutfeatures (/ body cut solids report)\n  (setvar \"CMDECHO\" 0)\n  (setvar \"OSMODE\" 0)\n  (setvar \"FILEDIA\" 0)\n  (setvar \"DELOBJ\" 1)\n  (setvar \"FACETRES\" 10)\n  (command \"_.UCS\" \"_World\")\n  (defun prism (pts z height / ent)\n    (entmake (append (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length pts)) '(70 . 1) (cons 38 z)) (mapcar '(lambda (p) (cons 10 p)) pts)))\n    (setq ent (entlast))\n    (command \"_.EXTRUDE\" ent \"\" height)\n    (entlast)\n  )\n  (defun bodyentity () (ssname (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))) 0))\n  (setq body (bodyentity))\n  (setq cut (prism '((-1 -13.5) (81 -13.5) (81 13.5) (-1 13.5)) -1 4))\n  (command \"_.SUBTRACT\" body \"\" cut \"\")\n  (setq body (bodyentity))\n  (setq cut (prism '((-1 -5.5) (5 -5.5) (5 -9.5) (13 -9.5) (13 9.5) (5 9.5) (5 5.5) (-1 5.5)) -1 17))\n  (command \"_.SUBTRACT\" body \"\" cut \"\")\n  (foreach center '((30 -10 2) (30 10 2) (45 -10 2) (45 10 2))\n    (setq body (bodyentity))\n    (command \"_.CYLINDER\" center 1.7 14)\n    (setq cut (entlast))\n    (command \"_.SUBTRACT\" body \"\" cut \"\")\n  )\n  (setq body (bodyentity))\n  (command \"_.CYLINDER\" '(50 0 49) 2.5 17)\n  (setq cut (entlast))\n  (command \"_.SUBTRACT\" body \"\" cut \"\")\n  (setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n  (setq report (open \"[private value removed]\" \"w\"))\n  (write-line (strcat \"3DSOLID count: \" (itoa (sslength solids))) report)\n  (write-line (strcat \"All model entities: \" (itoa (sslength (ssget \"_X\" '((410 . \"Model\")))))) report)\n  (write-line (strcat \"INSUNITS: \" (itoa (getvar \"INSUNITS\"))) report)\n  (write-line \"M5 represented by nominal diameter 5 mm, flat-bottom blind bore, depth 16 mm.\" report)\n  (close report)\n  (command \"_.MASSPROP\" solids \"\" \"_Yes\" \"[private value removed]\")\n  (command \"_.STLOUT\" solids \"\" \"_Yes\" \"[private value removed]\")\n  (command \"_.VPOINT\" '(-1 -1 0.7))\n  (command \"_.ZOOM\" \"_Extents\")\n  (princ)\n)\n(c:cutfeatures)\n",
+                "timeout": 120,
+                "capture_boolean_lineage": false,
+                "operation_manifest": [
+                  {
+                    "operation_id": "underside_recess",
+                    "operation_type": "subtract",
+                    "intent": "Cut full-length underside central relief",
+                    "parameters": {
+                      "width": 27,
+                      "depth": 3
+                    }
+                  },
+                  {
+                    "operation_id": "end_t_notch",
+                    "operation_type": "subtract",
+                    "intent": "Cut full-thickness end T-notch",
+                    "parameters": {
+                      "mouth_width": 11,
+                      "mouth_length": 5,
+                      "inner_width": 19,
+                      "inner_length": 8
+                    }
+                  },
+                  {
+                    "operation_id": "four_mounting_holes",
+                    "operation_type": "subtract",
+                    "intent": "Drill four diameter 3.4 through holes in lower flange",
+                    "parameters": {
+                      "diameter": 3.4,
+                      "centers_xy": [
+                        [
+                          30,
+                          -10
+                        ],
+                        [
+                          30,
+                          10
+                        ],
+                        [
+                          45,
+                          -10
+                        ],
+                        [
+                          45,
+                          10
+                        ]
+                      ]
+                    }
+                  },
+                  {
+                    "operation_id": "m5_blind_hole",
+                    "operation_type": "subtract",
+                    "intent": "Nominal smooth representation of M5 blind threaded hole",
+                    "parameters": {
+                      "diameter": 5,
+                      "depth": 16,
+                      "center_xy": [
+                        50,
+                        0
+                      ],
+                      "top_z": 65
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "f8f8a50e544242b1992dd55387a3de12"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-ChildItem -LiteralPath '.' -File | Select-Object Name,Length; if (Test-Path -LiteralPath 'stage02-entities.txt') { Get-Content -LiteralPath 'stage02-entities.txt' }; if (Test-Path -LiteralPath 'stage02-mass.mpr') { Get-Content -LiteralPath 'stage02-mass.mpr' }\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The feature model is complete as one solid. Its bounds are exactly 80 × 30 × 65 mm, and AutoCAD’s volume matches the independent calculation at 62,813.539 mm³. I’m now checking the exported shape and native faces before saving the final submission.\n"
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"@'\n\nimport json, pathlib, numpy as np, trimesh\nimport matplotlib\nmatplotlib.use('Agg')\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d.art3d import Poly3DCollection, Line3DCollection\nroot=pathlib.Path.cwd()\nmesh=trimesh.load(root/'stage02-preview.stl',force='mesh',process=True)\nstats={'watertight':bool(mesh.is_watertight),'winding_consistent':bool(mesh.is_winding_consistent),'connected_components':len(mesh.split()),'bounds':mesh.bounds.tolist(),'mesh_volume':float(mesh.volume),'triangles':len(mesh.faces),'analytic_volume':62813.53900173505}\n(root/'stage02-mesh-check.json').write_text(json.dumps(stats,indent=2))\nprint(json.dumps(stats))\nlight=np.array([-0.6,-0.7,1.0]);light/=np.linalg.norm(light)\nillum=np.clip(0.62+0.32*(mesh.face_normals@light),0.2,1)\ncolors=np.column_stack([illum*0.70,illum*0.77,illum*0.90,np.ones(len(illum))])\nedges=mesh.face_adjacency_edges[mesh.face_adjacency_angles>0.35]\nedgepts=mesh.vertices[edges]\nfig=plt.figure(figsize=(15,10),facecolor='white')\nviews=[('Isometric',25,-130),('Underside',-30,-130),('Top',90,-90),('Side',0,-90),('End',0,0),('Bottom',-90,-90)]\nfor i,(title,elev,azim) in enumerate(views,1):\n ax=fig.add_subplot(2,3,i,projection='3d')\n ax.add_collection3d(Poly3DCollection(mesh.triangles,facecolors=colors,edgecolor='none',zsort='average'))\n ax.add_collection3d(Line3DCollection(edgepts,colors='#1c2839',linewidths=0.5))\n ax.set(xlim=(-2,82),ylim=(-17,17),zlim=(-2,67),title=title)\n ax.set_box_aspect((84,34,69));ax.view_init(elev=elev,azim=azim);ax.set_proj_type('ortho');ax.axis('off')\nfig.tight_layout()\nfig.savefig(root/'stage02-inspection.png',dpi=170,bbox_inches='tight')\n\n'@ | python -\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "684b3ffaa6d54510b6d8deca51e5d6ac"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"import json; d=json.load(open('stage02-topology.json')); print(type(d).__name__); print(list(d) if isinstance(d,dict) else len(d)); print(str(d)[:12000])\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"@'\n\nimport json,pathlib,numpy as np,trimesh\nimport matplotlib\nmatplotlib.use('Agg')\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d.art3d import Poly3DCollection,Line3DCollection\nroot=pathlib.Path.cwd()\nmesh=trimesh.load(root/'stage02-preview.stl',force='mesh',process=True)\nmesh.apply_translation(np.array([40,0,32.5])-mesh.bounds.mean(axis=0))\nlight=np.array([-0.6,-0.7,1.0]);light/=np.linalg.norm(light)\nillum=np.clip(0.62+0.32*(mesh.face_normals@light),0.2,1)\ncolors=np.column_stack([illum*0.70,illum*0.77,illum*0.90,np.ones(len(illum))])\nedgepts=mesh.vertices[mesh.face_adjacency_edges[mesh.face_adjacency_angles>0.35]]\nfig=plt.figure(figsize=(15,10),facecolor='white')\nfor i,(title,elev,azim) in enumerate([('Isometric',25,-130),('Underside',-30,-130),('Top',90,-90),('Side',0,-90),('End',0,0),('Bottom',-90,-90)],1):\n ax=fig.add_subplot(2,3,i,projection='3d')\n ax.add_collection3d(Poly3DCollection(mesh.triangles,facecolors=colors,edgecolor='none',zsort='average'))\n ax.add_collection3d(Line3DCollection(edgepts,colors='#1c2839',linewidths=0.5))\n ax.set(xlim=(-2,82),ylim=(-17,17),zlim=(-2,67),title=title)\n ax.set_box_aspect((84,34,69));ax.view_init(elev=elev,azim=azim);ax.set_proj_type('ortho');ax.axis('off')\nfig.tight_layout()\nfig.savefig(root/'stage02-inspection.png',dpi=170,bbox_inches='tight')\nd=json.loads((root/'stage02-topology.json').read_text());e=d['entities'][0]\nprint('Entity fields:',list(e))\nprint('Face example:',e['faces'][0])\nprint('Surface types:',{f['surface']['type'] for f in e['faces']})\nprint('Native topology errors:',d['errors'])\n\n'@ | python -\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"import json; d=json.load(open('stage02-topology.json')); e=d['entities'][0]; print('Mass:', e['mass_properties']); print('Cylinders:',[(f['surface']['radius'],f['surface']['origin'],f['bounds']) for f in e['faces'] if f['surface']['type']=='cylinder']); print('Planes:',[(f['id'],f['surface']) for f in e['faces'] if f['surface']['type']=='plane'][:4]); print('Topology:',len(e['faces']),len(e['edges']),len(e['vertices']))\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The native face data confirms all five bores at the intended positions and depths, and the exported mesh is one closed, connected body. The orthographic shapes also match the drawing. The remaining uncertainty is the unshown M5 thread and drill-bottom detail; the model uses a smooth, flat-bottom bore.\n"
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"@'\n\nimport pathlib, json, numpy as np, trimesh\nfrom PIL import Image,ImageDraw\nroot=pathlib.Path.cwd()\nmesh=trimesh.load(root/'stage02-preview.stl',force='mesh',process=True)\nmesh.apply_translation(np.array([40,0,32.5])-mesh.bounds.mean(axis=0))\nverts=mesh.vertices; faces=mesh.faces; normals=mesh.face_normals\nedges=mesh.face_adjacency_edges[mesh.face_adjacency_angles>0.35]\nW,H=650,620\ndef render(elev,azim):\n e,a=np.radians([elev,azim]);eye=np.array([np.cos(e)*np.cos(a),np.cos(e)*np.sin(a),np.sin(e)])\n right=np.array([-np.sin(a),np.cos(a),0]);up=np.cross(eye,right)\n proj=[email removed]([right,up,eye]).T\n lo=proj[:,:2].min(0); hi=proj[:,:2].max(0); scale=min((W-65)/(hi[0]-lo[0]),(H-80)/(hi[1]-lo[1]))\n p=np.column_stack([(proj[:,0]-(lo[0]+hi[0])/2)*scale+W/2,H/2-(proj[:,1]-(lo[1]+hi[1])/2)*scale,proj[:,2]])\n img=np.full((H,W,3),255,dtype=np.uint8);zb=np.full((H,W),-np.inf)\n light=eye*0.5+np.array([-0.3,-0.5,0.8]);light/=np.linalg.norm(light)\n for face,normal in zip(faces,normals):\n  if normal@eye<-1e-8: continue\n  q=p[face];xmin=max(0,int(np.floor(q[:,0].min())));xmax=min(W-1,int(np.ceil(q[:,0].max())))\n  ymin=max(0,int(np.floor(q[:,1].min())));ymax=min(H-1,int(np.ceil(q[:,1].max())))\n  xx,yy=np.meshgrid(np.arange(xmin,xmax+1)+0.5,np.arange(ymin,ymax+1)+0.5)\n  x0,y0,z0=q[0];x1,y1,z1=q[1];x2,y2,z2=q[2]\n  den=(y1-y2)*(x0-x2)+(x2-x1)*(y0-y2)\n  if abs(den)<1e-9: continue\n  b0=((y1-y2)*(xx-x2)+(x2-x1)*(yy-y2))/den\n  b1=((y2-y0)*(xx-x2)+(x0-x2)*(yy-y2))/den;b2=1-b0-b1\n  z=b0*z0+b1*z1+b2*z2\n  mask=(b0>=-1e-8)&(b1>=-1e-8)&(b2>=-1e-8)&(z>zb[ymin:ymax+1,xmin:xmax+1])\n  shade=0.63+0.31*max(-0.5,normal@light)\n  img[ymin:ymax+1,xmin:xmax+1][mask]=np.clip(np.array([190,200,218])*shade,0,255).astype(np.uint8)\n  zb[ymin:ymax+1,xmin:xmax+1][mask]=z[mask]\n for edge in edges:\n  q0,q1=p[edge];n=max(2,int(np.linalg.norm(q1[:2]-q0[:2])*2))\n  line=q0[None,:]+np.linspace(0,1,n)[:,None]*(q1-q0)[None,:]\n  x=np.rint(line[:,0]).astype(int);y=np.rint(line[:,1]).astype(int)\n  for dx,dy in [(0,0)]:\n   xc=np.clip(x+dx,0,W-1);yc=np.clip(y+dy,0,H-1)\n   visible=line[:,2]>=zb[yc,xc]-0.12\n   img[yc[visible],xc[visible]]=[38,44,53]\n return Image.fromarray(img)\ncanvas=Image.new('RGB',(W*3,H*2),'white');draw=ImageDraw.Draw(canvas)\nfor i,(title,e,a) in enumerate([('Isometric',25,-130),('Underside',-30,-130),('Top',90,-90),('Side',0,-90),('End',0,0),('Bottom',-90,-90)]):\n im=render(e,a);canvas.paste(im,((i%3)*W,(i//3)*H))\n draw.text(((i%3)*W+24,(i//3)*H+15),title,fill='black',font_size=23)\ncanvas.save(root/'stage02-inspection.png')\nprint('Saved depth-tested inspection render.')\n\n'@ | python -\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "\n(defun c:finalize (/ solids report)\n (setvar \"CMDECHO\" 0)\n (setvar \"FILEDIA\" 0)\n (setvar \"OSMODE\" 0)\n (setvar \"INSUNITS\" 4)\n (setvar \"MEASUREMENT\" 1)\n (setvar \"FACETRES\" 10)\n (setvar \"DISPSILH\" 1)\n (setvar \"ISOLINES\" 4)\n (command \"_.UCS\" \"_World\")\n (setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n (if (/= (sslength solids) 1) (progn (princ \"\\nFINAL_SOLID_COUNT_FAILED\") (exit)))\n (command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" (ssname solids 0) \"_eXit\" \"_eXit\")\n (command \"_.AUDIT\" \"_Yes\")\n (command \"_.VPOINT\" '(-1 -1 0.7))\n (command \"_.VSCURRENT\" \"_Conceptual\")\n (command \"_.ZOOM\" \"_Extents\")\n (command \"_.UCSICON\" \"_OFF\")\n (setq report (open \"[private value removed]\" \"w\"))\n (write-line \"Model space entity count: 1\" report)\n (write-line (strcat \"Model space 3DSOLID count: \" (itoa (sslength (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))))) report)\n (write-line \"Native SOLIDEDIT Body Check and AUDIT commands completed.\" report)\n (write-line \"Verified stage02 native B-Rep: 40 faces; 5 cylinders; 8 C3 corner planes; no topology export errors.\" report)\n (write-line \"Native bounds: x0..80, y-15..15, z0..65 mm.\" report)\n (write-line \"Native volume: 62813.539001735044 mm3; analytic volume: 62813.53900173505 mm3.\" report)\n (write-line \"Mesh export: watertight, consistent winding, one connected component.\" report)\n (write-line \"Six-direction geometry inspection and independent dimension review passed.\" report)\n (write-line \"Assumption: M5 represented by smooth nominal diameter 5 mm, 16 mm-deep flat-bottom blind bore.\" report)\n (close report)\n (command \"_.MASSPROP\" solids \"\" \"_Yes\" \"[private value removed]\")\n (princ)\n)\n(c:finalize)\n",
+                "timeout": 120,
+                "capture_boolean_lineage": false,
+                "operation_manifest": [
+                  {
+                    "operation_id": "final_validate",
+                    "operation_type": "verification",
+                    "intent": "Check native solid, audit drawing, set isometric view and save final native editable solid"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "b32a40c0ba6d4cb2860f24c2bf35613c"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-ChildItem -LiteralPath '.' -Filter 'candidate.a001*' -File | Select-Object Name,Length; if (Test-Path -LiteralPath 'candidate.a001-checks.txt') { Get-Content -LiteralPath 'candidate.a001-checks.txt' }\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "\n(defun c:finalize (/ solids modelentities report)\n (setvar \"CMDECHO\" 0)\n (setvar \"FILEDIA\" 0)\n (setvar \"OSMODE\" 0)\n (setvar \"INSUNITS\" 4)\n (setvar \"MEASUREMENT\" 1)\n (setvar \"FACETRES\" 10)\n (setvar \"DISPSILH\" 1)\n (setvar \"ISOLINES\" 4)\n (command \"_.UCS\" \"_World\")\n (setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n (setq modelentities (ssget \"_X\" '((410 . \"Model\"))))\n (if (/= (sslength solids) 1) (progn (princ \"\\nFINAL_SOLID_COUNT_FAILED\") (exit)))\n (command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" (ssname solids 0) \"_eXit\" \"_eXit\")\n (command \"_.AUDIT\" \"_Yes\")\n (command \"_.VPOINT\" '(-1 -1 0.7))\n (command \"_.VSCURRENT\" \"_Conceptual\")\n (command \"_.ZOOM\" \"_Extents\")\n (command \"_.UCSICON\" \"_OFF\")\n (setq report (open \"[private value removed]\" \"w\"))\n (write-line (strcat \"Model space entity count: \" (itoa (sslength modelentities))) report)\n (write-line (strcat \"Model space 3DSOLID count: \" (itoa (sslength solids))) report)\n (write-line \"Native SOLIDEDIT Body Check and AUDIT commands completed.\" report)\n (write-line \"Verified stage02 native B-Rep: 40 faces; 5 cylinders; 8 C3 corner planes; no topology export errors.\" report)\n (write-line \"Native bounds: x0..80, y-15..15, z0..65 mm.\" report)\n (write-line \"Native volume: 62813.539001735044 mm3; analytic volume: 62813.53900173505 mm3.\" report)\n (write-line \"Mesh export: watertight, consistent winding, one connected component.\" report)\n (write-line \"Six-direction geometry inspection and independent dimension review passed.\" report)\n (write-line \"Assumption: M5 represented by smooth nominal diameter 5 mm, 16 mm-deep flat-bottom blind bore.\" report)\n (close report)\n (command \"_.MASSPROP\" solids \"\" \"_Yes\" \"[private value removed]\")\n (princ)\n)\n(c:finalize)\n",
+                "timeout": 120,
+                "capture_boolean_lineage": false,
+                "operation_manifest": [
+                  {
+                    "operation_id": "final_validate",
+                    "operation_type": "verification",
+                    "intent": "Check native solid, audit drawing, set isometric view and save final native editable solid"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The independent review found no dimensional discrepancies, including the slot, underside recess, and all eight chamfers. I corrected a reporting-script error in the finalization job and am confirming that the final DWG saved successfully.\n"
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "f26d9cc490ad4b528196e3b31c4c9d48"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-ChildItem -LiteralPath '.' -Filter 'candidate.a001*' -File | Select-Object Name,Length; if (Test-Path -LiteralPath 'candidate.a001-checks.txt') { Get-Content -LiteralPath 'candidate.a001-checks.txt' }\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "Saved [candidate.a001.dwg]([private value removed] Its Core Console job succeeded.\n\nVerified one editable 3DSOLID, 80 × 30 × 65 mm bounds, feature dimensions, closed geometry, and volume of 62,813.539 mm³. Intermediate DWGs are preserved.\n\nRemaining uncertainty: M5 is represented by a smooth Ø5 × 16 mm blind bore with a flat bottom."
+            }
+          ],
+          "mcp_events": [
+            {
+              "event_id": "5700638961d04bdeb853d9b749efce84",
+              "timestamp": "2026-09-14T14:33:10Z",
+              "tool": "autocad_set_run_context",
+              "status": "pass",
+              "duration_ms": 0.04,
+              "arguments": {
+                "sample_id": "omnimech:10",
+                "run_id": "direct-codex-astra-ultra-omnimech10-https-20260914-gpt-6-astra-ultra",
+                "attempt_id": "a001"
+              },
+              "error": null
+            },
+            {
+              "event_id": "287abdde5c1c473fa9fea06bf3aa8dd6",
+              "timestamp": "2026-09-14T14:35:10Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 3.688,
+              "arguments": {
+                "output_path": "[private value removed]",
+                "lisp": "\n(defun c:buildbody (/ base top web solids)\n  (setvar \"CMDECHO\" 0)\n  (setvar \"OSMODE\" 0)\n  (setvar \"INSUNITS\" 4)\n  (setvar \"LUNITS\" 2)\n  (setvar \"LUPREC\" 6)\n  (setvar \"DELOBJ\" 1)\n  (setvar \"SOLIDHIST\" 1)\n  (command \"_.UCS\" \"_World\")\n  (defun prism (pts z height / ent)\n    (entmake (append (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length pts)) '(70 . 1) (cons 38 z)) (mapcar '(lambda (p) (cons 10 p)) pts)))\n    (setq ent (entlast))\n    (command \"_.EXTRUDE\" ent \"\" height)\n    (if (/= (cdr (assoc 0 (entget (entlast)))) \"3DSOLID\") (progn (princ \"\\nPRISM_FAILED\") (exit)))\n    (entlast)\n  )\n  (setq base (prism '((0 -12) (3 -15) (77 -15) (80 -12) (80 12) (77 15) (3 15) (0 12)) 0 15))\n  (setq top (prism '((30 -12) (33 -15) (77 -15) (80 -12) (80 12) (77 15) (33 15) (30 12)) 53 12))\n  (setq web (prism '((30 -5) (80 -5) (80 5) (30 5)) 15 38))\n  (command \"_.UNION\" base top web \"\")\n  (setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n  (princ (strcat \"\\nBODY_SOLID_COUNT=\" (itoa (sslength solids))))\n  (command \"_.MASSPROP\" solids \"\" \"_No\")\n  (command \"_.VPOINT\" '(-1 -1 0.7))\n  (command \"_.ZOOM\" \"_Extents\")\n  (princ)\n)\n(c:buildbody)\n",
+                "timeout": 120,
+                "operation_manifest": [
+                  {
+                    "operation_id": "body",
+                    "operation_type": "union",
+                    "intent": "Construct base, top flange and web with eight C3 vertical corner chamfers",
+                    "parameters": {
+                      "base": [
+                        80,
+                        30,
+                        15
+                      ],
+                      "top": [
+                        50,
+                        30,
+                        12
+                      ],
+                      "web": [
+                        50,
+                        10,
+                        38
+                      ],
+                      "height": 65,
+                      "top_start_x": 30,
+                      "corner_chamfer": 3
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "2fd32c45325845d2934cfe79142d5c4b",
+              "timestamp": "2026-09-14T14:35:35Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.071,
+              "arguments": {
+                "job_id": "0cba1a2fa0c84b3e8fb72404104089ad"
+              },
+              "error": null
+            },
+            {
+              "event_id": "65af207058b64d5684e6d687b70c5ca3",
+              "timestamp": "2026-09-14T14:36:42Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.941,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "\n(defun c:cutfeatures (/ body cut solids report)\n  (setvar \"CMDECHO\" 0)\n  (setvar \"OSMODE\" 0)\n  (setvar \"FILEDIA\" 0)\n  (setvar \"DELOBJ\" 1)\n  (setvar \"FACETRES\" 10)\n  (command \"_.UCS\" \"_World\")\n  (defun prism (pts z height / ent)\n    (entmake (append (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length pts)) '(70 . 1) (cons 38 z)) (mapcar '(lambda (p) (cons 10 p)) pts)))\n    (setq ent (entlast))\n    (command \"_.EXTRUDE\" ent \"\" height)\n    (entlast)\n  )\n  (defun bodyentity () (ssname (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))) 0))\n  (setq body (bodyentity))\n  (setq cut (prism '((-1 -13.5) (81 -13.5) (81 13.5) (-1 13.5)) -1 4))\n  (command \"_.SUBTRACT\" body \"\" cut \"\")\n  (setq body (bodyentity))\n  (setq cut (prism '((-1 -5.5) (5 -5.5) (5 -9.5) (13 -9.5) (13 9.5) (5 9.5) (5 5.5) (-1 5.5)) -1 17))\n  (command \"_.SUBTRACT\" body \"\" cut \"\")\n  (foreach center '((30 -10 2) (30 10 2) (45 -10 2) (45 10 2))\n    (setq body (bodyentity))\n    (command \"_.CYLINDER\" center 1.7 14)\n    (setq cut (entlast))\n    (command \"_.SUBTRACT\" body \"\" cut \"\")\n  )\n  (setq body (bodyentity))\n  (command \"_.CYLINDER\" '(50 0 49) 2.5 17)\n  (setq cut (entlast))\n  (command \"_.SUBTRACT\" body \"\" cut \"\")\n  (setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n  (setq report (open \"[private value removed]\" \"w\"))\n  (write-line (strcat \"3DSOLID count: \" (itoa (sslength solids))) report)\n  (write-line (strcat \"All model entities: \" (itoa (sslength (ssget \"_X\" '((410 . \"Model\")))))) report)\n  (write-line (strcat \"INSUNITS: \" (itoa (getvar \"INSUNITS\"))) report)\n  (write-line \"M5 represented by nominal diameter 5 mm, flat-bottom blind bore, depth 16 mm.\" report)\n  (close report)\n  (command \"_.MASSPROP\" solids \"\" \"_Yes\" \"[private value removed]\")\n  (command \"_.STLOUT\" solids \"\" \"_Yes\" \"[private value removed]\")\n  (command \"_.VPOINT\" '(-1 -1 0.7))\n  (command \"_.ZOOM\" \"_Extents\")\n  (princ)\n)\n(c:cutfeatures)\n",
+                "timeout": 120,
+                "capture_boolean_lineage": false,
+                "operation_manifest": [
+                  {
+                    "operation_id": "underside_recess",
+                    "operation_type": "subtract",
+                    "intent": "Cut full-length underside central relief",
+                    "parameters": {
+                      "width": 27,
+                      "depth": 3
+                    }
+                  },
+                  {
+                    "operation_id": "end_t_notch",
+                    "operation_type": "subtract",
+                    "intent": "Cut full-thickness end T-notch",
+                    "parameters": {
+                      "mouth_width": 11,
+                      "mouth_length": 5,
+                      "inner_width": 19,
+                      "inner_length": 8
+                    }
+                  },
+                  {
+                    "operation_id": "four_mounting_holes",
+                    "operation_type": "subtract",
+                    "intent": "Drill four diameter 3.4 through holes in lower flange",
+                    "parameters": {
+                      "diameter": 3.4,
+                      "centers_xy": [
+                        [
+                          30,
+                          -10
+                        ],
+                        [
+                          30,
+                          10
+                        ],
+                        [
+                          45,
+                          -10
+                        ],
+                        [
+                          45,
+                          10
+                        ]
+                      ]
+                    }
+                  },
+                  {
+                    "operation_id": "m5_blind_hole",
+                    "operation_type": "subtract",
+                    "intent": "Nominal smooth representation of M5 blind threaded hole",
+                    "parameters": {
+                      "diameter": 5,
+                      "depth": 16,
+                      "center_xy": [
+                        50,
+                        0
+                      ],
+                      "top_z": 65
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "d11901ff9a2d4b9ea7f28d5ba91502d8",
+              "timestamp": "2026-09-14T14:37:04Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.083,
+              "arguments": {
+                "job_id": "f8f8a50e544242b1992dd55387a3de12"
+              },
+              "error": null
+            },
+            {
+              "event_id": "6ab15f40aa034c6d8fc40189a800fdc5",
+              "timestamp": "2026-09-14T14:38:02Z",
+              "tool": "autocad_topology_start",
+              "status": "pass",
+              "duration_ms": 1.934,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "event_id": "674bd0a576a24d5cad5c1c9fd0af85d7",
+              "timestamp": "2026-09-14T14:38:34Z",
+              "tool": "autocad_topology_status",
+              "status": "pass",
+              "duration_ms": 0.052,
+              "arguments": {
+                "job_id": "684b3ffaa6d54510b6d8deca51e5d6ac"
+              },
+              "error": null
+            },
+            {
+              "event_id": "f719d3f898e54d6c9ca140f225dfc891",
+              "timestamp": "2026-09-14T14:42:03Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.779,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "\n(defun c:finalize (/ solids report)\n (setvar \"CMDECHO\" 0)\n (setvar \"FILEDIA\" 0)\n (setvar \"OSMODE\" 0)\n (setvar \"INSUNITS\" 4)\n (setvar \"MEASUREMENT\" 1)\n (setvar \"FACETRES\" 10)\n (setvar \"DISPSILH\" 1)\n (setvar \"ISOLINES\" 4)\n (command \"_.UCS\" \"_World\")\n (setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n (if (/= (sslength solids) 1) (progn (princ \"\\nFINAL_SOLID_COUNT_FAILED\") (exit)))\n (command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" (ssname solids 0) \"_eXit\" \"_eXit\")\n (command \"_.AUDIT\" \"_Yes\")\n (command \"_.VPOINT\" '(-1 -1 0.7))\n (command \"_.VSCURRENT\" \"_Conceptual\")\n (command \"_.ZOOM\" \"_Extents\")\n (command \"_.UCSICON\" \"_OFF\")\n (setq report (open \"[private value removed]\" \"w\"))\n (write-line \"Model space entity count: 1\" report)\n (write-line (strcat \"Model space 3DSOLID count: \" (itoa (sslength (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))))) report)\n (write-line \"Native SOLIDEDIT Body Check and AUDIT commands completed.\" report)\n (write-line \"Verified stage02 native B-Rep: 40 faces; 5 cylinders; 8 C3 corner planes; no topology export errors.\" report)\n (write-line \"Native bounds: x0..80, y-15..15, z0..65 mm.\" report)\n (write-line \"Native volume: 62813.539001735044 mm3; analytic volume: 62813.53900173505 mm3.\" report)\n (write-line \"Mesh export: watertight, consistent winding, one connected component.\" report)\n (write-line \"Six-direction geometry inspection and independent dimension review passed.\" report)\n (write-line \"Assumption: M5 represented by smooth nominal diameter 5 mm, 16 mm-deep flat-bottom blind bore.\" report)\n (close report)\n (command \"_.MASSPROP\" solids \"\" \"_Yes\" \"[private value removed]\")\n (princ)\n)\n(c:finalize)\n",
+                "timeout": 120,
+                "capture_boolean_lineage": false,
+                "operation_manifest": [
+                  {
+                    "operation_id": "final_validate",
+                    "operation_type": "verification",
+                    "intent": "Check native solid, audit drawing, set isometric view and save final native editable solid"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "c4c12c6f56dd4e029e27f01bde6d229d",
+              "timestamp": "2026-09-14T14:42:23Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.055,
+              "arguments": {
+                "job_id": "b32a40c0ba6d4cb2860f24c2bf35613c"
+              },
+              "error": null
+            },
+            {
+              "event_id": "9c1d66819f1e4116859991afb4949770",
+              "timestamp": "2026-09-14T14:43:16Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.767,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "\n(defun c:finalize (/ solids modelentities report)\n (setvar \"CMDECHO\" 0)\n (setvar \"FILEDIA\" 0)\n (setvar \"OSMODE\" 0)\n (setvar \"INSUNITS\" 4)\n (setvar \"MEASUREMENT\" 1)\n (setvar \"FACETRES\" 10)\n (setvar \"DISPSILH\" 1)\n (setvar \"ISOLINES\" 4)\n (command \"_.UCS\" \"_World\")\n (setq solids (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n (setq modelentities (ssget \"_X\" '((410 . \"Model\"))))\n (if (/= (sslength solids) 1) (progn (princ \"\\nFINAL_SOLID_COUNT_FAILED\") (exit)))\n (command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" (ssname solids 0) \"_eXit\" \"_eXit\")\n (command \"_.AUDIT\" \"_Yes\")\n (command \"_.VPOINT\" '(-1 -1 0.7))\n (command \"_.VSCURRENT\" \"_Conceptual\")\n (command \"_.ZOOM\" \"_Extents\")\n (command \"_.UCSICON\" \"_OFF\")\n (setq report (open \"[private value removed]\" \"w\"))\n (write-line (strcat \"Model space entity count: \" (itoa (sslength modelentities))) report)\n (write-line (strcat \"Model space 3DSOLID count: \" (itoa (sslength solids))) report)\n (write-line \"Native SOLIDEDIT Body Check and AUDIT commands completed.\" report)\n (write-line \"Verified stage02 native B-Rep: 40 faces; 5 cylinders; 8 C3 corner planes; no topology export errors.\" report)\n (write-line \"Native bounds: x0..80, y-15..15, z0..65 mm.\" report)\n (write-line \"Native volume: 62813.539001735044 mm3; analytic volume: 62813.53900173505 mm3.\" report)\n (write-line \"Mesh export: watertight, consistent winding, one connected component.\" report)\n (write-line \"Six-direction geometry inspection and independent dimension review passed.\" report)\n (write-line \"Assumption: M5 represented by smooth nominal diameter 5 mm, 16 mm-deep flat-bottom blind bore.\" report)\n (close report)\n (command \"_.MASSPROP\" solids \"\" \"_Yes\" \"[private value removed]\")\n (princ)\n)\n(c:finalize)\n",
+                "timeout": 120,
+                "capture_boolean_lineage": false,
+                "operation_manifest": [
+                  {
+                    "operation_id": "final_validate",
+                    "operation_type": "verification",
+                    "intent": "Check native solid, audit drawing, set isometric view and save final native editable solid"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "d72dfe5725a44213aca079cabd9a5d4f",
+              "timestamp": "2026-09-14T14:43:33Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.053,
+              "arguments": {
+                "job_id": "f26d9cc490ad4b528196e3b31c4c9d48"
+              },
+              "error": null
+            }
+          ],
+          "derived_feature_backfill": {
+            "applied": false,
+            "record_sha256": null
+          }
+        }
+      ]
+    }
+  ],
+  "public_export_notice": "Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded.",
+  "source_bundle_sha256": "d85851df212a85a7f16273c13f67511cd6b8b84d34b31618903559213e70a943",
+  "bundle_sha256": "d0a5bb452d06309b5197dbfc8c9119fd3bc9e0866390029a48a33c7837e70b4e"
+}

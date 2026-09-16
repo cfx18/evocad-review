@@ -1,0 +1,370 @@
+{
+  "target_id": "0f6d067ab367fa65b8990e07",
+  "sample_id": "drawing-01",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "centerline"
+  },
+  "learner_answer": {
+    "answer": "centerline"
+  },
+  "task_manifest": {
+    "task_id": "drawing-01",
+    "task_type": "line_role",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true
+  },
+  "task": {
+    "task_id": "drawing-01",
+    "query": "区域A中，从左侧轴颈内部向右延伸并穿过中央小圆圆心的水平细线，属于哪一种线？请判断左端面与左侧台肩之间的那一段。",
+    "answer_format": {
+      "answer": "one option value"
+    },
+    "options": [
+      {
+        "value": "visible_edge",
+        "label": "可见轮廓线"
+      },
+      {
+        "value": "hidden_edge",
+        "label": "不可见轮廓线"
+      },
+      {
+        "value": "centerline",
+        "label": "中心线"
+      },
+      {
+        "value": "dimension_line",
+        "label": "尺寸线"
+      },
+      {
+        "value": "extension_line",
+        "label": "尺寸界线"
+      }
+    ],
+    "unit": "none",
+    "absolute_tolerance": 0
+  },
+  "source": {
+    "source_id": "pdf-035",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 35,
+    "sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "区域A中，从左侧轴颈内部向右延伸并穿过中央小圆圆心的水平细线，属于哪一种线？请判断左端面与左侧台肩之间的那一段。",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            171,
+            404,
+            352,
+            503
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "指定细线位于左侧孔壁投影之间，穿过中央圆心，并以长短划相间的线型延伸，表示水平中心线。",
+      "expected_answer": "centerline",
+      "answer_kind": "choice",
+      "bad_pattern_tags": [
+        "centerline_as_hidden_edge",
+        "thin_line_as_dimension_line"
+      ],
+      "confidence": 0.98,
+      "ambiguity_notes": "",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "centerline",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "指定水平细点画线沿左轴颈轴线延伸，并穿过中央小圆圆心。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 454.61,
+    "observations": 10,
+    "findings": 2,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "centerline"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:33:37.838Z",
+      "payload": {
+        "observation_id": "a8cfa53ed49e4fba93c9fda611d76f72",
+        "intent": "Overview of the CAD drawing to understand the part geometry and line types",
+        "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "sha256": "68ddba8759634ef1209246c7071a403ac957675c67d3a0ad572433a97338ecd7",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:33:38.867Z",
+      "payload": {
+        "observation_id": "16599c9fff194299a907db5b0526b84d",
+        "intent": "Inspect region A showing the horizontal thin line passing through the center of the small central circle, extending from the left journal area",
+        "source_sha256": "5e234705825b1ae5cb808056cc61fabe6036402820b57bd7aa7c1e5e981e2043",
+        "sha256": "5e234705825b1ae5cb808056cc61fabe6036402820b57bd7aa7c1e5e981e2043",
+        "crop": null,
+        "dimensions": [
+          465,
+          180
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:34:20.048Z",
+      "payload": {
+        "observation_id": "ef60a042fde24062b2c517a1e78d2cef",
+        "intent": "Examine the line style of the horizontal line inside the left journal between its left end face and the shoulder where it meets the central body - checking if it's dash-dot centerline, dashed hidden line, or solid line",
+        "source_sha256": "5e234705825b1ae5cb808056cc61fabe6036402820b57bd7aa7c1e5e981e2043",
+        "sha256": "b1b6f33a7a910534820f60826173274c7bd59009452025d1bcdfe2cf17eaf9fc",
+        "crop": [
+          0,
+          40,
+          220,
+          140
+        ],
+        "dimensions": [
+          220,
+          100
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:34:20.236Z",
+      "payload": {
+        "observation_id": "f79118fe607e402b9e530410efe2db60",
+        "intent": "View the left journal and center area in full resolution to see the horizontal line styles - centerline vs hidden lines in the left journal",
+        "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "sha256": "51fc2e56554aa588815891658a5a3435d0d7d5b45471fc97eda11e6d1e8a8bfb",
+        "crop": [
+          437,
+          700,
+          1100,
+          950
+        ],
+        "dimensions": [
+          663,
+          250
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:35:48.995Z",
+      "payload": {
+        "observation_id": "5566b4bebb1e46cbb5dfbff08135899b",
+        "intent": "Tight crop of the horizontal middle line inside the left journal to identify whether it's a dash-dot centerline, dashed hidden line, or solid thin line",
+        "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "sha256": "ed1a68dea303c4a467ea18d6a62a7d9a32281d78b44b1e3af4c95697c6928be4",
+        "crop": [
+          445,
+          795,
+          640,
+          850
+        ],
+        "dimensions": [
+          195,
+          55
+        ],
+        "image": "receipts/005.png"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:35:49.114Z",
+      "payload": {
+        "observation_id": "7b53a81bf2154d6586ed3897c17c3af4",
+        "intent": "View of the horizontal line passing through the central small circle and extending right, to compare line style in the central region vs the journal region",
+        "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "sha256": "b5c1286105daded8e89c297bcbc8cd37090eca37d59b995f106d853c7cd6443c",
+        "crop": [
+          590,
+          795,
+          900,
+          850
+        ],
+        "dimensions": [
+          310,
+          55
+        ],
+        "image": "receipts/006.png"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:37:10.901Z",
+      "payload": {
+        "observation_id": "8c08dfa095054d1db8923675b5b33c80",
+        "intent": "Very thin horizontal strip along the exact middle line inside the left journal to see the dash pattern clearly (dash-dot centerline vs short-dash hidden line)",
+        "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "sha256": "71811efdc2d56c64abd0ec94d0d45d003402e03745ae4a5f9f4d9c05601a9346",
+        "crop": [
+          450,
+          815,
+          625,
+          830
+        ],
+        "dimensions": [
+          175,
+          15
+        ],
+        "image": "receipts/007.png"
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:37:11.057Z",
+      "payload": {
+        "observation_id": "f0ea2019571f4e808459adf89bbbfd2e",
+        "intent": "Thin horizontal strip along the upper hidden line of the blind hole inside the left journal for pattern comparison",
+        "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "sha256": "cd95ef3aefc58311c9a322458c579d5de0bdbb2b70e2dda35b3e477a4c28d663",
+        "crop": [
+          450,
+          800,
+          625,
+          812
+        ],
+        "dimensions": [
+          175,
+          12
+        ],
+        "image": "receipts/008.png"
+      }
+    },
+    {
+      "sequence": 10,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:39:32.511Z",
+      "payload": {
+        "observation_id": "1207a7001a6643df9674400bf092fd16",
+        "intent": "Check if the horizontal middle line extends beyond the left end face of the left journal - centerlines extend beyond feature outlines, hidden lines stop at them",
+        "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "sha256": "554d8ef0ecc8410cd4fa08738ca23cd6cc9795d44422db8ddfe6893bf2215465",
+        "crop": [
+          425,
+          805,
+          480,
+          840
+        ],
+        "dimensions": [
+          55,
+          35
+        ],
+        "image": "receipts/009.png"
+      }
+    },
+    {
+      "sequence": 11,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:39:32.738Z",
+      "payload": {
+        "observation_id": "2e98c658f37748aa9cbabd3d7ca36c69",
+        "intent": "Compare the middle horizontal line pattern (dash-dot) against the upper/lower hidden hole-wall lines (uniform dashes) inside the left journal",
+        "source_sha256": "5e234705825b1ae5cb808056cc61fabe6036402820b57bd7aa7c1e5e981e2043",
+        "sha256": "b0a713cd1a701475a964ef68b77719edda661437b252f7b394949cc8ff6c8308",
+        "crop": [
+          0,
+          55,
+          200,
+          125
+        ],
+        "dimensions": [
+          200,
+          70
+        ],
+        "image": "receipts/010.png"
+      }
+    },
+    {
+      "sequence": 12,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T10:40:14.825Z",
+      "payload": {
+        "observation_id": "1207a7001a6643df9674400bf092fd16",
+        "public_conclusion": "At the left end of the left journal, the horizontal thin middle line extends slightly beyond the journal's left end face (past the chamfered end). Extending beyond the feature outline is characteristic of a centerline (轴线/中心线), whereas hidden lines stop at the outline."
+      }
+    },
+    {
+      "sequence": 13,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T10:40:14.833Z",
+      "payload": {
+        "observation_id": "2e98c658f37748aa9cbabd3d7ca36c69",
+        "public_conclusion": "Inside the left journal, three thin horizontal lines are visible: an upper and a lower line drawn with uniform short dashes (hidden edges of the internal blind hole walls), and a middle line drawn with a long-dash/short-mark alternating dash-dot pattern passing through the hole's mid-height — this is the axis centerline."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/drawing-01/input-01.png",
+    "assets/drawing-01/input-02.png"
+  ],
+  "asset_base": "assets/drawing-01",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/drawing-01/record.json"
+    }
+  ]
+}

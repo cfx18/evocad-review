@@ -1,0 +1,38 @@
+{
+  "input_path": "[private value removed]",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 800,
+  "operation_manifest": [
+    {
+      "operation_id": "rail_gap_cut",
+      "operation_type": "boolean_subtract",
+      "feature_id": "right_rail_gap",
+      "intent": "Remove5 long section of right raised rail29 from upper end",
+      "parameters": {
+        "x": [
+          16.5,
+          23
+        ],
+        "y": [
+          30,
+          35
+        ],
+        "z": [
+          16.1,
+          22.1
+        ],
+        "length": 5,
+        "top_offset": 29,
+        "expected_volume": 27127.6
+      },
+      "parent_operation_ids": [
+        "window_cut"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    }
+  ],
+  "capture_boolean_lineage": true
+}

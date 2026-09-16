@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.0,
+  "region_count": 0,
+  "regions": [],
+  "native_topology": {
+    "protocol": "evocad-native-feature-localization-v1",
+    "entity_count": 1,
+    "face_count": 130,
+    "adjacency_count": 378,
+    "feature_candidate_count": 76,
+    "export_errors": [],
+    "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+    "boolean_lineage": {
+      "schema_version": "1.0",
+      "protocol": "evocad-boolean-face-lineage-v2",
+      "snapshot_comparison": {
+        "parent_face_count": 130,
+        "current_face_count": 130,
+        "inherited_face_count": 130,
+        "created_or_modified_face_count": 0,
+        "deleted_or_modified_parent_face_count": 0,
+        "captured_job_count": 1,
+        "lineage_mode": "multi_job_fingerprint_chain"
+      },
+      "operation_graph": {
+        "nodes": [
+          {
+            "operation_id": "a007_tooth_edge_chamfer_01",
+            "intent": "From the a004 best checkpoint, replace only the bilateral conical radial-cap approximation with native 1.65 mm constant-distance chamfers on the two axial sprocket-tooth perimeter loops",
+            "operation_type": "chamfer_edge",
+            "feature_id": "tooth_side_chamfers",
+            "parameters": {
+              "overall_width_mm": 7.21,
+              "chamfer_distance_1_mm": 1.65,
+              "chamfer_distance_2_mm": 1.65,
+              "rear_tooth_face_z_mm": 20.79,
+              "front_tooth_face_z_mm": 28,
+              "reverted_operation_ids": [
+                "a003_edge_chamfer_01",
+                "a005_roller_seat_01",
+                "a006_curved_flank_01"
+              ],
+              "retained_roller_seat_radius_mm": 4.255,
+              "retained_root_radius_mm": 44.21,
+              "retained_tip_radius_mm": 51.5
+            },
+            "parent_operation_ids": [
+              "a004_tooth_arcs_01",
+              "a004_restore_chamfer_01"
+            ],
+            "mcp_job_id": "1fdcceba0d8c4672800d6d665cfac9d6"
+          },
+          {
+            "operation_id": "a007_preserve_verified_core_01",
+            "intent": "Preserve the a004 hub, bore, keyway, radial tap-drill, pitch envelope, and straight tangent tooth flanks unchanged while isolating the native edge-chamfer repair",
+            "operation_type": "preserve",
+            "feature_id": null,
+            "parameters": {
+              "tooth_count": 24,
+              "pitch_diameter_mm": 96.93,
+              "hub_diameter_mm": 60,
+              "total_axial_length_mm": 28,
+              "bore_diameter_mm": 30,
+              "keyway_width_mm": 8,
+              "keyway_top_radius_mm": 18.3,
+              "tap_drill_diameter_mm": 5,
+              "tap_drill_offset_mm": 8
+            },
+            "parent_operation_ids": [
+              "a007_tooth_edge_chamfer_01",
+              "a004_preserved_core_01"
+            ],
+            "mcp_job_id": "1fdcceba0d8c4672800d6d665cfac9d6"
+          }
+        ],
+        "edges": [
+          {
+            "source": "a004_tooth_arcs_01",
+            "target": "a007_tooth_edge_chamfer_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a004_restore_chamfer_01",
+            "target": "a007_tooth_edge_chamfer_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a007_tooth_edge_chamfer_01",
+            "target": "a007_preserve_verified_core_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a004_preserved_core_01",
+            "target": "a007_preserve_verified_core_01",
+            "relation": "declared_parent"
+          }
+        ]
+      },
+      "deleted_parent_face_examples": [],
+      "interpretation": "Stable fingerprints prove inheritance. Snapshot-delta faces identify the operation group that changed topology; multiple operations in one job remain causally ambiguous."
+    }
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [],
+    "ground_truth_to_candidate": []
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

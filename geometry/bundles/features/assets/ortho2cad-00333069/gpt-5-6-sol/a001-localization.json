@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.0,
+  "region_count": 0,
+  "regions": [],
+  "native_topology": {
+    "protocol": "evocad-native-feature-localization-v1",
+    "entity_count": 1,
+    "face_count": 9,
+    "adjacency_count": 21,
+    "feature_candidate_count": 0,
+    "export_errors": [],
+    "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery."
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [],
+    "ground_truth_to_candidate": []
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

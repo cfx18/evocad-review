@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" data-mode="public">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Astra Execution Records | EvoCAD</title>
+  <link rel="stylesheet" href="astra.css">
+  <link rel="stylesheet" href="benchmark-metrics.css">
+</head>
+<body>
+  <header class="topbar"><strong>EvoCAD <span>/ Astra execution records</span></strong><a href="index.html" target="_blank" rel="noopener">Geometry review</a></header>
+  <div class="layout">
+    <aside><h1>Astra Ultra</h1><p class="muted" id="inventory">Loading records...</p><nav id="experiments" aria-label="Experiments"></nav></aside>
+    <main>
+      <header class="run-header"><div><p id="condition" class="eyebrow"></p><h2 id="title">Execution records</h2><code id="campaign"></code></div><div class="actions"><a id="reviewLink" target="_blank" rel="noopener">Review geometry</a><a id="downloadLink" download>Download ZIP</a></div></header>
+      <p id="status" role="status"></p><p class="notice" id="note" hidden></p>
+      <dl class="metrics" id="metrics"></dl>
+      <nav class="tabs" aria-label="Record views"><button data-tab="overview" aria-selected="true">Overview</button><button data-tab="conversation" aria-selected="false">Model I/O</button><button data-tab="native" aria-selected="false">AutoCAD jobs</button><button data-tab="files" aria-selected="false">All files</button></nav>
+      <section id="overviewPanel"><div class="media" id="media"></div><div id="benchmarkComparison"></div><h3>Run outcome</h3><div id="outcome"></div><h3>Evidence scope</h3><ul id="limits"></ul></section>
+      <section id="conversationPanel" hidden><div class="toolbar"><label>Event type<select id="eventFilter"><option value="all">All recorded I/O</option><option value="messages">Agent messages</option><option value="input">Input prompts</option><option value="tools">Tool calls and returns</option><option value="evaluation">Evaluation and diagnostics</option></select></label><label class="grow">Search<input id="eventSearch" type="search" placeholder="Code, output, phase or error"></label><span id="eventCount"></span></div><div id="events"></div></section>
+      <section id="nativePanel" hidden><div class="toolbar"><label class="grow">Native job<select id="nativeJob"></select></label><label>Artifact<select id="nativeFile"></select></label><label class="check"><input id="wrapCode" type="checkbox" checked>Wrap lines</label></div><p id="nativeMeta" class="muted"></p><pre id="nativeCode" class="code wrap" tabindex="0"></pre></section>
+      <section id="filesPanel" hidden><div class="toolbar"><label class="grow">Find file<input id="fileSearch" type="search" placeholder="prompt, feedback, stdout, .dwg..."></label><span id="fileCount"></span></div><div class="file-layout"><div id="files"></div><div class="file-preview"><div class="toolbar"><code id="previewName"></code><a id="fileDownload" download hidden>Download file</a></div><pre id="filePreview" class="code wrap" tabindex="0"></pre><img id="fileImage" alt="Recorded image" hidden></div></div></section>
+    </main>
+  </div>
+  <script src="benchmark-metrics.js"></script>
+  <script src="astra.js"></script>
+</body>
+</html>

@@ -1,0 +1,5196 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.029875,
+  "region_count": 10,
+  "regions": [
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 460,
+      "sample_fraction": 0.023,
+      "estimated_area": 0.019261,
+      "estimated_area_fraction": 0.023,
+      "centroid": [
+        -0.000303,
+        0.079782,
+        0.087411
+      ],
+      "centroid_bbox_position": [
+        0.4989,
+        0.1064,
+        0.1178
+      ],
+      "bbox": {
+        "min": [
+          -0.064669,
+          -0.0,
+          0.013005
+        ],
+        "max": [
+          0.064842,
+          0.126248,
+          0.138405
+        ]
+      },
+      "mean_distance_normalized": 0.013954,
+      "p95_distance_normalized": 0.02526,
+      "max_distance_normalized": 0.028571,
+      "mean_normal_offset_normalized": -0.004336,
+      "mean_normal_disagreement": 0.671458,
+      "dominant_source_normal": [
+        -0.0126,
+        -0.9631,
+        0.2687
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.056505,
+          0.119894,
+          0.070313
+        ],
+        [
+          0.049918,
+          0.117938,
+          0.070313
+        ],
+        [
+          0.023424,
+          -0.0,
+          0.020287
+        ],
+        [
+          -0.02039,
+          0.046376,
+          0.056194
+        ],
+        [
+          0.038823,
+          0.095025,
+          0.111066
+        ],
+        [
+          0.020703,
+          0.078125,
+          0.112974
+        ],
+        [
+          -0.002497,
+          0.078125,
+          0.093367
+        ],
+        [
+          -0.047329,
+          0.105232,
+          0.132844
+        ],
+        [
+          -0.059561,
+          0.119912,
+          0.095231
+        ]
+      ],
+      "region_id": "excess-01",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f36",
+          "face_fingerprint": "a790da89378b37c1110e3218b083adbd72a2a439c2c4ff66003779a57e3f6701",
+          "surface_type": "plane",
+          "area": 0.00425578125,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f36",
+            "entity_handle": "4F9",
+            "face_id": "f36",
+            "face_fingerprint": "a790da89378b37c1110e3218b083adbd72a2a439c2c4ff66003779a57e3f6701",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f25",
+          "face_fingerprint": "41286cdb84f4ef51c40fc2f0076a1d648f1ccede36784b8f1181d8ff3863ad03",
+          "surface_type": "plane",
+          "area": 0.004154891576403921,
+          "aligned_bounds": {
+            "min": [
+              0.06250149999999999,
+              0.08593650000000008,
+              0.07031150000000008
+            ],
+            "max": [
+              0.10156399999999999,
+              0.13281250000000008,
+              0.13840400000000008
+            ]
+          },
+          "bbox_distance_normalized": 0.0,
+          "bbox_overlap": 0.051526,
+          "boolean_lineage": {
+            "node_id": "4F9:f25",
+            "entity_handle": "4F9",
+            "face_id": "f25",
+            "face_fingerprint": "41286cdb84f4ef51c40fc2f0076a1d648f1ccede36784b8f1181d8ff3863ad03",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f2",
+          "face_fingerprint": "dd0583ce3d4c842b232530ccfdd63b87e30d8ad9364c774440661db321228e68",
+          "surface_type": "plane",
+          "area": 0.001439125,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f2",
+            "entity_handle": "4F9",
+            "face_id": "f2",
+            "face_fingerprint": "dd0583ce3d4c842b232530ccfdd63b87e30d8ad9364c774440661db321228e68",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f22",
+          "face_fingerprint": "92b5954f4737e007fac21142f6e6c8137f1c4b2c2a178f418ad5b6852792a9d5",
+          "surface_type": "plane",
+          "area": 0.04724119140625,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f22",
+            "entity_handle": "4F9",
+            "face_id": "f22",
+            "face_fingerprint": "92b5954f4737e007fac21142f6e6c8137f1c4b2c2a178f418ad5b6852792a9d5",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f23",
+          "face_fingerprint": "4967d97a8149c2af9d5dce576881afdc27aff66e7b8a30c3b0a1b672d8ec21c0",
+          "surface_type": "plane",
+          "area": 0.04724119140625001,
+          "aligned_bounds": {
+            "min": [
+              0.015626499999999988,
+              0.08593650000000008,
+              0.07031150000000008
+            ],
+            "max": [
+              0.101564,
+              0.6718740000000001,
+              0.07031150000000008
+            ]
+          },
+          "bbox_distance_normalized": 0.0,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f23",
+            "entity_handle": "4F9",
+            "face_id": "f23",
+            "face_fingerprint": "4967d97a8149c2af9d5dce576881afdc27aff66e7b8a30c3b0a1b672d8ec21c0",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f26",
+          "face_fingerprint": "194d46d76403e0d64dd6c7fbf2424eb35b0665881f7a700b981201881cc34553",
+          "surface_type": "plane",
+          "area": 0.004154891576403923,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f26",
+            "entity_handle": "4F9",
+            "face_id": "f26",
+            "face_fingerprint": "194d46d76403e0d64dd6c7fbf2424eb35b0665881f7a700b981201881cc34553",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f34",
+          "face_fingerprint": "54d4d29f1c934d9b0a2c5ce6adc1cc4d41ac06813c68872e8228a2f417bd5993",
+          "surface_type": "plane",
+          "area": 0.003783558354915513,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f34",
+            "entity_handle": "4F9",
+            "face_id": "f34",
+            "face_fingerprint": "54d4d29f1c934d9b0a2c5ce6adc1cc4d41ac06813c68872e8228a2f417bd5993",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "low",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a012_translate_rear_housing_arc",
+          "intent": "Translate only the correct-radius rear cylindrical arc forward to the center supported by the localized cylinder samples, preserving its elevation, radius, sweep, and extrusion width.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.150819,
+              0.15625
+            ],
+            "new_center": [
+              0.171875,
+              0.15625
+            ],
+            "longitudinal_translation": 0.021056,
+            "old_arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "new_arc_start": [
+              0.206487,
+              0.297458
+            ],
+            "old_arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "new_arc_lower": [
+              0.045965,
+              0.083556
+            ],
+            "width": 0.0625,
+            "restored_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a009_restore_housing_station"
+          ]
+        },
+        {
+          "operation_id": "a012_final_union",
+          "intent": "Fuse the a010-preserved components and isolated rear-arc translation into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_shoulder_end_width": 0.140625,
+            "preserved_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a012_translate_rear_housing_arc"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 76,
+      "sample_fraction": 0.0038,
+      "estimated_area": 0.003182,
+      "estimated_area_fraction": 0.0038,
+      "centroid": [
+        9.4e-05,
+        0.632576,
+        0.033555
+      ],
+      "centroid_bbox_position": [
+        0.5004,
+        0.8434,
+        0.0452
+      ],
+      "bbox": {
+        "min": [
+          -0.03125,
+          0.617188,
+          0.006577
+        ],
+        "max": [
+          0.029395,
+          0.664157,
+          0.063639
+        ]
+      },
+      "mean_distance_normalized": 0.011335,
+      "p95_distance_normalized": 0.020245,
+      "max_distance_normalized": 0.02211,
+      "mean_normal_offset_normalized": -0.007552,
+      "mean_normal_disagreement": 0.573087,
+      "dominant_source_normal": [
+        -0.0145,
+        0.8297,
+        -0.558
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.029833,
+          0.658053,
+          0.058361
+        ],
+        [
+          0.021475,
+          0.6595,
+          0.059612
+        ],
+        [
+          0.008181,
+          0.634817,
+          0.03827
+        ],
+        [
+          0.008366,
+          0.624487,
+          0.029337
+        ],
+        [
+          0.00594,
+          0.617188,
+          0.020448
+        ],
+        [
+          0.005466,
+          0.617188,
+          0.007797
+        ],
+        [
+          -0.00978,
+          0.61833,
+          0.024013
+        ],
+        [
+          -0.000766,
+          0.627571,
+          0.032004
+        ],
+        [
+          -0.013184,
+          0.628489,
+          0.032798
+        ]
+      ],
+      "region_id": "excess-02",
+      "counterpart_region_ids": [
+        "missing-02"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f37",
+          "face_fingerprint": "2997489ade34b75a327885bccd3177be24df8ba2e063c8c9598b0348ceaa5b46",
+          "surface_type": "plane",
+          "area": 0.0045184867883446694,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f37",
+            "entity_handle": "4F9",
+            "face_id": "f37",
+            "face_fingerprint": "2997489ade34b75a327885bccd3177be24df8ba2e063c8c9598b0348ceaa5b46",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 7,
+          "exact_query_fraction": 0.777778,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f18",
+          "face_fingerprint": "a853390c997ffd0d4e39ae84011cf6b57eb0ad2c5c535caa3bd5453474d9ce5a",
+          "surface_type": "plane",
+          "area": 0.00611628125,
+          "aligned_bounds": {
+            "min": [
+              1.4999999999876223e-06,
+              0.6171865000000001,
+              -9.999999999177334e-07
+            ],
+            "max": [
+              0.2656265,
+              0.6171865000000001,
+              0.023025000000000073
+            ]
+          },
+          "bbox_distance_normalized": 1e-06,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f18",
+            "entity_handle": "4F9",
+            "face_id": "f18",
+            "face_fingerprint": "a853390c997ffd0d4e39ae84011cf6b57eb0ad2c5c535caa3bd5453474d9ce5a",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a012_translate_rear_housing_arc",
+          "intent": "Translate only the correct-radius rear cylindrical arc forward to the center supported by the localized cylinder samples, preserving its elevation, radius, sweep, and extrusion width.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.150819,
+              0.15625
+            ],
+            "new_center": [
+              0.171875,
+              0.15625
+            ],
+            "longitudinal_translation": 0.021056,
+            "old_arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "new_arc_start": [
+              0.206487,
+              0.297458
+            ],
+            "old_arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "new_arc_lower": [
+              0.045965,
+              0.083556
+            ],
+            "width": 0.0625,
+            "restored_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a009_restore_housing_station"
+          ]
+        },
+        {
+          "operation_id": "a012_final_union",
+          "intent": "Fuse the a010-preserved components and isolated rear-arc translation into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_shoulder_end_width": 0.140625,
+            "preserved_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a012_translate_rear_housing_arc"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 98,
+      "sample_fraction": 0.0049,
+      "estimated_area": 0.004103,
+      "estimated_area_fraction": 0.0049,
+      "centroid": [
+        0.00037,
+        0.695144,
+        0.519891
+      ],
+      "centroid_bbox_position": [
+        0.5014,
+        0.9269,
+        0.7006
+      ],
+      "bbox": {
+        "min": [
+          -0.024424,
+          0.685723,
+          0.479007
+        ],
+        "max": [
+          0.0245,
+          0.704978,
+          0.5625
+        ]
+      },
+      "mean_distance_normalized": 0.00739,
+      "p95_distance_normalized": 0.008818,
+      "max_distance_normalized": 0.00952,
+      "mean_normal_offset_normalized": -0.006848,
+      "mean_normal_disagreement": 0.085543,
+      "dominant_source_normal": [
+        0.0,
+        -0.9828,
+        0.1849
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.019262,
+          0.685798,
+          0.479333
+        ],
+        [
+          0.005384,
+          0.691311,
+          0.503113
+        ],
+        [
+          0.015474,
+          0.693623,
+          0.513086
+        ],
+        [
+          0.00769,
+          0.697966,
+          0.531822
+        ],
+        [
+          0.013442,
+          0.703538,
+          0.555855
+        ],
+        [
+          -0.019733,
+          0.702106,
+          0.54968
+        ],
+        [
+          -0.007916,
+          0.694978,
+          0.518933
+        ],
+        [
+          -0.023679,
+          0.688223,
+          0.489791
+        ],
+        [
+          -0.018829,
+          0.689163,
+          0.493846
+        ]
+      ],
+      "region_id": "excess-03",
+      "counterpart_region_ids": [
+        "missing-05"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f38",
+          "face_fingerprint": "8a8cebb317dace969ffe8da1ec53a561d3bc49969c93df20c2ed2de4a1c9f13d",
+          "surface_type": "plane",
+          "area": 0.026183922570057735,
+          "aligned_bounds": {
+            "min": [
+              0.10156400000000011,
+              0.610467456454544,
+              0.15437886117646407
+            ],
+            "max": [
+              0.1640640000000001,
+              0.7050771250000001,
+              0.5624990000000001
+            ]
+          },
+          "bbox_distance_normalized": 0.07083,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f38",
+            "entity_handle": "4F9",
+            "face_id": "f38",
+            "face_fingerprint": "8a8cebb317dace969ffe8da1ec53a561d3bc49969c93df20c2ed2de4a1c9f13d",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a012_translate_rear_housing_arc",
+          "intent": "Translate only the correct-radius rear cylindrical arc forward to the center supported by the localized cylinder samples, preserving its elevation, radius, sweep, and extrusion width.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.150819,
+              0.15625
+            ],
+            "new_center": [
+              0.171875,
+              0.15625
+            ],
+            "longitudinal_translation": 0.021056,
+            "old_arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "new_arc_start": [
+              0.206487,
+              0.297458
+            ],
+            "old_arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "new_arc_lower": [
+              0.045965,
+              0.083556
+            ],
+            "width": 0.0625,
+            "restored_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a009_restore_housing_station"
+          ]
+        },
+        {
+          "operation_id": "a012_final_union",
+          "intent": "Fuse the a010-preserved components and isolated rear-arc translation into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_shoulder_end_width": 0.140625,
+            "preserved_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a012_translate_rear_housing_arc"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 16,
+      "sample_fraction": 0.0008,
+      "estimated_area": 0.00067,
+      "estimated_area_fraction": 0.0008,
+      "centroid": [
+        0.003233,
+        0.742973,
+        0.634412
+      ],
+      "centroid_bbox_position": [
+        0.5122,
+        0.9906,
+        0.8549
+      ],
+      "bbox": {
+        "min": [
+          -0.021237,
+          0.742574,
+          0.628291
+        ],
+        "max": [
+          0.023561,
+          0.743393,
+          0.640838
+        ]
+      },
+      "mean_distance_normalized": 0.00636,
+      "p95_distance_normalized": 0.006577,
+      "max_distance_normalized": 0.006588,
+      "mean_normal_offset_normalized": -0.00636,
+      "mean_normal_disagreement": 0.003283,
+      "dominant_source_normal": [
+        0.0,
+        0.9979,
+        -0.0651
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.007572,
+          0.743114,
+          0.636568
+        ],
+        [
+          -0.007825,
+          0.743357,
+          0.640298
+        ],
+        [
+          -0.021237,
+          0.742726,
+          0.630625
+        ],
+        [
+          0.010082,
+          0.742832,
+          0.632251
+        ],
+        [
+          0.01096,
+          0.742817,
+          0.63202
+        ],
+        [
+          0.002191,
+          0.742861,
+          0.632683
+        ],
+        [
+          0.003681,
+          0.742623,
+          0.629048
+        ],
+        [
+          0.000654,
+          0.743032,
+          0.63531
+        ],
+        [
+          0.023561,
+          0.743127,
+          0.636765
+        ]
+      ],
+      "region_id": "excess-04",
+      "counterpart_region_ids": [
+        "missing-06"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f42",
+          "face_fingerprint": "379e07f4117da239275c2eced160c15eb2512c67c09812e75111206d2de1f4bb",
+          "surface_type": "plane",
+          "area": 0.011249181415802431,
+          "aligned_bounds": {
+            "min": [
+              0.10156400000000011,
+              0.7382802500000001,
+              0.5624990000000001
+            ],
+            "max": [
+              0.1640640000000001,
+              0.7499990000000001,
+              0.7421040000000001
+            ]
+          },
+          "bbox_distance_normalized": 0.071693,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f42",
+            "entity_handle": "4F9",
+            "face_id": "f42",
+            "face_fingerprint": "379e07f4117da239275c2eced160c15eb2512c67c09812e75111206d2de1f4bb",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a012_translate_rear_housing_arc",
+          "intent": "Translate only the correct-radius rear cylindrical arc forward to the center supported by the localized cylinder samples, preserving its elevation, radius, sweep, and extrusion width.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.150819,
+              0.15625
+            ],
+            "new_center": [
+              0.171875,
+              0.15625
+            ],
+            "longitudinal_translation": 0.021056,
+            "old_arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "new_arc_start": [
+              0.206487,
+              0.297458
+            ],
+            "old_arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "new_arc_lower": [
+              0.045965,
+              0.083556
+            ],
+            "width": 0.0625,
+            "restored_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a009_restore_housing_station"
+          ]
+        },
+        {
+          "operation_id": "a012_final_union",
+          "intent": "Fuse the a010-preserved components and isolated rear-arc translation into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_shoulder_end_width": 0.140625,
+            "preserved_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a012_translate_rear_housing_arc"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 97,
+      "sample_fraction": 0.00485,
+      "estimated_area": 0.004052,
+      "estimated_area_fraction": 0.00485,
+      "centroid": [
+        -0.039113,
+        0.124775,
+        0.106372
+      ],
+      "centroid_bbox_position": [
+        0.3528,
+        0.1664,
+        0.1433
+      ],
+      "bbox": {
+        "min": [
+          -0.061074,
+          0.097804,
+          0.078127
+        ],
+        "max": [
+          -0.03125,
+          0.132812,
+          0.131565
+        ]
+      },
+      "mean_distance_normalized": 0.014313,
+      "p95_distance_normalized": 0.024575,
+      "max_distance_normalized": 0.027123,
+      "mean_normal_offset_normalized": -0.014313,
+      "mean_normal_disagreement": 0.621169,
+      "dominant_source_normal": [
+        -0.7286,
+        -0.6849,
+        0.0
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.055924,
+          0.132812,
+          0.080999
+        ],
+        [
+          -0.03125,
+          0.120536,
+          0.081747
+        ],
+        [
+          -0.03883,
+          0.132812,
+          0.108053
+        ],
+        [
+          -0.031622,
+          0.132812,
+          0.120586
+        ],
+        [
+          -0.052383,
+          0.132812,
+          0.119262
+        ],
+        [
+          -0.03125,
+          0.122697,
+          0.11206
+        ],
+        [
+          -0.03125,
+          0.117051,
+          0.109911
+        ],
+        [
+          -0.03125,
+          0.100294,
+          0.093443
+        ],
+        [
+          -0.057238,
+          0.132812,
+          0.101179
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-f30991d46a09",
+          "sample_fraction": 0.515464,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-30940416656d",
+          "sample_fraction": 0.484536,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-01",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f25",
+          "face_fingerprint": "41286cdb84f4ef51c40fc2f0076a1d648f1ccede36784b8f1181d8ff3863ad03",
+          "surface_type": "plane",
+          "area": 0.004154891576403921,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f25",
+            "entity_handle": "4F9",
+            "face_id": "f25",
+            "face_fingerprint": "41286cdb84f4ef51c40fc2f0076a1d648f1ccede36784b8f1181d8ff3863ad03",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 6,
+          "exact_query_fraction": 0.666667,
+          "minimum_trimmed_face_distance_normalized": 0.008447,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f23",
+          "face_fingerprint": "4967d97a8149c2af9d5dce576881afdc27aff66e7b8a30c3b0a1b672d8ec21c0",
+          "surface_type": "plane",
+          "area": 0.04724119140625001,
+          "aligned_bounds": {
+            "min": [
+              0.015626499999999988,
+              0.08593650000000008,
+              0.07031150000000008
+            ],
+            "max": [
+              0.101564,
+              0.6718740000000001,
+              0.07031150000000008
+            ]
+          },
+          "bbox_distance_normalized": 0.043679,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f23",
+            "entity_handle": "4F9",
+            "face_id": "f23",
+            "face_fingerprint": "4967d97a8149c2af9d5dce576881afdc27aff66e7b8a30c3b0a1b672d8ec21c0",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.009822,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f44",
+          "face_fingerprint": "edb58c5fc1cad1ee4f48ee47cce06a4c0fe9adee1945db4dcec9153c60b84776",
+          "surface_type": "plane",
+          "area": 0.13870377136868917,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f44",
+            "entity_handle": "4F9",
+            "face_id": "f44",
+            "face_fingerprint": "edb58c5fc1cad1ee4f48ee47cce06a4c0fe9adee1945db4dcec9153c60b84776",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.010509,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f24",
+          "face_fingerprint": "59ca8f283e479d9c4b2109273ed80018a83ef584903a8ce2bacc1e0f43829adc",
+          "surface_type": "plane",
+          "area": 0.09539221661931818,
+          "aligned_bounds": {
+            "min": [
+              0.015626499999999988,
+              0.08593650000000008,
+              0.13840400000000008
+            ],
+            "max": [
+              0.2500015,
+              0.6718740000000001,
+              0.13840400000000008
+            ]
+          },
+          "bbox_distance_normalized": 0.043541,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f24",
+            "entity_handle": "4F9",
+            "face_id": "f24",
+            "face_fingerprint": "59ca8f283e479d9c4b2109273ed80018a83ef584903a8ce2bacc1e0f43829adc",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.016378,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a012_translate_rear_housing_arc",
+          "intent": "Translate only the correct-radius rear cylindrical arc forward to the center supported by the localized cylinder samples, preserving its elevation, radius, sweep, and extrusion width.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.150819,
+              0.15625
+            ],
+            "new_center": [
+              0.171875,
+              0.15625
+            ],
+            "longitudinal_translation": 0.021056,
+            "old_arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "new_arc_start": [
+              0.206487,
+              0.297458
+            ],
+            "old_arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "new_arc_lower": [
+              0.045965,
+              0.083556
+            ],
+            "width": 0.0625,
+            "restored_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a009_restore_housing_station"
+          ]
+        },
+        {
+          "operation_id": "a012_final_union",
+          "intent": "Fuse the a010-preserved components and isolated rear-arc translation into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_shoulder_end_width": 0.140625,
+            "preserved_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a012_translate_rear_housing_arc"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 118,
+      "sample_fraction": 0.0059,
+      "estimated_area": 0.004929,
+      "estimated_area_fraction": 0.0059,
+      "centroid": [
+        0.000505,
+        0.641773,
+        0.025256
+      ],
+      "centroid_bbox_position": [
+        0.5019,
+        0.8557,
+        0.034
+      ],
+      "bbox": {
+        "min": [
+          -0.03125,
+          0.62448,
+          -0.0
+        ],
+        "max": [
+          0.03125,
+          0.659912,
+          0.070312
+        ]
+      },
+      "mean_distance_normalized": 0.013522,
+      "p95_distance_normalized": 0.02176,
+      "max_distance_normalized": 0.022348,
+      "mean_normal_offset_normalized": 0.00997,
+      "mean_normal_disagreement": 0.463875,
+      "dominant_source_normal": [
+        0.0,
+        0.8137,
+        -0.5813
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.029473,
+          0.63087,
+          -0.0
+        ],
+        [
+          -0.015328,
+          0.640889,
+          0.00809
+        ],
+        [
+          0.019178,
+          0.644496,
+          0.0287
+        ],
+        [
+          0.03125,
+          0.62547,
+          0.00552
+        ],
+        [
+          -0.010159,
+          0.654128,
+          0.070312
+        ],
+        [
+          0.02298,
+          0.642232,
+          0.015764
+        ],
+        [
+          0.024791,
+          0.639278,
+          -0.0
+        ],
+        [
+          -0.007756,
+          0.629916,
+          -0.0
+        ],
+        [
+          -0.03125,
+          0.627589,
+          0.018091
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-aa5a3340271a",
+          "sample_fraction": 0.279661,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-128ad171706e",
+          "sample_fraction": 0.262712,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-fc0006dccf55",
+          "sample_fraction": 0.101695,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-f30991d46a09",
+          "sample_fraction": 0.084746,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-e726c000eb78",
+          "sample_fraction": 0.084746,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-02",
+      "counterpart_region_ids": [
+        "excess-02"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f18",
+          "face_fingerprint": "a853390c997ffd0d4e39ae84011cf6b57eb0ad2c5c535caa3bd5453474d9ce5a",
+          "surface_type": "plane",
+          "area": 0.00611628125,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f18",
+            "entity_handle": "4F9",
+            "face_id": "f18",
+            "face_fingerprint": "a853390c997ffd0d4e39ae84011cf6b57eb0ad2c5c535caa3bd5453474d9ce5a",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.007612,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f37",
+          "face_fingerprint": "2997489ade34b75a327885bccd3177be24df8ba2e063c8c9598b0348ceaa5b46",
+          "surface_type": "plane",
+          "area": 0.0045184867883446694,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f37",
+            "entity_handle": "4F9",
+            "face_id": "f37",
+            "face_fingerprint": "2997489ade34b75a327885bccd3177be24df8ba2e063c8c9598b0348ceaa5b46",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.010668,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f9",
+          "face_fingerprint": "46201607dcc6da1b6bf1bad641e5100fa6248f47d34363aa151b5c5ab06080a8",
+          "surface_type": "plane",
+          "area": 0.060791015625,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f9",
+            "entity_handle": "4F9",
+            "face_id": "f9",
+            "face_fingerprint": "46201607dcc6da1b6bf1bad641e5100fa6248f47d34363aa151b5c5ab06080a8",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.011699,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a012_translate_rear_housing_arc",
+          "intent": "Translate only the correct-radius rear cylindrical arc forward to the center supported by the localized cylinder samples, preserving its elevation, radius, sweep, and extrusion width.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.150819,
+              0.15625
+            ],
+            "new_center": [
+              0.171875,
+              0.15625
+            ],
+            "longitudinal_translation": 0.021056,
+            "old_arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "new_arc_start": [
+              0.206487,
+              0.297458
+            ],
+            "old_arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "new_arc_lower": [
+              0.045965,
+              0.083556
+            ],
+            "width": 0.0625,
+            "restored_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a009_restore_housing_station"
+          ]
+        },
+        {
+          "operation_id": "a012_final_union",
+          "intent": "Fuse the a010-preserved components and isolated rear-arc translation into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_shoulder_end_width": 0.140625,
+            "preserved_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a012_translate_rear_housing_arc"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 87,
+      "sample_fraction": 0.00435,
+      "estimated_area": 0.003634,
+      "estimated_area_fraction": 0.00435,
+      "centroid": [
+        0.038778,
+        0.123933,
+        0.105217
+      ],
+      "centroid_bbox_position": [
+        0.646,
+        0.1652,
+        0.1418
+      ],
+      "bbox": {
+        "min": [
+          0.03125,
+          0.096402,
+          0.077049
+        ],
+        "max": [
+          0.061221,
+          0.132812,
+          0.130949
+        ]
+      },
+      "mean_distance_normalized": 0.013732,
+      "p95_distance_normalized": 0.024576,
+      "max_distance_normalized": 0.026752,
+      "mean_normal_offset_normalized": -0.010648,
+      "mean_normal_disagreement": 0.407801,
+      "dominant_source_normal": [
+        0.6989,
+        -0.7152,
+        0.0
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          0.03125,
+          0.10113,
+          0.078986
+        ],
+        [
+          0.035155,
+          0.132812,
+          0.112098
+        ],
+        [
+          0.033221,
+          0.132812,
+          0.126727
+        ],
+        [
+          0.045869,
+          0.132812,
+          0.128952
+        ],
+        [
+          0.03125,
+          0.107006,
+          0.11594
+        ],
+        [
+          0.03125,
+          0.125688,
+          0.094131
+        ],
+        [
+          0.038013,
+          0.132812,
+          0.089964
+        ],
+        [
+          0.035947,
+          0.132812,
+          0.077049
+        ],
+        [
+          0.03125,
+          0.100248,
+          0.087773
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-8f5d97800ba9",
+          "sample_fraction": 0.505747,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-e726c000eb78",
+          "sample_fraction": 0.494253,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-03",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f24",
+          "face_fingerprint": "59ca8f283e479d9c4b2109273ed80018a83ef584903a8ce2bacc1e0f43829adc",
+          "surface_type": "plane",
+          "area": 0.09539221661931818,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f24",
+            "entity_handle": "4F9",
+            "face_id": "f24",
+            "face_fingerprint": "59ca8f283e479d9c4b2109273ed80018a83ef584903a8ce2bacc1e0f43829adc",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.008689,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f22",
+          "face_fingerprint": "92b5954f4737e007fac21142f6e6c8137f1c4b2c2a178f418ad5b6852792a9d5",
+          "surface_type": "plane",
+          "area": 0.04724119140625,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f22",
+            "entity_handle": "4F9",
+            "face_id": "f22",
+            "face_fingerprint": "92b5954f4737e007fac21142f6e6c8137f1c4b2c2a178f418ad5b6852792a9d5",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.006191,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f21",
+          "face_fingerprint": "c93c23523b1461f3a003d61c78103b47dacef42af041b3824928f2842d362b49",
+          "surface_type": "plane",
+          "area": 0.1387037713686892,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f21",
+            "entity_handle": "4F9",
+            "face_id": "f21",
+            "face_fingerprint": "c93c23523b1461f3a003d61c78103b47dacef42af041b3824928f2842d362b49",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.007971,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f26",
+          "face_fingerprint": "194d46d76403e0d64dd6c7fbf2424eb35b0665881f7a700b981201881cc34553",
+          "surface_type": "plane",
+          "area": 0.004154891576403923,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f26",
+            "entity_handle": "4F9",
+            "face_id": "f26",
+            "face_fingerprint": "194d46d76403e0d64dd6c7fbf2424eb35b0665881f7a700b981201881cc34553",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.00842,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a012_translate_rear_housing_arc",
+          "intent": "Translate only the correct-radius rear cylindrical arc forward to the center supported by the localized cylinder samples, preserving its elevation, radius, sweep, and extrusion width.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.150819,
+              0.15625
+            ],
+            "new_center": [
+              0.171875,
+              0.15625
+            ],
+            "longitudinal_translation": 0.021056,
+            "old_arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "new_arc_start": [
+              0.206487,
+              0.297458
+            ],
+            "old_arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "new_arc_lower": [
+              0.045965,
+              0.083556
+            ],
+            "width": 0.0625,
+            "restored_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a009_restore_housing_station"
+          ]
+        },
+        {
+          "operation_id": "a012_final_union",
+          "intent": "Fuse the a010-preserved components and isolated rear-arc translation into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_shoulder_end_width": 0.140625,
+            "preserved_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a012_translate_rear_housing_arc"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 106,
+      "sample_fraction": 0.0053,
+      "estimated_area": 0.004428,
+      "estimated_area_fraction": 0.0053,
+      "centroid": [
+        -0.000616,
+        0.027168,
+        0.043259
+      ],
+      "centroid_bbox_position": [
+        0.4977,
+        0.0362,
+        0.0583
+      ],
+      "bbox": {
+        "min": [
+          -0.03125,
+          0.007621,
+          0.012702
+        ],
+        "max": [
+          0.03125,
+          0.039982,
+          0.065738
+        ]
+      },
+      "mean_distance_normalized": 0.011571,
+      "p95_distance_normalized": 0.018055,
+      "max_distance_normalized": 0.018753,
+      "mean_normal_offset_normalized": 0.009489,
+      "mean_normal_disagreement": 0.361258,
+      "dominant_source_normal": [
+        0.0,
+        -0.8575,
+        0.5145
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.031164,
+          0.020869,
+          0.034782
+        ],
+        [
+          -0.008902,
+          0.037637,
+          0.062729
+        ],
+        [
+          0.027262,
+          0.035206,
+          0.058677
+        ],
+        [
+          0.003795,
+          0.009865,
+          0.016442
+        ],
+        [
+          0.015737,
+          0.020058,
+          0.03343
+        ],
+        [
+          -0.008585,
+          0.027224,
+          0.045374
+        ],
+        [
+          -0.011183,
+          0.024489,
+          0.040815
+        ],
+        [
+          -0.012053,
+          0.024749,
+          0.041248
+        ],
+        [
+          -0.03125,
+          0.032472,
+          0.038936
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-588eb426461a",
+          "sample_fraction": 0.45283,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-23dd45881a0c",
+          "sample_fraction": 0.377358,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-f30991d46a09",
+          "sample_fraction": 0.084906,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-e726c000eb78",
+          "sample_fraction": 0.084906,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-04",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f8",
+          "face_fingerprint": "e626a56a4ec1f73c977ad776ce4e16edd4380926fd272a072886000eeaa306eb",
+          "surface_type": "plane",
+          "area": 0.0140380859375,
+          "aligned_bounds": {
+            "min": [
+              1.4999999999876223e-06,
+              -9.999999999177334e-07,
+              0.023025000000000073
+            ],
+            "max": [
+              0.2656265,
+              0.07812400000000008,
+              0.023025000000000073
+            ]
+          },
+          "bbox_distance_normalized": 0.0,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f8",
+            "entity_handle": "4F9",
+            "face_id": "f8",
+            "face_fingerprint": "e626a56a4ec1f73c977ad776ce4e16edd4380926fd272a072886000eeaa306eb",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 5,
+          "exact_query_fraction": 0.555556,
+          "minimum_trimmed_face_distance_normalized": 0.006052,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f34",
+          "face_fingerprint": "54d4d29f1c934d9b0a2c5ce6adc1cc4d41ac06813c68872e8228a2f417bd5993",
+          "surface_type": "plane",
+          "area": 0.003783558354915513,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f34",
+            "entity_handle": "4F9",
+            "face_id": "f34",
+            "face_fingerprint": "54d4d29f1c934d9b0a2c5ce6adc1cc4d41ac06813c68872e8228a2f417bd5993",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.007941,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f44",
+          "face_fingerprint": "edb58c5fc1cad1ee4f48ee47cce06a4c0fe9adee1945db4dcec9153c60b84776",
+          "surface_type": "plane",
+          "area": 0.13870377136868917,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f44",
+            "entity_handle": "4F9",
+            "face_id": "f44",
+            "face_fingerprint": "edb58c5fc1cad1ee4f48ee47cce06a4c0fe9adee1945db4dcec9153c60b84776",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.013017,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a012_translate_rear_housing_arc",
+          "intent": "Translate only the correct-radius rear cylindrical arc forward to the center supported by the localized cylinder samples, preserving its elevation, radius, sweep, and extrusion width.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.150819,
+              0.15625
+            ],
+            "new_center": [
+              0.171875,
+              0.15625
+            ],
+            "longitudinal_translation": 0.021056,
+            "old_arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "new_arc_start": [
+              0.206487,
+              0.297458
+            ],
+            "old_arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "new_arc_lower": [
+              0.045965,
+              0.083556
+            ],
+            "width": 0.0625,
+            "restored_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a009_restore_housing_station"
+          ]
+        },
+        {
+          "operation_id": "a012_final_union",
+          "intent": "Fuse the a010-preserved components and isolated rear-arc translation into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_shoulder_end_width": 0.140625,
+            "preserved_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a012_translate_rear_housing_arc"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 118,
+      "sample_fraction": 0.0059,
+      "estimated_area": 0.004929,
+      "estimated_area_fraction": 0.0059,
+      "centroid": [
+        0.00117,
+        0.685929,
+        0.514501
+      ],
+      "centroid_bbox_position": [
+        0.5044,
+        0.9146,
+        0.6933
+      ],
+      "bbox": {
+        "min": [
+          -0.031162,
+          0.679498,
+          0.481287
+        ],
+        "max": [
+          0.03125,
+          0.694587,
+          0.555845
+        ]
+      },
+      "mean_distance_normalized": 0.007139,
+      "p95_distance_normalized": 0.008284,
+      "max_distance_normalized": 0.008504,
+      "mean_normal_offset_normalized": 0.007139,
+      "mean_normal_disagreement": 0.055193,
+      "dominant_source_normal": [
+        0.0351,
+        -0.9814,
+        0.1887
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.027985,
+          0.680997,
+          0.489078
+        ],
+        [
+          -0.01208,
+          0.685344,
+          0.511685
+        ],
+        [
+          0.000614,
+          0.688172,
+          0.526391
+        ],
+        [
+          0.029632,
+          0.682132,
+          0.494979
+        ],
+        [
+          0.018121,
+          0.685694,
+          0.513502
+        ],
+        [
+          0.022443,
+          0.682981,
+          0.499394
+        ],
+        [
+          0.022089,
+          0.679498,
+          0.481287
+        ],
+        [
+          -0.004681,
+          0.687488,
+          0.522832
+        ],
+        [
+          -0.031046,
+          0.685018,
+          0.509989
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-8b1f83019229",
+          "sample_fraction": 0.491525,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-5ebabb91d9d1",
+          "sample_fraction": 0.474576,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-e726c000eb78",
+          "sample_fraction": 0.033898,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-05",
+      "counterpart_region_ids": [
+        "excess-03"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f38",
+          "face_fingerprint": "8a8cebb317dace969ffe8da1ec53a561d3bc49969c93df20c2ed2de4a1c9f13d",
+          "surface_type": "plane",
+          "area": 0.026183922570057735,
+          "aligned_bounds": {
+            "min": [
+              0.10156400000000011,
+              0.610467456454544,
+              0.15437886117646407
+            ],
+            "max": [
+              0.1640640000000001,
+              0.7050771250000001,
+              0.5624990000000001
+            ]
+          },
+          "bbox_distance_normalized": 0.064626,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f38",
+            "entity_handle": "4F9",
+            "face_id": "f38",
+            "face_fingerprint": "8a8cebb317dace969ffe8da1ec53a561d3bc49969c93df20c2ed2de4a1c9f13d",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.006047,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a012_translate_rear_housing_arc",
+          "intent": "Translate only the correct-radius rear cylindrical arc forward to the center supported by the localized cylinder samples, preserving its elevation, radius, sweep, and extrusion width.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.150819,
+              0.15625
+            ],
+            "new_center": [
+              0.171875,
+              0.15625
+            ],
+            "longitudinal_translation": 0.021056,
+            "old_arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "new_arc_start": [
+              0.206487,
+              0.297458
+            ],
+            "old_arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "new_arc_lower": [
+              0.045965,
+              0.083556
+            ],
+            "width": 0.0625,
+            "restored_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a009_restore_housing_station"
+          ]
+        },
+        {
+          "operation_id": "a012_final_union",
+          "intent": "Fuse the a010-preserved components and isolated rear-arc translation into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_shoulder_end_width": 0.140625,
+            "preserved_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a012_translate_rear_housing_arc"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 19,
+      "sample_fraction": 0.00095,
+      "estimated_area": 0.000794,
+      "estimated_area_fraction": 0.00095,
+      "centroid": [
+        0.006398,
+        0.749828,
+        0.63409
+      ],
+      "centroid_bbox_position": [
+        0.5241,
+        0.9998,
+        0.8544
+      ],
+      "bbox": {
+        "min": [
+          -0.030667,
+          0.74907,
+          0.626265
+        ],
+        "max": [
+          0.030907,
+          0.75,
+          0.641434
+        ]
+      },
+      "mean_distance_normalized": 0.006306,
+      "p95_distance_normalized": 0.006563,
+      "max_distance_normalized": 0.006607,
+      "mean_normal_offset_normalized": 0.006306,
+      "mean_normal_disagreement": 0.003099,
+      "dominant_source_normal": [
+        0.0,
+        0.999,
+        -0.0455
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.02954,
+          0.75,
+          0.636563
+        ],
+        [
+          -0.013999,
+          0.749405,
+          0.628181
+        ],
+        [
+          -0.017538,
+          0.75,
+          0.632722
+        ],
+        [
+          -0.002672,
+          0.75,
+          0.632524
+        ],
+        [
+          0.013591,
+          0.75,
+          0.63169
+        ],
+        [
+          0.00983,
+          0.749729,
+          0.630029
+        ],
+        [
+          0.022074,
+          0.75,
+          0.634804
+        ],
+        [
+          0.020645,
+          0.75,
+          0.63565
+        ],
+        [
+          0.030329,
+          0.75,
+          0.641434
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-4d013bb0e5f2",
+          "sample_fraction": 0.473684,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-f643ddacaf4f",
+          "sample_fraction": 0.263158,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-ed72c9f2ad28",
+          "sample_fraction": 0.157895,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-77d9cc9571a5",
+          "sample_fraction": 0.105263,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-06",
+      "counterpart_region_ids": [
+        "excess-04"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f42",
+          "face_fingerprint": "379e07f4117da239275c2eced160c15eb2512c67c09812e75111206d2de1f4bb",
+          "surface_type": "plane",
+          "area": 0.011249181415802431,
+          "aligned_bounds": {
+            "min": [
+              0.10156400000000011,
+              0.7382802500000001,
+              0.5624990000000001
+            ],
+            "max": [
+              0.1640640000000001,
+              0.7499990000000001,
+              0.7421040000000001
+            ]
+          },
+          "bbox_distance_normalized": 0.064941,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f42",
+            "entity_handle": "4F9",
+            "face_id": "f42",
+            "face_fingerprint": "379e07f4117da239275c2eced160c15eb2512c67c09812e75111206d2de1f4bb",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a012_translate_rear_housing_arc",
+              "a012_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.006024,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a012_translate_rear_housing_arc",
+          "intent": "Translate only the correct-radius rear cylindrical arc forward to the center supported by the localized cylinder samples, preserving its elevation, radius, sweep, and extrusion width.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_arc_profile",
+          "feature_id": "rear_housing",
+          "editable_parameters": {
+            "radius": 0.145388,
+            "old_center": [
+              0.150819,
+              0.15625
+            ],
+            "new_center": [
+              0.171875,
+              0.15625
+            ],
+            "longitudinal_translation": 0.021056,
+            "old_arc_start": [
+              0.185431,
+              0.297458
+            ],
+            "new_arc_start": [
+              0.206487,
+              0.297458
+            ],
+            "old_arc_lower": [
+              0.024909,
+              0.083556
+            ],
+            "new_arc_lower": [
+              0.045965,
+              0.083556
+            ],
+            "width": 0.0625,
+            "restored_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a009_restore_housing_station"
+          ]
+        },
+        {
+          "operation_id": "a012_final_union",
+          "intent": "Fuse the a010-preserved components and isolated rear-arc translation into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_shoulder_end_width": 0.140625,
+            "preserved_connector_upper": 0.671875
+          },
+          "parent_operation_ids": [
+            "a012_translate_rear_housing_arc"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    }
+  ],
+  "native_topology": {
+    "protocol": "evocad-native-feature-localization-v1",
+    "entity_count": 1,
+    "face_count": 44,
+    "adjacency_count": 120,
+    "feature_candidate_count": 1,
+    "export_errors": [],
+    "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+    "boolean_lineage": {
+      "schema_version": "1.0",
+      "protocol": "evocad-boolean-face-lineage-v2",
+      "snapshot_comparison": {
+        "parent_face_count": 47,
+        "current_face_count": 44,
+        "inherited_face_count": 5,
+        "created_or_modified_face_count": 39,
+        "deleted_or_modified_parent_face_count": 42,
+        "captured_job_count": 1,
+        "lineage_mode": "multi_job_fingerprint_chain"
+      },
+      "operation_graph": {
+        "nodes": [
+          {
+            "operation_id": "a012_translate_rear_housing_arc",
+            "intent": "Translate only the correct-radius rear cylindrical arc forward to the center supported by the localized cylinder samples, preserving its elevation, radius, sweep, and extrusion width.",
+            "operation_type": "replace_arc_profile",
+            "feature_id": "rear_housing",
+            "parameters": {
+              "radius": 0.145388,
+              "old_center": [
+                0.150819,
+                0.15625
+              ],
+              "new_center": [
+                0.171875,
+                0.15625
+              ],
+              "longitudinal_translation": 0.021056,
+              "old_arc_start": [
+                0.185431,
+                0.297458
+              ],
+              "new_arc_start": [
+                0.206487,
+                0.297458
+              ],
+              "old_arc_lower": [
+                0.024909,
+                0.083556
+              ],
+              "new_arc_lower": [
+                0.045965,
+                0.083556
+              ],
+              "width": 0.0625,
+              "restored_connector_upper": 0.671875
+            },
+            "parent_operation_ids": [
+              "a009_restore_housing_station"
+            ],
+            "mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          },
+          {
+            "operation_id": "a012_final_union",
+            "intent": "Fuse the a010-preserved components and isolated rear-arc translation into exactly one native editable solid with no annotations.",
+            "operation_type": "union",
+            "feature_id": "final_solid",
+            "parameters": {
+              "expected_solid_count": 1,
+              "overall_length": 0.75,
+              "overall_width": 0.265625,
+              "overall_height": 0.742105,
+              "preserved_lever_notch_transition": 0.705078125,
+              "preserved_shoulder_end_width": 0.140625,
+              "preserved_connector_upper": 0.671875
+            },
+            "parent_operation_ids": [
+              "a012_translate_rear_housing_arc"
+            ],
+            "mcp_job_id": "5930dba73a014d3bb2614a5409b7a9c6"
+          }
+        ],
+        "edges": [
+          {
+            "source": "a009_restore_housing_station",
+            "target": "a012_translate_rear_housing_arc",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a012_translate_rear_housing_arc",
+            "target": "a012_final_union",
+            "relation": "declared_parent"
+          }
+        ]
+      },
+      "deleted_parent_face_examples": [
+        {
+          "node_id": "4D7:f1",
+          "entity_handle": "4D7",
+          "face_id": "f1",
+          "face_fingerprint": "63d9ce38d198649c327cdb76617754b137470565d017993ded72daeb69c60119"
+        },
+        {
+          "node_id": "4D7:f2",
+          "entity_handle": "4D7",
+          "face_id": "f2",
+          "face_fingerprint": "e38d4afaf77db449103756f4f8ed2a59750b4d7c3425ac47bf70517b1cfb324e"
+        },
+        {
+          "node_id": "4D7:f3",
+          "entity_handle": "4D7",
+          "face_id": "f3",
+          "face_fingerprint": "301f799762e985de4620ebaec1476c14280883c598b533632903feea9c5023b7"
+        },
+        {
+          "node_id": "4D7:f4",
+          "entity_handle": "4D7",
+          "face_id": "f4",
+          "face_fingerprint": "3ec995dab6387ac1e76986003a5791009fd2e0a7e29bdfe62b5a7cfe7ec1253f"
+        },
+        {
+          "node_id": "4D7:f5",
+          "entity_handle": "4D7",
+          "face_id": "f5",
+          "face_fingerprint": "6d6ea84ea1a2645092cafd1f54e0ac8c29ae175e0721353c417a04e2338baa3d"
+        },
+        {
+          "node_id": "4D7:f6",
+          "entity_handle": "4D7",
+          "face_id": "f6",
+          "face_fingerprint": "5ce30586a8aeacb38cafc91e10f30e006152a0cb8be3f63673c89dd571285cd2"
+        },
+        {
+          "node_id": "4DB:f1",
+          "entity_handle": "4DB",
+          "face_id": "f1",
+          "face_fingerprint": "a03e0767e4db43e1e131fb959b5faa6e03258c64e3cd9ffc0857192417018a2a"
+        },
+        {
+          "node_id": "4DB:f2",
+          "entity_handle": "4DB",
+          "face_id": "f2",
+          "face_fingerprint": "f8ebd9118ef3ab3e23b7d81879176b6e8885c2d3287f6e6e37a1d7974f3f768f"
+        },
+        {
+          "node_id": "4DB:f3",
+          "entity_handle": "4DB",
+          "face_id": "f3",
+          "face_fingerprint": "ff0d2d064f99aafc8c2701072028557659f92fb444420e6d1cc5bc5d5799a7e7"
+        },
+        {
+          "node_id": "4DB:f4",
+          "entity_handle": "4DB",
+          "face_id": "f4",
+          "face_fingerprint": "07a53c0a66e763d3bd08bbbdf993ea09cb3ae3666bce1a3b75d4d9da11f19bed"
+        },
+        {
+          "node_id": "4DB:f5",
+          "entity_handle": "4DB",
+          "face_id": "f5",
+          "face_fingerprint": "c340fd03e1567d5f3b94e020b05fbe1df9706a1561a286d95fd39c0b516ae6ee"
+        },
+        {
+          "node_id": "4DB:f6",
+          "entity_handle": "4DB",
+          "face_id": "f6",
+          "face_fingerprint": "2d7e1415c8bdde4e3abbf7df841f3b17110401586c2308df950ab821986ec906"
+        },
+        {
+          "node_id": "4DF:f1",
+          "entity_handle": "4DF",
+          "face_id": "f1",
+          "face_fingerprint": "ece49df6303bb6b3fa9107424642ed31749188461eaf7595782fd8bf879b0beb"
+        },
+        {
+          "node_id": "4DF:f2",
+          "entity_handle": "4DF",
+          "face_id": "f2",
+          "face_fingerprint": "41b9510bfee57d28870171174c9ab1f2a6980a779ed84c76442adfdcb4e673fa"
+        },
+        {
+          "node_id": "4DF:f3",
+          "entity_handle": "4DF",
+          "face_id": "f3",
+          "face_fingerprint": "a8afa81b04c9a89068cecfd9e02aba809acbb836f504b1abc5217fd08ad3675f"
+        },
+        {
+          "node_id": "4DF:f4",
+          "entity_handle": "4DF",
+          "face_id": "f4",
+          "face_fingerprint": "4f5a06ef76882d0398c311bf5c280c11e9e9ce7e8eec178be4e1a3cd50a4051a"
+        },
+        {
+          "node_id": "4DF:f5",
+          "entity_handle": "4DF",
+          "face_id": "f5",
+          "face_fingerprint": "2d6cdb83ea7a5a91f61d59859e9e7f3d54c4d2b55dd763fa8bc6b6bfb849d9ed"
+        },
+        {
+          "node_id": "4DF:f6",
+          "entity_handle": "4DF",
+          "face_id": "f6",
+          "face_fingerprint": "ed71f92cf447517b7300150937f3e52d8adaff4b744dea3a71330c7f0c24f77f"
+        },
+        {
+          "node_id": "4E3:f1",
+          "entity_handle": "4E3",
+          "face_id": "f1",
+          "face_fingerprint": "88f72e4b7759de6c7ccc8cda622049c0b01a4fde63604445f6ed86a004938e43"
+        },
+        {
+          "node_id": "4E3:f2",
+          "entity_handle": "4E3",
+          "face_id": "f2",
+          "face_fingerprint": "a5a330446c3e68d8ce9a51ab2600c9730567cbffec8083d9b1a6a6b2c78357ed"
+        },
+        {
+          "node_id": "4E3:f3",
+          "entity_handle": "4E3",
+          "face_id": "f3",
+          "face_fingerprint": "fb46b37994cbe692c1dbc16988188a817adc5efe66fbca75ddc5ac9f0bfd956f"
+        },
+        {
+          "node_id": "4E3:f4",
+          "entity_handle": "4E3",
+          "face_id": "f4",
+          "face_fingerprint": "d7c1c38de3fa097b3aaa1edbae69520ed4ec8254495fab76d93b2fdcb230a157"
+        },
+        {
+          "node_id": "4E3:f5",
+          "entity_handle": "4E3",
+          "face_id": "f5",
+          "face_fingerprint": "5b949d15634a164c00123ff799d853c5102ae7a2c3c87ff850db6f5e1268ecf1"
+        },
+        {
+          "node_id": "4E3:f6",
+          "entity_handle": "4E3",
+          "face_id": "f6",
+          "face_fingerprint": "f3884ddc55f38ecd5bd7b4146c09f6127d72ca3090c80e92dcddf1ff69b9ef8f"
+        },
+        {
+          "node_id": "4E9:f2",
+          "entity_handle": "4E9",
+          "face_id": "f2",
+          "face_fingerprint": "087acfc8128388ee52c238603209eebeeecb0f0c8bcc088b8ee1dcc1d8496113"
+        },
+        {
+          "node_id": "4E9:f3",
+          "entity_handle": "4E9",
+          "face_id": "f3",
+          "face_fingerprint": "a7bd234aae1c9f7a3bac7392d98c95132a7233c3d3ad0f4108805523e35462e5"
+        },
+        {
+          "node_id": "4E9:f4",
+          "entity_handle": "4E9",
+          "face_id": "f4",
+          "face_fingerprint": "237599d70c4e82d0ae79902fa4af5684bf8b2b5c8664cd8cc1bcfab28de91fc2"
+        },
+        {
+          "node_id": "4E9:f5",
+          "entity_handle": "4E9",
+          "face_id": "f5",
+          "face_fingerprint": "a1a4af8357567df95afdea7924839bbcbd106520d3c3c943b94d5400261e1018"
+        },
+        {
+          "node_id": "4E9:f6",
+          "entity_handle": "4E9",
+          "face_id": "f6",
+          "face_fingerprint": "02ecc04f6a1ec96c7fc5d1885746181c0e2b8035db64d4cd20de8806d2bdcfd3"
+        },
+        {
+          "node_id": "4ED:f1",
+          "entity_handle": "4ED",
+          "face_id": "f1",
+          "face_fingerprint": "6bbb6440e4ab97481a459581c603e8759131cd4dfbbf57c4d9f53b98237c010b"
+        },
+        {
+          "node_id": "4ED:f2",
+          "entity_handle": "4ED",
+          "face_id": "f2",
+          "face_fingerprint": "31c83ab9ee164044b0f3d1570f41ed25996c295b0365d60f5470f815f9f4ab15"
+        },
+        {
+          "node_id": "4ED:f3",
+          "entity_handle": "4ED",
+          "face_id": "f3",
+          "face_fingerprint": "a1c564baf60318de55b1f0a0c348ea6ccc4a8534b7803aceed16d7e2e9c34ae3"
+        }
+      ],
+      "interpretation": "Stable fingerprints prove inheritance. Snapshot-delta faces identify the operation group that changed topology; multiple operations in one job remain causally ambiguous."
+    },
+    "exact_face_query_count": 90
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [
+      {
+        "point": [
+          0.000103,
+          0.078125,
+          0.091796
+        ],
+        "distance_normalized": 0.028627,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.000621,
+          0.078125,
+          0.094727
+        ],
+        "distance_normalized": 0.028151,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.001705,
+          0.078125,
+          0.137893
+        ],
+        "distance_normalized": 0.027155,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.002264,
+          0.085937,
+          0.09537
+        ],
+        "distance_normalized": 0.026642,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.00366,
+          0.078125,
+          0.136293
+        ],
+        "distance_normalized": 0.025358,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.005395,
+          0.078125,
+          0.106825
+        ],
+        "distance_normalized": 0.023764,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.006737,
+          0.080681,
+          0.070313
+        ],
+        "distance_normalized": 0.02253,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008492,
+          0.083908,
+          0.070313
+        ],
+        "distance_normalized": 0.020917,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.009165,
+          0.083473,
+          0.138405
+        ],
+        "distance_normalized": 0.020298,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.009261,
+          0.078125,
+          0.112157
+        ],
+        "distance_normalized": 0.020211,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.00963,
+          0.620619,
+          0.025993
+        ],
+        "distance_normalized": 0.019871,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.01013,
+          0.07979,
+          0.138405
+        ],
+        "distance_normalized": 0.019412,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.05209,
+          0.110946,
+          0.127103
+        ],
+        "distance_normalized": 0.019154,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.010846,
+          0.085937,
+          0.090204
+        ],
+        "distance_normalized": 0.018754,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.011019,
+          0.085937,
+          0.120683
+        ],
+        "distance_normalized": 0.018594,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.053596,
+          0.112753,
+          0.119227
+        ],
+        "distance_normalized": 0.018437,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.053641,
+          0.112808,
+          0.070522
+        ],
+        "distance_normalized": 0.018387,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.011508,
+          0.078125,
+          0.138194
+        ],
+        "distance_normalized": 0.018145,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.011565,
+          0.085937,
+          0.135148
+        ],
+        "distance_normalized": 0.018092,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.053995,
+          0.113233,
+          0.074468
+        ],
+        "distance_normalized": 0.017996,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.011845,
+          0.085937,
+          0.09876
+        ],
+        "distance_normalized": 0.017835,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.012633,
+          0.62185,
+          0.027058
+        ],
+        "distance_normalized": 0.017111,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.012652,
+          0.078125,
+          0.072122
+        ],
+        "distance_normalized": 0.017093,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.05493,
+          0.114355,
+          0.08669
+        ],
+        "distance_normalized": 0.016965,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.012863,
+          0.082418,
+          0.070313
+        ],
+        "distance_normalized": 0.0169,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.055169,
+          0.114641,
+          0.123266
+        ],
+        "distance_normalized": 0.016701,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.013527,
+          0.078125,
+          0.089004
+        ],
+        "distance_normalized": 0.016289,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.013949,
+          0.085937,
+          0.103573
+        ],
+        "distance_normalized": 0.015902,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.014017,
+          0.083422,
+          0.070313
+        ],
+        "distance_normalized": 0.015839,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.048435,
+          0.10656,
+          0.135588
+        ],
+        "distance_normalized": 0.015795,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.04829,
+          0.106944,
+          0.070313
+        ],
+        "distance_normalized": 0.015662,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.014664,
+          0.085937,
+          0.117764
+        ],
+        "distance_normalized": 0.015245,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.014693,
+          0.085937,
+          0.103116
+        ],
+        "distance_normalized": 0.015218,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.056596,
+          0.116354,
+          0.090526
+        ],
+        "distance_normalized": 0.015128,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.047602,
+          0.10556,
+          0.098473
+        ],
+        "distance_normalized": 0.015029,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.015059,
+          0.085937,
+          0.126395
+        ],
+        "distance_normalized": 0.014881,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.056982,
+          0.116817,
+          0.130293
+        ],
+        "distance_normalized": 0.014702,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.015288,
+          0.085937,
+          0.081467
+        ],
+        "distance_normalized": 0.014671,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.047037,
+          0.104882,
+          0.107154
+        ],
+        "distance_normalized": 0.01451,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.057248,
+          0.117136,
+          0.073851
+        ],
+        "distance_normalized": 0.014409,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.051972,
+          0.117306,
+          0.138405
+        ],
+        "distance_normalized": 0.014252,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.015951,
+          0.085937,
+          0.11135
+        ],
+        "distance_normalized": 0.014061,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.046321,
+          0.112634,
+          0.070313
+        ],
+        "distance_normalized": 0.013852,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.057769,
+          0.117761,
+          0.09869
+        ],
+        "distance_normalized": 0.013834,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.046212,
+          0.103892,
+          0.131567
+        ],
+        "distance_normalized": 0.013751,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.016334,
+          0.044286,
+          0.023026
+        ],
+        "distance_normalized": 0.01371,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.016627,
+          0.078125,
+          0.08887
+        ],
+        "distance_normalized": 0.01344,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.016725,
+          0.078125,
+          0.111866
+        ],
+        "distance_normalized": 0.01335,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.004347,
+          0.046474,
+          0.049676
+        ],
+        "distance_normalized": 0.013137,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.013032,
+          0.631161,
+          0.035108
+        ],
+        "distance_normalized": 0.013088,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.045242,
+          0.102728,
+          0.118508
+        ],
+        "distance_normalized": 0.01286,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.045135,
+          0.1026,
+          0.088922
+        ],
+        "distance_normalized": 0.012762,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.013486,
+          0.046459,
+          0.050677
+        ],
+        "distance_normalized": 0.012652,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.017514,
+          0.046471,
+          0.049903
+        ],
+        "distance_normalized": 0.012625,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.044706,
+          0.112782,
+          0.070313
+        ],
+        "distance_normalized": 0.012367,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.007459,
+          0.632436,
+          0.036211
+        ],
+        "distance_normalized": 0.012108,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.018305,
+          0.618616,
+          0.024261
+        ],
+        "distance_normalized": 0.011898,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.012622,
+          0.046424,
+          0.05306
+        ],
+        "distance_normalized": 0.011497,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.018917,
+          0.078125,
+          0.08334
+        ],
+        "distance_normalized": 0.011335,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.043188,
+          0.100263,
+          0.098247
+        ],
+        "distance_normalized": 0.010972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.053639,
+          0.12122,
+          0.070313
+        ],
+        "distance_normalized": 0.010655,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.019667,
+          0.046539,
+          0.045357
+        ],
+        "distance_normalized": 0.010646,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.042432,
+          0.111734,
+          0.138405
+        ],
+        "distance_normalized": 0.010277,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.061068,
+          0.12172,
+          0.128658
+        ],
+        "distance_normalized": 0.010195,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.061332,
+          0.122037,
+          0.074858
+        ],
+        "distance_normalized": 0.009904,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.020544,
+          0.085937,
+          0.090016
+        ],
+        "distance_normalized": 0.00984,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.020688,
+          0.085937,
+          0.103869
+        ],
+        "distance_normalized": 0.009707,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03028,
+          0.001529,
+          0.023026
+        ],
+        "distance_normalized": 0.009683,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.020823,
+          0.085937,
+          0.133082
+        ],
+        "distance_normalized": 0.009584,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.022619,
+          -0.0,
+          0.020188
+        ],
+        "distance_normalized": 0.009546,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.027945,
+          -0.0,
+          0.020066
+        ],
+        "distance_normalized": 0.009489,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.020992,
+          0.085937,
+          0.137554
+        ],
+        "distance_normalized": 0.009428,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.021088,
+          0.085937,
+          0.109016
+        ],
+        "distance_normalized": 0.00934,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.01893,
+          -0.0,
+          0.019725
+        ],
+        "distance_normalized": 0.009328,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.014022,
+          0.025409,
+          0.023026
+        ],
+        "distance_normalized": 0.009137,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.001536,
+          0.659931,
+          0.059985
+        ],
+        "distance_normalized": 0.009017,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.021473,
+          0.085937,
+          0.119841
+        ],
+        "distance_normalized": 0.008986,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.040814,
+          0.097414,
+          0.070594
+        ],
+        "distance_normalized": 0.00879,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.016311,
+          -0.0,
+          0.018527
+        ],
+        "distance_normalized": 0.008761,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.018757,
+          0.703096,
+          0.553949
+        ],
+        "distance_normalized": 0.008686,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.012367,
+          0.702509,
+          0.551418
+        ],
+        "distance_normalized": 0.008596,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.02226,
+          -0.0,
+          0.01811
+        ],
+        "distance_normalized": 0.008564,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.003647,
+          0.702135,
+          0.549805
+        ],
+        "distance_normalized": 0.008538,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.024584,
+          0.6593,
+          0.059439
+        ],
+        "distance_normalized": 0.008532,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.014299,
+          0.701335,
+          0.546355
+        ],
+        "distance_normalized": 0.008415,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.002585,
+          0.701125,
+          0.545448
+        ],
+        "distance_normalized": 0.008383,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.022135,
+          0.046725,
+          0.033029
+        ],
+        "distance_normalized": 0.008377,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.018277,
+          0.701081,
+          0.545259
+        ],
+        "distance_normalized": 0.008376,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.022261,
+          0.085937,
+          0.11375
+        ],
+        "distance_normalized": 0.008262,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.022467,
+          0.62065,
+          0.026019
+        ],
+        "distance_normalized": 0.008072,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.03997,
+          0.10195,
+          0.070313
+        ],
+        "distance_normalized": 0.008015,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.025215,
+          -0.0,
+          0.016835
+        ],
+        "distance_normalized": 0.007961,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.063112,
+          0.124172,
+          0.114338
+        ],
+        "distance_normalized": 0.007941,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.029779,
+          0.661898,
+          0.061686
+        ],
+        "distance_normalized": 0.007929,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.022807,
+          0.085937,
+          0.114068
+        ],
+        "distance_normalized": 0.00776,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.004965,
+          0.697008,
+          0.527687
+        ],
+        "distance_normalized": 0.00775,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.056561,
+          0.124498,
+          0.070313
+        ],
+        "distance_normalized": 0.007642,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.003127,
+          0.696177,
+          0.524105
+        ],
+        "distance_normalized": 0.007622,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.008422,
+          0.023475,
+          0.023026
+        ],
+        "distance_normalized": 0.007612,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.005577,
+          0.638315,
+          0.041294
+        ],
+        "distance_normalized": 0.007591,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.02304,
+          0.078125,
+          0.116626
+        ],
+        "distance_normalized": 0.007546,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.039433,
+          0.105562,
+          0.138405
+        ],
+        "distance_normalized": 0.007521,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008787,
+          0.662424,
+          0.062141
+        ],
+        "distance_normalized": 0.007511,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.013629,
+          0.694605,
+          0.517322
+        ],
+        "distance_normalized": 0.00738,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.017433,
+          0.694604,
+          0.517316
+        ],
+        "distance_normalized": 0.00738,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.039208,
+          0.095487,
+          0.11607
+        ],
+        "distance_normalized": 0.007314,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.658322,
+          0.06194
+        ],
+        "distance_normalized": 0.007251,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.014267,
+          0.692762,
+          0.50937
+        ],
+        "distance_normalized": 0.007096,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.002067,
+          0.657421,
+          0.057814
+        ],
+        "distance_normalized": 0.007088,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.010077,
+          0.691822,
+          0.505318
+        ],
+        "distance_normalized": 0.006952,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.010356,
+          0.691589,
+          0.504311
+        ],
+        "distance_normalized": 0.006916,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.016122,
+          0.691084,
+          0.502133
+        ],
+        "distance_normalized": 0.006838,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.00255,
+          0.022478,
+          0.023026
+        ],
+        "distance_normalized": 0.006827,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.001018,
+          0.656723,
+          0.057211
+        ],
+        "distance_normalized": 0.006552,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.024137,
+          0.085479,
+          0.138405
+        ],
+        "distance_normalized": 0.006538,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008581,
+          0.688216,
+          0.489761
+        ],
+        "distance_normalized": 0.006397,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -7e-06,
+          0.687946,
+          0.488599
+        ],
+        "distance_normalized": 0.006356,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.024404,
+          0.7046,
+          0.560438
+        ],
+        "distance_normalized": 0.006292,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.024406,
+          0.046329,
+          0.059345
+        ],
+        "distance_normalized": 0.00629,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.003114,
+          0.68739,
+          0.486199
+        ],
+        "distance_normalized": 0.00627,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.060718,
+          0.125992,
+          0.070313
+        ],
+        "distance_normalized": 0.006269,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.06467,
+          0.126043,
+          0.130049
+        ],
+        "distance_normalized": 0.006222,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.024542,
+          0.028301,
+          0.023026
+        ],
+        "distance_normalized": 0.006165,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.658978,
+          0.063627
+        ],
+        "distance_normalized": 0.006145,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.024654,
+          0.046418,
+          0.0534
+        ],
+        "distance_normalized": 0.006062,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03779,
+          0.099456,
+          0.138405
+        ],
+        "distance_normalized": 0.006011,
+        "region_id": "excess-01"
+      }
+    ],
+    "ground_truth_to_candidate": [
+      {
+        "point": [
+          0.03125,
+          0.132242,
+          0.09976
+        ],
+        "distance_normalized": 0.027066,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.125984,
+          0.114181
+        ],
+        "distance_normalized": 0.022264,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.038122,
+          0.132812,
+          0.114993
+        ],
+        "distance_normalized": 0.021518,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.04002,
+          0.132812,
+          0.102566
+        ],
+        "distance_normalized": 0.021389,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.021665,
+          0.642067,
+          0.014818
+        ],
+        "distance_normalized": 0.020663,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.120696,
+          0.108069
+        ],
+        "distance_normalized": 0.020452,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.016554,
+          0.638781,
+          -0.0
+        ],
+        "distance_normalized": 0.019846,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.026183,
+          0.637777,
+          -0.0
+        ],
+        "distance_normalized": 0.018924,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.04441,
+          0.132812,
+          0.110054
+        ],
+        "distance_normalized": 0.018289,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.116868,
+          0.111492
+        ],
+        "distance_normalized": 0.018199,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.025144,
+          0.642816,
+          0.019099
+        ],
+        "distance_normalized": 0.018137,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.019096,
+          0.026994,
+          0.04499
+        ],
+        "distance_normalized": 0.017967,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.045065,
+          0.132812,
+          0.09928
+        ],
+        "distance_normalized": 0.017826,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.132774,
+          0.119436
+        ],
+        "distance_normalized": 0.017435,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.023312,
+          0.635998,
+          -0.0
+        ],
+        "distance_normalized": 0.017289,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.046132,
+          0.132812,
+          0.093652
+        ],
+        "distance_normalized": 0.017073,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.009516,
+          0.635043,
+          -0.0
+        ],
+        "distance_normalized": 0.016411,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.043076,
+          0.132812,
+          0.08778
+        ],
+        "distance_normalized": 0.016055,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.033311,
+          0.132812,
+          0.087734
+        ],
+        "distance_normalized": 0.016012,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.005508,
+          0.634199,
+          -0.0
+        ],
+        "distance_normalized": 0.015636,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.025071,
+          0.023924,
+          0.039874
+        ],
+        "distance_normalized": 0.015485,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.112253,
+          0.090485
+        ],
+        "distance_normalized": 0.015484,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.016746,
+          0.023567,
+          0.039279
+        ],
+        "distance_normalized": 0.014938,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.03125,
+          0.110605,
+          0.10798
+        ],
+        "distance_normalized": 0.014514,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.030279,
+          0.030974,
+          0.051623
+        ],
+        "distance_normalized": 0.014218,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.115041,
+          0.123022
+        ],
+        "distance_normalized": 0.014139,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.109648,
+          0.119602
+        ],
+        "distance_normalized": 0.013951,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.017224,
+          0.031505,
+          0.052508
+        ],
+        "distance_normalized": 0.013718,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.018107,
+          0.644136,
+          0.026644
+        ],
+        "distance_normalized": 0.013685,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.031024,
+          0.644164,
+          0.026804
+        ],
+        "distance_normalized": 0.013591,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.051193,
+          0.132812,
+          0.108559
+        ],
+        "distance_normalized": 0.013499,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.051369,
+          0.132812,
+          0.091038
+        ],
+        "distance_normalized": 0.013375,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.031483,
+          0.132812,
+          0.084641
+        ],
+        "distance_normalized": 0.013169,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.051682,
+          0.132812,
+          0.088288
+        ],
+        "distance_normalized": 0.013154,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.643347,
+          0.02683
+        ],
+        "distance_normalized": 0.013081,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.017145,
+          0.644442,
+          0.028388
+        ],
+        "distance_normalized": 0.012656,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.00981,
+          0.630554,
+          -0.0
+        ],
+        "distance_normalized": 0.012286,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.125026,
+          0.083569
+        ],
+        "distance_normalized": 0.012184,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.014711,
+          0.644779,
+          0.030319
+        ],
+        "distance_normalized": 0.011517,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.000861,
+          0.652822,
+          0.070312
+        ],
+        "distance_normalized": 0.011454,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.03125,
+          0.118587,
+          0.12607
+        ],
+        "distance_normalized": 0.011337,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.105192,
+          0.1205
+        ],
+        "distance_normalized": 0.011329,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.111002,
+          0.126237
+        ],
+        "distance_normalized": 0.011183,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.029572,
+          0.629168,
+          -0.0
+        ],
+        "distance_normalized": 0.011012,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.038524,
+          0.132812,
+          0.081809
+        ],
+        "distance_normalized": 0.010567,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.117711,
+          0.081794
+        ],
+        "distance_normalized": 0.010553,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.037945,
+          0.132812,
+          0.08177
+        ],
+        "distance_normalized": 0.01053,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.025091,
+          0.628423,
+          -0.0
+        ],
+        "distance_normalized": 0.010326,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.020607,
+          0.645135,
+          0.032349
+        ],
+        "distance_normalized": 0.010319,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.010174,
+          0.035148,
+          0.058581
+        ],
+        "distance_normalized": 0.010286,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.029296,
+          0.645191,
+          0.032669
+        ],
+        "distance_normalized": 0.01013,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.017524,
+          0.628206,
+          -0.0
+        ],
+        "distance_normalized": 0.010127,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.030171,
+          0.035846,
+          0.059743
+        ],
+        "distance_normalized": 0.009629,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.020956,
+          0.036169,
+          0.060281
+        ],
+        "distance_normalized": 0.009324,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.057121,
+          0.132812,
+          0.085208
+        ],
+        "distance_normalized": 0.009314,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.627181,
+          0.000704
+        ],
+        "distance_normalized": 0.009185,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.057591,
+          0.132812,
+          0.086111
+        ],
+        "distance_normalized": 0.008982,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.018483,
+          0.626739,
+          -0.0
+        ],
+        "distance_normalized": 0.008779,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.039052,
+          0.132812,
+          0.079807
+        ],
+        "distance_normalized": 0.008726,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.021908,
+          0.650892,
+          0.065249
+        ],
+        "distance_normalized": 0.008587,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.000629,
+          0.693285,
+          0.552976
+        ],
+        "distance_normalized": 0.008582,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.029947,
+          0.692761,
+          0.550251
+        ],
+        "distance_normalized": 0.008486,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.051153,
+          0.132812,
+          0.129184
+        ],
+        "distance_normalized": 0.008475,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.000334,
+          0.691679,
+          0.544627
+        ],
+        "distance_normalized": 0.008287,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.024307,
+          0.69088,
+          0.54047
+        ],
+        "distance_normalized": 0.00814,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.027821,
+          0.690597,
+          0.539
+        ],
+        "distance_normalized": 0.008088,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.023478,
+          0.690082,
+          0.53632
+        ],
+        "distance_normalized": 0.007993,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.059073,
+          0.132812,
+          0.094833
+        ],
+        "distance_normalized": 0.007936,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.002247,
+          0.689739,
+          0.534538
+        ],
+        "distance_normalized": 0.00793,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.099169,
+          0.083772
+        ],
+        "distance_normalized": 0.007785,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.00556,
+          0.688901,
+          0.530177
+        ],
+        "distance_normalized": 0.007776,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.03125,
+          0.099124,
+          0.127988
+        ],
+        "distance_normalized": 0.007759,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.01854,
+          0.688143,
+          0.526239
+        ],
+        "distance_normalized": 0.007637,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.029327,
+          0.687686,
+          0.523863
+        ],
+        "distance_normalized": 0.007553,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.004095,
+          0.687394,
+          0.522343
+        ],
+        "distance_normalized": 0.007499,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.013416,
+          0.008096,
+          0.013494
+        ],
+        "distance_normalized": 0.007441,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.009776,
+          0.038243,
+          0.063739
+        ],
+        "distance_normalized": 0.00737,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.016816,
+          0.686632,
+          0.518383
+        ],
+        "distance_normalized": 0.007359,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.005035,
+          0.693591,
+          0.55457
+        ],
+        "distance_normalized": 0.007288,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.017548,
+          0.686202,
+          0.516144
+        ],
+        "distance_normalized": 0.007279,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.00384,
+          0.686104,
+          0.515634
+        ],
+        "distance_normalized": 0.007261,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.09811,
+          0.084272
+        ],
+        "distance_normalized": 0.007162,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.060245,
+          0.132812,
+          0.097072
+        ],
+        "distance_normalized": 0.007108,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.027992,
+          0.685033,
+          0.510066
+        ],
+        "distance_normalized": 0.007064,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.006326,
+          0.684823,
+          0.508973
+        ],
+        "distance_normalized": 0.007026,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.025621,
+          0.646118,
+          0.037967
+        ],
+        "distance_normalized": 0.007004,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.060422,
+          0.132812,
+          0.103318
+        ],
+        "distance_normalized": 0.006983,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.003214,
+          0.693671,
+          0.554983
+        ],
+        "distance_normalized": 0.006909,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.007317,
+          0.684036,
+          0.504883
+        ],
+        "distance_normalized": 0.006881,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.030628,
+          0.683883,
+          0.504087
+        ],
+        "distance_normalized": 0.006853,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.0298,
+          0.646189,
+          0.038373
+        ],
+        "distance_normalized": 0.006764,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.002953,
+          0.683363,
+          0.50138
+        ],
+        "distance_normalized": 0.006757,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.017731,
+          0.683214,
+          0.500606
+        ],
+        "distance_normalized": 0.00673,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.015967,
+          0.683069,
+          0.499853
+        ],
+        "distance_normalized": 0.006703,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.002847,
+          0.682191,
+          0.495288
+        ],
+        "distance_normalized": 0.006542,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.039689,
+          0.040202
+        ],
+        "distance_normalized": 0.006367,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.014293,
+          0.006925,
+          0.011541
+        ],
+        "distance_normalized": 0.006365,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.00154,
+          0.661358,
+          0.070312
+        ],
+        "distance_normalized": 0.006322,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.03125,
+          0.113591,
+          0.131569
+        ],
+        "distance_normalized": 0.006283,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.685102,
+          0.506141
+        ],
+        "distance_normalized": 0.006188,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.007023,
+          0.623894,
+          -0.0
+        ],
+        "distance_normalized": 0.006164,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.021417,
+          0.679542,
+          0.481512
+        ],
+        "distance_normalized": 0.006054,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.005733,
+          0.679495,
+          0.481266
+        ],
+        "distance_normalized": 0.006046,
+        "region_id": "missing-05"
+      }
+    ]
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

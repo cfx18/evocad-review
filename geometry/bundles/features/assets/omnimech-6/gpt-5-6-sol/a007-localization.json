@@ -1,0 +1,2979 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.019875,
+  "region_count": 10,
+  "regions": [
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 328,
+      "sample_fraction": 0.0164,
+      "estimated_area": 244.45787,
+      "estimated_area_fraction": 0.0164,
+      "centroid": [
+        -0.206218,
+        22.628945,
+        -0.234333
+      ],
+      "centroid_bbox_position": [
+        0.4969,
+        0.6878,
+        0.4964
+      ],
+      "bbox": {
+        "min": [
+          -15.113272,
+          21.495223,
+          -15.230393
+        ],
+        "max": [
+          15.350645,
+          23.000001,
+          15.357484
+        ]
+      },
+      "mean_distance_normalized": 0.013386,
+      "p95_distance_normalized": 0.020099,
+      "max_distance_normalized": 0.020244,
+      "mean_normal_offset_normalized": 0.013386,
+      "mean_normal_disagreement": 0.957326,
+      "dominant_source_normal": [
+        -0.0237,
+        0.9997,
+        0.002
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -14.899546,
+          23.000001,
+          -3.517953
+        ],
+        [
+          -6.482516,
+          23.000001,
+          13.737501
+        ],
+        [
+          14.798219,
+          23.000001,
+          3.069776
+        ],
+        [
+          4.26719,
+          23.000001,
+          -14.29578
+        ],
+        [
+          -11.579971,
+          23.000001,
+          -8.886647
+        ],
+        [
+          10.273449,
+          21.860104,
+          -9.508093
+        ],
+        [
+          7.926413,
+          22.917082,
+          11.534319
+        ],
+        [
+          -10.919343,
+          22.188738,
+          8.760107
+        ],
+        [
+          -13.749698,
+          21.836557,
+          -2.613344
+        ]
+      ],
+      "region_id": "excess-01",
+      "counterpart_region_ids": [
+        "missing-01"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "30C",
+          "face_id": "f34",
+          "face_fingerprint": "91a486d66250377bd411424a8744516a9e35b96418382c64c44992d98a3104c2",
+          "surface_type": "plane",
+          "area": 188.49555921538763,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 5,
+          "exact_query_fraction": 0.555556,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "30C",
+          "face_id": "f37",
+          "face_fingerprint": "fc5f4a2d52e0d9dec7292f510188c508c73e8e7163d9721a5ddd473973944c66",
+          "surface_type": "cylinder",
+          "area": 879.6459430051419,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 1e-05,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-30C-f37",
+          "kind": "hole_candidate",
+          "confidence": "medium",
+          "entity_handle": "30C",
+          "face_ids": [
+            "f37"
+          ],
+          "face_fingerprints": [
+            "fc5f4a2d52e0d9dec7292f510188c508c73e8e7163d9721a5ddd473973944c66"
+          ],
+          "parameters": {
+            "radius": 14,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "origin": [
+              0,
+              0,
+              16.45
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 13,
+      "sample_fraction": 0.00065,
+      "estimated_area": 9.688879,
+      "estimated_area_fraction": 0.00065,
+      "centroid": [
+        15.015178,
+        32.863929,
+        13.049176
+      ],
+      "centroid_bbox_position": [
+        0.7276,
+        0.9989,
+        0.6977
+      ],
+      "bbox": {
+        "min": [
+          8.086088,
+          32.753927,
+          3.782697
+        ],
+        "max": [
+          20.651621,
+          32.9,
+          19.282475
+        ]
+      },
+      "mean_distance_normalized": 0.006542,
+      "p95_distance_normalized": 0.007133,
+      "max_distance_normalized": 0.00716,
+      "mean_normal_offset_normalized": 0.006542,
+      "mean_normal_disagreement": 0.292811,
+      "dominant_source_normal": [
+        0.39,
+        0.8583,
+        0.3335
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          8.086088,
+          32.9,
+          19.282475
+        ],
+        [
+          9.326946,
+          32.9,
+          18.812275
+        ],
+        [
+          11.856042,
+          32.764729,
+          17.3277
+        ],
+        [
+          11.08099,
+          32.882372,
+          17.833361
+        ],
+        [
+          15.630309,
+          32.793715,
+          14.021608
+        ],
+        [
+          17.829786,
+          32.9,
+          10.928465
+        ],
+        [
+          19.88525,
+          32.9,
+          6.734624
+        ],
+        [
+          19.869297,
+          32.9,
+          6.678363
+        ],
+        [
+          17.266149,
+          32.753927,
+          11.947446
+        ]
+      ],
+      "region_id": "excess-02",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "30C",
+          "face_id": "f42",
+          "face_fingerprint": "b6c78c8fd223e7d9b08b73e02b9e6fdf278d28e1a98fb41c177f24dc88ae3ba0",
+          "surface_type": "plane",
+          "area": 477.62878765310904,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 5,
+          "exact_query_fraction": 0.555556,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "30C",
+          "face_id": "f43",
+          "face_fingerprint": "2e6c2edc6b91b0c21254dd71ad940fa9b9b0e65ca0aad5ce09a987cdfb0c0bdf",
+          "surface_type": "cylinder",
+          "area": 1319.4689145077132,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 2.1e-05,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-30C-f43",
+          "kind": "boss_candidate",
+          "confidence": "medium",
+          "entity_handle": "30C",
+          "face_ids": [
+            "f43"
+          ],
+          "face_fingerprints": [
+            "2e6c2edc6b91b0c21254dd71ad940fa9b9b0e65ca0aad5ce09a987cdfb0c0bdf"
+          ],
+          "parameters": {
+            "radius": 21,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "origin": [
+              0,
+              0,
+              16.45
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 12,
+      "sample_fraction": 0.0006,
+      "estimated_area": 8.943581,
+      "estimated_area_fraction": 0.0006,
+      "centroid": [
+        16.835379,
+        32.859611,
+        -11.507491
+      ],
+      "centroid_bbox_position": [
+        0.7552,
+        0.9988,
+        0.3256
+      ],
+      "bbox": {
+        "min": [
+          10.901379,
+          32.748936,
+          -17.943361
+        ],
+        "max": [
+          20.290967,
+          32.9,
+          -5.185493
+        ]
+      },
+      "mean_distance_normalized": 0.006545,
+      "p95_distance_normalized": 0.006958,
+      "max_distance_normalized": 0.006962,
+      "mean_normal_offset_normalized": 0.006545,
+      "mean_normal_disagreement": 0.292829,
+      "dominant_source_normal": [
+        0.5627,
+        0.719,
+        -0.4079
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          10.901379,
+          32.748936,
+          -17.943361
+        ],
+        [
+          14.476464,
+          32.9,
+          -15.159006
+        ],
+        [
+          13.249861,
+          32.87137,
+          -16.287747
+        ],
+        [
+          14.880704,
+          32.9,
+          -14.700947
+        ],
+        [
+          17.719882,
+          32.847033,
+          -11.264249
+        ],
+        [
+          18.016277,
+          32.9,
+          -10.614718
+        ],
+        [
+          19.911937,
+          32.767138,
+          -6.662164
+        ],
+        [
+          20.290967,
+          32.9,
+          -5.185493
+        ],
+        [
+          17.149758,
+          32.812162,
+          -12.117971
+        ]
+      ],
+      "region_id": "excess-03",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "30C",
+          "face_id": "f43",
+          "face_fingerprint": "2e6c2edc6b91b0c21254dd71ad940fa9b9b0e65ca0aad5ce09a987cdfb0c0bdf",
+          "surface_type": "cylinder",
+          "area": 1319.4689145077132,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 5,
+          "exact_query_fraction": 0.555556,
+          "minimum_trimmed_face_distance_normalized": 1e-05,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "30C",
+          "face_id": "f42",
+          "face_fingerprint": "b6c78c8fd223e7d9b08b73e02b9e6fdf278d28e1a98fb41c177f24dc88ae3ba0",
+          "surface_type": "plane",
+          "area": 477.62878765310904,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-30C-f43",
+          "kind": "boss_candidate",
+          "confidence": "medium",
+          "entity_handle": "30C",
+          "face_ids": [
+            "f43"
+          ],
+          "face_fingerprints": [
+            "2e6c2edc6b91b0c21254dd71ad940fa9b9b0e65ca0aad5ce09a987cdfb0c0bdf"
+          ],
+          "parameters": {
+            "radius": 21,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "origin": [
+              0,
+              0,
+              16.45
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 13,
+      "sample_fraction": 0.00065,
+      "estimated_area": 9.688879,
+      "estimated_area_fraction": 0.00065,
+      "centroid": [
+        -15.424382,
+        22.889695,
+        28.608114
+      ],
+      "centroid_bbox_position": [
+        0.2662,
+        0.6957,
+        0.9335
+      ],
+      "bbox": {
+        "min": [
+          -23.127454,
+          22.835525,
+          23.532881
+        ],
+        "max": [
+          -7.888578,
+          22.9,
+          32.035524
+        ]
+      },
+      "mean_distance_normalized": 0.006268,
+      "p95_distance_normalized": 0.006442,
+      "max_distance_normalized": 0.006462,
+      "mean_normal_offset_normalized": 0.006268,
+      "mean_normal_disagreement": 0.292918,
+      "dominant_source_normal": [
+        -0.2961,
+        0.7643,
+        0.5728
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -23.127454,
+          22.858637,
+          23.532881
+        ],
+        [
+          -21.540401,
+          22.9,
+          24.972192
+        ],
+        [
+          -18.784813,
+          22.9,
+          27.089983
+        ],
+        [
+          -15.00605,
+          22.9,
+          29.364794
+        ],
+        [
+          -13.524694,
+          22.897759,
+          30.097352
+        ],
+        [
+          -12.8656,
+          22.9,
+          30.330783
+        ],
+        [
+          -10.221917,
+          22.835525,
+          31.374708
+        ],
+        [
+          -7.888578,
+          22.9,
+          32.035524
+        ],
+        [
+          -21.818762,
+          22.9,
+          24.665663
+        ]
+      ],
+      "region_id": "excess-04",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "30C",
+          "face_id": "f1",
+          "face_fingerprint": "463e7e02127222a85e395f2c438846d9b9c7167e2ecae58c2e1d22990e4dfede",
+          "surface_type": "plane",
+          "area": 1669.4386853523126,
+          "aligned_bounds": {
+            "min": [
+              -66.000002,
+              22.900001,
+              0.0
+            ],
+            "max": [
+              -2.0000000020559128e-06,
+              22.900001,
+              66.0
+            ]
+          },
+          "bbox_distance_normalized": 0.0,
+          "bbox_overlap": 0.0,
+          "exact_query_hits": 7,
+          "exact_query_fraction": 0.777778,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "30C",
+          "face_id": "f39",
+          "face_fingerprint": "b60e837624e3ad18443765e9072029e85be649784d9f678318208f028435437c",
+          "surface_type": "cylinder",
+          "area": 2052.716639855571,
+          "aligned_bounds": {
+            "min": [
+              -66.000002,
+              13.000001000000001,
+              0.0
+            ],
+            "max": [
+              -2.0000000020559128e-06,
+              22.900001,
+              66.0
+            ]
+          },
+          "bbox_distance_normalized": 0.0,
+          "bbox_overlap": 1.0,
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 2.1e-05,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-30C-f39",
+          "kind": "boss_candidate",
+          "confidence": "medium",
+          "entity_handle": "30C",
+          "face_ids": [
+            "f39"
+          ],
+          "face_fingerprints": [
+            "b60e837624e3ad18443765e9072029e85be649784d9f678318208f028435437c"
+          ],
+          "parameters": {
+            "radius": 33,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "origin": [
+              0,
+              0,
+              14.9
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 9,
+      "sample_fraction": 0.00045,
+      "estimated_area": 6.707685,
+      "estimated_area_fraction": 0.00045,
+      "centroid": [
+        -19.759162,
+        32.858871,
+        -6.256784
+      ],
+      "centroid_bbox_position": [
+        0.2005,
+        0.9987,
+        0.4052
+      ],
+      "bbox": {
+        "min": [
+          -20.807329,
+          32.752828,
+          -11.060129
+        ],
+        "max": [
+          -17.84577,
+          32.9,
+          -2.820631
+        ]
+      },
+      "mean_distance_normalized": 0.00653,
+      "p95_distance_normalized": 0.006953,
+      "max_distance_normalized": 0.00703,
+      "mean_normal_offset_normalized": 0.00653,
+      "mean_normal_disagreement": 0.292809,
+      "dominant_source_normal": [
+        -0.5847,
+        0.7851,
+        -0.2041
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -20.375761,
+          32.752828,
+          -5.06342
+        ],
+        [
+          -19.15845,
+          32.842473,
+          -8.587699
+        ],
+        [
+          -18.991131,
+          32.9,
+          -8.740766
+        ],
+        [
+          -18.860108,
+          32.9,
+          -8.874719
+        ],
+        [
+          -17.84577,
+          32.779441,
+          -11.060129
+        ],
+        [
+          -20.697719,
+          32.9,
+          -3.167241
+        ],
+        [
+          -20.624406,
+          32.9,
+          -3.396119
+        ],
+        [
+          -20.471782,
+          32.9,
+          -4.600329
+        ],
+        [
+          -20.807329,
+          32.855094,
+          -2.820631
+        ]
+      ],
+      "region_id": "excess-05",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "30C",
+          "face_id": "f42",
+          "face_fingerprint": "b6c78c8fd223e7d9b08b73e02b9e6fdf278d28e1a98fb41c177f24dc88ae3ba0",
+          "surface_type": "plane",
+          "area": 477.62878765310904,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 5,
+          "exact_query_fraction": 0.555556,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "30C",
+          "face_id": "f43",
+          "face_fingerprint": "2e6c2edc6b91b0c21254dd71ad940fa9b9b0e65ca0aad5ce09a987cdfb0c0bdf",
+          "surface_type": "cylinder",
+          "area": 1319.4689145077132,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 2.4e-05,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-30C-f43",
+          "kind": "boss_candidate",
+          "confidence": "medium",
+          "entity_handle": "30C",
+          "face_ids": [
+            "f43"
+          ],
+          "face_fingerprints": [
+            "2e6c2edc6b91b0c21254dd71ad940fa9b9b0e65ca0aad5ce09a987cdfb0c0bdf"
+          ],
+          "parameters": {
+            "radius": 21,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "origin": [
+              0,
+              0,
+              16.45
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 8,
+      "sample_fraction": 0.0004,
+      "estimated_area": 5.962387,
+      "estimated_area_fraction": 0.0004,
+      "centroid": [
+        -1.582717,
+        32.858104,
+        -20.502254
+      ],
+      "centroid_bbox_position": [
+        0.476,
+        0.9987,
+        0.1894
+      ],
+      "bbox": {
+        "min": [
+          -7.398296,
+          32.80282,
+          -20.933435
+        ],
+        "max": [
+          5.028282,
+          32.9,
+          -19.649163
+        ]
+      },
+      "mean_distance_normalized": 0.006798,
+      "p95_distance_normalized": 0.007054,
+      "max_distance_normalized": 0.007075,
+      "mean_normal_offset_normalized": 0.006798,
+      "mean_normal_disagreement": 0.292661,
+      "dominant_source_normal": [
+        -0.13,
+        0.3215,
+        -0.938
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -7.398296,
+          32.824091,
+          -19.649163
+        ],
+        [
+          -4.450108,
+          32.80282,
+          -20.521775
+        ],
+        [
+          -4.710862,
+          32.887133,
+          -20.461305
+        ],
+        [
+          -4.909585,
+          32.881654,
+          -20.413029
+        ],
+        [
+          -1.08359,
+          32.9,
+          -20.930244
+        ],
+        [
+          1.62986,
+          32.856346,
+          -20.933435
+        ],
+        [
+          3.232563,
+          32.812784,
+          -20.744856
+        ],
+        [
+          5.028282,
+          32.9,
+          -20.364222
+        ]
+      ],
+      "region_id": "excess-06",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "30C",
+          "face_id": "f43",
+          "face_fingerprint": "2e6c2edc6b91b0c21254dd71ad940fa9b9b0e65ca0aad5ce09a987cdfb0c0bdf",
+          "surface_type": "cylinder",
+          "area": 1319.4689145077132,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 6,
+          "exact_query_fraction": 0.75,
+          "minimum_trimmed_face_distance_normalized": 1.3e-05,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "30C",
+          "face_id": "f42",
+          "face_fingerprint": "b6c78c8fd223e7d9b08b73e02b9e6fdf278d28e1a98fb41c177f24dc88ae3ba0",
+          "surface_type": "plane",
+          "area": 477.62878765310904,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.25,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-30C-f43",
+          "kind": "boss_candidate",
+          "confidence": "medium",
+          "entity_handle": "30C",
+          "face_ids": [
+            "f43"
+          ],
+          "face_fingerprints": [
+            "2e6c2edc6b91b0c21254dd71ad940fa9b9b0e65ca0aad5ce09a987cdfb0c0bdf"
+          ],
+          "parameters": {
+            "radius": 21,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "origin": [
+              0,
+              0,
+              16.45
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [],
+      "exact_face_query": {
+        "query_count": 8,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 384,
+      "sample_fraction": 0.0192,
+      "estimated_area": 286.216703,
+      "estimated_area_fraction": 0.0192,
+      "centroid": [
+        -0.655922,
+        21.323319,
+        1.379337
+      ],
+      "centroid_bbox_position": [
+        0.4901,
+        0.6481,
+        0.5209
+      ],
+      "bbox": {
+        "min": [
+          -15.995027,
+          20.9,
+          -15.996329
+        ],
+        "max": [
+          15.995027,
+          22.404721,
+          15.996766
+        ]
+      },
+      "mean_distance_normalized": 0.013436,
+      "p95_distance_normalized": 0.019933,
+      "max_distance_normalized": 0.020246,
+      "mean_normal_offset_normalized": -0.013436,
+      "mean_normal_disagreement": 0.973962,
+      "dominant_source_normal": [
+        0.0249,
+        0.9925,
+        -0.1201
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -15.033149,
+          21.337235,
+          -5.463094
+        ],
+        [
+          15.936168,
+          21.459306,
+          -1.386482
+        ],
+        [
+          0.694268,
+          22.371562,
+          15.982686
+        ],
+        [
+          -14.316698,
+          20.9,
+          3.779844
+        ],
+        [
+          -11.098511,
+          20.9,
+          10.453337
+        ],
+        [
+          4.977757,
+          20.9,
+          14.287251
+        ],
+        [
+          13.791949,
+          22.185374,
+          -8.10548
+        ],
+        [
+          -3.307797,
+          21.031118,
+          -15.651386
+        ],
+        [
+          -15.281165,
+          20.999791,
+          -4.725146
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-874afa52b2e2",
+          "sample_fraction": 0.453125,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-69e045761f97",
+          "sample_fraction": 0.276042,
+          "surface_type": "cylinder",
+          "radius": 16.0
+        },
+        {
+          "face_id": "face-04b08e1861c1",
+          "sample_fraction": 0.270833,
+          "surface_type": "cylinder",
+          "radius": 16.0
+        }
+      ],
+      "region_id": "missing-01",
+      "counterpart_region_ids": [
+        "excess-01"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "30C",
+          "face_id": "f34",
+          "face_fingerprint": "91a486d66250377bd411424a8744516a9e35b96418382c64c44992d98a3104c2",
+          "surface_type": "plane",
+          "area": 188.49555921538763,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 5,
+          "exact_query_fraction": 0.555556,
+          "minimum_trimmed_face_distance_normalized": 0.006351,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "30C",
+          "face_id": "f37",
+          "face_fingerprint": "fc5f4a2d52e0d9dec7292f510188c508c73e8e7163d9721a5ddd473973944c66",
+          "surface_type": "cylinder",
+          "area": 879.6459430051419,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 0.008158,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-30C-f37",
+          "kind": "hole_candidate",
+          "confidence": "medium",
+          "entity_handle": "30C",
+          "face_ids": [
+            "f37"
+          ],
+          "face_fingerprints": [
+            "fc5f4a2d52e0d9dec7292f510188c508c73e8e7163d9721a5ddd473973944c66"
+          ],
+          "parameters": {
+            "radius": 14,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "origin": [
+              0,
+              0,
+              16.45
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 12,
+      "sample_fraction": 0.0006,
+      "estimated_area": 8.944272,
+      "estimated_area_fraction": 0.0006,
+      "centroid": [
+        2.954295,
+        22.953192,
+        -26.987628
+      ],
+      "centroid_bbox_position": [
+        0.5448,
+        0.6977,
+        0.0911
+      ],
+      "bbox": {
+        "min": [
+          0.249178,
+          22.853138,
+          -30.992542
+        ],
+        "max": [
+          4.586516,
+          23.0,
+          -22.160067
+        ]
+      },
+      "mean_distance_normalized": 0.006577,
+      "p95_distance_normalized": 0.006959,
+      "max_distance_normalized": 0.007075,
+      "mean_normal_offset_normalized": 0.006577,
+      "mean_normal_disagreement": 0.293129,
+      "dominant_source_normal": [
+        -0.745,
+        0.6665,
+        0.0269
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          2.184575,
+          22.939492,
+          -30.433272
+        ],
+        [
+          0.249178,
+          22.853138,
+          -30.992542
+        ],
+        [
+          3.727251,
+          23.0,
+          -29.270926
+        ],
+        [
+          4.586516,
+          23.0,
+          -26.157929
+        ],
+        [
+          4.521315,
+          23.0,
+          -25.584884
+        ],
+        [
+          4.155246,
+          22.957824,
+          -24.776053
+        ],
+        [
+          1.184743,
+          22.89093,
+          -22.160067
+        ],
+        [
+          1.964067,
+          22.952597,
+          -22.451582
+        ],
+        [
+          2.68402,
+          23.0,
+          -30.119782
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-6d96c7be828d",
+          "sample_fraction": 0.666667,
+          "surface_type": "cylinder",
+          "radius": 4.5
+        },
+        {
+          "face_id": "face-4c53cb78b37d",
+          "sample_fraction": 0.333333,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-02",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "30C",
+          "face_id": "f20",
+          "face_fingerprint": "4869202ce9e34ade941e58416f9cbce5bca6855c328bcd210b0ba0fc7c894a14",
+          "surface_type": "cone",
+          "area": 39.562725304904205,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.006097,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-30C-f20",
+          "kind": "cone_surface_candidate",
+          "confidence": "low",
+          "entity_handle": "30C",
+          "face_ids": [
+            "f20"
+          ],
+          "face_fingerprints": [
+            "4869202ce9e34ade941e58416f9cbce5bca6855c328bcd210b0ba0fc7c894a14"
+          ],
+          "parameters": {
+            "base_radius": 5,
+            "half_angle": 0.784898413314115,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 8,
+      "sample_fraction": 0.0004,
+      "estimated_area": 5.962848,
+      "estimated_area_fraction": 0.0004,
+      "centroid": [
+        -28.532647,
+        22.973718,
+        -3.295375
+      ],
+      "centroid_bbox_position": [
+        0.0676,
+        0.6983,
+        0.4501
+      ],
+      "bbox": {
+        "min": [
+          -30.991986,
+          22.884638,
+          -4.483352
+        ],
+        "max": [
+          -26.082936,
+          23.0,
+          -0.244748
+        ]
+      },
+      "mean_distance_normalized": 0.006796,
+      "p95_distance_normalized": 0.007074,
+      "max_distance_normalized": 0.007115,
+      "mean_normal_offset_normalized": 0.006796,
+      "mean_normal_disagreement": 0.292818,
+      "dominant_source_normal": [
+        0.2589,
+        0.897,
+        0.3583
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -30.948281,
+          23.0,
+          -0.81951
+        ],
+        [
+          -30.991986,
+          22.947498,
+          -0.244748
+        ],
+        [
+          -27.387808,
+          22.957605,
+          -4.411455
+        ],
+        [
+          -28.535848,
+          23.0,
+          -4.032532
+        ],
+        [
+          -27.732679,
+          22.884638,
+          -4.326446
+        ],
+        [
+          -29.391878,
+          23.0,
+          -3.578555
+        ],
+        [
+          -26.082936,
+          23.0,
+          -4.483352
+        ],
+        [
+          -27.189761,
+          23.0,
+          -4.466403
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-4c53cb78b37d",
+          "sample_fraction": 0.625,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-59c7d497e48f",
+          "sample_fraction": 0.375,
+          "surface_type": "cylinder",
+          "radius": 4.5
+        }
+      ],
+      "region_id": "missing-03",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "30C",
+          "face_id": "f5",
+          "face_fingerprint": "3115510b448a857b21e0a72a798f2ad4545a384aaa3aef5652dff6bc37b68651",
+          "surface_type": "cone",
+          "area": 39.562725304904184,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 8,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.006328,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-30C-f5",
+          "kind": "cone_surface_candidate",
+          "confidence": "low",
+          "entity_handle": "30C",
+          "face_ids": [
+            "f5"
+          ],
+          "face_fingerprints": [
+            "3115510b448a857b21e0a72a798f2ad4545a384aaa3aef5652dff6bc37b68651"
+          ],
+          "parameters": {
+            "base_radius": 5,
+            "half_angle": 0.784898413314115,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [],
+      "exact_face_query": {
+        "query_count": 8,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 8,
+      "sample_fraction": 0.0004,
+      "estimated_area": 5.962848,
+      "estimated_area_fraction": 0.0004,
+      "centroid": [
+        0.905246,
+        13.046782,
+        -25.40091
+      ],
+      "centroid_bbox_position": [
+        0.5137,
+        0.3966,
+        0.1151
+      ],
+      "bbox": {
+        "min": [
+          -2.54251,
+          13.0,
+          -27.28761
+        ],
+        "max": [
+          2.811876,
+          13.153163,
+          -23.751662
+        ]
+      },
+      "mean_distance_normalized": 0.006548,
+      "p95_distance_normalized": 0.007043,
+      "max_distance_normalized": 0.007115,
+      "mean_normal_offset_normalized": 0.006548,
+      "mean_normal_disagreement": 0.293559,
+      "dominant_source_normal": [
+        -0.1407,
+        -0.8606,
+        -0.4895
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -2.54251,
+          13.0,
+          -25.449082
+        ],
+        [
+          -0.066656,
+          13.032227,
+          -23.751662
+        ],
+        [
+          -2.05593,
+          13.121338,
+          -24.673931
+        ],
+        [
+          1.289145,
+          13.067525,
+          -24.071534
+        ],
+        [
+          2.811876,
+          13.0,
+          -27.154493
+        ],
+        [
+          2.664788,
+          13.0,
+          -25.646005
+        ],
+        [
+          2.507243,
+          13.0,
+          -25.172963
+        ],
+        [
+          2.634015,
+          13.153163,
+          -27.28761
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-74e9ffd6c0eb",
+          "sample_fraction": 0.5,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-dff8006b99e1",
+          "sample_fraction": 0.25,
+          "surface_type": "cylinder",
+          "radius": 2.75
+        },
+        {
+          "face_id": "face-af09076c765c",
+          "sample_fraction": 0.25,
+          "surface_type": "cylinder",
+          "radius": 2.75
+        }
+      ],
+      "region_id": "missing-04",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "30C",
+          "face_id": "f19",
+          "face_fingerprint": "b0d97db273eeee09f35a35cdf7a46bcabbf5afa8cb4570d7d66baeee5dd82bd1",
+          "surface_type": "cone",
+          "area": 28.874348308124933,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "exact_query_hits": 8,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.006058,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-30C-f19",
+          "kind": "cone_surface_candidate",
+          "confidence": "low",
+          "entity_handle": "30C",
+          "face_ids": [
+            "f19"
+          ],
+          "face_fingerprints": [
+            "b0d97db273eeee09f35a35cdf7a46bcabbf5afa8cb4570d7d66baeee5dd82bd1"
+          ],
+          "parameters": {
+            "base_radius": 3.25,
+            "half_angle": 0.7843991627307824,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [],
+      "exact_face_query": {
+        "query_count": 8,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    }
+  ],
+  "native_topology": {
+    "protocol": "evocad-native-feature-localization-v1",
+    "entity_count": 1,
+    "face_count": 43,
+    "adjacency_count": 47,
+    "feature_candidate_count": 28,
+    "export_errors": [],
+    "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+    "exact_face_query_count": 87
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [
+      {
+        "point": [
+          2.805488,
+          22.921083,
+          13.713105
+        ],
+        "distance_normalized": 0.020226,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          3.533179,
+          22.921453,
+          13.544024
+        ],
+        "distance_normalized": 0.020215,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -14.012258,
+          23.000001,
+          -0.546618
+        ],
+        "distance_normalized": 0.019938,
+        "region_id": "excess-05"
+      },
+      {
+        "point": [
+          12.676636,
+          23.000001,
+          6.01993
+        ],
+        "distance_normalized": 0.019826,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          2.671775,
+          22.78427,
+          13.738101
+        ],
+        "distance_normalized": 0.019042,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -6.482148,
+          23.000001,
+          12.560344
+        ],
+        "distance_normalized": 0.018804,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          9.873325,
+          23.000001,
+          -10.130462
+        ],
+        "distance_normalized": 0.018686,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          2.391145,
+          22.741927,
+          -13.790592
+        ],
+        "distance_normalized": 0.018614,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          2.639486,
+          23.000001,
+          -13.912028
+        ],
+        "distance_normalized": 0.018554,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -11.030521,
+          23.000001,
+          8.884309
+        ],
+        "distance_normalized": 0.018538,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -2.583258,
+          22.712293,
+          13.754648
+        ],
+        "distance_normalized": 0.018315,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -10.167397,
+          23.000001,
+          9.911123
+        ],
+        "distance_normalized": 0.018196,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          5.564532,
+          22.694808,
+          -12.842714
+        ],
+        "distance_normalized": 0.018138,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -13.192384,
+          22.685937,
+          -4.676837
+        ],
+        "distance_normalized": 0.018048,
+        "region_id": "excess-05"
+      },
+      {
+        "point": [
+          5.521358,
+          23.000001,
+          13.115937
+        ],
+        "distance_normalized": 0.017873,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          9.588362,
+          23.000001,
+          10.524528
+        ],
+        "distance_normalized": 0.017781,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          2.667142,
+          22.62,
+          13.738967
+        ],
+        "distance_normalized": 0.017382,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -12.526879,
+          22.612334,
+          6.250516
+        ],
+        "distance_normalized": 0.017305,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          5.174908,
+          22.573901,
+          -13.003851
+        ],
+        "distance_normalized": 0.016916,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          10.708496,
+          22.551509,
+          -9.018032
+        ],
+        "distance_normalized": 0.01669,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -1.109335,
+          22.391249,
+          13.951085
+        ],
+        "distance_normalized": 0.01507,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -13.990673,
+          22.382404,
+          0.429398
+        ],
+        "distance_normalized": 0.014981,
+        "region_id": "excess-05"
+      },
+      {
+        "point": [
+          13.463855,
+          22.372369,
+          3.819437
+        ],
+        "distance_normalized": 0.01488,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          5.983607,
+          22.226492,
+          -12.654358
+        ],
+        "distance_normalized": 0.013405,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -3.602456,
+          23.000001,
+          14.224007
+        ],
+        "distance_normalized": 0.013401,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -10.982289,
+          22.218508,
+          8.68033
+        ],
+        "distance_normalized": 0.013325,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.737025,
+          22.19369,
+          10.052696
+        ],
+        "distance_normalized": 0.013074,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          11.132671,
+          22.18364,
+          -8.486503
+        ],
+        "distance_normalized": 0.012972,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          7.941981,
+          23.000001,
+          12.450369
+        ],
+        "distance_normalized": 0.012405,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -9.408759,
+          23.000001,
+          11.444334
+        ],
+        "distance_normalized": 0.011937,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          11.080973,
+          23.000001,
+          9.902567
+        ],
+        "distance_normalized": 0.011487,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -13.378671,
+          22.008673,
+          -4.108628
+        ],
+        "distance_normalized": 0.011204,
+        "region_id": "excess-05"
+      },
+      {
+        "point": [
+          11.523948,
+          23.000001,
+          9.543387
+        ],
+        "distance_normalized": 0.010437,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -13.711362,
+          23.000001,
+          6.008633
+        ],
+        "distance_normalized": 0.010372,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -12.044799,
+          21.900057,
+          7.127101
+        ],
+        "distance_normalized": 0.010106,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          12.435873,
+          23.000001,
+          -8.396145
+        ],
+        "distance_normalized": 0.010008,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          11.185484,
+          21.833241,
+          8.411252
+        ],
+        "distance_normalized": 0.009431,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -11.747851,
+          21.824364,
+          7.61073
+        ],
+        "distance_normalized": 0.009341,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -10.696923,
+          23.000001,
+          10.621771
+        ],
+        "distance_normalized": 0.00932,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -7.776027,
+          21.820611,
+          11.638802
+        ],
+        "distance_normalized": 0.009304,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -13.261407,
+          23.000001,
+          -7.170994
+        ],
+        "distance_normalized": 0.009287,
+        "region_id": "excess-05"
+      },
+      {
+        "point": [
+          -13.790416,
+          21.816823,
+          -2.410391
+        ],
+        "distance_normalized": 0.009265,
+        "region_id": "excess-05"
+      },
+      {
+        "point": [
+          -12.56172,
+          23.000001,
+          8.420617
+        ],
+        "distance_normalized": 0.008818,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -13.450952,
+          21.76827,
+          -3.877907
+        ],
+        "distance_normalized": 0.008775,
+        "region_id": "excess-05"
+      },
+      {
+        "point": [
+          9.020433,
+          21.757247,
+          10.701658
+        ],
+        "distance_normalized": 0.008663,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          11.417662,
+          21.738967,
+          8.099634
+        ],
+        "distance_normalized": 0.008478,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          12.277173,
+          23.000001,
+          -8.911237
+        ],
+        "distance_normalized": 0.008366,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          4.683894,
+          21.704862,
+          -13.192456
+        ],
+        "distance_normalized": 0.008134,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -10.075017,
+          23.000001,
+          11.378616
+        ],
+        "distance_normalized": 0.008055,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          10.393291,
+          21.682379,
+          9.375996
+        ],
+        "distance_normalized": 0.007907,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          3.352421,
+          23.000001,
+          -14.841788
+        ],
+        "distance_normalized": 0.007876,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          11.665491,
+          23.000001,
+          -9.77204
+        ],
+        "distance_normalized": 0.007856,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -12.753715,
+          23.000001,
+          -8.343027
+        ],
+        "distance_normalized": 0.007656,
+        "region_id": "excess-05"
+      },
+      {
+        "point": [
+          -13.02524,
+          21.646061,
+          5.120531
+        ],
+        "distance_normalized": 0.00754,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -2.324602,
+          23.000001,
+          15.120076
+        ],
+        "distance_normalized": 0.007084,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -12.898363,
+          23.000001,
+          -8.285014
+        ],
+        "distance_normalized": 0.00676,
+        "region_id": "excess-05"
+      },
+      {
+        "point": [
+          -2.34874,
+          23.000001,
+          15.151568
+        ],
+        "distance_normalized": 0.006728,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -6.996442,
+          23.000001,
+          13.64348
+        ],
+        "distance_normalized": 0.006692,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          12.721861,
+          21.547921,
+          5.833011
+        ],
+        "distance_normalized": 0.006548,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          14.005098,
+          23.000001,
+          6.301191
+        ],
+        "distance_normalized": 0.006489,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -8.876805,
+          21.530191,
+          10.825815
+        ],
+        "distance_normalized": 0.006369,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -13.300672,
+          21.496708,
+          -4.357601
+        ],
+        "distance_normalized": 0.00603,
+        "region_id": "excess-05"
+      }
+    ],
+    "ground_truth_to_candidate": [
+      {
+        "point": [
+          -2.820753,
+          20.9,
+          15.737804
+        ],
+        "distance_normalized": 0.020141,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -15.976489,
+          20.9,
+          0.033921
+        ],
+        "distance_normalized": 0.020014,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -14.556121,
+          20.9,
+          6.517792
+        ],
+        "distance_normalized": 0.019726,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          15.995027,
+          21.097683,
+          0.363434
+        ],
+        "distance_normalized": 0.019224,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -9.431912,
+          20.9,
+          12.719668
+        ],
+        "distance_normalized": 0.018556,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          13.976777,
+          21.164939,
+          -7.778963
+        ],
+        "distance_normalized": 0.018545,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          15.795464,
+          21.165659,
+          2.522672
+        ],
+        "distance_normalized": 0.018537,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.117058,
+          20.9,
+          -15.753428
+        ],
+        "distance_normalized": 0.018143,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          15.975278,
+          21.221493,
+          0.794602
+        ],
+        "distance_normalized": 0.017973,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -4.184394,
+          20.9,
+          15.210296
+        ],
+        "distance_normalized": 0.017952,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -15.587709,
+          20.9,
+          2.329713
+        ],
+        "distance_normalized": 0.017801,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -3.99258,
+          20.9,
+          -15.216685
+        ],
+        "distance_normalized": 0.017546,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          14.77749,
+          21.277582,
+          -6.121803
+        ],
+        "distance_normalized": 0.017406,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.268158,
+          21.2887,
+          -15.835895
+        ],
+        "distance_normalized": 0.017294,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -14.330777,
+          21.296026,
+          -7.106611
+        ],
+        "distance_normalized": 0.01722,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -15.687478,
+          21.309821,
+          -3.121902
+        ],
+        "distance_normalized": 0.017081,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -12.55531,
+          21.321916,
+          9.9151
+        ],
+        "distance_normalized": 0.016958,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -11.957842,
+          21.374744,
+          -10.628636
+        ],
+        "distance_normalized": 0.016425,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.997998,
+          21.418302,
+          15.86975
+        ],
+        "distance_normalized": 0.015984,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -15.926479,
+          21.443393,
+          -1.483309
+        ],
+        "distance_normalized": 0.015731,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          12.59567,
+          21.4439,
+          -9.861818
+        ],
+        "distance_normalized": 0.015726,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          14.552314,
+          20.9,
+          -5.29387
+        ],
+        "distance_normalized": 0.015055,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          13.174659,
+          21.527324,
+          9.070533
+        ],
+        "distance_normalized": 0.014883,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          13.591443,
+          21.530262,
+          -8.433594
+        ],
+        "distance_normalized": 0.014853,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.714435,
+          21.563287,
+          -15.905285
+        ],
+        "distance_normalized": 0.014519,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -12.692843,
+          21.573583,
+          9.733532
+        ],
+        "distance_normalized": 0.014415,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -12.842772,
+          21.574805,
+          9.535597
+        ],
+        "distance_normalized": 0.014403,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -13.077491,
+          21.575717,
+          -9.213051
+        ],
+        "distance_normalized": 0.014394,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -10.262974,
+          21.59527,
+          12.273959
+        ],
+        "distance_normalized": 0.014196,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          14.7595,
+          21.595546,
+          -6.164481
+        ],
+        "distance_normalized": 0.014193,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          3.204985,
+          21.618335,
+          15.674852
+        ],
+        "distance_normalized": 0.013963,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -14.274992,
+          21.629614,
+          7.222449
+        ],
+        "distance_normalized": 0.013849,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          8.354151,
+          21.651227,
+          13.645429
+        ],
+        "distance_normalized": 0.013631,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -5.710367,
+          20.9,
+          14.227684
+        ],
+        "distance_normalized": 0.013483,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          3.997928,
+          21.666979,
+          15.491222
+        ],
+        "distance_normalized": 0.013471,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -13.868766,
+          20.9,
+          6.484728
+        ],
+        "distance_normalized": 0.013287,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -10.122585,
+          20.9,
+          -11.474689
+        ],
+        "distance_normalized": 0.013181,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          14.82161,
+          20.9,
+          3.77382
+        ],
+        "distance_normalized": 0.013084,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          14.672787,
+          20.9,
+          4.266589
+        ],
+        "distance_normalized": 0.012987,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          4.948459,
+          20.9,
+          14.449558
+        ],
+        "distance_normalized": 0.012905,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -13.034066,
+          21.738977,
+          9.276744
+        ],
+        "distance_normalized": 0.012744,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          12.14925,
+          21.752576,
+          10.404932
+        ],
+        "distance_normalized": 0.012606,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          14.740416,
+          20.9,
+          3.713378
+        ],
+        "distance_normalized": 0.012147,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -5.965165,
+          20.9,
+          -13.964188
+        ],
+        "distance_normalized": 0.011997,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -4.893596,
+          20.9,
+          14.362804
+        ],
+        "distance_normalized": 0.011892,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -6.9668,
+          20.9,
+          13.463221
+        ],
+        "distance_normalized": 0.011717,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -11.200503,
+          20.9,
+          -10.189274
+        ],
+        "distance_normalized": 0.011576,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          5.828228,
+          21.856779,
+          14.895399
+        ],
+        "distance_normalized": 0.011553,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -4.811204,
+          20.9,
+          14.329475
+        ],
+        "distance_normalized": 0.011295,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -12.695649,
+          20.9,
+          -8.108891
+        ],
+        "distance_normalized": 0.010805,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -11.25175,
+          21.937063,
+          11.368931
+        ],
+        "distance_normalized": 0.010742,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -15.698523,
+          21.938558,
+          3.067267
+        ],
+        "distance_normalized": 0.010727,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -12.354821,
+          20.9,
+          8.585118
+        ],
+        "distance_normalized": 0.010594,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -4.2063,
+          20.9,
+          -14.446174
+        ],
+        "distance_normalized": 0.010592,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          15.819263,
+          21.968884,
+          -2.364782
+        ],
+        "distance_normalized": 0.01042,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -5.44578,
+          21.970058,
+          15.044
+        ],
+        "distance_normalized": 0.010408,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -13.911332,
+          20.9,
+          5.53603
+        ],
+        "distance_normalized": 0.009875,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.624316,
+          20.9,
+          14.719781
+        ],
+        "distance_normalized": 0.009664,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.390024,
+          22.045566,
+          15.93571
+        ],
+        "distance_normalized": 0.009645,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.163214,
+          20.9,
+          14.768746
+        ],
+        "distance_normalized": 0.009397,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.553691,
+          20.9,
+          -9.404474
+        ],
+        "distance_normalized": 0.00911,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -4.418574,
+          20.9,
+          14.223938
+        ],
+        "distance_normalized": 0.00908,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          13.906309,
+          20.9,
+          -5.318768
+        ],
+        "distance_normalized": 0.009025,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -13.807873,
+          20.9,
+          5.555381
+        ],
+        "distance_normalized": 0.008978,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -8.875185,
+          20.9,
+          -11.947188
+        ],
+        "distance_normalized": 0.008971,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -15.978205,
+          22.114168,
+          -0.735947
+        ],
+        "distance_normalized": 0.008952,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          8.247903,
+          20.9,
+          12.338857
+        ],
+        "distance_normalized": 0.008531,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          12.8173,
+          20.9,
+          -7.478627
+        ],
+        "distance_normalized": 0.00852,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -7.13028,
+          20.9,
+          -12.986871
+        ],
+        "distance_normalized": 0.008242,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          13.113812,
+          20.9,
+          -6.825241
+        ],
+        "distance_normalized": 0.007945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -15.884239,
+          22.229275,
+          -1.905441
+        ],
+        "distance_normalized": 0.007789,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -15.995027,
+          22.246697,
+          -0.280615
+        ],
+        "distance_normalized": 0.007613,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          14.14411,
+          20.9,
+          4.10838
+        ],
+        "distance_normalized": 0.007411,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.566456,
+          20.9,
+          -9.113356
+        ],
+        "distance_normalized": 0.007377,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          13.670258,
+          22.283136,
+          -8.304619
+        ],
+        "distance_normalized": 0.007244,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          4.645791,
+          20.9,
+          -13.954578
+        ],
+        "distance_normalized": 0.007199,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          15.995027,
+          22.288223,
+          -0.326999
+        ],
+        "distance_normalized": 0.007193,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.045101,
+          22.311172,
+          -15.863848
+        ],
+        "distance_normalized": 0.006961,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          10.659236,
+          22.313628,
+          -11.926094
+        ],
+        "distance_normalized": 0.006936,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          12.239418,
+          20.9,
+          8.068576
+        ],
+        "distance_normalized": 0.006706,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.561457,
+          22.348288,
+          -11.055837
+        ],
+        "distance_normalized": 0.006586,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.813532,
+          20.9,
+          14.364591
+        ],
+        "distance_normalized": 0.006487,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -14.559043,
+          20.9,
+          -1.473067
+        ],
+        "distance_normalized": 0.006445,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -3.571507,
+          20.9,
+          14.190265
+        ],
+        "distance_normalized": 0.006438,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -10.792791,
+          22.373696,
+          -11.808231
+        ],
+        "distance_normalized": 0.006329,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -12.763942,
+          22.373774,
+          9.639667
+        ],
+        "distance_normalized": 0.006329,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.670565,
+          20.9,
+          14.368279
+        ],
+        "distance_normalized": 0.006258,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          8.913015,
+          22.388667,
+          13.284475
+        ],
+        "distance_normalized": 0.006178,
+        "region_id": "missing-01"
+      }
+    ]
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

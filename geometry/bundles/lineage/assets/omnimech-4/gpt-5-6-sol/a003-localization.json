@@ -1,0 +1,1855 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.005575,
+  "region_count": 3,
+  "regions": [
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 100,
+      "sample_fraction": 0.005,
+      "estimated_area": 111.984174,
+      "estimated_area_fraction": 0.005,
+      "centroid": [
+        0.331143,
+        -33.9121,
+        1.878369
+      ],
+      "centroid_bbox_position": [
+        0.1413,
+        0.1683,
+        0.5184
+      ],
+      "bbox": {
+        "min": [
+          -3.628652,
+          -47.614923,
+          -45.34676
+        ],
+        "max": [
+          3.628062,
+          -4.251186,
+          47.955292
+        ]
+      },
+      "mean_distance_normalized": 0.006698,
+      "p95_distance_normalized": 0.007502,
+      "max_distance_normalized": 0.007848,
+      "mean_normal_offset_normalized": 0.006696,
+      "mean_normal_disagreement": 0.297072,
+      "dominant_source_normal": [
+        0.0812,
+        -0.9723,
+        0.219
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -3.594346,
+          -45.343313,
+          -8.420673
+        ],
+        [
+          3.548171,
+          -38.21563,
+          -26.69163
+        ],
+        [
+          3.37896,
+          -20.169725,
+          -40.928519
+        ],
+        [
+          -3.621862,
+          -40.918715,
+          -20.147455
+        ],
+        [
+          3.287234,
+          -43.28482,
+          14.820152
+        ],
+        [
+          3.338043,
+          -38.300417,
+          26.358571
+        ],
+        [
+          3.507715,
+          -8.080306,
+          46.23442
+        ],
+        [
+          -3.376802,
+          -40.59415,
+          20.28106
+        ],
+        [
+          -3.529413,
+          -46.586616,
+          -4.072593
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-f358dc613cff",
+          "sample_fraction": 0.04,
+          "surface_type": "cylinder",
+          "radius": 11.134275
+        },
+        {
+          "face_id": "face-a8a0809538e1",
+          "sample_fraction": 0.04,
+          "surface_type": "torus",
+          "major_radius": 45.193975,
+          "minor_radius": 12.7
+        },
+        {
+          "face_id": "face-4d45ccf509cb",
+          "sample_fraction": 0.04,
+          "surface_type": "torus",
+          "major_radius": 45.193975,
+          "minor_radius": 12.7
+        },
+        {
+          "face_id": "face-5df441f47f93",
+          "sample_fraction": 0.04,
+          "surface_type": "torus",
+          "major_radius": 45.193975,
+          "minor_radius": 12.7
+        },
+        {
+          "face_id": "face-7fa0aeeabf54",
+          "sample_fraction": 0.04,
+          "surface_type": "cylinder",
+          "radius": 4.326275
+        }
+      ],
+      "region_id": "missing-01",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "352",
+          "face_id": "f87",
+          "face_fingerprint": "11f538f593d04997d534507a946156d842319a7c928553f9d365c8b6f23f58bb",
+          "surface_type": "nurbsurface",
+          "area": 15.145270528529009,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f87",
+            "entity_handle": "352",
+            "face_id": "f87",
+            "face_fingerprint": "11f538f593d04997d534507a946156d842319a7c928553f9d365c8b6f23f58bb",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006172,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f81",
+          "face_fingerprint": "64a9ee3a341cd6e380f76b2e762df25aef057be6ca7dcc6c802cda1e28414bff",
+          "surface_type": "nurbsurface",
+          "area": 15.145270528529036,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f81",
+            "entity_handle": "352",
+            "face_id": "f81",
+            "face_fingerprint": "64a9ee3a341cd6e380f76b2e762df25aef057be6ca7dcc6c802cda1e28414bff",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006459,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f89",
+          "face_fingerprint": "917fa8b3d5e1862f6efbe86060a033074b5c16162bed3a6233e2e635964edc42",
+          "surface_type": "nurbsurface",
+          "area": 15.145270528529004,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f89",
+            "entity_handle": "352",
+            "face_id": "f89",
+            "face_fingerprint": "917fa8b3d5e1862f6efbe86060a033074b5c16162bed3a6233e2e635964edc42",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006493,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f219",
+          "face_fingerprint": "cfcf5bf0e56191728a2d76b555736114f711222be14dc0f640954f2c31179388",
+          "surface_type": "nurbsurface",
+          "area": 15.14527062020876,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f219",
+            "entity_handle": "352",
+            "face_id": "f219",
+            "face_fingerprint": "cfcf5bf0e56191728a2d76b555736114f711222be14dc0f640954f2c31179388",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006542,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f63",
+          "face_fingerprint": "3ce9cd3b602ca1360d5fbcdbef873a563f1ad0937bd70ed4eea3cb400b797585",
+          "surface_type": "nurbsurface",
+          "area": 15.145270528529013,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f63",
+            "entity_handle": "352",
+            "face_id": "f63",
+            "face_fingerprint": "3ce9cd3b602ca1360d5fbcdbef873a563f1ad0937bd70ed4eea3cb400b797585",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006609,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f217",
+          "face_fingerprint": "853c1f19113a2e2c5d3f18157efd9550aab048af4b16709de498c14b9fd22ae0",
+          "surface_type": "nurbsurface",
+          "area": 15.14527062020881,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f217",
+            "entity_handle": "352",
+            "face_id": "f217",
+            "face_fingerprint": "853c1f19113a2e2c5d3f18157efd9550aab048af4b16709de498c14b9fd22ae0",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006652,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f77",
+          "face_fingerprint": "7635d9ea508d9346e0ffe0ef883241315f3a60856da9145cdfb2a8723aad625f",
+          "surface_type": "nurbsurface",
+          "area": 15.145270528529009,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f77",
+            "entity_handle": "352",
+            "face_id": "f77",
+            "face_fingerprint": "7635d9ea508d9346e0ffe0ef883241315f3a60856da9145cdfb2a8723aad625f",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006688,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f96",
+          "face_fingerprint": "ca576735d806604f15a6c24d4ec0c143e759ae39a57fa4849a5dd086e151145c",
+          "surface_type": "nurbsurface",
+          "area": 15.145270620208773,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f96",
+            "entity_handle": "352",
+            "face_id": "f96",
+            "face_fingerprint": "ca576735d806604f15a6c24d4ec0c143e759ae39a57fa4849a5dd086e151145c",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006806,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "low",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a003_tooth_arcs_01",
+          "intent": "Replace sampled Hermite tooth boundary with exact Ø96.93-pitch 08B roller-seat arcs tangent to straight flanks ending at the stated R51.50 tips",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "target_entity_handle"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile",
+          "feature_id": "sprocket_tooth_profile",
+          "editable_parameters": {
+            "tooth_count": 24,
+            "pitch_diameter_mm": 96.93,
+            "roller_seat_radius_mm": 4.255,
+            "root_radius_mm": 44.21,
+            "tip_radius_mm": 51.5,
+            "profile_edges_per_tooth": 4
+          },
+          "parent_operation_ids": [
+            "a002_outer_01"
+          ]
+        },
+        {
+          "operation_id": "a003_edge_chamfer_01",
+          "intent": "Replace conical cap surrogate with perimeter-following inward parallel profiles lofted over 1.65 mm on both tooth sides",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "target_entity_handle"
+          ],
+          "confidence": "medium",
+          "operation_type": "loft",
+          "feature_id": "tooth_side_chamfers",
+          "editable_parameters": {
+            "overall_width_mm": 7.21,
+            "chamfer_axial_depth_mm": 1.65,
+            "chamfer_normal_offset_mm": 1.65,
+            "central_land_mm": 3.91
+          },
+          "parent_operation_ids": [
+            "a003_tooth_arcs_01"
+          ]
+        },
+        {
+          "operation_id": "a003_preserved_core_01",
+          "intent": "Recreate unchanged verified hub, bore, keyway, and tap-drill features around the repaired tooth body",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "target_entity_handle"
+          ],
+          "confidence": "medium",
+          "operation_type": "boolean_reconstruct",
+          "feature_id": null,
+          "editable_parameters": {
+            "hub_diameter_mm": 60,
+            "total_axial_length_mm": 28,
+            "bore_diameter_mm": 30,
+            "keyway_width_mm": 8,
+            "keyway_top_radius_mm": 18.3,
+            "tap_drill_diameter_mm": 5,
+            "tap_drill_offset_mm": 8
+          },
+          "parent_operation_ids": [
+            "a003_edge_chamfer_01",
+            "a002_hub_01",
+            "a002_bore_key_01",
+            "a002_m6tap_01"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 87,
+      "sample_fraction": 0.00435,
+      "estimated_area": 97.426232,
+      "estimated_area_fraction": 0.00435,
+      "centroid": [
+        0.352989,
+        27.576647,
+        -26.761814
+      ],
+      "centroid_bbox_position": [
+        0.1421,
+        0.7697,
+        0.2382
+      ],
+      "bbox": {
+        "min": [
+          -3.627146,
+          -8.881911,
+          -47.938124
+        ],
+        "max": [
+          3.628223,
+          47.92324,
+          9.260317
+        ]
+      },
+      "mean_distance_normalized": 0.006762,
+      "p95_distance_normalized": 0.007519,
+      "max_distance_normalized": 0.007769,
+      "mean_normal_offset_normalized": 0.006762,
+      "mean_normal_disagreement": 0.276728,
+      "dominant_source_normal": [
+        0.2177,
+        0.8402,
+        -0.4967
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -3.500456,
+          -8.109327,
+          -46.288944
+        ],
+        [
+          3.554668,
+          -2.387945,
+          -45.04179
+        ],
+        [
+          3.614932,
+          29.949066,
+          -34.605729
+        ],
+        [
+          -3.150108,
+          44.336075,
+          -20.012086
+        ],
+        [
+          3.298071,
+          45.165193,
+          2.562787
+        ],
+        [
+          -3.448682,
+          46.009953,
+          3.427765
+        ],
+        [
+          -3.443588,
+          36.449957,
+          -30.211834
+        ],
+        [
+          -3.09081,
+          28.540496,
+          -39.622428
+        ],
+        [
+          -3.275137,
+          4.703025,
+          -47.938124
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-3395dd0edcbe",
+          "sample_fraction": 0.091954,
+          "surface_type": "cylinder",
+          "radius": 4.326275
+        },
+        {
+          "face_id": "face-98c96822f244",
+          "sample_fraction": 0.057471,
+          "surface_type": "cylinder",
+          "radius": 11.134275
+        },
+        {
+          "face_id": "face-e7d23f2aa0a1",
+          "sample_fraction": 0.057471,
+          "surface_type": "torus",
+          "major_radius": 45.193975,
+          "minor_radius": 12.7
+        },
+        {
+          "face_id": "face-80b39ab70b70",
+          "sample_fraction": 0.057471,
+          "surface_type": "torus",
+          "major_radius": 45.193975,
+          "minor_radius": 12.7
+        },
+        {
+          "face_id": "face-7ce5dd2a3039",
+          "sample_fraction": 0.045977,
+          "surface_type": "cylinder",
+          "radius": 4.326275
+        }
+      ],
+      "region_id": "missing-02",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "352",
+          "face_id": "f10",
+          "face_fingerprint": "f7ba30a101a23819ce2ae7452247836aade43b01b9109d99716c8b2487a3ed87",
+          "surface_type": "cylinder",
+          "area": 8.114260967031647,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f10",
+            "entity_handle": "352",
+            "face_id": "f10",
+            "face_fingerprint": "f7ba30a101a23819ce2ae7452247836aade43b01b9109d99716c8b2487a3ed87",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006077,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f140",
+          "face_fingerprint": "eca70af9a35e92251660c109249b544f8f355197787494e1d1844e802a142906",
+          "surface_type": "nurbsurface",
+          "area": 15.145270528529036,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f140",
+            "entity_handle": "352",
+            "face_id": "f140",
+            "face_fingerprint": "eca70af9a35e92251660c109249b544f8f355197787494e1d1844e802a142906",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006246,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f141",
+          "face_fingerprint": "359b46e06b21bf3878ec609e2e9bb75939b6314c216e04d05acb0ae8d8a2f32a",
+          "surface_type": "nurbsurface",
+          "area": 15.145270528529048,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f141",
+            "entity_handle": "352",
+            "face_id": "f141",
+            "face_fingerprint": "359b46e06b21bf3878ec609e2e9bb75939b6314c216e04d05acb0ae8d8a2f32a",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006317,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f123",
+          "face_fingerprint": "07d087c65493e2ddbbe02363694f307a684fba6db3e355192e5c3a3b7ea920f3",
+          "surface_type": "nurbsurface",
+          "area": 15.145270528529046,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f123",
+            "entity_handle": "352",
+            "face_id": "f123",
+            "face_fingerprint": "07d087c65493e2ddbbe02363694f307a684fba6db3e355192e5c3a3b7ea920f3",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006345,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f139",
+          "face_fingerprint": "5980e623ee0183274b7d444efac6cf85da4d670c9362e9ce0f4f213d06baad9f",
+          "surface_type": "nurbsurface",
+          "area": 15.145270528529066,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f139",
+            "entity_handle": "352",
+            "face_id": "f139",
+            "face_fingerprint": "5980e623ee0183274b7d444efac6cf85da4d670c9362e9ce0f4f213d06baad9f",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006407,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f98",
+          "face_fingerprint": "3f03dab5f50fa57dbeb4eab594442a1c58d882c7bd1deae4ffdabc31ddbed4e8",
+          "surface_type": "nurbsurface",
+          "area": 15.145270620208809,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f98",
+            "entity_handle": "352",
+            "face_id": "f98",
+            "face_fingerprint": "3f03dab5f50fa57dbeb4eab594442a1c58d882c7bd1deae4ffdabc31ddbed4e8",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006521,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f119",
+          "face_fingerprint": "007289234f26fcb5a176be35df0af5dca71e476a4bb68fabf3a7fc202e61613d",
+          "surface_type": "nurbsurface",
+          "area": 15.14527052852906,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f119",
+            "entity_handle": "352",
+            "face_id": "f119",
+            "face_fingerprint": "007289234f26fcb5a176be35df0af5dca71e476a4bb68fabf3a7fc202e61613d",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006676,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f137",
+          "face_fingerprint": "aa3b164ba0133a0a05ab4d288f169b3d41c9f71d7ba4d35ba6d1f746faadc42c",
+          "surface_type": "nurbsurface",
+          "area": 15.145270528529025,
+          "aligned_bounds": {
+            "min": [
+              17.173643,
+              -7.022984551222528,
+              -51.060035
+            ],
+            "max": [
+              18.823642999999997,
+              -0.0006246392487625485,
+              -44.33793610066733
+            ]
+          },
+          "bbox_distance_normalized": 0.091969,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "352:f137",
+            "entity_handle": "352",
+            "face_id": "f137",
+            "face_fingerprint": "aa3b164ba0133a0a05ab4d288f169b3d41c9f71d7ba4d35ba6d1f746faadc42c",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.00681,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "low",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-352-f10",
+          "kind": "boss_candidate",
+          "confidence": "medium",
+          "entity_handle": "352",
+          "face_ids": [
+            "f10"
+          ],
+          "face_fingerprints": [
+            "f7ba30a101a23819ce2ae7452247836aade43b01b9109d99716c8b2487a3ed87"
+          ],
+          "parameters": {
+            "radius": 44.21,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "origin": [
+              0,
+              0,
+              3.605
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a003_tooth_arcs_01",
+          "intent": "Replace sampled Hermite tooth boundary with exact Ø96.93-pitch 08B roller-seat arcs tangent to straight flanks ending at the stated R51.50 tips",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "target_entity_handle"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile",
+          "feature_id": "sprocket_tooth_profile",
+          "editable_parameters": {
+            "tooth_count": 24,
+            "pitch_diameter_mm": 96.93,
+            "roller_seat_radius_mm": 4.255,
+            "root_radius_mm": 44.21,
+            "tip_radius_mm": 51.5,
+            "profile_edges_per_tooth": 4
+          },
+          "parent_operation_ids": [
+            "a002_outer_01"
+          ]
+        },
+        {
+          "operation_id": "a003_edge_chamfer_01",
+          "intent": "Replace conical cap surrogate with perimeter-following inward parallel profiles lofted over 1.65 mm on both tooth sides",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "target_entity_handle"
+          ],
+          "confidence": "medium",
+          "operation_type": "loft",
+          "feature_id": "tooth_side_chamfers",
+          "editable_parameters": {
+            "overall_width_mm": 7.21,
+            "chamfer_axial_depth_mm": 1.65,
+            "chamfer_normal_offset_mm": 1.65,
+            "central_land_mm": 3.91
+          },
+          "parent_operation_ids": [
+            "a003_tooth_arcs_01"
+          ]
+        },
+        {
+          "operation_id": "a003_preserved_core_01",
+          "intent": "Recreate unchanged verified hub, bore, keyway, and tap-drill features around the repaired tooth body",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "target_entity_handle"
+          ],
+          "confidence": "medium",
+          "operation_type": "boolean_reconstruct",
+          "feature_id": null,
+          "editable_parameters": {
+            "hub_diameter_mm": 60,
+            "total_axial_length_mm": 28,
+            "bore_diameter_mm": 30,
+            "keyway_width_mm": 8,
+            "keyway_top_radius_mm": 18.3,
+            "tap_drill_diameter_mm": 5,
+            "tap_drill_offset_mm": 8
+          },
+          "parent_operation_ids": [
+            "a003_edge_chamfer_01",
+            "a002_hub_01",
+            "a002_bore_key_01",
+            "a002_m6tap_01"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 36,
+      "sample_fraction": 0.0018,
+      "estimated_area": 40.314303,
+      "estimated_area_fraction": 0.0018,
+      "centroid": [
+        1.540314,
+        19.096891,
+        40.439683
+      ],
+      "centroid_bbox_position": [
+        0.1845,
+        0.6868,
+        0.8955
+      ],
+      "bbox": {
+        "min": [
+          -3.622286,
+          3.034251,
+          27.799435
+        ],
+        "max": [
+          3.628546,
+          38.897391,
+          48.250548
+        ]
+      },
+      "mean_distance_normalized": 0.006669,
+      "p95_distance_normalized": 0.00757,
+      "max_distance_normalized": 0.007756,
+      "mean_normal_offset_normalized": 0.006668,
+      "mean_normal_disagreement": 0.329655,
+      "dominant_source_normal": [
+        0.712,
+        0.292,
+        0.6386
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -3.214987,
+          8.106297,
+          46.795235
+        ],
+        [
+          3.60577,
+          19.764727,
+          41.486285
+        ],
+        [
+          3.628546,
+          24.597237,
+          37.803284
+        ],
+        [
+          3.627702,
+          29.99693,
+          33.78058
+        ],
+        [
+          3.35505,
+          38.897391,
+          27.799435
+        ],
+        [
+          -3.542799,
+          20.32311,
+          40.490179
+        ],
+        [
+          -3.600041,
+          15.337715,
+          43.41784
+        ],
+        [
+          3.191375,
+          4.763603,
+          48.250548
+        ],
+        [
+          3.592264,
+          3.246408,
+          45.791338
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-02c016c05d3c",
+          "sample_fraction": 0.138889,
+          "surface_type": "torus",
+          "major_radius": 45.193975,
+          "minor_radius": 12.7
+        },
+        {
+          "face_id": "face-092117d604ed",
+          "sample_fraction": 0.138889,
+          "surface_type": "torus",
+          "major_radius": 45.193975,
+          "minor_radius": 12.7
+        },
+        {
+          "face_id": "face-7838f0facf56",
+          "sample_fraction": 0.083333,
+          "surface_type": "cylinder",
+          "radius": 4.326275
+        },
+        {
+          "face_id": "face-523d2de33ce4",
+          "sample_fraction": 0.083333,
+          "surface_type": "torus",
+          "major_radius": 45.193975,
+          "minor_radius": 12.7
+        },
+        {
+          "face_id": "face-96592d225710",
+          "sample_fraction": 0.083333,
+          "surface_type": "torus",
+          "major_radius": 45.193975,
+          "minor_radius": 12.7
+        }
+      ],
+      "region_id": "missing-03",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "352",
+          "face_id": "f61",
+          "face_fingerprint": "63277a89b9b2cebc5e8f862d8d30619904b4f8da1ce6cfd12dd37db48a864aab",
+          "surface_type": "nurbsurface",
+          "area": 15.145270528529029,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f61",
+            "entity_handle": "352",
+            "face_id": "f61",
+            "face_fingerprint": "63277a89b9b2cebc5e8f862d8d30619904b4f8da1ce6cfd12dd37db48a864aab",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.006617,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f47",
+          "face_fingerprint": "74743172b70bd3a503e75b399e4c44d37410a08e70de122e8c89481e7e37548a",
+          "surface_type": "cylinder",
+          "area": 8.11426096703168,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f47",
+            "entity_handle": "352",
+            "face_id": "f47",
+            "face_fingerprint": "74743172b70bd3a503e75b399e4c44d37410a08e70de122e8c89481e7e37548a",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006055,
+          "query_methods": [
+            "trim_boundary"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f132",
+          "face_fingerprint": "235c6972d7346ff7248573743dffc52fe16374bc36abff7645d15460c60ab214",
+          "surface_type": "nurbsurface",
+          "area": 15.145270528529053,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f132",
+            "entity_handle": "352",
+            "face_id": "f132",
+            "face_fingerprint": "235c6972d7346ff7248573743dffc52fe16374bc36abff7645d15460c60ab214",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006065,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f86",
+          "face_fingerprint": "08412c1edbc33c03351bc5db0439a3c1667bfcd61b6cf9d03a00656caa678d30",
+          "surface_type": "nurbsurface",
+          "area": 15.145270620208825,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f86",
+            "entity_handle": "352",
+            "face_id": "f86",
+            "face_fingerprint": "08412c1edbc33c03351bc5db0439a3c1667bfcd61b6cf9d03a00656caa678d30",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006234,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f74",
+          "face_fingerprint": "0b61cf99be314ba397d9c7c364ca5a8a0e44f8b6a18c6e1824be0c564114c3a7",
+          "surface_type": "nurbsurface",
+          "area": 15.145270620208832,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f74",
+            "entity_handle": "352",
+            "face_id": "f74",
+            "face_fingerprint": "0b61cf99be314ba397d9c7c364ca5a8a0e44f8b6a18c6e1824be0c564114c3a7",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006396,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f214",
+          "face_fingerprint": "c854836f40bf663d4670cc9442b51fdd11f35ffc587224f3348d5882b4f63627",
+          "surface_type": "plane",
+          "area": 3450.4972526968654,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f214",
+            "entity_handle": "352",
+            "face_id": "f214",
+            "face_fingerprint": "c854836f40bf663d4670cc9442b51fdd11f35ffc587224f3348d5882b4f63627",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006568,
+          "query_methods": [
+            "trim_boundary"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f64",
+          "face_fingerprint": "36a582b4bc85882988ce28647cb1067253a06cadbedae28ac2e58f6f0d4a479b",
+          "surface_type": "nurbsurface",
+          "area": 15.14527062020883,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f64",
+            "entity_handle": "352",
+            "face_id": "f64",
+            "face_fingerprint": "36a582b4bc85882988ce28647cb1067253a06cadbedae28ac2e58f6f0d4a479b",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006714,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "352",
+          "face_id": "f49",
+          "face_fingerprint": "c62782cc9b83f428f0f4cc133f5dd2e32fbc9a8fa4322ee66e662197c02206c0",
+          "surface_type": "cylinder",
+          "area": 8.114260967031678,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "352:f49",
+            "entity_handle": "352",
+            "face_id": "f49",
+            "face_fingerprint": "c62782cc9b83f428f0f4cc133f5dd2e32fbc9a8fa4322ee66e662197c02206c0",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a003_tooth_arcs_01",
+              "a003_edge_chamfer_01",
+              "a003_preserved_core_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "target_entity_handle"
+            ],
+            "confidence": "low"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.00743,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "low",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-352-f47",
+          "kind": "boss_candidate",
+          "confidence": "medium",
+          "entity_handle": "352",
+          "face_ids": [
+            "f47"
+          ],
+          "face_fingerprints": [
+            "74743172b70bd3a503e75b399e4c44d37410a08e70de122e8c89481e7e37548a"
+          ],
+          "parameters": {
+            "radius": 44.21,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "origin": [
+              0,
+              0,
+              3.605
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        },
+        {
+          "feature_id": "feature-352-f49",
+          "kind": "boss_candidate",
+          "confidence": "medium",
+          "entity_handle": "352",
+          "face_ids": [
+            "f49"
+          ],
+          "face_fingerprints": [
+            "c62782cc9b83f428f0f4cc133f5dd2e32fbc9a8fa4322ee66e662197c02206c0"
+          ],
+          "parameters": {
+            "radius": 44.21,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "origin": [
+              0,
+              0,
+              3.605
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a003_tooth_arcs_01",
+          "intent": "Replace sampled Hermite tooth boundary with exact Ø96.93-pitch 08B roller-seat arcs tangent to straight flanks ending at the stated R51.50 tips",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "target_entity_handle"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile",
+          "feature_id": "sprocket_tooth_profile",
+          "editable_parameters": {
+            "tooth_count": 24,
+            "pitch_diameter_mm": 96.93,
+            "roller_seat_radius_mm": 4.255,
+            "root_radius_mm": 44.21,
+            "tip_radius_mm": 51.5,
+            "profile_edges_per_tooth": 4
+          },
+          "parent_operation_ids": [
+            "a002_outer_01"
+          ]
+        },
+        {
+          "operation_id": "a003_edge_chamfer_01",
+          "intent": "Replace conical cap surrogate with perimeter-following inward parallel profiles lofted over 1.65 mm on both tooth sides",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "target_entity_handle"
+          ],
+          "confidence": "medium",
+          "operation_type": "loft",
+          "feature_id": "tooth_side_chamfers",
+          "editable_parameters": {
+            "overall_width_mm": 7.21,
+            "chamfer_axial_depth_mm": 1.65,
+            "chamfer_normal_offset_mm": 1.65,
+            "central_land_mm": 3.91
+          },
+          "parent_operation_ids": [
+            "a003_tooth_arcs_01"
+          ]
+        },
+        {
+          "operation_id": "a003_preserved_core_01",
+          "intent": "Recreate unchanged verified hub, bore, keyway, and tap-drill features around the repaired tooth body",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "target_entity_handle"
+          ],
+          "confidence": "medium",
+          "operation_type": "boolean_reconstruct",
+          "feature_id": null,
+          "editable_parameters": {
+            "hub_diameter_mm": 60,
+            "total_axial_length_mm": 28,
+            "bore_diameter_mm": 30,
+            "keyway_width_mm": 8,
+            "keyway_top_radius_mm": 18.3,
+            "tap_drill_diameter_mm": 5,
+            "tap_drill_offset_mm": 8
+          },
+          "parent_operation_ids": [
+            "a003_edge_chamfer_01",
+            "a002_hub_01",
+            "a002_bore_key_01",
+            "a002_m6tap_01"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    }
+  ],
+  "native_topology": {
+    "protocol": "evocad-native-feature-localization-v1",
+    "entity_count": 1,
+    "face_count": 226,
+    "adjacency_count": 570,
+    "feature_candidate_count": 76,
+    "export_errors": [],
+    "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+    "boolean_lineage": {
+      "schema_version": "1.0",
+      "protocol": "evocad-boolean-face-lineage-v2",
+      "snapshot_comparison": {
+        "parent_face_count": 1210,
+        "current_face_count": 226,
+        "inherited_face_count": 8,
+        "created_or_modified_face_count": 218,
+        "deleted_or_modified_parent_face_count": 1202,
+        "captured_job_count": 1,
+        "lineage_mode": "single_snapshot_delta"
+      },
+      "operation_graph": {
+        "nodes": [
+          {
+            "operation_id": "a003_tooth_arcs_01",
+            "intent": "Replace sampled Hermite tooth boundary with exact Ø96.93-pitch 08B roller-seat arcs tangent to straight flanks ending at the stated R51.50 tips",
+            "operation_type": "replace_profile",
+            "feature_id": "sprocket_tooth_profile",
+            "parameters": {
+              "tooth_count": 24,
+              "pitch_diameter_mm": 96.93,
+              "roller_seat_radius_mm": 4.255,
+              "root_radius_mm": 44.21,
+              "tip_radius_mm": 51.5,
+              "profile_edges_per_tooth": 4
+            },
+            "parent_operation_ids": [
+              "a002_outer_01"
+            ],
+            "mcp_job_id": "b7d8e21e100c49909e57eaab49297b88"
+          },
+          {
+            "operation_id": "a003_edge_chamfer_01",
+            "intent": "Replace conical cap surrogate with perimeter-following inward parallel profiles lofted over 1.65 mm on both tooth sides",
+            "operation_type": "loft",
+            "feature_id": "tooth_side_chamfers",
+            "parameters": {
+              "overall_width_mm": 7.21,
+              "chamfer_axial_depth_mm": 1.65,
+              "chamfer_normal_offset_mm": 1.65,
+              "central_land_mm": 3.91
+            },
+            "parent_operation_ids": [
+              "a003_tooth_arcs_01"
+            ],
+            "mcp_job_id": "b7d8e21e100c49909e57eaab49297b88"
+          },
+          {
+            "operation_id": "a003_preserved_core_01",
+            "intent": "Recreate unchanged verified hub, bore, keyway, and tap-drill features around the repaired tooth body",
+            "operation_type": "boolean_reconstruct",
+            "feature_id": null,
+            "parameters": {
+              "hub_diameter_mm": 60,
+              "total_axial_length_mm": 28,
+              "bore_diameter_mm": 30,
+              "keyway_width_mm": 8,
+              "keyway_top_radius_mm": 18.3,
+              "tap_drill_diameter_mm": 5,
+              "tap_drill_offset_mm": 8
+            },
+            "parent_operation_ids": [
+              "a003_edge_chamfer_01",
+              "a002_hub_01",
+              "a002_bore_key_01",
+              "a002_m6tap_01"
+            ],
+            "mcp_job_id": "b7d8e21e100c49909e57eaab49297b88"
+          }
+        ],
+        "edges": [
+          {
+            "source": "a002_outer_01",
+            "target": "a003_tooth_arcs_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a003_tooth_arcs_01",
+            "target": "a003_edge_chamfer_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a003_edge_chamfer_01",
+            "target": "a003_preserved_core_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a002_hub_01",
+            "target": "a003_preserved_core_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a002_bore_key_01",
+            "target": "a003_preserved_core_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a002_m6tap_01",
+            "target": "a003_preserved_core_01",
+            "relation": "declared_parent"
+          }
+        ]
+      },
+      "deleted_parent_face_examples": [
+        {
+          "node_id": "313:f6",
+          "entity_handle": "313",
+          "face_id": "f6",
+          "face_fingerprint": "ac979f1dcc81f4034fd51801cb2a258a270dee36b862d3b794d7aa5fcbb75709"
+        },
+        {
+          "node_id": "313:f10",
+          "entity_handle": "313",
+          "face_id": "f10",
+          "face_fingerprint": "67a252ae464c69b9201a3ccae3cfc7fb2a17df0d70e38d30d41e74d03303b178"
+        },
+        {
+          "node_id": "313:f11",
+          "entity_handle": "313",
+          "face_id": "f11",
+          "face_fingerprint": "5753f8d5e6edd03db07d4411f0baaf55e8db4feaa82cbcd39d7e636de5ef723f"
+        },
+        {
+          "node_id": "313:f12",
+          "entity_handle": "313",
+          "face_id": "f12",
+          "face_fingerprint": "6a5383c06bf2acb9c144ee6f5dec0cb5588edf0f551f0b722f7265e236f04237"
+        },
+        {
+          "node_id": "313:f13",
+          "entity_handle": "313",
+          "face_id": "f13",
+          "face_fingerprint": "a586cd74a728c8f32a37a9839b4ce4d18de727a473e56ff93d2d9f5449af465c"
+        },
+        {
+          "node_id": "313:f14",
+          "entity_handle": "313",
+          "face_id": "f14",
+          "face_fingerprint": "15cfe41f3a6d448372015e55bee2e4431cc99178af4d8012b7b836dbaf9c43bd"
+        },
+        {
+          "node_id": "313:f15",
+          "entity_handle": "313",
+          "face_id": "f15",
+          "face_fingerprint": "65b56faf7f880f31f618fff1ffbc2f5f047bad89802648f906c8067fec27b923"
+        },
+        {
+          "node_id": "313:f16",
+          "entity_handle": "313",
+          "face_id": "f16",
+          "face_fingerprint": "3eadab7d182a0bbea3dab43fa9d9df3069cd7595da0adb334cbca2158ba8eed0"
+        },
+        {
+          "node_id": "313:f17",
+          "entity_handle": "313",
+          "face_id": "f17",
+          "face_fingerprint": "066ca61e598d9177cb5b31a36b256978896dbd3f9409efcd860c3f5bb97847ce"
+        },
+        {
+          "node_id": "313:f18",
+          "entity_handle": "313",
+          "face_id": "f18",
+          "face_fingerprint": "4d1a4b7b8138fe1e40e288abba52ad29d05a04059652ecd95b1ed56df4efebe2"
+        },
+        {
+          "node_id": "313:f19",
+          "entity_handle": "313",
+          "face_id": "f19",
+          "face_fingerprint": "763d70206d9e724ae8e759079b61e18813918882dbd9dd5ba8f3650e0032e24c"
+        },
+        {
+          "node_id": "313:f20",
+          "entity_handle": "313",
+          "face_id": "f20",
+          "face_fingerprint": "988d393edcab1b21e498578cbcd2ffd34db901ffa9d974fbb459c56328541038"
+        },
+        {
+          "node_id": "313:f21",
+          "entity_handle": "313",
+          "face_id": "f21",
+          "face_fingerprint": "49317009f8c875daf768fa5049c46fb8a367389f89a9b2a1d1808e55a7cc7a90"
+        },
+        {
+          "node_id": "313:f22",
+          "entity_handle": "313",
+          "face_id": "f22",
+          "face_fingerprint": "31d7e8c2864a18776b7fcb59bac2a526db0dad5451ecab8c96145204bee82c4d"
+        },
+        {
+          "node_id": "313:f23",
+          "entity_handle": "313",
+          "face_id": "f23",
+          "face_fingerprint": "5896c496150a6213de3997730bf1cd2e1dffc0e5f250c49ba04cedab3022eb70"
+        },
+        {
+          "node_id": "313:f24",
+          "entity_handle": "313",
+          "face_id": "f24",
+          "face_fingerprint": "7e3845f3c0f1d43eac062eaca399f55b6da92cddee2014349200fd7efab94a3a"
+        },
+        {
+          "node_id": "313:f25",
+          "entity_handle": "313",
+          "face_id": "f25",
+          "face_fingerprint": "f9113e39de6a1387b0ee2bed53e85337956812f285c9065e50e06a37ee63befe"
+        },
+        {
+          "node_id": "313:f26",
+          "entity_handle": "313",
+          "face_id": "f26",
+          "face_fingerprint": "803a7a6bfac41b8ef2cd9097319fea323d39da1d62dc98beea6fed4d15b00d5f"
+        },
+        {
+          "node_id": "313:f27",
+          "entity_handle": "313",
+          "face_id": "f27",
+          "face_fingerprint": "c231d7f5b3cb98c1d3a5883011254a239c979302eacc15fdddb8fb97a7a97421"
+        },
+        {
+          "node_id": "313:f28",
+          "entity_handle": "313",
+          "face_id": "f28",
+          "face_fingerprint": "c122c070c74af37fd94d69e59bae146d96e64b5d28fd646fb3483b1af77194e9"
+        },
+        {
+          "node_id": "313:f29",
+          "entity_handle": "313",
+          "face_id": "f29",
+          "face_fingerprint": "c828a87fbd948d7cbbd6ec2a38965f63b96c9a9c7568a443472c750991f9355c"
+        },
+        {
+          "node_id": "313:f30",
+          "entity_handle": "313",
+          "face_id": "f30",
+          "face_fingerprint": "e474868de5bb3644343003179b22ee480bfa5cbeecc879426d6bc8c10d00ebf3"
+        },
+        {
+          "node_id": "313:f31",
+          "entity_handle": "313",
+          "face_id": "f31",
+          "face_fingerprint": "4f544f85d6e91347f1b653f9add0d179a5bc3581b873a57f9858bf41fa02da01"
+        },
+        {
+          "node_id": "313:f32",
+          "entity_handle": "313",
+          "face_id": "f32",
+          "face_fingerprint": "2147881dc103cc2ac6e28ac0f33392763d33b1b1fe5ed94a93c1844f9f670136"
+        },
+        {
+          "node_id": "313:f33",
+          "entity_handle": "313",
+          "face_id": "f33",
+          "face_fingerprint": "dd1ee228c05ac8b12cde561b03d8d2d6d8e0e8b8bb499eb3d611b54219316e9b"
+        },
+        {
+          "node_id": "313:f34",
+          "entity_handle": "313",
+          "face_id": "f34",
+          "face_fingerprint": "35b729203ffcc27ac667b7ff6d467f3529aad5657695688b7ef5101a6fa48bda"
+        },
+        {
+          "node_id": "313:f35",
+          "entity_handle": "313",
+          "face_id": "f35",
+          "face_fingerprint": "4ece681ffdb7570b593b0a3a927e7f33560785a749a6ea5a8f70e1ab9962e9b1"
+        },
+        {
+          "node_id": "313:f36",
+          "entity_handle": "313",
+          "face_id": "f36",
+          "face_fingerprint": "178654101ad3423bb85237d01eb80befc0a1ffb5c87eceefee53db8016b38adf"
+        },
+        {
+          "node_id": "313:f37",
+          "entity_handle": "313",
+          "face_id": "f37",
+          "face_fingerprint": "646a4bb95a5c9f9cfd0465e351129f78b48bca64fe3c8d5f5e79c6b3adeef74d"
+        },
+        {
+          "node_id": "313:f38",
+          "entity_handle": "313",
+          "face_id": "f38",
+          "face_fingerprint": "21acf380e3d2eec042244518a37a637769a2b6a80b983a9b65a3693b330e89a7"
+        },
+        {
+          "node_id": "313:f39",
+          "entity_handle": "313",
+          "face_id": "f39",
+          "face_fingerprint": "390c790b499161b3f3e818a3bc94dfeaf0dea977bab111f3a6d8b76cb1bce208"
+        },
+        {
+          "node_id": "313:f40",
+          "entity_handle": "313",
+          "face_id": "f40",
+          "face_fingerprint": "39b21d5da9eb6188ab366d8988222631845ed59d2d6c1084d68cd88d84592e0c"
+        }
+      ],
+      "interpretation": "Stable fingerprints prove inheritance. Snapshot-delta faces identify the operation group that changed topology; multiple operations in one job remain causally ambiguous."
+    },
+    "exact_face_query_count": 27
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [],
+    "ground_truth_to_candidate": []
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

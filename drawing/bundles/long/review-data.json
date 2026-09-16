@@ -1,0 +1,5203 @@
+{
+  "schema_version": "public-drawing-review-v1",
+  "source_bundle_sha256": "d84f11d366f01ae23da77ef17366bad4e15a2e7c7f1529516bd839c28411b386",
+  "summary": {
+    "completed": 18
+  },
+  "runs": [
+    {
+      "target_id": "0f6d067ab367fa65b8990e07",
+      "sample_id": "drawing-01",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "centerline"
+      },
+      "learner_answer": {
+        "answer": "centerline"
+      },
+      "task_manifest": {
+        "task_id": "drawing-01",
+        "task_type": "line_role",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-01",
+        "query": "区域A中，从左侧轴颈内部向右延伸并穿过中央小圆圆心的水平细线，属于哪一种线？请判断左端面与左侧台肩之间的那一段。",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "visible_edge",
+            "label": "可见轮廓线"
+          },
+          {
+            "value": "hidden_edge",
+            "label": "不可见轮廓线"
+          },
+          {
+            "value": "centerline",
+            "label": "中心线"
+          },
+          {
+            "value": "dimension_line",
+            "label": "尺寸线"
+          },
+          {
+            "value": "extension_line",
+            "label": "尺寸界线"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "pdf-035",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 35,
+        "sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域A中，从左侧轴颈内部向右延伸并穿过中央小圆圆心的水平细线，属于哪一种线？请判断左端面与左侧台肩之间的那一段。",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                171,
+                404,
+                352,
+                503
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "指定细线位于左侧孔壁投影之间，穿过中央圆心，并以长短划相间的线型延伸，表示水平中心线。",
+          "expected_answer": "centerline",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "centerline_as_hidden_edge",
+            "thin_line_as_dimension_line"
+          ],
+          "confidence": 0.98,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "centerline",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "指定水平细点画线沿左轴颈轴线延伸，并穿过中央小圆圆心。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 454.61,
+        "observations": 10,
+        "findings": 2,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "centerline"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:33:37.838Z",
+          "payload": {
+            "observation_id": "a8cfa53ed49e4fba93c9fda611d76f72",
+            "intent": "Overview of the CAD drawing to understand the part geometry and line types",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "68ddba8759634ef1209246c7071a403ac957675c67d3a0ad572433a97338ecd7",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:33:38.867Z",
+          "payload": {
+            "observation_id": "16599c9fff194299a907db5b0526b84d",
+            "intent": "Inspect region A showing the horizontal thin line passing through the center of the small central circle, extending from the left journal area",
+            "source_sha256": "5e234705825b1ae5cb808056cc61fabe6036402820b57bd7aa7c1e5e981e2043",
+            "sha256": "5e234705825b1ae5cb808056cc61fabe6036402820b57bd7aa7c1e5e981e2043",
+            "crop": null,
+            "dimensions": [
+              465,
+              180
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:34:20.048Z",
+          "payload": {
+            "observation_id": "ef60a042fde24062b2c517a1e78d2cef",
+            "intent": "Examine the line style of the horizontal line inside the left journal between its left end face and the shoulder where it meets the central body - checking if it's dash-dot centerline, dashed hidden line, or solid line",
+            "source_sha256": "5e234705825b1ae5cb808056cc61fabe6036402820b57bd7aa7c1e5e981e2043",
+            "sha256": "b1b6f33a7a910534820f60826173274c7bd59009452025d1bcdfe2cf17eaf9fc",
+            "crop": [
+              0,
+              40,
+              220,
+              140
+            ],
+            "dimensions": [
+              220,
+              100
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:34:20.236Z",
+          "payload": {
+            "observation_id": "f79118fe607e402b9e530410efe2db60",
+            "intent": "View the left journal and center area in full resolution to see the horizontal line styles - centerline vs hidden lines in the left journal",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "51fc2e56554aa588815891658a5a3435d0d7d5b45471fc97eda11e6d1e8a8bfb",
+            "crop": [
+              437,
+              700,
+              1100,
+              950
+            ],
+            "dimensions": [
+              663,
+              250
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:35:48.995Z",
+          "payload": {
+            "observation_id": "5566b4bebb1e46cbb5dfbff08135899b",
+            "intent": "Tight crop of the horizontal middle line inside the left journal to identify whether it's a dash-dot centerline, dashed hidden line, or solid thin line",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "ed1a68dea303c4a467ea18d6a62a7d9a32281d78b44b1e3af4c95697c6928be4",
+            "crop": [
+              445,
+              795,
+              640,
+              850
+            ],
+            "dimensions": [
+              195,
+              55
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:35:49.114Z",
+          "payload": {
+            "observation_id": "7b53a81bf2154d6586ed3897c17c3af4",
+            "intent": "View of the horizontal line passing through the central small circle and extending right, to compare line style in the central region vs the journal region",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "b5c1286105daded8e89c297bcbc8cd37090eca37d59b995f106d853c7cd6443c",
+            "crop": [
+              590,
+              795,
+              900,
+              850
+            ],
+            "dimensions": [
+              310,
+              55
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:37:10.901Z",
+          "payload": {
+            "observation_id": "8c08dfa095054d1db8923675b5b33c80",
+            "intent": "Very thin horizontal strip along the exact middle line inside the left journal to see the dash pattern clearly (dash-dot centerline vs short-dash hidden line)",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "71811efdc2d56c64abd0ec94d0d45d003402e03745ae4a5f9f4d9c05601a9346",
+            "crop": [
+              450,
+              815,
+              625,
+              830
+            ],
+            "dimensions": [
+              175,
+              15
+            ],
+            "image": "receipts/007.png"
+          }
+        },
+        {
+          "sequence": 9,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:37:11.057Z",
+          "payload": {
+            "observation_id": "f0ea2019571f4e808459adf89bbbfd2e",
+            "intent": "Thin horizontal strip along the upper hidden line of the blind hole inside the left journal for pattern comparison",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "cd95ef3aefc58311c9a322458c579d5de0bdbb2b70e2dda35b3e477a4c28d663",
+            "crop": [
+              450,
+              800,
+              625,
+              812
+            ],
+            "dimensions": [
+              175,
+              12
+            ],
+            "image": "receipts/008.png"
+          }
+        },
+        {
+          "sequence": 10,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:39:32.511Z",
+          "payload": {
+            "observation_id": "1207a7001a6643df9674400bf092fd16",
+            "intent": "Check if the horizontal middle line extends beyond the left end face of the left journal - centerlines extend beyond feature outlines, hidden lines stop at them",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "554d8ef0ecc8410cd4fa08738ca23cd6cc9795d44422db8ddfe6893bf2215465",
+            "crop": [
+              425,
+              805,
+              480,
+              840
+            ],
+            "dimensions": [
+              55,
+              35
+            ],
+            "image": "receipts/009.png"
+          }
+        },
+        {
+          "sequence": 11,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:39:32.738Z",
+          "payload": {
+            "observation_id": "2e98c658f37748aa9cbabd3d7ca36c69",
+            "intent": "Compare the middle horizontal line pattern (dash-dot) against the upper/lower hidden hole-wall lines (uniform dashes) inside the left journal",
+            "source_sha256": "5e234705825b1ae5cb808056cc61fabe6036402820b57bd7aa7c1e5e981e2043",
+            "sha256": "b0a713cd1a701475a964ef68b77719edda661437b252f7b394949cc8ff6c8308",
+            "crop": [
+              0,
+              55,
+              200,
+              125
+            ],
+            "dimensions": [
+              200,
+              70
+            ],
+            "image": "receipts/010.png"
+          }
+        },
+        {
+          "sequence": 12,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T10:40:14.825Z",
+          "payload": {
+            "observation_id": "1207a7001a6643df9674400bf092fd16",
+            "public_conclusion": "At the left end of the left journal, the horizontal thin middle line extends slightly beyond the journal's left end face (past the chamfered end). Extending beyond the feature outline is characteristic of a centerline (轴线/中心线), whereas hidden lines stop at the outline."
+          }
+        },
+        {
+          "sequence": 13,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T10:40:14.833Z",
+          "payload": {
+            "observation_id": "2e98c658f37748aa9cbabd3d7ca36c69",
+            "public_conclusion": "Inside the left journal, three thin horizontal lines are visible: an upper and a lower line drawn with uniform short dashes (hidden edges of the internal blind hole walls), and a middle line drawn with a long-dash/short-mark alternating dash-dot pattern passing through the hole's mid-height — this is the axis centerline."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-01/input-01.png",
+        "assets/drawing-01/input-02.png"
+      ],
+      "asset_base": "assets/drawing-01",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-01/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "6bd7226b76531f376c77a13e",
+      "sample_id": "drawing-02",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "central_concentric_opening"
+      },
+      "learner_answer": null,
+      "task_manifest": {
+        "task_id": "drawing-02",
+        "task_type": "cross_view",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-02",
+        "query": "区域B剖视图中，标有M8-7H并配有φ23、60°孔口标注的横向孔，在区域A的十字形视图中对应哪一处？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "upper_journal_bore",
+            "label": "上轴颈端面向内延伸的孔"
+          },
+          {
+            "value": "central_concentric_opening",
+            "label": "十字交会处中央同心圆表示的孔口"
+          },
+          {
+            "value": "left_journal_bore",
+            "label": "左轴颈端面向内延伸的孔"
+          },
+          {
+            "value": "root_fillet",
+            "label": "上轴颈根部的R12圆弧过渡"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "pdf-035",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 35,
+        "sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域B剖视图中，标有M8-7H并配有φ23、60°孔口标注的横向孔，在区域A的十字形视图中对应哪一处？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                174,
+                289,
+                408,
+                618
+              ]
+            },
+            {
+              "label": "B",
+              "bbox": [
+                638,
+                333,
+                813,
+                565
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "剖视图的M8-7H孔位于十字交会处并向右侧表面开口，φ23和60°标在该孔口；左侧视图对应位置为中央同心圆。",
+          "expected_answer": "central_concentric_opening",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "view_correspondence_error",
+            "central_hole_vs_journal_bore"
+          ],
+          "confidence": 0.98,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "central_concentric_opening",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "剖视图中的横向螺纹孔位于十字交会中心，其孔口对应左视图中央的同心圆。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "timeout",
+        "passed": null,
+        "elapsed_seconds": 600.39,
+        "observations": 7,
+        "findings": 0,
+        "timeout_seconds": 600,
+        "timed_out": true,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "central_concentric_opening"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:41:17.392Z",
+          "payload": {
+            "observation_id": "1b1bbe0afdcb4047abd42f23315b6cc3",
+            "intent": "Overview of the full CAD drawing to understand the layout of regions A and B",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "68ddba8759634ef1209246c7071a403ac957675c67d3a0ad572433a97338ecd7",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:41:18.482Z",
+          "payload": {
+            "observation_id": "85ee3b44665d4e57991a028db04caa5d",
+            "intent": "Inspect region B section view to find the M8-7H transverse hole with φ23, 60° hole opening annotation",
+            "source_sha256": "a1825aedb5cb35fc949c6e8db0effec414092373751ac2c6276992c1a4ef6d80",
+            "sha256": "a1825aedb5cb35fc949c6e8db0effec414092373751ac2c6276992c1a4ef6d80",
+            "crop": null,
+            "dimensions": [
+              449,
+              421
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:41:18.606Z",
+          "payload": {
+            "observation_id": "6993d494417744358b2d81e4565bd954",
+            "intent": "Inspect region A cross-shaped view to identify features: upper journal bore, central concentric opening, left journal bore, root fillet",
+            "source_sha256": "0bd5412f13014837c713de6858effc4593260d0c0eefb783f0a29c1273e5c387",
+            "sha256": "0bd5412f13014837c713de6858effc4593260d0c0eefb783f0a29c1273e5c387",
+            "crop": null,
+            "dimensions": [
+              600,
+              597
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:43:41.700Z",
+          "payload": {
+            "observation_id": "e6bf8dce25694ae193081c18893fa952",
+            "intent": "Full-fidelity crop of region B section view to trace leader lines for M8-7H, φ23, 60° annotations",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "a1825aedb5cb35fc949c6e8db0effec414092373751ac2c6276992c1a4ef6d80",
+            "crop": [
+              1633,
+              603,
+              2082,
+              1024
+            ],
+            "dimensions": [
+              449,
+              421
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:43:41.847Z",
+          "payload": {
+            "observation_id": "78925f18bb3d40df81978f6f9b84359f",
+            "intent": "Full-fidelity crop of region A cross view to examine central concentric circles and journal bores",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "0bd5412f13014837c713de6858effc4593260d0c0eefb783f0a29c1273e5c387",
+            "crop": [
+              445,
+              523,
+              1045,
+              1120
+            ],
+            "dimensions": [
+              600,
+              597
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:47:57.139Z",
+          "payload": {
+            "observation_id": "6e8a75371e3641b1902b2cadaf4a17ff",
+            "intent": "Zoom into region B center to see the exact shape of the transverse hole feature (circle, slot, counterbore) and where M8-7H/φ23/60° leaders point",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "d624ed5f963a68d31d398034f8123bfd0009ea6d205848dcc5e8a01104aaf68e",
+            "crop": [
+              1640,
+              680,
+              2090,
+              920
+            ],
+            "dimensions": [
+              450,
+              240
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:47:57.253Z",
+          "payload": {
+            "observation_id": "171ca410974741d0bf1c4f9d7a1cace5",
+            "intent": "Zoom into region A left journal and center to compare bore features (counterbore at end face, hidden lines, central concentric circles)",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "24ad1ffadc920a17e4a5166608299d614c3ed0f352f9f4abd59343a5dc737cc5",
+            "crop": [
+              445,
+              700,
+              750,
+              900
+            ],
+            "dimensions": [
+              305,
+              200
+            ],
+            "image": "receipts/007.png"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-02/input-01.png",
+        "assets/drawing-02/input-02.png",
+        "assets/drawing-02/input-03.png"
+      ],
+      "asset_base": "assets/drawing-02",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-02/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "d26faee1ae3de525426db71b",
+      "sample_id": "drawing-03",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "lower_bore_depth"
+      },
+      "learner_answer": {
+        "answer": "lower_bore_depth"
+      },
+      "task_manifest": {
+        "task_id": "drawing-03",
+        "task_type": "dimension_attachment",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-03",
+        "query": "区域A为右侧剖视图下部，区域B为左侧视图下轴颈。区域A中不带φ符号的竖向尺寸25，实际控制哪一段长度？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "journal_outer_diameter",
+            "label": "下轴颈两侧外圆母线之间的距离"
+          },
+          {
+            "value": "lower_bore_depth",
+            "label": "零件下端面至下端较大孔段内端界线的距离"
+          },
+          {
+            "value": "center_to_end",
+            "label": "中央横孔轴线至零件下端面的距离"
+          },
+          {
+            "value": "overall_vertical_span",
+            "label": "零件最上端面至最下端面的距离"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "pdf-035",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 35,
+        "sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域A为右侧剖视图下部，区域B为左侧视图下轴颈。区域A中不带φ符号的竖向尺寸25，实际控制哪一段长度？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                606,
+                519,
+                750,
+                674
+              ]
+            },
+            {
+              "label": "B",
+              "bbox": [
+                254,
+                508,
+                338,
+                704
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "剖视图中25的下尺寸界线对应零件下端面，上尺寸界线对应下端较大孔段的内端。区域B的φ25则标注轴颈外径。",
+          "expected_answer": "lower_bore_depth",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "same_number_wrong_attachment",
+            "depth_as_diameter"
+          ],
+          "confidence": 0.97,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "lower_bore_depth",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "竖向尺寸25的两端分别连接零件下端面和下端较大孔段的内端界线。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 190.45,
+        "observations": 5,
+        "findings": 2,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "lower_bore_depth"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:51:09.511Z",
+          "payload": {
+            "observation_id": "2cfed54ba86341e192d1720004fb1b6e",
+            "intent": "Inspect the overall CAD drawing to understand the part and its views, especially the right-side section view lower part (region A) and left view lower journal (region B).",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "68ddba8759634ef1209246c7071a403ac957675c67d3a0ad572433a97338ecd7",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:51:10.555Z",
+          "payload": {
+            "observation_id": "bed8062656014b63833d92c4a09de2c7",
+            "intent": "Inspect region A (lower part of right section view) to find the vertical dimension 25 without φ symbol and determine which length it controls.",
+            "source_sha256": "9f7ab192d27e76d9cb79dd272a8beea6ce68a10728536b71ffbf642faeb72e87",
+            "sha256": "9f7ab192d27e76d9cb79dd272a8beea6ce68a10728536b71ffbf642faeb72e87",
+            "crop": null,
+            "dimensions": [
+              369,
+              282
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:51:10.704Z",
+          "payload": {
+            "observation_id": "018d5ed1f5e44adda4e226dd771b7cdd",
+            "intent": "Inspect region B (lower journal of left view) to understand the geometry and dimensions there.",
+            "source_sha256": "cfffe6fd00e85423069f48921d7a5b75b37ebb53e14c32f10bbabd47b9af3cb1",
+            "sha256": "cfffe6fd00e85423069f48921d7a5b75b37ebb53e14c32f10bbabd47b9af3cb1",
+            "crop": null,
+            "dimensions": [
+              216,
+              356
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:51:56.374Z",
+          "payload": {
+            "observation_id": "c51fcb1124d44963bf65cbf72719e20b",
+            "intent": "Look closely at the vertical dimension 25 in the lower part of the right section view: trace where its upper and lower extension lines attach (bottom end face vs internal bore step vs cross-hole axis).",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "507d2a70c4dbc55645d1fb208bcb3f1d64d22817c4acdf9d6750ee2b24439ce8",
+            "crop": [
+              1500,
+              860,
+              2010,
+              1300
+            ],
+            "dimensions": [
+              510,
+              440
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:53:20.463Z",
+          "payload": {
+            "observation_id": "310258f934f343038b8bae16412518f3",
+            "intent": "Zoom tightly on the upper extension line of the '25' dimension to verify it aligns with the inner end boundary (shoulder) of the larger bore segment, not the external profile step.",
+            "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+            "sha256": "1856dcf1ec0c34990789a50654e8ac18c0fc53c1d7c1191773f29be8cbc7359e",
+            "crop": [
+              1540,
+              960,
+              1780,
+              1230
+            ],
+            "dimensions": [
+              240,
+              270
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T10:53:40.386Z",
+          "payload": {
+            "observation_id": "2cfed54ba86341e192d1720004fb1b6e",
+            "public_conclusion": "The drawing is a cross shaft (十字轴, LJT03.15). The right view is a longitudinal section through the vertical journals showing stepped internal bores; the left view gives the φ25 journal outer diameters and the 108 overall spans."
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T10:53:40.394Z",
+          "payload": {
+            "observation_id": "310258f934f343038b8bae16412518f3",
+            "public_conclusion": "In the lower part of the right section view (region A), the vertical dimension 25 (no φ symbol) has its lower extension line on the bottom end face of the part and its upper extension line aligned exactly with the internal horizontal shoulder where the larger lower bore segment ends and narrows to the through-hole. It is not attached to the external profile, not to the central cross-hole axis, and not the overall span (108) or the φ25 journal diameter."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-03/input-01.png",
+        "assets/drawing-03/input-02.png",
+        "assets/drawing-03/input-03.png"
+      ],
+      "asset_base": "assets/drawing-03",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-03/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "76392c1c462731f09259f064",
+      "sample_id": "drawing-04",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "cutting_plane_indication"
+      },
+      "learner_answer": {
+        "answer": "cutting_plane_indication"
+      },
+      "task_manifest": {
+        "task_id": "drawing-04",
+        "task_type": "line_role",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-04",
+        "query": "区域A左侧视图上端，左边字母A正上方有一小段向右下倾斜的粗线。结合区域B的A—A图，这一小段粗线属于哪一种线？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "visible_edge",
+            "label": "零件的可见轮廓线"
+          },
+          {
+            "value": "hidden_edge",
+            "label": "被遮挡结构的不可见轮廓线"
+          },
+          {
+            "value": "cutting_plane_indication",
+            "label": "表示截取位置的剖切位置线"
+          },
+          {
+            "value": "section_hatching",
+            "label": "表示剖到材料的剖面线"
+          },
+          {
+            "value": "extension_line",
+            "label": "尺寸界线"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "pdf-065",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 65,
+        "sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域A左侧视图上端，左边字母A正上方有一小段向右下倾斜的粗线。结合区域B的A—A图，这一小段粗线属于哪一种线？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                249,
+                161,
+                325,
+                266
+              ]
+            },
+            {
+              "label": "B",
+              "bbox": [
+                397,
+                120,
+                499,
+                257
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "指定短粗线与轮辐另一侧的同向短粗线共同标示A处截取位置，字母A与旁列A—A移出断面对应。",
+          "expected_answer": "cutting_plane_indication",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "cutting_plane_as_visible_edge",
+            "section_label_ignored"
+          ],
+          "confidence": 0.99,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "cutting_plane_indication",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "短粗斜线与字母A配合标明截取位置，对应单独绘出的A—A断面。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 168.2,
+        "observations": 6,
+        "findings": 2,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "cutting_plane_indication"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:54:26.492Z",
+          "payload": {
+            "observation_id": "b9ff537d51e04adca8cb04c19e7a4286",
+            "intent": "Inspect the left-side view in region A, especially the upper end near the left letter A and the short thick line slanting down to the right directly above it.",
+            "source_sha256": "130afd34a8f3ce216521d180d8317a589135ed54d739b767990dd99b3086e6b7",
+            "sha256": "130afd34a8f3ce216521d180d8317a589135ed54d739b767990dd99b3086e6b7",
+            "crop": null,
+            "dimensions": [
+              195,
+              191
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:54:26.692Z",
+          "payload": {
+            "observation_id": "a001810e08c24ecc91c036db79f78d94",
+            "intent": "Inspect the A-A sectional/detail drawing in region B to determine what the short slanting thick line above the left A in region A represents.",
+            "source_sha256": "709f8d621e727b3acc1c948854e8dcbb052fbdbc74b0a93022e96c703c0b8438",
+            "sha256": "709f8d621e727b3acc1c948854e8dcbb052fbdbc74b0a93022e96c703c0b8438",
+            "crop": null,
+            "dimensions": [
+              262,
+              249
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:54:26.928Z",
+          "payload": {
+            "observation_id": "59be1cf681464eb28c03b773dc5ad1c8",
+            "intent": "Inspect overall drawing context around regions A and B and the A-A cutting plane labels.",
+            "source_sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+            "sha256": "68ffc77e9a4e0853e660e99f64d12755aa0e7d216c3eefe11ae476b168fe4ecf",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:55:32.560Z",
+          "payload": {
+            "observation_id": "ed3a2509bf05452dbf2d5f0ed1723963",
+            "intent": "Zoom on the left letter A and the short thick segment directly above it to see whether it is a cutting-plane marker, arrow, edge, hatching, or extension line.",
+            "source_sha256": "130afd34a8f3ce216521d180d8317a589135ed54d739b767990dd99b3086e6b7",
+            "sha256": "ac767f206924e8e24348539a1397ff73ff9cb8f3214331082f9cb2d0d2c3f75b",
+            "crop": [
+              0,
+              90,
+              65,
+              155
+            ],
+            "dimensions": [
+              65,
+              65
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:55:32.706Z",
+          "payload": {
+            "observation_id": "63c3580062354ff3b772e64b370168d3",
+            "intent": "Zoom on the right letter A and nearby short thick segment for comparison with the left A marker.",
+            "source_sha256": "130afd34a8f3ce216521d180d8317a589135ed54d739b767990dd99b3086e6b7",
+            "sha256": "2408291f49af183f5ee7bd7c7cd58571709bbe58035bfe4d26096fb6048d05ca",
+            "crop": [
+              150,
+              115,
+              195,
+              180
+            ],
+            "dimensions": [
+              45,
+              65
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:55:32.807Z",
+          "payload": {
+            "observation_id": "5daf572159fa462f9be77aab828de399",
+            "intent": "Inspect the A-A label and arrow in region B to confirm the section designation and viewing direction.",
+            "source_sha256": "709f8d621e727b3acc1c948854e8dcbb052fbdbc74b0a93022e96c703c0b8438",
+            "sha256": "0751ff5c0eb8de8caa60d6f6316a10fb44a8343b7a76e152b1acd333c9884411",
+            "crop": [
+              0,
+              0,
+              140,
+              65
+            ],
+            "dimensions": [
+              140,
+              65
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T10:56:31.041Z",
+          "payload": {
+            "observation_id": "ed3a2509bf05452dbf2d5f0ed1723963",
+            "public_conclusion": "The mark directly above the left letter A is an isolated short thick slanted segment outside the part outline, matching the similar marker by the opposite letter A rather than hatching or a dimension extension line."
+          }
+        },
+        {
+          "sequence": 9,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T10:56:31.049Z",
+          "payload": {
+            "observation_id": "5daf572159fa462f9be77aab828de399",
+            "public_conclusion": "Region B is explicitly labeled “A—A” with a section-view rotation arrow, so the paired A markers in region A denote where the A-A section is taken."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-04/input-01.png",
+        "assets/drawing-04/input-02.png",
+        "assets/drawing-04/input-03.png"
+      ],
+      "asset_base": "assets/drawing-04",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-04/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "2ea92446bb0f032c68ae5e2c",
+      "sample_id": "drawing-06",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "insufficient_information"
+      },
+      "learner_answer": {
+        "answer": "insufficient_information"
+      },
+      "task_manifest": {
+        "task_id": "drawing-06",
+        "task_type": "clarification",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-06",
+        "query": "区域A标出了A、B两处截取位置，区域B给出了相应断面，区域C为2:1局部放大图。如果要求两处截取位置沿轮辐方向的精确间距，以下哪种判断成立？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "diameter_difference",
+            "label": "可取左图φ320与φ264的半差确定"
+          },
+          {
+            "value": "section_width_difference",
+            "label": "可取两个断面标注宽度之差确定"
+          },
+          {
+            "value": "pixel_scaled",
+            "label": "可用2:1局部图校准截图比例后量取"
+          },
+          {
+            "value": "insufficient_information",
+            "label": "现有标注不足以唯一确定该间距"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "pdf-065",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 65,
+        "sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域A标出了A、B两处截取位置，区域B给出了相应断面，区域C为2:1局部放大图。如果要求两处截取位置沿轮辐方向的精确间距，以下哪种判断成立？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                223,
+                160,
+                397,
+                793
+              ]
+            },
+            {
+              "label": "B",
+              "bbox": [
+                395,
+                121,
+                499,
+                427
+              ]
+            },
+            {
+              "label": "C",
+              "bbox": [
+                399,
+                604,
+                519,
+                838
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "A—A、B—B给出了截面宽高及圆弧尺寸，但没有两处截取位置的间距或完整定位尺寸；2:1属于轮缘局部放大图，不能补足该间距。",
+          "expected_answer": "insufficient_information",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "pixel_scale_inference",
+            "section_size_as_position",
+            "unsupported_exact_dimension"
+          ],
+          "confidence": 0.98,
+          "ambiguity_notes": "The intended missing information is the numerical location of the two section cuts along the spoke.",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "insufficient_information",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "图中给出了断面尺寸及轮缘局部尺寸，但未标注A、B截取位置沿轮辐方向的定位尺寸。",
+          "ambiguity_notes": "不能由断面宽度差、轮缘直径差或截图比例唯一确定该间距。"
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 501.44,
+        "observations": 12,
+        "findings": 3,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "insufficient_information"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:57:14.378Z",
+          "payload": {
+            "observation_id": "374c7f09a5bf4951b7723a2691c1a2e7",
+            "intent": "Inspect the full CAD drawing to understand views, labels A/B section cut positions, dimensions φ320/φ264, section views, and 2:1 detail.",
+            "source_sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+            "sha256": "68ffc77e9a4e0853e660e99f64d12755aa0e7d216c3eefe11ae476b168fe4ecf",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:57:15.518Z",
+          "payload": {
+            "observation_id": "7d538e084ac94ad8bcb63386bf79fc66",
+            "intent": "Inspect region A for the two截取位置 A and B and nearby radial/spoke dimensions such as φ320 and φ264.",
+            "source_sha256": "214e8314d7e515b9834b47ce964713f30709d7a782b4f91a7264e8d36803d346",
+            "sha256": "214e8314d7e515b9834b47ce964713f30709d7a782b4f91a7264e8d36803d346",
+            "crop": null,
+            "dimensions": [
+              447,
+              1148
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:57:15.642Z",
+          "payload": {
+            "observation_id": "464f5a4b826447d7a29cf7a530a0f62d",
+            "intent": "Inspect region B for the section views corresponding to A and B and their width annotations.",
+            "source_sha256": "3a5ab382becf682755bbc3c417d7785d92ca958756f49d0eee62e3b8106d5b3c",
+            "sha256": "3a5ab382becf682755bbc3c417d7785d92ca958756f49d0eee62e3b8106d5b3c",
+            "crop": null,
+            "dimensions": [
+              267,
+              555
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:57:15.793Z",
+          "payload": {
+            "observation_id": "e65c37c3502e4a5e87d409274fdcfbac",
+            "intent": "Inspect region C, the 2:1 local enlarged view, for any dimensions that could determine spacing between cut positions along the spoke direction.",
+            "source_sha256": "423060b48e3f2a07d2d2b5fb8897a6882f72bdc5611df7f7fcd955587f897b38",
+            "sha256": "423060b48e3f2a07d2d2b5fb8897a6882f72bdc5611df7f7fcd955587f897b38",
+            "crop": null,
+            "dimensions": [
+              308,
+              425
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:58:33.210Z",
+          "payload": {
+            "observation_id": "fe54a4bda7e049ebad2f22a048b830df",
+            "intent": "Zoom the right-side radial diameter dimensions φ254/φ264/φ320 and their extension lines in region A.",
+            "source_sha256": "214e8314d7e515b9834b47ce964713f30709d7a782b4f91a7264e8d36803d346",
+            "sha256": "302a67777d1da24ae3234511112d573351996a83a4bfe87fe141719a4d227559",
+            "crop": [
+              300,
+              80,
+              447,
+              1050
+            ],
+            "dimensions": [
+              147,
+              970
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:58:33.353Z",
+          "payload": {
+            "observation_id": "5a07e0dead5742b4986621ae1b98c4ad",
+            "intent": "Zoom the A and B cutting-position markers near the rim and hub in region A.",
+            "source_sha256": "214e8314d7e515b9834b47ce964713f30709d7a782b4f91a7264e8d36803d346",
+            "sha256": "2bdcd490ec41c37548a522fcd4753ffe72d131cb9f542f7228db9e9175c585de",
+            "crop": [
+              0,
+              0,
+              260,
+              520
+            ],
+            "dimensions": [
+              260,
+              520
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:58:33.513Z",
+          "payload": {
+            "observation_id": "c2eee0f9a0d3424994bc800f4d081ee2",
+            "intent": "Zoom the left sectional view of the handwheel with A/B markers and diameter dimensions.",
+            "source_sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+            "sha256": "6702e443b198b258641d6a6aec0be368322b242195eefcc1a15c96f6f790d509",
+            "crop": [
+              150,
+              180,
+              1030,
+              1510
+            ],
+            "dimensions": [
+              880,
+              1330
+            ],
+            "image": "receipts/007.png"
+          }
+        },
+        {
+          "sequence": 9,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T10:58:33.619Z",
+          "payload": {
+            "observation_id": "cf7ac6b61b734a6e8e7f5e896efb3d06",
+            "intent": "Zoom the A-A and B-B spoke cross-section details and their dimensions.",
+            "source_sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+            "sha256": "d7bd7bcc85daa9d632d94b3334261deed6a039294c3c65c83dee91ed1bfd93d6",
+            "crop": [
+              1000,
+              180,
+              1320,
+              800
+            ],
+            "dimensions": [
+              320,
+              620
+            ],
+            "image": "receipts/008.png"
+          }
+        },
+        {
+          "sequence": 10,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:01:52.132Z",
+          "payload": {
+            "observation_id": "a22932285be541df9ff13dc592e0b4ee",
+            "intent": "Inspect the upper spoke, A/B section markers, and the origin/extension lines of φ254/φ264/φ320 dimensions.",
+            "source_sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+            "sha256": "c17aaa26ae65e7ee46927d0ed520d89ee59143e2bef6811bf0750d1ca2456199",
+            "crop": [
+              480,
+              200,
+              1015,
+              1180
+            ],
+            "dimensions": [
+              535,
+              980
+            ],
+            "image": "receipts/009.png"
+          }
+        },
+        {
+          "sequence": 11,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:01:52.246Z",
+          "payload": {
+            "observation_id": "cc8b61d12a754c86b516d2d5d0656618",
+            "intent": "Inspect which feature the upper extension lines for φ264 and φ320 attach to near section A.",
+            "source_sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+            "sha256": "d2c6fa8fea08bb4c27912396d53785fbc2b084a2f5f289c0c0bf27fd1a55fb56",
+            "crop": [
+              600,
+              220,
+              1000,
+              360
+            ],
+            "dimensions": [
+              400,
+              140
+            ],
+            "image": "receipts/010.png"
+          }
+        },
+        {
+          "sequence": 12,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:01:52.375Z",
+          "payload": {
+            "observation_id": "5f0ad05ee4e04e2f80e2a563d42aa0cd",
+            "intent": "Inspect the lower ends of the φ254/φ264/φ320 dimension extension lines relative to the wheel centerline and lower rim.",
+            "source_sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+            "sha256": "cc1161c8956c0ee7591298554206d4643e78aece49849b6ebfc268ff11980731",
+            "crop": [
+              600,
+              620,
+              1000,
+              1160
+            ],
+            "dimensions": [
+              400,
+              540
+            ],
+            "image": "receipts/011.png"
+          }
+        },
+        {
+          "sequence": 13,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:01:52.501Z",
+          "payload": {
+            "observation_id": "b688a2d60ca04af1bf236348f950db1c",
+            "intent": "Inspect the front-view spoke angular dimensions and any location dimensions for sections A/B.",
+            "source_sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+            "sha256": "28c95ce884fc656cf4b328eeb4600b9018a3d3233875d19e182c5172f34fa032",
+            "crop": [
+              1180,
+              900,
+              1600,
+              1300
+            ],
+            "dimensions": [
+              420,
+              400
+            ],
+            "image": "receipts/012.png"
+          }
+        },
+        {
+          "sequence": 14,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:04:46.013Z",
+          "payload": {
+            "observation_id": "a22932285be541df9ff13dc592e0b4ee",
+            "public_conclusion": "Region A shows section markers A near the rim/spoke and B near the hub, but the adjacent φ320/φ264 dimensions are concentric rim diameters; they are not dimensioning the distance between the A and B cutting planes."
+          }
+        },
+        {
+          "sequence": 15,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:04:46.020Z",
+          "payload": {
+            "observation_id": "cf7ac6b61b734a6e8e7f5e896efb3d06",
+            "public_conclusion": "Sections A-A and B-B only give cross-section sizes (A-A: 12 by 24 with R24/R4.5; B-B: 16 by 32 with R32/R6), so the width difference 32-24 is a section size difference, not the spacing along the spoke."
+          }
+        },
+        {
+          "sequence": 16,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:04:46.028Z",
+          "payload": {
+            "observation_id": "e65c37c3502e4a5e87d409274fdcfbac",
+            "public_conclusion": "The 2:1 detail shows local rim features (1.5, R32, R12.5, R4, 45°) and provides no locating dimension for sections A/B; it also has a different scale from the main view."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-06/input-01.png",
+        "assets/drawing-06/input-02.png",
+        "assets/drawing-06/input-03.png",
+        "assets/drawing-06/input-04.png"
+      ],
+      "asset_base": "assets/drawing-06",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-06/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "e7d50314f9ec151d7c88a002",
+      "sample_id": "drawing-07",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": 20
+      },
+      "learner_answer": {
+        "answer": 20
+      },
+      "task_manifest": {
+        "task_id": "drawing-07",
+        "task_type": "dimension_chain",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-07",
+        "query": "区域A的A向视图中，左侧长圆孔两端半圆的圆心间距是多少？按标注公称尺寸计算，答案单位为mm，允许误差±0.1 mm。",
+        "answer_format": {
+          "answer": "number"
+        },
+        "options": [],
+        "unit": "mm",
+        "absolute_tolerance": 0.1
+      },
+      "source": {
+        "source_id": "pdf-120",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 120,
+        "sha256": "a0a3f638ab1f6fd1aad23cfcbb9bc2db759aaad8a142e1de0b4a03dbe33ef7f9",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域A的A向视图中，左侧长圆孔两端半圆的圆心间距是多少？按标注公称尺寸计算，答案单位为mm，允许误差±0.1 mm。",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                534,
+                166,
+                791,
+                535
+              ]
+            }
+          ],
+          "unit": "mm",
+          "answer_evidence": "28标注长圆孔的总长，8标注孔宽。两端半圆的半径之和等于孔宽，故圆心间距为28−8＝20 mm。",
+          "expected_answer": 20,
+          "answer_kind": "number",
+          "bad_pattern_tags": [
+            "overall_slot_length_as_center_distance",
+            "radius_diameter_confusion"
+          ],
+          "confidence": 0.99,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "L_slot - W_slot",
+            "inputs": [
+              {
+                "symbol": "L_slot",
+                "value": 28,
+                "drawing_evidence": "左侧长圆孔旁的竖向28标注跨越孔最上端与最下端。"
+              },
+              {
+                "symbol": "W_slot",
+                "value": 8,
+                "drawing_evidence": "该长圆孔下方的水平8标注连接两条平行直边。"
+              }
+            ]
+          }
+        },
+        "blind_audit": {
+          "answer": 20,
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "长圆孔总长28、宽8，两端半圆圆心间距为28−8＝20 mm。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 332.86,
+        "observations": 4,
+        "findings": 1,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": 20
+        },
+        "absolute_tolerance": 0.1,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:05:29.088Z",
+          "payload": {
+            "observation_id": "e89c5733e4a54f0c960ce8effc405674",
+            "intent": "Inspect the full CAD drawing to locate region A and the A-direction view, including relevant dimensions for slotted holes.",
+            "source_sha256": "a0a3f638ab1f6fd1aad23cfcbb9bc2db759aaad8a142e1de0b4a03dbe33ef7f9",
+            "sha256": "84a98f19cb03c03943bc4d99343ce3d599295df1580e897a46b02d8d23d876df",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:05:30.191Z",
+          "payload": {
+            "observation_id": "5dbbdd942db54742be08cbfab1bd9fa2",
+            "intent": "Inspect region A crop, especially the A-direction view and dimensions around the left slotted hole.",
+            "source_sha256": "ca0786091d1101faeb5f108e0940806d7180967da90fd4e43098806a5a80bacf",
+            "sha256": "ca0786091d1101faeb5f108e0940806d7180967da90fd4e43098806a5a80bacf",
+            "crop": null,
+            "dimensions": [
+              658,
+              670
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:06:32.764Z",
+          "payload": {
+            "observation_id": "f8fa05e6cbef436687dd39cc9ff3d35c",
+            "intent": "Zoom into the left slotted hole and the 28 and 8 dimensions to determine whether 28 is overall slot length or center spacing.",
+            "source_sha256": "ca0786091d1101faeb5f108e0940806d7180967da90fd4e43098806a5a80bacf",
+            "sha256": "e471c938e29b872484bff66a412136b086f4778d49e8d7a564d2b1edaac61765",
+            "crop": [
+              0,
+              250,
+              240,
+              480
+            ],
+            "dimensions": [
+              240,
+              230
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:07:51.580Z",
+          "payload": {
+            "observation_id": "31dca8b3a8fc4ad09352bc71db96f903",
+            "intent": "Further zoom the left slot dimensioning to see the exact extension lines for the 28 dimension and the slot end geometry.",
+            "source_sha256": "ca0786091d1101faeb5f108e0940806d7180967da90fd4e43098806a5a80bacf",
+            "sha256": "ec21bf57b9a17c5ce14562d2ca4e40cc108571e1e929c482f71485d536f6212a",
+            "crop": [
+              20,
+              280,
+              220,
+              470
+            ],
+            "dimensions": [
+              200,
+              190
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:10:26.042Z",
+          "payload": {
+            "observation_id": "31dca8b3a8fc4ad09352bc71db96f903",
+            "public_conclusion": "In region A's A-direction view, the left slotted hole is dimensioned with overall vertical length 28 mm and slot width 8 mm; the semicircular end radius is therefore 4 mm, so the two end-center spacing is 28 - 2×4 = 20 mm."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-07/input-01.png",
+        "assets/drawing-07/input-02.png"
+      ],
+      "asset_base": "assets/drawing-07",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-07/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "f5133acc4cdbf46bf8df4956",
+      "sample_id": "drawing-08",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "outer_face_to_axis"
+      },
+      "learner_answer": {
+        "answer": "outer_face_to_axis"
+      },
+      "task_manifest": {
+        "task_id": "drawing-08",
+        "task_type": "dimension_attachment",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-08",
+        "query": "区域A左上视图中的水平尺寸74，量取的是哪两处之间的距离？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "outer_face_to_axis",
+            "label": "安装板左侧外平面至上部圆孔的竖直中心线"
+          },
+          {
+            "value": "inner_face_to_axis",
+            "label": "安装板右侧内平面至上部圆孔的竖直中心线"
+          },
+          {
+            "value": "outer_face_to_left_outline",
+            "label": "安装板左侧外平面至上部圆凸台的最左外轮廓"
+          },
+          {
+            "value": "outer_face_to_right_outline",
+            "label": "安装板左侧外平面至上部圆凸台的最右外轮廓"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "pdf-120",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 120,
+        "sha256": "a0a3f638ab1f6fd1aad23cfcbb9bc2db759aaad8a142e1de0b4a03dbe33ef7f9",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域A左上视图中的水平尺寸74，量取的是哪两处之间的距离？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                126,
+                177,
+                340,
+                433
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "74的左端对应安装板左侧外平面的向上延长线，右端对应上部圆孔的竖直中心线；旁边的12单独标注板厚。",
+          "expected_answer": "outer_face_to_axis",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "axis_vs_tangent_attachment",
+            "wrong_reference_face"
+          ],
+          "confidence": 0.98,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "outer_face_to_axis",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "尺寸74的左端界线来自安装板左侧外平面，右端落在上部圆孔的竖直中心线上。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 434.34,
+        "observations": 9,
+        "findings": 2,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "outer_face_to_axis"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:11:01.753Z",
+          "payload": {
+            "observation_id": "ee52b62157794adca1e9c2f4bb263a11",
+            "intent": "Inspect the upper-left view in region A, especially the horizontal dimension 74 and its extension/witness lines",
+            "source_sha256": "de23494b50b01878caca45ca5f7f49be2983e0f6d4443f46e2962c71580937df",
+            "sha256": "de23494b50b01878caca45ca5f7f49be2983e0f6d4443f46e2962c71580937df",
+            "crop": null,
+            "dimensions": [
+              549,
+              465
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:11:02.010Z",
+          "payload": {
+            "observation_id": "3edfc4aac0484007b0230c87fe5b1e72",
+            "intent": "Get overall context of the drawing and locate region A and the dimension 74",
+            "source_sha256": "a0a3f638ab1f6fd1aad23cfcbb9bc2db759aaad8a142e1de0b4a03dbe33ef7f9",
+            "sha256": "84a98f19cb03c03943bc4d99343ce3d599295df1580e897a46b02d8d23d876df",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:11:24.075Z",
+          "payload": {
+            "observation_id": "9cb28d1cf26143f58f2abe3fb44a2479",
+            "intent": "Zoom into the horizontal dimension 74 to see exactly where its left and right extension/witness lines terminate",
+            "source_sha256": "de23494b50b01878caca45ca5f7f49be2983e0f6d4443f46e2962c71580937df",
+            "sha256": "f4bcb1a69218ce6f5a778b195273b628f687188b8f7a5d704662a1ee0844571e",
+            "crop": [
+              0,
+              90,
+              549,
+              230
+            ],
+            "dimensions": [
+              549,
+              140
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:11:55.995Z",
+          "payload": {
+            "observation_id": "b70d8dff964f4b39a0e86ae80624c6c6",
+            "intent": "Inspect the lower-left area of region A: the mounting plate edges and the dimension 12 to identify which vertical line the 74 dimension's left extension line corresponds to",
+            "source_sha256": "de23494b50b01878caca45ca5f7f49be2983e0f6d4443f46e2962c71580937df",
+            "sha256": "ae4097a13316fb9f42314717195cefcd295055cdfcf5f6e2f7f1d49a201be757",
+            "crop": [
+              0,
+              280,
+              260,
+              465
+            ],
+            "dimensions": [
+              260,
+              185
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:12:57.082Z",
+          "payload": {
+            "observation_id": "f116745954954d01bb4fc74aad112139",
+            "intent": "Inspect the mounting plate area in the main view at full resolution to identify the plate's left outer face and right inner face and which lines the 74 and 12 dimensions reference",
+            "source_sha256": "a0a3f638ab1f6fd1aad23cfcbb9bc2db759aaad8a142e1de0b4a03dbe33ef7f9",
+            "sha256": "46f808ce8271260c95b7925b5b85dbfd1e25a347251e1821f9d940beae07f041",
+            "crop": [
+              300,
+              540,
+              560,
+              1140
+            ],
+            "dimensions": [
+              260,
+              600
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:13:56.281Z",
+          "payload": {
+            "observation_id": "db99783cedd1407b88e516c254a1d3d7",
+            "intent": "Zoom in tightly on the mounting plate to precisely identify the plate's left and right faces and the extension lines for dimensions 12 and 74",
+            "source_sha256": "a0a3f638ab1f6fd1aad23cfcbb9bc2db759aaad8a142e1de0b4a03dbe33ef7f9",
+            "sha256": "dbd33bffe042eda9ad4a99a44ee882977100df3512af1ff56be5d51d3f3410ea",
+            "crop": [
+              330,
+              560,
+              470,
+              1000
+            ],
+            "dimensions": [
+              140,
+              440
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:14:45.877Z",
+          "payload": {
+            "observation_id": "6b5fa82d0b0449c68301e4dc6a8692e9",
+            "intent": "Very tight zoom on the top of the mounting plate and the dimension 12 to see exactly which vertical edges exist and where the extension lines attach",
+            "source_sha256": "a0a3f638ab1f6fd1aad23cfcbb9bc2db759aaad8a142e1de0b4a03dbe33ef7f9",
+            "sha256": "94d225aae5d2bffaa0113ab18f4a81d27551644fdf4524941001c4bfe6a18134",
+            "crop": [
+              335,
+              600,
+              450,
+              760
+            ],
+            "dimensions": [
+              115,
+              160
+            ],
+            "image": "receipts/007.png"
+          }
+        },
+        {
+          "sequence": 9,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:15:19.329Z",
+          "payload": {
+            "observation_id": "56dbceddafbb4583ae6f86e022d3e3c0",
+            "intent": "Zoom on the body of the mounting plate to see its exact left and right faces and hatching extent",
+            "source_sha256": "a0a3f638ab1f6fd1aad23cfcbb9bc2db759aaad8a142e1de0b4a03dbe33ef7f9",
+            "sha256": "84888db7da416fa8d0eb102fff4fcfe0173ba73c980339aa3c1e8fb067741a6b",
+            "crop": [
+              335,
+              720,
+              455,
+              1000
+            ],
+            "dimensions": [
+              120,
+              280
+            ],
+            "image": "receipts/008.png"
+          }
+        },
+        {
+          "sequence": 10,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:16:05.878Z",
+          "payload": {
+            "observation_id": "f0c8109c7431445598900fee84116110",
+            "intent": "Full-resolution view of where the right arrow of dimension 74 terminates: at the boss vertical centerline or at the boss left outer contour",
+            "source_sha256": "a0a3f638ab1f6fd1aad23cfcbb9bc2db759aaad8a142e1de0b4a03dbe33ef7f9",
+            "sha256": "65cdcb988411aff21b48dcc3baf541f78a228da059250271389715691046d764",
+            "crop": [
+              620,
+              440,
+              860,
+              570
+            ],
+            "dimensions": [
+              240,
+              130
+            ],
+            "image": "receipts/009.png"
+          }
+        },
+        {
+          "sequence": 11,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:17:32.754Z",
+          "payload": {
+            "observation_id": "f0c8109c7431445598900fee84116110",
+            "public_conclusion": "The right arrow of the horizontal dimension 74 terminates with its tip exactly on the vertical dash-dot centerline of the upper circular hole/boss (drawing x≈746), not on the boss's left or right outer contour."
+          }
+        },
+        {
+          "sequence": 12,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:17:32.762Z",
+          "payload": {
+            "observation_id": "56dbceddafbb4583ae6f86e022d3e3c0",
+            "public_conclusion": "The left extension line of dimension 74 (drawing x≈358) is collinear with the leftmost vertical edge of the mounting plate; the hatched plate body lies to its right (x≈358–397), so x=358 is the mounting plate's left outer face, not its right inner face. The top edge of the base also starts at this line (seen in the y=600–760 crop)."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-08/input-01.png",
+        "assets/drawing-08/input-02.png"
+      ],
+      "asset_base": "assets/drawing-08",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-08/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "8e04b4fb4b3301b95caf034d",
+      "sample_id": "drawing-09",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": 8
+      },
+      "learner_answer": {
+        "answer": 8
+      },
+      "task_manifest": {
+        "task_id": "drawing-09",
+        "task_type": "dimension_chain",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-09",
+        "query": "区域A左上主视图中，顶部中央开口槽的槽底平面比底座上表面高多少？用图中标注的公称尺寸计算，答案单位为mm，允许误差±0.1 mm。",
+        "answer_format": {
+          "answer": "number"
+        },
+        "options": [],
+        "unit": "mm",
+        "absolute_tolerance": 0.1
+      },
+      "source": {
+        "source_id": "web-2679-01",
+        "origin": "public_web_drawing",
+        "article_url": "https://xifengboke.com/post/2679.html",
+        "sha256": "5985018b095635dd755d04b34e0be97e9d5badc8a524ad662fa3afeb00530df6",
+        "dimensions": [
+          2480,
+          3507
+        ],
+        "rights": {
+          "status": "permission_required",
+          "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+          "training_eligible": false,
+          "redistribution_eligible": false
+        }
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域A左上主视图中，顶部中央开口槽的槽底平面比底座上表面高多少？用图中标注的公称尺寸计算，答案单位为mm，允许误差±0.1 mm。",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                134,
+                140,
+                563,
+                380
+              ]
+            }
+          ],
+          "unit": "mm",
+          "answer_evidence": "总高48从底座下表面量至顶面，竖向32从顶面量至槽底，底座厚度为8；槽底高于底座上表面48−32−8＝8 mm。",
+          "expected_answer": 8,
+          "answer_kind": "number",
+          "bad_pattern_tags": [
+            "wrong_32_dimension_attachment",
+            "baseline_confusion",
+            "omitted_base_thickness"
+          ],
+          "confidence": 0.99,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "H_total - D_slot - T_base",
+            "inputs": [
+              {
+                "symbol": "H_total",
+                "value": 48,
+                "drawing_evidence": "主视图最左侧竖向48的上下界线分别对应零件顶面与底座下表面。"
+              },
+              {
+                "symbol": "D_slot",
+                "value": 32,
+                "drawing_evidence": "中央开口槽内的竖向32从顶部开口平面量至槽底水平边。"
+              },
+              {
+                "symbol": "T_base",
+                "value": 8,
+                "drawing_evidence": "主视图左下侧竖向8连接底座上表面与下表面。"
+              }
+            ]
+          }
+        },
+        "blind_audit": {
+          "answer": 8,
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "总高48、顶部槽深32、底座厚8，槽底高出底座上表面48−32−8＝8 mm。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 316.36,
+        "observations": 5,
+        "findings": 3,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": 8
+        },
+        "absolute_tolerance": 0.1,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:18:23.893Z",
+          "payload": {
+            "observation_id": "9fb1f855debc4fcbae28b4f303effeb3",
+            "intent": "Inspect region A: identify the upper-left front view, locate the top central opening slot and dimension annotations related to its bottom plane height and the base upper surface.",
+            "source_sha256": "f6b33bfc3cac99e37e1a71e234dcc71c6ad097c5f644c6924a5e43a23babd82b",
+            "sha256": "f6b33bfc3cac99e37e1a71e234dcc71c6ad097c5f644c6924a5e43a23babd82b",
+            "crop": null,
+            "dimensions": [
+              1065,
+              843
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:18:24.370Z",
+          "payload": {
+            "observation_id": "f2694d62ecbd4079aceef7070349430e",
+            "intent": "Get an overview of the whole drawing to understand views, scales and where region A is located.",
+            "source_sha256": "5985018b095635dd755d04b34e0be97e9d5badc8a524ad662fa3afeb00530df6",
+            "sha256": "db69eea9db1a28ac866db02f326633fcb0c9c5f89d3c878a687bcd5e05e95a42",
+            "crop": null,
+            "dimensions": [
+              2480,
+              3507
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:20:13.968Z",
+          "payload": {
+            "observation_id": "4485e58172794128bf6536a704a3e106",
+            "intent": "Read the stacked vertical dimensions on the left (48, 14, 8) and confirm which surfaces they reference, especially the base thickness.",
+            "source_sha256": "f6b33bfc3cac99e37e1a71e234dcc71c6ad097c5f644c6924a5e43a23babd82b",
+            "sha256": "e6e666b52b158d41c9c614320acdf040c9570c82b7454c720b3a901337c898ed",
+            "crop": [
+              0,
+              150,
+              330,
+              700
+            ],
+            "dimensions": [
+              330,
+              550
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:20:14.282Z",
+          "payload": {
+            "observation_id": "e350f6ab5153497eb129ca01db0dbd26",
+            "intent": "Examine the top central slot: its width 10, depth 32 dimension, and the shape of the slot bottom.",
+            "source_sha256": "f6b33bfc3cac99e37e1a71e234dcc71c6ad097c5f644c6924a5e43a23babd82b",
+            "sha256": "2eec1a4b17b8ef3871d9d412181b000e29ba77b53e192793de7fc12739c2cdd4",
+            "crop": [
+              480,
+              90,
+              780,
+              560
+            ],
+            "dimensions": [
+              300,
+              470
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:20:14.441Z",
+          "payload": {
+            "observation_id": "7e7de8acf6544c2eba2593d18fd4bed8",
+            "intent": "Examine the bottom right of the front view: the '3' dimension and the base step, plus base top surface lines.",
+            "source_sha256": "f6b33bfc3cac99e37e1a71e234dcc71c6ad097c5f644c6924a5e43a23babd82b",
+            "sha256": "8a2e5aba59d3f0b8e804584de23014f2c6db02076aa87383ae2c5ed50d40be2c",
+            "crop": [
+              780,
+              520,
+              1065,
+              700
+            ],
+            "dimensions": [
+              285,
+              180
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:22:51.577Z",
+          "payload": {
+            "observation_id": "4485e58172794128bf6536a704a3e106",
+            "public_conclusion": "Left side of the front view shows stacked vertical dimensions: total height 48 from base bottom to the top of the prongs; base thickness 8 from the base bottom to the base upper surface; 14 from the base upper surface up to the next ledge."
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:22:51.585Z",
+          "payload": {
+            "observation_id": "e350f6ab5153497eb129ca01db0dbd26",
+            "public_conclusion": "The top central opening slot has width 10 and a vertical dimension 32 measured from the top face of the prongs down to the flat slot bottom plane; the 32 dimension's lower arrow terminates exactly at the horizontal slot-bottom line."
+          }
+        },
+        {
+          "sequence": 9,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:22:51.594Z",
+          "payload": {
+            "observation_id": "7e7de8acf6544c2eba2593d18fd4bed8",
+            "public_conclusion": "The '3' dimension at the bottom right refers only to a small local step at the right end of the base, not to the main base upper surface; the main base upper surface remains the level given by the base thickness dimension 8."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-09/input-01.png",
+        "assets/drawing-09/input-02.png"
+      ],
+      "asset_base": "assets/drawing-09",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-09/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "072dbdededc38a6190d20982",
+      "sample_id": "drawing-10",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "fork_transverse_holes"
+      },
+      "learner_answer": {
+        "answer": "fork_transverse_holes"
+      },
+      "task_manifest": {
+        "task_id": "drawing-10",
+        "task_type": "cross_view",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-10",
+        "query": "对照区域B俯视图和区域C轴测图，区域A右上视图中φ6引线所指的圆，对应哪一项实体特征？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "base_mounting_holes",
+            "label": "底座四角的竖向安装孔"
+          },
+          {
+            "value": "central_vertical_bore",
+            "label": "俯视图中央的竖向圆孔"
+          },
+          {
+            "value": "fork_transverse_holes",
+            "label": "叉口两侧立耳上的小横孔"
+          },
+          {
+            "value": "underside_arc_groove",
+            "label": "底座下表面的横向圆弧槽"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "web-2679-01",
+        "origin": "public_web_drawing",
+        "article_url": "https://xifengboke.com/post/2679.html",
+        "sha256": "5985018b095635dd755d04b34e0be97e9d5badc8a524ad662fa3afeb00530df6",
+        "dimensions": [
+          2480,
+          3507
+        ],
+        "rights": {
+          "status": "permission_required",
+          "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+          "training_eligible": false,
+          "redistribution_eligible": false
+        }
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "对照区域B俯视图和区域C轴测图，区域A右上视图中φ6引线所指的圆，对应哪一项实体特征？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                625,
+                159,
+                894,
+                336
+              ]
+            },
+            {
+              "label": "B",
+              "bbox": [
+                177,
+                423,
+                596,
+                676
+              ]
+            },
+            {
+              "label": "C",
+              "bbox": [
+                574,
+                598,
+                952,
+                839
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "右上视图的φ6圆位于立耳上部，轴测图对应位置可见两立耳的小横孔；俯视图四角孔标为4×φ10，中央孔标为φ20。",
+          "expected_answer": "fork_transverse_holes",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "hole_axis_confusion",
+            "cross_view_feature_mismatch",
+            "nearby_diameter_substitution"
+          ],
+          "confidence": 0.99,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "fork_transverse_holes",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "φ6圆位于右上视图的立耳上部，与轴测图中叉口两侧立耳的小横孔对应。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 101.61,
+        "observations": 4,
+        "findings": 3,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "fork_transverse_holes"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:23:32.975Z",
+          "payload": {
+            "observation_id": "4192d250e2054ceb910e41ab09d4fc71",
+            "intent": "Inspect the overall CAD drawing layout to understand the views and annotations",
+            "source_sha256": "5985018b095635dd755d04b34e0be97e9d5badc8a524ad662fa3afeb00530df6",
+            "sha256": "db69eea9db1a28ac866db02f326633fcb0c9c5f89d3c878a687bcd5e05e95a42",
+            "crop": null,
+            "dimensions": [
+              2480,
+              3507
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:23:34.229Z",
+          "payload": {
+            "observation_id": "b19425070f964e81b5de2cda260d3b83",
+            "intent": "Inspect region A view, especially the upper-right view with the φ6 leader line pointing to a circle",
+            "source_sha256": "3dc9fb91853bcbaf0be9f1cf8761b33d30de1608c58e0d37e2127b1d0a301720",
+            "sha256": "3dc9fb91853bcbaf0be9f1cf8761b33d30de1608c58e0d37e2127b1d0a301720",
+            "crop": null,
+            "dimensions": [
+              668,
+              622
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:23:46.882Z",
+          "payload": {
+            "observation_id": "29b848838b6d44c099a3efe185555072",
+            "intent": "Inspect region B top view to see hole layout and features",
+            "source_sha256": "96eb1eed4d310bf057dec0dea273c00c4229a1d5621ed49be8e9619b959b9b66",
+            "sha256": "96eb1eed4d310bf057dec0dea273c00c4229a1d5621ed49be8e9619b959b9b66",
+            "crop": null,
+            "dimensions": [
+              1041,
+              888
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:23:47.084Z",
+          "payload": {
+            "observation_id": "3468c9f8e40b4a15b8211ca467c7c581",
+            "intent": "Inspect region C isometric view to see 3D features including holes on the fork ears",
+            "source_sha256": "4a450e7bda6c2707c0c2c1663eef625099148b2747d5c40a0718495ec547667c",
+            "sha256": "4a450e7bda6c2707c0c2c1663eef625099148b2747d5c40a0718495ec547667c",
+            "crop": null,
+            "dimensions": [
+              938,
+              846
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:24:33.920Z",
+          "payload": {
+            "observation_id": "b19425070f964e81b5de2cda260d3b83",
+            "public_conclusion": "Region A (side view): the φ6 leader points to a circle with centerlines located inside the upper rectangular upright block (the fork ear seen from the side), with its center dimensioned 8 mm below the top edge — a horizontal hole through the ear."
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:24:33.928Z",
+          "payload": {
+            "observation_id": "29b848838b6d44c099a3efe185555072",
+            "public_conclusion": "Region B (top view): base has 4 × φ10 through holes at the corners, central φ20 bore in the R23 boss, and a 6 mm wide slot on each side between the central boss and the side ears — no φ6 vertical hole exists."
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:24:33.936Z",
+          "payload": {
+            "observation_id": "3468c9f8e40b4a15b8211ca467c7c581",
+            "public_conclusion": "Region C (isometric): the two upright fork ears each carry a small coaxial horizontal (transverse) through-hole; the base corners have larger vertical mounting holes, and the central boss has a vertical bore. The φ6 circle in region A matches the transverse holes in the fork ears."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-10/input-01.png",
+        "assets/drawing-10/input-02.png",
+        "assets/drawing-10/input-03.png",
+        "assets/drawing-10/input-04.png"
+      ],
+      "asset_base": "assets/drawing-10",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-10/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "9f95cf993dcf7214462234e4",
+      "sample_id": "drawing-11",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "centerline"
+      },
+      "learner_answer": {
+        "answer": "centerline"
+      },
+      "task_manifest": {
+        "task_id": "drawing-11",
+        "task_type": "line_role",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-11",
+        "query": "区域 A 中，A—A 剖视图最右端空白孔腔内，φ43 文字右侧、孔腔高度中部那段有间断的细水平线，属于哪类图线？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "visible_edge",
+            "label": "可见轮廓线"
+          },
+          {
+            "value": "hidden_edge",
+            "label": "不可见轮廓线"
+          },
+          {
+            "value": "centerline",
+            "label": "中心线"
+          },
+          {
+            "value": "dimension_line",
+            "label": "尺寸线"
+          },
+          {
+            "value": "extension_line",
+            "label": "尺寸界线"
+          },
+          {
+            "value": "cutting_plane",
+            "label": "剖切位置指示线"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "pdf-162",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 162,
+        "sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域 A 中，A—A 剖视图最右端空白孔腔内，φ43 文字右侧、孔腔高度中部那段有间断的细水平线，属于哪类图线？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                295,
+                245,
+                429,
+                409
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "该细点画线通过右端孔腔中部，与左侧水平孔的中心位置对齐；上下孔壁另以粗实线表示。",
+          "expected_answer": "centerline",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "dashed_line_as_hidden_edge",
+            "centerline_as_dimension_line"
+          ],
+          "confidence": 0.99,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "centerline",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "该细点画线沿右端孔腔的轴线水平延伸，没有尺寸箭头。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 192.67,
+        "observations": 4,
+        "findings": 2,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "centerline"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:25:26.815Z",
+          "payload": {
+            "observation_id": "3eab7e8225214863ad78460a1c882569",
+            "intent": "Inspect the A-A section view, specifically the rightmost blank hole cavity, the φ43 text, and the thin horizontal broken line at the middle height of the hole cavity to the right of φ43. Determine the line type (solid, dashed/hidden, centerline chain, dimension, extension, or cutting plane).",
+            "source_sha256": "4fbb8d824997a285f886b978b96dda911ca45b92256777f777a198441448f9cd",
+            "sha256": "4fbb8d824997a285f886b978b96dda911ca45b92256777f777a198441448f9cd",
+            "crop": null,
+            "dimensions": [
+              344,
+              299
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:25:27.065Z",
+          "payload": {
+            "observation_id": "4182796f176d440c95d0b4f00f141b5b",
+            "intent": "Get overall context of the CAD drawing, locate region A (source pixels [755,443,1099,742]) and the A-A section view, understand the part and the hole labeled φ43.",
+            "source_sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+            "sha256": "f26c60dc73bec1f6698c42da47c7219af3c2a88f3ba6117e22127a57952916e8",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:27:13.185Z",
+          "payload": {
+            "observation_id": "47c4c8a09b4b437cb25fa07a484df6b2",
+            "intent": "Zoom into the middle-height horizontal thin line inside the blank hole cavity, to the right of the φ43 text and around the φ52 text. Determine the dash pattern: uniform short dashes (hidden edge) vs long-dash short-dash chain (centerline) vs solid. Also check whether it carries arrowheads (dimension line) or is a cutting-plane mark.",
+            "source_sha256": "4fbb8d824997a285f886b978b96dda911ca45b92256777f777a198441448f9cd",
+            "sha256": "c0dcf115a6f22e945164440e844316df84d6226434c629bd14cefa935866846b",
+            "crop": [
+              80,
+              120,
+              240,
+              178
+            ],
+            "dimensions": [
+              160,
+              58
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:27:13.338Z",
+          "payload": {
+            "observation_id": "5f157d1a45cb48b6b7e3c1a365454593",
+            "intent": "Zoom the left part of the blank cavity to see the φ43 dimension text and the horizontal thin line immediately to its right at mid-height of the cavity; identify the line's dash pattern and whether it is the hole axis.",
+            "source_sha256": "4fbb8d824997a285f886b978b96dda911ca45b92256777f777a198441448f9cd",
+            "sha256": "d5ccfeb2f97779025376047eef87a70bb368c28efd53fdeb568d31317e1457eb",
+            "crop": [
+              40,
+              100,
+              200,
+              200
+            ],
+            "dimensions": [
+              160,
+              100
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:27:49.431Z",
+          "payload": {
+            "observation_id": "47c4c8a09b4b437cb25fa07a484df6b2",
+            "public_conclusion": "At the blank hole cavity mid-height, the thin horizontal line shows a long-dash → gap → short dash(dot) → gap → long-dash chain pattern ending at the solid vertical cavity wall, with the φ52 text just to the right. This long-dash/short-dash thin chain with no arrowheads is a centerline (axis), not a solid edge, uniform dashed hidden line, or dimension line."
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:27:49.439Z",
+          "payload": {
+            "observation_id": "5f157d1a45cb48b6b7e3c1a365454593",
+            "public_conclusion": "Immediately to the right of the vertical φ43 dimension text, at the middle height of the hole cavity, the thin horizontal segment repeats the same long-dash–dot (chain) pattern. It lies on the cylinder/hole axis and carries no arrowheads, confirming it is the centerline rather than a hidden edge, dimension line, extension line, or cutting-plane mark."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-11/input-01.png",
+        "assets/drawing-11/input-02.png"
+      ],
+      "asset_base": "assets/drawing-11",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-11/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "a893f34bb1ad92c45dacac81",
+      "sample_id": "drawing-12",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "enclosed_void_solid_stem"
+      },
+      "learner_answer": {
+        "answer": "enclosed_void_solid_stem"
+      },
+      "task_manifest": {
+        "task_id": "drawing-12",
+        "task_type": "section_reasoning",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-12",
+        "query": "区域 A 的 D—D 剖面中，上方圆角矩形内部的空白区域，与其下方细长且带斜剖面线的凸出部分，应怎样解释？仅判断该截面内的材料分布。",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "enclosed_void_solid_stem",
+            "label": "上方为材料包围的空腔，下方凸出部分为实料。"
+          },
+          {
+            "value": "solid_head_solid_stem",
+            "label": "上方为省略剖面线的实心区域，下方凸出部分也为实料。"
+          },
+          {
+            "value": "two_voids",
+            "label": "上方空白区域和下方带斜线的凸出部分均为空腔。"
+          },
+          {
+            "value": "open_side_slot",
+            "label": "上方为向右侧外轮廓敞开的槽，下方凸出部分为实料。"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "pdf-162",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 162,
+        "sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域 A 的 D—D 剖面中，上方圆角矩形内部的空白区域，与其下方细长且带斜剖面线的凸出部分，应怎样解释？仅判断该截面内的材料分布。",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                798,
+                110,
+                913,
+                343
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "圆角矩形空白区域四周都有带剖面线的壁，右壁连续闭合；下方细长凸出部分内部有剖面线。",
+          "expected_answer": "enclosed_void_solid_stem",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "unhatched_void_as_solid",
+            "hatching_as_void",
+            "closed_section_as_open_slot"
+          ],
+          "confidence": 0.99,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "enclosed_void_solid_stem",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "上方空白区域四周由带剖面线的材料封闭；下方细长凸出部分画有剖面线。",
+          "ambiguity_notes": "结论仅涉及该截面内的材料分布。"
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 112.95,
+        "observations": 2,
+        "findings": 2,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "enclosed_void_solid_stem"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:28:34.188Z",
+          "payload": {
+            "observation_id": "f0d1b4bfc53f408499a624e300824f4b",
+            "intent": "Inspect region A, the D-D section view: look at the upper rounded rectangle interior (blank or hatched?), the hatching on surrounding material, and the thin protruding part below with diagonal hatching. Determine whether the upper blank area is enclosed by hatched material or open to one side.",
+            "source_sha256": "681f9115a17eba883143231104255c54fa7aa1014ba1f68d490a41f25f09ac19",
+            "sha256": "681f9115a17eba883143231104255c54fa7aa1014ba1f68d490a41f25f09ac19",
+            "crop": null,
+            "dimensions": [
+              296,
+              423
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:28:34.460Z",
+          "payload": {
+            "observation_id": "12c4db558b4a42f4b0a1139d5001e261",
+            "intent": "Get overall context of the drawing: locate the D-D section label and the cutting plane D-D on the parent view to understand what the section represents.",
+            "source_sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+            "sha256": "f26c60dc73bec1f6698c42da47c7219af3c2a88f3ba6117e22127a57952916e8",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:29:10.819Z",
+          "payload": {
+            "observation_id": "f0d1b4bfc53f408499a624e300824f4b",
+            "public_conclusion": "In the D—D section, the outer profile is a closed rounded rectangle (overall 54 wide; walls 8 thick top/bottom, inner 42x28) filled with diagonal hatching all around, while its inner rounded-rectangle region is completely unhatched and fully enclosed by the hatched material on all four sides — it does not open to the right or any outer contour."
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:29:10.827Z",
+          "payload": {
+            "observation_id": "f0d1b4bfc53f408499a624e300824f4b",
+            "public_conclusion": "Below the rectangular frame, a thin downward stem/rib protrusion carries the same diagonal section hatching as the frame, so within this cut plane it represents solid cut material, not a void."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-12/input-01.png",
+        "assets/drawing-12/input-02.png"
+      ],
+      "asset_base": "assets/drawing-12",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-12/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "cce1dcbf6037a04c3c051ad6",
+      "sample_id": "drawing-13",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "base_holes_17"
+      },
+      "learner_answer": {
+        "answer": "base_holes_17"
+      },
+      "task_manifest": {
+        "task_id": "drawing-13",
+        "task_type": "cross_view",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-13",
+        "query": "区域 A 的 E—E 图中，圆角长底板两端、中心距标为155的两个圆孔，对应其它剖视图中的哪组孔？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "base_holes_17",
+            "label": "A—A 剖视图底座上标注为2×φ17的孔。"
+          },
+          {
+            "value": "upper_flange_holes_15",
+            "label": "B—B 剖视图顶部法兰上标注为2×φ15的孔。"
+          },
+          {
+            "value": "top_thread_27",
+            "label": "A—A 剖视图顶部标注为M27×2-7H的孔。"
+          },
+          {
+            "value": "side_threads_39",
+            "label": "B—B 剖视图左侧标注为M39×2-7H的孔。"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "pdf-162",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 162,
+        "sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域 A 的 E—E 图中，圆角长底板两端、中心距标为155的两个圆孔，对应其它剖视图中的哪组孔？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                267,
+                631,
+                581,
+                907
+              ]
+            },
+            {
+              "label": "B",
+              "bbox": [
+                83,
+                461,
+                423,
+                606
+              ]
+            },
+            {
+              "label": "C",
+              "bbox": [
+                595,
+                116,
+                795,
+                239
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "E—E 显示底板及中间支承截面，两端圆孔对应 A—A 底座两端的竖向孔；该孔组在 A—A 标为2×φ17。2×φ15属于顶部法兰。",
+          "expected_answer": "base_holes_17",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "cross_view_hole_group_swap",
+            "nearby_callout_attachment"
+          ],
+          "confidence": 0.99,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "base_holes_17",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "E—E 的两个端部孔位于长底板上，与 A—A 底座两端标注的 2×φ17 孔对应。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 108.53,
+        "observations": 4,
+        "findings": 2,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "base_holes_17"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:30:25.771Z",
+          "payload": {
+            "observation_id": "e25f1721109e4cbabed8529968de0f85",
+            "intent": "Inspect region A (E—E view) to see the rounded long base plate with two holes at ends and center distance 155",
+            "source_sha256": "006f295ca2fa5f5db4e102fd6421ce2af1aeefde9455414ec2f9e021d4858d3a",
+            "sha256": "006f295ca2fa5f5db4e102fd6421ce2af1aeefde9455414ec2f9e021d4858d3a",
+            "crop": null,
+            "dimensions": [
+              805,
+              501
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:30:26.025Z",
+          "payload": {
+            "observation_id": "f6858d6cd75c452696ba3025b0aa7e4f",
+            "intent": "Get an overall view of the drawing to understand the layout of views (A—A, B—B, E—E sections)",
+            "source_sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+            "sha256": "f26c60dc73bec1f6698c42da47c7219af3c2a88f3ba6117e22127a57952916e8",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:30:57.885Z",
+          "payload": {
+            "observation_id": "84f6a560714e4e1bb1b26971c3275db7",
+            "intent": "Inspect the bottom of the A—A section view where the E cutting plane and 2×φ17 label are located, to confirm correspondence with E—E base holes",
+            "source_sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+            "sha256": "c1da1d03fb75434f8e44a3795a3aaaf93124fa10f29fd9a1a5a713a30753d69a",
+            "crop": [
+              180,
+              600,
+              1000,
+              1160
+            ],
+            "dimensions": [
+              820,
+              560
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:30:58.052Z",
+          "payload": {
+            "observation_id": "699028225cff4438bc7f648b1fedd853",
+            "intent": "Inspect region B to see what part of the drawing it covers (likely the E plane / base area of A—A view)",
+            "source_sha256": "1d7939befb1fb773f5b87ed3d84ce98ffb54c0d05c69e0931cd1f6d892364cbe",
+            "sha256": "1d7939befb1fb773f5b87ed3d84ce98ffb54c0d05c69e0931cd1f6d892364cbe",
+            "crop": null,
+            "dimensions": [
+              871,
+              264
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:31:28.473Z",
+          "payload": {
+            "observation_id": "e25f1721109e4cbabed8529968de0f85",
+            "public_conclusion": "Region A is the E—E view: a rounded oblong base plate (overall 195, width 60, corner R10) with one round through-hole at each end; the two holes' center distance is dimensioned 155."
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:31:28.514Z",
+          "payload": {
+            "observation_id": "699028225cff4438bc7f648b1fedd853",
+            "public_conclusion": "Region B (bottom of A—A section) shows the same horizontal base plate cut by the E—E plane: cutting-plane markers labeled \"E\" sit at the base, and the base holes are explicitly labeled \"2×φ17\" with an Ra25 surface note; the left end of the base shows an unsectioned hole."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-13/input-01.png",
+        "assets/drawing-13/input-02.png",
+        "assets/drawing-13/input-03.png",
+        "assets/drawing-13/input-04.png"
+      ],
+      "asset_base": "assets/drawing-13",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-13/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "bf99aff23fea8df096a4b5da",
+      "sample_id": "drawing-14",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "internal_passage"
+      },
+      "learner_answer": {
+        "answer": "internal_passage"
+      },
+      "task_manifest": {
+        "task_id": "drawing-14",
+        "task_type": "section_reasoning",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-14",
+        "query": "结合区域 A 的 A—A 剖视和区域 B 的 C—C 剖面，A—A 中位于大竖孔左侧、向下延伸至底部凹腔的细长空白带，最符合哪种结构解释？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "solid_rib",
+            "label": "实心加强筋，因沿筋纵向剖切而省略剖面线。"
+          },
+          {
+            "value": "internal_passage",
+            "label": "内部小孔道被纵向剖开后形成的空白区域。"
+          },
+          {
+            "value": "external_open_groove",
+            "label": "沿左侧外表面全长敞开的槽。"
+          },
+          {
+            "value": "joint_gap",
+            "label": "两片壳体之间的装配接缝。"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "pdf-178",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 178,
+        "sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "结合区域 A 的 A—A 剖视和区域 B 的 C—C 剖面，A—A 中位于大竖孔左侧、向下延伸至底部凹腔的细长空白带，最符合哪种结构解释？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                617,
+                179,
+                754,
+                478
+              ]
+            },
+            {
+              "label": "B",
+              "bbox": [
+                441,
+                557,
+                631,
+                728
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "A—A 中空白带由两条平行实线界定，周围有剖面线，下端通至底部凹腔；C—C 左侧对应位置显示标注φ4的小圆孔。",
+          "expected_answer": "internal_passage",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "passage_as_unhatched_rib",
+            "internal_hole_as_external_groove"
+          ],
+          "confidence": 0.98,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "internal_passage",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "A—A 中细长空白带两侧为剖切材料；C—C 在对应位置显示 φ4 小圆孔。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 307.94,
+        "observations": 10,
+        "findings": 2,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "internal_passage"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:32:07.657Z",
+          "payload": {
+            "observation_id": "4a38d1ec9b3f4b0d9d006e6d8488bed8",
+            "intent": "Inspect the full CAD drawing: overall views, section labels (A-A, C-C), and where regions A and B come from.",
+            "source_sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+            "sha256": "4c4f1d445204d6e99887904d72a7f2d6e5c6e3fdc026a175ced74028fcbc856c",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:32:08.691Z",
+          "payload": {
+            "observation_id": "1b45558a4f764c18b7dfa8297111ed5c",
+            "intent": "Inspect region A: the A-A section view, especially the slender blank band to the left of the large vertical hole extending down to the bottom cavity.",
+            "source_sha256": "8a8600dba4e98c2566af8d7ee8d944bcd6f44cc3f39a3d77db8d36872bd8a46c",
+            "sha256": "8a8600dba4e98c2566af8d7ee8d944bcd6f44cc3f39a3d77db8d36872bd8a46c",
+            "crop": null,
+            "dimensions": [
+              352,
+              543
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:32:08.842Z",
+          "payload": {
+            "observation_id": "6fae875a0dd74f0ca1931d275abeb69c",
+            "intent": "Inspect region B: the C-C section, to see how features relate to region A structures.",
+            "source_sha256": "9488213c36db7521f7c4ce0130dc1950d88a1864bdaf4d68256fb001f64d2020",
+            "sha256": "9488213c36db7521f7c4ce0130dc1950d88a1864bdaf4d68256fb001f64d2020",
+            "crop": null,
+            "dimensions": [
+              488,
+              311
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:33:24.708Z",
+          "payload": {
+            "observation_id": "3ae4445d6e76435db9023b67e1220ef2",
+            "intent": "Zoom into top of region A: the phi4 hole with X mark and the start of the slender blank band left of the big bore.",
+            "source_sha256": "8a8600dba4e98c2566af8d7ee8d944bcd6f44cc3f39a3d77db8d36872bd8a46c",
+            "sha256": "8f835db95f8d1c5f98823239e7a6f31bf3691adb4b6d91a1de8978b203edbf9c",
+            "crop": [
+              40,
+              0,
+              220,
+              200
+            ],
+            "dimensions": [
+              180,
+              200
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:33:24.972Z",
+          "payload": {
+            "observation_id": "1c350f46b4474ec3a7a848ab92153f31",
+            "intent": "Zoom into the slender vertical blank band with centerline running down to the bottom cavity, left of the large vertical hole.",
+            "source_sha256": "8a8600dba4e98c2566af8d7ee8d944bcd6f44cc3f39a3d77db8d36872bd8a46c",
+            "sha256": "c953ebb9d1a5271303021b181c0e055f9df836fcba02d577985d577d13b5fcb2",
+            "crop": [
+              60,
+              150,
+              240,
+              543
+            ],
+            "dimensions": [
+              180,
+              393
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:33:25.117Z",
+          "payload": {
+            "observation_id": "de63c02c2e5244d4a1e77d9427478e9b",
+            "intent": "Zoom into C-C section: the profile with R6/phi4 lobe, R11/phi10 lobe, hatching, and the '2' dimension feature at top.",
+            "source_sha256": "9488213c36db7521f7c4ce0130dc1950d88a1864bdaf4d68256fb001f64d2020",
+            "sha256": "a58eacbc057839ecb97fd7bd5720abddfb83aeb7d5d0bedb1740879d60ea5a0e",
+            "crop": [
+              120,
+              20,
+              380,
+              240
+            ],
+            "dimensions": [
+              260,
+              220
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:34:45.724Z",
+          "payload": {
+            "observation_id": "25a99347658248069c81e84cea83b6cf",
+            "intent": "Left third of region A from mid-height to bottom: identify exterior surfaces, walls, and the bottom cavity.",
+            "source_sha256": "8a8600dba4e98c2566af8d7ee8d944bcd6f44cc3f39a3d77db8d36872bd8a46c",
+            "sha256": "d513d670594da37e3be97af9273b9c790e70fd8f92ea6a6afa29a515c21eaeea",
+            "crop": [
+              0,
+              100,
+              140,
+              543
+            ],
+            "dimensions": [
+              140,
+              443
+            ],
+            "image": "receipts/007.png"
+          }
+        },
+        {
+          "sequence": 9,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:34:45.867Z",
+          "payload": {
+            "observation_id": "a9673fe81c7d4de59d024e0db0af9c60",
+            "intent": "Center of region A: relationship between the slender blank band, the big vertical bore, and the side recess.",
+            "source_sha256": "8a8600dba4e98c2566af8d7ee8d944bcd6f44cc3f39a3d77db8d36872bd8a46c",
+            "sha256": "37745e824823be356c802fa44076469249d3cffd84f1746410264084236a6690",
+            "crop": [
+              100,
+              60,
+              300,
+              300
+            ],
+            "dimensions": [
+              200,
+              240
+            ],
+            "image": "receipts/008.png"
+          }
+        },
+        {
+          "sequence": 10,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:34:46.102Z",
+          "payload": {
+            "observation_id": "41315ce1ecc147909c8df939302314b1",
+            "intent": "A-A section in the full drawing: see the C-C cutting-plane marks and the whole column including right side recess and phi19 cross hole.",
+            "source_sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+            "sha256": "563ce43a78a4c08b4e417d2f1cf6a6c18e19aae84a94017d88a0361ebdbc53cc",
+            "crop": [
+              1200,
+              640,
+              1720,
+              1010
+            ],
+            "dimensions": [
+              520,
+              370
+            ],
+            "image": "receipts/009.png"
+          }
+        },
+        {
+          "sequence": 11,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:35:06.548Z",
+          "payload": {
+            "observation_id": "e92894718abe40e2bb43d0084164cb3a",
+            "intent": "Whole A-A section view in original resolution: column, side recess, phi19 hole, C-C cutting plane marks, dimensions.",
+            "source_sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+            "sha256": "3082b9def80ef34ac48558c3bdc24b0ca86cc903c1843bd01b075b2acc6e4b5d",
+            "crop": [
+              1330,
+              200,
+              2260,
+              900
+            ],
+            "dimensions": [
+              930,
+              700
+            ],
+            "image": "receipts/010.png"
+          }
+        },
+        {
+          "sequence": 12,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:36:28.189Z",
+          "payload": {
+            "observation_id": "e92894718abe40e2bb43d0084164cb3a",
+            "public_conclusion": "In the A-A section, the slender unhatched band left of the main vertical bore is bounded by two parallel solid lines with a dash-dot centerline, has hatched solid material on BOTH sides (a hatched wall separates it from the left exterior surface), starts at the top phi4 cross-hole (shown with drill-cone X intersection) and runs down to the bottom base cavity — the classic longitudinal-section appearance of a small internal drilled hole, not a surface groove."
+          }
+        },
+        {
+          "sequence": 13,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:36:28.197Z",
+          "payload": {
+            "observation_id": "de63c02c2e5244d4a1e77d9427478e9b",
+            "public_conclusion": "The C-C cross-section through the column shows a pear-shaped hatched profile (R11 lobe around the phi10 main bore, R6 lobe around a small hole) in which the feature corresponding to the band is a CLOSED phi4 circle fully surrounded by hatched material — i.e., an enclosed internal hole, not an open external groove, not an unhatched solid rib, and not a joint (single HT150 casting)."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-14/input-01.png",
+        "assets/drawing-14/input-02.png",
+        "assets/drawing-14/input-03.png"
+      ],
+      "asset_base": "assets/drawing-14",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-14/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "245ff766589c14e5b020736b",
+      "sample_id": "drawing-15",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": 30
+      },
+      "learner_answer": {
+        "answer": 30
+      },
+      "task_manifest": {
+        "task_id": "drawing-15",
+        "task_type": "dimension_chain",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-15",
+        "query": "区域 A 的 A—A 剖视图右侧凹口中，竖向尺寸10的下端箭头所对应的水平面，距底座最下方水平面的名义高度是多少？单位为 mm，允许误差为±0.1 mm。",
+        "answer_format": {
+          "answer": "number"
+        },
+        "options": [],
+        "unit": "mm",
+        "absolute_tolerance": 0.1
+      },
+      "source": {
+        "source_id": "pdf-178",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 178,
+        "sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域 A 的 A—A 剖视图右侧凹口中，竖向尺寸10的下端箭头所对应的水平面，距底座最下方水平面的名义高度是多少？单位为 mm，允许误差为±0.1 mm。",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                640,
+                180,
+                869,
+                481
+              ]
+            }
+          ],
+          "unit": "mm",
+          "answer_evidence": "总高66从底座最下平面量至顶面；26从顶面量至凹口上水平面；10再向下量至所求水平面，故高度为30 mm。",
+          "expected_answer": 30,
+          "answer_kind": "number",
+          "bad_pattern_tags": [
+            "wrong_height_datum",
+            "dimension_chain_sign_error",
+            "recess_depth_as_height"
+          ],
+          "confidence": 0.99,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "H-a-b",
+            "inputs": [
+              {
+                "symbol": "H",
+                "value": 66,
+                "drawing_evidence": "A—A 最右侧竖向尺寸66，连接底座最下平面与顶部凸台顶面。"
+              },
+              {
+                "symbol": "a",
+                "value": 26,
+                "drawing_evidence": "竖向尺寸26，连接顶部凸台顶面与右侧凹口的上水平面。"
+              },
+              {
+                "symbol": "b",
+                "value": 10,
+                "drawing_evidence": "竖向尺寸10，连接右侧凹口的上、下两水平面。"
+              }
+            ]
+          }
+        },
+        "blind_audit": {
+          "answer": 30,
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "总高为66，顶面至凹口上平面为26，凹口高10，因此目标平面高度为66−26−10＝30 mm。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 249.09,
+        "observations": 4,
+        "findings": 2,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": 30
+        },
+        "absolute_tolerance": 0.1,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:37:14.888Z",
+          "payload": {
+            "observation_id": "042f1a36a8d24420961bf96ee799604b",
+            "intent": "Inspect the full CAD drawing to understand the layout, views, and dimensions",
+            "source_sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+            "sha256": "4c4f1d445204d6e99887904d72a7f2d6e5c6e3fdc026a175ced74028fcbc856c",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:37:15.975Z",
+          "payload": {
+            "observation_id": "55dfb22fa33e4a11bce6477d83ac92ab",
+            "intent": "Inspect region A showing the A-A cross-section view with the vertical dimension 10 in the notch",
+            "source_sha256": "dea647b73b6c3240ce7f066a511ae30f198a9ca2733e6ed3774f5fb6214cebf5",
+            "sha256": "dea647b73b6c3240ce7f066a511ae30f198a9ca2733e6ed3774f5fb6214cebf5",
+            "crop": null,
+            "dimensions": [
+              587,
+              546
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:38:31.540Z",
+          "payload": {
+            "observation_id": "1ec2e8a0a2e74008bc40299316787db8",
+            "intent": "Read arrow/extension-line alignment for vertical dimensions 26, 10 on the right notch and confirm they share extension lines",
+            "source_sha256": "dea647b73b6c3240ce7f066a511ae30f198a9ca2733e6ed3774f5fb6214cebf5",
+            "sha256": "d8ecb5581ebc3cdee6cc6671ef2e4e2060903824d4fa266575610705895bc40b",
+            "crop": [
+              250,
+              30,
+              460,
+              330
+            ],
+            "dimensions": [
+              210,
+              300
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:38:31.761Z",
+          "payload": {
+            "observation_id": "503ec708fe7f4af7a4e7b74b3dc5a75f",
+            "intent": "Read the far-right vertical dimensions 66 (total) and 14 (base step) and their arrow reference planes relative to the base bottom",
+            "source_sha256": "dea647b73b6c3240ce7f066a511ae30f198a9ca2733e6ed3774f5fb6214cebf5",
+            "sha256": "127df4d210a9e3d740806ea3ebd094bd97968ada52c334c7ead9d7b729f7b0dd",
+            "crop": [
+              440,
+              30,
+              587,
+              545
+            ],
+            "dimensions": [
+              147,
+              515
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:40:43.688Z",
+          "payload": {
+            "observation_id": "1ec2e8a0a2e74008bc40299316787db8",
+            "public_conclusion": "In the A–A section's right-side notch, the vertical dimension 26 runs from the top horizontal face down to the notch ceiling; the vertical dimension 10 spans the notch from that ceiling down to the notch floor. The lower arrow of the \"10\" dimension therefore references the notch floor plane, which lies 26+10 = 36 mm below the top face."
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:40:43.695Z",
+          "payload": {
+            "observation_id": "503ec708fe7f4af7a4e7b74b3dc5a75f",
+            "public_conclusion": "The far-right overall vertical dimension is 66, measured from the same top horizontal face down to the base's lowest horizontal plane. The separate \"14\" dimension is a lower base step and is not the plane asked about."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-15/input-01.png",
+        "assets/drawing-15/input-02.png"
+      ],
+      "asset_base": "assets/drawing-15",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-15/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "d79310d2cb001ad2318dda2e",
+      "sample_id": "drawing-16",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "passage_axis_to_main_bore_axis"
+      },
+      "learner_answer": {
+        "answer": "passage_axis_to_main_bore_axis"
+      },
+      "task_manifest": {
+        "task_id": "drawing-16",
+        "task_type": "dimension_attachment",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-16",
+        "query": "区域 A 中，A—A 剖视图顶部标注12的水平尺寸，表示哪两个要素之间的距离？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "passage_axis_to_main_bore_axis",
+            "label": "左侧细长孔道的轴线与右侧大竖孔的轴线。"
+          },
+          {
+            "value": "outer_left_face_to_main_axis",
+            "label": "凸台左侧外表面与大竖孔的轴线。"
+          },
+          {
+            "value": "adjacent_bore_walls",
+            "label": "两个竖孔彼此相邻的孔壁。"
+          },
+          {
+            "value": "main_bore_diameter",
+            "label": "大竖孔的左右两侧孔壁。"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "pdf-178",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 178,
+        "sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域 A 中，A—A 剖视图顶部标注12的水平尺寸，表示哪两个要素之间的距离？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                619,
+                162,
+                751,
+                335
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "尺寸12左端界线与左侧小孔道中心重合，右端界线与大竖孔中心线重合；两端均未落在孔壁或外表面上。",
+          "expected_answer": "passage_axis_to_main_bore_axis",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "axis_spacing_as_wall_thickness",
+            "dimension_attachment_to_nearest_edge"
+          ],
+          "confidence": 0.99,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "passage_axis_to_main_bore_axis",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "尺寸12的两端尺寸界线分别对准左侧细孔道轴线和右侧大竖孔轴线。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 184.31,
+        "observations": 6,
+        "findings": 2,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "passage_axis_to_main_bore_axis"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:41:28.066Z",
+          "payload": {
+            "observation_id": "ef36c7b6b0004e97a6cfd10bea2b11ff",
+            "intent": "Inspect the A-A section view, focusing on the horizontal dimension labeled 12 at the top, to determine which two features it spans between.",
+            "source_sha256": "940b6f2e6ed04a15c85e9c613d45886db7e2195fdc61a88901578b414cc2f9b4",
+            "sha256": "940b6f2e6ed04a15c85e9c613d45886db7e2195fdc61a88901578b414cc2f9b4",
+            "crop": null,
+            "dimensions": [
+              339,
+              315
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:41:28.342Z",
+          "payload": {
+            "observation_id": "794ca668f8e948398dd1ddcf2091b88c",
+            "intent": "Get overall context of the CAD drawing, locate region A (source pixels 1584,293 to 1923,608) and the A-A section view with dimension 12 at top.",
+            "source_sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+            "sha256": "4c4f1d445204d6e99887904d72a7f2d6e5c6e3fdc026a175ced74028fcbc856c",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:42:05.263Z",
+          "payload": {
+            "observation_id": "e17d3a8c38434fb8b86cffd024de886d",
+            "intent": "Zoom into the top area where the horizontal dimension 12 is shown, to see exactly which features its left and right extension lines align with (centerline of the φ4 slender passage vs centerline of the large vertical bore, or outer faces/walls).",
+            "source_sha256": "940b6f2e6ed04a15c85e9c613d45886db7e2195fdc61a88901578b414cc2f9b4",
+            "sha256": "e93284b7de227ca12d026fd4cf323c30db4a601c8dd47cc4b96052484fc01067",
+            "crop": [
+              100,
+              0,
+              260,
+              130
+            ],
+            "dimensions": [
+              160,
+              130
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:42:21.344Z",
+          "payload": {
+            "observation_id": "8b7242a857f44b58878ba2c8c99f15e1",
+            "intent": "Check where the left extension line of dimension 12 descends: does it align with the centerline of the slender vertical passage (the φ4 feature with cross intersection) or with an outer face?",
+            "source_sha256": "940b6f2e6ed04a15c85e9c613d45886db7e2195fdc61a88901578b414cc2f9b4",
+            "sha256": "5481898e17835816d3731a0ca2049f8812e5a0271dc8cb4d8fbeb853a7c82a38",
+            "crop": [
+              120,
+              20,
+              190,
+              200
+            ],
+            "dimensions": [
+              70,
+              180
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:42:21.502Z",
+          "payload": {
+            "observation_id": "e7eaedeb3f5e4f869d4a1659c7eda82f",
+            "intent": "Check where the right extension line of dimension 12 descends: does it continue as the dash-dot centerline of the large vertical bore on the right?",
+            "source_sha256": "940b6f2e6ed04a15c85e9c613d45886db7e2195fdc61a88901578b414cc2f9b4",
+            "sha256": "98817be5ad3497592ca0b40640cbb1fc04b32d9cb420aac646685cb1b664fbef",
+            "crop": [
+              180,
+              20,
+              250,
+              220
+            ],
+            "dimensions": [
+              70,
+              200
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:43:03.559Z",
+          "payload": {
+            "observation_id": "f0dbd88ef3754424b24219fa8c196efe",
+            "intent": "View the full left structure under the dimension 12: the slender vertical passage walls, the φ4 cross intersection, and the outer left face of the boss, to determine exactly what the left extension line of 12 aligns with.",
+            "source_sha256": "940b6f2e6ed04a15c85e9c613d45886db7e2195fdc61a88901578b414cc2f9b4",
+            "sha256": "3601e149d95299830707b040876323087d8004c7f0f990db288395649e444b77",
+            "crop": [
+              80,
+              20,
+              210,
+              300
+            ],
+            "dimensions": [
+              130,
+              280
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:43:45.038Z",
+          "payload": {
+            "observation_id": "f0dbd88ef3754424b24219fa8c196efe",
+            "public_conclusion": "In region A (A–A section), the left extension line of the top horizontal dimension \"12\" descends through the center of the diamond/cross intersection of the φ4 feature and continues as the centerline of the slender vertical passage, not at any outer face or bore wall."
+          }
+        },
+        {
+          "sequence": 9,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:43:45.047Z",
+          "payload": {
+            "observation_id": "e7eaedeb3f5e4f869d4a1659c7eda82f",
+            "public_conclusion": "The right extension line of dimension \"12\" descends into the large right-hand vertical bore and coincides with its dash-dot centerline (axis), while dimension 26 marks that bore's depth on its right side."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-16/input-01.png",
+        "assets/drawing-16/input-02.png"
+      ],
+      "asset_base": "assets/drawing-16",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-16/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "4fec7e488bf249b1ac61d1e1",
+      "sample_id": "drawing-18",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "insufficient_information"
+      },
+      "learner_answer": {
+        "answer": "insufficient_information"
+      },
+      "task_manifest": {
+        "task_id": "drawing-18",
+        "task_type": "clarification",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-18",
+        "query": "若要给区域 A 的 B—B 视图左右两端 U 形开口安装槽标出精确槽宽，现有图样支持以下哪种结论？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "slot_width_14",
+            "label": "槽宽为14 mm，可直接使用14 H7/h6标注。"
+          },
+          {
+            "value": "slot_width_28",
+            "label": "槽宽为28 mm，可直接使用φ28 H7/m6标注。"
+          },
+          {
+            "value": "pixel_ratio",
+            "label": "可用标注80的底座宽度与图片像素比例换算出精确槽宽。"
+          },
+          {
+            "value": "insufficient_information",
+            "label": "不能唯一确定，需要补充槽宽尺寸或能约束槽宽的零件图。"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "pdf-202",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 202,
+        "sha256": "964f48e97ada053bfa92004c8270356f5dfdedc095310bc4b1bccadafffa1913",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "若要给区域 A 的 B—B 视图左右两端 U 形开口安装槽标出精确槽宽，现有图样支持以下哪种结论？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                124,
+                610,
+                476,
+                906
+              ]
+            },
+            {
+              "label": "B",
+              "bbox": [
+                571,
+                464,
+                754,
+                611
+              ]
+            },
+            {
+              "label": "C",
+              "bbox": [
+                181,
+                177,
+                288,
+                284
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "14 H7/h6附着于底部定位键配合，φ28 H7/m6附着于上部套孔配合；图中没有把安装槽宽与这些尺寸关联的尺寸链，像素比例也不能提供精确槽宽。",
+          "expected_answer": "insufficient_information",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "unrelated_fit_as_slot_width",
+            "pixel_ratio_as_exact_dimension",
+            "unsupported_dimension_inference"
+          ],
+          "confidence": 0.99,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "insufficient_information",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "U形安装槽没有槽宽标注；14 H7/h6标注定位键配合，φ28 H7/m6标注上部圆柱配合，均不限定槽宽。",
+          "ambiguity_notes": "需要补充槽宽尺寸或相关零件图，不能用像素比例获得精确尺寸。"
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 121.31,
+        "observations": 4,
+        "findings": 3,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "insufficient_information"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:44:35.207Z",
+          "payload": {
+            "observation_id": "d759129e73bf4b5fa4d2720a07531c38",
+            "intent": "整体查看工程图，寻找 B—B 剖视图及与区域 A 相关的尺寸标注（特别是 80、14、28 等）。",
+            "source_sha256": "964f48e97ada053bfa92004c8270356f5dfdedc095310bc4b1bccadafffa1913",
+            "sha256": "3658efb981109200967f180d81281203a7f0468d04d05b99641921a467c5711d",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:44:36.329Z",
+          "payload": {
+            "observation_id": "be0325a4659b4761af17c6b684d6c3c8",
+            "intent": "查看区域 A（B—B 视图），检查左右两端 U 形开口安装槽是否有槽宽尺寸标注。",
+            "source_sha256": "0738eb99e3cf337610d7720670d581dfef7508c9a633e66de4d762debe058bf6",
+            "sha256": "0738eb99e3cf337610d7720670d581dfef7508c9a633e66de4d762debe058bf6",
+            "crop": null,
+            "dimensions": [
+              902,
+              537
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:45:23.145Z",
+          "payload": {
+            "observation_id": "50c259ed431045dabcc323cf93e1fc43",
+            "intent": "查看区域 B，确认 80 与 14 H7/h6 标注所指对象（是否为定位键/键槽，而非 B—B 视图两端 U 形安装槽）。",
+            "source_sha256": "12d8cf97c5bd6fbf0643f567eeda63e02b084784a75fffbf26704ef72d1d8325",
+            "sha256": "12d8cf97c5bd6fbf0643f567eeda63e02b084784a75fffbf26704ef72d1d8325",
+            "crop": null,
+            "dimensions": [
+              470,
+              268
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:45:23.285Z",
+          "payload": {
+            "observation_id": "886fb7d92e3f458ab82577e280fbafbd",
+            "intent": "查看区域 C，确认 φ28 H7/m6 标注所指对象（顶尖套与本体孔配合），与 U 形安装槽槽宽无关。",
+            "source_sha256": "c647b81fa55fd6f3da9abae94bdb1afe9fff7fa3ca8e59b1d5bd3c560adfa5fa",
+            "sha256": "c647b81fa55fd6f3da9abae94bdb1afe9fff7fa3ca8e59b1d5bd3c560adfa5fa",
+            "crop": null,
+            "dimensions": [
+              275,
+              195
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:45:41.941Z",
+          "payload": {
+            "observation_id": "be0325a4659b4761af17c6b684d6c3c8",
+            "public_conclusion": "区域 A（B—B 视图）左右两端各有一个 U 形开口安装槽，但该视图内及附近没有任何槽宽尺寸标注。"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:45:41.949Z",
+          "payload": {
+            "observation_id": "50c259ed431045dabcc323cf93e1fc43",
+            "public_conclusion": "A—A 视图底部的 14 H7/h6 标注的是底座中部的定位键/键槽宽度（明细栏第5项：定位键 A 14 h6），80 为底座宽度；二者均不约束 B—B 视图两端 U 形安装槽的槽宽。"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:45:41.956Z",
+          "payload": {
+            "observation_id": "886fb7d92e3f458ab82577e280fbafbd",
+            "public_conclusion": "φ28 H7/m6 为主视图中顶尖套与本体孔的直径配合，与 U 形安装槽槽宽无关。"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-18/input-01.png",
+        "assets/drawing-18/input-02.png",
+        "assets/drawing-18/input-03.png",
+        "assets/drawing-18/input-04.png"
+      ],
+      "asset_base": "assets/drawing-18",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-18/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "ba36ce6101647f2c97b0d2c8",
+      "sample_id": "drawing-19",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "right_axis_lower_end"
+      },
+      "learner_answer": {
+        "answer": "right_axis_lower_end"
+      },
+      "task_manifest": {
+        "task_id": "drawing-19",
+        "task_type": "cross_view",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-19",
+        "query": "区域 A 的右上视图中，最右侧沿水平方向伸出箱体的轴端，在区域 B 的左下剖视图中对应哪一处？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "left_axis_upper_end",
+            "label": "左侧轴线的上端。"
+          },
+          {
+            "value": "right_axis_lower_end",
+            "label": "右侧轴线的下端。"
+          },
+          {
+            "value": "left_axis_lower_end",
+            "label": "左侧轴线的下端。"
+          },
+          {
+            "value": "right_axis_upper_end",
+            "label": "右侧轴线的上端。"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "web-1936-01",
+        "origin": "public_web_drawing",
+        "article_url": "https://xifengboke.com/post/1936.html",
+        "sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+        "dimensions": [
+          919,
+          586
+        ],
+        "rights": {
+          "status": "permission_required",
+          "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+          "training_eligible": false,
+          "redistribution_eligible": false
+        }
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域 A 的右上视图中，最右侧沿水平方向伸出箱体的轴端，在区域 B 的左下剖视图中对应哪一处？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                559,
+                21,
+                919,
+                476
+              ]
+            },
+            {
+              "label": "B",
+              "bbox": [
+                80,
+                481,
+                416,
+                989
+              ]
+            },
+            {
+              "label": "C",
+              "bbox": [
+                82,
+                76,
+                409,
+                385
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "右上图右端为较粗的带键槽伸出轴端，对应左下图右侧轴线向下伸出的同形轴端；左下图左侧向上伸出的较细轴端对应右上图左端。",
+          "expected_answer": "right_axis_lower_end",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "cross_view_direction_swap",
+            "input_output_shaft_swap"
+          ],
+          "confidence": 0.96,
+          "ambiguity_notes": "The source is low resolution; correspondence uses the large shaft outlines and projection layout, without relying on small item numbers.",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "right_axis_lower_end",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.98,
+          "evidence": "右上视图右侧较粗的伸出轴，其轴肩和端部轮廓对应左下剖视图右侧轴线向下伸出的轴端。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 583.94,
+        "observations": 6,
+        "findings": 3,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "right_axis_lower_end"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:46:31.434Z",
+          "payload": {
+            "observation_id": "628f0663d1d44f94bb47ab7f7798bd02",
+            "intent": "Inspect the full drawing to understand all views and layout.",
+            "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+            "sha256": "04b1fc17909c69d4f8ece1bf28f5c422236cd3018cbbb45bdc0a9aeeed03919c",
+            "crop": null,
+            "dimensions": [
+              919,
+              586
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:46:31.582Z",
+          "payload": {
+            "observation_id": "0211ecda2cc74422b9359ad16c54e13c",
+            "intent": "Inspect region A: upper-right view; find the rightmost horizontally protruding shaft end from the box body.",
+            "source_sha256": "18dc78eb7957d0b749180d44bea68d5006b2cb9612c41963c6eccb9685e042f9",
+            "sha256": "18dc78eb7957d0b749180d44bea68d5006b2cb9612c41963c6eccb9685e042f9",
+            "crop": null,
+            "dimensions": [
+              332,
+              267
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:46:31.708Z",
+          "payload": {
+            "observation_id": "f6fec40712f148d0aafb3a33d3505242",
+            "intent": "Inspect region B: lower-left sectional view; identify left/right axis lines and their upper/lower ends.",
+            "source_sha256": "43a865265cf39c2d4d166bd4842593ca303322bdc90b846efcb9c92a01511484",
+            "sha256": "43a865265cf39c2d4d166bd4842593ca303322bdc90b846efcb9c92a01511484",
+            "crop": null,
+            "dimensions": [
+              310,
+              299
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:50:05.260Z",
+          "payload": {
+            "observation_id": "61a80343db624b7e8c15f3355163187f",
+            "intent": "Inspect region C (upper-left main view): locate the two circular bosses and the left/right protruding shaft ends.",
+            "source_sha256": "bdc6c604e45f5ea2d45e399c62a4bfcb4432ce116f1e35cae51cd1dfe1cfa0c0",
+            "sha256": "bdc6c604e45f5ea2d45e399c62a4bfcb4432ce116f1e35cae51cd1dfe1cfa0c0",
+            "crop": null,
+            "dimensions": [
+              301,
+              182
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:50:05.411Z",
+          "payload": {
+            "observation_id": "87d2bac7ab91440a9e2fd3ce12a7713e",
+            "intent": "Crop the left and right protruding shaft ends in region A to compare their shapes.",
+            "source_sha256": "18dc78eb7957d0b749180d44bea68d5006b2cb9612c41963c6eccb9685e042f9",
+            "sha256": "2899fcd3fa9cb07b4688fb6fff5cb3172e8452e9e6cdf2291c0ba921d5b8f358",
+            "crop": [
+              0,
+              90,
+              332,
+              160
+            ],
+            "dimensions": [
+              332,
+              70
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:50:05.534Z",
+          "payload": {
+            "observation_id": "238e1c042ab946848a0e39f17f45be55",
+            "intent": "Crop top and bottom ends of the two vertical axes in region B to identify shaft ends.",
+            "source_sha256": "43a865265cf39c2d4d166bd4842593ca303322bdc90b846efcb9c92a01511484",
+            "sha256": "234456cd9b04e9455ba49f14e30f05523c324fd74872907a351a5a562250391b",
+            "crop": [
+              50,
+              0,
+              260,
+              299
+            ],
+            "dimensions": [
+              210,
+              299
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:55:29.964Z",
+          "payload": {
+            "observation_id": "87d2bac7ab91440a9e2fd3ce12a7713e",
+            "public_conclusion": "In region A (the side/left view at upper right of the drawing), the horizontal shaft line at parting-plane height has two protruding ends: a long thin one on the LEFT and a shorter, thicker stepped one on the RIGHT (rightmost shaft end). A round oil-indicator cover sits lower-center on the box face."
+          }
+        },
+        {
+          "sequence": 9,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:55:29.973Z",
+          "payload": {
+            "observation_id": "238e1c042ab946848a0e39f17f45be55",
+            "public_conclusion": "In region B (horizontal sectional top view), the LEFT vertical axis carries the pinion with a long upward-protruding shaft end (input shaft 23, 6204/Ø20), while the RIGHT vertical axis carries the large gear with a shorter downward-protruding keyed shaft end (output shaft 20, Ø30m6, 6206/Ø62; leaders 18/19/20 point there)."
+          }
+        },
+        {
+          "sequence": 10,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:55:29.982Z",
+          "payload": {
+            "observation_id": "628f0663d1d44f94bb47ab7f7798bd02",
+            "public_conclusion": "Layout is first-angle projection (Chinese GB): region C is the front view, region A on its right is the left view, region B below is the (sectional) top view. Working-principle text: input shaft 23 (belt-driven) and output shaft 20 on 6204/6206 bearings. In the left view, drawing-right corresponds to the object's front side where the output shaft 20 protrudes; this matches the thicker right protrusion (Ø30 output end) vs the thinner left protrusion (input shaft 23 end)."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-19/input-01.png",
+        "assets/drawing-19/input-02.png",
+        "assets/drawing-19/input-03.png",
+        "assets/drawing-19/input-04.png"
+      ],
+      "asset_base": "assets/drawing-19",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-19/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "a0f7ca720c71d1ea085da9ae",
+      "sample_id": "drawing-20",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "shaft_center_spacing"
+      },
+      "learner_answer": {
+        "answer": "shaft_center_spacing"
+      },
+      "task_manifest": {
+        "task_id": "drawing-20",
+        "task_type": "dimension_attachment",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true
+      },
+      "task": {
+        "task_id": "drawing-20",
+        "query": "区域 A 中，左上视图底部标注70的水平尺寸，位于135和180两层尺寸的上方。沿其两端尺寸界线追踪，它限定的是哪段距离？",
+        "answer_format": {
+          "answer": "one option value"
+        },
+        "options": [
+          {
+            "value": "shaft_center_spacing",
+            "label": "左右两根平行轴的轴线间距。"
+          },
+          {
+            "value": "foot_overall_length",
+            "label": "底脚最左端面至最右端面的距离。"
+          },
+          {
+            "value": "right_bearing_outer_diameter",
+            "label": "右侧圆形轴承部位的外径。"
+          },
+          {
+            "value": "shaft_end_to_end_length",
+            "label": "沿同一根轴方向，两端伸出轴端之间的总长。"
+          }
+        ],
+        "unit": "none",
+        "absolute_tolerance": 0
+      },
+      "source": {
+        "source_id": "web-1936-01",
+        "origin": "public_web_drawing",
+        "article_url": "https://xifengboke.com/post/1936.html",
+        "sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+        "dimensions": [
+          919,
+          586
+        ],
+        "rights": {
+          "status": "permission_required",
+          "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+          "training_eligible": false,
+          "redistribution_eligible": false
+        }
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "区域 A 中，左上视图底部标注70的水平尺寸，位于135和180两层尺寸的上方。沿其两端尺寸界线追踪，它限定的是哪段距离？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                108,
+                149,
+                383,
+                464
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "70的左右两端分别与左、右圆形轴位的竖直中心线对齐；最外侧底脚端面之间另标180。",
+          "expected_answer": "shaft_center_spacing",
+          "answer_kind": "choice",
+          "bad_pattern_tags": [
+            "center_distance_as_overall_size",
+            "stacked_dimension_attachment_swap"
+          ],
+          "confidence": 0.98,
+          "ambiguity_notes": "",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "shaft_center_spacing",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "尺寸70两端的尺寸界线分别与左右两个轴承圆形部位的中心线对齐，限定两轴轴线间距。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 245.52,
+        "observations": 9,
+        "findings": 2,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "shaft_center_spacing"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:56:18.596Z",
+          "payload": {
+            "observation_id": "c114f5f0dc754ae499ffdebc821f276e",
+            "intent": "Inspect the overall CAD drawing, find region A (upper-left view) and the horizontal dimension 70 at bottom, above 135 and 180 dimension layers",
+            "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+            "sha256": "04b1fc17909c69d4f8ece1bf28f5c422236cd3018cbbb45bdc0a9aeeed03919c",
+            "crop": null,
+            "dimensions": [
+              919,
+              586
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:56:18.732Z",
+          "payload": {
+            "observation_id": "ac298982c27a452096981bf0d1822aa3",
+            "intent": "Inspect region A: the upper-left view with dimension 70 at bottom, and 135, 180 layers; trace extension lines of the 70 dimension",
+            "source_sha256": "e2b56b6274edbca8b68d773611dba5b65f7ef0fa5a6ecb3080151711c5657e5f",
+            "sha256": "e2b56b6274edbca8b68d773611dba5b65f7ef0fa5a6ecb3080151711c5657e5f",
+            "crop": null,
+            "dimensions": [
+              253,
+              185
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:56:35.227Z",
+          "payload": {
+            "observation_id": "4178ba30630845bf91eb3bd48ac8e590",
+            "intent": "Zoom into bottom dimension lines: trace extension lines of 70, 135, 180 dimensions to see what features they reference",
+            "source_sha256": "e2b56b6274edbca8b68d773611dba5b65f7ef0fa5a6ecb3080151711c5657e5f",
+            "sha256": "818696648898f16a50f4a5a5889c848e9b192e6144bee7cc675918fe610931a8",
+            "crop": [
+              30,
+              120,
+              230,
+              185
+            ],
+            "dimensions": [
+              200,
+              65
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:56:35.408Z",
+          "payload": {
+            "observation_id": "d9d10c5cc0b24981930126a01a1a56a8",
+            "intent": "Zoom into upper-left view bottom dimensions 70/135/180 to trace extension lines upward to features (shaft centerlines vs foot edges)",
+            "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+            "sha256": "acd9f9171abb11622c0f960547d28cffb4154a65f4bdf9f0db793143429d33bd",
+            "crop": [
+              120,
+              200,
+              420,
+              285
+            ],
+            "dimensions": [
+              300,
+              85
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:57:06.925Z",
+          "payload": {
+            "observation_id": "b033a3a10b8943498a0d73aba654539c",
+            "intent": "Trace 70-dimension extension lines from the bottom dimension line upward to see whether they terminate at the two shaft centerlines (circle centers)",
+            "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+            "sha256": "9e29a5957e37161907eebb1377c9c8c0c30d6e1d3ad5b11075dc5578a77fbab4",
+            "crop": [
+              120,
+              60,
+              420,
+              285
+            ],
+            "dimensions": [
+              300,
+              225
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:57:25.787Z",
+          "payload": {
+            "observation_id": "eaeb9d6979414e94a011e118ed077eb8",
+            "intent": "Close-up of the three stacked dimensions 70/135/180 and the vertical extension lines rising from them, to identify which feature each extension line aligns with",
+            "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+            "sha256": "f6e16abf1e8b9ab8209e0b3cce287dcbaa5158ffbf02854aa2ff1b8bc3d66584",
+            "crop": [
+              150,
+              150,
+              400,
+              285
+            ],
+            "dimensions": [
+              250,
+              135
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:57:47.369Z",
+          "payload": {
+            "observation_id": "08c7e77f8ee043b8a490ab7606be8961",
+            "intent": "Full vertical trace: from the two circles' centerlines down to the 70/135/180 dimension lines, to confirm the 70 dimension spans the two shaft axis centerlines",
+            "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+            "sha256": "977c0f58b010a3b1e1078f9954a230ada42b304069c7e19bc20c9952c9cbdad1",
+            "crop": [
+              160,
+              70,
+              390,
+              285
+            ],
+            "dimensions": [
+              230,
+              215
+            ],
+            "image": "receipts/007.png"
+          }
+        },
+        {
+          "sequence": 9,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:58:29.266Z",
+          "payload": {
+            "observation_id": "17c5e453fd8b4b1288c1072031b0c4de",
+            "intent": "Show both circle centerlines (shaft axes) and the dimension extension lines below them, to confirm 70 spans the two shaft centerlines",
+            "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+            "sha256": "7e8c8d5f20632c3fd84b9b85e3ea27225f2f100660975ab74b7e999a644da5ec",
+            "crop": [
+              130,
+              70,
+              320,
+              285
+            ],
+            "dimensions": [
+              190,
+              215
+            ],
+            "image": "receipts/008.png"
+          }
+        },
+        {
+          "sequence": 10,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:58:51.975Z",
+          "payload": {
+            "observation_id": "da94814c4891441294b54bb084865e43",
+            "intent": "Close inspection of the stacked dimension lines: identify the left/right extension line x-positions of the 70 dimension versus the 135 and 180 dimensions",
+            "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+            "sha256": "7222e8826890ec4eb54e783f4d0876f876bc22ae9c12818e06141a55a6a225f3",
+            "crop": [
+              140,
+              195,
+              340,
+              285
+            ],
+            "dimensions": [
+              200,
+              90
+            ],
+            "image": "receipts/009.png"
+          }
+        },
+        {
+          "sequence": 11,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:59:29.222Z",
+          "payload": {
+            "observation_id": "da94814c4891441294b54bb084865e43",
+            "public_conclusion": "In the upper-left front view, three stacked horizontal dimensions appear at the bottom: 70 (innermost/top layer), 135 (middle), 180 (outermost). The 70 dimension's extension lines sit at original-image x≈178 and x≈248."
+          }
+        },
+        {
+          "sequence": 12,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:59:29.240Z",
+          "payload": {
+            "observation_id": "17c5e453fd8b4b1288c1072031b0c4de",
+            "public_conclusion": "The front view shows two circles side by side (the two parallel shafts' gears/bearing seats) with vertical centerlines at original-image x≈182 (left circle) and x≈252 (right circle). These x-positions match the 70-dimension extension lines, so 70 spans the two shaft axis centerlines — the center distance of the gear pair. The 135 and 180 dimensions extend wider, to base bolt-hole/foot edges."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/drawing-20/input-01.png",
+        "assets/drawing-20/input-02.png"
+      ],
+      "asset_base": "assets/drawing-20",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/drawing-20/record.json"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,575 @@
+{
+  "target_id": "28a5b6e4c449a8ad1f6ec782",
+  "sample_id": "hard-20",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": 5
+  },
+  "learner_answer": null,
+  "task_manifest": {
+    "task_id": "hard-20",
+    "task_type": "dimension_chain",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true,
+    "protocol": "boxed-minimal-v1"
+  },
+  "task": {
+    "task_id": "hard-20",
+    "query": "框示两孔壁的最短间距是多少毫米？",
+    "answer_format": {
+      "answer": "number"
+    }
+  },
+  "source": {
+    "source_id": "pdf-178",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 178,
+    "sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "框示两孔壁的最短间距是多少毫米？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            511,
+            663,
+            531,
+            680
+          ]
+        }
+      ],
+      "unit": "mm",
+      "answer_evidence": "框内是C—C中左侧小孔与中央大孔相向孔壁之间的材料桥。两孔分别标注直径4和10；A—A顶部的12尺寸连接对应的两条孔轴线。孔壁最短间距位于连心线上，需从轴线间距扣除两个半径。R6和R11指向外轮廓，不能作为这两处孔壁的半径。",
+      "expected_answer": 5,
+      "answer_kind": "number",
+      "accepted_answers": [],
+      "bad_pattern_tags": [
+        "diameter_as_radius",
+        "center_distance_as_wall_gap",
+        "outer_radius_as_bore_radius",
+        "cross_section_mismatch"
+      ],
+      "confidence": 0.97,
+      "ambiguity_notes": "所求为相向内孔壁之间的最小材料厚度。模型拟议标签，待人工复核。",
+      "derivation": {
+        "expression": "axis_spacing - small_bore_diameter / 2 - large_bore_diameter / 2",
+        "inputs": [
+          {
+            "symbol": "axis_spacing",
+            "value": 12,
+            "drawing_evidence": "A—A顶部12尺寸连接左侧细长孔轴线与中央孔轴线，与C—C的两个孔中心对应。"
+          },
+          {
+            "symbol": "small_bore_diameter",
+            "value": 4,
+            "drawing_evidence": "C—C左上方的φ4引线指向左侧小孔。"
+          },
+          {
+            "symbol": "large_bore_diameter",
+            "value": 10,
+            "drawing_evidence": "C—C右下方的φ10标注中央大孔直径。"
+          }
+        ]
+      }
+    },
+    "blind_audit": {
+      "answer": 5,
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.98,
+      "evidence": "A—A中两孔轴线间距12；C—C中孔径为φ4、φ10，故12−4/2−10/2＝5毫米。",
+      "ambiguity_notes": "指框两侧φ4与φ10孔之间的净壁厚。",
+      "evidence_scope": "multi_dimension",
+      "difficulty_evidence": "需结合中心距12及两个孔径4、10，将孔径换算为半径后从中心距扣除。"
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "timeout",
+    "passed": null,
+    "elapsed_seconds": 600.41,
+    "observations": 20,
+    "findings": 0,
+    "timeout_seconds": 600,
+    "timed_out": true,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": 5
+    },
+    "absolute_tolerance": 0.1,
+    "label_status": "model_proposed_not_gt",
+    "accepted_answers": {
+      "answer": []
+    },
+    "alias_policy": "engineering-line-terms-v1"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:32:47.922Z",
+      "payload": {
+        "observation_id": "9aa02ccafe1442ec9b493fc01ec0005e",
+        "intent": "Inspect the engineering drawing to find the boxed dimension indicating the shortest distance between two hole walls.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:33:32.503Z",
+      "payload": {
+        "observation_id": "9a9ca6331e6a48f0a568053d7e4e234f",
+        "intent": "Look for a highlighted/boxed dimension in the upper-left main view area near M14x1.5-7H and the 0.5 dimension.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "4bc322168f8aa354e73aa111583afb253bb3364b9aeed8778132c181737a4dc3",
+        "crop": [
+          380,
+          130,
+          980,
+          470
+        ],
+        "dimensions": [
+          600,
+          340
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:33:32.645Z",
+      "payload": {
+        "observation_id": "94f002fdc4d24207b94f7482720c92cf",
+        "intent": "Look for a highlighted/boxed dimension in the middle main view area near the side holes (φ12, φ9, φ4) and dimensions 16, 25.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "8de6f367322b95572920fa698d0125edb2c145962738278e634b2bed840194a8",
+        "crop": [
+          200,
+          460,
+          1230,
+          830
+        ],
+        "dimensions": [
+          1030,
+          370
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:33:52.587Z",
+      "payload": {
+        "observation_id": "0f328bdd1d8345639e09394218c9c451",
+        "intent": "Zoom into the left side near the 0.5 dimension and φ12 hole to check for a box drawn around a dimension.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "d2634e7e9cf63c9f89f3e1ebfda9c78b1b0a23f82131e9f82e01e3f507c73ab3",
+        "crop": [
+          380,
+          500,
+          700,
+          640
+        ],
+        "dimensions": [
+          320,
+          140
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:33:52.783Z",
+      "payload": {
+        "observation_id": "559042b3df464518b838d8e1639cd744",
+        "intent": "Zoom into the center area near φ4, φ2, 60° dimensions to check for a boxed dimension.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "340671b3fab85fbcf143df3e92c87fe44aa1648923ca16e91d42d6f72d6f50d2",
+        "crop": [
+          600,
+          560,
+          1000,
+          800
+        ],
+        "dimensions": [
+          400,
+          240
+        ],
+        "image": "receipts/005.png"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:34:16.152Z",
+      "payload": {
+        "observation_id": "c3e8f4c424ad4aa788b13b8735ba7408",
+        "intent": "Scan the A-A section view (upper right) for a boxed dimension; inspect dimensions 12, 26, 10, 14, 4, 66.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "77674cc23ab0ab88e1fe34aff1a23c8a4c7e2e6f5dbf2d24d2a3bfbb4e87939b",
+        "crop": [
+          1040,
+          140,
+          1880,
+          700
+        ],
+        "dimensions": [
+          840,
+          560
+        ],
+        "image": "receipts/006.png"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:34:16.378Z",
+      "payload": {
+        "observation_id": "3958b5ed52d64c46b19cddb2db621dd4",
+        "intent": "Scan the lower part of A-A section for boxed dimensions (M12x1.25, φ60H8, φ72, D).",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "3ec404f3f80458241677f7efc865aa9d383a07fd023866c78de77dc9c79b648e",
+        "crop": [
+          1040,
+          560,
+          1880,
+          840
+        ],
+        "dimensions": [
+          840,
+          280
+        ],
+        "image": "receipts/007.png"
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:34:30.908Z",
+      "payload": {
+        "observation_id": "d68588d2d9764d31b2bee5d2f30b4c03",
+        "intent": "Scan the bottom-left top view for a boxed dimension (17, 22, 45°, ∅72±0.2).",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "8426ca83b96a43b81c29a8025d2bd3d269c2e7cad45628ac249e9f5675dc5b24",
+        "crop": [
+          180,
+          800,
+          1100,
+          1300
+        ],
+        "dimensions": [
+          920,
+          500
+        ],
+        "image": "receipts/008.png"
+      }
+    },
+    {
+      "sequence": 10,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:34:31.035Z",
+      "payload": {
+        "observation_id": "579713c0d5ba4373add0f25517ef915c",
+        "intent": "Scan the C-C section and B1/B2 view in the middle for a boxed dimension (R11, R6, ∅10, ∅4, 2, R14).",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "5266e023a5b3d6faead279e3ae628e33d2b4decc7c754e99dd03be9c5ac18572",
+        "crop": [
+          850,
+          800,
+          1500,
+          1310
+        ],
+        "dimensions": [
+          650,
+          510
+        ],
+        "image": "receipts/009.png"
+      }
+    },
+    {
+      "sequence": 11,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:34:47.090Z",
+      "payload": {
+        "observation_id": "53c7e6cde93f49e58495352096880d2b",
+        "intent": "Zoom into the C-C section to inspect the red box/highlight around the two holes and any associated dimension (R11, R6, φ4, φ10, 2).",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "a39929ce0ec38b4684ebcd39db14668e7f25bd1db65048e5e61b1ccc946b72dc",
+        "crop": [
+          880,
+          830,
+          1420,
+          1060
+        ],
+        "dimensions": [
+          540,
+          230
+        ],
+        "image": "receipts/010.png"
+      }
+    },
+    {
+      "sequence": 12,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:35:03.636Z",
+      "payload": {
+        "observation_id": "89ec748b54f04e309acad9770f7add07",
+        "intent": "Zoom into the C-C section lower area showing the two holes with red highlight, R11, R6, φ4, φ10, dimension 2.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "fa481b2db6bffa55f7dfa5cdad64d7ff2a8e0ea9d7e360e8294c97301c555af7",
+        "crop": [
+          1100,
+          1020,
+          1560,
+          1300
+        ],
+        "dimensions": [
+          460,
+          280
+        ],
+        "image": "receipts/011.png"
+      }
+    },
+    {
+      "sequence": 13,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:35:39.588Z",
+      "payload": {
+        "observation_id": "82059e760e8a4358ba03ba7340f02d21",
+        "intent": "High-zoom on the C-C section: determine what the '2' dimension references, the hole sizes (φ4, φ10), and the red box spanning the two hole walls.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "ba03b03c4733cdd958e78e8d00af055f156a6c253d0959f820cbad642cafe836",
+        "crop": [
+          1140,
+          1040,
+          1480,
+          1260
+        ],
+        "dimensions": [
+          340,
+          220
+        ],
+        "image": "receipts/012.png"
+      }
+    },
+    {
+      "sequence": 14,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:36:54.823Z",
+      "payload": {
+        "observation_id": "305b880eaaaa4fa28f3167bdea74c26e",
+        "intent": "Trace the extension lines of the '2' dimension in C-C section down to the features they reference; inspect the red box between the φ4 hole and the large hole.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "5b6b3ac41d15cfa129af653cb9dcea44e3839415a6f769f780f207759e5e8e5f",
+        "crop": [
+          1230,
+          1050,
+          1420,
+          1330
+        ],
+        "dimensions": [
+          190,
+          280
+        ],
+        "image": "receipts/013.png"
+      }
+    },
+    {
+      "sequence": 15,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:38:32.182Z",
+      "payload": {
+        "observation_id": "7d7dc175d2e64b6694f550c9fa0cd9bd",
+        "intent": "Trace the left extension line of the '2' dimension downward to see which feature it references.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "845b7a43a4fad197933e7b8d9ca6ceaf9f9ef0740781b36bb41a25f4c02e6ddd",
+        "crop": [
+          1320,
+          1060,
+          1370,
+          1260
+        ],
+        "dimensions": [
+          50,
+          200
+        ],
+        "image": "receipts/014.png"
+      }
+    },
+    {
+      "sequence": 16,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:38:32.484Z",
+      "payload": {
+        "observation_id": "f030589118a94f9bb03795b79670feb0",
+        "intent": "Check the φ10 label and leader near the big circle of the C-C section to confirm the big hole diameter.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "3b3e0a2ec30ea17dc1ae584b12e594f4e29bd4a0edf6c42a58cf9de61ff8dc16",
+        "crop": [
+          1380,
+          1150,
+          1620,
+          1330
+        ],
+        "dimensions": [
+          240,
+          180
+        ],
+        "image": "receipts/015.png"
+      }
+    },
+    {
+      "sequence": 17,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:39:02.042Z",
+      "payload": {
+        "observation_id": "c5d41626c77644e3995132510e1f5143",
+        "intent": "Examine the big feature of the C-C section: is it a single hole circle or an annulus (boss with hole)? Check hatching and where R11 and φ10 leaders point.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "a25af95fab63acdcb890228c181f5fec3efebeb9bc7a69653d9a5ba6ac058757",
+        "crop": [
+          1280,
+          1080,
+          1560,
+          1360
+        ],
+        "dimensions": [
+          280,
+          280
+        ],
+        "image": "receipts/016.png"
+      }
+    },
+    {
+      "sequence": 18,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:40:16.903Z",
+      "payload": {
+        "observation_id": "fb444eb794fc411ea5b79d044092d2e5",
+        "intent": "Measure precisely: both hole circles (φ4 and φ10) and the red box between them, for pixel-to-mm scaling.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "67d133ad0a03bc9df2cad1e698911b3a7d203b3b6757160e62356d4abc913ac0",
+        "crop": [
+          1250,
+          1120,
+          1410,
+          1240
+        ],
+        "dimensions": [
+          160,
+          120
+        ],
+        "image": "receipts/017.png"
+      }
+    },
+    {
+      "sequence": 19,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:41:08.926Z",
+      "payload": {
+        "observation_id": "06f5c443d16842b196b8ba0f95c7d27f",
+        "intent": "Inspect the A-A section view around the inclined arm and the C cutting-plane markers to understand the C-C section geometry and the meaning of dimension '2'.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "f8e7511d86673fedfa6d21326886dc9e253f25b3ef65aee6977bb0e3a47055ce",
+        "crop": [
+          1180,
+          180,
+          1700,
+          700
+        ],
+        "dimensions": [
+          520,
+          520
+        ],
+        "image": "receipts/018.png"
+      }
+    },
+    {
+      "sequence": 20,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:41:24.389Z",
+      "payload": {
+        "observation_id": "c730757f4ca94d57835aaba02c16a4be",
+        "intent": "Inspect the A-A section view: the inclined arm from the top boss (width 12, φ4 hole) down to the body; locate C-C cutting plane and related dimensions.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "82137d51910ec1934729a82e66798c33fc6b485f08beca2d5af528a97a271b90",
+        "crop": [
+          1290,
+          180,
+          1900,
+          760
+        ],
+        "dimensions": [
+          610,
+          580
+        ],
+        "image": "receipts/019.png"
+      }
+    },
+    {
+      "sequence": 21,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T14:42:07.669Z",
+      "payload": {
+        "observation_id": "889a1ebf83b74445a4b8dc88ab4ed1d3",
+        "intent": "High-zoom on the '2' dimension in the C-C section to precisely identify its extension line positions.",
+        "source_sha256": "2ed559079ef766c2b75c0e80d85314fe307332cfb48fba44bd98b92e783a95fa",
+        "sha256": "fbeba39db8aad75a41839fd74121abfe5aa6d585e8a79bf0b332f54c874f3a75",
+        "crop": [
+          1300,
+          1050,
+          1410,
+          1130
+        ],
+        "dimensions": [
+          110,
+          80
+        ],
+        "image": "receipts/020.png"
+      }
+    }
+  ],
+  "input_images": [
+    "assets/hard-20/input-01.png"
+  ],
+  "asset_base": "assets/hard-20",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/hard-20/record.json"
+    }
+  ]
+}

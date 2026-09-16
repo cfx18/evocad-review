@@ -1,0 +1,69 @@
+{
+  "input_path": "[private value removed]",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 2283,
+  "operation_manifest": [
+    {
+      "operation_id": "underside_recess",
+      "operation_type": "subtract",
+      "intent": "Cut full-length underside central relief",
+      "parameters": {
+        "width": 27,
+        "depth": 3
+      }
+    },
+    {
+      "operation_id": "end_t_notch",
+      "operation_type": "subtract",
+      "intent": "Cut full-thickness end T-notch",
+      "parameters": {
+        "mouth_width": 11,
+        "mouth_length": 5,
+        "inner_width": 19,
+        "inner_length": 8
+      }
+    },
+    {
+      "operation_id": "four_mounting_holes",
+      "operation_type": "subtract",
+      "intent": "Drill four diameter 3.4 through holes in lower flange",
+      "parameters": {
+        "diameter": 3.4,
+        "centers_xy": [
+          [
+            30,
+            -10
+          ],
+          [
+            30,
+            10
+          ],
+          [
+            45,
+            -10
+          ],
+          [
+            45,
+            10
+          ]
+        ]
+      }
+    },
+    {
+      "operation_id": "m5_blind_hole",
+      "operation_type": "subtract",
+      "intent": "Nominal smooth representation of M5 blind threaded hole",
+      "parameters": {
+        "diameter": 5,
+        "depth": 16,
+        "center_xy": [
+          50,
+          0
+        ],
+        "top_z": 65
+      }
+    }
+  ],
+  "capture_boolean_lineage": false
+}

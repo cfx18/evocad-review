@@ -1,0 +1,38 @@
+{
+  "input_path": "[private value removed]",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 721,
+  "operation_manifest": [
+    {
+      "operation_id": "front_channel_cut",
+      "operation_type": "boolean_subtract",
+      "feature_id": "front_longitudinal_channel",
+      "intent": "Cut full-length11.5 wide front channel6 deep",
+      "parameters": {
+        "x": [
+          5,
+          16.5
+        ],
+        "y": [
+          0,
+          64
+        ],
+        "z": [
+          16.1,
+          22.1
+        ],
+        "width": 11.5,
+        "depth": 6,
+        "expected_volume": 30515.2
+      },
+      "parent_operation_ids": [
+        "body_union"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    }
+  ],
+  "capture_boolean_lineage": true
+}

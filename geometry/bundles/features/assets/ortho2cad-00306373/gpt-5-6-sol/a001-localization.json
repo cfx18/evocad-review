@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 4000,
+  "localized_sample_fraction": 0.0,
+  "region_count": 0,
+  "regions": [],
+  "distance_summary": {
+    "candidate_to_ground_truth": {
+      "p50_normalized": 1e-05,
+      "p95_normalized": 0.004944,
+      "max_normalized": 0.008269,
+      "worst_point_bbox_position": [
+        0.2142,
+        0.0218,
+        0.4693
+      ]
+    },
+    "ground_truth_to_candidate": {
+      "p50_normalized": 1e-05,
+      "p95_normalized": 0.004944,
+      "max_normalized": 0.006091,
+      "worst_point_bbox_position": [
+        0.2375,
+        0.0283,
+        0.4466
+      ]
+    }
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [],
+    "ground_truth_to_candidate": []
+  }
+}

@@ -1,0 +1,7019 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 4000,
+  "localized_sample_fraction": 0.335,
+  "region_count": 5,
+  "regions": [
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 1236,
+      "sample_fraction": 0.309,
+      "estimated_area": 5087.354046,
+      "estimated_area_fraction": 0.309,
+      "centroid": [
+        2.658871,
+        0.186202,
+        25.427446
+      ],
+      "centroid_bbox_position": [
+        0.5332,
+        0.5062,
+        0.8912
+      ],
+      "bbox": {
+        "min": [
+          -39.999999,
+          -13.5,
+          -20.5
+        ],
+        "max": [
+          40.0,
+          13.5,
+          32.5
+        ]
+      },
+      "mean_distance_normalized": 0.022687,
+      "p95_distance_normalized": 0.040824,
+      "max_distance_normalized": 0.046575,
+      "mean_normal_offset_normalized": 0.000856,
+      "mean_normal_disagreement": 0.487511,
+      "dominant_source_normal": [
+        0.2289,
+        0.0399,
+        0.9726
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -39.41453,
+          -13.5,
+          31.209651
+        ],
+        [
+          -23.896463,
+          11.386918,
+          32.5
+        ],
+        [
+          37.0,
+          -3.789886,
+          6.436348
+        ],
+        [
+          7.376643,
+          0.956285,
+          32.5
+        ],
+        [
+          -10.532811,
+          -1.808363,
+          32.5
+        ],
+        [
+          10.980782,
+          -10.0,
+          24.014962
+        ],
+        [
+          -19.283631,
+          10.0,
+          19.059253
+        ],
+        [
+          23.918524,
+          12.462409,
+          24.5
+        ],
+        [
+          -38.71321,
+          -11.11825,
+          32.5
+        ]
+      ],
+      "region_id": "excess-01",
+      "counterpart_region_ids": [
+        "missing-01"
+      ]
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 25,
+      "sample_fraction": 0.00625,
+      "estimated_area": 102.899556,
+      "estimated_area_fraction": 0.00625,
+      "centroid": [
+        -9.521101,
+        14.47388,
+        -24.848295
+      ],
+      "centroid_bbox_position": [
+        0.381,
+        0.9825,
+        0.1177
+      ],
+      "bbox": {
+        "min": [
+          -9.999999,
+          12.925706,
+          -32.5
+        ],
+        "max": [
+          -8.059223,
+          15.0,
+          -20.632894
+        ]
+      },
+      "mean_distance_normalized": 0.01314,
+      "p95_distance_normalized": 0.019,
+      "max_distance_normalized": 0.019473,
+      "mean_normal_offset_normalized": 0.01314,
+      "mean_normal_disagreement": 0.321177,
+      "dominant_source_normal": [
+        -0.7621,
+        0.6448,
+        -0.0586
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -9.999999,
+          13.088335,
+          -29.890797
+        ],
+        [
+          -9.999999,
+          14.95638,
+          -26.281581
+        ],
+        [
+          -9.999999,
+          14.284158,
+          -24.222262
+        ],
+        [
+          -9.999999,
+          14.155842,
+          -23.370577
+        ],
+        [
+          -8.428468,
+          15.0,
+          -21.381548
+        ],
+        [
+          -9.999999,
+          14.42522,
+          -21.410626
+        ],
+        [
+          -9.999999,
+          14.69511,
+          -20.70429
+        ],
+        [
+          -8.34959,
+          15.0,
+          -30.416403
+        ],
+        [
+          -9.999999,
+          13.153748,
+          -27.376967
+        ]
+      ],
+      "region_id": "excess-02"
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 12,
+      "sample_fraction": 0.003,
+      "estimated_area": 49.391787,
+      "estimated_area_fraction": 0.003,
+      "centroid": [
+        -9.682037,
+        -14.286045,
+        -28.223306
+      ],
+      "centroid_bbox_position": [
+        0.379,
+        0.0238,
+        0.0658
+      ],
+      "bbox": {
+        "min": [
+          -9.999999,
+          -15.0,
+          -32.0348
+        ],
+        "max": [
+          -8.393598,
+          -13.161358,
+          -24.349855
+        ]
+      },
+      "mean_distance_normalized": 0.012963,
+      "p95_distance_normalized": 0.017943,
+      "max_distance_normalized": 0.019289,
+      "mean_normal_offset_normalized": 0.012963,
+      "mean_normal_disagreement": 0.292893,
+      "dominant_source_normal": [
+        -0.9487,
+        -0.3162,
+        0.0
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -9.999999,
+          -14.30942,
+          -31.004949
+        ],
+        [
+          -9.999999,
+          -13.648109,
+          -30.070208
+        ],
+        [
+          -9.999999,
+          -13.982957,
+          -32.007553
+        ],
+        [
+          -9.266962,
+          -15.0,
+          -32.0348
+        ],
+        [
+          -9.999999,
+          -13.161358,
+          -27.624038
+        ],
+        [
+          -9.999999,
+          -14.557027,
+          -25.454644
+        ],
+        [
+          -9.999999,
+          -13.673674,
+          -26.135774
+        ],
+        [
+          -9.999999,
+          -13.86549,
+          -25.263477
+        ],
+        [
+          -9.999999,
+          -14.928487,
+          -29.020794
+        ]
+      ],
+      "region_id": "excess-03"
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 1391,
+      "sample_fraction": 0.34775,
+      "estimated_area": 6053.275556,
+      "estimated_area_fraction": 0.34775,
+      "centroid": [
+        3.514162,
+        -0.2894,
+        22.888464
+      ],
+      "centroid_bbox_position": [
+        0.5439,
+        0.4904,
+        0.8521
+      ],
+      "bbox": {
+        "min": [
+          -40.0,
+          -15.0,
+          -19.816894
+        ],
+        "max": [
+          40.0,
+          15.0,
+          32.5
+        ]
+      },
+      "mean_distance_normalized": 0.023046,
+      "p95_distance_normalized": 0.046261,
+      "max_distance_normalized": 0.051232,
+      "mean_normal_offset_normalized": 0.005845,
+      "mean_normal_disagreement": 0.442751,
+      "dominant_source_normal": [
+        0.3103,
+        -0.0154,
+        0.9505
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -37.726341,
+          -14.273659,
+          31.192763
+        ],
+        [
+          -13.38243,
+          15.0,
+          21.23445
+        ],
+        [
+          38.05527,
+          5.455493,
+          29.5
+        ],
+        [
+          40.0,
+          2.513375,
+          -2.667996
+        ],
+        [
+          -33.436175,
+          -12.00822,
+          17.5
+        ],
+        [
+          25.48934,
+          -5.905233,
+          29.5
+        ],
+        [
+          -25.439507,
+          -15.0,
+          19.763865
+        ],
+        [
+          33.352646,
+          15.0,
+          24.610665
+        ],
+        [
+          -37.624102,
+          -14.375898,
+          32.386081
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-1198c1259011",
+          "sample_fraction": 0.263839,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-caf3116c66a9",
+          "sample_fraction": 0.17757,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-52c53a0e38cb",
+          "sample_fraction": 0.174694,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-fa83c247f502",
+          "sample_fraction": 0.127247,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-6df23379faae",
+          "sample_fraction": 0.071891,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-01",
+      "counterpart_region_ids": [
+        "excess-01"
+      ]
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 16,
+      "sample_fraction": 0.004,
+      "estimated_area": 69.6279,
+      "estimated_area_fraction": 0.004,
+      "centroid": [
+        9.959103,
+        0.091495,
+        -13.280288
+      ],
+      "centroid_bbox_position": [
+        0.6245,
+        0.503,
+        0.2957
+      ],
+      "bbox": {
+        "min": [
+          7.932031,
+          -1.999174,
+          -15.795122
+        ],
+        "max": [
+          12.047305,
+          1.919494,
+          -11.650959
+        ]
+      },
+      "mean_distance_normalized": 0.027579,
+      "p95_distance_normalized": 0.041489,
+      "max_distance_normalized": 0.044347,
+      "mean_normal_offset_normalized": -0.027579,
+      "mean_normal_disagreement": 0.682733,
+      "dominant_source_normal": [
+        -0.028,
+        0.0383,
+        -0.9989
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          7.932031,
+          -0.361625,
+          -13.034082
+        ],
+        [
+          9.302342,
+          1.270886,
+          -12.109735
+        ],
+        [
+          8.149919,
+          0.967468,
+          -12.492996
+        ],
+        [
+          10.025699,
+          1.139492,
+          -11.923627
+        ],
+        [
+          11.240423,
+          1.334369,
+          -12.333816
+        ],
+        [
+          12.047305,
+          0.464552,
+          -14.036183
+        ],
+        [
+          10.830652,
+          -1.928094,
+          -15.510748
+        ],
+        [
+          9.332722,
+          -0.648307,
+          -11.797545
+        ],
+        [
+          8.093434,
+          -0.878952,
+          -15.387246
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-4b132484ffc4",
+          "sample_fraction": 0.375,
+          "surface_type": "cone",
+          "reference_radius": 2.1,
+          "semi_angle": 1.029744
+        },
+        {
+          "face_id": "face-23a8c2f3dc40",
+          "sample_fraction": 0.375,
+          "surface_type": "cylinder",
+          "radius": 2.1
+        },
+        {
+          "face_id": "face-3f1022a28f16",
+          "sample_fraction": 0.1875,
+          "surface_type": "cylinder",
+          "radius": 2.1
+        },
+        {
+          "face_id": "face-f155f4259313",
+          "sample_fraction": 0.0625,
+          "surface_type": "cone",
+          "reference_radius": 2.1,
+          "semi_angle": 1.029744
+        }
+      ],
+      "region_id": "missing-02"
+    }
+  ],
+  "distance_summary": {
+    "candidate_to_ground_truth": {
+      "p50_normalized": 0.0,
+      "p95_normalized": 0.027945,
+      "max_normalized": 0.046575,
+      "worst_point_bbox_position": [
+        0.7582,
+        0.1667,
+        0.865
+      ]
+    },
+    "ground_truth_to_candidate": {
+      "p50_normalized": 0.0,
+      "p95_normalized": 0.034907,
+      "max_normalized": 0.051232,
+      "worst_point_bbox_position": [
+        0.0616,
+        1.0,
+        0.7835
+      ]
+    }
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [
+      {
+        "point": [
+          31.340494,
+          -10.0,
+          23.54058
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          33.809812,
+          -10.0,
+          23.692773
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          29.883529,
+          10.0,
+          23.711228
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          19.095865,
+          10.0,
+          22.685319
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          27.152642,
+          10.0,
+          23.635681
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -18.255496,
+          -10.057376,
+          24.5
+        ],
+        "distance_normalized": 0.04604,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.0,
+          -0.991041,
+          32.287336
+        ],
+        "distance_normalized": 0.045414,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.0,
+          -5.294826,
+          32.132523
+        ],
+        "distance_normalized": 0.044605,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -3.413568,
+          -10.340576,
+          24.5
+        ],
+        "distance_normalized": 0.043402,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          26.588729,
+          10.411237,
+          24.5
+        ],
+        "distance_normalized": 0.042744,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          33.941261,
+          10.0,
+          22.058257
+        ],
+        "distance_normalized": 0.04246,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -17.187042,
+          10.535811,
+          24.5
+        ],
+        "distance_normalized": 0.041584,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -16.137411,
+          10.0,
+          22.897643
+        ],
+        "distance_normalized": 0.041334,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          12.941841,
+          10.0,
+          21.897505
+        ],
+        "distance_normalized": 0.040962,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.0,
+          3.632007,
+          31.093434
+        ],
+        "distance_normalized": 0.040107,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          31.82132,
+          -10.0,
+          21.729508
+        ],
+        "distance_normalized": 0.039398,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.0,
+          -0.599746,
+          30.573144
+        ],
+        "distance_normalized": 0.038577,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.0,
+          1.223935,
+          30.157519
+        ],
+        "distance_normalized": 0.03776,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.0,
+          -2.543605,
+          24.50387
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.0,
+          -5.237133,
+          27.779991
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.0,
+          -2.223399,
+          18.778863
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.0,
+          3.221621,
+          17.891797
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.0,
+          3.435864,
+          20.172002
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.0,
+          -2.672678,
+          25.368554
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.0,
+          -3.953047,
+          20.974815
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          17.824587,
+          10.0,
+          21.414959
+        ],
+        "distance_normalized": 0.036468,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          35.845529,
+          -10.0,
+          21.355259
+        ],
+        "distance_normalized": 0.035911,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          10.494136,
+          10.047911,
+          24.5
+        ],
+        "distance_normalized": 0.035345,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -29.183152,
+          3.347057,
+          32.5
+        ],
+        "distance_normalized": 0.034561,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          12.435497,
+          11.395432,
+          24.5
+        ],
+        "distance_normalized": 0.033576,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.253922,
+          10.0,
+          23.035652
+        ],
+        "distance_normalized": 0.033105,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -32.661962,
+          -7.803053,
+          32.5
+        ],
+        "distance_normalized": 0.032106,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -4.895138,
+          10.0,
+          24.052161
+        ],
+        "distance_normalized": 0.031716,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          34.935185,
+          10.0,
+          20.83588
+        ],
+        "distance_normalized": 0.031073,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -3.908279,
+          11.744325,
+          24.5
+        ],
+        "distance_normalized": 0.030326,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -27.898999,
+          7.086911,
+          32.5
+        ],
+        "distance_normalized": 0.029173,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -27.797077,
+          5.065051,
+          32.5
+        ],
+        "distance_normalized": 0.028914,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.929203,
+          -5.5,
+          18.179612
+        ],
+        "distance_normalized": 0.028604,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -23.994961,
+          10.0,
+          20.994988
+        ],
+        "distance_normalized": 0.028377,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -27.352998,
+          7.666369,
+          32.5
+        ],
+        "distance_normalized": 0.028138,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          5.810242,
+          8.706584,
+          32.5
+        ],
+        "distance_normalized": 0.027991,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.0,
+          0.194431,
+          14.488167
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.0,
+          -1.489292,
+          8.313746
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.0,
+          0.519901,
+          2.914206
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.0,
+          -1.951279,
+          -2.021086
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.0,
+          -1.893706,
+          -12.010085
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.0,
+          0.494387,
+          -12.885243
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          16.228512,
+          -4.85831,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          1.960356,
+          -10.154564,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          29.008866,
+          -1.007837,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          1.006167,
+          -3.992316,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          30.256314,
+          8.184537,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          10.774995,
+          -10.312555,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -35.020282,
+          -10.347734,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          39.527429,
+          9.848816,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -13.553487,
+          -0.504368,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          38.806469,
+          -9.93974,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          20.571594,
+          -5.427493,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -24.154514,
+          -0.802926,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          33.463184,
+          -6.596612,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -22.547602,
+          -3.816078,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          6.53906,
+          0.072681,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -15.915831,
+          9.56595,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          32.154604,
+          -0.556242,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.539932,
+          6.705288,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          11.916397,
+          -4.299316,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.33127,
+          2.02616,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          30.711231,
+          3.247717,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -17.702268,
+          5.815076,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -7.419289,
+          -9.629679,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          17.75742,
+          9.198083,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -36.578715,
+          7.133612,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          23.605961,
+          3.704204,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          11.871856,
+          4.392082,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.179273,
+          7.35989,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          9.198008,
+          -8.016026,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          36.737701,
+          -0.338552,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          8.622689,
+          7.43173,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          35.274936,
+          -0.908325,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -3.304242,
+          -6.106999,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.003988,
+          5.549463,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          13.91661,
+          -1.564705,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -35.733601,
+          -5.894309,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -7.144665,
+          -6.325292,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          38.604636,
+          9.713491,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          23.027586,
+          8.94928,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -23.750728,
+          -10.049333,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          7.78764,
+          3.286462,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          34.879942,
+          7.672651,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -24.125431,
+          9.047908,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -17.547576,
+          -8.587715,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -16.488819,
+          -1.720019,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -6.049177,
+          10.305378,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -4.710769,
+          -8.500938,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          22.462086,
+          2.353981,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          27.035452,
+          -6.090431,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -18.131378,
+          -8.675513,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          20.632282,
+          0.565366,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          31.927256,
+          2.472601,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -7.834047,
+          2.585534,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          23.496057,
+          6.891603,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -20.255859,
+          -7.84302,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -36.958674,
+          9.092026,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -1.241733,
+          -2.008024,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          7.427585,
+          9.263953,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          2.192208,
+          -3.332761,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          32.77254,
+          -7.569201,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          8.921652,
+          6.960243,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -16.883346,
+          -2.639484,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          15.009315,
+          0.260642,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          5.41799,
+          -1.265277,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          25.416658,
+          1.090069,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.742579,
+          -0.007645,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          19.386105,
+          -10.03508,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -17.479456,
+          0.052331,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -19.046142,
+          -10.216774,
+          32.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          4.977542,
+          -5.301767,
+          25.163847
+        ],
+        "distance_normalized": 0.027933,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          4.805922,
+          5.315275,
+          23.653906
+        ],
+        "distance_normalized": 0.027843,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -37.157222,
+          -5.5,
+          32.453549
+        ],
+        "distance_normalized": 0.027512,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.053929,
+          -9.946071,
+          24.145692
+        ],
+        "distance_normalized": 0.027442,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          21.786435,
+          -12.076054,
+          24.5
+        ],
+        "distance_normalized": 0.027236,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -37.662374,
+          10.586917,
+          32.5
+        ],
+        "distance_normalized": 0.027135,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -32.110246,
+          -6.218553,
+          17.5
+        ],
+        "distance_normalized": 0.026918,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          32.239225,
+          -10.620705,
+          32.5
+        ],
+        "distance_normalized": 0.02682,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          40.0,
+          2.4094,
+          32.356151
+        ],
+        "distance_normalized": 0.026605,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          5.865504,
+          -5.54272,
+          24.212497
+        ],
+        "distance_normalized": 0.026463,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -37.160441,
+          10.673161,
+          32.5
+        ],
+        "distance_normalized": 0.026332,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.017226,
+          -12.199174,
+          24.5
+        ],
+        "distance_normalized": 0.026089,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.0,
+          -2.218136,
+          -9.277725
+        ],
+        "distance_normalized": 0.025913,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -13.968631,
+          10.74855,
+          32.5
+        ],
+        "distance_normalized": 0.02563,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -35.372823,
+          -12.274709,
+          24.5
+        ],
+        "distance_normalized": 0.025386,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          3.837223,
+          5.76435,
+          24.1274
+        ],
+        "distance_normalized": 0.02508,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          4.260483,
+          -10.839799,
+          32.5
+        ],
+        "distance_normalized": 0.02478,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.356708,
+          -9.643292,
+          24.067934
+        ],
+        "distance_normalized": 0.024622,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -36.280557,
+          12.005222,
+          24.5
+        ],
+        "distance_normalized": 0.024464,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -36.588693,
+          11.567517,
+          24.5
+        ],
+        "distance_normalized": 0.024288,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -18.362836,
+          10.907711,
+          32.5
+        ],
+        "distance_normalized": 0.024147,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          40.0,
+          7.731124,
+          32.076749
+        ],
+        "distance_normalized": 0.024002,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -5.733387,
+          10.158104,
+          24.5
+        ],
+        "distance_normalized": 0.023937,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          6.269225,
+          -10.944909,
+          32.5
+        ],
+        "distance_normalized": 0.0238,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          14.277572,
+          -12.479963,
+          24.5
+        ],
+        "distance_normalized": 0.023474,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          28.830391,
+          -10.0,
+          19.998411
+        ],
+        "distance_normalized": 0.023273,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.537095,
+          -9.462905,
+          21.580943
+        ],
+        "distance_normalized": 0.022942,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -11.445551,
+          -6.115359,
+          20.472148
+        ],
+        "distance_normalized": 0.022778,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.229224,
+          5.484871,
+          27.076127
+        ],
+        "distance_normalized": 0.022578,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          22.11039,
+          10.0,
+          19.90619
+        ],
+        "distance_normalized": 0.022413,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          5.567956,
+          5.400861,
+          27.107896
+        ],
+        "distance_normalized": 0.022282,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          9.068933,
+          10.0,
+          22.63255
+        ],
+        "distance_normalized": 0.022066,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          21.550791,
+          -10.0,
+          19.840349
+        ],
+        "distance_normalized": 0.0218,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          40.0,
+          -4.393948,
+          31.810299
+        ],
+        "distance_normalized": 0.02152,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.727488,
+          10.727465,
+          24.5
+        ],
+        "distance_normalized": 0.021168,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          24.853021,
+          -10.0,
+          19.748444
+        ],
+        "distance_normalized": 0.020944,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -32.775937,
+          -5.5,
+          20.369872
+        ],
+        "distance_normalized": 0.020717,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.512795,
+          -2.789838,
+          17.5
+        ],
+        "distance_normalized": 0.020588,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          6.605333,
+          6.446993,
+          25.179314
+        ],
+        "distance_normalized": 0.020482,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -35.319949,
+          -11.322243,
+          32.5
+        ],
+        "distance_normalized": 0.020286,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          18.959237,
+          -11.351737,
+          32.5
+        ],
+        "distance_normalized": 0.020011,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.367619,
+          -6.539586,
+          26.069306
+        ],
+        "distance_normalized": 0.019808,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.0,
+          2.891467,
+          13.268918
+        ],
+        "distance_normalized": 0.019641,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -11.641704,
+          -6.578424,
+          24.857587
+        ],
+        "distance_normalized": 0.01952,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          14.95638,
+          -26.281581
+        ],
+        "distance_normalized": 0.019473,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          5.94629,
+          -5.592225,
+          19.570866
+        ],
+        "distance_normalized": 0.01929,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          -14.928487,
+          -29.020794
+        ],
+        "distance_normalized": 0.019289,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -9.890685,
+          15.0,
+          -21.152792
+        ],
+        "distance_normalized": 0.01904,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -6.259112,
+          10.0,
+          22.037014
+        ],
+        "distance_normalized": 0.019011,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          14.860011,
+          -29.433558
+        ],
+        "distance_normalized": 0.018838,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          40.0,
+          10.218681,
+          31.517155
+        ],
+        "distance_normalized": 0.01879,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          25.129408,
+          -12.999191,
+          24.5
+        ],
+        "distance_normalized": 0.018637,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          6.443507,
+          -7.887978,
+          31.486295
+        ],
+        "distance_normalized": 0.018502,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -28.951967,
+          -4.379877,
+          17.5
+        ],
+        "distance_normalized": 0.018182,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -32.951435,
+          -11.433352,
+          24.5
+        ],
+        "distance_normalized": 0.018009,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          26.151762,
+          -10.0,
+          19.418723
+        ],
+        "distance_normalized": 0.017873,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          14.69511,
+          -20.70429
+        ],
+        "distance_normalized": 0.017752,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -23.015657,
+          11.596683,
+          32.5
+        ],
+        "distance_normalized": 0.017729,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          6.686376,
+          -6.826894,
+          26.829267
+        ],
+        "distance_normalized": 0.01764,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          11.811983,
+          -11.622003,
+          32.5
+        ],
+        "distance_normalized": 0.017493,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          1.763045,
+          11.482639,
+          24.5
+        ],
+        "distance_normalized": 0.017333,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          6.80039,
+          -13.157613,
+          24.5
+        ],
+        "distance_normalized": 0.017162,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.708505,
+          14.865986,
+          -32.5
+        ],
+        "distance_normalized": 0.016957,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          37.0,
+          -3.179818,
+          4.782005
+        ],
+        "distance_normalized": 0.016955,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -29.126954,
+          7.690103,
+          17.5
+        ],
+        "distance_normalized": 0.016859,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          -14.557027,
+          -25.454644
+        ],
+        "distance_normalized": 0.016842,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -9.999999,
+          14.526769,
+          -27.177082
+        ],
+        "distance_normalized": 0.016643,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          38.224282,
+          -2.793323,
+          17.5
+        ],
+        "distance_normalized": 0.016541,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          14.338227,
+          11.761989,
+          32.5
+        ],
+        "distance_normalized": 0.016189,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          3.302387,
+          -7.030338,
+          27.168633
+        ],
+        "distance_normalized": 0.016028,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          14.42522,
+          -21.410626
+        ],
+        "distance_normalized": 0.015974,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -9.419957,
+          15.0,
+          -20.632894
+        ],
+        "distance_normalized": 0.015939,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -2.961391,
+          11.793826,
+          32.5
+        ],
+        "distance_normalized": 0.015893,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.409332,
+          15.0,
+          -24.786273
+        ],
+        "distance_normalized": 0.015869,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          37.0,
+          -3.317433,
+          11.231112
+        ],
+        "distance_normalized": 0.015673,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -19.747397,
+          -10.0,
+          19.174825
+        ],
+        "distance_normalized": 0.015601,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -6.79643,
+          -11.000815,
+          24.5
+        ],
+        "distance_normalized": 0.015428,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.589301,
+          12.085759,
+          24.5
+        ],
+        "distance_normalized": 0.015314,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          -14.30942,
+          -31.004949
+        ],
+        "distance_normalized": 0.015211,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          37.0,
+          3.368305,
+          -9.162465
+        ],
+        "distance_normalized": 0.015199,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          -14.306022,
+          -26.020088
+        ],
+        "distance_normalized": 0.015189,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -9.999999,
+          14.290532,
+          -22.208413
+        ],
+        "distance_normalized": 0.015087,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -9.999999,
+          14.284158,
+          -24.222262
+        ],
+        "distance_normalized": 0.015045,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -9.266962,
+          -15.0,
+          -32.0348
+        ],
+        "distance_normalized": 0.014932,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          8.293696,
+          10.0,
+          23.952829
+        ],
+        "distance_normalized": 0.014845,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          3.859228,
+          13.416307,
+          24.5
+        ],
+        "distance_normalized": 0.014752,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -22.114081,
+          10.0,
+          19.078139
+        ],
+        "distance_normalized": 0.0147,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.227412,
+          15.0,
+          -24.930148
+        ],
+        "distance_normalized": 0.014671,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -2.815911,
+          11.932961,
+          32.5
+        ],
+        "distance_normalized": 0.014597,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          24.178018,
+          13.450161,
+          24.5
+        ],
+        "distance_normalized": 0.014437,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.0,
+          3.459779,
+          1.294289
+        ],
+        "distance_normalized": 0.014347,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          14.155842,
+          -23.370577
+        ],
+        "distance_normalized": 0.0142,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -11.678617,
+          -7.267826,
+          23.414487
+        ],
+        "distance_normalized": 0.014039,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          34.720021,
+          -13.5,
+          25.858944
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          22.815761,
+          -13.5,
+          25.937966
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          31.294955,
+          -13.5,
+          25.272011
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          9.776145,
+          -13.5,
+          25.362587
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          15.447466,
+          -13.5,
+          26.920177
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -4.446652,
+          -13.5,
+          27.481818
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.593349,
+          -13.5,
+          25.455393
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -11.100188,
+          -13.5,
+          26.221279
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          13.375331,
+          -13.5,
+          26.621036
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          5.04083,
+          -13.5,
+          24.594453
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          5.699869,
+          -13.5,
+          26.791075
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -23.249864,
+          -13.5,
+          25.79816
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -10.254454,
+          -13.5,
+          26.23963
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          4.911533,
+          13.5,
+          26.888453
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          22.921752,
+          13.5,
+          26.044458
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          6.046191,
+          13.5,
+          26.695297
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          12.26812,
+          13.5,
+          27.480333
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -3.634883,
+          13.5,
+          26.649143
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          34.9346,
+          13.5,
+          27.837961
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -7.719349,
+          13.5,
+          25.549575
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          9.883634,
+          13.5,
+          26.360595
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.255228,
+          13.5,
+          26.385162
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          20.088974,
+          13.5,
+          24.777336
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -31.846929,
+          13.5,
+          25.398287
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -25.640491,
+          13.5,
+          26.428788
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -19.054874,
+          13.5,
+          27.171041
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -32.676774,
+          13.5,
+          27.519496
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          5.213133,
+          -10.0,
+          21.398119
+        ],
+        "distance_normalized": 0.013846,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.06832,
+          15.0,
+          -21.016534
+        ],
+        "distance_normalized": 0.013623,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          40.0,
+          -1.108289,
+          30.947324
+        ],
+        "distance_normalized": 0.013482,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          30.120127,
+          12.081822,
+          32.5
+        ],
+        "distance_normalized": 0.01321,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          4.255524,
+          -8.526021,
+          30.909775
+        ],
+        "distance_normalized": 0.01314,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.987429,
+          15.0,
+          -21.151311
+        ],
+        "distance_normalized": 0.013091,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -9.999999,
+          -13.982957,
+          -32.007553
+        ],
+        "distance_normalized": 0.013061,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          37.498458,
+          12.115191,
+          32.5
+        ],
+        "distance_normalized": 0.012899,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          40.0,
+          -2.082158,
+          30.861335
+        ],
+        "distance_normalized": 0.012681,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.887657,
+          15.0,
+          -32.369564
+        ],
+        "distance_normalized": 0.012433,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -2.136338,
+          -12.169698,
+          32.5
+        ],
+        "distance_normalized": 0.012392,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          -13.86549,
+          -25.263477
+        ],
+        "distance_normalized": 0.012287,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          39.180681,
+          -11.319319,
+          30.814849
+        ],
+        "distance_normalized": 0.012248,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          5.420014,
+          -10.0,
+          18.093921
+        ],
+        "distance_normalized": 0.011919,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.666888,
+          -5.337056,
+          28.236649
+        ],
+        "distance_normalized": 0.011768,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          3.308437,
+          7.107206,
+          28.248225
+        ],
+        "distance_normalized": 0.01166,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          6.608114,
+          7.546295,
+          23.160567
+        ],
+        "distance_normalized": 0.011493,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -10.479744,
+          -10.0,
+          21.04722
+        ],
+        "distance_normalized": 0.011363,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.0,
+          3.801584,
+          -8.771757
+        ],
+        "distance_normalized": 0.011163,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          -13.673674,
+          -26.135774
+        ],
+        "distance_normalized": 0.011024,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -7.708048,
+          -11.741113,
+          24.5
+        ],
+        "distance_normalized": 0.010976,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          -13.648109,
+          -30.070208
+        ],
+        "distance_normalized": 0.010856,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          32.724718,
+          -13.5,
+          28.344578
+        ],
+        "distance_normalized": 0.010763,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.360656,
+          -13.041568,
+          24.5
+        ],
+        "distance_normalized": 0.010524,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.590956,
+          15.0,
+          -22.844944
+        ],
+        "distance_normalized": 0.010479,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -3.900309,
+          13.5,
+          28.381588
+        ],
+        "distance_normalized": 0.010418,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -33.895025,
+          -6.835837,
+          17.5
+        ],
+        "distance_normalized": 0.010293,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.0,
+          3.911001,
+          -16.511617
+        ],
+        "distance_normalized": 0.010144,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.523897,
+          -15.0,
+          -29.693489
+        ],
+        "distance_normalized": 0.010037,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -3.710068,
+          -13.5,
+          28.425142
+        ],
+        "distance_normalized": 0.010012,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -10.171088,
+          5.313465,
+          18.563426
+        ],
+        "distance_normalized": 0.009906,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.769602,
+          12.730398,
+          25.6009
+        ],
+        "distance_normalized": 0.00988,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          37.0,
+          -3.951919,
+          16.566266
+        ],
+        "distance_normalized": 0.009763,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -39.999999,
+          12.906402,
+          30.317214
+        ],
+        "distance_normalized": 0.009674,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.428468,
+          15.0,
+          -21.381548
+        ],
+        "distance_normalized": 0.009409,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          38.991956,
+          -11.508044,
+          26.877241
+        ],
+        "distance_normalized": 0.00939,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          13.42421,
+          -23.392217
+        ],
+        "distance_normalized": 0.009381,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          6.490199,
+          -6.188214,
+          18.500695
+        ],
+        "distance_normalized": 0.009321,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -39.689383,
+          5.5,
+          30.495072
+        ],
+        "distance_normalized": 0.009269,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.393598,
+          -15.0,
+          -24.349855
+        ],
+        "distance_normalized": 0.009179,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          40.0,
+          -7.823289,
+          30.471304
+        ],
+        "distance_normalized": 0.009048,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.34959,
+          15.0,
+          -30.416403
+        ],
+        "distance_normalized": 0.008889,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -8.732575,
+          -8.125573,
+          30.438111
+        ],
+        "distance_normalized": 0.008738,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          34.240826,
+          10.0,
+          18.425925
+        ],
+        "distance_normalized": 0.008625,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -39.41453,
+          -13.5,
+          31.209651
+        ],
+        "distance_normalized": 0.008519,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -7.400307,
+          -10.0,
+          20.826416
+        ],
+        "distance_normalized": 0.008381,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          39.119932,
+          7.880068,
+          18.431536
+        ],
+        "distance_normalized": 0.008198,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -10.354306,
+          10.760041,
+          24.5
+        ],
+        "distance_normalized": 0.00802,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          13.194993,
+          -23.221744
+        ],
+        "distance_normalized": 0.007871,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.889564,
+          13.5,
+          28.665497
+        ],
+        "distance_normalized": 0.007773,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          2.475652,
+          10.0,
+          21.083532
+        ],
+        "distance_normalized": 0.007679,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          -13.161358,
+          -27.624038
+        ],
+        "distance_normalized": 0.007649,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -8.576413,
+          7.920485,
+          19.923271
+        ],
+        "distance_normalized": 0.007644,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          13.153748,
+          -27.376967
+        ],
+        "distance_normalized": 0.007599,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -37.364512,
+          13.5,
+          26.685983
+        ],
+        "distance_normalized": 0.007479,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -39.999999,
+          13.117328,
+          28.235898
+        ],
+        "distance_normalized": 0.007359,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          13.088335,
+          -29.890797
+        ],
+        "distance_normalized": 0.007168,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -27.762866,
+          5.998763,
+          17.5
+        ],
+        "distance_normalized": 0.007106,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.059223,
+          15.0,
+          -24.105034
+        ],
+        "distance_normalized": 0.006977,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          40.0,
+          -10.424681,
+          30.246912
+        ],
+        "distance_normalized": 0.006957,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -7.566311,
+          10.0,
+          19.086057
+        ],
+        "distance_normalized": 0.006834,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -37.483115,
+          13.5,
+          25.441943
+        ],
+        "distance_normalized": 0.006698,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -8.649088,
+          -8.027822,
+          21.624589
+        ],
+        "distance_normalized": 0.006437,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          6.699699,
+          -7.003832,
+          30.170988
+        ],
+        "distance_normalized": 0.00625,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -3.429299,
+          -10.0,
+          18.155721
+        ],
+        "distance_normalized": 0.006108,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -9.999999,
+          12.925706,
+          -25.229813
+        ],
+        "distance_normalized": 0.006097,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          40.0,
+          -2.33233,
+          30.14603
+        ],
+        "distance_normalized": 0.006018,
+        "region_id": "excess-01"
+      }
+    ],
+    "ground_truth_to_candidate": [
+      {
+        "point": [
+          -35.070264,
+          15.0,
+          18.428933
+        ],
+        "distance_normalized": 0.051232,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -32.583397,
+          15.0,
+          18.64571
+        ],
+        "distance_normalized": 0.046892,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -29.8257,
+          -15.0,
+          19.547863
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          28.416843,
+          -15.0,
+          18.90818
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          19.204225,
+          -15.0,
+          19.472662
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.596244,
+          -15.0,
+          19.296474
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          13.816721,
+          -15.0,
+          18.942802
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          29.149143,
+          -15.0,
+          17.688213
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          33.965014,
+          -15.0,
+          18.801916
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          22.894177,
+          -15.0,
+          18.285913
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          30.637716,
+          -15.0,
+          18.297496
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -28.77673,
+          15.0,
+          19.493999
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          13.011484,
+          15.0,
+          18.091012
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -12.334174,
+          15.0,
+          17.997904
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -12.250434,
+          15.0,
+          18.279461
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          27.669919,
+          15.0,
+          18.901171
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          21.145191,
+          15.0,
+          18.763251
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          8.185593,
+          15.0,
+          18.772104
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          32.661149,
+          15.0,
+          19.207173
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          15.138441,
+          15.0,
+          19.335392
+        ],
+        "distance_normalized": 0.046575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -25.439507,
+          -15.0,
+          19.763865
+        ],
+        "distance_normalized": 0.046277,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -26.324545,
+          15.0,
+          19.818528
+        ],
+        "distance_normalized": 0.045791,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.343647,
+          14.893725,
+          17.5
+        ],
+        "distance_normalized": 0.045585,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.028619,
+          14.866315,
+          17.5
+        ],
+        "distance_normalized": 0.045329,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -9.486797,
+          15.0,
+          19.909069
+        ],
+        "distance_normalized": 0.044989,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -17.907296,
+          14.803685,
+          17.5
+        ],
+        "distance_normalized": 0.044746,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.699455,
+          -15.0,
+          19.979908
+        ],
+        "distance_normalized": 0.044362,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          10.643178,
+          0.2391,
+          -11.650959
+        ],
+        "distance_normalized": 0.044347,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -21.501273,
+          14.732452,
+          17.5
+        ],
+        "distance_normalized": 0.044082,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          24.020246,
+          -15.0,
+          20.044781
+        ],
+        "distance_normalized": 0.043789,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          30.729418,
+          -14.629532,
+          17.5
+        ],
+        "distance_normalized": 0.043124,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -36.175731,
+          -15.0,
+          20.135298
+        ],
+        "distance_normalized": 0.042991,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.27434,
+          -15.0,
+          20.183034
+        ],
+        "distance_normalized": 0.042571,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -15.910744,
+          14.540963,
+          17.5
+        ],
+        "distance_normalized": 0.042299,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.021308,
+          15.0,
+          20.221546
+        ],
+        "distance_normalized": 0.042232,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -25.12065,
+          15.0,
+          20.314881
+        ],
+        "distance_normalized": 0.041412,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -18.714057,
+          -15.0,
+          20.396772
+        ],
+        "distance_normalized": 0.040695,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.332722,
+          -0.648307,
+          -11.797545
+        ],
+        "distance_normalized": 0.040536,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -15.749804,
+          14.335052,
+          17.5
+        ],
+        "distance_normalized": 0.040381,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.677443,
+          -14.295344,
+          17.5
+        ],
+        "distance_normalized": 0.040011,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          15.044334,
+          14.245069,
+          17.5
+        ],
+        "distance_normalized": 0.039543,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          8.869441,
+          15.0,
+          20.563021
+        ],
+        "distance_normalized": 0.039244,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          27.396159,
+          -14.18738,
+          17.5
+        ],
+        "distance_normalized": 0.039005,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          24.07848,
+          15.0,
+          20.624768
+        ],
+        "distance_normalized": 0.038707,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -15.185393,
+          14.123223,
+          17.5
+        ],
+        "distance_normalized": 0.038408,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.386754,
+          14.070639,
+          17.5
+        ],
+        "distance_normalized": 0.037918,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          8.149919,
+          0.967468,
+          -12.492996
+        ],
+        "distance_normalized": 0.037325,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -27.0,
+          -2.698844,
+          24.470545
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.0,
+          -2.227383,
+          24.793234
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.0,
+          4.462222,
+          21.931224
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.0,
+          5.41786,
+          26.307322
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.0,
+          2.390193,
+          27.337816
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.0,
+          3.464426,
+          26.262647
+        ],
+        "distance_normalized": 0.03726,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          38.221352,
+          13.778648,
+          18.202469
+        ],
+        "distance_normalized": 0.036991,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          13.967489,
+          -15.0,
+          20.873141
+        ],
+        "distance_normalized": 0.036559,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.183614,
+          -9.5,
+          28.609971
+        ],
+        "distance_normalized": 0.036235,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.082366,
+          -15.0,
+          20.925011
+        ],
+        "distance_normalized": 0.036113,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          10.025699,
+          1.139492,
+          -11.923627
+        ],
+        "distance_normalized": 0.03596,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          13.192766,
+          15.0,
+          20.98659
+        ],
+        "distance_normalized": 0.035585,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          4.545285,
+          -15.0,
+          21.037758
+        ],
+        "distance_normalized": 0.035147,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -33.147356,
+          13.572328,
+          17.5
+        ],
+        "distance_normalized": 0.034953,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          15.9563,
+          -13.737634,
+          17.5
+        ],
+        "distance_normalized": 0.034816,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.302342,
+          1.270886,
+          -12.109735
+        ],
+        "distance_normalized": 0.034736,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          11.929791,
+          -0.827479,
+          -12.796506
+        ],
+        "distance_normalized": 0.034498,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -5.112579,
+          -13.699093,
+          17.5
+        ],
+        "distance_normalized": 0.034457,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.240423,
+          1.334369,
+          -12.333816
+        ],
+        "distance_normalized": 0.034145,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          15.483467,
+          15.0,
+          21.161382
+        ],
+        "distance_normalized": 0.034094,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          38.879949,
+          13.120051,
+          19.770971
+        ],
+        "distance_normalized": 0.033931,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -13.38243,
+          15.0,
+          21.23445
+        ],
+        "distance_normalized": 0.033474,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -19.705739,
+          13.572492,
+          17.5
+        ],
+        "distance_normalized": 0.033277,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.460049,
+          -12.539951,
+          19.152376
+        ],
+        "distance_normalized": 0.032937,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.579973,
+          12.420027,
+          18.936151
+        ],
+        "distance_normalized": 0.032933,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          13.507535,
+          -13.518353,
+          17.5
+        ],
+        "distance_normalized": 0.032773,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -26.732952,
+          -13.496643,
+          17.5
+        ],
+        "distance_normalized": 0.032571,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          7.932031,
+          -0.361625,
+          -13.034082
+        ],
+        "distance_normalized": 0.032285,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          13.670019,
+          13.456201,
+          17.5
+        ],
+        "distance_normalized": 0.032194,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -21.961366,
+          13.418014,
+          17.5
+        ],
+        "distance_normalized": 0.031839,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.519762,
+          -13.407831,
+          17.5
+        ],
+        "distance_normalized": 0.031744,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.0,
+          -5.313659,
+          29.114316
+        ],
+        "distance_normalized": 0.031537,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.365598,
+          1.621204,
+          -12.285047
+        ],
+        "distance_normalized": 0.031473,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          25.30607,
+          15.0,
+          21.493052
+        ],
+        "distance_normalized": 0.031301,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -25.870721,
+          -13.321791,
+          17.5
+        ],
+        "distance_normalized": 0.030942,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          6.648855,
+          -15.0,
+          21.570663
+        ],
+        "distance_normalized": 0.030656,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          10.696484,
+          15.0,
+          21.59933
+        ],
+        "distance_normalized": 0.030418,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -35.0,
+          8.737962,
+          27.972459
+        ],
+        "distance_normalized": 0.030161,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -22.174961,
+          15.0,
+          21.673711
+        ],
+        "distance_normalized": 0.029805,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -10.151881,
+          -13.163508,
+          17.5
+        ],
+        "distance_normalized": 0.029468,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          29.568437,
+          15.0,
+          21.738858
+        ],
+        "distance_normalized": 0.02927,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.707365,
+          -13.108531,
+          17.5
+        ],
+        "distance_normalized": 0.028956,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.148946,
+          1.919494,
+          -12.973449
+        ],
+        "distance_normalized": 0.028695,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -32.029188,
+          15.0,
+          21.810095
+        ],
+        "distance_normalized": 0.028689,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          22.920795,
+          -13.066343,
+          17.5
+        ],
+        "distance_normalized": 0.028563,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          35.084418,
+          -13.062305,
+          17.5
+        ],
+        "distance_normalized": 0.028525,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          24.324457,
+          15.0,
+          21.840371
+        ],
+        "distance_normalized": 0.028443,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -29.450364,
+          15.0,
+          21.863834
+        ],
+        "distance_normalized": 0.028253,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -39.498901,
+          -12.501099,
+          20.304515
+        ],
+        "distance_normalized": 0.027955,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          10.64118,
+          -1.999174,
+          -12.954378
+        ],
+        "distance_normalized": 0.027952,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          40.0,
+          -0.152726,
+          14.097519
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -4.760527,
+          8.818136
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          2.770678,
+          12.8092
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          1.385143,
+          13.073485
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -3.356304,
+          8.536208
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -4.119236,
+          8.874471
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          1.906637,
+          10.579222
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          2.131675,
+          -1.145139
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          2.778263,
+          3.356103
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -3.80325,
+          -0.702988
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          2.513375,
+          -2.667996
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -2.564945,
+          3.21481
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          4.303654,
+          -9.413034
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          3.806687,
+          -0.954989
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -0.45498,
+          -3.226871
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -2.232178,
+          -3.955574
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -1.657104,
+          -14.255963
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -0.82992,
+          -13.696794
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          4.872422,
+          -16.758033
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -3.485083,
+          -9.600446
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          1.020819,
+          -16.764673
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          27.688819,
+          -5.246321,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          15.095288,
+          1.766908,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          21.382378,
+          1.505055,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -17.418836,
+          -1.936063,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          20.382936,
+          -1.219569,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -25.830098,
+          -5.273137,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -19.235191,
+          -4.175328,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          25.140568,
+          1.144685,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -5.568693,
+          -0.330313,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          21.465055,
+          4.600665,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -15.522173,
+          -5.97063,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          18.285586,
+          -6.472251,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -14.895894,
+          -7.589897,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          21.078655,
+          -3.784223,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          30.998357,
+          -4.992864,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          34.756209,
+          -9.385318,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -3.582008,
+          -7.89942,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          21.739939,
+          9.701992,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          32.64014,
+          3.405563,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.797299,
+          8.568379,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -21.815309,
+          10.419633,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          26.879671,
+          3.561661,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -19.744904,
+          -7.732694,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -25.318572,
+          4.313501,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -24.33574,
+          0.147353,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          25.815692,
+          -8.996389,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          21.83228,
+          9.496,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          29.992357,
+          2.957663,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          23.881783,
+          -5.847711,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          15.68261,
+          0.09838,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.485486,
+          1.64864,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          15.185217,
+          -7.121024,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -14.456383,
+          -0.871311,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          3.602775,
+          1.005963,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -6.789281,
+          2.326355,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -3.744715,
+          -3.322153,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -15.874652,
+          3.32707,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          27.725921,
+          10.088325,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.783191,
+          -0.862603,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          29.170504,
+          7.548155,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -9.241262,
+          0.007608,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -33.18972,
+          -9.60491,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          5.180932,
+          2.222558,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          24.819546,
+          -0.463116,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -25.601538,
+          -10.418398,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          7.800862,
+          -2.152203,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -20.389553,
+          9.624906,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -4.143267,
+          -1.243981,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          25.407472,
+          3.931623,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          10.639295,
+          0.109682,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -19.245004,
+          0.143657,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -23.322442,
+          -6.801237,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          31.573893,
+          -6.030815,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          20.591257,
+          0.865769,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -17.241522,
+          -9.485032,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -16.903887,
+          2.522754,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -26.682941,
+          2.753989,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          31.71747,
+          -10.295668,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          34.502247,
+          9.197813,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          31.194865,
+          -1.908631,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          20.215733,
+          8.427306,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -20.5984,
+          -9.239681,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -6.769251,
+          2.964527,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          23.378455,
+          3.351472,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          16.639865,
+          0.36553,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.440695,
+          8.159689,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          16.387552,
+          3.866571,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -24.189516,
+          -4.824384,
+          29.5
+        ],
+        "distance_normalized": 0.027945,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          37.011581,
+          3.400906,
+          29.5
+        ],
+        "distance_normalized": 0.027837,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          36.773139,
+          -9.513733,
+          29.5
+        ],
+        "distance_normalized": 0.02775,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -14.757615,
+          10.562857,
+          29.5
+        ],
+        "distance_normalized": 0.027359,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -7.691572,
+          -3.002558,
+          29.5
+        ],
+        "distance_normalized": 0.027197,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -36.976391,
+          15.0,
+          21.999934
+        ],
+        "distance_normalized": 0.027158,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -29.628315,
+          15.0,
+          22.033948
+        ],
+        "distance_normalized": 0.026887,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.78128,
+          12.875596,
+          17.5
+        ],
+        "distance_normalized": 0.026786,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          11.462711,
+          21.733007
+        ],
+        "distance_normalized": 0.026543,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.82149,
+          5.0,
+          4.59413
+        ],
+        "distance_normalized": 0.026282,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          21.800507,
+          10.730745,
+          29.5
+        ],
+        "distance_normalized": 0.025795,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -32.006109,
+          -9.5,
+          27.239238
+        ],
+        "distance_normalized": 0.025516,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.636581,
+          6.285581,
+          29.5
+        ],
+        "distance_normalized": 0.025351,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.696363,
+          -5.0,
+          -7.132666
+        ],
+        "distance_normalized": 0.025116,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -22.376165,
+          12.673784,
+          17.5
+        ],
+        "distance_normalized": 0.024906,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.641938,
+          -5.0,
+          -3.055163
+        ],
+        "distance_normalized": 0.024609,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -36.456196,
+          15.0,
+          22.341785
+        ],
+        "distance_normalized": 0.024482,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          28.147461,
+          15.0,
+          22.378422
+        ],
+        "distance_normalized": 0.024203,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          10.647237,
+          20.960119
+        ],
+        "distance_normalized": 0.024023,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -10.724799,
+          -12.565254,
+          17.5
+        ],
+        "distance_normalized": 0.023895,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -5.831432,
+          6.164093,
+          29.5
+        ],
+        "distance_normalized": 0.023789,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.015368,
+          10.967385,
+          29.5
+        ],
+        "distance_normalized": 0.023591,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -24.761094,
+          -10.980946,
+          29.5
+        ],
+        "distance_normalized": 0.023465,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          18.59265,
+          -12.506872,
+          17.5
+        ],
+        "distance_normalized": 0.023351,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.0,
+          5.667174,
+          19.97873
+        ],
+        "distance_normalized": 0.023089,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          12.047305,
+          0.464552,
+          -14.036183
+        ],
+        "distance_normalized": 0.02295,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -19.935074,
+          -11.071711,
+          29.5
+        ],
+        "distance_normalized": 0.022619,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -28.026933,
+          -15.0,
+          22.609767
+        ],
+        "distance_normalized": 0.022478,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          14.681676,
+          11.118813,
+          29.5
+        ],
+        "distance_normalized": 0.022181,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.118071,
+          11.134515,
+          29.5
+        ],
+        "distance_normalized": 0.022034,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.359241,
+          -5.0,
+          -3.768539
+        ],
+        "distance_normalized": 0.021976,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          28.104467,
+          12.349139,
+          17.5
+        ],
+        "distance_normalized": 0.021882,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.336355,
+          -5.0,
+          -7.992456
+        ],
+        "distance_normalized": 0.021763,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.320689,
+          -5.0,
+          -14.866275
+        ],
+        "distance_normalized": 0.021617,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -34.23793,
+          9.5,
+          26.804779
+        ],
+        "distance_normalized": 0.021469,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.276098,
+          5.0,
+          -9.947556
+        ],
+        "distance_normalized": 0.021202,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -13.935231,
+          -6.660655,
+          29.5
+        ],
+        "distance_normalized": 0.021005,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          22.081792,
+          15.0,
+          22.826075
+        ],
+        "distance_normalized": 0.020937,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          3.125341,
+          15.0,
+          22.834054
+        ],
+        "distance_normalized": 0.020882,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          31.186039,
+          11.284833,
+          29.5
+        ],
+        "distance_normalized": 0.020634,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.183658,
+          -5.0,
+          -0.841992
+        ],
+        "distance_normalized": 0.020341,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -3.81097,
+          -18.327183
+        ],
+        "distance_normalized": 0.02024,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          14.850339,
+          -11.35967,
+          29.5
+        ],
+        "distance_normalized": 0.019937,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -24.521817,
+          11.369288,
+          29.5
+        ],
+        "distance_normalized": 0.019847,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -6.688565,
+          -15.0,
+          23.008011
+        ],
+        "distance_normalized": 0.019707,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -33.646499,
+          -11.594567,
+          17.5
+        ],
+        "distance_normalized": 0.019511,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          3.344686,
+          -10.384953,
+          28.203635
+        ],
+        "distance_normalized": 0.019267,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -25.647396,
+          11.442213,
+          29.5
+        ],
+        "distance_normalized": 0.019168,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.500805,
+          -12.055308,
+          17.5
+        ],
+        "distance_normalized": 0.019145,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.701229,
+          -15.0,
+          23.110023
+        ],
+        "distance_normalized": 0.019049,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          5.886819,
+          -11.465108,
+          29.5
+        ],
+        "distance_normalized": 0.018955,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -13.416343,
+          8.458977,
+          29.5
+        ],
+        "distance_normalized": 0.018815,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -28.15468,
+          -15.0,
+          23.181518
+        ],
+        "distance_normalized": 0.018603,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.13846,
+          -11.993503,
+          17.5
+        ],
+        "distance_normalized": 0.018569,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -26.062173,
+          -11.522584,
+          29.5
+        ],
+        "distance_normalized": 0.018419,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          12.125736,
+          11.959162,
+          17.5
+        ],
+        "distance_normalized": 0.018249,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          38.05527,
+          5.455493,
+          29.5
+        ],
+        "distance_normalized": 0.018115,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -6.513758,
+          -11.581706,
+          29.5
+        ],
+        "distance_normalized": 0.017869,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          20.683112,
+          -11.901593,
+          17.5
+        ],
+        "distance_normalized": 0.017713,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -4.007712,
+          -15.0,
+          23.378569
+        ],
+        "distance_normalized": 0.017446,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.0,
+          -4.761313,
+          19.369661
+        ],
+        "distance_normalized": 0.017416,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -12.876311,
+          4.933273,
+          29.5
+        ],
+        "distance_normalized": 0.017157,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -30.561246,
+          -15.0,
+          23.458412
+        ],
+        "distance_normalized": 0.017011,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          23.832925,
+          -15.0,
+          23.478297
+        ],
+        "distance_normalized": 0.016906,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -9.428266,
+          15.0,
+          23.481026
+        ],
+        "distance_normalized": 0.016891,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          27.341976,
+          -15.0,
+          23.505916
+        ],
+        "distance_normalized": 0.016762,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          7.918745,
+          8.877706,
+          29.5
+        ],
+        "distance_normalized": 0.016534,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          20.961741,
+          15.0,
+          23.560203
+        ],
+        "distance_normalized": 0.016488,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -22.011325,
+          -11.765047,
+          17.5
+        ],
+        "distance_normalized": 0.016441,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -11.70979,
+          11.759092,
+          17.5
+        ],
+        "distance_normalized": 0.016386,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -9.181257,
+          3.658366,
+          29.5
+        ],
+        "distance_normalized": 0.016261,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          38.728647,
+          5.0,
+          0.606555
+        ],
+        "distance_normalized": 0.016102,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          17.575235,
+          11.780476,
+          29.5
+        ],
+        "distance_normalized": 0.016017,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -19.279215,
+          -11.70343,
+          17.5
+        ],
+        "distance_normalized": 0.015867,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          6.308139,
+          11.694526,
+          17.5
+        ],
+        "distance_normalized": 0.015784,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          7.915517,
+          -8.712398,
+          29.5
+        ],
+        "distance_normalized": 0.015704,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          4.692075,
+          -11.671601,
+          22.492249
+        ],
+        "distance_normalized": 0.015571,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          6.78555,
+          -15.0,
+          23.793281
+        ],
+        "distance_normalized": 0.015446,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.314293,
+          15.0,
+          23.813466
+        ],
+        "distance_normalized": 0.015366,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          12.568418,
+          15.0,
+          23.82448
+        ],
+        "distance_normalized": 0.015324,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -18.042912,
+          15.0,
+          23.873921
+        ],
+        "distance_normalized": 0.015141,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          3.307303,
+          9.846015,
+          27.934067
+        ],
+        "distance_normalized": 0.015056,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -5.396105,
+          15.0,
+          23.9651
+        ],
+        "distance_normalized": 0.014834,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          15.78823,
+          -15.0,
+          23.989088
+        ],
+        "distance_normalized": 0.014761,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          8.078942,
+          5.890284,
+          29.5
+        ],
+        "distance_normalized": 0.014667,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          38.549225,
+          5.0,
+          -6.382584
+        ],
+        "distance_normalized": 0.014431,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -10.733214,
+          -11.533174,
+          19.573324
+        ],
+        "distance_normalized": 0.014281,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.993546,
+          15.0,
+          24.235048
+        ],
+        "distance_normalized": 0.014189,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -7.190471,
+          -11.516856,
+          17.5
+        ],
+        "distance_normalized": 0.014129,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.135811,
+          15.0,
+          24.366141
+        ],
+        "distance_normalized": 0.014028,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -30.843582,
+          -15.0,
+          24.406197
+        ],
+        "distance_normalized": 0.014,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          30.115043,
+          11.501391,
+          17.5
+        ],
+        "distance_normalized": 0.013985,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          20.147493,
+          -15.0,
+          32.298624
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          28.153218,
+          -15.0,
+          30.652755
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          32.586619,
+          -15.0,
+          31.261177
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          26.141671,
+          -15.0,
+          31.785571
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          36.233376,
+          -15.0,
+          30.100561
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          20.553105,
+          -15.0,
+          27.854661
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -9.64366,
+          -15.0,
+          28.987901
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -8.143154,
+          -15.0,
+          31.354521
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -18.363619,
+          -15.0,
+          29.831256
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -3.701027,
+          -15.0,
+          31.487161
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.676362,
+          -15.0,
+          31.036122
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -15.817867,
+          -15.0,
+          29.089742
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          36.699485,
+          -15.0,
+          24.875188
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -9.464084,
+          -15.0,
+          30.054188
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.349018,
+          -15.0,
+          30.872324
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          25.990655,
+          -15.0,
+          25.711791
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          27.906678,
+          -15.0,
+          28.1182
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          13.198053,
+          -15.0,
+          30.509243
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -28.390416,
+          -15.0,
+          30.957353
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -21.140338,
+          -15.0,
+          24.564016
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -29.155691,
+          -15.0,
+          26.014206
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -7.427026,
+          -15.0,
+          26.656226
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.926814,
+          -15.0,
+          24.945676
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.271699,
+          -15.0,
+          25.71845
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -19.814348,
+          -15.0,
+          30.656731
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -6.333198,
+          -15.0,
+          28.745235
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -35.316953,
+          -15.0,
+          30.708841
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -23.098054,
+          -15.0,
+          30.89074
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -7.852371,
+          -15.0,
+          28.249484
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.058004,
+          -15.0,
+          27.924575
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -17.583391,
+          -15.0,
+          25.397943
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -17.913242,
+          -15.0,
+          28.213038
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -18.969301,
+          -15.0,
+          24.567461
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -3.883525,
+          -15.0,
+          26.583174
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -32.047937,
+          -15.0,
+          32.474821
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -34.149325,
+          -15.0,
+          32.198046
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -24.785132,
+          -15.0,
+          28.338725
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.824893,
+          -15.0,
+          28.402929
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -20.02085,
+          -15.0,
+          25.48441
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          34.879438,
+          15.0,
+          31.171738
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          33.650987,
+          15.0,
+          32.0404
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          30.955775,
+          15.0,
+          30.083397
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          15.048864,
+          15.0,
+          29.051659
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          22.489398,
+          15.0,
+          30.562523
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          24.448734,
+          15.0,
+          30.289249
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.747032,
+          15.0,
+          30.713098
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          24.505549,
+          15.0,
+          31.230422
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          9.848049,
+          15.0,
+          27.7569
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.479621,
+          15.0,
+          30.010241
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.217732,
+          15.0,
+          27.941972
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -8.52438,
+          15.0,
+          29.1389
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -13.155777,
+          15.0,
+          31.796632
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -7.32423,
+          15.0,
+          25.883557
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          13.433453,
+          15.0,
+          24.659767
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          12.701409,
+          15.0,
+          28.011854
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          10.854302,
+          15.0,
+          32.216815
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          33.459948,
+          15.0,
+          27.058054
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          10.351812,
+          15.0,
+          27.643701
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -4.448045,
+          15.0,
+          30.610229
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.572724,
+          15.0,
+          26.234221
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -5.449358,
+          15.0,
+          30.849162
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -19.159916,
+          15.0,
+          29.444689
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          10.205651,
+          15.0,
+          24.91124
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.564028,
+          15.0,
+          26.474353
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          26.407427,
+          15.0,
+          26.803136
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -22.063756,
+          15.0,
+          30.892091
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          5.518762,
+          15.0,
+          30.088662
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          4.096281,
+          15.0,
+          25.639579
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.58609,
+          15.0,
+          26.281203
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -9.141789,
+          15.0,
+          27.73802
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -35.989658,
+          15.0,
+          30.159854
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -31.657169,
+          15.0,
+          24.888729
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -23.743151,
+          15.0,
+          28.518044
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -26.39425,
+          15.0,
+          31.47437
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -10.375822,
+          15.0,
+          28.414608
+        ],
+        "distance_normalized": 0.013972,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          38.499328,
+          5.0,
+          -18.826257
+        ],
+        "distance_normalized": 0.013966,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          3.273283,
+          9.672295,
+          29.5
+        ],
+        "distance_normalized": 0.013842,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -16.045537,
+          11.461806,
+          17.5
+        ],
+        "distance_normalized": 0.013617,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          5.880697,
+          -11.453485,
+          22.104502
+        ],
+        "distance_normalized": 0.013539,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.64319,
+          -14.943448,
+          32.5
+        ],
+        "distance_normalized": 0.013446,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -32.746071,
+          -11.212151,
+          17.5
+        ],
+        "distance_normalized": 0.013263,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -30.192606,
+          14.893496,
+          32.5
+        ],
+        "distance_normalized": 0.01298,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          31.870532,
+          12.126737,
+          29.5
+        ],
+        "distance_normalized": 0.012792,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -40.0,
+          10.854345,
+          20.339996
+        ],
+        "distance_normalized": 0.012616,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          17.280703,
+          -14.82116,
+          32.5
+        ],
+        "distance_normalized": 0.012307,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          38.292827,
+          -5.0,
+          14.979015
+        ],
+        "distance_normalized": 0.012043,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          12.658621,
+          -14.773661,
+          32.5
+        ],
+        "distance_normalized": 0.011864,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          22.089479,
+          -11.258791,
+          17.5
+        ],
+        "distance_normalized": 0.011726,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -39.757646,
+          -12.242354,
+          23.260898
+        ],
+        "distance_normalized": 0.011542,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          3.366637,
+          -9.530509,
+          25.634561
+        ],
+        "distance_normalized": 0.011437,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -28.703028,
+          14.710871,
+          32.5
+        ],
+        "distance_normalized": 0.011279,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          38.193483,
+          -5.0,
+          2.092125
+        ],
+        "distance_normalized": 0.011117,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          37.367585,
+          14.632415,
+          29.408844
+        ],
+        "distance_normalized": 0.01109,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -34.452198,
+          12.318736,
+          29.5
+        ],
+        "distance_normalized": 0.011003,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -29.674317,
+          -9.5,
+          25.55325
+        ],
+        "distance_normalized": 0.01086,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          12.145409,
+          11.135281,
+          17.5
+        ],
+        "distance_normalized": 0.010575,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          38.120891,
+          5.0,
+          -17.815308
+        ],
+        "distance_normalized": 0.010441,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          8.093434,
+          -0.878952,
+          -15.387246
+        ],
+        "distance_normalized": 0.010365,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -10.631269,
+          -14.60278,
+          32.5
+        ],
+        "distance_normalized": 0.010272,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          8.730678,
+          -1.67215,
+          -15.40317
+        ],
+        "distance_normalized": 0.010217,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -16.587121,
+          -14.58543,
+          32.5
+        ],
+        "distance_normalized": 0.010111,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.739434,
+          12.435206,
+          29.5
+        ],
+        "distance_normalized": 0.009918,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          38.828185,
+          -13.171815,
+          24.850996
+        ],
+        "distance_normalized": 0.00988,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          37.996662,
+          14.003338,
+          28.795228
+        ],
+        "distance_normalized": 0.00988,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.358456,
+          12.641544,
+          26.392395
+        ],
+        "distance_normalized": 0.00988,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.233383,
+          11.046656,
+          17.5
+        ],
+        "distance_normalized": 0.00975,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -7.639283,
+          -14.529857,
+          32.5
+        ],
+        "distance_normalized": 0.009593,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -38.062576,
+          10.52463,
+          17.5
+        ],
+        "distance_normalized": 0.009544,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -28.096554,
+          11.003439,
+          17.5
+        ],
+        "distance_normalized": 0.009347,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          10.830652,
+          -1.928094,
+          -15.510748
+        ],
+        "distance_normalized": 0.009215,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -8.612936,
+          10.982043,
+          22.494472
+        ],
+        "distance_normalized": 0.009148,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          7.089978,
+          -8.656388,
+          29.5
+        ],
+        "distance_normalized": 0.009037,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          6.496976,
+          9.194769,
+          26.608805
+        ],
+        "distance_normalized": 0.008931,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -31.056088,
+          10.933581,
+          17.5
+        ],
+        "distance_normalized": 0.008696,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          6.431351,
+          10.916234,
+          20.326315
+        ],
+        "distance_normalized": 0.008535,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -8.562853,
+          10.907261,
+          19.297528
+        ],
+        "distance_normalized": 0.008451,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -38.656954,
+          12.608969,
+          29.5
+        ],
+        "distance_normalized": 0.0083,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -8.543209,
+          9.124293,
+          27.37909
+        ],
+        "distance_normalized": 0.008175,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -11.736495,
+          27.552883
+        ],
+        "distance_normalized": 0.008144,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          34.484969,
+          -14.350506,
+          32.5
+        ],
+        "distance_normalized": 0.007922,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          29.103538,
+          -10.821727,
+          17.5
+        ],
+        "distance_normalized": 0.007654,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          0.051534,
+          -19.689533
+        ],
+        "distance_normalized": 0.007549,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -8.139158,
+          20.640303
+        ],
+        "distance_normalized": 0.007503,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          6.500574,
+          9.201788,
+          23.174551
+        ],
+        "distance_normalized": 0.007435,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.849515,
+          -10.783056,
+          17.5
+        ],
+        "distance_normalized": 0.007294,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -36.086741,
+          -12.725123,
+          29.5
+        ],
+        "distance_normalized": 0.007218,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          6.513695,
+          -10.772619,
+          18.834343
+        ],
+        "distance_normalized": 0.007197,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          34.654346,
+          10.757698,
+          17.5
+        ],
+        "distance_normalized": 0.007058,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.245539,
+          8.036627,
+          29.5
+        ],
+        "distance_normalized": 0.007028,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -11.382919,
+          9.012191,
+          29.419889
+        ],
+        "distance_normalized": 0.006926,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          39.264241,
+          3.136019,
+          29.5
+        ],
+        "distance_normalized": 0.006854,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -40.0,
+          -10.219218,
+          19.599085
+        ],
+        "distance_normalized": 0.006699,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.0,
+          -6.975227,
+          18.217273
+        ],
+        "distance_normalized": 0.006681,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          11.931753,
+          0.823131,
+          -15.795122
+        ],
+        "distance_normalized": 0.006566,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -8.451484,
+          -9.299784,
+          23.951075
+        ],
+        "distance_normalized": 0.006522,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          40.0,
+          -4.493847,
+          -19.816894
+        ],
+        "distance_normalized": 0.006363,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -27.0,
+          8.975561,
+          18.16355
+        ],
+        "distance_normalized": 0.006181,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -13.536042,
+          10.654048,
+          17.5
+        ],
+        "distance_normalized": 0.006092,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -17.407051,
+          -10.649276,
+          17.5
+        ],
+        "distance_normalized": 0.006048,
+        "region_id": "missing-01"
+      }
+    ]
+  }
+}

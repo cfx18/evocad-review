@@ -1,0 +1,6609 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.050575,
+  "region_count": 10,
+  "regions": [
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 995,
+      "sample_fraction": 0.04975,
+      "estimated_area": 0.042157,
+      "estimated_area_fraction": 0.04975,
+      "centroid": [
+        0.000308,
+        0.055599,
+        0.148274
+      ],
+      "centroid_bbox_position": [
+        0.5012,
+        0.0741,
+        0.1998
+      ],
+      "bbox": {
+        "min": [
+          -0.064491,
+          -0.0,
+          0.013005
+        ],
+        "max": [
+          0.06451,
+          0.125889,
+          0.297517
+        ]
+      },
+      "mean_distance_normalized": 0.013959,
+      "p95_distance_normalized": 0.022582,
+      "max_distance_normalized": 0.028471,
+      "mean_normal_offset_normalized": 0.006238,
+      "mean_normal_disagreement": 0.406203,
+      "dominant_source_normal": [
+        -0.0289,
+        -0.9503,
+        0.3099
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.056475,
+          0.116208,
+          0.074513
+        ],
+        [
+          0.03125,
+          0.037328,
+          0.231875
+        ],
+        [
+          -0.012337,
+          0.012655,
+          0.111089
+        ],
+        [
+          -0.01131,
+          0.022919,
+          0.225301
+        ],
+        [
+          0.03125,
+          0.02556,
+          0.221561
+        ],
+        [
+          0.023649,
+          0.022628,
+          0.087768
+        ],
+        [
+          0.039042,
+          0.099055,
+          0.070313
+        ],
+        [
+          -0.000958,
+          0.078744,
+          0.138405
+        ],
+        [
+          -0.058368,
+          0.118479,
+          0.098398
+        ]
+      ],
+      "region_id": "excess-01",
+      "counterpart_region_ids": [
+        "missing-01"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f36",
+          "face_fingerprint": "ac5713a905a93f4b6c5436890a94b53443d515b62d422e5242b0ddef2ff4bb93",
+          "surface_type": "cylinder",
+          "area": 0.021215467376145998,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f36",
+            "entity_handle": "4F9",
+            "face_id": "f36",
+            "face_fingerprint": "ac5713a905a93f4b6c5436890a94b53443d515b62d422e5242b0ddef2ff4bb93",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 2.8e-05,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f21",
+          "face_fingerprint": "0ea0b6df6be9fb2281c98c3e6c927200ca85a512a133213c22a0496c886a9367",
+          "surface_type": "plane",
+          "area": 0.14249867316314685,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f21",
+            "entity_handle": "4F9",
+            "face_id": "f21",
+            "face_fingerprint": "0ea0b6df6be9fb2281c98c3e6c927200ca85a512a133213c22a0496c886a9367",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f25",
+          "face_fingerprint": "41286cdb84f4ef51c40fc2f0076a1d648f1ccede36784b8f1181d8ff3863ad03",
+          "surface_type": "plane",
+          "area": 0.004154891576403921,
+          "aligned_bounds": {
+            "min": [
+              0.06250149999999999,
+              0.08593650000000008,
+              0.07031150000000008
+            ],
+            "max": [
+              0.10156399999999999,
+              0.13281250000000008,
+              0.13840400000000008
+            ]
+          },
+          "bbox_distance_normalized": 0.0,
+          "bbox_overlap": 0.043823,
+          "boolean_lineage": {
+            "node_id": "4F9:f25",
+            "entity_handle": "4F9",
+            "face_id": "f25",
+            "face_fingerprint": "41286cdb84f4ef51c40fc2f0076a1d648f1ccede36784b8f1181d8ff3863ad03",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f22",
+          "face_fingerprint": "92b5954f4737e007fac21142f6e6c8137f1c4b2c2a178f418ad5b6852792a9d5",
+          "surface_type": "plane",
+          "area": 0.04724119140625,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f22",
+            "entity_handle": "4F9",
+            "face_id": "f22",
+            "face_fingerprint": "92b5954f4737e007fac21142f6e6c8137f1c4b2c2a178f418ad5b6852792a9d5",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f29",
+          "face_fingerprint": "a1e335720cd02961e4896bf53a42595901a3a6e7f652a65e45892d4f6fa79c25",
+          "surface_type": "plane",
+          "area": 0.00048828125,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f29",
+            "entity_handle": "4F9",
+            "face_id": "f29",
+            "face_fingerprint": "a1e335720cd02961e4896bf53a42595901a3a6e7f652a65e45892d4f6fa79c25",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-4F9-f36",
+          "kind": "boss_candidate",
+          "confidence": "medium",
+          "entity_handle": "4F9",
+          "face_ids": [
+            "f36"
+          ],
+          "face_fingerprints": [
+            "ac5713a905a93f4b6c5436890a94b53443d515b62d422e5242b0ddef2ff4bb93"
+          ],
+          "parameters": {
+            "radius": 0.14538806625029443,
+            "axis": [
+              0,
+              -1,
+              -2.2204460492503126e-16
+            ],
+            "origin": [
+              0.15081899999999995,
+              0.031249999999999965,
+              0.15625
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a011_interpolate_connector_upper",
+          "intent": "Move only the short lower-forward connector upper endpoint to the midpoint bracketed by the a010 under-advance and a008 over-advance, preserving its lower attachment and all adjacent geometry.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "old_upper_point": [
+              0.671875,
+              0.0703125
+            ],
+            "new_upper_point": [
+              0.6796875,
+              0.0703125
+            ],
+            "width": 0.0625,
+            "preserved_bridge_end": 0.671875
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward",
+            "a008_advance_connector_upper"
+          ]
+        },
+        {
+          "operation_id": "a011_final_union",
+          "intent": "Fuse the preserved a010 geometry and isolated connector refinement into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_housing_center": [
+              0.150819,
+              0.15625
+            ],
+            "preserved_housing_radius": 0.145388,
+            "preserved_shoulder_end_width": 0.140625
+          },
+          "parent_operation_ids": [
+            "a011_interpolate_connector_upper"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 80,
+      "sample_fraction": 0.004,
+      "estimated_area": 0.00339,
+      "estimated_area_fraction": 0.004,
+      "centroid": [
+        0.000949,
+        0.639476,
+        0.037756
+      ],
+      "centroid_bbox_position": [
+        0.5036,
+        0.8526,
+        0.0509
+      ],
+      "bbox": {
+        "min": [
+          -0.03125,
+          0.617188,
+          0.006577
+        ],
+        "max": [
+          0.03125,
+          0.679608,
+          0.070313
+        ]
+      },
+      "mean_distance_normalized": 0.010718,
+      "p95_distance_normalized": 0.019603,
+      "max_distance_normalized": 0.021176,
+      "mean_normal_offset_normalized": -0.003847,
+      "mean_normal_disagreement": 0.608379,
+      "dominant_source_normal": [
+        0.0,
+        0.8195,
+        -0.573
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.03125,
+          0.660569,
+          0.05627
+        ],
+        [
+          -0.008712,
+          0.660104,
+          0.055496
+        ],
+        [
+          0.011216,
+          0.662465,
+          0.057283
+        ],
+        [
+          0.012166,
+          0.630889,
+          0.033392
+        ],
+        [
+          0.01979,
+          0.636994,
+          0.038011
+        ],
+        [
+          0.003459,
+          0.617188,
+          0.00971
+        ],
+        [
+          -0.001092,
+          0.617188,
+          0.016178
+        ],
+        [
+          -0.007478,
+          0.617188,
+          0.011022
+        ],
+        [
+          -0.016877,
+          0.638277,
+          0.038982
+        ]
+      ],
+      "region_id": "excess-02",
+      "counterpart_region_ids": [
+        "missing-03"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f38",
+          "face_fingerprint": "ead36acd106eb5101bd9734c7e0bb959ae1bfcf78ef7f40fed36a2164a9cff82",
+          "surface_type": "plane",
+          "area": 0.004898262041315332,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f38",
+            "entity_handle": "4F9",
+            "face_id": "f38",
+            "face_fingerprint": "ead36acd106eb5101bd9734c7e0bb959ae1bfcf78ef7f40fed36a2164a9cff82",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 5,
+          "exact_query_fraction": 0.555556,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f18",
+          "face_fingerprint": "a853390c997ffd0d4e39ae84011cf6b57eb0ad2c5c535caa3bd5453474d9ce5a",
+          "surface_type": "plane",
+          "area": 0.00611628125,
+          "aligned_bounds": {
+            "min": [
+              1.4999999999876223e-06,
+              0.6171865000000001,
+              -9.999999999177334e-07
+            ],
+            "max": [
+              0.2656265,
+              0.6171865000000001,
+              0.023025000000000073
+            ]
+          },
+          "bbox_distance_normalized": 1e-06,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f18",
+            "entity_handle": "4F9",
+            "face_id": "f18",
+            "face_fingerprint": "a853390c997ffd0d4e39ae84011cf6b57eb0ad2c5c535caa3bd5453474d9ce5a",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f45",
+          "face_fingerprint": "f579fa9758917b8de0379510aa9b9e6f8f96fbd2030a32ceab9f475ea56916f5",
+          "surface_type": "plane",
+          "area": 0.14249867316314685,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f45",
+            "entity_handle": "4F9",
+            "face_id": "f45",
+            "face_fingerprint": "f579fa9758917b8de0379510aa9b9e6f8f96fbd2030a32ceab9f475ea56916f5",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a011_interpolate_connector_upper",
+          "intent": "Move only the short lower-forward connector upper endpoint to the midpoint bracketed by the a010 under-advance and a008 over-advance, preserving its lower attachment and all adjacent geometry.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "old_upper_point": [
+              0.671875,
+              0.0703125
+            ],
+            "new_upper_point": [
+              0.6796875,
+              0.0703125
+            ],
+            "width": 0.0625,
+            "preserved_bridge_end": 0.671875
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward",
+            "a008_advance_connector_upper"
+          ]
+        },
+        {
+          "operation_id": "a011_final_union",
+          "intent": "Fuse the preserved a010 geometry and isolated connector refinement into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_housing_center": [
+              0.150819,
+              0.15625
+            ],
+            "preserved_housing_radius": 0.145388,
+            "preserved_shoulder_end_width": 0.140625
+          },
+          "parent_operation_ids": [
+            "a011_interpolate_connector_upper"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 96,
+      "sample_fraction": 0.0048,
+      "estimated_area": 0.004067,
+      "estimated_area_fraction": 0.0048,
+      "centroid": [
+        -0.000649,
+        0.695307,
+        0.520963
+      ],
+      "centroid_bbox_position": [
+        0.4976,
+        0.9271,
+        0.702
+      ],
+      "bbox": {
+        "min": [
+          -0.024424,
+          0.685718,
+          0.478985
+        ],
+        "max": [
+          0.0245,
+          0.704978,
+          0.5625
+        ]
+      },
+      "mean_distance_normalized": 0.007364,
+      "p95_distance_normalized": 0.008764,
+      "max_distance_normalized": 0.009519,
+      "mean_normal_offset_normalized": -0.006822,
+      "mean_normal_disagreement": 0.079239,
+      "dominant_source_normal": [
+        0.0,
+        -0.9869,
+        0.1612
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.019262,
+          0.685793,
+          0.479311
+        ],
+        [
+          0.021456,
+          0.689343,
+          0.494624
+        ],
+        [
+          0.010577,
+          0.695187,
+          0.519831
+        ],
+        [
+          0.021338,
+          0.697245,
+          0.528712
+        ],
+        [
+          0.00782,
+          0.701459,
+          0.546888
+        ],
+        [
+          -0.019733,
+          0.702105,
+          0.549676
+        ],
+        [
+          -0.02129,
+          0.694521,
+          0.516958
+        ],
+        [
+          -0.014354,
+          0.691718,
+          0.504869
+        ],
+        [
+          -0.018829,
+          0.689159,
+          0.493828
+        ]
+      ],
+      "region_id": "excess-03",
+      "counterpart_region_ids": [
+        "missing-05"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f39",
+          "face_fingerprint": "e4e16424d683cb6541fd7d240ef9b5e89870855d7ca419f336db2fa914a4433f",
+          "surface_type": "plane",
+          "area": 0.026190829358124855,
+          "aligned_bounds": {
+            "min": [
+              0.10156400000000011,
+              0.6104425003415707,
+              0.1542712073557947
+            ],
+            "max": [
+              0.1640640000000001,
+              0.7050771250000001,
+              0.5624990000000001
+            ]
+          },
+          "bbox_distance_normalized": 0.07083,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f39",
+            "entity_handle": "4F9",
+            "face_id": "f39",
+            "face_fingerprint": "e4e16424d683cb6541fd7d240ef9b5e89870855d7ca419f336db2fa914a4433f",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a011_interpolate_connector_upper",
+          "intent": "Move only the short lower-forward connector upper endpoint to the midpoint bracketed by the a010 under-advance and a008 over-advance, preserving its lower attachment and all adjacent geometry.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "old_upper_point": [
+              0.671875,
+              0.0703125
+            ],
+            "new_upper_point": [
+              0.6796875,
+              0.0703125
+            ],
+            "width": 0.0625,
+            "preserved_bridge_end": 0.671875
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward",
+            "a008_advance_connector_upper"
+          ]
+        },
+        {
+          "operation_id": "a011_final_union",
+          "intent": "Fuse the preserved a010 geometry and isolated connector refinement into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_housing_center": [
+              0.150819,
+              0.15625
+            ],
+            "preserved_housing_radius": 0.145388,
+            "preserved_shoulder_end_width": 0.140625
+          },
+          "parent_operation_ids": [
+            "a011_interpolate_connector_upper"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 16,
+      "sample_fraction": 0.0008,
+      "estimated_area": 0.000678,
+      "estimated_area_fraction": 0.0008,
+      "centroid": [
+        0.000422,
+        0.742953,
+        0.634108
+      ],
+      "centroid_bbox_position": [
+        0.5016,
+        0.9906,
+        0.8545
+      ],
+      "bbox": {
+        "min": [
+          -0.021237,
+          0.742574,
+          0.628291
+        ],
+        "max": [
+          0.023561,
+          0.743433,
+          0.641454
+        ]
+      },
+      "mean_distance_normalized": 0.006374,
+      "p95_distance_normalized": 0.006577,
+      "max_distance_normalized": 0.006588,
+      "mean_normal_offset_normalized": -0.006374,
+      "mean_normal_disagreement": 0.003515,
+      "dominant_source_normal": [
+        0.0,
+        0.9979,
+        -0.0651
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.016767,
+          0.742574,
+          0.628291
+        ],
+        [
+          -0.020991,
+          0.742914,
+          0.63351
+        ],
+        [
+          -0.008354,
+          0.742748,
+          0.630964
+        ],
+        [
+          0.003429,
+          0.743395,
+          0.640875
+        ],
+        [
+          0.010082,
+          0.742832,
+          0.632251
+        ],
+        [
+          0.01096,
+          0.742817,
+          0.63202
+        ],
+        [
+          0.003681,
+          0.742623,
+          0.629048
+        ],
+        [
+          0.000654,
+          0.743032,
+          0.63531
+        ],
+        [
+          0.023561,
+          0.743127,
+          0.636765
+        ]
+      ],
+      "region_id": "excess-04",
+      "counterpart_region_ids": [
+        "missing-06"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f43",
+          "face_fingerprint": "379e07f4117da239275c2eced160c15eb2512c67c09812e75111206d2de1f4bb",
+          "surface_type": "plane",
+          "area": 0.011249181415802431,
+          "aligned_bounds": {
+            "min": [
+              0.10156400000000011,
+              0.7382802500000001,
+              0.5624990000000001
+            ],
+            "max": [
+              0.1640640000000001,
+              0.7499990000000001,
+              0.7421040000000001
+            ]
+          },
+          "bbox_distance_normalized": 0.071693,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f43",
+            "entity_handle": "4F9",
+            "face_id": "f43",
+            "face_fingerprint": "379e07f4117da239275c2eced160c15eb2512c67c09812e75111206d2de1f4bb",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a011_interpolate_connector_upper",
+          "intent": "Move only the short lower-forward connector upper endpoint to the midpoint bracketed by the a010 under-advance and a008 over-advance, preserving its lower attachment and all adjacent geometry.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "old_upper_point": [
+              0.671875,
+              0.0703125
+            ],
+            "new_upper_point": [
+              0.6796875,
+              0.0703125
+            ],
+            "width": 0.0625,
+            "preserved_bridge_end": 0.671875
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward",
+            "a008_advance_connector_upper"
+          ]
+        },
+        {
+          "operation_id": "a011_final_union",
+          "intent": "Fuse the preserved a010 geometry and isolated connector refinement into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_housing_center": [
+              0.150819,
+              0.15625
+            ],
+            "preserved_housing_radius": 0.145388,
+            "preserved_shoulder_end_width": 0.140625
+          },
+          "parent_operation_ids": [
+            "a011_interpolate_connector_upper"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 395,
+      "sample_fraction": 0.01975,
+      "estimated_area": 0.016499,
+      "estimated_area_fraction": 0.01975,
+      "centroid": [
+        -0.001178,
+        0.043341,
+        0.15995
+      ],
+      "centroid_bbox_position": [
+        0.4956,
+        0.0578,
+        0.2155
+      ],
+      "bbox": {
+        "min": [
+          -0.03125,
+          0.007621,
+          0.012702
+        ],
+        "max": [
+          0.03125,
+          0.115824,
+          0.290201
+        ]
+      },
+      "mean_distance_normalized": 0.012647,
+      "p95_distance_normalized": 0.018335,
+      "max_distance_normalized": 0.018466,
+      "mean_normal_offset_normalized": -0.009909,
+      "mean_normal_disagreement": 0.432849,
+      "dominant_source_normal": [
+        -0.0116,
+        -0.9428,
+        0.3332
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.031164,
+          0.020869,
+          0.034782
+        ],
+        [
+          0.007475,
+          0.025728,
+          0.147557
+        ],
+        [
+          0.003566,
+          0.110278,
+          0.287774
+        ],
+        [
+          0.022214,
+          0.072997,
+          0.263155
+        ],
+        [
+          -0.013704,
+          0.041095,
+          0.221089
+        ],
+        [
+          -0.012362,
+          0.028794,
+          0.186266
+        ],
+        [
+          -0.003139,
+          0.030076,
+          0.119503
+        ],
+        [
+          -0.013386,
+          0.039769,
+          0.092881
+        ],
+        [
+          -0.03125,
+          0.032472,
+          0.038936
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-16828b5745eb",
+          "sample_fraction": 0.43038,
+          "surface_type": "cylinder",
+          "radius": 0.145388
+        },
+        {
+          "face_id": "face-bd785ba25b73",
+          "sample_fraction": 0.35443,
+          "surface_type": "cylinder",
+          "radius": 0.145388
+        },
+        {
+          "face_id": "face-588eb426461a",
+          "sample_fraction": 0.101266,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-23dd45881a0c",
+          "sample_fraction": 0.083544,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-f30991d46a09",
+          "sample_fraction": 0.020253,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-01",
+      "counterpart_region_ids": [
+        "excess-01"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f36",
+          "face_fingerprint": "ac5713a905a93f4b6c5436890a94b53443d515b62d422e5242b0ddef2ff4bb93",
+          "surface_type": "cylinder",
+          "area": 0.021215467376145998,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f36",
+            "entity_handle": "4F9",
+            "face_id": "f36",
+            "face_fingerprint": "ac5713a905a93f4b6c5436890a94b53443d515b62d422e5242b0ddef2ff4bb93",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 0.007131,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f45",
+          "face_fingerprint": "f579fa9758917b8de0379510aa9b9e6f8f96fbd2030a32ceab9f475ea56916f5",
+          "surface_type": "plane",
+          "area": 0.14249867316314685,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f45",
+            "entity_handle": "4F9",
+            "face_id": "f45",
+            "face_fingerprint": "f579fa9758917b8de0379510aa9b9e6f8f96fbd2030a32ceab9f475ea56916f5",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.007456,
+          "query_methods": [
+            "surface_boundary",
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f21",
+          "face_fingerprint": "0ea0b6df6be9fb2281c98c3e6c927200ca85a512a133213c22a0496c886a9367",
+          "surface_type": "plane",
+          "area": 0.14249867316314685,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f21",
+            "entity_handle": "4F9",
+            "face_id": "f21",
+            "face_fingerprint": "0ea0b6df6be9fb2281c98c3e6c927200ca85a512a133213c22a0496c886a9367",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.008305,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f8",
+          "face_fingerprint": "e626a56a4ec1f73c977ad776ce4e16edd4380926fd272a072886000eeaa306eb",
+          "surface_type": "plane",
+          "area": 0.0140380859375,
+          "aligned_bounds": {
+            "min": [
+              1.4999999999876223e-06,
+              -9.999999999177334e-07,
+              0.023025000000000073
+            ],
+            "max": [
+              0.2656265,
+              0.07812400000000008,
+              0.023025000000000073
+            ]
+          },
+          "bbox_distance_normalized": 0.0,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f8",
+            "entity_handle": "4F9",
+            "face_id": "f8",
+            "face_fingerprint": "e626a56a4ec1f73c977ad776ce4e16edd4380926fd272a072886000eeaa306eb",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.010805,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [
+        {
+          "feature_id": "feature-4F9-f36",
+          "kind": "boss_candidate",
+          "confidence": "medium",
+          "entity_handle": "4F9",
+          "face_ids": [
+            "f36"
+          ],
+          "face_fingerprints": [
+            "ac5713a905a93f4b6c5436890a94b53443d515b62d422e5242b0ddef2ff4bb93"
+          ],
+          "parameters": {
+            "radius": 0.14538806625029443,
+            "axis": [
+              0,
+              -1,
+              -2.2204460492503126e-16
+            ],
+            "origin": [
+              0.15081899999999995,
+              0.031249999999999965,
+              0.15625
+            ]
+          },
+          "interpretation": "Candidate inferred from analytic surface orientation; verify against the drawing and adjacent faces."
+        }
+      ],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a011_interpolate_connector_upper",
+          "intent": "Move only the short lower-forward connector upper endpoint to the midpoint bracketed by the a010 under-advance and a008 over-advance, preserving its lower attachment and all adjacent geometry.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "old_upper_point": [
+              0.671875,
+              0.0703125
+            ],
+            "new_upper_point": [
+              0.6796875,
+              0.0703125
+            ],
+            "width": 0.0625,
+            "preserved_bridge_end": 0.671875
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward",
+            "a008_advance_connector_upper"
+          ]
+        },
+        {
+          "operation_id": "a011_final_union",
+          "intent": "Fuse the preserved a010 geometry and isolated connector refinement into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_housing_center": [
+              0.150819,
+              0.15625
+            ],
+            "preserved_housing_radius": 0.145388,
+            "preserved_shoulder_end_width": 0.140625
+          },
+          "parent_operation_ids": [
+            "a011_interpolate_connector_upper"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 97,
+      "sample_fraction": 0.00485,
+      "estimated_area": 0.004052,
+      "estimated_area_fraction": 0.00485,
+      "centroid": [
+        -0.039113,
+        0.124775,
+        0.106372
+      ],
+      "centroid_bbox_position": [
+        0.3528,
+        0.1664,
+        0.1433
+      ],
+      "bbox": {
+        "min": [
+          -0.061074,
+          0.097804,
+          0.078127
+        ],
+        "max": [
+          -0.03125,
+          0.132812,
+          0.131565
+        ]
+      },
+      "mean_distance_normalized": 0.014313,
+      "p95_distance_normalized": 0.024575,
+      "max_distance_normalized": 0.027123,
+      "mean_normal_offset_normalized": -0.014313,
+      "mean_normal_disagreement": 0.621169,
+      "dominant_source_normal": [
+        -0.7286,
+        -0.6849,
+        0.0
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.055924,
+          0.132812,
+          0.080999
+        ],
+        [
+          -0.03125,
+          0.120536,
+          0.081747
+        ],
+        [
+          -0.03883,
+          0.132812,
+          0.108053
+        ],
+        [
+          -0.031622,
+          0.132812,
+          0.120586
+        ],
+        [
+          -0.052383,
+          0.132812,
+          0.119262
+        ],
+        [
+          -0.03125,
+          0.122697,
+          0.11206
+        ],
+        [
+          -0.03125,
+          0.117051,
+          0.109911
+        ],
+        [
+          -0.03125,
+          0.100294,
+          0.093443
+        ],
+        [
+          -0.057238,
+          0.132812,
+          0.101179
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-f30991d46a09",
+          "sample_fraction": 0.515464,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-30940416656d",
+          "sample_fraction": 0.484536,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-02",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f25",
+          "face_fingerprint": "41286cdb84f4ef51c40fc2f0076a1d648f1ccede36784b8f1181d8ff3863ad03",
+          "surface_type": "plane",
+          "area": 0.004154891576403921,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f25",
+            "entity_handle": "4F9",
+            "face_id": "f25",
+            "face_fingerprint": "41286cdb84f4ef51c40fc2f0076a1d648f1ccede36784b8f1181d8ff3863ad03",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 6,
+          "exact_query_fraction": 0.666667,
+          "minimum_trimmed_face_distance_normalized": 0.008447,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f23",
+          "face_fingerprint": "4967d97a8149c2af9d5dce576881afdc27aff66e7b8a30c3b0a1b672d8ec21c0",
+          "surface_type": "plane",
+          "area": 0.04724119140625001,
+          "aligned_bounds": {
+            "min": [
+              0.015626499999999988,
+              0.08593650000000008,
+              0.07031150000000008
+            ],
+            "max": [
+              0.101564,
+              0.6718740000000001,
+              0.07031150000000008
+            ]
+          },
+          "bbox_distance_normalized": 0.043679,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f23",
+            "entity_handle": "4F9",
+            "face_id": "f23",
+            "face_fingerprint": "4967d97a8149c2af9d5dce576881afdc27aff66e7b8a30c3b0a1b672d8ec21c0",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.009822,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f45",
+          "face_fingerprint": "f579fa9758917b8de0379510aa9b9e6f8f96fbd2030a32ceab9f475ea56916f5",
+          "surface_type": "plane",
+          "area": 0.14249867316314685,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f45",
+            "entity_handle": "4F9",
+            "face_id": "f45",
+            "face_fingerprint": "f579fa9758917b8de0379510aa9b9e6f8f96fbd2030a32ceab9f475ea56916f5",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.010509,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f24",
+          "face_fingerprint": "59ca8f283e479d9c4b2109273ed80018a83ef584903a8ce2bacc1e0f43829adc",
+          "surface_type": "plane",
+          "area": 0.09539221661931818,
+          "aligned_bounds": {
+            "min": [
+              0.015626499999999988,
+              0.08593650000000008,
+              0.13840400000000008
+            ],
+            "max": [
+              0.2500015,
+              0.6718740000000001,
+              0.13840400000000008
+            ]
+          },
+          "bbox_distance_normalized": 0.043541,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f24",
+            "entity_handle": "4F9",
+            "face_id": "f24",
+            "face_fingerprint": "59ca8f283e479d9c4b2109273ed80018a83ef584903a8ce2bacc1e0f43829adc",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.016378,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a011_interpolate_connector_upper",
+          "intent": "Move only the short lower-forward connector upper endpoint to the midpoint bracketed by the a010 under-advance and a008 over-advance, preserving its lower attachment and all adjacent geometry.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "old_upper_point": [
+              0.671875,
+              0.0703125
+            ],
+            "new_upper_point": [
+              0.6796875,
+              0.0703125
+            ],
+            "width": 0.0625,
+            "preserved_bridge_end": 0.671875
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward",
+            "a008_advance_connector_upper"
+          ]
+        },
+        {
+          "operation_id": "a011_final_union",
+          "intent": "Fuse the preserved a010 geometry and isolated connector refinement into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_housing_center": [
+              0.150819,
+              0.15625
+            ],
+            "preserved_housing_radius": 0.145388,
+            "preserved_shoulder_end_width": 0.140625
+          },
+          "parent_operation_ids": [
+            "a011_interpolate_connector_upper"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 120,
+      "sample_fraction": 0.006,
+      "estimated_area": 0.005012,
+      "estimated_area_fraction": 0.006,
+      "centroid": [
+        0.000832,
+        0.643063,
+        0.028216
+      ],
+      "centroid_bbox_position": [
+        0.5031,
+        0.8574,
+        0.038
+      ],
+      "bbox": {
+        "min": [
+          -0.03125,
+          0.62448,
+          -0.0
+        ],
+        "max": [
+          0.03125,
+          0.665148,
+          0.070312
+        ]
+      },
+      "mean_distance_normalized": 0.013473,
+      "p95_distance_normalized": 0.021729,
+      "max_distance_normalized": 0.022249,
+      "mean_normal_offset_normalized": 0.008176,
+      "mean_normal_disagreement": 0.509723,
+      "dominant_source_normal": [
+        0.0125,
+        0.7734,
+        -0.6338
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          -0.029473,
+          0.63087,
+          -0.0
+        ],
+        [
+          -0.015328,
+          0.640889,
+          0.00809
+        ],
+        [
+          0.027692,
+          0.640909,
+          0.0082
+        ],
+        [
+          0.021661,
+          0.658279,
+          0.070312
+        ],
+        [
+          0.021166,
+          0.650166,
+          0.0611
+        ],
+        [
+          0.00638,
+          0.643576,
+          0.02344
+        ],
+        [
+          0.015311,
+          0.643602,
+          0.023589
+        ],
+        [
+          -0.007756,
+          0.629916,
+          -0.0
+        ],
+        [
+          -0.03125,
+          0.627589,
+          0.018091
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-aa5a3340271a",
+          "sample_fraction": 0.266667,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-128ad171706e",
+          "sample_fraction": 0.258333,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-fc0006dccf55",
+          "sample_fraction": 0.1,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-b7f1e09637b9",
+          "sample_fraction": 0.1,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-c176b20e43f8",
+          "sample_fraction": 0.083333,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-03",
+      "counterpart_region_ids": [
+        "excess-02"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f18",
+          "face_fingerprint": "a853390c997ffd0d4e39ae84011cf6b57eb0ad2c5c535caa3bd5453474d9ce5a",
+          "surface_type": "plane",
+          "area": 0.00611628125,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f18",
+            "entity_handle": "4F9",
+            "face_id": "f18",
+            "face_fingerprint": "a853390c997ffd0d4e39ae84011cf6b57eb0ad2c5c535caa3bd5453474d9ce5a",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.012576,
+          "query_methods": [
+            "surface_boundary",
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f21",
+          "face_fingerprint": "0ea0b6df6be9fb2281c98c3e6c927200ca85a512a133213c22a0496c886a9367",
+          "surface_type": "plane",
+          "area": 0.14249867316314685,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f21",
+            "entity_handle": "4F9",
+            "face_id": "f21",
+            "face_fingerprint": "0ea0b6df6be9fb2281c98c3e6c927200ca85a512a133213c22a0496c886a9367",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.008813,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f38",
+          "face_fingerprint": "ead36acd106eb5101bd9734c7e0bb959ae1bfcf78ef7f40fed36a2164a9cff82",
+          "surface_type": "plane",
+          "area": 0.004898262041315332,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f38",
+            "entity_handle": "4F9",
+            "face_id": "f38",
+            "face_fingerprint": "ead36acd106eb5101bd9734c7e0bb959ae1bfcf78ef7f40fed36a2164a9cff82",
+            "status": "inherited",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [],
+            "evidence": [
+              "stable_face_fingerprint_chain"
+            ],
+            "confidence": "high",
+            "origin_mcp_job_id": null
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.014236,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f45",
+          "face_fingerprint": "f579fa9758917b8de0379510aa9b9e6f8f96fbd2030a32ceab9f475ea56916f5",
+          "surface_type": "plane",
+          "area": 0.14249867316314685,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f45",
+            "entity_handle": "4F9",
+            "face_id": "f45",
+            "face_fingerprint": "f579fa9758917b8de0379510aa9b9e6f8f96fbd2030a32ceab9f475ea56916f5",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.009385,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f9",
+          "face_fingerprint": "46201607dcc6da1b6bf1bad641e5100fa6248f47d34363aa151b5c5ab06080a8",
+          "surface_type": "plane",
+          "area": 0.060791015625,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f9",
+            "entity_handle": "4F9",
+            "face_id": "f9",
+            "face_fingerprint": "46201607dcc6da1b6bf1bad641e5100fa6248f47d34363aa151b5c5ab06080a8",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.011699,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a011_interpolate_connector_upper",
+          "intent": "Move only the short lower-forward connector upper endpoint to the midpoint bracketed by the a010 under-advance and a008 over-advance, preserving its lower attachment and all adjacent geometry.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "old_upper_point": [
+              0.671875,
+              0.0703125
+            ],
+            "new_upper_point": [
+              0.6796875,
+              0.0703125
+            ],
+            "width": 0.0625,
+            "preserved_bridge_end": 0.671875
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward",
+            "a008_advance_connector_upper"
+          ]
+        },
+        {
+          "operation_id": "a011_final_union",
+          "intent": "Fuse the preserved a010 geometry and isolated connector refinement into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_housing_center": [
+              0.150819,
+              0.15625
+            ],
+            "preserved_housing_radius": 0.145388,
+            "preserved_shoulder_end_width": 0.140625
+          },
+          "parent_operation_ids": [
+            "a011_interpolate_connector_upper"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 87,
+      "sample_fraction": 0.00435,
+      "estimated_area": 0.003634,
+      "estimated_area_fraction": 0.00435,
+      "centroid": [
+        0.038778,
+        0.123933,
+        0.105217
+      ],
+      "centroid_bbox_position": [
+        0.646,
+        0.1652,
+        0.1418
+      ],
+      "bbox": {
+        "min": [
+          0.03125,
+          0.096402,
+          0.077049
+        ],
+        "max": [
+          0.061221,
+          0.132812,
+          0.130949
+        ]
+      },
+      "mean_distance_normalized": 0.013732,
+      "p95_distance_normalized": 0.024576,
+      "max_distance_normalized": 0.026752,
+      "mean_normal_offset_normalized": -0.010648,
+      "mean_normal_disagreement": 0.407801,
+      "dominant_source_normal": [
+        0.6989,
+        -0.7152,
+        0.0
+      ],
+      "confidence": "high",
+      "source_surface_query_points": [
+        [
+          0.03125,
+          0.10113,
+          0.078986
+        ],
+        [
+          0.035155,
+          0.132812,
+          0.112098
+        ],
+        [
+          0.033221,
+          0.132812,
+          0.126727
+        ],
+        [
+          0.045869,
+          0.132812,
+          0.128952
+        ],
+        [
+          0.03125,
+          0.107006,
+          0.11594
+        ],
+        [
+          0.03125,
+          0.125688,
+          0.094131
+        ],
+        [
+          0.038013,
+          0.132812,
+          0.089964
+        ],
+        [
+          0.035947,
+          0.132812,
+          0.077049
+        ],
+        [
+          0.03125,
+          0.100248,
+          0.087773
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-8f5d97800ba9",
+          "sample_fraction": 0.505747,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-e726c000eb78",
+          "sample_fraction": 0.494253,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-04",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f24",
+          "face_fingerprint": "59ca8f283e479d9c4b2109273ed80018a83ef584903a8ce2bacc1e0f43829adc",
+          "surface_type": "plane",
+          "area": 0.09539221661931818,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f24",
+            "entity_handle": "4F9",
+            "face_id": "f24",
+            "face_fingerprint": "59ca8f283e479d9c4b2109273ed80018a83ef584903a8ce2bacc1e0f43829adc",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.008689,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f22",
+          "face_fingerprint": "92b5954f4737e007fac21142f6e6c8137f1c4b2c2a178f418ad5b6852792a9d5",
+          "surface_type": "plane",
+          "area": 0.04724119140625,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f22",
+            "entity_handle": "4F9",
+            "face_id": "f22",
+            "face_fingerprint": "92b5954f4737e007fac21142f6e6c8137f1c4b2c2a178f418ad5b6852792a9d5",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.006191,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f21",
+          "face_fingerprint": "0ea0b6df6be9fb2281c98c3e6c927200ca85a512a133213c22a0496c886a9367",
+          "surface_type": "plane",
+          "area": 0.14249867316314685,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f21",
+            "entity_handle": "4F9",
+            "face_id": "f21",
+            "face_fingerprint": "0ea0b6df6be9fb2281c98c3e6c927200ca85a512a133213c22a0496c886a9367",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.007971,
+          "query_methods": [
+            "surface_boundary"
+          ]
+        },
+        {
+          "entity_handle": "4F9",
+          "face_id": "f26",
+          "face_fingerprint": "194d46d76403e0d64dd6c7fbf2424eb35b0665881f7a700b981201881cc34553",
+          "surface_type": "plane",
+          "area": 0.004154891576403923,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "4F9:f26",
+            "entity_handle": "4F9",
+            "face_id": "f26",
+            "face_fingerprint": "194d46d76403e0d64dd6c7fbf2424eb35b0665881f7a700b981201881cc34553",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.00842,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a011_interpolate_connector_upper",
+          "intent": "Move only the short lower-forward connector upper endpoint to the midpoint bracketed by the a010 under-advance and a008 over-advance, preserving its lower attachment and all adjacent geometry.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "old_upper_point": [
+              0.671875,
+              0.0703125
+            ],
+            "new_upper_point": [
+              0.6796875,
+              0.0703125
+            ],
+            "width": 0.0625,
+            "preserved_bridge_end": 0.671875
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward",
+            "a008_advance_connector_upper"
+          ]
+        },
+        {
+          "operation_id": "a011_final_union",
+          "intent": "Fuse the preserved a010 geometry and isolated connector refinement into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_housing_center": [
+              0.150819,
+              0.15625
+            ],
+            "preserved_housing_radius": 0.145388,
+            "preserved_shoulder_end_width": 0.140625
+          },
+          "parent_operation_ids": [
+            "a011_interpolate_connector_upper"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 118,
+      "sample_fraction": 0.0059,
+      "estimated_area": 0.004929,
+      "estimated_area_fraction": 0.0059,
+      "centroid": [
+        0.00117,
+        0.685929,
+        0.514501
+      ],
+      "centroid_bbox_position": [
+        0.5044,
+        0.9146,
+        0.6933
+      ],
+      "bbox": {
+        "min": [
+          -0.031162,
+          0.679498,
+          0.481287
+        ],
+        "max": [
+          0.03125,
+          0.694587,
+          0.555845
+        ]
+      },
+      "mean_distance_normalized": 0.007139,
+      "p95_distance_normalized": 0.008284,
+      "max_distance_normalized": 0.008504,
+      "mean_normal_offset_normalized": 0.007139,
+      "mean_normal_disagreement": 0.055193,
+      "dominant_source_normal": [
+        0.0351,
+        -0.9814,
+        0.1887
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.027985,
+          0.680997,
+          0.489078
+        ],
+        [
+          -0.01208,
+          0.685344,
+          0.511685
+        ],
+        [
+          0.000614,
+          0.688172,
+          0.526391
+        ],
+        [
+          0.029632,
+          0.682132,
+          0.494979
+        ],
+        [
+          0.018121,
+          0.685694,
+          0.513502
+        ],
+        [
+          0.022443,
+          0.682981,
+          0.499394
+        ],
+        [
+          0.022089,
+          0.679498,
+          0.481287
+        ],
+        [
+          -0.004681,
+          0.687488,
+          0.522832
+        ],
+        [
+          -0.031046,
+          0.685018,
+          0.509989
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-8b1f83019229",
+          "sample_fraction": 0.491525,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-5ebabb91d9d1",
+          "sample_fraction": 0.474576,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-e726c000eb78",
+          "sample_fraction": 0.033898,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-05",
+      "counterpart_region_ids": [
+        "excess-03"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f39",
+          "face_fingerprint": "e4e16424d683cb6541fd7d240ef9b5e89870855d7ca419f336db2fa914a4433f",
+          "surface_type": "plane",
+          "area": 0.026190829358124855,
+          "aligned_bounds": {
+            "min": [
+              0.10156400000000011,
+              0.6104425003415707,
+              0.1542712073557947
+            ],
+            "max": [
+              0.1640640000000001,
+              0.7050771250000001,
+              0.5624990000000001
+            ]
+          },
+          "bbox_distance_normalized": 0.064626,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f39",
+            "entity_handle": "4F9",
+            "face_id": "f39",
+            "face_fingerprint": "e4e16424d683cb6541fd7d240ef9b5e89870855d7ca419f336db2fa914a4433f",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.006047,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a011_interpolate_connector_upper",
+          "intent": "Move only the short lower-forward connector upper endpoint to the midpoint bracketed by the a010 under-advance and a008 over-advance, preserving its lower attachment and all adjacent geometry.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "old_upper_point": [
+              0.671875,
+              0.0703125
+            ],
+            "new_upper_point": [
+              0.6796875,
+              0.0703125
+            ],
+            "width": 0.0625,
+            "preserved_bridge_end": 0.671875
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward",
+            "a008_advance_connector_upper"
+          ]
+        },
+        {
+          "operation_id": "a011_final_union",
+          "intent": "Fuse the preserved a010 geometry and isolated connector refinement into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_housing_center": [
+              0.150819,
+              0.15625
+            ],
+            "preserved_housing_radius": 0.145388,
+            "preserved_shoulder_end_width": 0.140625
+          },
+          "parent_operation_ids": [
+            "a011_interpolate_connector_upper"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 19,
+      "sample_fraction": 0.00095,
+      "estimated_area": 0.000794,
+      "estimated_area_fraction": 0.00095,
+      "centroid": [
+        0.006398,
+        0.749828,
+        0.63409
+      ],
+      "centroid_bbox_position": [
+        0.5241,
+        0.9998,
+        0.8544
+      ],
+      "bbox": {
+        "min": [
+          -0.030667,
+          0.74907,
+          0.626265
+        ],
+        "max": [
+          0.030907,
+          0.75,
+          0.641434
+        ]
+      },
+      "mean_distance_normalized": 0.006306,
+      "p95_distance_normalized": 0.006563,
+      "max_distance_normalized": 0.006607,
+      "mean_normal_offset_normalized": 0.006306,
+      "mean_normal_disagreement": 0.003099,
+      "dominant_source_normal": [
+        0.0,
+        0.999,
+        -0.0455
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.02954,
+          0.75,
+          0.636563
+        ],
+        [
+          -0.013999,
+          0.749405,
+          0.628181
+        ],
+        [
+          -0.017538,
+          0.75,
+          0.632722
+        ],
+        [
+          -0.002672,
+          0.75,
+          0.632524
+        ],
+        [
+          0.013591,
+          0.75,
+          0.63169
+        ],
+        [
+          0.00983,
+          0.749729,
+          0.630029
+        ],
+        [
+          0.022074,
+          0.75,
+          0.634804
+        ],
+        [
+          0.020645,
+          0.75,
+          0.63565
+        ],
+        [
+          0.030329,
+          0.75,
+          0.641434
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-4d013bb0e5f2",
+          "sample_fraction": 0.473684,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-f643ddacaf4f",
+          "sample_fraction": 0.263158,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-ed72c9f2ad28",
+          "sample_fraction": 0.157895,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-77d9cc9571a5",
+          "sample_fraction": 0.105263,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-06",
+      "counterpart_region_ids": [
+        "excess-04"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "4F9",
+          "face_id": "f43",
+          "face_fingerprint": "379e07f4117da239275c2eced160c15eb2512c67c09812e75111206d2de1f4bb",
+          "surface_type": "plane",
+          "area": 0.011249181415802431,
+          "aligned_bounds": {
+            "min": [
+              0.10156400000000011,
+              0.7382802500000001,
+              0.5624990000000001
+            ],
+            "max": [
+              0.1640640000000001,
+              0.7499990000000001,
+              0.7421040000000001
+            ]
+          },
+          "bbox_distance_normalized": 0.064941,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "4F9:f43",
+            "entity_handle": "4F9",
+            "face_id": "f43",
+            "face_fingerprint": "379e07f4117da239275c2eced160c15eb2512c67c09812e75111206d2de1f4bb",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a011_interpolate_connector_upper",
+              "a011_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          "exact_query_hits": 9,
+          "exact_query_fraction": 1.0,
+          "minimum_trimmed_face_distance_normalized": 0.006024,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a011_interpolate_connector_upper",
+          "intent": "Move only the short lower-forward connector upper endpoint to the midpoint bracketed by the a010 under-advance and a008 over-advance, preserving its lower attachment and all adjacent geometry.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile_edge",
+          "feature_id": "lower_forward_connector",
+          "editable_parameters": {
+            "lower_point": [
+              0.617188,
+              0.023026
+            ],
+            "old_upper_point": [
+              0.671875,
+              0.0703125
+            ],
+            "new_upper_point": [
+              0.6796875,
+              0.0703125
+            ],
+            "width": 0.0625,
+            "preserved_bridge_end": 0.671875
+          },
+          "parent_operation_ids": [
+            "a007_connector_forward",
+            "a008_advance_connector_upper"
+          ]
+        },
+        {
+          "operation_id": "a011_final_union",
+          "intent": "Fuse the preserved a010 geometry and isolated connector refinement into exactly one native editable solid with no annotations.",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "final_solid",
+          "editable_parameters": {
+            "expected_solid_count": 1,
+            "overall_length": 0.75,
+            "overall_width": 0.265625,
+            "overall_height": 0.742105,
+            "preserved_lever_notch_transition": 0.705078125,
+            "preserved_housing_center": [
+              0.150819,
+              0.15625
+            ],
+            "preserved_housing_radius": 0.145388,
+            "preserved_shoulder_end_width": 0.140625
+          },
+          "parent_operation_ids": [
+            "a011_interpolate_connector_upper"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    }
+  ],
+  "native_topology": {
+    "protocol": "evocad-native-feature-localization-v1",
+    "entity_count": 1,
+    "face_count": 45,
+    "adjacency_count": 123,
+    "feature_candidate_count": 1,
+    "export_errors": [],
+    "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+    "boolean_lineage": {
+      "schema_version": "1.0",
+      "protocol": "evocad-boolean-face-lineage-v2",
+      "snapshot_comparison": {
+        "parent_face_count": 47,
+        "current_face_count": 45,
+        "inherited_face_count": 5,
+        "created_or_modified_face_count": 40,
+        "deleted_or_modified_parent_face_count": 42,
+        "captured_job_count": 1,
+        "lineage_mode": "multi_job_fingerprint_chain"
+      },
+      "operation_graph": {
+        "nodes": [
+          {
+            "operation_id": "a011_interpolate_connector_upper",
+            "intent": "Move only the short lower-forward connector upper endpoint to the midpoint bracketed by the a010 under-advance and a008 over-advance, preserving its lower attachment and all adjacent geometry.",
+            "operation_type": "replace_profile_edge",
+            "feature_id": "lower_forward_connector",
+            "parameters": {
+              "lower_point": [
+                0.617188,
+                0.023026
+              ],
+              "old_upper_point": [
+                0.671875,
+                0.0703125
+              ],
+              "new_upper_point": [
+                0.6796875,
+                0.0703125
+              ],
+              "width": 0.0625,
+              "preserved_bridge_end": 0.671875
+            },
+            "parent_operation_ids": [
+              "a007_connector_forward",
+              "a008_advance_connector_upper"
+            ],
+            "mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          },
+          {
+            "operation_id": "a011_final_union",
+            "intent": "Fuse the preserved a010 geometry and isolated connector refinement into exactly one native editable solid with no annotations.",
+            "operation_type": "union",
+            "feature_id": "final_solid",
+            "parameters": {
+              "expected_solid_count": 1,
+              "overall_length": 0.75,
+              "overall_width": 0.265625,
+              "overall_height": 0.742105,
+              "preserved_lever_notch_transition": 0.705078125,
+              "preserved_housing_center": [
+                0.150819,
+                0.15625
+              ],
+              "preserved_housing_radius": 0.145388,
+              "preserved_shoulder_end_width": 0.140625
+            },
+            "parent_operation_ids": [
+              "a011_interpolate_connector_upper"
+            ],
+            "mcp_job_id": "7d1c2e78d7674f3a80b37bec68ab8d6d"
+          }
+        ],
+        "edges": [
+          {
+            "source": "a007_connector_forward",
+            "target": "a011_interpolate_connector_upper",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a008_advance_connector_upper",
+            "target": "a011_interpolate_connector_upper",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a011_interpolate_connector_upper",
+            "target": "a011_final_union",
+            "relation": "declared_parent"
+          }
+        ]
+      },
+      "deleted_parent_face_examples": [
+        {
+          "node_id": "4D7:f1",
+          "entity_handle": "4D7",
+          "face_id": "f1",
+          "face_fingerprint": "63d9ce38d198649c327cdb76617754b137470565d017993ded72daeb69c60119"
+        },
+        {
+          "node_id": "4D7:f2",
+          "entity_handle": "4D7",
+          "face_id": "f2",
+          "face_fingerprint": "e38d4afaf77db449103756f4f8ed2a59750b4d7c3425ac47bf70517b1cfb324e"
+        },
+        {
+          "node_id": "4D7:f3",
+          "entity_handle": "4D7",
+          "face_id": "f3",
+          "face_fingerprint": "301f799762e985de4620ebaec1476c14280883c598b533632903feea9c5023b7"
+        },
+        {
+          "node_id": "4D7:f4",
+          "entity_handle": "4D7",
+          "face_id": "f4",
+          "face_fingerprint": "3ec995dab6387ac1e76986003a5791009fd2e0a7e29bdfe62b5a7cfe7ec1253f"
+        },
+        {
+          "node_id": "4D7:f5",
+          "entity_handle": "4D7",
+          "face_id": "f5",
+          "face_fingerprint": "6d6ea84ea1a2645092cafd1f54e0ac8c29ae175e0721353c417a04e2338baa3d"
+        },
+        {
+          "node_id": "4D7:f6",
+          "entity_handle": "4D7",
+          "face_id": "f6",
+          "face_fingerprint": "5ce30586a8aeacb38cafc91e10f30e006152a0cb8be3f63673c89dd571285cd2"
+        },
+        {
+          "node_id": "4DB:f1",
+          "entity_handle": "4DB",
+          "face_id": "f1",
+          "face_fingerprint": "a03e0767e4db43e1e131fb959b5faa6e03258c64e3cd9ffc0857192417018a2a"
+        },
+        {
+          "node_id": "4DB:f2",
+          "entity_handle": "4DB",
+          "face_id": "f2",
+          "face_fingerprint": "f8ebd9118ef3ab3e23b7d81879176b6e8885c2d3287f6e6e37a1d7974f3f768f"
+        },
+        {
+          "node_id": "4DB:f3",
+          "entity_handle": "4DB",
+          "face_id": "f3",
+          "face_fingerprint": "ff0d2d064f99aafc8c2701072028557659f92fb444420e6d1cc5bc5d5799a7e7"
+        },
+        {
+          "node_id": "4DB:f4",
+          "entity_handle": "4DB",
+          "face_id": "f4",
+          "face_fingerprint": "07a53c0a66e763d3bd08bbbdf993ea09cb3ae3666bce1a3b75d4d9da11f19bed"
+        },
+        {
+          "node_id": "4DB:f5",
+          "entity_handle": "4DB",
+          "face_id": "f5",
+          "face_fingerprint": "c340fd03e1567d5f3b94e020b05fbe1df9706a1561a286d95fd39c0b516ae6ee"
+        },
+        {
+          "node_id": "4DB:f6",
+          "entity_handle": "4DB",
+          "face_id": "f6",
+          "face_fingerprint": "2d7e1415c8bdde4e3abbf7df841f3b17110401586c2308df950ab821986ec906"
+        },
+        {
+          "node_id": "4DF:f1",
+          "entity_handle": "4DF",
+          "face_id": "f1",
+          "face_fingerprint": "ece49df6303bb6b3fa9107424642ed31749188461eaf7595782fd8bf879b0beb"
+        },
+        {
+          "node_id": "4DF:f2",
+          "entity_handle": "4DF",
+          "face_id": "f2",
+          "face_fingerprint": "41b9510bfee57d28870171174c9ab1f2a6980a779ed84c76442adfdcb4e673fa"
+        },
+        {
+          "node_id": "4DF:f3",
+          "entity_handle": "4DF",
+          "face_id": "f3",
+          "face_fingerprint": "a8afa81b04c9a89068cecfd9e02aba809acbb836f504b1abc5217fd08ad3675f"
+        },
+        {
+          "node_id": "4DF:f4",
+          "entity_handle": "4DF",
+          "face_id": "f4",
+          "face_fingerprint": "4f5a06ef76882d0398c311bf5c280c11e9e9ce7e8eec178be4e1a3cd50a4051a"
+        },
+        {
+          "node_id": "4DF:f5",
+          "entity_handle": "4DF",
+          "face_id": "f5",
+          "face_fingerprint": "2d6cdb83ea7a5a91f61d59859e9e7f3d54c4d2b55dd763fa8bc6b6bfb849d9ed"
+        },
+        {
+          "node_id": "4DF:f6",
+          "entity_handle": "4DF",
+          "face_id": "f6",
+          "face_fingerprint": "ed71f92cf447517b7300150937f3e52d8adaff4b744dea3a71330c7f0c24f77f"
+        },
+        {
+          "node_id": "4E3:f1",
+          "entity_handle": "4E3",
+          "face_id": "f1",
+          "face_fingerprint": "88f72e4b7759de6c7ccc8cda622049c0b01a4fde63604445f6ed86a004938e43"
+        },
+        {
+          "node_id": "4E3:f2",
+          "entity_handle": "4E3",
+          "face_id": "f2",
+          "face_fingerprint": "a5a330446c3e68d8ce9a51ab2600c9730567cbffec8083d9b1a6a6b2c78357ed"
+        },
+        {
+          "node_id": "4E3:f3",
+          "entity_handle": "4E3",
+          "face_id": "f3",
+          "face_fingerprint": "fb46b37994cbe692c1dbc16988188a817adc5efe66fbca75ddc5ac9f0bfd956f"
+        },
+        {
+          "node_id": "4E3:f4",
+          "entity_handle": "4E3",
+          "face_id": "f4",
+          "face_fingerprint": "d7c1c38de3fa097b3aaa1edbae69520ed4ec8254495fab76d93b2fdcb230a157"
+        },
+        {
+          "node_id": "4E3:f5",
+          "entity_handle": "4E3",
+          "face_id": "f5",
+          "face_fingerprint": "5b949d15634a164c00123ff799d853c5102ae7a2c3c87ff850db6f5e1268ecf1"
+        },
+        {
+          "node_id": "4E3:f6",
+          "entity_handle": "4E3",
+          "face_id": "f6",
+          "face_fingerprint": "f3884ddc55f38ecd5bd7b4146c09f6127d72ca3090c80e92dcddf1ff69b9ef8f"
+        },
+        {
+          "node_id": "4E9:f2",
+          "entity_handle": "4E9",
+          "face_id": "f2",
+          "face_fingerprint": "087acfc8128388ee52c238603209eebeeecb0f0c8bcc088b8ee1dcc1d8496113"
+        },
+        {
+          "node_id": "4E9:f3",
+          "entity_handle": "4E9",
+          "face_id": "f3",
+          "face_fingerprint": "a7bd234aae1c9f7a3bac7392d98c95132a7233c3d3ad0f4108805523e35462e5"
+        },
+        {
+          "node_id": "4E9:f4",
+          "entity_handle": "4E9",
+          "face_id": "f4",
+          "face_fingerprint": "237599d70c4e82d0ae79902fa4af5684bf8b2b5c8664cd8cc1bcfab28de91fc2"
+        },
+        {
+          "node_id": "4E9:f5",
+          "entity_handle": "4E9",
+          "face_id": "f5",
+          "face_fingerprint": "a1a4af8357567df95afdea7924839bbcbd106520d3c3c943b94d5400261e1018"
+        },
+        {
+          "node_id": "4E9:f6",
+          "entity_handle": "4E9",
+          "face_id": "f6",
+          "face_fingerprint": "02ecc04f6a1ec96c7fc5d1885746181c0e2b8035db64d4cd20de8806d2bdcfd3"
+        },
+        {
+          "node_id": "4ED:f1",
+          "entity_handle": "4ED",
+          "face_id": "f1",
+          "face_fingerprint": "6bbb6440e4ab97481a459581c603e8759131cd4dfbbf57c4d9f53b98237c010b"
+        },
+        {
+          "node_id": "4ED:f2",
+          "entity_handle": "4ED",
+          "face_id": "f2",
+          "face_fingerprint": "31c83ab9ee164044b0f3d1570f41ed25996c295b0365d60f5470f815f9f4ab15"
+        },
+        {
+          "node_id": "4ED:f3",
+          "entity_handle": "4ED",
+          "face_id": "f3",
+          "face_fingerprint": "a1c564baf60318de55b1f0a0c348ea6ccc4a8534b7803aceed16d7e2e9c34ae3"
+        }
+      ],
+      "interpretation": "Stable fingerprints prove inheritance. Snapshot-delta faces identify the operation group that changed topology; multiple operations in one job remain causally ambiguous."
+    },
+    "exact_face_query_count": 90
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [
+      {
+        "point": [
+          0.000103,
+          0.078125,
+          0.091796
+        ],
+        "distance_normalized": 0.028627,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.001705,
+          0.078125,
+          0.137893
+        ],
+        "distance_normalized": 0.027155,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.001799,
+          0.078125,
+          0.072502
+        ],
+        "distance_normalized": 0.027069,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.002459,
+          0.085937,
+          0.126741
+        ],
+        "distance_normalized": 0.026462,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.00366,
+          0.078125,
+          0.136293
+        ],
+        "distance_normalized": 0.025358,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.004035,
+          0.08456,
+          0.138405
+        ],
+        "distance_normalized": 0.025013,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.004275,
+          0.079395,
+          0.070313
+        ],
+        "distance_normalized": 0.024793,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.005395,
+          0.078125,
+          0.106825
+        ],
+        "distance_normalized": 0.023764,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.007412,
+          0.085937,
+          0.116175
+        ],
+        "distance_normalized": 0.02191,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.003732,
+          0.046659,
+          0.023622
+        ],
+        "distance_normalized": 0.021711,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008429,
+          0.078125,
+          0.098738
+        ],
+        "distance_normalized": 0.020975,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008841,
+          0.078125,
+          0.128096
+        ],
+        "distance_normalized": 0.020596,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.00963,
+          0.621109,
+          0.025993
+        ],
+        "distance_normalized": 0.019871,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.052412,
+          0.111332,
+          0.087026
+        ],
+        "distance_normalized": 0.01945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.010112,
+          0.085937,
+          0.126898
+        ],
+        "distance_normalized": 0.019428,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.053016,
+          0.112057,
+          0.136733
+        ],
+        "distance_normalized": 0.019076,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.051611,
+          0.110372,
+          0.109962
+        ],
+        "distance_normalized": 0.018714,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.011019,
+          0.085937,
+          0.120683
+        ],
+        "distance_normalized": 0.018594,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.023444,
+          0.005478,
+          0.159495
+        ],
+        "distance_normalized": 0.018468,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.011637,
+          0.005475,
+          0.156961
+        ],
+        "distance_normalized": 0.018438,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.008971,
+          0.005515,
+          0.151788
+        ],
+        "distance_normalized": 0.01843,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.004536,
+          0.005951,
+          0.168192
+        ],
+        "distance_normalized": 0.018425,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.01171,
+          0.005581,
+          0.161701
+        ],
+        "distance_normalized": 0.018403,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.022605,
+          0.005671,
+          0.148738
+        ],
+        "distance_normalized": 0.018385,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.006654,
+          0.006282,
+          0.171464
+        ],
+        "distance_normalized": 0.018367,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.018858,
+          0.006796,
+          0.175933
+        ],
+        "distance_normalized": 0.018362,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.008559,
+          0.005978,
+          0.143792
+        ],
+        "distance_normalized": 0.018352,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.019058,
+          0.006856,
+          0.176315
+        ],
+        "distance_normalized": 0.018348,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.013155,
+          0.005964,
+          0.144029
+        ],
+        "distance_normalized": 0.018347,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.020424,
+          0.005954,
+          0.14418
+        ],
+        "distance_normalized": 0.018343,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.051172,
+          0.109845,
+          0.08743
+        ],
+        "distance_normalized": 0.018311,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.000751,
+          0.007501,
+          0.180437
+        ],
+        "distance_normalized": 0.01828,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.053761,
+          0.112952,
+          0.099373
+        ],
+        "distance_normalized": 0.018254,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.007894,
+          0.008071,
+          0.183694
+        ],
+        "distance_normalized": 0.018249,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.021241,
+          0.008256,
+          0.184565
+        ],
+        "distance_normalized": 0.018211,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.029594,
+          0.006612,
+          0.138137
+        ],
+        "distance_normalized": 0.018211,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.011508,
+          0.078125,
+          0.138194
+        ],
+        "distance_normalized": 0.018145,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.029891,
+          0.009213,
+          0.189067
+        ],
+        "distance_normalized": 0.018135,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.024118,
+          0.009183,
+          0.188927
+        ],
+        "distance_normalized": 0.018135,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.011565,
+          0.085937,
+          0.135148
+        ],
+        "distance_normalized": 0.018092,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.019741,
+          0.009973,
+          0.192148
+        ],
+        "distance_normalized": 0.01805,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.027878,
+          0.008606,
+          0.126192
+        ],
+        "distance_normalized": 0.017994,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.02889,
+          0.008862,
+          0.125075
+        ],
+        "distance_normalized": 0.017951,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.026903,
+          0.008908,
+          0.124873
+        ],
+        "distance_normalized": 0.017943,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.003694,
+          0.008944,
+          0.124715
+        ],
+        "distance_normalized": 0.017937,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.002596,
+          0.011039,
+          0.196099
+        ],
+        "distance_normalized": 0.017936,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.018185,
+          0.011209,
+          0.196729
+        ],
+        "distance_normalized": 0.017936,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.02035,
+          0.011391,
+          0.197402
+        ],
+        "distance_normalized": 0.017935,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.054118,
+          0.113379,
+          0.101513
+        ],
+        "distance_normalized": 0.017861,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.01144,
+          0.00949,
+          0.12233
+        ],
+        "distance_normalized": 0.017845,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.011845,
+          0.085937,
+          0.09876
+        ],
+        "distance_normalized": 0.017835,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.001618,
+          0.012423,
+          0.200633
+        ],
+        "distance_normalized": 0.017789,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.019825,
+          0.010621,
+          0.117912
+        ],
+        "distance_normalized": 0.017735,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.014331,
+          0.011176,
+          0.115975
+        ],
+        "distance_normalized": 0.01765,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.00663,
+          0.011324,
+          0.11546
+        ],
+        "distance_normalized": 0.017627,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.010449,
+          0.016272,
+          0.211246
+        ],
+        "distance_normalized": 0.0174,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.010888,
+          0.016664,
+          0.212249
+        ],
+        "distance_normalized": 0.017389,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.029268,
+          0.016787,
+          0.212564
+        ],
+        "distance_normalized": 0.017386,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.003049,
+          0.625398,
+          0.029238
+        ],
+        "distance_normalized": 0.017376,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.014994,
+          0.013489,
+          0.108684
+        ],
+        "distance_normalized": 0.01737,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.022851,
+          0.013899,
+          0.1075
+        ],
+        "distance_normalized": 0.017312,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.022896,
+          0.014698,
+          0.105195
+        ],
+        "distance_normalized": 0.017233,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.02177,
+          0.015145,
+          0.104061
+        ],
+        "distance_normalized": 0.017185,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008959,
+          0.018273,
+          0.215866
+        ],
+        "distance_normalized": 0.017181,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.027842,
+          0.015978,
+          0.102022
+        ],
+        "distance_normalized": 0.017073,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.019855,
+          0.016633,
+          0.10042
+        ],
+        "distance_normalized": 0.016986,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.008456,
+          0.177228
+        ],
+        "distance_normalized": 0.016982,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.000238,
+          0.042523,
+          0.03502
+        ],
+        "distance_normalized": 0.016953,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.012987,
+          0.085937,
+          0.074806
+        ],
+        "distance_normalized": 0.016785,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.0169,
+          0.023889,
+          0.227137
+        ],
+        "distance_normalized": 0.016637,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.049178,
+          0.107451,
+          0.079634
+        ],
+        "distance_normalized": 0.016478,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.018648,
+          0.020851,
+          0.091127
+        ],
+        "distance_normalized": 0.016475,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008395,
+          0.025249,
+          0.229432
+        ],
+        "distance_normalized": 0.016454,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.020698,
+          0.022188,
+          0.088579
+        ],
+        "distance_normalized": 0.01633,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.013527,
+          0.078125,
+          0.089004
+        ],
+        "distance_normalized": 0.016289,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.008188,
+          0.144899
+        ],
+        "distance_normalized": 0.016242,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.024569,
+          0.022938,
+          0.087195
+        ],
+        "distance_normalized": 0.016237,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.006481,
+          0.023029,
+          0.087028
+        ],
+        "distance_normalized": 0.016225,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.029323,
+          0.027722,
+          0.233603
+        ],
+        "distance_normalized": 0.01622,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.013647,
+          0.085937,
+          0.090087
+        ],
+        "distance_normalized": 0.016179,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.05581,
+          0.11541,
+          0.114201
+        ],
+        "distance_normalized": 0.015994,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.003498,
+          0.041949,
+          0.0366
+        ],
+        "distance_normalized": 0.015754,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.04829,
+          0.106944,
+          0.070313
+        ],
+        "distance_normalized": 0.015662,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.056324,
+          0.116027,
+          0.072171
+        ],
+        "distance_normalized": 0.015428,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.026481,
+          0.03645,
+          0.245981
+        ],
+        "distance_normalized": 0.015246,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.014693,
+          0.085937,
+          0.103116
+        ],
+        "distance_normalized": 0.015218,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.056596,
+          0.116354,
+          0.090526
+        ],
+        "distance_normalized": 0.015128,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.047602,
+          0.10556,
+          0.098473
+        ],
+        "distance_normalized": 0.015029,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.010092,
+          0.17023
+        ],
+        "distance_normalized": 0.014759,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.057121,
+          0.116983,
+          0.077693
+        ],
+        "distance_normalized": 0.014549,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.030583,
+          0.044282,
+          0.255106
+        ],
+        "distance_normalized": 0.014376,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.023027,
+          0.044838,
+          0.2557
+        ],
+        "distance_normalized": 0.014307,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.051972,
+          0.117306,
+          0.138405
+        ],
+        "distance_normalized": 0.014252,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.009611,
+          0.046416,
+          0.257386
+        ],
+        "distance_normalized": 0.01412,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.006297,
+          0.046994,
+          0.258003
+        ],
+        "distance_normalized": 0.014086,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.01609,
+          0.198385
+        ],
+        "distance_normalized": 0.013998,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.046321,
+          0.112634,
+          0.070313
+        ],
+        "distance_normalized": 0.013852,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.016334,
+          0.044286,
+          0.023026
+        ],
+        "distance_normalized": 0.01371,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.01658,
+          0.085937,
+          0.119556
+        ],
+        "distance_normalized": 0.013483,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.028821,
+          0.052272,
+          0.263107
+        ],
+        "distance_normalized": 0.013475,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.029678,
+          0.07779
+        ],
+        "distance_normalized": 0.013395,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.011018,
+          0.154079
+        ],
+        "distance_normalized": 0.013307,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.029652,
+          0.077543
+        ],
+        "distance_normalized": 0.013298,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.002394,
+          0.054458,
+          0.265068
+        ],
+        "distance_normalized": 0.013256,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.029069,
+          0.055264,
+          0.265761
+        ],
+        "distance_normalized": 0.013156,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.016941,
+          0.078125,
+          0.079765
+        ],
+        "distance_normalized": 0.013151,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.023604,
+          0.217082
+        ],
+        "distance_normalized": 0.013059,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.015971,
+          0.056697,
+          0.266992
+        ],
+        "distance_normalized": 0.012977,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.008611,
+          0.056875,
+          0.267145
+        ],
+        "distance_normalized": 0.012955,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.058705,
+          0.118884,
+          0.072959
+        ],
+        "distance_normalized": 0.012802,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.058725,
+          0.118908,
+          0.122751
+        ],
+        "distance_normalized": 0.012779,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.017354,
+          0.085937,
+          0.096868
+        ],
+        "distance_normalized": 0.012772,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.019807,
+          0.060475,
+          0.270114
+        ],
+        "distance_normalized": 0.012578,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.028858,
+          0.060548,
+          0.27017
+        ],
+        "distance_normalized": 0.012569,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.010139,
+          0.061667,
+          0.27103
+        ],
+        "distance_normalized": 0.012429,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.050931,
+          0.259804
+        ],
+        "distance_normalized": 0.012415,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.007635,
+          0.631713,
+          0.034016
+        ],
+        "distance_normalized": 0.012415,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.044706,
+          0.112782,
+          0.070313
+        ],
+        "distance_normalized": 0.012367,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.059212,
+          0.119493,
+          0.117596
+        ],
+        "distance_normalized": 0.012242,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.059278,
+          0.119572,
+          0.093086
+        ],
+        "distance_normalized": 0.01217,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.005496,
+          0.065767,
+          0.274149
+        ],
+        "distance_normalized": 0.011988,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.026681,
+          0.066112,
+          0.274386
+        ],
+        "distance_normalized": 0.011945,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.043859,
+          0.101068,
+          0.091792
+        ],
+        "distance_normalized": 0.011589,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.053877,
+          0.261716
+        ],
+        "distance_normalized": 0.011525,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.002067,
+          0.663168,
+          0.057814
+        ],
+        "distance_normalized": 0.011487,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.026316,
+          0.218983
+        ],
+        "distance_normalized": 0.011472,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.015805,
+          0.07097,
+          0.277718
+        ],
+        "distance_normalized": 0.011359,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.018917,
+          0.078125,
+          0.08334
+        ],
+        "distance_normalized": 0.011335,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.013032,
+          0.633157,
+          0.035108
+        ],
+        "distance_normalized": 0.011281,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.014637,
+          0.072991,
+          0.279017
+        ],
+        "distance_normalized": 0.011155,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.011583,
+          0.661515,
+          0.056563
+        ],
+        "distance_normalized": 0.010993,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.008474,
+          0.029165,
+          0.071828
+        ],
+        "distance_normalized": 0.01098,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.031206,
+          0.029175,
+          0.071801
+        ],
+        "distance_normalized": 0.01096,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.053639,
+          0.12122,
+          0.070313
+        ],
+        "distance_normalized": 0.010655,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.007682,
+          0.078324,
+          0.282265
+        ],
+        "distance_normalized": 0.010541,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.028458,
+          0.090203
+        ],
+        "distance_normalized": 0.010472,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.025909,
+          0.000708,
+          0.023026
+        ],
+        "distance_normalized": 0.01033,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.042432,
+          0.111734,
+          0.138405
+        ],
+        "distance_normalized": 0.010277,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.0098,
+          0.029533,
+          0.070815
+        ],
+        "distance_normalized": 0.010211,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.013413,
+          0.08134,
+          0.283904
+        ],
+        "distance_normalized": 0.010175,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.047132,
+          0.25121
+        ],
+        "distance_normalized": 0.010113,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.019952,
+          0.026496,
+          0.023026
+        ],
+        "distance_normalized": 0.009994,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.034827,
+          0.078906
+        ],
+        "distance_normalized": 0.009865,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.015151,
+          0.084539,
+          0.285621
+        ],
+        "distance_normalized": 0.009792,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03028,
+          0.001529,
+          0.023026
+        ],
+        "distance_normalized": 0.009683,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.083356,
+          0.284552
+        ],
+        "distance_normalized": 0.009593,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.034097,
+          0.230191
+        ],
+        "distance_normalized": 0.009576,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.022619,
+          -0.0,
+          0.020188
+        ],
+        "distance_normalized": 0.009546,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.027945,
+          -0.0,
+          0.020066
+        ],
+        "distance_normalized": 0.009489,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.02858,
+          0.087553,
+          0.287103
+        ],
+        "distance_normalized": 0.00946,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.041489,
+          0.098225,
+          0.116539
+        ],
+        "distance_normalized": 0.009411,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.017162,
+          0.02994,
+          0.069693
+        ],
+        "distance_normalized": 0.00936,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.01893,
+          -0.0,
+          0.019725
+        ],
+        "distance_normalized": 0.009328,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.026912,
+          0.214509
+        ],
+        "distance_normalized": 0.009327,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.004592,
+          0.089488,
+          0.288011
+        ],
+        "distance_normalized": 0.009213,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.07313,
+          0.276288
+        ],
+        "distance_normalized": 0.0091,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.012144,
+          0.09127,
+          0.288846
+        ],
+        "distance_normalized": 0.008994,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.026862,
+          0.030135,
+          0.069155
+        ],
+        "distance_normalized": 0.008951,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.006606,
+          0.092761,
+          0.289541
+        ],
+        "distance_normalized": 0.008875,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.007105,
+          0.667006,
+          0.060718
+        ],
+        "distance_normalized": 0.008818,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.021716,
+          0.085937,
+          0.121737
+        ],
+        "distance_normalized": 0.008763,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.016311,
+          -0.0,
+          0.018527
+        ],
+        "distance_normalized": 0.008761,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.021773,
+          0.08584,
+          0.070313
+        ],
+        "distance_normalized": 0.008711,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.018757,
+          0.703095,
+          0.553947
+        ],
+        "distance_normalized": 0.008686,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.040652,
+          0.09722,
+          0.086984
+        ],
+        "distance_normalized": 0.008641,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.012367,
+          0.702508,
+          0.551415
+        ],
+        "distance_normalized": 0.008596,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.077625,
+          0.279099
+        ],
+        "distance_normalized": 0.008589,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.02226,
+          -0.0,
+          0.01811
+        ],
+        "distance_normalized": 0.008564,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.003647,
+          0.702134,
+          0.549802
+        ],
+        "distance_normalized": 0.008538,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.014299,
+          0.701334,
+          0.546351
+        ],
+        "distance_normalized": 0.008415,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.002585,
+          0.701124,
+          0.545444
+        ],
+        "distance_normalized": 0.008383,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.002902,
+          0.038422,
+          0.04632
+        ],
+        "distance_normalized": 0.008378,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.022135,
+          0.043245,
+          0.033029
+        ],
+        "distance_normalized": 0.008377,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.018277,
+          0.70108,
+          0.545254
+        ],
+        "distance_normalized": 0.008376,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.022261,
+          0.085937,
+          0.11375
+        ],
+        "distance_normalized": 0.008262,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.026798,
+          0.097624,
+          0.291506
+        ],
+        "distance_normalized": 0.008244,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.022304,
+          0.085937,
+          0.112544
+        ],
+        "distance_normalized": 0.008223,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.037783,
+          0.233472
+        ],
+        "distance_normalized": 0.008092,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.022467,
+          0.621144,
+          0.026019
+        ],
+        "distance_normalized": 0.008072,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.03997,
+          0.10195,
+          0.070313
+        ],
+        "distance_normalized": 0.008015,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.025215,
+          -0.0,
+          0.016835
+        ],
+        "distance_normalized": 0.007961,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.063112,
+          0.124172,
+          0.114338
+        ],
+        "distance_normalized": 0.007941,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.029618,
+          0.668375,
+          0.061753
+        ],
+        "distance_normalized": 0.007867,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.022807,
+          0.085937,
+          0.114068
+        ],
+        "distance_normalized": 0.00776,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.004965,
+          0.697006,
+          0.527678
+        ],
+        "distance_normalized": 0.007749,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.056561,
+          0.124498,
+          0.070313
+        ],
+        "distance_normalized": 0.007642,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.003127,
+          0.696175,
+          0.524095
+        ],
+        "distance_normalized": 0.007622,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.039433,
+          0.105562,
+          0.138405
+        ],
+        "distance_normalized": 0.007521,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.008787,
+          0.668887,
+          0.062141
+        ],
+        "distance_normalized": 0.007511,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.03125,
+          0.02638,
+          0.103972
+        ],
+        "distance_normalized": 0.007452,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.007568,
+          0.10456,
+          0.294029
+        ],
+        "distance_normalized": 0.007425,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.017433,
+          0.694601,
+          0.517304
+        ],
+        "distance_normalized": 0.007379,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.658322,
+          0.06194
+        ],
+        "distance_normalized": 0.007251,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.03125,
+          0.024422,
+          0.111025
+        ],
+        "distance_normalized": 0.00712,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.011179,
+          0.022821,
+          0.023026
+        ],
+        "distance_normalized": 0.007097,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.027895,
+          0.031023,
+          0.06671
+        ],
+        "distance_normalized": 0.007096,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.0583,
+          0.259271
+        ],
+        "distance_normalized": 0.007028,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.023612,
+          0.085937,
+          0.135472
+        ],
+        "distance_normalized": 0.00702,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.010356,
+          0.691585,
+          0.504296
+        ],
+        "distance_normalized": 0.006915,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.019847,
+          0.669756,
+          0.062798
+        ],
+        "distance_normalized": 0.006906,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.029719,
+          0.679322,
+          0.070036
+        ],
+        "distance_normalized": 0.006849,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.016122,
+          0.69108,
+          0.502117
+        ],
+        "distance_normalized": 0.006838,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.00255,
+          0.022478,
+          0.023026
+        ],
+        "distance_normalized": 0.006827,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.023907,
+          0.07826,
+          0.138405
+        ],
+        "distance_normalized": 0.006749,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.010315,
+          0.110391,
+          0.295852
+        ],
+        "distance_normalized": 0.006749,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.662769,
+          0.063038
+        ],
+        "distance_normalized": 0.006686,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.668494,
+          0.063046
+        ],
+        "distance_normalized": 0.006679,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.064326,
+          0.125629,
+          0.097126
+        ],
+        "distance_normalized": 0.006602,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.014832,
+          0.639177,
+          0.039663
+        ],
+        "distance_normalized": 0.006552,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.023444,
+          0.701415,
+          0.5625
+        ],
+        "distance_normalized": 0.0064,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.008581,
+          0.688211,
+          0.489742
+        ],
+        "distance_normalized": 0.006396,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.024404,
+          0.7046,
+          0.560437
+        ],
+        "distance_normalized": 0.006292,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.003114,
+          0.687385,
+          0.486179
+        ],
+        "distance_normalized": 0.006269,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.060718,
+          0.125992,
+          0.070313
+        ],
+        "distance_normalized": 0.006269,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.024542,
+          0.028301,
+          0.023026
+        ],
+        "distance_normalized": 0.006165,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.658978,
+          0.063627
+        ],
+        "distance_normalized": 0.006145,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.03779,
+          0.099456,
+          0.138405
+        ],
+        "distance_normalized": 0.006011,
+        "region_id": "excess-01"
+      }
+    ],
+    "ground_truth_to_candidate": [
+      {
+        "point": [
+          0.03125,
+          0.132242,
+          0.09976
+        ],
+        "distance_normalized": 0.027066,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.03125,
+          0.125984,
+          0.114181
+        ],
+        "distance_normalized": 0.022264,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.038122,
+          0.132812,
+          0.114993
+        ],
+        "distance_normalized": 0.021518,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.04002,
+          0.132812,
+          0.102566
+        ],
+        "distance_normalized": 0.021389,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.120696,
+          0.108069
+        ],
+        "distance_normalized": 0.020452,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.016554,
+          0.638781,
+          -0.0
+        ],
+        "distance_normalized": 0.019846,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.021665,
+          0.642067,
+          0.014818
+        ],
+        "distance_normalized": 0.019813,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.026183,
+          0.637777,
+          -0.0
+        ],
+        "distance_normalized": 0.018924,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.007655,
+          0.025579,
+          0.151789
+        ],
+        "distance_normalized": 0.018436,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.00141,
+          0.025644,
+          0.149946
+        ],
+        "distance_normalized": 0.018391,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.002859,
+          0.026645,
+          0.173661
+        ],
+        "distance_normalized": 0.018347,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.00394,
+          0.025937,
+          0.144732
+        ],
+        "distance_normalized": 0.018345,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.04441,
+          0.132812,
+          0.110054
+        ],
+        "distance_normalized": 0.018289,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.116868,
+          0.111492
+        ],
+        "distance_normalized": 0.018199,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.000655,
+          0.028628,
+          0.185496
+        ],
+        "distance_normalized": 0.018137,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.006346,
+          0.028451,
+          0.184675
+        ],
+        "distance_normalized": 0.018134,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.00228,
+          0.029099,
+          0.187675
+        ],
+        "distance_normalized": 0.018043,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.009701,
+          0.02781,
+          0.130008
+        ],
+        "distance_normalized": 0.017988,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.00514,
+          0.029412,
+          0.189126
+        ],
+        "distance_normalized": 0.017973,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.003868,
+          0.030411,
+          0.192991
+        ],
+        "distance_normalized": 0.0179,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.005334,
+          0.028466,
+          0.12648
+        ],
+        "distance_normalized": 0.017853,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.004218,
+          0.028541,
+          0.126077
+        ],
+        "distance_normalized": 0.017837,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.045065,
+          0.132812,
+          0.09928
+        ],
+        "distance_normalized": 0.017826,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.00426,
+          0.029059,
+          0.123781
+        ],
+        "distance_normalized": 0.017777,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.132774,
+          0.119436
+        ],
+        "distance_normalized": 0.017435,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.012353,
+          0.02559,
+          0.16064
+        ],
+        "distance_normalized": 0.017368,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.023312,
+          0.635998,
+          -0.0
+        ],
+        "distance_normalized": 0.017289,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.010199,
+          0.03211,
+          0.11233
+        ],
+        "distance_normalized": 0.017269,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.025144,
+          0.642816,
+          0.019099
+        ],
+        "distance_normalized": 0.01709,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.046132,
+          0.132812,
+          0.093652
+        ],
+        "distance_normalized": 0.017073,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.012797,
+          0.026443,
+          0.171891
+        ],
+        "distance_normalized": 0.01696,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.010789,
+          0.035892,
+          0.101761
+        ],
+        "distance_normalized": 0.016677,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.004775,
+          0.040301,
+          0.21949
+        ],
+        "distance_normalized": 0.01656,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.009516,
+          0.635043,
+          -0.0
+        ],
+        "distance_normalized": 0.016411,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.013412,
+          0.044502,
+          0.083828
+        ],
+        "distance_normalized": 0.016395,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.004234,
+          0.042082,
+          0.088296
+        ],
+        "distance_normalized": 0.016323,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.013701,
+          0.025595,
+          0.16098
+        ],
+        "distance_normalized": 0.01613,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.013706,
+          0.025952,
+          0.166843
+        ],
+        "distance_normalized": 0.016125,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.043076,
+          0.132812,
+          0.08778
+        ],
+        "distance_normalized": 0.016055,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.013811,
+          0.025498,
+          0.154273
+        ],
+        "distance_normalized": 0.016028,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.033311,
+          0.132812,
+          0.087734
+        ],
+        "distance_normalized": 0.016012,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.012817,
+          0.044847,
+          0.228065
+        ],
+        "distance_normalized": 0.015922,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.013968,
+          0.04379,
+          0.085041
+        ],
+        "distance_normalized": 0.015884,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.014231,
+          0.025598,
+          0.161224
+        ],
+        "distance_normalized": 0.015642,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.005508,
+          0.634199,
+          -0.0
+        ],
+        "distance_normalized": 0.015636,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.112253,
+          0.090485
+        ],
+        "distance_normalized": 0.015484,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.014409,
+          0.03526,
+          0.207936
+        ],
+        "distance_normalized": 0.015478,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.003257,
+          0.045554,
+          0.075924
+        ],
+        "distance_normalized": 0.015444,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.011857,
+          0.05012,
+          0.236584
+        ],
+        "distance_normalized": 0.015218,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.014811,
+          0.027594,
+          0.131169
+        ],
+        "distance_normalized": 0.015109,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.016746,
+          0.023567,
+          0.039279
+        ],
+        "distance_normalized": 0.014938,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.000861,
+          0.652822,
+          0.070312
+        ],
+        "distance_normalized": 0.014898,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.013691,
+          0.044995,
+          0.074992
+        ],
+        "distance_normalized": 0.014669,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.015322,
+          0.026906,
+          0.135716
+        ],
+        "distance_normalized": 0.01464,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.000837,
+          0.054369,
+          0.242585
+        ],
+        "distance_normalized": 0.014633,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.025071,
+          0.023924,
+          0.039874
+        ],
+        "distance_normalized": 0.014546,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.03125,
+          0.110605,
+          0.10798
+        ],
+        "distance_normalized": 0.014514,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.015678,
+          0.031703,
+          0.197638
+        ],
+        "distance_normalized": 0.014312,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.015757,
+          0.036412,
+          0.10047
+        ],
+        "distance_normalized": 0.01424,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.015786,
+          0.030315,
+          0.192631
+        ],
+        "distance_normalized": 0.014213,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.115041,
+          0.123022
+        ],
+        "distance_normalized": 0.014139,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.03125,
+          0.109648,
+          0.119602
+        ],
+        "distance_normalized": 0.013951,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.016545,
+          0.026035,
+          0.143585
+        ],
+        "distance_normalized": 0.013515,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.051193,
+          0.132812,
+          0.108559
+        ],
+        "distance_normalized": 0.013499,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.051369,
+          0.132812,
+          0.091038
+        ],
+        "distance_normalized": 0.013375,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.01684,
+          0.035956,
+          0.209777
+        ],
+        "distance_normalized": 0.013244,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.016895,
+          0.029189,
+          0.188095
+        ],
+        "distance_normalized": 0.013194,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.031483,
+          0.132812,
+          0.084641
+        ],
+        "distance_normalized": 0.013169,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.051682,
+          0.132812,
+          0.088288
+        ],
+        "distance_normalized": 0.013154,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.008596,
+          0.067684,
+          0.258059
+        ],
+        "distance_normalized": 0.012808,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.006368,
+          0.068284,
+          0.258646
+        ],
+        "distance_normalized": 0.01273,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.017743,
+          0.025512,
+          0.155202
+        ],
+        "distance_normalized": 0.012415,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.018107,
+          0.644136,
+          0.026644
+        ],
+        "distance_normalized": 0.012292,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.00981,
+          0.630554,
+          -0.0
+        ],
+        "distance_normalized": 0.012286,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.031024,
+          0.644164,
+          0.026804
+        ],
+        "distance_normalized": 0.012191,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.125026,
+          0.083569
+        ],
+        "distance_normalized": 0.012184,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.01821,
+          0.025815,
+          0.1647
+        ],
+        "distance_normalized": 0.011985,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.018322,
+          0.031425,
+          0.196769
+        ],
+        "distance_normalized": 0.011883,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.01845,
+          0.065992,
+          0.256273
+        ],
+        "distance_normalized": 0.011765,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.643347,
+          0.02683
+        ],
+        "distance_normalized": 0.011719,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.018525,
+          0.043656,
+          0.225937
+        ],
+        "distance_normalized": 0.011695,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.01854,
+          0.032986,
+          0.10968
+        ],
+        "distance_normalized": 0.011682,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.014556,
+          0.076541,
+          0.266224
+        ],
+        "distance_normalized": 0.011608,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.014607,
+          0.07681,
+          0.266458
+        ],
+        "distance_normalized": 0.011571,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.118587,
+          0.12607
+        ],
+        "distance_normalized": 0.011337,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.03125,
+          0.105192,
+          0.1205
+        ],
+        "distance_normalized": 0.011329,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.018455,
+          0.042541,
+          0.070902
+        ],
+        "distance_normalized": 0.011266,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.019006,
+          0.028071,
+          0.128605
+        ],
+        "distance_normalized": 0.011253,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.017145,
+          0.644442,
+          0.028388
+        ],
+        "distance_normalized": 0.011183,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.111002,
+          0.126237
+        ],
+        "distance_normalized": 0.011183,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.029572,
+          0.629168,
+          -0.0
+        ],
+        "distance_normalized": 0.011012,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.038524,
+          0.132812,
+          0.081809
+        ],
+        "distance_normalized": 0.010567,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.03125,
+          0.117711,
+          0.081794
+        ],
+        "distance_normalized": 0.010553,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.037945,
+          0.132812,
+          0.08177
+        ],
+        "distance_normalized": 0.01053,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.025091,
+          0.628423,
+          -0.0
+        ],
+        "distance_normalized": 0.010326,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.019096,
+          0.026994,
+          0.04499
+        ],
+        "distance_normalized": 0.010291,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.020114,
+          0.026047,
+          0.168321
+        ],
+        "distance_normalized": 0.010235,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.017524,
+          0.628206,
+          -0.0
+        ],
+        "distance_normalized": 0.010127,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.014711,
+          0.644779,
+          0.030319
+        ],
+        "distance_normalized": 0.009956,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.010164,
+          0.041503,
+          0.069172
+        ],
+        "distance_normalized": 0.009827,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.00154,
+          0.661358,
+          0.070312
+        ],
+        "distance_normalized": 0.009666,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.004404,
+          0.091696,
+          0.277543
+        ],
+        "distance_normalized": 0.009572,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.008413,
+          0.091928,
+          0.27769
+        ],
+        "distance_normalized": 0.009541,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.004012,
+          0.092014,
+          0.277744
+        ],
+        "distance_normalized": 0.009529,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.020898,
+          0.068542,
+          0.258893
+        ],
+        "distance_normalized": 0.009514,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.057121,
+          0.132812,
+          0.085208
+        ],
+        "distance_normalized": 0.009314,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.627181,
+          0.000704
+        ],
+        "distance_normalized": 0.009185,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.018163,
+          0.094727,
+          0.279464
+        ],
+        "distance_normalized": 0.009156,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.021353,
+          0.057255,
+          0.246311
+        ],
+        "distance_normalized": 0.009097,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.057591,
+          0.132812,
+          0.086111
+        ],
+        "distance_normalized": 0.008982,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.018483,
+          0.626739,
+          -0.0
+        ],
+        "distance_normalized": 0.008779,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.039052,
+          0.132812,
+          0.079807
+        ],
+        "distance_normalized": 0.008726,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.020607,
+          0.645135,
+          0.032349
+        ],
+        "distance_normalized": 0.008664,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.021908,
+          0.650892,
+          0.065249
+        ],
+        "distance_normalized": 0.008587,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.000629,
+          0.693285,
+          0.552976
+        ],
+        "distance_normalized": 0.008582,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.029947,
+          0.692761,
+          0.550251
+        ],
+        "distance_normalized": 0.008486,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.051153,
+          0.132812,
+          0.129184
+        ],
+        "distance_normalized": 0.008475,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.029296,
+          0.645191,
+          0.032669
+        ],
+        "distance_normalized": 0.008461,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.000334,
+          0.691679,
+          0.544627
+        ],
+        "distance_normalized": 0.008287,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.024307,
+          0.69088,
+          0.54047
+        ],
+        "distance_normalized": 0.00814,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.027821,
+          0.690597,
+          0.539
+        ],
+        "distance_normalized": 0.008088,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.023478,
+          0.690082,
+          0.53632
+        ],
+        "distance_normalized": 0.007993,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.059073,
+          0.132812,
+          0.094833
+        ],
+        "distance_normalized": 0.007936,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          0.002247,
+          0.689739,
+          0.534538
+        ],
+        "distance_normalized": 0.00793,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.099169,
+          0.083772
+        ],
+        "distance_normalized": 0.007785,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.00556,
+          0.688901,
+          0.530177
+        ],
+        "distance_normalized": 0.007776,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.03125,
+          0.099124,
+          0.127988
+        ],
+        "distance_normalized": 0.007759,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.01854,
+          0.688143,
+          0.526239
+        ],
+        "distance_normalized": 0.007637,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.029327,
+          0.687686,
+          0.523863
+        ],
+        "distance_normalized": 0.007553,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.004095,
+          0.687394,
+          0.522343
+        ],
+        "distance_normalized": 0.007499,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.023099,
+          0.095721,
+          0.280094
+        ],
+        "distance_normalized": 0.007491,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.013416,
+          0.008096,
+          0.013494
+        ],
+        "distance_normalized": 0.007441,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.016816,
+          0.686632,
+          0.518383
+        ],
+        "distance_normalized": 0.007359,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.005035,
+          0.693591,
+          0.55457
+        ],
+        "distance_normalized": 0.007288,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.017548,
+          0.686202,
+          0.516144
+        ],
+        "distance_normalized": 0.007279,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.00384,
+          0.686104,
+          0.515634
+        ],
+        "distance_normalized": 0.007261,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.03125,
+          0.09811,
+          0.084272
+        ],
+        "distance_normalized": 0.007162,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          -0.023472,
+          0.035452,
+          0.102856
+        ],
+        "distance_normalized": 0.007149,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.060245,
+          0.132812,
+          0.097072
+        ],
+        "distance_normalized": 0.007108,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.027992,
+          0.685033,
+          0.510066
+        ],
+        "distance_normalized": 0.007064,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.006326,
+          0.684823,
+          0.508973
+        ],
+        "distance_normalized": 0.007026,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.023638,
+          0.062933,
+          0.253042
+        ],
+        "distance_normalized": 0.006996,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.060422,
+          0.132812,
+          0.103318
+        ],
+        "distance_normalized": 0.006983,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.00812,
+          0.111414,
+          0.288276
+        ],
+        "distance_normalized": 0.006956,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.003214,
+          0.693671,
+          0.554983
+        ],
+        "distance_normalized": 0.006909,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.007317,
+          0.684036,
+          0.504883
+        ],
+        "distance_normalized": 0.006881,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.030628,
+          0.683883,
+          0.504087
+        ],
+        "distance_normalized": 0.006853,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.002953,
+          0.683363,
+          0.50138
+        ],
+        "distance_normalized": 0.006757,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.017731,
+          0.683214,
+          0.500606
+        ],
+        "distance_normalized": 0.00673,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.015967,
+          0.683069,
+          0.499853
+        ],
+        "distance_normalized": 0.006703,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.000649,
+          0.114303,
+          0.289552
+        ],
+        "distance_normalized": 0.006549,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.002847,
+          0.682191,
+          0.495288
+        ],
+        "distance_normalized": 0.006542,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          -0.014293,
+          0.006925,
+          0.011541
+        ],
+        "distance_normalized": 0.006365,
+        "region_id": "missing-02"
+      },
+      {
+        "point": [
+          0.024357,
+          0.026314,
+          0.140302
+        ],
+        "distance_normalized": 0.006336,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.023954,
+          0.116078,
+          0.290299
+        ],
+        "distance_normalized": 0.006333,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.03125,
+          0.113591,
+          0.131569
+        ],
+        "distance_normalized": 0.006283,
+        "region_id": "missing-04"
+      },
+      {
+        "point": [
+          -0.022673,
+          0.116746,
+          0.290555
+        ],
+        "distance_normalized": 0.006273,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.008686,
+          0.649243,
+          0.055827
+        ],
+        "distance_normalized": 0.006265,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.03125,
+          0.685102,
+          0.506141
+        ],
+        "distance_normalized": 0.006188,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.007023,
+          0.623894,
+          -0.0
+        ],
+        "distance_normalized": 0.006164,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          -0.024548,
+          0.049095,
+          0.235027
+        ],
+        "distance_normalized": 0.00616,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.004073,
+          0.649213,
+          0.055655
+        ],
+        "distance_normalized": 0.006156,
+        "region_id": "missing-03"
+      },
+      {
+        "point": [
+          0.024553,
+          0.112322,
+          0.288677
+        ],
+        "distance_normalized": 0.006156,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.021417,
+          0.679542,
+          0.481512
+        ],
+        "distance_normalized": 0.006054,
+        "region_id": "missing-05"
+      },
+      {
+        "point": [
+          0.005733,
+          0.679495,
+          0.481266
+        ],
+        "distance_normalized": 0.006046,
+        "region_id": "missing-05"
+      }
+    ]
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

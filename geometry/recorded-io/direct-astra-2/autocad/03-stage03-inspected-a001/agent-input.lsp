@@ -1,0 +1,11 @@
+(progn
+(setvar "CMDECHO" 0)
+(setvar "FILEDIA" 0)
+(setvar "FACETRES" 10.0)
+(setvar "ISOLINES" 8)
+(setq body (ssname (ssget "_X" '((0 . "3DSOLID") (410 . "Model"))) 0))
+(command "_.STLOUT" body "" "_Yes" "[private value removed]")
+(command "_.VPOINT" (list 1.0 1.5 1.2))
+(command "_.ZOOM" "_Extents")
+(princ)
+)

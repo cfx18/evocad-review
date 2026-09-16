@@ -1,0 +1,371 @@
+{
+  "target_id": "bf99aff23fea8df096a4b5da",
+  "sample_id": "drawing-14",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "internal_passage"
+  },
+  "learner_answer": {
+    "answer": "internal_passage"
+  },
+  "task_manifest": {
+    "task_id": "drawing-14",
+    "task_type": "section_reasoning",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true
+  },
+  "task": {
+    "task_id": "drawing-14",
+    "query": "结合区域 A 的 A—A 剖视和区域 B 的 C—C 剖面，A—A 中位于大竖孔左侧、向下延伸至底部凹腔的细长空白带，最符合哪种结构解释？",
+    "answer_format": {
+      "answer": "one option value"
+    },
+    "options": [
+      {
+        "value": "solid_rib",
+        "label": "实心加强筋，因沿筋纵向剖切而省略剖面线。"
+      },
+      {
+        "value": "internal_passage",
+        "label": "内部小孔道被纵向剖开后形成的空白区域。"
+      },
+      {
+        "value": "external_open_groove",
+        "label": "沿左侧外表面全长敞开的槽。"
+      },
+      {
+        "value": "joint_gap",
+        "label": "两片壳体之间的装配接缝。"
+      }
+    ],
+    "unit": "none",
+    "absolute_tolerance": 0
+  },
+  "source": {
+    "source_id": "pdf-178",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 178,
+    "sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "结合区域 A 的 A—A 剖视和区域 B 的 C—C 剖面，A—A 中位于大竖孔左侧、向下延伸至底部凹腔的细长空白带，最符合哪种结构解释？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            617,
+            179,
+            754,
+            478
+          ]
+        },
+        {
+          "label": "B",
+          "bbox": [
+            441,
+            557,
+            631,
+            728
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "A—A 中空白带由两条平行实线界定，周围有剖面线，下端通至底部凹腔；C—C 左侧对应位置显示标注φ4的小圆孔。",
+      "expected_answer": "internal_passage",
+      "answer_kind": "choice",
+      "bad_pattern_tags": [
+        "passage_as_unhatched_rib",
+        "internal_hole_as_external_groove"
+      ],
+      "confidence": 0.98,
+      "ambiguity_notes": "",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "internal_passage",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "A—A 中细长空白带两侧为剖切材料；C—C 在对应位置显示 φ4 小圆孔。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 307.94,
+    "observations": 10,
+    "findings": 2,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "internal_passage"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:32:07.657Z",
+      "payload": {
+        "observation_id": "4a38d1ec9b3f4b0d9d006e6d8488bed8",
+        "intent": "Inspect the full CAD drawing: overall views, section labels (A-A, C-C), and where regions A and B come from.",
+        "source_sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+        "sha256": "4c4f1d445204d6e99887904d72a7f2d6e5c6e3fdc026a175ced74028fcbc856c",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:32:08.691Z",
+      "payload": {
+        "observation_id": "1b45558a4f764c18b7dfa8297111ed5c",
+        "intent": "Inspect region A: the A-A section view, especially the slender blank band to the left of the large vertical hole extending down to the bottom cavity.",
+        "source_sha256": "8a8600dba4e98c2566af8d7ee8d944bcd6f44cc3f39a3d77db8d36872bd8a46c",
+        "sha256": "8a8600dba4e98c2566af8d7ee8d944bcd6f44cc3f39a3d77db8d36872bd8a46c",
+        "crop": null,
+        "dimensions": [
+          352,
+          543
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:32:08.842Z",
+      "payload": {
+        "observation_id": "6fae875a0dd74f0ca1931d275abeb69c",
+        "intent": "Inspect region B: the C-C section, to see how features relate to region A structures.",
+        "source_sha256": "9488213c36db7521f7c4ce0130dc1950d88a1864bdaf4d68256fb001f64d2020",
+        "sha256": "9488213c36db7521f7c4ce0130dc1950d88a1864bdaf4d68256fb001f64d2020",
+        "crop": null,
+        "dimensions": [
+          488,
+          311
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:33:24.708Z",
+      "payload": {
+        "observation_id": "3ae4445d6e76435db9023b67e1220ef2",
+        "intent": "Zoom into top of region A: the phi4 hole with X mark and the start of the slender blank band left of the big bore.",
+        "source_sha256": "8a8600dba4e98c2566af8d7ee8d944bcd6f44cc3f39a3d77db8d36872bd8a46c",
+        "sha256": "8f835db95f8d1c5f98823239e7a6f31bf3691adb4b6d91a1de8978b203edbf9c",
+        "crop": [
+          40,
+          0,
+          220,
+          200
+        ],
+        "dimensions": [
+          180,
+          200
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:33:24.972Z",
+      "payload": {
+        "observation_id": "1c350f46b4474ec3a7a848ab92153f31",
+        "intent": "Zoom into the slender vertical blank band with centerline running down to the bottom cavity, left of the large vertical hole.",
+        "source_sha256": "8a8600dba4e98c2566af8d7ee8d944bcd6f44cc3f39a3d77db8d36872bd8a46c",
+        "sha256": "c953ebb9d1a5271303021b181c0e055f9df836fcba02d577985d577d13b5fcb2",
+        "crop": [
+          60,
+          150,
+          240,
+          543
+        ],
+        "dimensions": [
+          180,
+          393
+        ],
+        "image": "receipts/005.png"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:33:25.117Z",
+      "payload": {
+        "observation_id": "de63c02c2e5244d4a1e77d9427478e9b",
+        "intent": "Zoom into C-C section: the profile with R6/phi4 lobe, R11/phi10 lobe, hatching, and the '2' dimension feature at top.",
+        "source_sha256": "9488213c36db7521f7c4ce0130dc1950d88a1864bdaf4d68256fb001f64d2020",
+        "sha256": "a58eacbc057839ecb97fd7bd5720abddfb83aeb7d5d0bedb1740879d60ea5a0e",
+        "crop": [
+          120,
+          20,
+          380,
+          240
+        ],
+        "dimensions": [
+          260,
+          220
+        ],
+        "image": "receipts/006.png"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:34:45.724Z",
+      "payload": {
+        "observation_id": "25a99347658248069c81e84cea83b6cf",
+        "intent": "Left third of region A from mid-height to bottom: identify exterior surfaces, walls, and the bottom cavity.",
+        "source_sha256": "8a8600dba4e98c2566af8d7ee8d944bcd6f44cc3f39a3d77db8d36872bd8a46c",
+        "sha256": "d513d670594da37e3be97af9273b9c790e70fd8f92ea6a6afa29a515c21eaeea",
+        "crop": [
+          0,
+          100,
+          140,
+          543
+        ],
+        "dimensions": [
+          140,
+          443
+        ],
+        "image": "receipts/007.png"
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:34:45.867Z",
+      "payload": {
+        "observation_id": "a9673fe81c7d4de59d024e0db0af9c60",
+        "intent": "Center of region A: relationship between the slender blank band, the big vertical bore, and the side recess.",
+        "source_sha256": "8a8600dba4e98c2566af8d7ee8d944bcd6f44cc3f39a3d77db8d36872bd8a46c",
+        "sha256": "37745e824823be356c802fa44076469249d3cffd84f1746410264084236a6690",
+        "crop": [
+          100,
+          60,
+          300,
+          300
+        ],
+        "dimensions": [
+          200,
+          240
+        ],
+        "image": "receipts/008.png"
+      }
+    },
+    {
+      "sequence": 10,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:34:46.102Z",
+      "payload": {
+        "observation_id": "41315ce1ecc147909c8df939302314b1",
+        "intent": "A-A section in the full drawing: see the C-C cutting-plane marks and the whole column including right side recess and phi19 cross hole.",
+        "source_sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+        "sha256": "563ce43a78a4c08b4e417d2f1cf6a6c18e19aae84a94017d88a0361ebdbc53cc",
+        "crop": [
+          1200,
+          640,
+          1720,
+          1010
+        ],
+        "dimensions": [
+          520,
+          370
+        ],
+        "image": "receipts/009.png"
+      }
+    },
+    {
+      "sequence": 11,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:35:06.548Z",
+      "payload": {
+        "observation_id": "e92894718abe40e2bb43d0084164cb3a",
+        "intent": "Whole A-A section view in original resolution: column, side recess, phi19 hole, C-C cutting plane marks, dimensions.",
+        "source_sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+        "sha256": "3082b9def80ef34ac48558c3bdc24b0ca86cc903c1843bd01b075b2acc6e4b5d",
+        "crop": [
+          1330,
+          200,
+          2260,
+          900
+        ],
+        "dimensions": [
+          930,
+          700
+        ],
+        "image": "receipts/010.png"
+      }
+    },
+    {
+      "sequence": 12,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:36:28.189Z",
+      "payload": {
+        "observation_id": "e92894718abe40e2bb43d0084164cb3a",
+        "public_conclusion": "In the A-A section, the slender unhatched band left of the main vertical bore is bounded by two parallel solid lines with a dash-dot centerline, has hatched solid material on BOTH sides (a hatched wall separates it from the left exterior surface), starts at the top phi4 cross-hole (shown with drill-cone X intersection) and runs down to the bottom base cavity — the classic longitudinal-section appearance of a small internal drilled hole, not a surface groove."
+      }
+    },
+    {
+      "sequence": 13,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:36:28.197Z",
+      "payload": {
+        "observation_id": "de63c02c2e5244d4a1e77d9427478e9b",
+        "public_conclusion": "The C-C cross-section through the column shows a pear-shaped hatched profile (R11 lobe around the phi10 main bore, R6 lobe around a small hole) in which the feature corresponding to the band is a CLOSED phi4 circle fully surrounded by hatched material — i.e., an enclosed internal hole, not an open external groove, not an unhatched solid rib, and not a joint (single HT150 casting)."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/drawing-14/input-01.png",
+    "assets/drawing-14/input-02.png",
+    "assets/drawing-14/input-03.png"
+  ],
+  "asset_base": "assets/drawing-14",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/drawing-14/record.json"
+    }
+  ]
+}

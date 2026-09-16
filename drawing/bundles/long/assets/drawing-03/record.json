@@ -1,0 +1,261 @@
+{
+  "target_id": "d26faee1ae3de525426db71b",
+  "sample_id": "drawing-03",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "lower_bore_depth"
+  },
+  "learner_answer": {
+    "answer": "lower_bore_depth"
+  },
+  "task_manifest": {
+    "task_id": "drawing-03",
+    "task_type": "dimension_attachment",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true
+  },
+  "task": {
+    "task_id": "drawing-03",
+    "query": "区域A为右侧剖视图下部，区域B为左侧视图下轴颈。区域A中不带φ符号的竖向尺寸25，实际控制哪一段长度？",
+    "answer_format": {
+      "answer": "one option value"
+    },
+    "options": [
+      {
+        "value": "journal_outer_diameter",
+        "label": "下轴颈两侧外圆母线之间的距离"
+      },
+      {
+        "value": "lower_bore_depth",
+        "label": "零件下端面至下端较大孔段内端界线的距离"
+      },
+      {
+        "value": "center_to_end",
+        "label": "中央横孔轴线至零件下端面的距离"
+      },
+      {
+        "value": "overall_vertical_span",
+        "label": "零件最上端面至最下端面的距离"
+      }
+    ],
+    "unit": "none",
+    "absolute_tolerance": 0
+  },
+  "source": {
+    "source_id": "pdf-035",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 35,
+    "sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "区域A为右侧剖视图下部，区域B为左侧视图下轴颈。区域A中不带φ符号的竖向尺寸25，实际控制哪一段长度？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            606,
+            519,
+            750,
+            674
+          ]
+        },
+        {
+          "label": "B",
+          "bbox": [
+            254,
+            508,
+            338,
+            704
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "剖视图中25的下尺寸界线对应零件下端面，上尺寸界线对应下端较大孔段的内端。区域B的φ25则标注轴颈外径。",
+      "expected_answer": "lower_bore_depth",
+      "answer_kind": "choice",
+      "bad_pattern_tags": [
+        "same_number_wrong_attachment",
+        "depth_as_diameter"
+      ],
+      "confidence": 0.97,
+      "ambiguity_notes": "",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "lower_bore_depth",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "竖向尺寸25的两端分别连接零件下端面和下端较大孔段的内端界线。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 190.45,
+    "observations": 5,
+    "findings": 2,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "lower_bore_depth"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:51:09.511Z",
+      "payload": {
+        "observation_id": "2cfed54ba86341e192d1720004fb1b6e",
+        "intent": "Inspect the overall CAD drawing to understand the part and its views, especially the right-side section view lower part (region A) and left view lower journal (region B).",
+        "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "sha256": "68ddba8759634ef1209246c7071a403ac957675c67d3a0ad572433a97338ecd7",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:51:10.555Z",
+      "payload": {
+        "observation_id": "bed8062656014b63833d92c4a09de2c7",
+        "intent": "Inspect region A (lower part of right section view) to find the vertical dimension 25 without φ symbol and determine which length it controls.",
+        "source_sha256": "9f7ab192d27e76d9cb79dd272a8beea6ce68a10728536b71ffbf642faeb72e87",
+        "sha256": "9f7ab192d27e76d9cb79dd272a8beea6ce68a10728536b71ffbf642faeb72e87",
+        "crop": null,
+        "dimensions": [
+          369,
+          282
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:51:10.704Z",
+      "payload": {
+        "observation_id": "018d5ed1f5e44adda4e226dd771b7cdd",
+        "intent": "Inspect region B (lower journal of left view) to understand the geometry and dimensions there.",
+        "source_sha256": "cfffe6fd00e85423069f48921d7a5b75b37ebb53e14c32f10bbabd47b9af3cb1",
+        "sha256": "cfffe6fd00e85423069f48921d7a5b75b37ebb53e14c32f10bbabd47b9af3cb1",
+        "crop": null,
+        "dimensions": [
+          216,
+          356
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:51:56.374Z",
+      "payload": {
+        "observation_id": "c51fcb1124d44963bf65cbf72719e20b",
+        "intent": "Look closely at the vertical dimension 25 in the lower part of the right section view: trace where its upper and lower extension lines attach (bottom end face vs internal bore step vs cross-hole axis).",
+        "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "sha256": "507d2a70c4dbc55645d1fb208bcb3f1d64d22817c4acdf9d6750ee2b24439ce8",
+        "crop": [
+          1500,
+          860,
+          2010,
+          1300
+        ],
+        "dimensions": [
+          510,
+          440
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:53:20.463Z",
+      "payload": {
+        "observation_id": "310258f934f343038b8bae16412518f3",
+        "intent": "Zoom tightly on the upper extension line of the '25' dimension to verify it aligns with the inner end boundary (shoulder) of the larger bore segment, not the external profile step.",
+        "source_sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "sha256": "1856dcf1ec0c34990789a50654e8ac18c0fc53c1d7c1191773f29be8cbc7359e",
+        "crop": [
+          1540,
+          960,
+          1780,
+          1230
+        ],
+        "dimensions": [
+          240,
+          270
+        ],
+        "image": "receipts/005.png"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T10:53:40.386Z",
+      "payload": {
+        "observation_id": "2cfed54ba86341e192d1720004fb1b6e",
+        "public_conclusion": "The drawing is a cross shaft (十字轴, LJT03.15). The right view is a longitudinal section through the vertical journals showing stepped internal bores; the left view gives the φ25 journal outer diameters and the 108 overall spans."
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T10:53:40.394Z",
+      "payload": {
+        "observation_id": "310258f934f343038b8bae16412518f3",
+        "public_conclusion": "In the lower part of the right section view (region A), the vertical dimension 25 (no φ symbol) has its lower extension line on the bottom end face of the part and its upper extension line aligned exactly with the internal horizontal shoulder where the larger lower bore segment ends and narrows to the through-hole. It is not attached to the external profile, not to the central cross-hole axis, and not the overall span (108) or the φ25 journal diameter."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/drawing-03/input-01.png",
+    "assets/drawing-03/input-02.png",
+    "assets/drawing-03/input-03.png"
+  ],
+  "asset_base": "assets/drawing-03",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/drawing-03/record.json"
+    }
+  ]
+}

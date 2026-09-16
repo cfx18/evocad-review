@@ -1,0 +1,349 @@
+{
+  "target_id": "a0f7ca720c71d1ea085da9ae",
+  "sample_id": "drawing-20",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "shaft_center_spacing"
+  },
+  "learner_answer": {
+    "answer": "shaft_center_spacing"
+  },
+  "task_manifest": {
+    "task_id": "drawing-20",
+    "task_type": "dimension_attachment",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true
+  },
+  "task": {
+    "task_id": "drawing-20",
+    "query": "区域 A 中，左上视图底部标注70的水平尺寸，位于135和180两层尺寸的上方。沿其两端尺寸界线追踪，它限定的是哪段距离？",
+    "answer_format": {
+      "answer": "one option value"
+    },
+    "options": [
+      {
+        "value": "shaft_center_spacing",
+        "label": "左右两根平行轴的轴线间距。"
+      },
+      {
+        "value": "foot_overall_length",
+        "label": "底脚最左端面至最右端面的距离。"
+      },
+      {
+        "value": "right_bearing_outer_diameter",
+        "label": "右侧圆形轴承部位的外径。"
+      },
+      {
+        "value": "shaft_end_to_end_length",
+        "label": "沿同一根轴方向，两端伸出轴端之间的总长。"
+      }
+    ],
+    "unit": "none",
+    "absolute_tolerance": 0
+  },
+  "source": {
+    "source_id": "web-1936-01",
+    "origin": "public_web_drawing",
+    "article_url": "https://xifengboke.com/post/1936.html",
+    "sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+    "dimensions": [
+      919,
+      586
+    ],
+    "rights": {
+      "status": "permission_required",
+      "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+      "training_eligible": false,
+      "redistribution_eligible": false
+    }
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "区域 A 中，左上视图底部标注70的水平尺寸，位于135和180两层尺寸的上方。沿其两端尺寸界线追踪，它限定的是哪段距离？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            108,
+            149,
+            383,
+            464
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "70的左右两端分别与左、右圆形轴位的竖直中心线对齐；最外侧底脚端面之间另标180。",
+      "expected_answer": "shaft_center_spacing",
+      "answer_kind": "choice",
+      "bad_pattern_tags": [
+        "center_distance_as_overall_size",
+        "stacked_dimension_attachment_swap"
+      ],
+      "confidence": 0.98,
+      "ambiguity_notes": "",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "shaft_center_spacing",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "尺寸70两端的尺寸界线分别与左右两个轴承圆形部位的中心线对齐，限定两轴轴线间距。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 245.52,
+    "observations": 9,
+    "findings": 2,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "shaft_center_spacing"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:56:18.596Z",
+      "payload": {
+        "observation_id": "c114f5f0dc754ae499ffdebc821f276e",
+        "intent": "Inspect the overall CAD drawing, find region A (upper-left view) and the horizontal dimension 70 at bottom, above 135 and 180 dimension layers",
+        "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+        "sha256": "04b1fc17909c69d4f8ece1bf28f5c422236cd3018cbbb45bdc0a9aeeed03919c",
+        "crop": null,
+        "dimensions": [
+          919,
+          586
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:56:18.732Z",
+      "payload": {
+        "observation_id": "ac298982c27a452096981bf0d1822aa3",
+        "intent": "Inspect region A: the upper-left view with dimension 70 at bottom, and 135, 180 layers; trace extension lines of the 70 dimension",
+        "source_sha256": "e2b56b6274edbca8b68d773611dba5b65f7ef0fa5a6ecb3080151711c5657e5f",
+        "sha256": "e2b56b6274edbca8b68d773611dba5b65f7ef0fa5a6ecb3080151711c5657e5f",
+        "crop": null,
+        "dimensions": [
+          253,
+          185
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:56:35.227Z",
+      "payload": {
+        "observation_id": "4178ba30630845bf91eb3bd48ac8e590",
+        "intent": "Zoom into bottom dimension lines: trace extension lines of 70, 135, 180 dimensions to see what features they reference",
+        "source_sha256": "e2b56b6274edbca8b68d773611dba5b65f7ef0fa5a6ecb3080151711c5657e5f",
+        "sha256": "818696648898f16a50f4a5a5889c848e9b192e6144bee7cc675918fe610931a8",
+        "crop": [
+          30,
+          120,
+          230,
+          185
+        ],
+        "dimensions": [
+          200,
+          65
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:56:35.408Z",
+      "payload": {
+        "observation_id": "d9d10c5cc0b24981930126a01a1a56a8",
+        "intent": "Zoom into upper-left view bottom dimensions 70/135/180 to trace extension lines upward to features (shaft centerlines vs foot edges)",
+        "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+        "sha256": "acd9f9171abb11622c0f960547d28cffb4154a65f4bdf9f0db793143429d33bd",
+        "crop": [
+          120,
+          200,
+          420,
+          285
+        ],
+        "dimensions": [
+          300,
+          85
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:57:06.925Z",
+      "payload": {
+        "observation_id": "b033a3a10b8943498a0d73aba654539c",
+        "intent": "Trace 70-dimension extension lines from the bottom dimension line upward to see whether they terminate at the two shaft centerlines (circle centers)",
+        "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+        "sha256": "9e29a5957e37161907eebb1377c9c8c0c30d6e1d3ad5b11075dc5578a77fbab4",
+        "crop": [
+          120,
+          60,
+          420,
+          285
+        ],
+        "dimensions": [
+          300,
+          225
+        ],
+        "image": "receipts/005.png"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:57:25.787Z",
+      "payload": {
+        "observation_id": "eaeb9d6979414e94a011e118ed077eb8",
+        "intent": "Close-up of the three stacked dimensions 70/135/180 and the vertical extension lines rising from them, to identify which feature each extension line aligns with",
+        "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+        "sha256": "f6e16abf1e8b9ab8209e0b3cce287dcbaa5158ffbf02854aa2ff1b8bc3d66584",
+        "crop": [
+          150,
+          150,
+          400,
+          285
+        ],
+        "dimensions": [
+          250,
+          135
+        ],
+        "image": "receipts/006.png"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:57:47.369Z",
+      "payload": {
+        "observation_id": "08c7e77f8ee043b8a490ab7606be8961",
+        "intent": "Full vertical trace: from the two circles' centerlines down to the 70/135/180 dimension lines, to confirm the 70 dimension spans the two shaft axis centerlines",
+        "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+        "sha256": "977c0f58b010a3b1e1078f9954a230ada42b304069c7e19bc20c9952c9cbdad1",
+        "crop": [
+          160,
+          70,
+          390,
+          285
+        ],
+        "dimensions": [
+          230,
+          215
+        ],
+        "image": "receipts/007.png"
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:58:29.266Z",
+      "payload": {
+        "observation_id": "17c5e453fd8b4b1288c1072031b0c4de",
+        "intent": "Show both circle centerlines (shaft axes) and the dimension extension lines below them, to confirm 70 spans the two shaft centerlines",
+        "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+        "sha256": "7e8c8d5f20632c3fd84b9b85e3ea27225f2f100660975ab74b7e999a644da5ec",
+        "crop": [
+          130,
+          70,
+          320,
+          285
+        ],
+        "dimensions": [
+          190,
+          215
+        ],
+        "image": "receipts/008.png"
+      }
+    },
+    {
+      "sequence": 10,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:58:51.975Z",
+      "payload": {
+        "observation_id": "da94814c4891441294b54bb084865e43",
+        "intent": "Close inspection of the stacked dimension lines: identify the left/right extension line x-positions of the 70 dimension versus the 135 and 180 dimensions",
+        "source_sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+        "sha256": "7222e8826890ec4eb54e783f4d0876f876bc22ae9c12818e06141a55a6a225f3",
+        "crop": [
+          140,
+          195,
+          340,
+          285
+        ],
+        "dimensions": [
+          200,
+          90
+        ],
+        "image": "receipts/009.png"
+      }
+    },
+    {
+      "sequence": 11,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:59:29.222Z",
+      "payload": {
+        "observation_id": "da94814c4891441294b54bb084865e43",
+        "public_conclusion": "In the upper-left front view, three stacked horizontal dimensions appear at the bottom: 70 (innermost/top layer), 135 (middle), 180 (outermost). The 70 dimension's extension lines sit at original-image x≈178 and x≈248."
+      }
+    },
+    {
+      "sequence": 12,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:59:29.240Z",
+      "payload": {
+        "observation_id": "17c5e453fd8b4b1288c1072031b0c4de",
+        "public_conclusion": "The front view shows two circles side by side (the two parallel shafts' gears/bearing seats) with vertical centerlines at original-image x≈182 (left circle) and x≈252 (right circle). These x-positions match the 70-dimension extension lines, so 70 spans the two shaft axis centerlines — the center distance of the gear pair. The 135 and 180 dimensions extend wider, to base bolt-hole/foot edges."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/drawing-20/input-01.png",
+    "assets/drawing-20/input-02.png"
+  ],
+  "asset_base": "assets/drawing-20",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/drawing-20/record.json"
+    }
+  ]
+}

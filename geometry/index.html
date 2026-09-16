@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN" data-mode="public">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EvoCAD Geometry Review</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="benchmark-metrics.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">E</span><span>EvoCAD</span><small>Geometry Review</small></div>
+    <div class="campaign-meta"><strong id="campaignName">Loading</strong><code id="protocolLabel"></code></div>
+    <div class="review-progress"><span id="reviewProgress">0 / 0 reviewed</span><span id="ledgerIntegrity">Ledger pending</span></div>
+  </header>
+
+  <main class="workspace">
+    <aside class="run-browser">
+      <nav class="review-navigation" aria-label="评审工作区"><a href="?view=features" aria-current="page"><i data-lucide="box" aria-hidden="true"></i>几何评审</a><a id="drawingResultsLink" href="../drawing/index.html"><i data-lucide="chart-no-axes-combined" aria-hidden="true"></i>读图结果</a></nav>
+      <div class="harness-navigation" id="harnessNavigation" hidden>
+        <div class="sidebar-heading"><h2>实验</h2><button class="records-button" id="openRecords" type="button" aria-haspopup="dialog"><i data-lucide="archive" aria-hidden="true"></i>记录归档</button></div>
+        <label>Harness<select id="harnessFilter" aria-label="Harness"></select></label>
+        <label>当前实验<span class="wrapping-select"><span data-select-value="experimentFilter" aria-hidden="true"></span><i data-lucide="chevron-down" aria-hidden="true"></i><select id="experimentFilter" aria-label="Experiment"></select></span></label>
+        <nav id="experimentRecords" class="experiment-records" aria-label="当前实验记录" hidden></nav>
+      </div>
+      <div id="navigationStatus" role="status" aria-live="polite"></div>
+      <details class="sidebar-disclosure" id="runFilters">
+        <summary><i data-lucide="list-filter" aria-hidden="true"></i><span>筛选算例</span><span id="filterCount" class="filter-count" hidden></span><i data-lucide="chevron-down" class="disclosure-chevron" aria-hidden="true"></i></summary>
+        <div class="filter-grid">
+          <label>数据集<span class="wrapping-select"><span data-select-value="datasetFilter" aria-hidden="true"></span><i data-lucide="chevron-down" aria-hidden="true"></i><select id="datasetFilter" aria-label="Dataset"></select></span></label>
+          <label>模型<span class="wrapping-select"><span data-select-value="modelFilter" aria-hidden="true"></span><i data-lucide="chevron-down" aria-hidden="true"></i><select id="modelFilter" aria-label="Model"></select></span></label>
+          <label>验证结果<select id="outcomeFilter"><option value="all">全部结果</option><option value="passed">严格通过</option><option value="failed">未通过</option><option value="unscored">未评分</option></select></label>
+          <label>人工评审<select id="reviewFilter"><option value="all">全部记录</option><option value="pending">待评审</option><option value="reviewed">已评审</option><option value="disputed">有争议</option></select></label>
+          <button class="reset-filters" id="resetFilters" type="button" disabled><i data-lucide="rotate-ccw" aria-hidden="true"></i>重置筛选</button>
+        </div>
+      </details>
+      <details class="sidebar-disclosure review-audit">
+        <summary><i data-lucide="chart-no-axes-combined" aria-hidden="true"></i><span>评测统计</span><i data-lucide="chevron-down" class="disclosure-chevron" aria-hidden="true"></i></summary>
+        <div id="reviewAuditMetrics"></div>
+      </details>
+      <div class="run-list-heading"><h2>算例</h2><span class="run-count" id="runCount"></span></div>
+      <div class="run-list" id="runList"></div>
+    </aside>
+
+    <section class="inspection">
+      <header class="run-heading">
+        <div><div class="eyebrow" id="datasetLabel"></div><h1 id="taskTitle">Select a run</h1></div>
+        <div class="run-identity"><strong id="modelLabel"></strong><code id="targetId"></code></div>
+      </header>
+
+      <div class="annotation-banner" id="annotationBanner" hidden></div>
+      <div class="metrics" id="metrics"></div>
+
+      <section class="attempt-strip" aria-label="Attempts">
+        <div class="section-label">Attempt trajectory</div>
+        <div class="attempts" id="attemptButtons"></div>
+      </section>
+
+      <nav class="tabs" aria-label="Evidence views">
+        <button class="tab active" data-tab="evidence">Visual evidence</button>
+        <button class="tab" data-tab="verifier">Verifier</button>
+        <button class="tab" data-tab="reflection">Reflection & actions</button>
+        <button class="tab" data-tab="mcp">MCP audit</button>
+      </nav>
+
+      <section class="tab-panel active" id="evidencePanel">
+        <div class="reference-evidence">
+          <figure><figcaption>Agent input <span>complete drawing visible during modeling</span></figcaption><button class="image-button reference-image" data-image="input"><img id="inputImage" alt="Agent input image"></button><div class="image-switcher" id="inputSwitcher"></div></figure>
+        </div>
+        <div class="geometry-grid">
+          <figure><figcaption>Evaluator ground truth <span>hidden from agent</span></figcaption><div class="geometry-viewer" id="truthViewer"><canvas aria-label="Interactive ground truth geometry"></canvas><img id="truthImage" class="geometry-fallback" alt="Ground truth geometry render"><div class="viewer-status" role="status"></div><button class="reset-view" type="button" title="Reset synchronized view" aria-label="Reset synchronized view">Reset</button></div><div class="image-caption" id="truthCaption"></div></figure>
+          <figure><figcaption>Candidate <span id="candidateCaption"></span></figcaption><div class="geometry-viewer" id="candidateViewer"><canvas aria-label="Interactive candidate geometry"></canvas><img id="candidateImage" class="geometry-fallback" alt="Candidate geometry render"><div class="viewer-status" role="status"></div><button class="reset-view" type="button" title="Reset synchronized view" aria-label="Reset synchronized view">Reset</button></div><div class="image-caption" id="candidateState"></div></figure>
+          <figure><figcaption>Aligned overlay <span>blue truth / orange candidate</span></figcaption><div class="geometry-viewer" id="overlayViewer"><canvas aria-label="Interactive aligned geometry overlay"></canvas><img id="overlayImage" class="geometry-fallback" alt="Aligned candidate and ground truth overlay"><div class="viewer-status" role="status"></div><button class="reset-view" type="button" title="Reset synchronized view" aria-label="Reset synchronized view">Reset</button></div><div class="image-caption" id="overlayState"></div></figure>
+        </div>
+        <section class="localization-panel">
+          <header><div><h2>Localized surface mismatch</h2><p>Click a region to focus all three views.</p></div><div class="localization-legend"><span class="missing-swatch"></span>Missing or displaced<span class="excess-swatch"></span>Excess or displaced</div></header>
+          <div class="localization-regions" id="localizationRegions"></div>
+        </section>
+      </section>
+
+      <section class="tab-panel" id="verifierPanel">
+        <div id="benchmarkComparison"></div>
+        <div class="verifier-layout">
+          <div><h2>Protocol checks</h2><div class="check-list" id="checkList"></div></div>
+          <div><h2>Geometry diagnostics</h2><div class="geometry-table" id="geometryTable"></div></div>
+        </div>
+        <div class="binding-block"><span>Protocol</span><code id="protocolBinding"></code><span>Evidence SHA</span><code id="evidenceHash"></code></div>
+      </section>
+
+      <section class="tab-panel" id="reflectionPanel">
+        <div class="reflection-note">Only recorded agent messages and submitted reflection are shown. Hidden chain-of-thought is not part of the review evidence.</div>
+        <div class="iteration-decision" id="iterationDecision"></div>
+        <details class="feedback-packet"><summary>Exact feedback packet delivered to agent</summary><pre id="feedbackPacket"></pre></details>
+        <div class="reflection-grid" id="reflectionContent"></div>
+        <h2>Public action and feedback trace</h2>
+        <div class="timeline" id="publicEvents"></div>
+      </section>
+
+      <section class="tab-panel" id="mcpPanel">
+        <div class="audit-summary" id="auditSummary"></div>
+        <div class="timeline" id="mcpEvents"></div>
+      </section>
+    </section>
+
+    <aside class="review-panel">
+      <header><div><div class="eyebrow">Human adjudication</div><h2 id="reviewTarget">No target selected</h2></div><button id="exportReviews" class="secondary" type="button">Export</button></header>
+      <div class="binding-alert" id="reviewBinding"></div>
+      <form id="reviewForm">
+        <div class="two-col">
+          <label>Reviewer ID<input id="reviewerId" required maxlength="120" autocomplete="name"></label>
+          <label>Expertise<input id="reviewerExpertise" maxlength="120" placeholder="CAD / evaluator"></label>
+        </div>
+
+        <fieldset><legend>Is the verifier conclusion correct?</legend><div class="decision-grid" id="decisionInputs">
+          <label><input type="radio" name="verifierDecision" value="agree" required><span>Agree</span></label>
+          <label><input type="radio" name="verifierDecision" value="partially_agree"><span>Partial</span></label>
+          <label><input type="radio" name="verifierDecision" value="disagree"><span>Disagree</span></label>
+          <label><input type="radio" name="verifierDecision" value="uncertain"><span>Uncertain</span></label>
+        </div></fieldset>
+
+        <div class="two-col">
+          <label>Strict pass label<select id="strictAssessment" required><option value="correct">Correct</option><option value="false_positive">False positive</option><option value="false_negative">False negative</option><option value="uncertain">Uncertain</option></select></label>
+          <label>Selected attempt<select id="selectionAssessment" required><option value="correct">Correct</option><option value="incorrect">Incorrect</option><option value="uncertain">Uncertain</option><option value="not_applicable">N/A</option></select></label>
+        </div>
+
+        <fieldset><legend>Ratings <span>1 poor, 5 strong</span></legend><div class="rating-grid">
+          <label>Evidence<select data-rating="evidence_sufficiency"></select></label>
+          <label>Geometry<select data-rating="geometry_fidelity"></select></label>
+          <label>Verifier<select data-rating="verifier_validity"></select></label>
+          <label>Reflection<select data-rating="reflection_quality"></select></label>
+        </div></fieldset>
+
+        <fieldset><legend>Issue ownership</legend><div class="issue-grid" id="issueInputs"></div></fieldset>
+
+        <label>Recommended action<select id="recommendedAction" required><option value="keep">Keep evaluation</option><option value="override_pass">Override as pass</option><option value="override_fail">Override as fail</option><option value="exclude_sample">Exclude sample</option><option value="revise_verifier">Revise verifier</option><option value="rerun">Rerun evidence</option><option value="needs_expert">Needs expert</option></select></label>
+        <label>Review notes<textarea id="reviewNotes" rows="5" maxlength="12000" placeholder="State what the evidence supports and what should change."></textarea></label>
+
+        <section class="findings-section"><div class="findings-heading"><strong>Structured findings</strong><button id="addFinding" class="secondary" type="button">Add finding</button></div><div id="findings"></div></section>
+        <input id="supersedesId" type="hidden">
+        <div class="form-status" id="formStatus"></div>
+        <button class="primary" id="submitReview" type="submit">Save immutable review</button>
+      </form>
+
+      <section class="history"><div class="history-heading"><h3>Review history</h3><span id="historyCount"></span></div><div id="reviewHistory"></div></section>
+    </aside>
+  </main>
+
+  <dialog id="imageDialog"><button id="closeDialog" aria-label="Close image">Close</button><img id="dialogImage" alt="Expanded review evidence"></dialog>
+  <dialog id="recordsDialog" class="records-dialog" aria-labelledby="recordsTitle">
+    <header><h2 id="recordsTitle">执行记录归档</h2><button id="closeRecords" class="sidebar-icon-button" type="button" title="关闭归档" aria-label="关闭归档"><i data-lucide="x" aria-hidden="true"></i></button></header>
+    <div id="recordsLibrary"></div>
+  </dialog>
+  <script src="vendor/lucide/lucide.min.js"></script>
+  <script src="benchmark-metrics.js"></script>
+  <script src="app.js?v=12"></script>
+</body>
+</html>

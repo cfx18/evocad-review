@@ -1,0 +1,68 @@
+{
+  "input_path": "[private value removed]",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 904,
+  "operation_manifest": [
+    {
+      "operation_id": "side_m4_left",
+      "operation_type": "boolean_subtract",
+      "feature_id": "left_side_tapped_hole",
+      "intent": "Create opposingM4 tap drill from left face into rear channel",
+      "parameters": {
+        "entry": [
+          0,
+          25.5,
+          5.1
+        ],
+        "axis": [
+          1,
+          0,
+          0
+        ],
+        "drill_diameter": 3.3,
+        "drill_depth": 9.25,
+        "thread": "M4-6H",
+        "thread_depth": 8,
+        "thread_representation": "nominal tap drill"
+      },
+      "parent_operation_ids": [
+        "side_dowel_cut"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    },
+    {
+      "operation_id": "side_m4_right",
+      "operation_type": "boolean_subtract",
+      "feature_id": "right_side_tapped_hole",
+      "intent": "Create opposingM4 tap drill from right face into rear channel",
+      "parameters": {
+        "entry": [
+          23,
+          25.5,
+          5.1
+        ],
+        "axis": [
+          -1,
+          0,
+          0
+        ],
+        "drill_diameter": 3.3,
+        "drill_depth": 9.25,
+        "thread": "M4-6H",
+        "thread_depth": 8,
+        "thread_representation": "nominal tap drill",
+        "expected_volume": 25815.27176073069
+      },
+      "parent_operation_ids": [
+        "side_m4_left"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    }
+  ],
+  "capture_boolean_lineage": true
+}

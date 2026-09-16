@@ -1,0 +1,1615 @@
+{
+  "schema_version": "1.0",
+  "review_ui_version": "1.0",
+  "campaign": {
+    "campaign_id": "cadgenbench-111-codex-astra-ultra-autocad-20260916",
+    "campaign_manifest_sha256": "5814c6681b5421d9e359249aa9107d986170675d6e29efc52a116354fdf58929",
+    "source_manifest_sha256": "8c3dd64da6c2a01283bf125e9d7542b6238d2f1b546904dfd026623763a6feac",
+    "protocol": "cadgenbench-generation-pending-official",
+    "agent_loop_protocol": "native-codex-single-conversation-v1"
+  },
+  "models": [
+    "gpt-6-astra"
+  ],
+  "runs": [
+    {
+      "target_id": "cadgenbench-111-astra-ultra",
+      "run_id": "cadgenbench-111-codex-astra-ultra-autocad-20260916",
+      "sample_id": "cadgenbench:111",
+      "sample_key": "cadgenbench / 111",
+      "dataset": "cadgenbench",
+      "category": "generation",
+      "task": "CADGenBench / 111",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "status": "unscored",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "a001",
+      "stop_reason": "generation_ready_for_review",
+      "selected_evidence_sha256": "e0df517e51945f03180af6228393a554819bce57c0a48738e6b1d9a0845c2e39",
+      "candidate_sha256": "17cf33ed7921fa440f1e4e7a7195e6ccb1b19411dba343dc91e71929cfd1fbde",
+      "ground_truth_sha256": null,
+      "integrity": {
+        "ok": true,
+        "checked_files": 193,
+        "errors": []
+      },
+      "input_images": [
+        "assets/input.png"
+      ],
+      "input_evidence": [
+        {
+          "path": "assets/input.png",
+          "sha256": "51268794bc3e92bfaa6f822d34105ffa21bf2b691f1fa1b837f8c9f1a88c84e3",
+          "bytes": 1035532
+        }
+      ],
+      "attempts": [
+        {
+          "attempt_id": "a001",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 2113.689,
+          "selected": true,
+          "timed_out": false,
+          "decision_reason": "Native Codex completed after local validation; no GT metric feedback was available.",
+          "images": {
+            "candidate": "assets/candidate.png"
+          },
+          "geometry": {
+            "candidate": "assets/candidate.stl"
+          },
+          "verdict": {
+            "protocol": "cadgenbench-generation-pending-official",
+            "score": null,
+            "passed": null,
+            "metrics": {},
+            "rubrics": [],
+            "candidate_geometry": {
+              "extents": [
+                316.7000738031237,
+                325.4020943790977,
+                80
+              ],
+              "volume": 2480250.5265947357
+            },
+            "local_verification": {
+              "run_context": {
+                "sample_id": "cadgenbench:111",
+                "run_id": "cadgenbench-111-codex-astra-ultra-autocad-20260916",
+                "attempt_id": "a001"
+              },
+              "checks": {
+                "one_native_solid": true,
+                "native_topology_no_errors": true,
+                "envelope_matches_316_7_by_325_4_by_80": true,
+                "fifteen_diameter13_axial_holes": true,
+                "hole_coordinates_match_dimensioned_pattern": true,
+                "all_fifteen_holes_span80mm": true,
+                "two_radius92_bore_surfaces": true,
+                "bore_arc_center_spacing55_8": true,
+                "radius25_tangent_neck_present": true,
+                "sat_roundtrip_one_native_solid": true,
+                "sat_roundtrip_identical_bounds": true,
+                "sat_roundtrip_identical_volume": true,
+                "render_matches_final_stl": true,
+                "final_artifacts_present": true
+              },
+              "all_passed": true,
+              "native_volume_mm3": 2480250.5265947357,
+              "native_bounds_mm": {
+                "max": [
+                  153.69999999999996,
+                  132.5,
+                  80
+                ],
+                "min": [
+                  -163.00007380312374,
+                  -192.90209437909772,
+                  0
+                ]
+              },
+              "native_envelope_mm": [
+                316.7000738031237,
+                325.4020943790977,
+                80
+              ],
+              "face_count": 330,
+              "edge_count": 934,
+              "max_bolt_center_error_mm": 6.244647275947638e-08,
+              "native_interactive_checks": {
+                "solidcheck": "valid ShapeManager solid",
+                "audit_errors": 0,
+                "solid_count_after_separate_on_reopened_copy": 1,
+                "sat_reimport_solidcheck": "valid ShapeManager solid"
+              },
+              "sha256": {
+                "candidate.dwg": "17cf33ed7921fa440f1e4e7a7195e6ccb1b19411dba343dc91e71929cfd1fbde",
+                "candidate.sat": "05f590c9d1b6e6e2675836e7103baa4ed6ae2b242f58206240d304cd812cf5de"
+              }
+            }
+          },
+          "benchmark_comparison": {
+            "benchmark": "CADGenBench",
+            "task_type": "generation",
+            "sample_id": "111",
+            "score_scale": "0 to 1",
+            "formula": "CADScore = 0.4 shape + 0.4 interface + 0.2 topology; shape = (Surface F1 + Volume IoU) / 2",
+            "status": "awaiting_authenticated_submission",
+            "official_metrics": null,
+            "notes": "Same fixture, different harnesses and reasoning budgets. Reference values are rounded to 3 decimals by public official reports; submissions are unvalidated. No controlled ranking claim. Local validity is not GT accuracy. Chamfer and volume error are not published in these reference cards.",
+            "metric_docs": "https://github.com/huggingface/cadgenbench/blob/main/docs/metrics.md",
+            "candidate": {
+              "label": "Codex + Astra Ultra + AutoCAD (this run)",
+              "metrics": {}
+            },
+            "references": [
+              {
+                "label": "Astra High + build123d MCP (pzfreo)",
+                "sample_id": "111",
+                "metrics": {
+                  "cad_score": 0.687,
+                  "shape_similarity": 0.522,
+                  "interface_match": 0.77,
+                  "topology_match": 0.85,
+                  "surface_f1": 0.38,
+                  "volume_iou": 0.664,
+                  "betti": "cand (1,63,0) vs gt (1,58,0)",
+                  "valid": true
+                },
+                "status": "official_report_unvalidated_submission",
+                "source_sha256": "4c92adb4526f8441a8c00c0840e6ca3ce578097e230054921a7d1f115e3744cb",
+                "source_url": "https://huggingai4engineering-cadgenbench.hf.space/reports/pzfreo_build123d-mcp-0-3-85-dev0-with-gpt-6-ast_20260905-073202.html#sample=111"
+              },
+              {
+                "label": "Codex + Astra Low + CadQuery (modelcorp)",
+                "sample_id": "111",
+                "metrics": {
+                  "cad_score": 0.662,
+                  "shape_similarity": 0.531,
+                  "interface_match": 0.713,
+                  "topology_match": 0.824,
+                  "surface_f1": 0.446,
+                  "volume_iou": 0.616,
+                  "betti": "cand (1,64,0) vs gt (1,58,0)",
+                  "valid": true
+                },
+                "status": "official_report_unvalidated_submission",
+                "source_sha256": "56954f2008a155b0d0eeb1bb23b95ff75afd0624bf724893e348100edb9bc56f",
+                "source_url": "https://huggingai4engineering-cadgenbench.hf.space/reports/modelcorp_baseline-astra-codex-low-v1_20260905-013922.html#sample=111"
+              }
+            ],
+            "conversion": {
+              "source": "AutoCAD native SAT",
+              "converter": "Installed Ansys SpaceClaim 2024 R2, SAT import / STEP export only",
+              "validation": "Local OpenCascade via CadQuery; not official CADGenBench validity or accuracy",
+              "step_valid": true,
+              "step_solids": 1,
+              "step_faces": 366,
+              "native_faces": 330,
+              "native_volume_mm3": 2480250.5265947357,
+              "step_volume_mm3": 2480232.3640662287,
+              "volume_relative_difference": 7.322860457903424e-06,
+              "step_bounds_mm": [
+                -163.0000738031237,
+                -192.90209437909732,
+                -1e-07,
+                153.70000000000002,
+                132.50000000000037,
+                80.0000001
+              ],
+              "max_bound_difference_mm": 1e-07,
+              "source_sat_sha256": "05f590c9d1b6e6e2675836e7103baa4ed6ae2b242f58206240d304cd812cf5de",
+              "step_sha256": "f203074051baf411e441c90e3db617b5aa22fd14ae60d61fcc465b7957f22cc7",
+              "caveat": "Translator splits analytic faces and introduces a small volume difference. Official scoring applies to the translated STEP, not byte-identical DWG/SAT.",
+              "accepted": true
+            }
+          },
+          "evidence": {
+            "candidate": {
+              "path": "assets/candidate.dwg",
+              "sha256": "17cf33ed7921fa440f1e4e7a7195e6ccb1b19411dba343dc91e71929cfd1fbde",
+              "bytes": 205798
+            },
+            "render_images": {
+              "candidate": {
+                "path": "assets/candidate.png",
+                "sha256": "bafeda23ad8cad81d84ad44fc8075e0881f392bda242251055a576c367d53fee",
+                "bytes": 156129
+              }
+            },
+            "geometry_assets": {
+              "candidate": {
+                "path": "assets/candidate.stl",
+                "sha256": "d095d361ecfd4fe4f4aeb7c38549323d91e55a1fffa608c26dc0d30178927c5d",
+                "bytes": 946984
+              }
+            }
+          },
+          "evidence_sha256": "e0df517e51945f03180af6228393a554819bce57c0a48738e6b1d9a0845c2e39",
+          "public_events": [
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "I’m using the AutoCAD modeling skill to interpret the drawing, build the solid in isolated Core Console jobs, and verify the saved DWG and SAT files. I’ll keep intermediate models and record any uncertain dimensions.\n"
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath '[private value removed] Get-Content -LiteralPath '[private value removed]\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_set_run_context",
+              "server": "autocad",
+              "arguments": {
+                "sample_id": "cadgenbench:111",
+                "run_id": "cadgenbench-111-codex-astra-ultra-autocad-20260916",
+                "attempt_id": "a001"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"rg --files -g AGENTS.md -g '*.yaml' -g '*.png' -g '*.lsp' -g '*.md' .\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"from PIL import Image; from pathlib import Path; p=Path(r'[private value removed] (p/'analysis').mkdir(exist_ok=True); im=Image.open(p/'input/input.png'); im.crop((110,180,700,660)).resize((1475,1200)).save(p/'analysis/section.png'); im.crop((290,850,690,1240)).resize((1200,1170)).save(p/'analysis/face.png'); im.crop((790,510,1290,940)).resize((1250,1075)).save(p/'analysis/sides.png')\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"from PIL import Image; im=Image.open('input/input.png'); print(im.size)\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"FILEDIA\" 0)\n(setvar \"CMDECHO\" 0)\n(princ (strcat \"\\nCADGEN ACADVER=\" (getvar \"ACADVER\")))\n(princ)",
+                "operation_manifest": [
+                  {
+                    "operation_id": "initialize",
+                    "intent": "Initialize isolated metric AutoCAD drawing and verify native console"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"from PIL import Image; from pathlib import Path; p=Path('.'); im=Image.open(p/'input/input.png'); k=3072/1902; areas={'section':(240,210,585,575),'face':(290,870,604,1165),'sides':(795,515,1270,935),'details':(730,110,1365,466)}; [(im.crop(tuple(round(v*k) for v in b)).resize((round((b[2]-b[0])*2.5),round((b[3]-b[1])*2.5))).save(p/'analysis'/ (n+'.png'))) for n,b in areas.items()]\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The drawing shows an 80 mm thick housing with a large shaped bore, two mounting ears, fifteen face holes, and two rows of curved passages. I’m resolving the bore and outer contour from the dimensioned views before cutting the smaller features.\n"
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "4b2b50222401488abec9f330b702d5d3"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath '[private value removed] -TotalCount 70; python -c \\\"import importlib.util; print({x:bool(importlib.util.find_spec(x)) for x in ['PIL','numpy','matplotlib','trimesh','scipy']})\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"from PIL import Image; im=Image.open('input/input.png'); k=3072/1902; im.crop(tuple(round(v*k) for v in (240,210,605,577))).resize((1095,1101)).save('analysis/section-full.png')\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The main dimensions are now resolved: a 184 mm wide bore with arc centers 55.8 mm apart, an 80 mm body thickness, and fifteen Ø13 through holes on the dimensioned pattern. The drawing also supports through passages around the bore; their exact widths and the shallow face grooves need some interpretation.\n"
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command '$modelSource = @'\"'\nfrom pathlib import Path\nimport math,json\nroot=Path(__file__).resolve().parent\n(root/'scripts').mkdir(exist_ok=True)\n(root/'outputs/renders').mkdir(parents=True,exist_ok=True)\ndef p(x,y,b=0): return [x,y,b]\ndef arc_mid(start,mid,end):\n    ax,ay=start[:2]; bx,by=mid; cx,cy=end\n    d=2*(ax*(by-cy)+bx*(cy-ay)+cx*(ay-by))\n    ux=((ax*ax+ay*ay)*(by-cy)+(bx*bx+by*by)*(cy-ay)+(cx*cx+cy*cy)*(ay-by))/d\n    uy=((ax*ax+ay*ay)*(cx-bx)+(bx*bx+by*by)*(ax-cx)+(cx*cx+cy*cy)*(bx-ax))/d\n    a=math.atan2(ay-uy,ax-ux); b=math.atan2(by-uy,bx-ux); c=math.atan2(cy-uy,cx-ux)\n    ccw=(c-a)%(2*math.pi)\n    delta=ccw if (b-a)%(2*math.pi)<ccw else ccw-2*math.pi\n    start[2]=math.tan(delta/4)\n    return p(cx,cy)\noutline=[p(153.7,132.5),p(129.7,132.5)]\ndef L(x,y): outline.append(p(x,y))\ndef A(mx,my,x,y): outline.append(arc_mid(outline[-1],(mx,my),(x,y)))\nA(125,130,121,128.2)\nL(52,120)\nA(44,120.6,40.0795,123.35)\n# exact upper R129.7 crown from angle72 to135\noutline[-1]=p(129.7*math.cos(math.radians(72)),129.7*math.sin(math.radians(72)),math.tan(math.radians(63)/4))\nL(-129.7/math.sqrt(2),129.7/math.sqrt(2))\nA(-113,85,-131,96)\nA(-132.8,99.5,-132.9,102.95)\n# right flank of round mount boss, join to top stem with10-ish blend\nA(-131,110.5,-134.2,120.1)\nA(-135,122.4,-135,124)\nL(-135,132.5)\nL(-158.5,132.5)\nL(-158.5,124)\nA(-159,121.5,-160,119.8)\nA(-163,110.5,-158.5,99.3)\nL(-158.5,93)\nA(-157,88,-153,84)\nL(-122,53)\nA(-118.5,41,-123.5,29)\nA(-128,15,-129.7,0)\nL(-129.7,-55.8)\nA(-126.5,-83,-118,-111)\nL(-118,-143)\nA(-116.5,-149,-110,-152.9)\nL(-71.5,-191.4)\nA(-70,-192.5,-68,-192.9)\nL(68,-192.9)\nA(70,-192.5,71.5,-191.4)\nL(110,-152.9)\nA(118,-140,122,-122)\nL(134.7,-105)\nL(134.7,105)\nA(138,115,145,117)\nL(149.5,117)\nL(153.7,125)\ndef fmt(v): return f'{v:.7f}'.rstrip('0').rstrip('.') if isinstance(v,float) else str(v)\ndef vl(verts): return \\\"'(\\\"+' '.join('('+' '.join(fmt(v) for v in row)+')' for row in verts)+')'\ndef stadium(r): return [p(r,0,1),p(-r,0),p(-r,-55.8,1),p(r,-55.8)]\ndef arslot(rc,w,a,b,cy=0,cx=0):\n    a,b=map(math.radians,(a,b)); ri,ro=rc-w/2,rc+w/2\n    return [p(cx+ri*math.cos(a),cy+ri*math.sin(a),math.tan((b-a)/4)),p(cx+ri*math.cos(b),cy+ri*math.sin(b),-1),p(cx+ro*math.cos(b),cy+ro*math.sin(b),-math.tan((b-a)/4)),p(cx+ro*math.cos(a),cy+ro*math.sin(a),-1)]\ndef capsule(x1,y1,x2,y2,r):\n    a=math.atan2(y2-y1,x2-x1)\n    nx,ny=-math.sin(a)*r,math.cos(a)*r\n    return [p(x1+nx,y1+ny),p(x2+nx,y2+ny,-1),p(x2-nx,y2-ny),p(x1-nx,y1-ny,-1)]\nhelper=r\\\"\\\"\\\"\n(setvar \\\"CMDECHO\\\" 0)\n(setvar \\\"FILEDIA\\\" 0)\n(setvar \\\"OSMODE\\\" 0)\n(setvar \\\"INSUNITS\\\" 4)\n(setvar \\\"DELOBJ\\\" 1)\n(setvar \\\"FACETRES\\\" 10)\n(setvar \\\"ISOLINES\\\" 0)\n(defun poly (vs z / data v)\n (setq data (list '(0 . \\\"LWPOLYLINE\\\") '(100 . \\\"AcDbEntity\\\") '(100 . \\\"AcDbPolyline\\\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\n (entmakex data)\n)\n(defun prism (vs z h / e)\n (setq e (poly vs z))\n (command \\\"_.EXTRUDE\\\" e \\\"\\\" h)\n (entlast)\n)\n(defun cyl (x y z r h / e)\n (command \\\"_.CYLINDER\\\" (list x y z) r h)\n (entlast)\n)\n(defun cut (e) (command \\\"_.SUBTRACT\\\" body \\\"\\\" e \\\"\\\"))\n(defun addsolid (e) (command \\\"_.UNION\\\" body e \\\"\\\") (setq body (entlast)))\n(defun getbody () (ssname (ssget \\\"_X\\\" '((0 . \\\"3DSOLID\\\"))) 0))\n(defun xcyl (x y z r h / e)\n (setq e (cyl 0 0 0 r h))\n (command \\\"_.ROTATE3D\\\" e \\\"\\\" \\\"_Yaxis\\\" '(0 0 0) 90)\n (command \\\"_.MOVE\\\" e \\\"\\\" '(0 0 0) (list x y z))\n e\n)\n\\\"\\\"\\\"\ns1=helper+f\\\"\\\\n(setq body (prism {vl(outline)} 0 80))\\\\n(cut (prism {vl(stadium(92))} -1 82))\\\\n\\\"\ns1+='(princ \\\"\\\\\\\\nSTAGE01_BODY_DONE\\\")\\\\n'\n(root/'scripts/01-body.lsp').write_text(s1)\n# Through drilling, ear reliefs, cooling passages\ns2=helper+\\\"\\\\n(setq body (getbody))\\\\n(setq cutters (ssadd))\\\\n\\\"\ndef cutprim(vertices,z=-1,h=82): return f\\\"(ssadd (prism {vl(vertices)} {fmt(z)} {fmt(h)}) cutters)\\\\n\\\"\nangles=[0,41.3,71.3,101.3,121.3,141.3,161.3]\nbolts=[]\nfor a in angles:\n    x,y=111.6*math.cos(math.radians(a)),111.6*math.sin(math.radians(a))\n    bolts.extend([(x,y),(x,-55.8-y)])\nbolts.append((-111.6,-27.9))\nfor x,y in bolts: s2+=f\\\"(ssadd (cyl {fmt(x)} {fmt(y)} -1 6.5 82) cutters)\\\\n\\\"\ns2+=\\\"(ssadd (cyl -147 110.5 -1 11 82) cutters)\\\\n\\\"\ns2+=cutprim(capsule(104.8,110.5,118.4,110.5,10))\n# tapered left-ear relief, through: length40.9 withR5 andR10 rounded ends\n# clockwise traced contour from detail B\nleftrel=[p(-143.5,89.7)]\nleftrel.append(arc_mid(leftrel[-1],(-149.5,86.7),(-147.0,80.8)))\nleftrel.append(p(-122.4,61.9))\nleftrel.append(arc_mid(leftrel[-1],(-109.0,65.0),(-112.4,79.4)))\nleftrel.append(p(-138.2,89.0))\nleftrel.append(arc_mid(leftrel[-1],(-141.0,89.9),(-143.5,89.7)))\nleftrel=leftrel[:-1]\ns2+=cutprim(leftrel)\nfor rc in (103.5,118.5):\n    for a,b in zip(angles[:-1],angles[1:]):\n        aa,bb=a+7,b-7\n        s2+=cutprim(arslot(rc,5.8,aa,bb))\n        s2+=cutprim(arslot(rc,5.8,-bb,-aa,-55.8))\n    # left top and bottom passages flow from arc onto side\n    a=math.radians(168.3); ri,ro=rc-2.9,rc+2.9\n    vs=[p(ri*math.cos(a),ri*math.sin(a),math.tan((math.pi-a)/4)),p(-ri,0),p(-ri,-16.6,-1),p(-ro,-16.6),p(-ro,0,-math.tan((math.pi-a)/4)),p(ro*math.cos(a),ro*math.sin(a),-1)]\n    s2+=cutprim(vs)\n    s2+=cutprim([p(x,-55.8-y,-b) for x,y,b in vs])\n    s2+=cutprim(capsule(rc,-12,rc,-43.8,2.9))\n# broad lower corner passages (R81.5 calledout)\ns2+=cutprim(arslot(81.5,8,-78,-35,-102.3,34.35))\ns2+=cutprim(arslot(81.5,8,215,258,-102.3,-34.35))\ns2+='(command \\\"_.SUBTRACT\\\" body \\\"\\\" cutters \\\"\\\")\\\\n(princ \\\"\\\\\\\\nSTAGE02_THROUGH_FEATURES_DONE\\\")\\\\n'\n(root/'scripts/02-through.lsp').write_text(s2)\n# stage3 side ports &external boss/ribs\ns3=helper+\\\"\\\\n(setq body (getbody))\\\\n\\\"\ns3+='(addsolid (xcyl 130 -88 40 19 9.7))\\\\n'\n# extrudeYZprofiles via rotateY from XY => Xnormal;local u=-z, v=y\ndef yz_prism(pts,x,depth):\n    vs=[p(-z,y,b) for y,z,b in pts]\n    return f\\\"(setq rib (prism {vl(vs)} 0 {fmt(depth)}))\\\\n(command \\\\\\\"_.ROTATE3D\\\\\\\" rib \\\\\\\"\\\\\\\" \\\\\\\"_Yaxis\\\\\\\" '(0 0 0) 90)\\\\n(command \\\\\\\"_.MOVE\\\\\\\" rib \\\\\\\"\\\\\\\" '(0 0 0) (list {fmt(x)} 0 0))\\\\n(addsolid rib)\\\\n\\\"\ns3+=yz_prism(capsule(-88,40,-64.8,40,9),132.7,5)\n# slender YZ ribs merge into tab; each oriented at47degree fromthicknessdirection\nfor zedge in (0,80):\n    s3+=yz_prism(capsule(-52.3,40,-9.4,zedge,2.5),133.2,3.5)\ns3+=yz_prism([p(-90.5,0),p(-85.5,0),p(-85.5,80),p(-90.5,80)],133.2,3.5)\n# bores positiveXcuts frominside tooutside\ns3+='(cut (xcyl 70 32 40 18 80))\\\\n(cut (xcyl 124.7 32 40 23 20))\\\\n'\ns3+='(cut (xcyl 70 -88 40 9.5 80))\\\\n(cut (xcyl 137.2 -88 40 14.5 5))\\\\n'\n# negativeX left upper stepstacks, all cylinderaxespositiveX\ns3+='(cut (xcyl -132 0 40 13 4.1))\\\\n(cut (xcyl -132 0 40 7.75 13.3))\\\\n(cut (xcyl -132 0 40 5.5 29.1))\\\\n(cut (xcyl -132 0 40 4 44))\\\\n'\ns3+='(cut (xcyl -132 -55.8 40 13 4.1))\\\\n(cut (xcyl -132 -55.8 40 5.5 13.3))\\\\n(cut (xcyl -132 -55.8 40 4 30.1))\\\\n(cut (xcyl -132 -55.8 40 2 44))\\\\n'\n# lower two cross drilled little holes visible left elevation\nfor z in (15,59.1): s3+=f\\\"(cut (xcyl -132 -127.9 {z} 3.0 33))\\\\n\\\"\ns3+='(princ \\\"\\\\\\\\nSTAGE03_PORTS_DONE\\\")\\\\n'\n(root/'scripts/03-ports.lsp').write_text(s3)\n# stage4 face grooves, bottom axialteeth\ns4=helper+\\\"\\\\n(setq body (getbody))\\\\n\\\"\nfor z in (-.1,78.5):\n  for ri,ro in ((95.5,97.5),(124.5,126)):\n    s4+=f\\\"(setq groove (prism {vl(stadium(ro))} {z} 1.6))\\\\n(setq inner (prism {vl(stadium(ri))} {z-.1} 1.8))\\\\n(command \\\\\\\"_.SUBTRACT\\\\\\\" groove \\\\\\\"\\\\\\\" inner \\\\\\\"\\\\\\\")\\\\n(cut groove)\\\\n\\\"\nfor x in range(-42,43,8):\n  s4+=f\\\"(cut (prism {vl([p(x-1.5,-194),p(x+1.5,-194),p(x+1.5,-189.9),p(x-1.5,-189.9)])} -1 82))\\\\n\\\"\ns4+='(command \\\"_.CHPROP\\\" body \\\"\\\" \\\"_Color\\\" \\\"8\\\" \\\"\\\")\\\\n(command \\\"_.VPOINT\\\" (list 1 -1 1.35))\\\\n(command \\\"_.ZOOM\\\" \\\"_Extents\\\")\\\\n(princ \\\"\\\\\\\\nSTAGE04_FACE_DETAILS_DONE\\\")\\\\n'\n(root/'scripts/04-details.lsp').write_text(s4)\n(root/'analysis/design-values.json').write_text(json.dumps({'outer_vertices_with_bulges':outline,'bolt_centers':bolts,'thickness':80,'bore_radius':92,'bore_center_separation':55.8,'slot_radii':[103.5,118.5],'slot_width':5.8},indent=2))\nprint('Generated native AutoLISP stages:',[(p.name,p.stat().st_size) for p in (root/'scripts').glob('*.lsp')])\n\n'@\nSet-Content -LiteralPath 'build_model.py' -Value \"'$modelSource -Encoding UTF8\npython build_model.py'",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -Raw -LiteralPath 'scripts/01-body.lsp'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (prism '((153.7 132.5 0) (129.7 132.5 -0.0330112) (121 128.2 0) (52 120 -0.2750539) (40.0795042 123.3520302 0.2820292) (-91.7117495 91.7117495 -0.4549736) (-131 96 -0.2267891) (-132.9 102.95 0.2920457) (-134.2 120.1 -0.1689489) (-135 124 0) (-135 132.5 0) (-158.5 132.5 0) (-158.5 124 -0.1687389) (-160 119.8 0.3616816) (-158.5 99.3 0) (-158.5 93 0.2521176) (-153 84 0) (-122 53 -0.3529412) (-123.5 29 0.0993987) (-129.7 0 0) (-129.7 -55.8 0.0890449) (-118 -111 0) (-118 -143 0.4142136) (-110 -152.9 0) (-71.5 -191.4 0.2211811) (-68 -192.9 0) (68 -192.9 0.2211811) (71.5 -191.4 0) (110 -152.9 0.1698243) (122 -122 0) (134.7 -105 0) (134.7 105 -0.5293802) (145 117 0) (149.5 117 0) (153.7 125 0)) 0 80))\r\n(cut (prism '((92 0 1) (-92 0 0) (-92 -55.8 1) (92 -55.8 0)) -1 82))\r\n(princ \"\\nSTAGE01_BODY_DONE\")",
+                "timeout": 180,
+                "operation_manifest": [
+                  {
+                    "operation_id": "body-and-bore",
+                    "operation_type": "extrude_subtract",
+                    "intent": "Extrude reconstructed housing and mounting-ear outline 80mm; subtract exact R92 stadium bore with55.8mm center separation",
+                    "parameters": {
+                      "thickness": 80,
+                      "bore_radius": 92,
+                      "bore_center_separation": 55.8
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The first construction job is running. The model uses native extrusions and Boolean cuts, with separate saved stages for the body, through features, side ports, and face details so any correction stays recoverable.\n"
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "14db696da00a4888a49dc4ac9412b35a"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-ChildItem -LiteralPath '[private value removed] -Name\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -Raw -LiteralPath 'scripts/02-through.lsp'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"import json; p=json.load(open(r'[private value removed] print(p.keys()); e=p['entities'][0]; print(e.keys()); print({k:v for k,v in e.items() if k not in ['faces','edges','vertices']})\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (getbody))\r\n(setq cutters (ssadd))\r\n(ssadd (cyl 111.6 0 -1 6.5 82) cutters)\r\n(ssadd (cyl 111.6 -55.8 -1 6.5 82) cutters)\r\n(ssadd (cyl 83.8410773 73.6561861 -1 6.5 82) cutters)\r\n(ssadd (cyl 83.8410773 -129.4561861 -1 6.5 82) cutters)\r\n(ssadd (cyl 35.7804097 105.708667 -1 6.5 82) cutters)\r\n(ssadd (cyl 35.7804097 -161.508667 -1 6.5 82) cutters)\r\n(ssadd (cyl -21.8675897 109.4365959 -1 6.5 82) cutters)\r\n(ssadd (cyl -21.8675897 -165.2365959 -1 6.5 82) cutters)\r\n(ssadd (cyl -57.9783329 95.3576054 -1 6.5 82) cutters)\r\n(ssadd (cyl -57.9783329 -151.1576054 -1 6.5 82) cutters)\r\n(ssadd (cyl -87.0960335 69.7770804 -1 6.5 82) cutters)\r\n(ssadd (cyl -87.0960335 -125.5770804 -1 6.5 82) cutters)\r\n(ssadd (cyl -105.708667 35.7804097 -1 6.5 82) cutters)\r\n(ssadd (cyl -105.708667 -91.5804097 -1 6.5 82) cutters)\r\n(ssadd (cyl -111.6 -27.9 -1 6.5 82) cutters)\r\n(ssadd (cyl -147 110.5 -1 11 82) cutters)\r\n(ssadd (prism '((104.8 120.5 0) (118.4 120.5 -1) (118.4 100.5 0) (104.8 100.5 -1)) -1 82) cutters)\r\n(ssadd (prism '((-143.5 89.7 0.9390415) (-147 80.8 0) (-122.4 61.9 1.0045311) (-112.4 79.4 0) (-138.2 89 0.1979401)) -1 82) cutters)\r\n(ssadd (prism '((99.8501429 12.2600559 0.1196853) (83.1054884 56.6907205 -1) (87.8968585 59.9591716 -0.1196853) (105.6069105 12.9668981 -1)) -1 82) cutters)\r\n(ssadd (prism '((83.1054884 -112.4907205 0.1196853) (99.8501429 -68.0600559 -1) (105.6069105 -68.7668981 -0.1196853) (87.8968585 -115.7591716 -1)) -1 82) cutters)\r\n(ssadd (prism '((66.9221737 75.1118011 0.0699268) (43.6261039 90.6483483 -1) (46.1413266 95.8745951 -0.0699268) (70.7805097 79.4423026 -1)) -1 82) cutters)\r\n(ssadd (prism '((43.6261039 -146.4483483 0.0699268) (66.9221737 -130.9118011 -1) (70.7805097 -135.2423026 -0.0699268) (46.1413266 -151.6745951 -1)) -1 82) cutters)\r\n(ssadd (prism '((20.4004019 98.5098147 0.0699268) (-7.5428599 100.3168244 -1) (-7.9777365 106.1004982 -0.0699268) (21.5765682 104.1893071 -1)) -1 82) cutters)\r\n(ssadd (prism '((-7.5428599 -156.1168244 0.0699268) (20.4004019 -154.3098147 -1) (21.5765682 -159.9893071 -0.0699268) (-7.9777365 -161.9004982 -1)) -1 82) cutters)\r\n(ssadd (prism '((-31.5876411 95.5122031 0.0261859) (-41.3983445 91.6871696 -1) (-43.7851278 96.9733086 -0.0261859) (-33.4087973 101.0188708 -1)) -1 82) cutters)\r\n(ssadd (prism '((-41.3983445 -147.4871696 0.0261859) (-31.5876411 -151.3122031 -1) (-33.4087973 -156.8188708 -0.0261859) (-43.7851278 -152.7733086 -1)) -1 82) cutters)\r\n(ssadd (prism '((-62.3497706 78.9485029 0.0261859) (-70.2605777 71.998689 -1) (-74.3113864 76.1497069 -0.0261859) (-65.944489 83.5002058 -1)) -1 82) cutters)\r\n(ssadd (prism '((-70.2605777 -127.798689 0.0261859) (-62.3497706 -134.7485029 -1) (-65.944489 -139.3002058 -0.0261859) (-74.3113864 -131.9497069 -1)) -1 82) cutters)\r\n(ssadd (prism '((-85.5915976 52.8624481 0.0261859) (-90.6483483 43.6261039 -1) (-95.8745951 46.1413266 -0.0261859) (-90.526302 55.9101837 -1)) -1 82) cutters)\r\n(ssadd (prism '((-90.6483483 -99.4261039 0.0261859) (-85.5915976 -108.6624481 -1) (-90.526302 -111.7101837 -0.0261859) (-95.8745951 -101.9413266 -1)) -1 82) cutters)\r\n(ssadd (prism '((-98.5098147 20.4004019 0.0510953) (-100.6 0 0) (-100.6 -16.6 -1) (-106.4 -16.6 0) (-106.4 0 -0.0510953) (-104.1893071 21.5765682 -1)) -1 82) cutters)\r\n(ssadd (prism '((-98.5098147 -76.2004019 -0.0510953) (-100.6 -55.8 0) (-100.6 -39.2 1) (-106.4 -39.2 0) (-106.4 -55.8 0.0510953) (-104.1893071 -77.3765682 1)) -1 82) cutters)\r\n(ssadd (prism '((106.4 -12 0) (106.4 -43.8 -1) (100.6 -43.8 0) (100.6 -12 -1)) -1 82) cutters)\r\n(ssadd (prism '((114.7383351 14.0880961 0.1196853) (95.4969628 65.1436113 -1) (100.288333 68.4120623 -0.1196853) (120.4951028 14.7949383 -1)) -1 82) cutters)\r\n(ssadd (prism '((95.4969628 -120.9436113 0.1196853) (114.7383351 -69.8880961 -1) (120.4951028 -70.5949383 -0.1196853) (100.288333 -124.2120623 -1)) -1 82) cutters)\r\n(ssadd (prism '((76.900629 86.3113739 0.0699268) (50.1309902 104.1645037 -1) (52.6462129 109.3907504 -0.0699268) (80.7589651 90.6418753 -1)) -1 82) cutters)\r\n(ssadd (prism '((50.1309902 -159.9645037 0.0699268) (76.900629 -142.1113739 -1) (80.7589651 -146.4418753 -0.0699268) (52.6462129 -165.1907504 -1)) -1 82) cutters)\r\n(ssadd (prism '((23.4422113 113.1981569 0.0699268) (-8.6675408 115.2746014 -1) (-9.1024174 121.0582752 -0.0699268) (24.6183777 118.8776492 -1)) -1 82) cutters)\r\n(ssadd (prism '((-8.6675408 -171.0746014 0.0699268) (23.4422113 -168.9981569 -1) (24.6183777 -174.6776492 -0.0699268) (-9.1024174 -176.8582752 -1)) -1 82) cutters)\r\n(ssadd (prism '((-36.2975279 109.7535852 0.0261859) (-47.5710599 105.3582188 -1) (-49.9578431 110.6443578 -0.0261859) (-38.1186842 115.260253 -1)) -1 82) cutters)\r\n(ssadd (prism '((-47.5710599 -161.1582188 0.0261859) (-36.2975279 -165.5535852 -1) (-38.1186842 -171.060253 -0.0261859) (-49.9578431 -166.4443578 -1)) -1 82) cutters)\r\n(ssadd (prism '((-71.6464561 90.7201484 0.0261859) (-80.736807 82.73408 -1) (-84.7876157 86.8850979 -0.0261859) (-75.2411745 95.2718514 -1)) -1 82) cutters)\r\n(ssadd (prism '((-80.736807 -138.53408 0.0261859) (-71.6464561 -146.5201484 -1) (-75.2411745 -151.0718514 -0.0261859) (-84.7876157 -142.6850979 -1)) -1 82) cutters)\r\n(ssadd (prism '((-98.3537642 60.7445229 0.0261859) (-104.1645037 50.1309902 -1) (-109.3907504 52.6462129 -0.0261859) (-103.2884687 63.7922584 -1)) -1 82) cutters)\r\n(ssadd (prism '((-104.1645037 -105.9309902 0.0261859) (-98.3537642 -116.5445229 -1) (-103.2884687 -119.5922584 -0.0261859) (-109.3907504 -108.4462129 -1)) -1 82) cutters)\r\n(ssadd (prism '((-113.1981569 23.4422113 0.0510953) (-115.6 0 0) (-115.6 -16.6 -1) (-121.4 -16.6 0) (-121.4 0 -0.0510953) (-118.8776492 24.6183777 -1)) -1 82) cutters)\r\n(ssadd (prism '((-113.1981569 -79.2422113 -0.0510953) (-115.6 -55.8 0) (-115.6 -39.2 1) (-121.4 -39.2 0) (-121.4 -55.8 0.0510953) (-118.8776492 -80.4183777 1)) -1 82) cutters)\r\n(ssadd (prism '((121.4 -12 0) (121.4 -43.8 -1) (115.6 -43.8 0) (115.6 -12 -1)) -1 82) cutters)\r\n(ssadd (prism '((50.463156 -178.1064391 0.1898559) (97.8342834 -146.7521738 -1) (104.3874998 -151.3407853 -0.1898559) (52.1264496 -185.9316199 -1)) -1 82) cutters)\r\n(ssadd (prism '((-97.8342834 -146.7521738 0.1898559) (-50.463156 -178.1064391 -1) (-52.1264496 -185.9316199 -0.1898559) (-104.3874998 -151.3407853 -1)) -1 82) cutters)\r\n(command \"_.SUBTRACT\" body \"\" cutters \"\")\r\n(princ \"\\nSTAGE02_THROUGH_FEATURES_DONE\")",
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "through-pattern",
+                    "operation_type": "subtract",
+                    "intent": "Cut15 diameter13 bolt holes, two mount openings, tapered ear relief, twin curved cooling passage rows and two R81.5 lower corner slots",
+                    "parameters": {
+                      "bolt_circle_diameter": 223.2,
+                      "bolt_count": 15,
+                      "bolt_diameter": 13,
+                      "slot_width": 5.8,
+                      "slot_centerline_radii": [
+                        103.5,
+                        118.5
+                      ]
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "e077d1875cf646ee9e3cba41eda2612d"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath '[private value removed] -Tail 35\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The body and all face openings have built successfully as one native solid. I’m adding the stepped side ports and external ribs next, then I’ll inspect rendered views and the saved model’s geometry.\n"
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -Raw -LiteralPath 'scripts/03-ports.lsp'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (getbody))\r\n(addsolid (xcyl 130 -88 40 19 9.7))\r\n(setq rib (prism '((-49 -88 0) (-49 -64.8 -1) (-31 -64.8 0) (-31 -88 -1)) 0 5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 132.7 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-41.8284884 -50.5951157 0) (-1.8284884 -7.6951157 -1) (1.8284884 -11.1048843 0) (-38.1715116 -54.0048843 -1)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-41.8284884 -54.0048843 0) (-81.8284884 -11.1048843 -1) (-78.1715116 -7.6951157 0) (-38.1715116 -50.5951157 -1)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((0 -90.5 0) (0 -85.5 0) (-80 -85.5 0) (-80 -90.5 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(cut (xcyl 70 32 40 18 80))\r\n(cut (xcyl 124.7 32 40 23 20))\r\n(cut (xcyl 70 -88 40 9.5 80))\r\n(cut (xcyl 137.2 -88 40 14.5 5))\r\n(cut (xcyl -132 0 40 13 4.1))\r\n(cut (xcyl -132 0 40 7.75 13.3))\r\n(cut (xcyl -132 0 40 5.5 29.1))\r\n(cut (xcyl -132 0 40 4 44))\r\n(cut (xcyl -132 -55.8 40 13 4.1))\r\n(cut (xcyl -132 -55.8 40 5.5 13.3))\r\n(cut (xcyl -132 -55.8 40 4 30.1))\r\n(cut (xcyl -132 -55.8 40 2 44))\r\n(cut (xcyl -132 -127.9 15 3.0 33))\r\n(cut (xcyl -132 -127.9 59.1 3.0 33))\r\n(princ \"\\nSTAGE03_PORTS_DONE\")",
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "side-ports",
+                    "operation_type": "union_subtract",
+                    "intent": "Add lower side boss and ribs; cut stepped native cylindrical side ports and two small cross drillings",
+                    "parameters": {
+                      "right_port_y": [
+                        32,
+                        -88
+                      ],
+                      "right_bore_diameters": [
+                        36,
+                        19
+                      ],
+                      "right_counterbore_diameters": [
+                        46,
+                        29
+                      ],
+                      "right_counterbore_depths": [
+                        10,
+                        2.5
+                      ],
+                      "port_axis_z": 40
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"import json; p=json.load(open(r'[private value removed] print('errors',p['errors']); print([{k:v for k,v in e.items() if k in ['type','bounds','mass_properties']} for e in p['entities']]); print('faces',len(p['entities'][0]['faces']))\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "a13e9b778fe84249926c29e27aa9bd8d"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath '[private value removed] -Tail 50\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath 'scripts/03-ports.lsp'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "One rib extrusion failed in Core Console. The completed body and passage stages are intact; I’m revising the rib profile and keeping its ends flush with the 80 mm faces before rerunning that stage.\n"
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command '$source = Get-Content -Raw -LiteralPath '\"'build_model.py'\n\"'$source = $source.Replace(\"s3+=yz_prism(capsule(-52.3,40,-9.4,zedge,2.5),133.2,3.5)\",\"s3+=yz_prism([p(-55.7,40),p(-12.8,zedge),p(-6.0,zedge),p(-48.9,40)],133.2,3.5)\")\nSet-Content -LiteralPath '\"'build_model.py' -Value \"'$source -Encoding UTF8\npython build_model.py'",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -Raw -LiteralPath 'scripts/03-ports.lsp'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setvar \"CMDECHO\" 1)\n(setq body (getbody))\r\n(addsolid (xcyl 130 -88 40 19 9.7))\r\n(setq rib (prism '((-49 -88 0) (-49 -64.8 -1) (-31 -64.8 0) (-31 -88 -1)) 0 5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 132.7 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-40 -55.7 0) (0 -12.8 0) (0 -6 0) (-40 -48.9 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-40 -55.7 0) (-80 -12.8 0) (-80 -6 0) (-40 -48.9 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((0 -90.5 0) (0 -85.5 0) (-80 -85.5 0) (-80 -90.5 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(cut (xcyl 70 32 40 18 80))\r\n(cut (xcyl 124.7 32 40 23 20))\r\n(cut (xcyl 70 -88 40 9.5 80))\r\n(cut (xcyl 137.2 -88 40 14.5 5))\r\n(cut (xcyl -132 0 40 13 4.1))\r\n(cut (xcyl -132 0 40 7.75 13.3))\r\n(cut (xcyl -132 0 40 5.5 29.1))\r\n(cut (xcyl -132 0 40 4 44))\r\n(cut (xcyl -132 -55.8 40 13 4.1))\r\n(cut (xcyl -132 -55.8 40 5.5 13.3))\r\n(cut (xcyl -132 -55.8 40 4 30.1))\r\n(cut (xcyl -132 -55.8 40 2 44))\r\n(cut (xcyl -132 -127.9 15 3.0 33))\r\n(cut (xcyl -132 -127.9 59.1 3.0 33))\r\n(princ \"\\nSTAGE03_PORTS_DONE\")",
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "side-ports-revised",
+                    "operation_type": "union_subtract",
+                    "intent": "Construct valid flush rectangular rib profiles, native sideboss and dimensioned stepped radialports"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "f0be2d9cf8f7414fbcc9bae5f164ca8b"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath '[private value removed] -Tail 50\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -Raw -LiteralPath 'scripts/03-ports.lsp'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setvar \"CMDECHO\" 1)\n(setq body (getbody))\r\n(addsolid (xcyl 130 -88 40 19 9.7))\r\n(setq rib (prism '((-49 -88 0) (-49 -64.8 -1) (-31 -64.8 0) (-31 -88 -1)) 0 5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 132.7 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-40 -55.7 0) (0 -12.8 0) (0 -6 0) (-40 -48.9 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-40 -55.7 0) (-80 -12.8 0) (-80 -6 0) (-40 -48.9 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((0 -90.5 0) (0 -85.5 0) (-80 -85.5 0) (-80 -90.5 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(cut (xcyl 70 32 40 18 80))\r\n(cut (xcyl 124.7 32 40 23 20))\r\n(cut (xcyl 70 -88 40 9.5 80))\r\n(cut (xcyl 137.2 -88 40 14.5 5))\r\n(cut (xcyl -132 0 40 13 4.1))\r\n(cut (xcyl -132 0 40 7.75 13.3))\r\n(cut (xcyl -132 0 40 5.5 29.1))\r\n(cut (xcyl -132 0 40 4 44))\r\n(cut (xcyl -132 -55.8 40 13 4.1))\r\n(cut (xcyl -132 -55.8 40 5.5 13.3))\r\n(cut (xcyl -132 -55.8 40 4 30.1))\r\n(cut (xcyl -132 -55.8 40 2 44))\r\n(cut (xcyl -132 -127.9 15 3.0 33))\r\n(cut (xcyl -132 -127.9 59.1 3.0 33))\r\n(princ \"\\nSTAGE03_PORTS_DONE\")",
+                "capture_boolean_lineage": false,
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "side-ports-revised-retry",
+                    "operation_type": "union_subtract",
+                    "intent": "Construct sideboss, flushribs and radialport cuts; skip optional lineage capture after instrumentation startup crash"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "1b803bc7937d4700830a54e3ad9aa7ea"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath '[private value removed] -Tail 95\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The revised ribs and side ports are complete. I’m finishing the shallow face grooves and bottom grooves, then exporting a preview from AutoCAD for visual checks.\n"
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -Raw -LiteralPath 'scripts/04-details.lsp'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (getbody))\r\n(setq groove (prism '((97.5 0 1) (-97.5 0 0) (-97.5 -55.8 1) (97.5 -55.8 0)) -0.1 1.6))\r\n(setq inner (prism '((95.5 0 1) (-95.5 0 0) (-95.5 -55.8 1) (95.5 -55.8 0)) -0.2 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(setq groove (prism '((126 0 1) (-126 0 0) (-126 -55.8 1) (126 -55.8 0)) -0.1 1.6))\r\n(setq inner (prism '((124.5 0 1) (-124.5 0 0) (-124.5 -55.8 1) (124.5 -55.8 0)) -0.2 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(setq groove (prism '((97.5 0 1) (-97.5 0 0) (-97.5 -55.8 1) (97.5 -55.8 0)) 78.5 1.6))\r\n(setq inner (prism '((95.5 0 1) (-95.5 0 0) (-95.5 -55.8 1) (95.5 -55.8 0)) 78.4 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(setq groove (prism '((126 0 1) (-126 0 0) (-126 -55.8 1) (126 -55.8 0)) 78.5 1.6))\r\n(setq inner (prism '((124.5 0 1) (-124.5 0 0) (-124.5 -55.8 1) (124.5 -55.8 0)) 78.4 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(cut (prism '((-43.5 -194 0) (-40.5 -194 0) (-40.5 -189.9 0) (-43.5 -189.9 0)) -1 82))\r\n(cut (prism '((-35.5 -194 0) (-32.5 -194 0) (-32.5 -189.9 0) (-35.5 -189.9 0)) -1 82))\r\n(cut (prism '((-27.5 -194 0) (-24.5 -194 0) (-24.5 -189.9 0) (-27.5 -189.9 0)) -1 82))\r\n(cut (prism '((-19.5 -194 0) (-16.5 -194 0) (-16.5 -189.9 0) (-19.5 -189.9 0)) -1 82))\r\n(cut (prism '((-11.5 -194 0) (-8.5 -194 0) (-8.5 -189.9 0) (-11.5 -189.9 0)) -1 82))\r\n(cut (prism '((-3.5 -194 0) (-0.5 -194 0) (-0.5 -189.9 0) (-3.5 -189.9 0)) -1 82))\r\n(cut (prism '((4.5 -194 0) (7.5 -194 0) (7.5 -189.9 0) (4.5 -189.9 0)) -1 82))\r\n(cut (prism '((12.5 -194 0) (15.5 -194 0) (15.5 -189.9 0) (12.5 -189.9 0)) -1 82))\r\n(cut (prism '((20.5 -194 0) (23.5 -194 0) (23.5 -189.9 0) (20.5 -189.9 0)) -1 82))\r\n(cut (prism '((28.5 -194 0) (31.5 -194 0) (31.5 -189.9 0) (28.5 -189.9 0)) -1 82))\r\n(cut (prism '((36.5 -194 0) (39.5 -194 0) (39.5 -189.9 0) (36.5 -189.9 0)) -1 82))\r\n(command \"_.CHPROP\" body \"\" \"_Color\" \"8\" \"\")\r\n(command \"_.VPOINT\" (list 1 -1 1.35))\r\n(command \"_.ZOOM\" \"_Extents\")\r\n(princ \"\\nSTAGE04_FACE_DETAILS_DONE\")\n(setvar \"CMDECHO\" 1)\n(command \"_.STLOUT\" body \"\" \"_Yes\" \"[private value removed]\")\n(princ \"\\nPREVIEW_EXPORT_DONE\")\n",
+                "capture_boolean_lineage": false,
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "face-details",
+                    "operation_type": "subtract_export",
+                    "intent": "Cut shallow stadium gasket grooves on both faces and axial bottom grooves; export native STL forvisual inspection only"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "e5d6f519d02343fab29b8d6cd8f89f48"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath '[private value removed] -Tail 55; Get-Item -LiteralPath 'outputs/renders/candidate.stl' | Select-Object Name,Length\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command 'python scripts/render_native_stl.py'",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 180
+              },
+              "error": null
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The detailed model is complete, and AutoCAD has exported the preview geometry. I’m checking the views for misplaced features and openings, while a separate isolated job checks the solid’s native topology and dimensions.\n"
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "125cf6193bda43b18684988d0aed2eaf"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"import json,collections; p=json.load(open('outputs/preview-topology.json')); e=p['entities'][0]; print('errors',p['errors']); print('bounds',e['bounds']); print('mass',e['mass_properties']); print('counts', {k:len(e[k]) for k in ['faces','edges','vertices']}); print('example_faces',e['faces'][:2])\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command '$checkLisp = @'\"'\n(setvar \\\"FILEDIA\\\" 0)\n(setvar \\\"CMDECHO\\\" 1)\n(setvar \\\"FACETRES\\\" 10)\n(setvar \\\"ISOLINES\\\" 0)\n(setq solids (ssget \\\"_X\\\" '((0 . \\\"3DSOLID\\\"))))\n(setq body (ssname solids 0))\n(princ (strcat \\\"\\\\nFINAL_SOLID_COUNT=\\\" (itoa (sslength solids))))\n(command \\\"_.SOLIDEDIT\\\" \\\"_Body\\\" \\\"_Check\\\" body)\n(repeat 4 (if (> (getvar \\\"CMDACTIVE\\\") 0) (command \\\"_Exit\\\")))\n(command \\\"_.AUDIT\\\" \\\"_Yes\\\")\n(command \\\"_.ACISOUT\\\" solids \\\"\\\" \\\"[private value removed]\")\n(command \\\"_.UCS\\\" \\\"_World\\\")\n(command \\\"_.VPOINT\\\" (list 1 -1 1.35))\n(command \\\"_.ZOOM\\\" \\\"_Extents\\\")\n(princ \\\"\\\\nFINAL_NATIVE_CHECK_AND_EXPORT_COMPLETE\\\")\n\n'@\nSet-Content -LiteralPath 'scripts/05-check-save.lsp' -Value \"'$checkLisp -Encoding UTF8'",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"FILEDIA\" 0)\n(setvar \"CMDECHO\" 1)\n(setvar \"FACETRES\" 10)\n(setvar \"ISOLINES\" 0)\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\"))))\n(setq body (ssname solids 0))\n(princ (strcat \"\\nFINAL_SOLID_COUNT=\" (itoa (sslength solids))))\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" body)\n(repeat 4 (if (> (getvar \"CMDACTIVE\") 0) (command \"_Exit\")))\n(command \"_.AUDIT\" \"_Yes\")\n(command \"_.ACISOUT\" solids \"\" \"[private value removed]\")\n(command \"_.UCS\" \"_World\")\n(command \"_.VPOINT\" (list 1 -1 1.35))\n(command \"_.ZOOM\" \"_Extents\")\n(princ \"\\nFINAL_NATIVE_CHECK_AND_EXPORT_COMPLETE\")\n",
+                "capture_boolean_lineage": false,
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "final-check-and-save",
+                    "operation_type": "validate_export",
+                    "intent": "Check native ShapeManager solid, audit drawing, export ACIS SAT, and save final native editable candidate DWG"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The visual review confirms the major features are in place. It also found a small cusp at the left ear’s junction with the ring. I’m correcting that junction to use the drawing’s R25 tangent blend before the final checks.\n"
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "77a762f7359f4d1498859cdda74a4574"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath '[private value removed] -Tail 90\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command '$modelSource = @'\"'\nfrom pathlib import Path\nimport math,json\nroot=Path(__file__).resolve().parent\n(root/'scripts').mkdir(exist_ok=True)\n(root/'outputs/renders').mkdir(parents=True,exist_ok=True)\ndef p(x,y,b=0): return [x,y,b]\ndef arc_mid(start,mid,end):\n    ax,ay=start[:2]; bx,by=mid; cx,cy=end\n    d=2*(ax*(by-cy)+bx*(cy-ay)+cx*(ay-by))\n    ux=((ax*ax+ay*ay)*(by-cy)+(bx*bx+by*by)*(cy-ay)+(cx*cx+cy*cy)*(ay-by))/d\n    uy=((ax*ax+ay*ay)*(cx-bx)+(bx*bx+by*by)*(ax-cx)+(cx*cx+cy*cy)*(bx-ax))/d\n    a=math.atan2(ay-uy,ax-ux); b=math.atan2(by-uy,bx-ux); c=math.atan2(cy-uy,cx-ux)\n    ccw=(c-a)%(2*math.pi)\n    delta=ccw if (b-a)%(2*math.pi)<ccw else ccw-2*math.pi\n    start[2]=math.tan(delta/4)\n    return p(cx,cy)\noutline=[p(153.7,132.5),p(129.7,132.5)]\ndef L(x,y): outline.append(p(x,y))\ndef A(mx,my,x,y): outline.append(arc_mid(outline[-1],(mx,my),(x,y)))\nA(125,130,121,128.2)\nL(52,120)\nA(44,120.6,40.0795,123.35)\n# exact upper R129.7 crown from angle72 to135\noutline[-1]=p(129.7*math.cos(math.radians(72)),129.7*math.sin(math.radians(72)),math.tan(math.radians(63)/4))\nL(-129.7/math.sqrt(2),129.7/math.sqrt(2))\nA(-113,85,-131,96)\nA(-132.8,99.5,-132.9,102.95)\n# right flank of round mount boss, join to top stem with10-ish blend\nA(-131,110.5,-134.2,120.1)\nA(-135,122.4,-135,124)\nL(-135,132.5)\nL(-158.5,132.5)\nL(-158.5,124)\nA(-159,121.5,-160,119.8)\nA(-163,110.5,-158.5,99.3)\nL(-158.5,93)\nA(-157,88,-153,84)\n# R25 concave blend tangent to x+y=-69 flank andR129.7 maincrown\ncs=-69-25*math.sqrt(2)\ncd=math.sqrt(2*(129.7+25)**2-cs**2)\nfcx,fcy=(cs-cd)/2,(cs+cd)/2\ntx,ty=fcx+25/math.sqrt(2),fcy+25/math.sqrt(2)\nqx,qy=fcx*129.7/154.7,fcy*129.7/154.7\nL(tx,ty)\noutline[-1][2]=math.tan((math.atan2(qy-fcy,qx-fcx)-math.pi/4)/4)\nL(qx,qy)\noutline[-1][2]=math.tan((math.pi-math.atan2(qy,qx))/4)\nL(-129.7,0)\nL(-129.7,-55.8)\nA(-126.5,-83,-118,-111)\nL(-118,-143)\nA(-116.5,-149,-110,-152.9)\nL(-71.5,-191.4)\nA(-70,-192.5,-68,-192.9)\nL(68,-192.9)\nA(70,-192.5,71.5,-191.4)\nL(110,-152.9)\nA(118,-140,122,-122)\nL(134.7,-105)\nL(134.7,105)\nA(138,115,145,117)\nL(149.5,117)\nL(153.7,125)\ndef fmt(v): return f'{v:.7f}'.rstrip('0').rstrip('.') if isinstance(v,float) else str(v)\ndef vl(verts): return \\\"'(\\\"+' '.join('('+' '.join(fmt(v) for v in row)+')' for row in verts)+')'\ndef stadium(r): return [p(r,0,1),p(-r,0),p(-r,-55.8,1),p(r,-55.8)]\ndef arslot(rc,w,a,b,cy=0,cx=0):\n    a,b=map(math.radians,(a,b)); ri,ro=rc-w/2,rc+w/2\n    return [p(cx+ri*math.cos(a),cy+ri*math.sin(a),math.tan((b-a)/4)),p(cx+ri*math.cos(b),cy+ri*math.sin(b),-1),p(cx+ro*math.cos(b),cy+ro*math.sin(b),-math.tan((b-a)/4)),p(cx+ro*math.cos(a),cy+ro*math.sin(a),-1)]\ndef capsule(x1,y1,x2,y2,r):\n    a=math.atan2(y2-y1,x2-x1)\n    nx,ny=-math.sin(a)*r,math.cos(a)*r\n    return [p(x1+nx,y1+ny),p(x2+nx,y2+ny,-1),p(x2-nx,y2-ny),p(x1-nx,y1-ny,-1)]\nhelper=r\\\"\\\"\\\"\n(setvar \\\"CMDECHO\\\" 0)\n(setvar \\\"FILEDIA\\\" 0)\n(setvar \\\"OSMODE\\\" 0)\n(setvar \\\"INSUNITS\\\" 4)\n(setvar \\\"DELOBJ\\\" 1)\n(setvar \\\"FACETRES\\\" 10)\n(setvar \\\"ISOLINES\\\" 0)\n(defun poly (vs z / data v)\n (setq data (list '(0 . \\\"LWPOLYLINE\\\") '(100 . \\\"AcDbEntity\\\") '(100 . \\\"AcDbPolyline\\\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\n (entmakex data)\n)\n(defun prism (vs z h / e)\n (setq e (poly vs z))\n (command \\\"_.EXTRUDE\\\" e \\\"\\\" h)\n (entlast)\n)\n(defun cyl (x y z r h / e)\n (command \\\"_.CYLINDER\\\" (list x y z) r h)\n (entlast)\n)\n(defun cut (e) (command \\\"_.SUBTRACT\\\" body \\\"\\\" e \\\"\\\"))\n(defun addsolid (e) (command \\\"_.UNION\\\" body e \\\"\\\") (setq body (entlast)))\n(defun getbody () (ssname (ssget \\\"_X\\\" '((0 . \\\"3DSOLID\\\"))) 0))\n(defun xcyl (x y z r h / e)\n (setq e (cyl 0 0 0 r h))\n (command \\\"_.ROTATE3D\\\" e \\\"\\\" \\\"_Yaxis\\\" '(0 0 0) 90)\n (command \\\"_.MOVE\\\" e \\\"\\\" '(0 0 0) (list x y z))\n e\n)\n\\\"\\\"\\\"\ns1=helper+f\\\"\\\\n(setq body (prism {vl(outline)} 0 80))\\\\n(cut (prism {vl(stadium(92))} -1 82))\\\\n\\\"\ns1+='(princ \\\"\\\\\\\\nSTAGE01_BODY_DONE\\\")\\\\n'\n(root/'scripts/01-body.lsp').write_text(s1)\n# Through drilling, ear reliefs, cooling passages\ns2=helper+\\\"\\\\n(setq body (getbody))\\\\n(setq cutters (ssadd))\\\\n\\\"\ndef cutprim(vertices,z=-1,h=82): return f\\\"(ssadd (prism {vl(vertices)} {fmt(z)} {fmt(h)}) cutters)\\\\n\\\"\nangles=[0,41.3,71.3,101.3,121.3,141.3,161.3]\nbolts=[]\nfor a in angles:\n    x,y=111.6*math.cos(math.radians(a)),111.6*math.sin(math.radians(a))\n    bolts.extend([(x,y),(x,-55.8-y)])\nbolts.append((-111.6,-27.9))\nfor x,y in bolts: s2+=f\\\"(ssadd (cyl {fmt(x)} {fmt(y)} -1 6.5 82) cutters)\\\\n\\\"\ns2+=\\\"(ssadd (cyl -147 110.5 -1 11 82) cutters)\\\\n\\\"\ns2+=cutprim(capsule(104.8,110.5,118.4,110.5,10))\n# tapered left-ear relief, through: length40.9 withR5 andR10 rounded ends\n# clockwise traced contour from detail B\nleftrel=[p(-143.5,89.7)]\nleftrel.append(arc_mid(leftrel[-1],(-149.5,86.7),(-147.0,80.8)))\nleftrel.append(p(-122.4,61.9))\nleftrel.append(arc_mid(leftrel[-1],(-109.0,65.0),(-112.4,79.4)))\nleftrel.append(p(-138.2,89.0))\nleftrel.append(arc_mid(leftrel[-1],(-141.0,89.9),(-143.5,89.7)))\nleftrel=leftrel[:-1]\ns2+=cutprim(leftrel)\nfor rc in (103.5,118.5):\n    for a,b in zip(angles[:-1],angles[1:]):\n        aa,bb=a+7,b-7\n        s2+=cutprim(arslot(rc,5.8,aa,bb))\n        s2+=cutprim(arslot(rc,5.8,-bb,-aa,-55.8))\n    # left top and bottom passages flow from arc onto side\n    a=math.radians(168.3); ri,ro=rc-2.9,rc+2.9\n    vs=[p(ri*math.cos(a),ri*math.sin(a),math.tan((math.pi-a)/4)),p(-ri,0),p(-ri,-16.6,-1),p(-ro,-16.6),p(-ro,0,-math.tan((math.pi-a)/4)),p(ro*math.cos(a),ro*math.sin(a),-1)]\n    s2+=cutprim(vs)\n    s2+=cutprim([p(x,-55.8-y,-b) for x,y,b in vs])\n    s2+=cutprim(capsule(rc,-12,rc,-43.8,2.9))\n# broad lower corner passages (R81.5 calledout)\ns2+=cutprim(arslot(81.5,8,-78,-35,-102.3,34.35))\ns2+=cutprim(arslot(81.5,8,215,258,-102.3,-34.35))\ns2+='(command \\\"_.SUBTRACT\\\" body \\\"\\\" cutters \\\"\\\")\\\\n(princ \\\"\\\\\\\\nSTAGE02_THROUGH_FEATURES_DONE\\\")\\\\n'\n(root/'scripts/02-through.lsp').write_text(s2)\n# stage3 side ports &external boss/ribs\ns3=helper+\\\"\\\\n(setq body (getbody))\\\\n\\\"\ns3+='(addsolid (xcyl 130 -88 40 19 9.7))\\\\n'\n# extrudeYZprofiles via rotateY from XY => Xnormal;local u=-z, v=y\ndef yz_prism(pts,x,depth):\n    vs=[p(-z,y,b) for y,z,b in pts]\n    return f\\\"(setq rib (prism {vl(vs)} 0 {fmt(depth)}))\\\\n(command \\\\\\\"_.ROTATE3D\\\\\\\" rib \\\\\\\"\\\\\\\" \\\\\\\"_Yaxis\\\\\\\" '(0 0 0) 90)\\\\n(command \\\\\\\"_.MOVE\\\\\\\" rib \\\\\\\"\\\\\\\" '(0 0 0) (list {fmt(x)} 0 0))\\\\n(addsolid rib)\\\\n\\\"\ns3+=yz_prism(capsule(-88,40,-64.8,40,9),132.7,5)\n# slender YZ ribs merge into tab; each oriented at47degree fromthicknessdirection\nfor zedge in (0,80):\n    s3+=yz_prism([p(-55.7,40),p(-12.8,zedge),p(-6.0,zedge),p(-48.9,40)],133.2,3.5)\ns3+=yz_prism([p(-90.5,0),p(-85.5,0),p(-85.5,80),p(-90.5,80)],133.2,3.5)\n# bores positiveXcuts frominside tooutside\ns3+='(cut (xcyl 70 32 40 18 80))\\\\n(cut (xcyl 124.7 32 40 23 20))\\\\n'\ns3+='(cut (xcyl 70 -88 40 9.5 80))\\\\n(cut (xcyl 137.2 -88 40 14.5 5))\\\\n'\n# negativeX left upper stepstacks, all cylinderaxespositiveX\ns3+='(cut (xcyl -132 0 40 13 4.1))\\\\n(cut (xcyl -132 0 40 7.75 13.3))\\\\n(cut (xcyl -132 0 40 5.5 29.1))\\\\n(cut (xcyl -132 0 40 4 44))\\\\n'\ns3+='(cut (xcyl -132 -55.8 40 13 4.1))\\\\n(cut (xcyl -132 -55.8 40 5.5 13.3))\\\\n(cut (xcyl -132 -55.8 40 4 30.1))\\\\n(cut (xcyl -132 -55.8 40 2 44))\\\\n'\n# lower two cross drilled little holes visible left elevation\nfor z in (15,59.1): s3+=f\\\"(cut (xcyl -132 -127.9 {z} 3.0 33))\\\\n\\\"\ns3+='(princ \\\"\\\\\\\\nSTAGE03_PORTS_DONE\\\")\\\\n'\n(root/'scripts/03-ports.lsp').write_text(s3)\n# stage4 face grooves, bottom axialteeth\ns4=helper+\\\"\\\\n(setq body (getbody))\\\\n\\\"\nfor z in (-.1,78.5):\n  for ri,ro in ((95.5,97.5),(124.5,126)):\n    s4+=f\\\"(setq groove (prism {vl(stadium(ro))} {z} 1.6))\\\\n(setq inner (prism {vl(stadium(ri))} {z-.1} 1.8))\\\\n(command \\\\\\\"_.SUBTRACT\\\\\\\" groove \\\\\\\"\\\\\\\" inner \\\\\\\"\\\\\\\")\\\\n(cut groove)\\\\n\\\"\nfor x in range(-42,43,8):\n  s4+=f\\\"(cut (prism {vl([p(x-1.5,-194),p(x+1.5,-194),p(x+1.5,-189.9),p(x-1.5,-189.9)])} -1 82))\\\\n\\\"\ns4+='(command \\\"_.CHPROP\\\" body \\\"\\\" \\\"_Color\\\" \\\"8\\\" \\\"\\\")\\\\n(command \\\"_.VPOINT\\\" (list 1 -1 1.35))\\\\n(command \\\"_.ZOOM\\\" \\\"_Extents\\\")\\\\n(princ \\\"\\\\\\\\nSTAGE04_FACE_DETAILS_DONE\\\")\\\\n'\n(root/'scripts/04-details.lsp').write_text(s4)\n(root/'analysis/design-values.json').write_text(json.dumps({'outer_vertices_with_bulges':outline,'bolt_centers':bolts,'thickness':80,'bore_radius':92,'bore_center_separation':55.8,'slot_radii':[103.5,118.5],'slot_width':5.8},indent=2))\nprint('Generated native AutoLISP stages:',[(p.name,p.stat().st_size) for p in (root/'scripts').glob('*.lsp')])\n\n'@\nSet-Content -LiteralPath 'build_model.py' -Value \"'$modelSource -Encoding UTF8\npython build_model.py\nCopy-Item -LiteralPath '\"'outputs/candidate.dwg' -Destination 'intermediate/05-initial-candidate.dwg'\nCopy-Item -LiteralPath 'outputs/candidate.sat' -Destination 'intermediate/05-initial-candidate.sat'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -Raw -LiteralPath 'scripts/01-body.lsp','scripts/02-through.lsp','scripts/03-ports.lsp','scripts/04-details.lsp'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (prism '((153.7 132.5 0) (129.7 132.5 -0.0330112) (121 128.2 0) (52 120 -0.2750539) (40.0795042 123.3520302 0.2820292) (-91.7117495 91.7117495 -0.4549736) (-131 96 -0.2267891) (-132.9 102.95 0.2920457) (-134.2 120.1 -0.1689489) (-135 124 0) (-135 132.5 0) (-158.5 132.5 0) (-158.5 124 -0.1687389) (-160 119.8 0.3616816) (-158.5 99.3 0) (-158.5 93 0.2521176) (-153 84 0) (-130.6433087 61.6433087 -0.2750281) (-124.3518479 36.8606554 0.0721677) (-129.7 0 0) (-129.7 -55.8 0.0890449) (-118 -111 0) (-118 -143 0.4142136) (-110 -152.9 0) (-71.5 -191.4 0.2211811) (-68 -192.9 0) (68 -192.9 0.2211811) (71.5 -191.4 0) (110 -152.9 0.1698243) (122 -122 0) (134.7 -105 0) (134.7 105 -0.5293802) (145 117 0) (149.5 117 0) (153.7 125 0)) 0 80))\r\n(cut (prism '((92 0 1) (-92 0 0) (-92 -55.8 1) (92 -55.8 0)) -1 82))\r\n(princ \"\\nSTAGE01_BODY_DONE\")\r\n\r\n\r\n(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (getbody))\r\n(setq cutters (ssadd))\r\n(ssadd (cyl 111.6 0 -1 6.5 82) cutters)\r\n(ssadd (cyl 111.6 -55.8 -1 6.5 82) cutters)\r\n(ssadd (cyl 83.8410773 73.6561861 -1 6.5 82) cutters)\r\n(ssadd (cyl 83.8410773 -129.4561861 -1 6.5 82) cutters)\r\n(ssadd (cyl 35.7804097 105.708667 -1 6.5 82) cutters)\r\n(ssadd (cyl 35.7804097 -161.508667 -1 6.5 82) cutters)\r\n(ssadd (cyl -21.8675897 109.4365959 -1 6.5 82) cutters)\r\n(ssadd (cyl -21.8675897 -165.2365959 -1 6.5 82) cutters)\r\n(ssadd (cyl -57.9783329 95.3576054 -1 6.5 82) cutters)\r\n(ssadd (cyl -57.9783329 -151.1576054 -1 6.5 82) cutters)\r\n(ssadd (cyl -87.0960335 69.7770804 -1 6.5 82) cutters)\r\n(ssadd (cyl -87.0960335 -125.5770804 -1 6.5 82) cutters)\r\n(ssadd (cyl -105.708667 35.7804097 -1 6.5 82) cutters)\r\n(ssadd (cyl -105.708667 -91.5804097 -1 6.5 82) cutters)\r\n(ssadd (cyl -111.6 -27.9 -1 6.5 82) cutters)\r\n(ssadd (cyl -147 110.5 -1 11 82) cutters)\r\n(ssadd (prism '((104.8 120.5 0) (118.4 120.5 -1) (118.4 100.5 0) (104.8 100.5 -1)) -1 82) cutters)\r\n(ssadd (prism '((-143.5 89.7 0.9390415) (-147 80.8 0) (-122.4 61.9 1.0045311) (-112.4 79.4 0) (-138.2 89 0.1979401)) -1 82) cutters)\r\n(ssadd (prism '((99.8501429 12.2600559 0.1196853) (83.1054884 56.6907205 -1) (87.8968585 59.9591716 -0.1196853) (105.6069105 12.9668981 -1)) -1 82) cutters)\r\n(ssadd (prism '((83.1054884 -112.4907205 0.1196853) (99.8501429 -68.0600559 -1) (105.6069105 -68.7668981 -0.1196853) (87.8968585 -115.7591716 -1)) -1 82) cutters)\r\n(ssadd (prism '((66.9221737 75.1118011 0.0699268) (43.6261039 90.6483483 -1) (46.1413266 95.8745951 -0.0699268) (70.7805097 79.4423026 -1)) -1 82) cutters)\r\n(ssadd (prism '((43.6261039 -146.4483483 0.0699268) (66.9221737 -130.9118011 -1) (70.7805097 -135.2423026 -0.0699268) (46.1413266 -151.6745951 -1)) -1 82) cutters)\r\n(ssadd (prism '((20.4004019 98.5098147 0.0699268) (-7.5428599 100.3168244 -1) (-7.9777365 106.1004982 -0.0699268) (21.5765682 104.1893071 -1)) -1 82) cutters)\r\n(ssadd (prism '((-7.5428599 -156.1168244 0.0699268) (20.4004019 -154.3098147 -1) (21.5765682 -159.9893071 -0.0699268) (-7.9777365 -161.9004982 -1)) -1 82) cutters)\r\n(ssadd (prism '((-31.5876411 95.5122031 0.0261859) (-41.3983445 91.6871696 -1) (-43.7851278 96.9733086 -0.0261859) (-33.4087973 101.0188708 -1)) -1 82) cutters)\r\n(ssadd (prism '((-41.3983445 -147.4871696 0.0261859) (-31.5876411 -151.3122031 -1) (-33.4087973 -156.8188708 -0.0261859) (-43.7851278 -152.7733086 -1)) -1 82) cutters)\r\n(ssadd (prism '((-62.3497706 78.9485029 0.0261859) (-70.2605777 71.998689 -1) (-74.3113864 76.1497069 -0.0261859) (-65.944489 83.5002058 -1)) -1 82) cutters)\r\n(ssadd (prism '((-70.2605777 -127.798689 0.0261859) (-62.3497706 -134.7485029 -1) (-65.944489 -139.3002058 -0.0261859) (-74.3113864 -131.9497069 -1)) -1 82) cutters)\r\n(ssadd (prism '((-85.5915976 52.8624481 0.0261859) (-90.6483483 43.6261039 -1) (-95.8745951 46.1413266 -0.0261859) (-90.526302 55.9101837 -1)) -1 82) cutters)\r\n(ssadd (prism '((-90.6483483 -99.4261039 0.0261859) (-85.5915976 -108.6624481 -1) (-90.526302 -111.7101837 -0.0261859) (-95.8745951 -101.9413266 -1)) -1 82) cutters)\r\n(ssadd (prism '((-98.5098147 20.4004019 0.0510953) (-100.6 0 0) (-100.6 -16.6 -1) (-106.4 -16.6 0) (-106.4 0 -0.0510953) (-104.1893071 21.5765682 -1)) -1 82) cutters)\r\n(ssadd (prism '((-98.5098147 -76.2004019 -0.0510953) (-100.6 -55.8 0) (-100.6 -39.2 1) (-106.4 -39.2 0) (-106.4 -55.8 0.0510953) (-104.1893071 -77.3765682 1)) -1 82) cutters)\r\n(ssadd (prism '((106.4 -12 0) (106.4 -43.8 -1) (100.6 -43.8 0) (100.6 -12 -1)) -1 82) cutters)\r\n(ssadd (prism '((114.7383351 14.0880961 0.1196853) (95.4969628 65.1436113 -1) (100.288333 68.4120623 -0.1196853) (120.4951028 14.7949383 -1)) -1 82) cutters)\r\n(ssadd (prism '((95.4969628 -120.9436113 0.1196853) (114.7383351 -69.8880961 -1) (120.4951028 -70.5949383 -0.1196853) (100.288333 -124.2120623 -1)) -1 82) cutters)\r\n(ssadd (prism '((76.900629 86.3113739 0.0699268) (50.1309902 104.1645037 -1) (52.6462129 109.3907504 -0.0699268) (80.7589651 90.6418753 -1)) -1 82) cutters)\r\n(ssadd (prism '((50.1309902 -159.9645037 0.0699268) (76.900629 -142.1113739 -1) (80.7589651 -146.4418753 -0.0699268) (52.6462129 -165.1907504 -1)) -1 82) cutters)\r\n(ssadd (prism '((23.4422113 113.1981569 0.0699268) (-8.6675408 115.2746014 -1) (-9.1024174 121.0582752 -0.0699268) (24.6183777 118.8776492 -1)) -1 82) cutters)\r\n(ssadd (prism '((-8.6675408 -171.0746014 0.0699268) (23.4422113 -168.9981569 -1) (24.6183777 -174.6776492 -0.0699268) (-9.1024174 -176.8582752 -1)) -1 82) cutters)\r\n(ssadd (prism '((-36.2975279 109.7535852 0.0261859) (-47.5710599 105.3582188 -1) (-49.9578431 110.6443578 -0.0261859) (-38.1186842 115.260253 -1)) -1 82) cutters)\r\n(ssadd (prism '((-47.5710599 -161.1582188 0.0261859) (-36.2975279 -165.5535852 -1) (-38.1186842 -171.060253 -0.0261859) (-49.9578431 -166.4443578 -1)) -1 82) cutters)\r\n(ssadd (prism '((-71.6464561 90.7201484 0.0261859) (-80.736807 82.73408 -1) (-84.7876157 86.8850979 -0.0261859) (-75.2411745 95.2718514 -1)) -1 82) cutters)\r\n(ssadd (prism '((-80.736807 -138.53408 0.0261859) (-71.6464561 -146.5201484 -1) (-75.2411745 -151.0718514 -0.0261859) (-84.7876157 -142.6850979 -1)) -1 82) cutters)\r\n(ssadd (prism '((-98.3537642 60.7445229 0.0261859) (-104.1645037 50.1309902 -1) (-109.3907504 52.6462129 -0.0261859) (-103.2884687 63.7922584 -1)) -1 82) cutters)\r\n(ssadd (prism '((-104.1645037 -105.9309902 0.0261859) (-98.3537642 -116.5445229 -1) (-103.2884687 -119.5922584 -0.0261859) (-109.3907504 -108.4462129 -1)) -1 82) cutters)\r\n(ssadd (prism '((-113.1981569 23.4422113 0.0510953) (-115.6 0 0) (-115.6 -16.6 -1) (-121.4 -16.6 0) (-121.4 0 -0.0510953) (-118.8776492 24.6183777 -1)) -1 82) cutters)\r\n(ssadd (prism '((-113.1981569 -79.2422113 -0.0510953) (-115.6 -55.8 0) (-115.6 -39.2 1) (-121.4 -39.2 0) (-121.4 -55.8 0.0510953) (-118.8776492 -80.4183777 1)) -1 82) cutters)\r\n(ssadd (prism '((121.4 -12 0) (121.4 -43.8 -1) (115.6 -43.8 0) (115.6 -12 -1)) -1 82) cutters)\r\n(ssadd (prism '((50.463156 -178.1064391 0.1898559) (97.8342834 -146.7521738 -1) (104.3874998 -151.3407853 -0.1898559) (52.1264496 -185.9316199 -1)) -1 82) cutters)\r\n(ssadd (prism '((-97.8342834 -146.7521738 0.1898559) (-50.463156 -178.1064391 -1) (-52.1264496 -185.9316199 -0.1898559) (-104.3874998 -151.3407853 -1)) -1 82) cutters)\r\n(command \"_.SUBTRACT\" body \"\" cutters \"\")\r\n(princ \"\\nSTAGE02_THROUGH_FEATURES_DONE\")\r\n\r\n\r\n(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (getbody))\r\n(addsolid (xcyl 130 -88 40 19 9.7))\r\n(setq rib (prism '((-49 -88 0) (-49 -64.8 -1) (-31 -64.8 0) (-31 -88 -1)) 0 5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 132.7 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-40 -55.7 0) (0 -12.8 0) (0 -6 0) (-40 -48.9 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-40 -55.7 0) (-80 -12.8 0) (-80 -6 0) (-40 -48.9 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((0 -90.5 0) (0 -85.5 0) (-80 -85.5 0) (-80 -90.5 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(cut (xcyl 70 32 40 18 80))\r\n(cut (xcyl 124.7 32 40 23 20))\r\n(cut (xcyl 70 -88 40 9.5 80))\r\n(cut (xcyl 137.2 -88 40 14.5 5))\r\n(cut (xcyl -132 0 40 13 4.1))\r\n(cut (xcyl -132 0 40 7.75 13.3))\r\n(cut (xcyl -132 0 40 5.5 29.1))\r\n(cut (xcyl -132 0 40 4 44))\r\n(cut (xcyl -132 -55.8 40 13 4.1))\r\n(cut (xcyl -132 -55.8 40 5.5 13.3))\r\n(cut (xcyl -132 -55.8 40 4 30.1))\r\n(cut (xcyl -132 -55.8 40 2 44))\r\n(cut (xcyl -132 -127.9 15 3.0 33))\r\n(cut (xcyl -132 -127.9 59.1 3.0 33))\r\n(princ \"\\nSTAGE03_PORTS_DONE\")\r\n\r\n\r\n(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (getbody))\r\n(setq groove (prism '((97.5 0 1) (-97.5 0 0) (-97.5 -55.8 1) (97.5 -55.8 0)) -0.1 1.6))\r\n(setq inner (prism '((95.5 0 1) (-95.5 0 0) (-95.5 -55.8 1) (95.5 -55.8 0)) -0.2 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(setq groove (prism '((126 0 1) (-126 0 0) (-126 -55.8 1) (126 -55.8 0)) -0.1 1.6))\r\n(setq inner (prism '((124.5 0 1) (-124.5 0 0) (-124.5 -55.8 1) (124.5 -55.8 0)) -0.2 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(setq groove (prism '((97.5 0 1) (-97.5 0 0) (-97.5 -55.8 1) (97.5 -55.8 0)) 78.5 1.6))\r\n(setq inner (prism '((95.5 0 1) (-95.5 0 0) (-95.5 -55.8 1) (95.5 -55.8 0)) 78.4 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(setq groove (prism '((126 0 1) (-126 0 0) (-126 -55.8 1) (126 -55.8 0)) 78.5 1.6))\r\n(setq inner (prism '((124.5 0 1) (-124.5 0 0) (-124.5 -55.8 1) (124.5 -55.8 0)) 78.4 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(cut (prism '((-43.5 -194 0) (-40.5 -194 0) (-40.5 -189.9 0) (-43.5 -189.9 0)) -1 82))\r\n(cut (prism '((-35.5 -194 0) (-32.5 -194 0) (-32.5 -189.9 0) (-35.5 -189.9 0)) -1 82))\r\n(cut (prism '((-27.5 -194 0) (-24.5 -194 0) (-24.5 -189.9 0) (-27.5 -189.9 0)) -1 82))\r\n(cut (prism '((-19.5 -194 0) (-16.5 -194 0) (-16.5 -189.9 0) (-19.5 -189.9 0)) -1 82))\r\n(cut (prism '((-11.5 -194 0) (-8.5 -194 0) (-8.5 -189.9 0) (-11.5 -189.9 0)) -1 82))\r\n(cut (prism '((-3.5 -194 0) (-0.5 -194 0) (-0.5 -189.9 0) (-3.5 -189.9 0)) -1 82))\r\n(cut (prism '((4.5 -194 0) (7.5 -194 0) (7.5 -189.9 0) (4.5 -189.9 0)) -1 82))\r\n(cut (prism '((12.5 -194 0) (15.5 -194 0) (15.5 -189.9 0) (12.5 -189.9 0)) -1 82))\r\n(cut (prism '((20.5 -194 0) (23.5 -194 0) (23.5 -189.9 0) (20.5 -189.9 0)) -1 82))\r\n(cut (prism '((28.5 -194 0) (31.5 -194 0) (31.5 -189.9 0) (28.5 -189.9 0)) -1 82))\r\n(cut (prism '((36.5 -194 0) (39.5 -194 0) (39.5 -189.9 0) (36.5 -189.9 0)) -1 82))\r\n(command \"_.CHPROP\" body \"\" \"_Color\" \"8\" \"\")\r\n(command \"_.VPOINT\" (list 1 -1 1.35))\r\n(command \"_.ZOOM\" \"_Extents\")\r\n(princ \"\\nSTAGE04_FACE_DETAILS_DONE\")",
+                "capture_boolean_lineage": false,
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "r25-refinement",
+                    "operation_type": "rebuild_native_features",
+                    "intent": "Rebuild unchanged housing features with exact R25 concave fillet tangent to mountingflank and R129.7 bodyarc",
+                    "parameters": {
+                      "neck_radius": 25,
+                      "body_radius": 129.7
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "c13c1150dd3441518529e95f7895e75d"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath '[private value removed] -Tail 25; Select-String -LiteralPath '[private value removed] -Pattern '有效|valid|检查|FINAL_SOLID' -Context 2,2\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -Raw -LiteralPath 'scripts/05-check-save.lsp'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"FILEDIA\" 0)\n(setvar \"CMDECHO\" 1)\n(setvar \"FACETRES\" 10)\n(setvar \"ISOLINES\" 0)\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\"))))\n(setq body (ssname solids 0))\n(princ (strcat \"\\nFINAL_SOLID_COUNT=\" (itoa (sslength solids))))\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" body)\n(repeat 4 (if (> (getvar \"CMDACTIVE\") 0) (command \"_Exit\")))\n(command \"_.AUDIT\" \"_Yes\")\n(if (findfile \"[private value removed]\") (vl-file-delete \"[private value removed]\"))\n(command \"_.ACISOUT\" solids \"\" \"[private value removed]\")\n(command \"_.UCS\" \"_World\")\n(command \"_.VPOINT\" (list 1 -1 1.35))\n(command \"_.ZOOM\" \"_Extents\")\n(princ \"\\nFINAL_NATIVE_CHECK_AND_EXPORT_COMPLETE\")\n(if (findfile \"[private value removed]\") (vl-file-delete \"[private value removed]\"))\n(command \"_.STLOUT\" body \"\" \"_Yes\" \"[private value removed]\")\n",
+                "capture_boolean_lineage": false,
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "final-refined-save",
+                    "operation_type": "validate_export",
+                    "intent": "Save refined final candidate with native validity check, AUDIT, ACISOUT SAT and fresh STLOUT render source; prior candidate preserved in intermediate05"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The R25 junction has been rebuilt. The earlier candidate passed AutoCAD’s solid check and AUDIT; I’m now repeating those checks on the refined model, reopening the final DWG, and checking the SAT export.\n"
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "a88ef7fcd4a249c39ae849132d0f4c70"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Select-String -LiteralPath '[private value removed] -Pattern '有效|错误|COMPLETE|STLOUT' -Context 0,2; Get-Item -LiteralPath 'outputs/candidate.dwg','outputs/candidate.sat','outputs/renders/candidate.stl' | Select-Object Name,Length\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 180
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"FILEDIA\" 0)\n(setvar \"CMDECHO\" 1)\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\"))))\n(setq body (ssname solids 0))\n(princ (strcat \"\\nREOPEN_SOLID_COUNT=\" (itoa (sslength solids))))\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" body)\n(repeat 4 (if (> (getvar \"CMDACTIVE\") 0) (command \"_Exit\")))\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Separate\" body)\n(repeat 4 (if (> (getvar \"CMDACTIVE\") 0) (command \"_Exit\")))\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\"))))\n(princ (strcat \"\\nCONNECTED_COMPONENT_SOLID_COUNT=\" (itoa (sslength solids))))\n(command \"_.MASSPROP\" solids \"\" \"_Yes\" \"[private value removed]\")\n(princ \"\\nREOPEN_VERIFY_DONE\")\n",
+                "capture_boolean_lineage": false,
+                "timeout": 180,
+                "operation_manifest": [
+                  {
+                    "operation_id": "reopen-final-native-check",
+                    "operation_type": "validate",
+                    "intent": "Reopen finalDWG, check ShapeManager validity, separate test for disjointlumps on isolatedcopy, and save native mass properties"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command 'python scripts/render_native_stl.py'",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "26a4e0cc25d4414d8052fab1c9170ea5"
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "d436f76880814066a0530174370bfbb3"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"import json,collections; p=json.load(open('outputs/native-topology.json')); e=p['entities'][0]; print('entities',len(p['entities']),'errors',p['errors']); print('mass',e['mass_properties'],'bounds',e['bounds']); print('cylinder_example',next((f['surface'] for f in e['faces'] if 'cyl' in f['surface']['type'].lower()),None)); print('surface_types',collections.Counter(f['surface']['type'] for f in e['faces']))\\\"; Get-Content -LiteralPath '[private value removed] -Tail 70\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"FILEDIA\" 0)\n(setvar \"CMDECHO\" 1)\n(command \"_.ACISIN\" \"[private value removed]\")\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\"))))\n(princ (strcat \"\\nSAT_REIMPORT_SOLID_COUNT=\" (itoa (sslength solids))))\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" (ssname solids 0))\n(repeat 4 (if (> (getvar \"CMDACTIVE\") 0) (command \"_Exit\")))\n(princ \"\\nSAT_ROUNDTRIP_DONE\")",
+                "capture_boolean_lineage": true,
+                "timeout": 180,
+                "operation_manifest": [
+                  {
+                    "operation_id": "sat-roundtrip",
+                    "operation_type": "import_validate",
+                    "intent": "Reimport exported SAT into isolated blank drawing, validate native solid, and compare native mass properties to final DWG"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The reopened DWG contains one connected, valid 3DSOLID, and AUDIT reports zero errors. Its measured envelope is approximately 316.7 × 325.4 × 80 mm. I’m finishing the SAT round-trip check and recording the remaining drawing assumptions.\n"
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "ef152431bc694f1d896e0ca373b4e9c5"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"import json; p=json.load(open('outputs/native-topology.json')); fs=p['entities'][0]['faces']; cyl=[f for f in fs if f['surface']['type']=='cylinder']; bolt=[f for f in cyl if abs(f['surface']['radius']-6.5)<1e-5]; print('boltcount',len(bolt)); print('bolt_holes',[(f['surface']['origin'],f['bounds']) for f in bolt]); print('bore',[(f['surface']['origin'],f['surface']['radius']) for f in cyl if abs(f['surface']['radius']-92)<1e-5]); print('R25',[(f['surface']['origin'],f['surface']['radius']) for f in cyl if abs(f['surface']['radius']-25)<1e-5])\\\"; Get-Content -LiteralPath '[private value removed] -Tail 35\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 180
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath 'outputs/candidate.sat' -TotalCount 3; Get-Content -LiteralPath 'outputs/native-mass-properties.mpr' -TotalCount 18\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "d1a01d579c5f40b08915b3250507f7fa"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"python -c \\\"import json; a=json.load(open('outputs/native-topology.json')); b=json.load(open('outputs/sat-roundtrip-topology.json')); print('SAT errors:',b['errors']); print('SAT entities:',len(b['entities'])); print('volume difference:',b['entities'][0]['mass_properties']['volume']-a['entities'][0]['mass_properties']['volume']); print('bounds equal:',a['entities'][0]['bounds']==b['entities'][0]['bounds']); print('render metadata:',json.load(open('outputs/renders/render-metadata.json')))\\\"\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The SAT re-import also produced one valid solid, with the same native volume and bounds as the final DWG. The topology check confirms all fifteen Ø13 through holes and both R92 bore arcs. I’m saving the verification summary and model report now.\n"
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command '$verifySource = @'\"'\nfrom pathlib import Path\nimport json,math,hashlib,shutil\nroot=Path(__file__).resolve().parents[1]\nout=root/'outputs'\na=json.loads((out/'native-topology.json').read_text())\nb=json.loads((out/'sat-roundtrip-topology.json').read_text())\ndesign=json.loads((root/'analysis/design-values.json').read_text())\ne=a['entities'][0]; se=b['entities'][0]\ncyl=[f for f in e['faces'] if f['surface']['type']=='cylinder']\nbolt=[f for f in cyl if abs(f['surface']['radius']-6.5)<1e-6 and abs(f['surface']['axis'][2])>0.999]\nerr=max(min(math.dist(pt,f['surface']['origin'][:2]) for f in bolt) for pt in design['bolt_centers'])\nbore=[f for f in cyl if abs(f['surface']['radius']-92)<1e-6]\ndims=[e['bounds']['max'][i]-e['bounds']['min'][i] for i in range(3)]\nmetadata=json.loads((out/'renders/render-metadata.json').read_text())\nchecks={\n 'one_native_solid': len(a['entities'])==1 and e['type']=='Solid3d',\n 'native_topology_no_errors': not a['errors'],\n 'envelope_matches_316_7_by_325_4_by_80': all(abs(x-y)<0.01 for x,y in zip(dims,(316.7,325.4,80))),\n 'fifteen_diameter13_axial_holes':len(bolt)==15,\n 'hole_coordinates_match_dimensioned_pattern':err<1e-5,\n 'all_fifteen_holes_span80mm':all(abs(f['bounds']['min'][2])<1e-6 and abs(f['bounds']['max'][2]-80)<1e-6 for f in bolt),\n 'two_radius92_bore_surfaces':len(bore)==2,\n 'bore_arc_center_spacing55_8':len(bore)==2 and abs(abs(bore[0]['surface']['origin'][1]-bore[1]['surface']['origin'][1])-55.8)<1e-6,\n 'radius25_tangent_neck_present':any(abs(f['surface']['radius']-25)<1e-5 for f in cyl),\n 'sat_roundtrip_one_native_solid':len(b['entities'])==1 and se['type']=='Solid3d' and not b['errors'],\n 'sat_roundtrip_identical_bounds':se['bounds']==e['bounds'],\n 'sat_roundtrip_identical_volume':abs(se['mass_properties']['volume']-e['mass_properties']['volume'])<1e-6,\n 'render_matches_final_stl':metadata['source_sha256']==hashlib.sha256((out/'renders/candidate.stl').read_bytes()).hexdigest(),\n 'final_artifacts_present':all((out/f).is_file() and (out/f).stat().st_size>0 for f in ('candidate.dwg','candidate.sat','renders/isometric.png','renders/front.png','renders/opposite-isometric.png'))\n}\nresult={'run_context':{'sample_id':'cadgenbench:111','run_id':'cadgenbench-111-codex-astra-ultra-autocad-20260916','attempt_id':'a001'},'checks':checks,'all_passed':all(checks.values()),'native_volume_mm3':e['mass_properties']['volume'],'native_bounds_mm':e['bounds'],'native_envelope_mm':dims,'face_count':len(e['faces']),'edge_count':len(e['edges']),'max_bolt_center_error_mm':err,'native_interactive_checks':{'solidcheck':'valid ShapeManager solid','audit_errors':0,'solid_count_after_separate_on_reopened_copy':1,'sat_reimport_solidcheck':'valid ShapeManager solid'},'sha256':{f:hashlib.sha256((out/f).read_bytes()).hexdigest() for f in ('candidate.dwg','candidate.sat')}}\n(out/'verification.json').write_text(json.dumps(result,indent=2),encoding='utf-8')\nfor job,name in [('a88ef7fcd4a249c39ae849132d0f4c70','native-final-check'),('d436f76880814066a0530174370bfbb3','native-reopen-check'),('ef152431bc694f1d896e0ca373b4e9c5','native-sat-check')]:\n    jobdir=Path('[private value removed]\n    shutil.copy2(jobdir/'stdout.log',out/(name+'.log'))\n    shutil.copy2(jobdir/'payload.lsp',root/'scripts'/(name+'.lsp'))\nreport=f\\\"\\\"\\\"# CADGenBench sample 111 — model report\n\n## Deliverables\n\n- [candidate.dwg](candidate.dwg): one native editable AutoCAD 3DSOLID, in millimetres.\n- [candidate.sat](candidate.sat): native AutoCAD ACISOUT export, SAT version 700.\n- [renders](renders/): front and two shaded isometric PNG views of the final model.\n- Native topology, verification.json, check logs, and the native mass-properties report provide inspection evidence.\n- Recoverable DWGs are in ../intermediate/; construction scripts are in ../scripts/ and ../build_model.py.\n\n## Construction and interpretation\n\nAll solid construction used the installed AutoCAD 2024 Core Console through the audited AutoCAD MCP. Only the staged drawing and description were used as design evidence. Desktop drawings were not accessed. Run context: cadgenbench:111 / cadgenbench-111-codex-astra-ultra-autocad-20260916 / a001.\n\nThe model has an 80 mm extrusion depth; an R92 stadium bore with arc centers 55.8 mm apart; fifteen Ø13 through holes on the R111.6 pattern; mounting ears and reliefs; paired curved through passages; two broad lower corner passages; stepped radial ports; a lower side boss and ribs; shallow face grooves; and bottom axial grooves. The left ear junction was revised to a tangent R25 blend.\n\nThe XY plane is the main face, with the upper bore arc center at (0,0), lower center at (0,-55.8), and thickness Z=0…80.\n\n## Successful checks\n\n- Final DWG reopened in an isolated Core Console job.\n- SOLIDEDIT Check: valid ShapeManager solid.\n- AUDIT: zero errors and zero repairs.\n- SOLIDEDIT Separate on the reopened copy retained one solid, confirming one connected body.\n- Native topology: one Solid3d, {len(e['faces'])} analytic faces, no export errors.\n- Measured envelope: {dims[0]:.4f} × {dims[1]:.4f} × {dims[2]:.4f} mm.\n- Native volume: approximately {e['mass_properties']['volume']:,.1f} mm³.\n- All fifteen Ø13 cylindrical holes span the complete 80 mm thickness; both R92 arcs and 55.8 mm center spacing were confirmed.\n- SAT re-imported into a separate blank drawing as one valid solid. Native volume and bounds exactly matched the final DWG export.\n- Front and isometric views inspected against the reference. The render source is AutoCAD STLOUT tessellation; the editable model remains native solid geometry. AutoCAD translated STL display coordinates into the positive octant; DWG and SAT preserve the stated WCS.\n- All {len(checks)} automated artifact/geometry checks passed. These checks establish model validity and selected dimensions, not a benchmark accuracy score.\n\n## Assumptions and remaining limits\n\n- The section's 55.8 mm bore-center spacing was used over the face view's approximately 55.7 mm implied value.\n- Cooling passages are interpreted as through features: width 5.8 mm at centerline radii 103.5 and 118.5 mm. Exact passage widths and some endpoints are inferred.\n- Face contours are interpreted as 1.5 mm deep grooves on both faces, spanning radii 95.5–97.5 and 124.5–126 mm.\n- Several ear blend positions, the tapered left relief, lower exterior shoulders, small drilling depths, and rib transitions are reconstructed from the raster. Some minor corners remain sharper than shown.\n- Bottom grooves use eleven 3 mm wide, 3 mm deep cuts at 8 mm pitch; their precise count/spacing is not explicitly dimensioned.\n- No ground-truth geometry or accuracy score was available or used.\n\\\"\\\"\\\"\n(out/'model-report.md').write_text(report,encoding='utf-8')\nprint(json.dumps({'all_passed':result['all_passed'],'checks':len(checks),'volume_mm3':result['native_volume_mm3'],'report':str(out/'model-report.md')},indent=2))\nassert result['all_passed'], checks\n\n'@\nSet-Content -LiteralPath 'scripts/verify_outputs.py' -Value \"'$verifySource -Encoding UTF8\npython scripts/verify_outputs.py'",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "Saved the completed model:\n\n- [Native editable DWG]([private value removed]\n- [ACIS SAT]([private value removed]\n- [Rendered PNG views]([private value removed]\n- [Model report]([private value removed]\n\nVerified one connected, valid 3DSOLID, zero AUDIT errors, and fifteen Ø13 through holes. SAT re-import matched the DWG’s volume and bounds.\n\nPassage widths, groove depths, and some small blends remain inferred from the drawing."
+            }
+          ],
+          "mcp_events": [
+            {
+              "event_id": "e4adcf71c06d48d5a5499b55d217dc6f",
+              "timestamp": "2026-09-15T19:02:08Z",
+              "tool": "autocad_set_run_context",
+              "status": "pass",
+              "duration_ms": 0.045,
+              "arguments": {
+                "sample_id": "cadgenbench:111",
+                "run_id": "cadgenbench-111-codex-astra-ultra-autocad-20260916",
+                "attempt_id": "a001"
+              },
+              "error": null
+            },
+            {
+              "event_id": "9853d26011fd43fcac8f5bca374d19d0",
+              "timestamp": "2026-09-15T19:03:36Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 4.169,
+              "arguments": {
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"FILEDIA\" 0)\n(setvar \"CMDECHO\" 0)\n(princ (strcat \"\\nCADGEN ACADVER=\" (getvar \"ACADVER\")))\n(princ)",
+                "operation_manifest": [
+                  {
+                    "operation_id": "initialize",
+                    "intent": "Initialize isolated metric AutoCAD drawing and verify native console"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "c0b25932ee0546b8b9d97f861274bcaf",
+              "timestamp": "2026-09-15T19:04:27Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.067,
+              "arguments": {
+                "job_id": "4b2b50222401488abec9f330b702d5d3"
+              },
+              "error": null
+            },
+            {
+              "event_id": "90966e84aa8b4442bb4b1ae124664ca8",
+              "timestamp": "2026-09-15T19:12:34Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 3.138,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (prism '((153.7 132.5 0) (129.7 132.5 -0.0330112) (121 128.2 0) (52 120 -0.2750539) (40.0795042 123.3520302 0.2820292) (-91.7117495 91.7117495 -0.4549736) (-131 96 -0.2267891) (-132.9 102.95 0.2920457) (-134.2 120.1 -0.1689489) (-135 124 0) (-135 132.5 0) (-158.5 132.5 0) (-158.5 124 -0.1687389) (-160 119.8 0.3616816) (-158.5 99.3 0) (-158.5 93 0.2521176) (-153 84 0) (-122 53 -0.3529412) (-123.5 29 0.0993987) (-129.7 0 0) (-129.7 -55.8 0.0890449) (-118 -111 0) (-118 -143 0.4142136) (-110 -152.9 0) (-71.5 -191.4 0.2211811) (-68 -192.9 0) (68 -192.9 0.2211811) (71.5 -191.4 0) (110 -152.9 0.1698243) (122 -122 0) (134.7 -105 0) (134.7 105 -0.5293802) (145 117 0) (149.5 117 0) (153.7 125 0)) 0 80))\r\n(cut (prism '((92 0 1) (-92 0 0) (-92 -55.8 1) (92 -55.8 0)) -1 82))\r\n(princ \"\\nSTAGE01_BODY_DONE\")",
+                "timeout": 180,
+                "operation_manifest": [
+                  {
+                    "operation_id": "body-and-bore",
+                    "operation_type": "extrude_subtract",
+                    "intent": "Extrude reconstructed housing and mounting-ear outline 80mm; subtract exact R92 stadium bore with55.8mm center separation",
+                    "parameters": {
+                      "thickness": 80,
+                      "bore_radius": 92,
+                      "bore_center_separation": 55.8
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "4aaf92857bbc4f598aa5b5620dcfac57",
+              "timestamp": "2026-09-15T19:12:54Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.058,
+              "arguments": {
+                "job_id": "14db696da00a4888a49dc4ac9412b35a"
+              },
+              "error": null
+            },
+            {
+              "event_id": "18e5f7497e0741dcb4d2948c097fb91b",
+              "timestamp": "2026-09-15T19:13:42Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 3.006,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (getbody))\r\n(setq cutters (ssadd))\r\n(ssadd (cyl 111.6 0 -1 6.5 82) cutters)\r\n(ssadd (cyl 111.6 -55.8 -1 6.5 82) cutters)\r\n(ssadd (cyl 83.8410773 73.6561861 -1 6.5 82) cutters)\r\n(ssadd (cyl 83.8410773 -129.4561861 -1 6.5 82) cutters)\r\n(ssadd (cyl 35.7804097 105.708667 -1 6.5 82) cutters)\r\n(ssadd (cyl 35.7804097 -161.508667 -1 6.5 82) cutters)\r\n(ssadd (cyl -21.8675897 109.4365959 -1 6.5 82) cutters)\r\n(ssadd (cyl -21.8675897 -165.2365959 -1 6.5 82) cutters)\r\n(ssadd (cyl -57.9783329 95.3576054 -1 6.5 82) cutters)\r\n(ssadd (cyl -57.9783329 -151.1576054 -1 6.5 82) cutters)\r\n(ssadd (cyl -87.0960335 69.7770804 -1 6.5 82) cutters)\r\n(ssadd (cyl -87.0960335 -125.5770804 -1 6.5 82) cutters)\r\n(ssadd (cyl -105.708667 35.7804097 -1 6.5 82) cutters)\r\n(ssadd (cyl -105.708667 -91.5804097 -1 6.5 82) cutters)\r\n(ssadd (cyl -111.6 -27.9 -1 6.5 82) cutters)\r\n(ssadd (cyl -147 110.5 -1 11 82) cutters)\r\n(ssadd (prism '((104.8 120.5 0) (118.4 120.5 -1) (118.4 100.5 0) (104.8 100.5 -1)) -1 82) cutters)\r\n(ssadd (prism '((-143.5 89.7 0.9390415) (-147 80.8 0) (-122.4 61.9 1.0045311) (-112.4 79.4 0) (-138.2 89 0.1979401)) -1 82) cutters)\r\n(ssadd (prism '((99.8501429 12.2600559 0.1196853) (83.1054884 56.6907205 -1) (87.8968585 59.9591716 -0.1196853) (105.6069105 12.9668981 -1)) -1 82) cutters)\r\n(ssadd (prism '((83.1054884 -112.4907205 0.1196853) (99.8501429 -68.0600559 -1) (105.6069105 -68.7668981 -0.1196853) (87.8968585 -115.7591716 -1)) -1 82) cutters)\r\n(ssadd (prism '((66.9221737 75.1118011 0.0699268) (43.6261039 90.6483483 -1) (46.1413266 95.8745951 -0.0699268) (70.7805097 79.4423026 -1)) -1 82) cutters)\r\n(ssadd (prism '((43.6261039 -146.4483483 0.0699268) (66.9221737 -130.9118011 -1) (70.7805097 -135.2423026 -0.0699268) (46.1413266 -151.6745951 -1)) -1 82) cutters)\r\n(ssadd (prism '((20.4004019 98.5098147 0.0699268) (-7.5428599 100.3168244 -1) (-7.9777365 106.1004982 -0.0699268) (21.5765682 104.1893071 -1)) -1 82) cutters)\r\n(ssadd (prism '((-7.5428599 -156.1168244 0.0699268) (20.4004019 -154.3098147 -1) (21.5765682 -159.9893071 -0.0699268) (-7.9777365 -161.9004982 -1)) -1 82) cutters)\r\n(ssadd (prism '((-31.5876411 95.5122031 0.0261859) (-41.3983445 91.6871696 -1) (-43.7851278 96.9733086 -0.0261859) (-33.4087973 101.0188708 -1)) -1 82) cutters)\r\n(ssadd (prism '((-41.3983445 -147.4871696 0.0261859) (-31.5876411 -151.3122031 -1) (-33.4087973 -156.8188708 -0.0261859) (-43.7851278 -152.7733086 -1)) -1 82) cutters)\r\n(ssadd (prism '((-62.3497706 78.9485029 0.0261859) (-70.2605777 71.998689 -1) (-74.3113864 76.1497069 -0.0261859) (-65.944489 83.5002058 -1)) -1 82) cutters)\r\n(ssadd (prism '((-70.2605777 -127.798689 0.0261859) (-62.3497706 -134.7485029 -1) (-65.944489 -139.3002058 -0.0261859) (-74.3113864 -131.9497069 -1)) -1 82) cutters)\r\n(ssadd (prism '((-85.5915976 52.8624481 0.0261859) (-90.6483483 43.6261039 -1) (-95.8745951 46.1413266 -0.0261859) (-90.526302 55.9101837 -1)) -1 82) cutters)\r\n(ssadd (prism '((-90.6483483 -99.4261039 0.0261859) (-85.5915976 -108.6624481 -1) (-90.526302 -111.7101837 -0.0261859) (-95.8745951 -101.9413266 -1)) -1 82) cutters)\r\n(ssadd (prism '((-98.5098147 20.4004019 0.0510953) (-100.6 0 0) (-100.6 -16.6 -1) (-106.4 -16.6 0) (-106.4 0 -0.0510953) (-104.1893071 21.5765682 -1)) -1 82) cutters)\r\n(ssadd (prism '((-98.5098147 -76.2004019 -0.0510953) (-100.6 -55.8 0) (-100.6 -39.2 1) (-106.4 -39.2 0) (-106.4 -55.8 0.0510953) (-104.1893071 -77.3765682 1)) -1 82) cutters)\r\n(ssadd (prism '((106.4 -12 0) (106.4 -43.8 -1) (100.6 -43.8 0) (100.6 -12 -1)) -1 82) cutters)\r\n(ssadd (prism '((114.7383351 14.0880961 0.1196853) (95.4969628 65.1436113 -1) (100.288333 68.4120623 -0.1196853) (120.4951028 14.7949383 -1)) -1 82) cutters)\r\n(ssadd (prism '((95.4969628 -120.9436113 0.1196853) (114.7383351 -69.8880961 -1) (120.4951028 -70.5949383 -0.1196853) (100.288333 -124.2120623 -1)) -1 82) cutters)\r\n(ssadd (prism '((76.900629 86.3113739 0.0699268) (50.1309902 104.1645037 -1) (52.6462129 109.3907504 -0.0699268) (80.7589651 90.6418753 -1)) -1 82) cutters)\r\n(ssadd (prism '((50.1309902 -159.9645037 0.0699268) (76.900629 -142.1113739 -1) (80.7589651 -146.4418753 -0.0699268) (52.6462129 -165.1907504 -1)) -1 82) cutters)\r\n(ssadd (prism '((23.4422113 113.1981569 0.0699268) (-8.6675408 115.2746014 -1) (-9.1024174 121.0582752 -0.0699268) (24.6183777 118.8776492 -1)) -1 82) cutters)\r\n(ssadd (prism '((-8.6675408 -171.0746014 0.0699268) (23.4422113 -168.9981569 -1) (24.6183777 -174.6776492 -0.0699268) (-9.1024174 -176.8582752 -1)) -1 82) cutters)\r\n(ssadd (prism '((-36.2975279 109.7535852 0.0261859) (-47.5710599 105.3582188 -1) (-49.9578431 110.6443578 -0.0261859) (-38.1186842 115.260253 -1)) -1 82) cutters)\r\n(ssadd (prism '((-47.5710599 -161.1582188 0.0261859) (-36.2975279 -165.5535852 -1) (-38.1186842 -171.060253 -0.0261859) (-49.9578431 -166.4443578 -1)) -1 82) cutters)\r\n(ssadd (prism '((-71.6464561 90.7201484 0.0261859) (-80.736807 82.73408 -1) (-84.7876157 86.8850979 -0.0261859) (-75.2411745 95.2718514 -1)) -1 82) cutters)\r\n(ssadd (prism '((-80.736807 -138.53408 0.0261859) (-71.6464561 -146.5201484 -1) (-75.2411745 -151.0718514 -0.0261859) (-84.7876157 -142.6850979 -1)) -1 82) cutters)\r\n(ssadd (prism '((-98.3537642 60.7445229 0.0261859) (-104.1645037 50.1309902 -1) (-109.3907504 52.6462129 -0.0261859) (-103.2884687 63.7922584 -1)) -1 82) cutters)\r\n(ssadd (prism '((-104.1645037 -105.9309902 0.0261859) (-98.3537642 -116.5445229 -1) (-103.2884687 -119.5922584 -0.0261859) (-109.3907504 -108.4462129 -1)) -1 82) cutters)\r\n(ssadd (prism '((-113.1981569 23.4422113 0.0510953) (-115.6 0 0) (-115.6 -16.6 -1) (-121.4 -16.6 0) (-121.4 0 -0.0510953) (-118.8776492 24.6183777 -1)) -1 82) cutters)\r\n(ssadd (prism '((-113.1981569 -79.2422113 -0.0510953) (-115.6 -55.8 0) (-115.6 -39.2 1) (-121.4 -39.2 0) (-121.4 -55.8 0.0510953) (-118.8776492 -80.4183777 1)) -1 82) cutters)\r\n(ssadd (prism '((121.4 -12 0) (121.4 -43.8 -1) (115.6 -43.8 0) (115.6 -12 -1)) -1 82) cutters)\r\n(ssadd (prism '((50.463156 -178.1064391 0.1898559) (97.8342834 -146.7521738 -1) (104.3874998 -151.3407853 -0.1898559) (52.1264496 -185.9316199 -1)) -1 82) cutters)\r\n(ssadd (prism '((-97.8342834 -146.7521738 0.1898559) (-50.463156 -178.1064391 -1) (-52.1264496 -185.9316199 -0.1898559) (-104.3874998 -151.3407853 -1)) -1 82) cutters)\r\n(command \"_.SUBTRACT\" body \"\" cutters \"\")\r\n(princ \"\\nSTAGE02_THROUGH_FEATURES_DONE\")",
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "through-pattern",
+                    "operation_type": "subtract",
+                    "intent": "Cut15 diameter13 bolt holes, two mount openings, tapered ear relief, twin curved cooling passage rows and two R81.5 lower corner slots",
+                    "parameters": {
+                      "bolt_circle_diameter": 223.2,
+                      "bolt_count": 15,
+                      "bolt_diameter": 13,
+                      "slot_width": 5.8,
+                      "slot_centerline_radii": [
+                        103.5,
+                        118.5
+                      ]
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "e6e1cb22aab643b8b45bd1fe8b5699b2",
+              "timestamp": "2026-09-15T19:14:26Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.06,
+              "arguments": {
+                "job_id": "e077d1875cf646ee9e3cba41eda2612d"
+              },
+              "error": null
+            },
+            {
+              "event_id": "f327408fb16947b680da952108bc5110",
+              "timestamp": "2026-09-15T19:15:15Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.958,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (getbody))\r\n(addsolid (xcyl 130 -88 40 19 9.7))\r\n(setq rib (prism '((-49 -88 0) (-49 -64.8 -1) (-31 -64.8 0) (-31 -88 -1)) 0 5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 132.7 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-41.8284884 -50.5951157 0) (-1.8284884 -7.6951157 -1) (1.8284884 -11.1048843 0) (-38.1715116 -54.0048843 -1)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-41.8284884 -54.0048843 0) (-81.8284884 -11.1048843 -1) (-78.1715116 -7.6951157 0) (-38.1715116 -50.5951157 -1)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((0 -90.5 0) (0 -85.5 0) (-80 -85.5 0) (-80 -90.5 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(cut (xcyl 70 32 40 18 80))\r\n(cut (xcyl 124.7 32 40 23 20))\r\n(cut (xcyl 70 -88 40 9.5 80))\r\n(cut (xcyl 137.2 -88 40 14.5 5))\r\n(cut (xcyl -132 0 40 13 4.1))\r\n(cut (xcyl -132 0 40 7.75 13.3))\r\n(cut (xcyl -132 0 40 5.5 29.1))\r\n(cut (xcyl -132 0 40 4 44))\r\n(cut (xcyl -132 -55.8 40 13 4.1))\r\n(cut (xcyl -132 -55.8 40 5.5 13.3))\r\n(cut (xcyl -132 -55.8 40 4 30.1))\r\n(cut (xcyl -132 -55.8 40 2 44))\r\n(cut (xcyl -132 -127.9 15 3.0 33))\r\n(cut (xcyl -132 -127.9 59.1 3.0 33))\r\n(princ \"\\nSTAGE03_PORTS_DONE\")",
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "side-ports",
+                    "operation_type": "union_subtract",
+                    "intent": "Add lower side boss and ribs; cut stepped native cylindrical side ports and two small cross drillings",
+                    "parameters": {
+                      "right_port_y": [
+                        32,
+                        -88
+                      ],
+                      "right_bore_diameters": [
+                        36,
+                        19
+                      ],
+                      "right_counterbore_diameters": [
+                        46,
+                        29
+                      ],
+                      "right_counterbore_depths": [
+                        10,
+                        2.5
+                      ],
+                      "port_axis_z": 40
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "9df883f29dc7454d8cedc0633392056d",
+              "timestamp": "2026-09-15T19:16:06Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.055,
+              "arguments": {
+                "job_id": "a13e9b778fe84249926c29e27aa9bd8d"
+              },
+              "error": null
+            },
+            {
+              "event_id": "71ce65e235764af0905a344952616efa",
+              "timestamp": "2026-09-15T19:18:03Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 3.068,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setvar \"CMDECHO\" 1)\n(setq body (getbody))\r\n(addsolid (xcyl 130 -88 40 19 9.7))\r\n(setq rib (prism '((-49 -88 0) (-49 -64.8 -1) (-31 -64.8 0) (-31 -88 -1)) 0 5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 132.7 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-40 -55.7 0) (0 -12.8 0) (0 -6 0) (-40 -48.9 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-40 -55.7 0) (-80 -12.8 0) (-80 -6 0) (-40 -48.9 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((0 -90.5 0) (0 -85.5 0) (-80 -85.5 0) (-80 -90.5 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(cut (xcyl 70 32 40 18 80))\r\n(cut (xcyl 124.7 32 40 23 20))\r\n(cut (xcyl 70 -88 40 9.5 80))\r\n(cut (xcyl 137.2 -88 40 14.5 5))\r\n(cut (xcyl -132 0 40 13 4.1))\r\n(cut (xcyl -132 0 40 7.75 13.3))\r\n(cut (xcyl -132 0 40 5.5 29.1))\r\n(cut (xcyl -132 0 40 4 44))\r\n(cut (xcyl -132 -55.8 40 13 4.1))\r\n(cut (xcyl -132 -55.8 40 5.5 13.3))\r\n(cut (xcyl -132 -55.8 40 4 30.1))\r\n(cut (xcyl -132 -55.8 40 2 44))\r\n(cut (xcyl -132 -127.9 15 3.0 33))\r\n(cut (xcyl -132 -127.9 59.1 3.0 33))\r\n(princ \"\\nSTAGE03_PORTS_DONE\")",
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "side-ports-revised",
+                    "operation_type": "union_subtract",
+                    "intent": "Construct valid flush rectangular rib profiles, native sideboss and dimensioned stepped radialports"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "8c3df9520fd54ec5b09f9b888a7fc6fd",
+              "timestamp": "2026-09-15T19:18:21Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.055,
+              "arguments": {
+                "job_id": "f0be2d9cf8f7414fbcc9bae5f164ca8b"
+              },
+              "error": null
+            },
+            {
+              "event_id": "5c6b83d0a0f841e58ddbec6161c833e7",
+              "timestamp": "2026-09-15T19:19:03Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.742,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setvar \"CMDECHO\" 1)\n(setq body (getbody))\r\n(addsolid (xcyl 130 -88 40 19 9.7))\r\n(setq rib (prism '((-49 -88 0) (-49 -64.8 -1) (-31 -64.8 0) (-31 -88 -1)) 0 5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 132.7 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-40 -55.7 0) (0 -12.8 0) (0 -6 0) (-40 -48.9 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-40 -55.7 0) (-80 -12.8 0) (-80 -6 0) (-40 -48.9 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((0 -90.5 0) (0 -85.5 0) (-80 -85.5 0) (-80 -90.5 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(cut (xcyl 70 32 40 18 80))\r\n(cut (xcyl 124.7 32 40 23 20))\r\n(cut (xcyl 70 -88 40 9.5 80))\r\n(cut (xcyl 137.2 -88 40 14.5 5))\r\n(cut (xcyl -132 0 40 13 4.1))\r\n(cut (xcyl -132 0 40 7.75 13.3))\r\n(cut (xcyl -132 0 40 5.5 29.1))\r\n(cut (xcyl -132 0 40 4 44))\r\n(cut (xcyl -132 -55.8 40 13 4.1))\r\n(cut (xcyl -132 -55.8 40 5.5 13.3))\r\n(cut (xcyl -132 -55.8 40 4 30.1))\r\n(cut (xcyl -132 -55.8 40 2 44))\r\n(cut (xcyl -132 -127.9 15 3.0 33))\r\n(cut (xcyl -132 -127.9 59.1 3.0 33))\r\n(princ \"\\nSTAGE03_PORTS_DONE\")",
+                "capture_boolean_lineage": false,
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "side-ports-revised-retry",
+                    "operation_type": "union_subtract",
+                    "intent": "Construct sideboss, flushribs and radialport cuts; skip optional lineage capture after instrumentation startup crash"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "5b13e45c17a74250a9bb360c1edd02cd",
+              "timestamp": "2026-09-15T19:19:22Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.054,
+              "arguments": {
+                "job_id": "1b803bc7937d4700830a54e3ad9aa7ea"
+              },
+              "error": null
+            },
+            {
+              "event_id": "7e12bee9d05744df8f975d13b5163cbc",
+              "timestamp": "2026-09-15T19:20:14Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.994,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (getbody))\r\n(setq groove (prism '((97.5 0 1) (-97.5 0 0) (-97.5 -55.8 1) (97.5 -55.8 0)) -0.1 1.6))\r\n(setq inner (prism '((95.5 0 1) (-95.5 0 0) (-95.5 -55.8 1) (95.5 -55.8 0)) -0.2 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(setq groove (prism '((126 0 1) (-126 0 0) (-126 -55.8 1) (126 -55.8 0)) -0.1 1.6))\r\n(setq inner (prism '((124.5 0 1) (-124.5 0 0) (-124.5 -55.8 1) (124.5 -55.8 0)) -0.2 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(setq groove (prism '((97.5 0 1) (-97.5 0 0) (-97.5 -55.8 1) (97.5 -55.8 0)) 78.5 1.6))\r\n(setq inner (prism '((95.5 0 1) (-95.5 0 0) (-95.5 -55.8 1) (95.5 -55.8 0)) 78.4 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(setq groove (prism '((126 0 1) (-126 0 0) (-126 -55.8 1) (126 -55.8 0)) 78.5 1.6))\r\n(setq inner (prism '((124.5 0 1) (-124.5 0 0) (-124.5 -55.8 1) (124.5 -55.8 0)) 78.4 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(cut (prism '((-43.5 -194 0) (-40.5 -194 0) (-40.5 -189.9 0) (-43.5 -189.9 0)) -1 82))\r\n(cut (prism '((-35.5 -194 0) (-32.5 -194 0) (-32.5 -189.9 0) (-35.5 -189.9 0)) -1 82))\r\n(cut (prism '((-27.5 -194 0) (-24.5 -194 0) (-24.5 -189.9 0) (-27.5 -189.9 0)) -1 82))\r\n(cut (prism '((-19.5 -194 0) (-16.5 -194 0) (-16.5 -189.9 0) (-19.5 -189.9 0)) -1 82))\r\n(cut (prism '((-11.5 -194 0) (-8.5 -194 0) (-8.5 -189.9 0) (-11.5 -189.9 0)) -1 82))\r\n(cut (prism '((-3.5 -194 0) (-0.5 -194 0) (-0.5 -189.9 0) (-3.5 -189.9 0)) -1 82))\r\n(cut (prism '((4.5 -194 0) (7.5 -194 0) (7.5 -189.9 0) (4.5 -189.9 0)) -1 82))\r\n(cut (prism '((12.5 -194 0) (15.5 -194 0) (15.5 -189.9 0) (12.5 -189.9 0)) -1 82))\r\n(cut (prism '((20.5 -194 0) (23.5 -194 0) (23.5 -189.9 0) (20.5 -189.9 0)) -1 82))\r\n(cut (prism '((28.5 -194 0) (31.5 -194 0) (31.5 -189.9 0) (28.5 -189.9 0)) -1 82))\r\n(cut (prism '((36.5 -194 0) (39.5 -194 0) (39.5 -189.9 0) (36.5 -189.9 0)) -1 82))\r\n(command \"_.CHPROP\" body \"\" \"_Color\" \"8\" \"\")\r\n(command \"_.VPOINT\" (list 1 -1 1.35))\r\n(command \"_.ZOOM\" \"_Extents\")\r\n(princ \"\\nSTAGE04_FACE_DETAILS_DONE\")\n(setvar \"CMDECHO\" 1)\n(command \"_.STLOUT\" body \"\" \"_Yes\" \"[private value removed]\")\n(princ \"\\nPREVIEW_EXPORT_DONE\")\n",
+                "capture_boolean_lineage": false,
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "face-details",
+                    "operation_type": "subtract_export",
+                    "intent": "Cut shallow stadium gasket grooves on both faces and axial bottom grooves; export native STL forvisual inspection only"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "47620e1ea391441e9faeb5abd2a8a192",
+              "timestamp": "2026-09-15T19:20:54Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.057,
+              "arguments": {
+                "job_id": "e5d6f519d02343fab29b8d6cd8f89f48"
+              },
+              "error": null
+            },
+            {
+              "event_id": "606df375dc044542809f3a75937d7add",
+              "timestamp": "2026-09-15T19:21:46Z",
+              "tool": "autocad_topology_start",
+              "status": "pass",
+              "duration_ms": 2.634,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 180
+              },
+              "error": null
+            },
+            {
+              "event_id": "0d5c7773168e4c62948d6a5c4b6baa91",
+              "timestamp": "2026-09-15T19:22:05Z",
+              "tool": "autocad_topology_status",
+              "status": "pass",
+              "duration_ms": 0.055,
+              "arguments": {
+                "job_id": "125cf6193bda43b18684988d0aed2eaf"
+              },
+              "error": null
+            },
+            {
+              "event_id": "af3151680b5f4ceebed374e7ef657001",
+              "timestamp": "2026-09-15T19:23:41Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.872,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"FILEDIA\" 0)\n(setvar \"CMDECHO\" 1)\n(setvar \"FACETRES\" 10)\n(setvar \"ISOLINES\" 0)\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\"))))\n(setq body (ssname solids 0))\n(princ (strcat \"\\nFINAL_SOLID_COUNT=\" (itoa (sslength solids))))\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" body)\n(repeat 4 (if (> (getvar \"CMDACTIVE\") 0) (command \"_Exit\")))\n(command \"_.AUDIT\" \"_Yes\")\n(command \"_.ACISOUT\" solids \"\" \"[private value removed]\")\n(command \"_.UCS\" \"_World\")\n(command \"_.VPOINT\" (list 1 -1 1.35))\n(command \"_.ZOOM\" \"_Extents\")\n(princ \"\\nFINAL_NATIVE_CHECK_AND_EXPORT_COMPLETE\")\n",
+                "capture_boolean_lineage": false,
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "final-check-and-save",
+                    "operation_type": "validate_export",
+                    "intent": "Check native ShapeManager solid, audit drawing, export ACIS SAT, and save final native editable candidate DWG"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "3746983172674ba5a3bd0a3c58cdf37d",
+              "timestamp": "2026-09-15T19:24:49Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.061,
+              "arguments": {
+                "job_id": "77a762f7359f4d1498859cdda74a4574"
+              },
+              "error": null
+            },
+            {
+              "event_id": "07be14f92f0a47108ddc0eb303a51190",
+              "timestamp": "2026-09-15T19:26:14Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.977,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (prism '((153.7 132.5 0) (129.7 132.5 -0.0330112) (121 128.2 0) (52 120 -0.2750539) (40.0795042 123.3520302 0.2820292) (-91.7117495 91.7117495 -0.4549736) (-131 96 -0.2267891) (-132.9 102.95 0.2920457) (-134.2 120.1 -0.1689489) (-135 124 0) (-135 132.5 0) (-158.5 132.5 0) (-158.5 124 -0.1687389) (-160 119.8 0.3616816) (-158.5 99.3 0) (-158.5 93 0.2521176) (-153 84 0) (-130.6433087 61.6433087 -0.2750281) (-124.3518479 36.8606554 0.0721677) (-129.7 0 0) (-129.7 -55.8 0.0890449) (-118 -111 0) (-118 -143 0.4142136) (-110 -152.9 0) (-71.5 -191.4 0.2211811) (-68 -192.9 0) (68 -192.9 0.2211811) (71.5 -191.4 0) (110 -152.9 0.1698243) (122 -122 0) (134.7 -105 0) (134.7 105 -0.5293802) (145 117 0) (149.5 117 0) (153.7 125 0)) 0 80))\r\n(cut (prism '((92 0 1) (-92 0 0) (-92 -55.8 1) (92 -55.8 0)) -1 82))\r\n(princ \"\\nSTAGE01_BODY_DONE\")\r\n\r\n\r\n(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (getbody))\r\n(setq cutters (ssadd))\r\n(ssadd (cyl 111.6 0 -1 6.5 82) cutters)\r\n(ssadd (cyl 111.6 -55.8 -1 6.5 82) cutters)\r\n(ssadd (cyl 83.8410773 73.6561861 -1 6.5 82) cutters)\r\n(ssadd (cyl 83.8410773 -129.4561861 -1 6.5 82) cutters)\r\n(ssadd (cyl 35.7804097 105.708667 -1 6.5 82) cutters)\r\n(ssadd (cyl 35.7804097 -161.508667 -1 6.5 82) cutters)\r\n(ssadd (cyl -21.8675897 109.4365959 -1 6.5 82) cutters)\r\n(ssadd (cyl -21.8675897 -165.2365959 -1 6.5 82) cutters)\r\n(ssadd (cyl -57.9783329 95.3576054 -1 6.5 82) cutters)\r\n(ssadd (cyl -57.9783329 -151.1576054 -1 6.5 82) cutters)\r\n(ssadd (cyl -87.0960335 69.7770804 -1 6.5 82) cutters)\r\n(ssadd (cyl -87.0960335 -125.5770804 -1 6.5 82) cutters)\r\n(ssadd (cyl -105.708667 35.7804097 -1 6.5 82) cutters)\r\n(ssadd (cyl -105.708667 -91.5804097 -1 6.5 82) cutters)\r\n(ssadd (cyl -111.6 -27.9 -1 6.5 82) cutters)\r\n(ssadd (cyl -147 110.5 -1 11 82) cutters)\r\n(ssadd (prism '((104.8 120.5 0) (118.4 120.5 -1) (118.4 100.5 0) (104.8 100.5 -1)) -1 82) cutters)\r\n(ssadd (prism '((-143.5 89.7 0.9390415) (-147 80.8 0) (-122.4 61.9 1.0045311) (-112.4 79.4 0) (-138.2 89 0.1979401)) -1 82) cutters)\r\n(ssadd (prism '((99.8501429 12.2600559 0.1196853) (83.1054884 56.6907205 -1) (87.8968585 59.9591716 -0.1196853) (105.6069105 12.9668981 -1)) -1 82) cutters)\r\n(ssadd (prism '((83.1054884 -112.4907205 0.1196853) (99.8501429 -68.0600559 -1) (105.6069105 -68.7668981 -0.1196853) (87.8968585 -115.7591716 -1)) -1 82) cutters)\r\n(ssadd (prism '((66.9221737 75.1118011 0.0699268) (43.6261039 90.6483483 -1) (46.1413266 95.8745951 -0.0699268) (70.7805097 79.4423026 -1)) -1 82) cutters)\r\n(ssadd (prism '((43.6261039 -146.4483483 0.0699268) (66.9221737 -130.9118011 -1) (70.7805097 -135.2423026 -0.0699268) (46.1413266 -151.6745951 -1)) -1 82) cutters)\r\n(ssadd (prism '((20.4004019 98.5098147 0.0699268) (-7.5428599 100.3168244 -1) (-7.9777365 106.1004982 -0.0699268) (21.5765682 104.1893071 -1)) -1 82) cutters)\r\n(ssadd (prism '((-7.5428599 -156.1168244 0.0699268) (20.4004019 -154.3098147 -1) (21.5765682 -159.9893071 -0.0699268) (-7.9777365 -161.9004982 -1)) -1 82) cutters)\r\n(ssadd (prism '((-31.5876411 95.5122031 0.0261859) (-41.3983445 91.6871696 -1) (-43.7851278 96.9733086 -0.0261859) (-33.4087973 101.0188708 -1)) -1 82) cutters)\r\n(ssadd (prism '((-41.3983445 -147.4871696 0.0261859) (-31.5876411 -151.3122031 -1) (-33.4087973 -156.8188708 -0.0261859) (-43.7851278 -152.7733086 -1)) -1 82) cutters)\r\n(ssadd (prism '((-62.3497706 78.9485029 0.0261859) (-70.2605777 71.998689 -1) (-74.3113864 76.1497069 -0.0261859) (-65.944489 83.5002058 -1)) -1 82) cutters)\r\n(ssadd (prism '((-70.2605777 -127.798689 0.0261859) (-62.3497706 -134.7485029 -1) (-65.944489 -139.3002058 -0.0261859) (-74.3113864 -131.9497069 -1)) -1 82) cutters)\r\n(ssadd (prism '((-85.5915976 52.8624481 0.0261859) (-90.6483483 43.6261039 -1) (-95.8745951 46.1413266 -0.0261859) (-90.526302 55.9101837 -1)) -1 82) cutters)\r\n(ssadd (prism '((-90.6483483 -99.4261039 0.0261859) (-85.5915976 -108.6624481 -1) (-90.526302 -111.7101837 -0.0261859) (-95.8745951 -101.9413266 -1)) -1 82) cutters)\r\n(ssadd (prism '((-98.5098147 20.4004019 0.0510953) (-100.6 0 0) (-100.6 -16.6 -1) (-106.4 -16.6 0) (-106.4 0 -0.0510953) (-104.1893071 21.5765682 -1)) -1 82) cutters)\r\n(ssadd (prism '((-98.5098147 -76.2004019 -0.0510953) (-100.6 -55.8 0) (-100.6 -39.2 1) (-106.4 -39.2 0) (-106.4 -55.8 0.0510953) (-104.1893071 -77.3765682 1)) -1 82) cutters)\r\n(ssadd (prism '((106.4 -12 0) (106.4 -43.8 -1) (100.6 -43.8 0) (100.6 -12 -1)) -1 82) cutters)\r\n(ssadd (prism '((114.7383351 14.0880961 0.1196853) (95.4969628 65.1436113 -1) (100.288333 68.4120623 -0.1196853) (120.4951028 14.7949383 -1)) -1 82) cutters)\r\n(ssadd (prism '((95.4969628 -120.9436113 0.1196853) (114.7383351 -69.8880961 -1) (120.4951028 -70.5949383 -0.1196853) (100.288333 -124.2120623 -1)) -1 82) cutters)\r\n(ssadd (prism '((76.900629 86.3113739 0.0699268) (50.1309902 104.1645037 -1) (52.6462129 109.3907504 -0.0699268) (80.7589651 90.6418753 -1)) -1 82) cutters)\r\n(ssadd (prism '((50.1309902 -159.9645037 0.0699268) (76.900629 -142.1113739 -1) (80.7589651 -146.4418753 -0.0699268) (52.6462129 -165.1907504 -1)) -1 82) cutters)\r\n(ssadd (prism '((23.4422113 113.1981569 0.0699268) (-8.6675408 115.2746014 -1) (-9.1024174 121.0582752 -0.0699268) (24.6183777 118.8776492 -1)) -1 82) cutters)\r\n(ssadd (prism '((-8.6675408 -171.0746014 0.0699268) (23.4422113 -168.9981569 -1) (24.6183777 -174.6776492 -0.0699268) (-9.1024174 -176.8582752 -1)) -1 82) cutters)\r\n(ssadd (prism '((-36.2975279 109.7535852 0.0261859) (-47.5710599 105.3582188 -1) (-49.9578431 110.6443578 -0.0261859) (-38.1186842 115.260253 -1)) -1 82) cutters)\r\n(ssadd (prism '((-47.5710599 -161.1582188 0.0261859) (-36.2975279 -165.5535852 -1) (-38.1186842 -171.060253 -0.0261859) (-49.9578431 -166.4443578 -1)) -1 82) cutters)\r\n(ssadd (prism '((-71.6464561 90.7201484 0.0261859) (-80.736807 82.73408 -1) (-84.7876157 86.8850979 -0.0261859) (-75.2411745 95.2718514 -1)) -1 82) cutters)\r\n(ssadd (prism '((-80.736807 -138.53408 0.0261859) (-71.6464561 -146.5201484 -1) (-75.2411745 -151.0718514 -0.0261859) (-84.7876157 -142.6850979 -1)) -1 82) cutters)\r\n(ssadd (prism '((-98.3537642 60.7445229 0.0261859) (-104.1645037 50.1309902 -1) (-109.3907504 52.6462129 -0.0261859) (-103.2884687 63.7922584 -1)) -1 82) cutters)\r\n(ssadd (prism '((-104.1645037 -105.9309902 0.0261859) (-98.3537642 -116.5445229 -1) (-103.2884687 -119.5922584 -0.0261859) (-109.3907504 -108.4462129 -1)) -1 82) cutters)\r\n(ssadd (prism '((-113.1981569 23.4422113 0.0510953) (-115.6 0 0) (-115.6 -16.6 -1) (-121.4 -16.6 0) (-121.4 0 -0.0510953) (-118.8776492 24.6183777 -1)) -1 82) cutters)\r\n(ssadd (prism '((-113.1981569 -79.2422113 -0.0510953) (-115.6 -55.8 0) (-115.6 -39.2 1) (-121.4 -39.2 0) (-121.4 -55.8 0.0510953) (-118.8776492 -80.4183777 1)) -1 82) cutters)\r\n(ssadd (prism '((121.4 -12 0) (121.4 -43.8 -1) (115.6 -43.8 0) (115.6 -12 -1)) -1 82) cutters)\r\n(ssadd (prism '((50.463156 -178.1064391 0.1898559) (97.8342834 -146.7521738 -1) (104.3874998 -151.3407853 -0.1898559) (52.1264496 -185.9316199 -1)) -1 82) cutters)\r\n(ssadd (prism '((-97.8342834 -146.7521738 0.1898559) (-50.463156 -178.1064391 -1) (-52.1264496 -185.9316199 -0.1898559) (-104.3874998 -151.3407853 -1)) -1 82) cutters)\r\n(command \"_.SUBTRACT\" body \"\" cutters \"\")\r\n(princ \"\\nSTAGE02_THROUGH_FEATURES_DONE\")\r\n\r\n\r\n(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (getbody))\r\n(addsolid (xcyl 130 -88 40 19 9.7))\r\n(setq rib (prism '((-49 -88 0) (-49 -64.8 -1) (-31 -64.8 0) (-31 -88 -1)) 0 5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 132.7 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-40 -55.7 0) (0 -12.8 0) (0 -6 0) (-40 -48.9 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((-40 -55.7 0) (-80 -12.8 0) (-80 -6 0) (-40 -48.9 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(setq rib (prism '((0 -90.5 0) (0 -85.5 0) (-80 -85.5 0) (-80 -90.5 0)) 0 3.5))\r\n(command \"_.ROTATE3D\" rib \"\" \"_Yaxis\" '(0 0 0) 90)\r\n(command \"_.MOVE\" rib \"\" '(0 0 0) (list 133.2 0 0))\r\n(addsolid rib)\r\n(cut (xcyl 70 32 40 18 80))\r\n(cut (xcyl 124.7 32 40 23 20))\r\n(cut (xcyl 70 -88 40 9.5 80))\r\n(cut (xcyl 137.2 -88 40 14.5 5))\r\n(cut (xcyl -132 0 40 13 4.1))\r\n(cut (xcyl -132 0 40 7.75 13.3))\r\n(cut (xcyl -132 0 40 5.5 29.1))\r\n(cut (xcyl -132 0 40 4 44))\r\n(cut (xcyl -132 -55.8 40 13 4.1))\r\n(cut (xcyl -132 -55.8 40 5.5 13.3))\r\n(cut (xcyl -132 -55.8 40 4 30.1))\r\n(cut (xcyl -132 -55.8 40 2 44))\r\n(cut (xcyl -132 -127.9 15 3.0 33))\r\n(cut (xcyl -132 -127.9 59.1 3.0 33))\r\n(princ \"\\nSTAGE03_PORTS_DONE\")\r\n\r\n\r\n(setvar \"CMDECHO\" 0)\r\n(setvar \"FILEDIA\" 0)\r\n(setvar \"OSMODE\" 0)\r\n(setvar \"INSUNITS\" 4)\r\n(setvar \"DELOBJ\" 1)\r\n(setvar \"FACETRES\" 10)\r\n(setvar \"ISOLINES\" 0)\r\n(defun poly (vs z / data v)\r\n (setq data (list '(0 . \"LWPOLYLINE\") '(100 . \"AcDbEntity\") '(100 . \"AcDbPolyline\") (cons 90 (length vs)) '(70 . 1) (cons 38 z)))\r\n (foreach v vs (setq data (append data (list (cons 10 (list (car v) (cadr v))) (cons 42 (caddr v))))))\r\n (entmakex data)\r\n)\r\n(defun prism (vs z h / e)\r\n (setq e (poly vs z))\r\n (command \"_.EXTRUDE\" e \"\" h)\r\n (entlast)\r\n)\r\n(defun cyl (x y z r h / e)\r\n (command \"_.CYLINDER\" (list x y z) r h)\r\n (entlast)\r\n)\r\n(defun cut (e) (command \"_.SUBTRACT\" body \"\" e \"\"))\r\n(defun addsolid (e) (command \"_.UNION\" body e \"\") (setq body (entlast)))\r\n(defun getbody () (ssname (ssget \"_X\" '((0 . \"3DSOLID\"))) 0))\r\n(defun xcyl (x y z r h / e)\r\n (setq e (cyl 0 0 0 r h))\r\n (command \"_.ROTATE3D\" e \"\" \"_Yaxis\" '(0 0 0) 90)\r\n (command \"_.MOVE\" e \"\" '(0 0 0) (list x y z))\r\n e\r\n)\r\n\r\n(setq body (getbody))\r\n(setq groove (prism '((97.5 0 1) (-97.5 0 0) (-97.5 -55.8 1) (97.5 -55.8 0)) -0.1 1.6))\r\n(setq inner (prism '((95.5 0 1) (-95.5 0 0) (-95.5 -55.8 1) (95.5 -55.8 0)) -0.2 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(setq groove (prism '((126 0 1) (-126 0 0) (-126 -55.8 1) (126 -55.8 0)) -0.1 1.6))\r\n(setq inner (prism '((124.5 0 1) (-124.5 0 0) (-124.5 -55.8 1) (124.5 -55.8 0)) -0.2 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(setq groove (prism '((97.5 0 1) (-97.5 0 0) (-97.5 -55.8 1) (97.5 -55.8 0)) 78.5 1.6))\r\n(setq inner (prism '((95.5 0 1) (-95.5 0 0) (-95.5 -55.8 1) (95.5 -55.8 0)) 78.4 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(setq groove (prism '((126 0 1) (-126 0 0) (-126 -55.8 1) (126 -55.8 0)) 78.5 1.6))\r\n(setq inner (prism '((124.5 0 1) (-124.5 0 0) (-124.5 -55.8 1) (124.5 -55.8 0)) 78.4 1.8))\r\n(command \"_.SUBTRACT\" groove \"\" inner \"\")\r\n(cut groove)\r\n(cut (prism '((-43.5 -194 0) (-40.5 -194 0) (-40.5 -189.9 0) (-43.5 -189.9 0)) -1 82))\r\n(cut (prism '((-35.5 -194 0) (-32.5 -194 0) (-32.5 -189.9 0) (-35.5 -189.9 0)) -1 82))\r\n(cut (prism '((-27.5 -194 0) (-24.5 -194 0) (-24.5 -189.9 0) (-27.5 -189.9 0)) -1 82))\r\n(cut (prism '((-19.5 -194 0) (-16.5 -194 0) (-16.5 -189.9 0) (-19.5 -189.9 0)) -1 82))\r\n(cut (prism '((-11.5 -194 0) (-8.5 -194 0) (-8.5 -189.9 0) (-11.5 -189.9 0)) -1 82))\r\n(cut (prism '((-3.5 -194 0) (-0.5 -194 0) (-0.5 -189.9 0) (-3.5 -189.9 0)) -1 82))\r\n(cut (prism '((4.5 -194 0) (7.5 -194 0) (7.5 -189.9 0) (4.5 -189.9 0)) -1 82))\r\n(cut (prism '((12.5 -194 0) (15.5 -194 0) (15.5 -189.9 0) (12.5 -189.9 0)) -1 82))\r\n(cut (prism '((20.5 -194 0) (23.5 -194 0) (23.5 -189.9 0) (20.5 -189.9 0)) -1 82))\r\n(cut (prism '((28.5 -194 0) (31.5 -194 0) (31.5 -189.9 0) (28.5 -189.9 0)) -1 82))\r\n(cut (prism '((36.5 -194 0) (39.5 -194 0) (39.5 -189.9 0) (36.5 -189.9 0)) -1 82))\r\n(command \"_.CHPROP\" body \"\" \"_Color\" \"8\" \"\")\r\n(command \"_.VPOINT\" (list 1 -1 1.35))\r\n(command \"_.ZOOM\" \"_Extents\")\r\n(princ \"\\nSTAGE04_FACE_DETAILS_DONE\")",
+                "capture_boolean_lineage": false,
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "r25-refinement",
+                    "operation_type": "rebuild_native_features",
+                    "intent": "Rebuild unchanged housing features with exact R25 concave fillet tangent to mountingflank and R129.7 bodyarc",
+                    "parameters": {
+                      "neck_radius": 25,
+                      "body_radius": 129.7
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "5c7aeb98c7464235998c47617f655594",
+              "timestamp": "2026-09-15T19:27:36Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.06,
+              "arguments": {
+                "job_id": "c13c1150dd3441518529e95f7895e75d"
+              },
+              "error": null
+            },
+            {
+              "event_id": "ef622ff50e494ba6a6d2c4fe9e9f103b",
+              "timestamp": "2026-09-15T19:28:19Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 3.275,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"FILEDIA\" 0)\n(setvar \"CMDECHO\" 1)\n(setvar \"FACETRES\" 10)\n(setvar \"ISOLINES\" 0)\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\"))))\n(setq body (ssname solids 0))\n(princ (strcat \"\\nFINAL_SOLID_COUNT=\" (itoa (sslength solids))))\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" body)\n(repeat 4 (if (> (getvar \"CMDACTIVE\") 0) (command \"_Exit\")))\n(command \"_.AUDIT\" \"_Yes\")\n(if (findfile \"[private value removed]\") (vl-file-delete \"[private value removed]\"))\n(command \"_.ACISOUT\" solids \"\" \"[private value removed]\")\n(command \"_.UCS\" \"_World\")\n(command \"_.VPOINT\" (list 1 -1 1.35))\n(command \"_.ZOOM\" \"_Extents\")\n(princ \"\\nFINAL_NATIVE_CHECK_AND_EXPORT_COMPLETE\")\n(if (findfile \"[private value removed]\") (vl-file-delete \"[private value removed]\"))\n(command \"_.STLOUT\" body \"\" \"_Yes\" \"[private value removed]\")\n",
+                "capture_boolean_lineage": false,
+                "timeout": 240,
+                "operation_manifest": [
+                  {
+                    "operation_id": "final-refined-save",
+                    "operation_type": "validate_export",
+                    "intent": "Save refined final candidate with native validity check, AUDIT, ACISOUT SAT and fresh STLOUT render source; prior candidate preserved in intermediate05"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "dfc75469651d42908333a2f4f0abdbe6",
+              "timestamp": "2026-09-15T19:28:57Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.06,
+              "arguments": {
+                "job_id": "a88ef7fcd4a249c39ae849132d0f4c70"
+              },
+              "error": null
+            },
+            {
+              "event_id": "470c50e1011a4f1b9b4709ed7385cf4a",
+              "timestamp": "2026-09-15T19:29:11Z",
+              "tool": "autocad_topology_start",
+              "status": "pass",
+              "duration_ms": 2.992,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 180
+              },
+              "error": null
+            },
+            {
+              "event_id": "cc700f7976114b97b5fe34cc21378a47",
+              "timestamp": "2026-09-15T19:29:45Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.919,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"FILEDIA\" 0)\n(setvar \"CMDECHO\" 1)\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\"))))\n(setq body (ssname solids 0))\n(princ (strcat \"\\nREOPEN_SOLID_COUNT=\" (itoa (sslength solids))))\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" body)\n(repeat 4 (if (> (getvar \"CMDACTIVE\") 0) (command \"_Exit\")))\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Separate\" body)\n(repeat 4 (if (> (getvar \"CMDACTIVE\") 0) (command \"_Exit\")))\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\"))))\n(princ (strcat \"\\nCONNECTED_COMPONENT_SOLID_COUNT=\" (itoa (sslength solids))))\n(command \"_.MASSPROP\" solids \"\" \"_Yes\" \"[private value removed]\")\n(princ \"\\nREOPEN_VERIFY_DONE\")\n",
+                "capture_boolean_lineage": false,
+                "timeout": 180,
+                "operation_manifest": [
+                  {
+                    "operation_id": "reopen-final-native-check",
+                    "operation_type": "validate",
+                    "intent": "Reopen finalDWG, check ShapeManager validity, separate test for disjointlumps on isolatedcopy, and save native mass properties"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "b2929374c9d340a29df360ee35fcf185",
+              "timestamp": "2026-09-15T19:30:24Z",
+              "tool": "autocad_topology_status",
+              "status": "pass",
+              "duration_ms": 0.054,
+              "arguments": {
+                "job_id": "26a4e0cc25d4414d8052fab1c9170ea5"
+              },
+              "error": null
+            },
+            {
+              "event_id": "88cdb8dd6b1e46958b8a0909d514dfcb",
+              "timestamp": "2026-09-15T19:30:30Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.058,
+              "arguments": {
+                "job_id": "d436f76880814066a0530174370bfbb3"
+              },
+              "error": null
+            },
+            {
+              "event_id": "97e49ff168f94b72ba6328a3a969e654",
+              "timestamp": "2026-09-15T19:31:06Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.951,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(setvar \"FILEDIA\" 0)\n(setvar \"CMDECHO\" 1)\n(command \"_.ACISIN\" \"[private value removed]\")\n(setq solids (ssget \"_X\" '((0 . \"3DSOLID\"))))\n(princ (strcat \"\\nSAT_REIMPORT_SOLID_COUNT=\" (itoa (sslength solids))))\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" (ssname solids 0))\n(repeat 4 (if (> (getvar \"CMDACTIVE\") 0) (command \"_Exit\")))\n(princ \"\\nSAT_ROUNDTRIP_DONE\")",
+                "capture_boolean_lineage": true,
+                "timeout": 180,
+                "operation_manifest": [
+                  {
+                    "operation_id": "sat-roundtrip",
+                    "operation_type": "import_validate",
+                    "intent": "Reimport exported SAT into isolated blank drawing, validate native solid, and compare native mass properties to final DWG"
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "7e378155e5434c139f64e46fd4ed1253",
+              "timestamp": "2026-09-15T19:32:00Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.064,
+              "arguments": {
+                "job_id": "ef152431bc694f1d896e0ca373b4e9c5"
+              },
+              "error": null
+            },
+            {
+              "event_id": "5e88a945c6f24e66b77ea580402bcb49",
+              "timestamp": "2026-09-15T19:32:27Z",
+              "tool": "autocad_topology_start",
+              "status": "pass",
+              "duration_ms": 2.743,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 180
+              },
+              "error": null
+            },
+            {
+              "event_id": "4b6120a74a9948cea2efc33006c3dc16",
+              "timestamp": "2026-09-15T19:33:06Z",
+              "tool": "autocad_topology_status",
+              "status": "pass",
+              "duration_ms": 0.05,
+              "arguments": {
+                "job_id": "d1a01d579c5f40b08915b3250507f7fa"
+              },
+              "error": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "public_export_notice": "Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded.",
+  "source_bundle_sha256": "8603e4c89f5a4b4e40bddf9d1aec5869166bb0892054f2959bde56b11125bfb2",
+  "bundle_sha256": "ca5d256abfd259750fe53324542c4fed29d32d8bc1e7809eb1fe849ddb18eb71"
+}

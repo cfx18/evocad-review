@@ -1,0 +1,152 @@
+{
+  "target_id": "bd26b3d60010489f06e5842c",
+  "sample_id": "boxed-02",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": 12
+  },
+  "learner_answer": {
+    "answer": 12
+  },
+  "task_manifest": {
+    "task_id": "boxed-02",
+    "task_type": "dimension_attachment",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true,
+    "protocol": "boxed-minimal-v1"
+  },
+  "task": {
+    "task_id": "boxed-02",
+    "query": "框内标注的半径是多少毫米？",
+    "answer_format": {
+      "answer": "number"
+    }
+  },
+  "source": {
+    "source_id": "pdf-035",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 35,
+    "sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "框内标注的半径是多少毫米？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            325,
+            347,
+            373,
+            404
+          ]
+        }
+      ],
+      "unit": "mm",
+      "answer_evidence": "框内R12引线的箭头指向上方轴颈与中心座之间右侧的过渡圆角，R表示半径。",
+      "expected_answer": 12,
+      "answer_kind": "number",
+      "accepted_answers": [],
+      "bad_pattern_tags": [],
+      "confidence": 0.99,
+      "ambiguity_notes": "模型拟定标签，需人工复核。",
+      "derivation": {
+        "expression": "R",
+        "inputs": [
+          {
+            "symbol": "R",
+            "value": 12,
+            "drawing_evidence": "框内圆角引线标注为R12。"
+          }
+        ]
+      }
+    },
+    "blind_audit": {
+      "answer": 12,
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "框内半径标注为R12。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 63.31,
+    "observations": 1,
+    "findings": 1,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": 12
+    },
+    "absolute_tolerance": 0.05,
+    "label_status": "model_proposed_not_gt",
+    "accepted_answers": {
+      "answer": []
+    },
+    "alias_policy": "engineering-line-terms-v1"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:28:26.039Z",
+      "payload": {
+        "observation_id": "77a4caf22d97401d963461fd7723915c",
+        "intent": "Inspect the engineering drawing to find the radius value marked inside the box (框内标注的半径). Read any boxed radius dimension in millimeters.",
+        "source_sha256": "730eb2e85dc64d8d0dc1fcebc31fb8737dd5f9972aec4d4392f08501c5419514",
+        "sha256": "730eb2e85dc64d8d0dc1fcebc31fb8737dd5f9972aec4d4392f08501c5419514",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:28:43.005Z",
+      "payload": {
+        "observation_id": "77a4caf22d97401d963461fd7723915c",
+        "public_conclusion": "The red box on the drawing highlights the radius annotation \"R12\" (a leader points to the fillet at the center of the cross shaft), so the boxed radius is 12 mm."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/boxed-02/input-01.png"
+  ],
+  "asset_base": "assets/boxed-02",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/boxed-02/record.json"
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "target_id": "d79310d2cb001ad2318dda2e",
+  "sample_id": "drawing-16",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "passage_axis_to_main_bore_axis"
+  },
+  "learner_answer": {
+    "answer": "passage_axis_to_main_bore_axis"
+  },
+  "task_manifest": {
+    "task_id": "drawing-16",
+    "task_type": "dimension_attachment",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true
+  },
+  "task": {
+    "task_id": "drawing-16",
+    "query": "区域 A 中，A—A 剖视图顶部标注12的水平尺寸，表示哪两个要素之间的距离？",
+    "answer_format": {
+      "answer": "one option value"
+    },
+    "options": [
+      {
+        "value": "passage_axis_to_main_bore_axis",
+        "label": "左侧细长孔道的轴线与右侧大竖孔的轴线。"
+      },
+      {
+        "value": "outer_left_face_to_main_axis",
+        "label": "凸台左侧外表面与大竖孔的轴线。"
+      },
+      {
+        "value": "adjacent_bore_walls",
+        "label": "两个竖孔彼此相邻的孔壁。"
+      },
+      {
+        "value": "main_bore_diameter",
+        "label": "大竖孔的左右两侧孔壁。"
+      }
+    ],
+    "unit": "none",
+    "absolute_tolerance": 0
+  },
+  "source": {
+    "source_id": "pdf-178",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 178,
+    "sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "区域 A 中，A—A 剖视图顶部标注12的水平尺寸，表示哪两个要素之间的距离？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            619,
+            162,
+            751,
+            335
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "尺寸12左端界线与左侧小孔道中心重合，右端界线与大竖孔中心线重合；两端均未落在孔壁或外表面上。",
+      "expected_answer": "passage_axis_to_main_bore_axis",
+      "answer_kind": "choice",
+      "bad_pattern_tags": [
+        "axis_spacing_as_wall_thickness",
+        "dimension_attachment_to_nearest_edge"
+      ],
+      "confidence": 0.99,
+      "ambiguity_notes": "",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "passage_axis_to_main_bore_axis",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "尺寸12的两端尺寸界线分别对准左侧细孔道轴线和右侧大竖孔轴线。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 184.31,
+    "observations": 6,
+    "findings": 2,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "passage_axis_to_main_bore_axis"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:41:28.066Z",
+      "payload": {
+        "observation_id": "ef36c7b6b0004e97a6cfd10bea2b11ff",
+        "intent": "Inspect the A-A section view, focusing on the horizontal dimension labeled 12 at the top, to determine which two features it spans between.",
+        "source_sha256": "940b6f2e6ed04a15c85e9c613d45886db7e2195fdc61a88901578b414cc2f9b4",
+        "sha256": "940b6f2e6ed04a15c85e9c613d45886db7e2195fdc61a88901578b414cc2f9b4",
+        "crop": null,
+        "dimensions": [
+          339,
+          315
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:41:28.342Z",
+      "payload": {
+        "observation_id": "794ca668f8e948398dd1ddcf2091b88c",
+        "intent": "Get overall context of the CAD drawing, locate region A (source pixels 1584,293 to 1923,608) and the A-A section view with dimension 12 at top.",
+        "source_sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+        "sha256": "4c4f1d445204d6e99887904d72a7f2d6e5c6e3fdc026a175ced74028fcbc856c",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:42:05.263Z",
+      "payload": {
+        "observation_id": "e17d3a8c38434fb8b86cffd024de886d",
+        "intent": "Zoom into the top area where the horizontal dimension 12 is shown, to see exactly which features its left and right extension lines align with (centerline of the φ4 slender passage vs centerline of the large vertical bore, or outer faces/walls).",
+        "source_sha256": "940b6f2e6ed04a15c85e9c613d45886db7e2195fdc61a88901578b414cc2f9b4",
+        "sha256": "e93284b7de227ca12d026fd4cf323c30db4a601c8dd47cc4b96052484fc01067",
+        "crop": [
+          100,
+          0,
+          260,
+          130
+        ],
+        "dimensions": [
+          160,
+          130
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:42:21.344Z",
+      "payload": {
+        "observation_id": "8b7242a857f44b58878ba2c8c99f15e1",
+        "intent": "Check where the left extension line of dimension 12 descends: does it align with the centerline of the slender vertical passage (the φ4 feature with cross intersection) or with an outer face?",
+        "source_sha256": "940b6f2e6ed04a15c85e9c613d45886db7e2195fdc61a88901578b414cc2f9b4",
+        "sha256": "5481898e17835816d3731a0ca2049f8812e5a0271dc8cb4d8fbeb853a7c82a38",
+        "crop": [
+          120,
+          20,
+          190,
+          200
+        ],
+        "dimensions": [
+          70,
+          180
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:42:21.502Z",
+      "payload": {
+        "observation_id": "e7eaedeb3f5e4f869d4a1659c7eda82f",
+        "intent": "Check where the right extension line of dimension 12 descends: does it continue as the dash-dot centerline of the large vertical bore on the right?",
+        "source_sha256": "940b6f2e6ed04a15c85e9c613d45886db7e2195fdc61a88901578b414cc2f9b4",
+        "sha256": "98817be5ad3497592ca0b40640cbb1fc04b32d9cb420aac646685cb1b664fbef",
+        "crop": [
+          180,
+          20,
+          250,
+          220
+        ],
+        "dimensions": [
+          70,
+          200
+        ],
+        "image": "receipts/005.png"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:43:03.559Z",
+      "payload": {
+        "observation_id": "f0dbd88ef3754424b24219fa8c196efe",
+        "intent": "View the full left structure under the dimension 12: the slender vertical passage walls, the φ4 cross intersection, and the outer left face of the boss, to determine exactly what the left extension line of 12 aligns with.",
+        "source_sha256": "940b6f2e6ed04a15c85e9c613d45886db7e2195fdc61a88901578b414cc2f9b4",
+        "sha256": "3601e149d95299830707b040876323087d8004c7f0f990db288395649e444b77",
+        "crop": [
+          80,
+          20,
+          210,
+          300
+        ],
+        "dimensions": [
+          130,
+          280
+        ],
+        "image": "receipts/006.png"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:43:45.038Z",
+      "payload": {
+        "observation_id": "f0dbd88ef3754424b24219fa8c196efe",
+        "public_conclusion": "In region A (A–A section), the left extension line of the top horizontal dimension \"12\" descends through the center of the diamond/cross intersection of the φ4 feature and continues as the centerline of the slender vertical passage, not at any outer face or bore wall."
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:43:45.047Z",
+      "payload": {
+        "observation_id": "e7eaedeb3f5e4f869d4a1659c7eda82f",
+        "public_conclusion": "The right extension line of dimension \"12\" descends into the large right-hand vertical bore and coincides with its dash-dot centerline (axis), while dimension 26 marks that bore's depth on its right side."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/drawing-16/input-01.png",
+    "assets/drawing-16/input-02.png"
+  ],
+  "asset_base": "assets/drawing-16",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/drawing-16/record.json"
+    }
+  ]
+}

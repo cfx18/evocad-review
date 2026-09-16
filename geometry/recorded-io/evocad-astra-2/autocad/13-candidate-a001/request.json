@@ -1,0 +1,39 @@
+{
+  "input_path": "[private value removed]",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 1193,
+  "operation_manifest": [
+    {
+      "operation_id": "final_native_validation",
+      "operation_type": "native_solid_validation",
+      "feature_id": "complete_part",
+      "intent": "Validate native ShapeManager solid, audit drawing, confirm exactly one3DSOLID in model space and save final candidate",
+      "parameters": {
+        "expected_entity_count": 1,
+        "expected_entity_type": "3DSOLID",
+        "expected_bounds": {
+          "min": [
+            -10,
+            0,
+            0
+          ],
+          "max": [
+            33,
+            64,
+            22.1
+          ]
+        },
+        "expected_volume": 25779.080613361337,
+        "units": "mm"
+      },
+      "parent_operation_ids": [
+        "floor_recess_cut"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    }
+  ],
+  "capture_boolean_lineage": true
+}

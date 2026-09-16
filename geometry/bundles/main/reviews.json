@@ -1,0 +1,129 @@
+{
+  "records": [
+    {
+      "review_id": "353fc6fc4d8f452d85d0a93c088583a7",
+      "supersedes_review_id": null,
+      "created_at": "2026-09-02T02:23:35.179Z",
+      "verifier_decision": "agree",
+      "recommended_action": "needs_expert",
+      "notes": "这个算例是输入三视图的锅，他没告诉我们第一层台阶的高度，这种情况下agent应该给出人类，当前数据缺少xxx的提示。",
+      "strict_pass_assessment": "correct",
+      "selected_attempt_assessment": "correct",
+      "ratings": {
+        "evidence_sufficiency": null,
+        "geometry_fidelity": null,
+        "verifier_validity": null,
+        "reflection_quality": null
+      },
+      "issue_types": [
+        "input_ambiguity"
+      ],
+      "findings": [],
+      "binding": {
+        "target_id": "fe6913494698685ab009",
+        "attempt_id": "a004"
+      },
+      "reviewer": {
+        "id": "评审人 1"
+      }
+    },
+    {
+      "review_id": "19bb73afb55349ab83b1bfacbe90e297",
+      "supersedes_review_id": null,
+      "created_at": "2026-09-02T02:41:27.855Z",
+      "verifier_decision": "agree",
+      "recommended_action": "keep",
+      "notes": "齿轮没画对，打孔没打对，看上去像是虚线看不懂",
+      "strict_pass_assessment": "correct",
+      "selected_attempt_assessment": "correct",
+      "ratings": {
+        "evidence_sufficiency": null,
+        "geometry_fidelity": null,
+        "verifier_validity": null,
+        "reflection_quality": null
+      },
+      "issue_types": [
+        "agent_geometry"
+      ],
+      "findings": [],
+      "binding": {
+        "target_id": "d2672189869904b7f4ce",
+        "attempt_id": "a003"
+      },
+      "reviewer": {
+        "id": "评审人 1"
+      }
+    },
+    {
+      "review_id": "32960ffbf443451f832846b962b9b5b1",
+      "supersedes_review_id": null,
+      "created_at": "2026-09-02T02:42:13.534Z",
+      "verifier_decision": "agree",
+      "recommended_action": "keep",
+      "notes": "",
+      "strict_pass_assessment": "correct",
+      "selected_attempt_assessment": "correct",
+      "ratings": {
+        "evidence_sufficiency": null,
+        "geometry_fidelity": null,
+        "verifier_validity": null,
+        "reflection_quality": null
+      },
+      "issue_types": [
+        "agent_geometry"
+      ],
+      "findings": [],
+      "binding": {
+        "target_id": "4b374e9f1f5edb149aa7",
+        "attempt_id": "a006"
+      },
+      "reviewer": {
+        "id": "评审人 1"
+      }
+    }
+  ],
+  "integrity": {
+    "ok": true,
+    "scope": "source_verified_before_redaction",
+    "records": 3,
+    "bundle": {
+      "bundle_sha256": "d2482c0c9a8f6eccf0b2129860e23e723a02e0010276d1414605759889d4a15e"
+    }
+  },
+  "summary": {
+    "reviewed_targets": 3,
+    "total_targets": 30,
+    "decisions": {
+      "uncertain": 0,
+      "agree": 3,
+      "partially_agree": 0,
+      "disagree": 0
+    },
+    "strict_pass_assessments": {
+      "uncertain": 0,
+      "correct": 3,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "issue_counts": {
+      "input_ambiguity": 1,
+      "agent_reasoning": 0,
+      "harness_error": 0,
+      "ground_truth_error": 0,
+      "verifier_threshold": 0,
+      "agent_geometry": 2,
+      "alignment_error": 0,
+      "attempt_selection": 0,
+      "export_error": 0,
+      "mcp_error": 0,
+      "verifier_metric": 0
+    },
+    "conflicted_evidence": 0,
+    "rating_means": {
+      "evidence_sufficiency": null,
+      "geometry_fidelity": null,
+      "verifier_validity": null,
+      "reflection_quality": null
+    }
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "target_id": "c25560c280af7dae970dabd9",
+  "sample_id": "boxed-15",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "尺寸界线"
+  },
+  "learner_answer": {
+    "answer": "尺寸界线（细实线）"
+  },
+  "task_manifest": {
+    "task_id": "boxed-15",
+    "task_type": "line_role",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true,
+    "protocol": "boxed-minimal-v1"
+  },
+  "task": {
+    "task_id": "boxed-15",
+    "query": "框内是什么线？",
+    "answer_format": {
+      "answer": "short text"
+    }
+  },
+  "source": {
+    "source_id": "web-1936-01",
+    "origin": "public_web_drawing",
+    "article_url": "https://xifengboke.com/post/1936.html",
+    "sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+    "dimensions": [
+      919,
+      586
+    ],
+    "rights": {
+      "status": "permission_required",
+      "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+      "training_eligible": false,
+      "redistribution_eligible": false
+    }
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "框内是什么线？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            568,
+            282,
+            576,
+            417
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "框内竖向细实线从右上视图左侧轴端向下延伸，在下方与212尺寸线的左端相接，用于限定测量端点。",
+      "expected_answer": "尺寸界线",
+      "answer_kind": "text",
+      "accepted_answers": [
+        "尺寸界线",
+        "尺寸延伸线",
+        "extension line"
+      ],
+      "bad_pattern_tags": [],
+      "confidence": 0.94,
+      "ambiguity_notes": "原图分辨率较低；模型拟定的框位与标签待人工复核。",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "尺寸界线（细实线）",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.97,
+      "evidence": "框内竖直细实线从轴端向下延伸，作为212尺寸的左侧界线。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 303.2,
+    "observations": 8,
+    "findings": 1,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "尺寸界线"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt",
+    "accepted_answers": {
+      "answer": [
+        "extension line",
+        "extension line(细实线)",
+        "尺寸延伸线",
+        "尺寸延伸线(细实线)",
+        "尺寸延长线",
+        "尺寸延长线(细实线)",
+        "尺寸界线",
+        "尺寸界线(细实线)"
+      ]
+    },
+    "alias_policy": "engineering-line-terms-v1"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:05:44.939Z",
+      "payload": {
+        "observation_id": "00ba77a235374a2988ca335ab7b83b4c",
+        "intent": "查看整张图片，找到框（box）并识别框内是什么线",
+        "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+        "sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+        "crop": null,
+        "dimensions": [
+          919,
+          586
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:06:04.344Z",
+      "payload": {
+        "observation_id": "e0cf26434daf42bc8f6c4e3d99c1e9e7",
+        "intent": "放大查看红框区域，识别框内标注的线是什么线（轮廓线、中心线、轴线等）",
+        "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+        "sha256": "a5f5f7d0359fe1927c0bf76a77bdf9af9609a5ea764240544bd49447333cba30",
+        "crop": [
+          490,
+          150,
+          700,
+          300
+        ],
+        "dimensions": [
+          210,
+          150
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:06:26.612Z",
+      "payload": {
+        "observation_id": "48c2101ed55541bb9ce70d5f4c7b210a",
+        "intent": "进一步放大红框内的竖线，判断是粗实线（可见轮廓线）还是中心线/轴线（点画线）",
+        "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+        "sha256": "98387505fe1628334097cd2305c65689539469e552635716b460e9aa48a39ae6",
+        "crop": [
+          500,
+          160,
+          580,
+          270
+        ],
+        "dimensions": [
+          80,
+          110
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:06:47.586Z",
+      "payload": {
+        "observation_id": "e560eb120beb496ea3b09d135ca362f9",
+        "intent": "查看红框与右侧视图、尺寸线的关系，判断框内竖线的性质（轮廓线/尺寸界线/中心线）",
+        "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+        "sha256": "b692966b8758defc00c4da34af6584d95dda03b3af7ccce11001de449eb2091e",
+        "crop": [
+          470,
+          120,
+          860,
+          320
+        ],
+        "dimensions": [
+          390,
+          200
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:07:18.431Z",
+      "payload": {
+        "observation_id": "6ec006addb514acb99281c2e446a4d75",
+        "intent": "紧密放大红框及其右侧轴端，确认框内竖线是轴端面的轮廓线还是独立的线型",
+        "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+        "sha256": "5ae96c0142a4b300338c2a4013f0699b8e8ee831d621f0b8dd041899685e868c",
+        "crop": [
+          505,
+          170,
+          620,
+          260
+        ],
+        "dimensions": [
+          115,
+          90
+        ],
+        "image": "receipts/005.png"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:07:33.163Z",
+      "payload": {
+        "observation_id": "eb2ddad241044f8c86e9030bc1466b3f",
+        "intent": "查看红框竖线与轴左端面的连接关系，确认该竖线是轴端外轮廓线（粗实线）",
+        "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+        "sha256": "9f6232e3423aca546ede674abf01e56a31e6e5ce3cf52c20cc21d75d56977c31",
+        "crop": [
+          510,
+          175,
+          640,
+          255
+        ],
+        "dimensions": [
+          130,
+          80
+        ],
+        "image": "receipts/006.png"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:08:27.513Z",
+      "payload": {
+        "observation_id": "15f5bf6bc54f4309b1656ff665776d04",
+        "intent": "查看红框竖线下方是否延伸至212尺寸线，判断它是尺寸界线还是零件轮廓线",
+        "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+        "sha256": "370e0a343a4b3ff68b30a0cc1fe0351ca3f5cf4644b3d57b5b070e35560cddf9",
+        "crop": [
+          505,
+          180,
+          600,
+          300
+        ],
+        "dimensions": [
+          95,
+          120
+        ],
+        "image": "receipts/007.png"
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:09:17.923Z",
+      "payload": {
+        "observation_id": "7d31fba1c22a457d922bfac37d3a8e06",
+        "intent": "查看红框竖线上方与轴左端面的关系，确认该竖线从轴端面引出作为212尺寸的界线",
+        "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+        "sha256": "051b1b07d088b646097b5f91a7495983899a2b38fb0b92d2d17968ea700103d5",
+        "crop": [
+          505,
+          100,
+          620,
+          210
+        ],
+        "dimensions": [
+          115,
+          110
+        ],
+        "image": "receipts/008.png"
+      }
+    },
+    {
+      "sequence": 10,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T12:10:15.609Z",
+      "payload": {
+        "observation_id": "15f5bf6bc54f4309b1656ff665776d04",
+        "public_conclusion": "红框内的竖线位于减速器侧视图左侧自由空间，上接输入轴左端面、向下延伸并与总长度尺寸212的尺寸线箭头相接，是尺寸212的尺寸界线（细实线），而非零件轮廓线或中心线。"
+      }
+    }
+  ],
+  "input_images": [
+    "assets/boxed-15/input-01.png"
+  ],
+  "asset_base": "assets/boxed-15",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/boxed-15/record.json"
+    }
+  ]
+}

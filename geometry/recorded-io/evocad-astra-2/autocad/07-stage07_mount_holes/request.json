@@ -1,0 +1,121 @@
+{
+  "input_path": "[private value removed]",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 865,
+  "operation_manifest": [
+    {
+      "operation_id": "mount_hole_00",
+      "operation_type": "boolean_subtract",
+      "feature_id": "ear_hole_00",
+      "intent": "Drill5.5 diameter completely through mounting ear",
+      "parameters": {
+        "center": [
+          -5,
+          5
+        ],
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "diameter": 5.5,
+        "material_z": [
+          1,
+          7
+        ]
+      },
+      "parent_operation_ids": [
+        "end_cross_cut"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    },
+    {
+      "operation_id": "mount_hole_01",
+      "operation_type": "boolean_subtract",
+      "feature_id": "ear_hole_01",
+      "intent": "Drill5.5 diameter completely through mounting ear",
+      "parameters": {
+        "center": [
+          -5,
+          50
+        ],
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "diameter": 5.5,
+        "material_z": [
+          1,
+          7
+        ]
+      },
+      "parent_operation_ids": [
+        "mount_hole_00"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    },
+    {
+      "operation_id": "mount_hole_10",
+      "operation_type": "boolean_subtract",
+      "feature_id": "ear_hole_10",
+      "intent": "Drill5.5 diameter completely through mounting ear",
+      "parameters": {
+        "center": [
+          28,
+          5
+        ],
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "diameter": 5.5,
+        "material_z": [
+          1,
+          7
+        ]
+      },
+      "parent_operation_ids": [
+        "mount_hole_01"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    },
+    {
+      "operation_id": "mount_hole_11",
+      "operation_type": "boolean_subtract",
+      "feature_id": "ear_hole_11",
+      "intent": "Drill5.5 diameter completely through mounting ear",
+      "parameters": {
+        "center": [
+          28,
+          50
+        ],
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "diameter": 5.5,
+        "material_z": [
+          1,
+          7
+        ]
+      },
+      "parent_operation_ids": [
+        "mount_hole_10"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    }
+  ],
+  "capture_boolean_lineage": true
+}

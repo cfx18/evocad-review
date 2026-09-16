@@ -1,0 +1,888 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.000725,
+  "region_count": 2,
+  "regions": [
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 21,
+      "sample_fraction": 0.00105,
+      "estimated_area": 0.000877,
+      "estimated_area_fraction": 0.00105,
+      "centroid": [
+        0.004041,
+        0.648318,
+        0.005063
+      ],
+      "centroid_bbox_position": [
+        0.5152,
+        0.8644,
+        0.0068
+      ],
+      "bbox": {
+        "min": [
+          -0.025934,
+          0.647189,
+          0.0
+        ],
+        "max": [
+          0.029565,
+          0.648438,
+          0.013231
+        ]
+      },
+      "mean_distance_normalized": 0.007205,
+      "p95_distance_normalized": 0.007985,
+      "max_distance_normalized": 0.008044,
+      "mean_normal_offset_normalized": 0.007205,
+      "mean_normal_disagreement": 0.131062,
+      "dominant_source_normal": [
+        0.0,
+        0.9864,
+        -0.1644
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.018496,
+          0.648438,
+          0.00686
+        ],
+        [
+          -0.010655,
+          0.648438,
+          0.007273
+        ],
+        [
+          -0.025934,
+          0.648359,
+          0.0
+        ],
+        [
+          -0.012718,
+          0.647263,
+          0.0
+        ],
+        [
+          0.012422,
+          0.648438,
+          0.013231
+        ],
+        [
+          0.004441,
+          0.648438,
+          0.00178
+        ],
+        [
+          0.004361,
+          0.648438,
+          0.008262
+        ],
+        [
+          0.029234,
+          0.648438,
+          0.00082
+        ],
+        [
+          0.029565,
+          0.648438,
+          0.001441
+        ]
+      ],
+      "region_id": "excess-01",
+      "counterpart_region_ids": [
+        "missing-01"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "3AE",
+          "face_id": "f38",
+          "face_fingerprint": "52be9d1a37a64433c03cbca5b4e257e6af1960daf933bbf34cc8580dd3e285f7",
+          "surface_type": "plane",
+          "area": 0.0015625,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "3AE:f38",
+            "entity_handle": "3AE",
+            "face_id": "f38",
+            "face_fingerprint": "52be9d1a37a64433c03cbca5b4e257e6af1960daf933bbf34cc8580dd3e285f7",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a005_preserve_a004",
+              "a005_pad_end_trim",
+              "a005_narrow_nose",
+              "a005_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "b22adcdf032244328a6f1a9ae410386b"
+          },
+          "exact_query_hits": 7,
+          "exact_query_fraction": 0.777778,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "3AE",
+          "face_id": "f27",
+          "face_fingerprint": "e7e1e1b6f1e451a7e44582c56cd51060e233302f6b5137e95cad51137a4c5194",
+          "surface_type": "plane",
+          "area": 0.06312499999999999,
+          "aligned_bounds": {
+            "min": [
+              1.4999999999876223e-06,
+              -9.999999999177334e-07,
+              -9.999999999177334e-07
+            ],
+            "max": [
+              0.2656265,
+              0.6484365000000001,
+              -9.999999999177334e-07
+            ]
+          },
+          "bbox_distance_normalized": 1e-06,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "3AE:f27",
+            "entity_handle": "3AE",
+            "face_id": "f27",
+            "face_fingerprint": "e7e1e1b6f1e451a7e44582c56cd51060e233302f6b5137e95cad51137a4c5194",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a005_preserve_a004",
+              "a005_pad_end_trim",
+              "a005_narrow_nose",
+              "a005_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "b22adcdf032244328a6f1a9ae410386b"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a005_preserve_a004",
+          "intent": "Preserve all a004 geometry outside the single localized pad-end and nose region",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "rebuild_preserve",
+          "feature_id": "a004_supported_geometry",
+          "editable_parameters": {
+            "envelope": [
+              0.265625,
+              0.75,
+              0.742105
+            ],
+            "rear_transition": "preserved",
+            "end_foot": "preserved",
+            "bar": "preserved",
+            "lever": "preserved"
+          },
+          "parent_operation_ids": [
+            "a004_final_union"
+          ]
+        },
+        {
+          "operation_id": "a005_pad_end_trim",
+          "intent": "Terminate the full-width transverse pad at the reference-supported plane",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "parameter_change",
+          "feature_id": "anvil_pad",
+          "editable_parameters": {
+            "old_x": [
+              0.5625,
+              0.6484375
+            ],
+            "new_x": [
+              0.5625,
+              0.6171875
+            ],
+            "width": 0.265625,
+            "z": [
+              0,
+              0.0234375
+            ]
+          },
+          "parent_operation_ids": [
+            "a005_preserve_a004"
+          ]
+        },
+        {
+          "operation_id": "a005_narrow_nose",
+          "intent": "Add the narrow rising connector from the base/body to the existing horizontal bar",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "profile_edit",
+          "feature_id": "central_body_nose",
+          "editable_parameters": {
+            "old_profile_segment": [
+              [
+                0.617,
+                0.147
+              ],
+              [
+                0.64,
+                0.025
+              ]
+            ],
+            "new_profile_segment": [
+              [
+                0.617,
+                0.147
+              ],
+              [
+                0.65625,
+                0.072
+              ],
+              [
+                0.64,
+                0.025
+              ]
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a005_preserve_a004",
+            "a005_pad_end_trim"
+          ]
+        },
+        {
+          "operation_id": "a005_final_union",
+          "intent": "Union the localized correction into one native editable solid while preserving the exact envelope",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "complete_part",
+          "editable_parameters": {
+            "required_solid_count": 1,
+            "overall_extents": [
+              0.265625,
+              0.75,
+              0.742105
+            ]
+          },
+          "parent_operation_ids": [
+            "a005_pad_end_trim",
+            "a005_narrow_nose"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 8,
+      "sample_fraction": 0.0004,
+      "estimated_area": 0.000334,
+      "estimated_area_fraction": 0.0004,
+      "centroid": [
+        -0.00465,
+        0.641231,
+        0.010041
+      ],
+      "centroid_bbox_position": [
+        0.4825,
+        0.855,
+        0.0135
+      ],
+      "bbox": {
+        "min": [
+          -0.015328,
+          0.640629,
+          0.006604
+        ],
+        "max": [
+          0.014517,
+          0.641833,
+          0.01348
+        ]
+      },
+      "mean_distance_normalized": 0.006485,
+      "p95_distance_normalized": 0.006956,
+      "max_distance_normalized": 0.006966,
+      "mean_normal_offset_normalized": -0.006485,
+      "mean_normal_disagreement": 0.116551,
+      "dominant_source_normal": [
+        0.0,
+        0.985,
+        -0.1724
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.005042,
+          0.641651,
+          0.012442
+        ],
+        [
+          -0.0097,
+          0.641503,
+          0.011597
+        ],
+        [
+          -0.014772,
+          0.640629,
+          0.006604
+        ],
+        [
+          -0.015328,
+          0.640889,
+          0.00809
+        ],
+        [
+          -0.0081,
+          0.641088,
+          0.009225
+        ],
+        [
+          -0.008997,
+          0.641395,
+          0.01098
+        ],
+        [
+          0.014517,
+          0.640858,
+          0.007913
+        ],
+        [
+          0.010218,
+          0.641833,
+          0.01348
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-128ad171706e",
+          "sample_fraction": 0.75,
+          "surface_type": "plane"
+        },
+        {
+          "face_id": "face-aa5a3340271a",
+          "sample_fraction": 0.25,
+          "surface_type": "plane"
+        }
+      ],
+      "region_id": "missing-01",
+      "counterpart_region_ids": [
+        "excess-01"
+      ],
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "3AE",
+          "face_id": "f38",
+          "face_fingerprint": "52be9d1a37a64433c03cbca5b4e257e6af1960daf933bbf34cc8580dd3e285f7",
+          "surface_type": "plane",
+          "area": 0.0015625,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "3AE:f38",
+            "entity_handle": "3AE",
+            "face_id": "f38",
+            "face_fingerprint": "52be9d1a37a64433c03cbca5b4e257e6af1960daf933bbf34cc8580dd3e285f7",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a005_preserve_a004",
+              "a005_pad_end_trim",
+              "a005_narrow_nose",
+              "a005_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "b22adcdf032244328a6f1a9ae410386b"
+          },
+          "exact_query_hits": 7,
+          "exact_query_fraction": 0.875,
+          "minimum_trimmed_face_distance_normalized": 0.00607,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "3AE",
+          "face_id": "f27",
+          "face_fingerprint": "e7e1e1b6f1e451a7e44582c56cd51060e233302f6b5137e95cad51137a4c5194",
+          "surface_type": "plane",
+          "area": 0.06312499999999999,
+          "aligned_bounds": {
+            "min": [
+              1.4999999999876223e-06,
+              -9.999999999177334e-07,
+              -9.999999999177334e-07
+            ],
+            "max": [
+              0.2656265,
+              0.6484365000000001,
+              -9.999999999177334e-07
+            ]
+          },
+          "bbox_distance_normalized": 0.006071,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "3AE:f27",
+            "entity_handle": "3AE",
+            "face_id": "f27",
+            "face_fingerprint": "e7e1e1b6f1e451a7e44582c56cd51060e233302f6b5137e95cad51137a4c5194",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a005_preserve_a004",
+              "a005_pad_end_trim",
+              "a005_narrow_nose",
+              "a005_final_union"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "b22adcdf032244328a6f1a9ae410386b"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.125,
+          "minimum_trimmed_face_distance_normalized": 0.006069,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a005_preserve_a004",
+          "intent": "Preserve all a004 geometry outside the single localized pad-end and nose region",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "rebuild_preserve",
+          "feature_id": "a004_supported_geometry",
+          "editable_parameters": {
+            "envelope": [
+              0.265625,
+              0.75,
+              0.742105
+            ],
+            "rear_transition": "preserved",
+            "end_foot": "preserved",
+            "bar": "preserved",
+            "lever": "preserved"
+          },
+          "parent_operation_ids": [
+            "a004_final_union"
+          ]
+        },
+        {
+          "operation_id": "a005_pad_end_trim",
+          "intent": "Terminate the full-width transverse pad at the reference-supported plane",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "parameter_change",
+          "feature_id": "anvil_pad",
+          "editable_parameters": {
+            "old_x": [
+              0.5625,
+              0.6484375
+            ],
+            "new_x": [
+              0.5625,
+              0.6171875
+            ],
+            "width": 0.265625,
+            "z": [
+              0,
+              0.0234375
+            ]
+          },
+          "parent_operation_ids": [
+            "a005_preserve_a004"
+          ]
+        },
+        {
+          "operation_id": "a005_narrow_nose",
+          "intent": "Add the narrow rising connector from the base/body to the existing horizontal bar",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "profile_edit",
+          "feature_id": "central_body_nose",
+          "editable_parameters": {
+            "old_profile_segment": [
+              [
+                0.617,
+                0.147
+              ],
+              [
+                0.64,
+                0.025
+              ]
+            ],
+            "new_profile_segment": [
+              [
+                0.617,
+                0.147
+              ],
+              [
+                0.65625,
+                0.072
+              ],
+              [
+                0.64,
+                0.025
+              ]
+            ],
+            "width": 0.0625
+          },
+          "parent_operation_ids": [
+            "a005_preserve_a004",
+            "a005_pad_end_trim"
+          ]
+        },
+        {
+          "operation_id": "a005_final_union",
+          "intent": "Union the localized correction into one native editable solid while preserving the exact envelope",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "union",
+          "feature_id": "complete_part",
+          "editable_parameters": {
+            "required_solid_count": 1,
+            "overall_extents": [
+              0.265625,
+              0.75,
+              0.742105
+            ]
+          },
+          "parent_operation_ids": [
+            "a005_pad_end_trim",
+            "a005_narrow_nose"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 8,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    }
+  ],
+  "native_topology": {
+    "protocol": "evocad-native-feature-localization-v1",
+    "entity_count": 1,
+    "face_count": 45,
+    "adjacency_count": 125,
+    "feature_candidate_count": 0,
+    "export_errors": [],
+    "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+    "boolean_lineage": {
+      "schema_version": "1.0",
+      "protocol": "evocad-boolean-face-lineage-v2",
+      "snapshot_comparison": {
+        "parent_face_count": 43,
+        "current_face_count": 45,
+        "inherited_face_count": 30,
+        "created_or_modified_face_count": 15,
+        "deleted_or_modified_parent_face_count": 13,
+        "captured_job_count": 1,
+        "lineage_mode": "multi_job_fingerprint_chain"
+      },
+      "operation_graph": {
+        "nodes": [
+          {
+            "operation_id": "a005_preserve_a004",
+            "intent": "Preserve all a004 geometry outside the single localized pad-end and nose region",
+            "operation_type": "rebuild_preserve",
+            "feature_id": "a004_supported_geometry",
+            "parameters": {
+              "envelope": [
+                0.265625,
+                0.75,
+                0.742105
+              ],
+              "rear_transition": "preserved",
+              "end_foot": "preserved",
+              "bar": "preserved",
+              "lever": "preserved"
+            },
+            "parent_operation_ids": [
+              "a004_final_union"
+            ],
+            "mcp_job_id": "b22adcdf032244328a6f1a9ae410386b"
+          },
+          {
+            "operation_id": "a005_pad_end_trim",
+            "intent": "Terminate the full-width transverse pad at the reference-supported plane",
+            "operation_type": "parameter_change",
+            "feature_id": "anvil_pad",
+            "parameters": {
+              "old_x": [
+                0.5625,
+                0.6484375
+              ],
+              "new_x": [
+                0.5625,
+                0.6171875
+              ],
+              "width": 0.265625,
+              "z": [
+                0,
+                0.0234375
+              ]
+            },
+            "parent_operation_ids": [
+              "a005_preserve_a004"
+            ],
+            "mcp_job_id": "b22adcdf032244328a6f1a9ae410386b"
+          },
+          {
+            "operation_id": "a005_narrow_nose",
+            "intent": "Add the narrow rising connector from the base/body to the existing horizontal bar",
+            "operation_type": "profile_edit",
+            "feature_id": "central_body_nose",
+            "parameters": {
+              "old_profile_segment": [
+                [
+                  0.617,
+                  0.147
+                ],
+                [
+                  0.64,
+                  0.025
+                ]
+              ],
+              "new_profile_segment": [
+                [
+                  0.617,
+                  0.147
+                ],
+                [
+                  0.65625,
+                  0.072
+                ],
+                [
+                  0.64,
+                  0.025
+                ]
+              ],
+              "width": 0.0625
+            },
+            "parent_operation_ids": [
+              "a005_preserve_a004",
+              "a005_pad_end_trim"
+            ],
+            "mcp_job_id": "b22adcdf032244328a6f1a9ae410386b"
+          },
+          {
+            "operation_id": "a005_final_union",
+            "intent": "Union the localized correction into one native editable solid while preserving the exact envelope",
+            "operation_type": "union",
+            "feature_id": "complete_part",
+            "parameters": {
+              "required_solid_count": 1,
+              "overall_extents": [
+                0.265625,
+                0.75,
+                0.742105
+              ]
+            },
+            "parent_operation_ids": [
+              "a005_pad_end_trim",
+              "a005_narrow_nose"
+            ],
+            "mcp_job_id": "b22adcdf032244328a6f1a9ae410386b"
+          }
+        ],
+        "edges": [
+          {
+            "source": "a004_final_union",
+            "target": "a005_preserve_a004",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a005_preserve_a004",
+            "target": "a005_pad_end_trim",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a005_preserve_a004",
+            "target": "a005_narrow_nose",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a005_pad_end_trim",
+            "target": "a005_narrow_nose",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a005_pad_end_trim",
+            "target": "a005_final_union",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a005_narrow_nose",
+            "target": "a005_final_union",
+            "relation": "declared_parent"
+          }
+        ]
+      },
+      "deleted_parent_face_examples": [
+        {
+          "node_id": "36F:f1",
+          "entity_handle": "36F",
+          "face_id": "f1",
+          "face_fingerprint": "cfa79eff51620ffa8946d97083c97463db029ccc8d01982a637eba886bb829d8"
+        },
+        {
+          "node_id": "36F:f7",
+          "entity_handle": "36F",
+          "face_id": "f7",
+          "face_fingerprint": "695e130b612baf224ce194eab300803cfaa44bd8672be46ffd2ba4536ca2fdab"
+        },
+        {
+          "node_id": "36F:f8",
+          "entity_handle": "36F",
+          "face_id": "f8",
+          "face_fingerprint": "d1b767a11ac56bbfea04b206239e24fc5b4e4489935b053742b758dafa7bffd3"
+        },
+        {
+          "node_id": "36F:f16",
+          "entity_handle": "36F",
+          "face_id": "f16",
+          "face_fingerprint": "e9d8d048a6b9e5d910a7ddc9280228b57ca56d0532cf2bb580b4fe2d3893e40b"
+        },
+        {
+          "node_id": "36F:f19",
+          "entity_handle": "36F",
+          "face_id": "f19",
+          "face_fingerprint": "d622c641ad6350fe99c68814745f2ae56748bc129315c1c004349220c5ce6973"
+        },
+        {
+          "node_id": "36F:f22",
+          "entity_handle": "36F",
+          "face_id": "f22",
+          "face_fingerprint": "b6c53a18445f2c788ec1d24fe26422631f8210da2d0231ef4d928e3c5bed81a6"
+        },
+        {
+          "node_id": "36F:f23",
+          "entity_handle": "36F",
+          "face_id": "f23",
+          "face_fingerprint": "47c3c7babb968382ac63a2d41906bca0d3e1a5489793121d5d5fd12b3c744e1e"
+        },
+        {
+          "node_id": "36F:f24",
+          "entity_handle": "36F",
+          "face_id": "f24",
+          "face_fingerprint": "be5bfb6b466805da8627c066af4fc14bc6cbe0d9195b9ab01f0fd4fd1ec16a05"
+        },
+        {
+          "node_id": "36F:f25",
+          "entity_handle": "36F",
+          "face_id": "f25",
+          "face_fingerprint": "779f090e3e38f395fe8db6ad67283d8df6e31e1dcd73a7aa583cc2ff240553f4"
+        },
+        {
+          "node_id": "36F:f26",
+          "entity_handle": "36F",
+          "face_id": "f26",
+          "face_fingerprint": "0ea3a6f9e3b22d84b22c628729d8c62e17e22827550358b4b9c0b8314de2f724"
+        },
+        {
+          "node_id": "36F:f35",
+          "entity_handle": "36F",
+          "face_id": "f35",
+          "face_fingerprint": "4cfe27f18633a950d9918f8aacd996da9ca809cbfbaa63b44becc63b07c60d2e"
+        },
+        {
+          "node_id": "36F:f36",
+          "entity_handle": "36F",
+          "face_id": "f36",
+          "face_fingerprint": "014431df09d0a65ccb1516ef4c7672b74a0e118cb87c81a187a1d7c1d95e5e33"
+        },
+        {
+          "node_id": "36F:f39",
+          "entity_handle": "36F",
+          "face_id": "f39",
+          "face_fingerprint": "abefa8a66c0358fff7a60b21e214d007c6b6dd12146c5188a29cb123b0b921cc"
+        }
+      ],
+      "interpretation": "Stable fingerprints prove inheritance. Snapshot-delta faces identify the operation group that changed topology; multiple operations in one job remain causally ambiguous."
+    },
+    "exact_face_query_count": 17
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [],
+    "ground_truth_to_candidate": []
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

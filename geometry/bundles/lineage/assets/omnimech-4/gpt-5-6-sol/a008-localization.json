@@ -1,0 +1,6592 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.04845,
+  "region_count": 9,
+  "regions": [
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 237,
+      "sample_fraction": 0.01185,
+      "estimated_area": 274.002384,
+      "estimated_area_fraction": 0.01185,
+      "centroid": [
+        -0.207308,
+        31.110764,
+        -30.360677
+      ],
+      "centroid_bbox_position": [
+        0.1221,
+        0.8043,
+        0.203
+      ],
+      "bbox": {
+        "min": [
+          -3.616359,
+          9.070832,
+          -46.901697
+        ],
+        "max": [
+          3.593642,
+          46.586624,
+          -9.248822
+        ]
+      },
+      "mean_distance_normalized": 0.007396,
+      "p95_distance_normalized": 0.008239,
+      "max_distance_normalized": 0.008256,
+      "mean_normal_offset_normalized": 0.007145,
+      "mean_normal_disagreement": 0.056829,
+      "dominant_source_normal": [
+        -0.0,
+        0.6992,
+        -0.715
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -1.490086,
+          9.969802,
+          -45.310345
+        ],
+        [
+          2.477387,
+          20.975301,
+          -42.66703
+        ],
+        [
+          2.570527,
+          35.54708,
+          -31.301396
+        ],
+        [
+          3.593642,
+          44.653977,
+          -14.842503
+        ],
+        [
+          -2.83028,
+          44.580122,
+          -14.623367
+        ],
+        [
+          -3.476065,
+          39.986237,
+          -21.666729
+        ],
+        [
+          -0.72524,
+          33.134109,
+          -31.27876
+        ],
+        [
+          -2.714139,
+          21.67468,
+          -39.955416
+        ],
+        [
+          -3.616359,
+          14.491253,
+          -44.500863
+        ]
+      ],
+      "region_id": "excess-01",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "39C",
+          "face_id": "f91",
+          "face_fingerprint": "6cc1bd2bdab66b909837239ecadeea2163ee1bf49c4a20fce7c12e0b8cfb6e37",
+          "surface_type": "plane",
+          "area": 66.18313297189094,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f91",
+            "entity_handle": "39C",
+            "face_id": "f91",
+            "face_fingerprint": "6cc1bd2bdab66b909837239ecadeea2163ee1bf49c4a20fce7c12e0b8cfb6e37",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f88",
+          "face_fingerprint": "ce1943e0ba95f273def5c683aed07747033b2dfbcaf4a842716a0fef4b7c6911",
+          "surface_type": "plane",
+          "area": 66.18313297189084,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f88",
+            "entity_handle": "39C",
+            "face_id": "f88",
+            "face_fingerprint": "ce1943e0ba95f273def5c683aed07747033b2dfbcaf4a842716a0fef4b7c6911",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f81",
+          "face_fingerprint": "e5dc8fb60dace327c2cea311e1ec368189098b99202a9f4bd22d0bef40804b85",
+          "surface_type": "plane",
+          "area": 4266.79951775252,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f81",
+            "entity_handle": "39C",
+            "face_id": "f81",
+            "face_fingerprint": "e5dc8fb60dace327c2cea311e1ec368189098b99202a9f4bd22d0bef40804b85",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f94",
+          "face_fingerprint": "7c5d364aeb023851018737d23a0a69287f0ea02c5380378934643086159e4490",
+          "surface_type": "plane",
+          "area": 66.18313297189094,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f94",
+            "entity_handle": "39C",
+            "face_id": "f94",
+            "face_fingerprint": "7c5d364aeb023851018737d23a0a69287f0ea02c5380378934643086159e4490",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f93",
+          "face_fingerprint": "0cbf99b2ea94b4a80b2501e3ba34fe89c37f0f353b04ee5581093900b52479cd",
+          "surface_type": "plane",
+          "area": 66.18313297189084,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f93",
+            "entity_handle": "39C",
+            "face_id": "f93",
+            "face_fingerprint": "0cbf99b2ea94b4a80b2501e3ba34fe89c37f0f353b04ee5581093900b52479cd",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f86",
+          "face_fingerprint": "e134ced9eed92b2a7008586006ad0471089a5de04d75829d3935cfb37c825237",
+          "surface_type": "plane",
+          "area": 66.18313297189083,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f86",
+            "entity_handle": "39C",
+            "face_id": "f86",
+            "face_fingerprint": "e134ced9eed92b2a7008586006ad0471089a5de04d75829d3935cfb37c825237",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f6",
+          "face_fingerprint": "c449a8ef151e5bca7bd222dd15a3a73c1cee871e18f8d36a65bf27566f00d7f2",
+          "surface_type": "plane",
+          "area": 6359.53676716735,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f6",
+            "entity_handle": "39C",
+            "face_id": "f6",
+            "face_fingerprint": "c449a8ef151e5bca7bd222dd15a3a73c1cee871e18f8d36a65bf27566f00d7f2",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "low",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_reconstruct_verified_profile_01",
+          "intent": "Reconstruct the a004 verified 24-tooth R4.255 roller-seat and straight-flank profile after native CHAMFEREDGE proved unstable",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile",
+          "feature_id": "sprocket_tooth_profile",
+          "editable_parameters": {
+            "tooth_count": 24,
+            "pitch_diameter_mm": 96.93,
+            "roller_seat_radius_mm": 4.255,
+            "root_radius_mm": 44.21,
+            "tip_radius_mm": 51.5,
+            "flank_type": "straight",
+            "reverted_operation_ids": [
+              "a005_roller_seat_01",
+              "a006_curved_flank_01"
+            ]
+          },
+          "parent_operation_ids": [
+            "a004_tooth_arcs_01"
+          ]
+        },
+        {
+          "operation_id": "a008_preserve_core_01",
+          "intent": "Recreate unchanged a004 hub, bore, keyway, and radial tap-drill around the isolated localized chamfer fallback",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "boolean_reconstruct",
+          "feature_id": null,
+          "editable_parameters": {
+            "hub_diameter_mm": 60,
+            "total_axial_length_mm": 28,
+            "rear_projection_mm": 20.79,
+            "bore_diameter_mm": 30,
+            "keyway_width_mm": 8,
+            "keyway_top_radius_mm": 18.3,
+            "tap_drill_diameter_mm": 5,
+            "tap_drill_axial_position_mm": -12.79
+          },
+          "parent_operation_ids": [
+            "a008_localized_chamfer_fallback_01",
+            "a004_preserved_core_01"
+          ]
+        },
+        {
+          "operation_id": "a008_localized_chamfer_fallback_01",
+          "intent": "Apply localized bilateral tip-rim chamfer envelopes over the drawing-stated 1.65 mm axial depth; reduce radial cap removal to 1.45 mm to address the a004 volume deficit while avoiding the regressed full-perimeter loft",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "intersect",
+          "feature_id": "tooth_side_chamfers",
+          "editable_parameters": {
+            "overall_width_mm": 7.21,
+            "chamfer_axial_depth_mm": 1.65,
+            "chamfer_radial_cap_mm": 1.45,
+            "end_envelope_radius_mm": 50.05,
+            "central_land_mm": 3.91,
+            "replaces_failed_operation_id": "a008_native_chamfer_01"
+          },
+          "parent_operation_ids": [
+            "a008_reconstruct_verified_profile_01",
+            "a004_restore_chamfer_01"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 220,
+      "sample_fraction": 0.011,
+      "estimated_area": 254.348204,
+      "estimated_area_fraction": 0.011,
+      "centroid": [
+        -0.12521,
+        -31.214541,
+        -30.248286
+      ],
+      "centroid_bbox_position": [
+        0.125,
+        0.1947,
+        0.2041
+      ],
+      "bbox": {
+        "min": [
+          -3.616359,
+          -47.061307,
+          -47.084149
+        ],
+        "max": [
+          3.593642,
+          -8.967764,
+          -8.980668
+        ]
+      },
+      "mean_distance_normalized": 0.00733,
+      "p95_distance_normalized": 0.00825,
+      "max_distance_normalized": 0.008259,
+      "mean_normal_offset_normalized": 0.006983,
+      "mean_normal_disagreement": 0.075221,
+      "dominant_source_normal": [
+        -0.0238,
+        -0.726,
+        -0.6873
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -1.942831,
+          -44.853752,
+          -15.087206
+        ],
+        [
+          -0.991885,
+          -44.438518,
+          -10.462308
+        ],
+        [
+          3.58935,
+          -38.809826,
+          -23.985538
+        ],
+        [
+          1.963503,
+          -24.215626,
+          -38.873797
+        ],
+        [
+          3.216639,
+          -9.01793,
+          -46.995345
+        ],
+        [
+          -3.362263,
+          -14.712881,
+          -44.632928
+        ],
+        [
+          -1.822089,
+          -31.295122,
+          -34.878284
+        ],
+        [
+          -0.830131,
+          -39.03469,
+          -24.794318
+        ],
+        [
+          -0.084809,
+          -44.285843,
+          -14.124528
+        ]
+      ],
+      "region_id": "excess-02",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "39C",
+          "face_id": "f65",
+          "face_fingerprint": "5bd9ae5fafcba8a05c59b5b8671f5da39d20e46074c1dca503c3e214ff201749",
+          "surface_type": "plane",
+          "area": 66.18313297189079,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f65",
+            "entity_handle": "39C",
+            "face_id": "f65",
+            "face_fingerprint": "5bd9ae5fafcba8a05c59b5b8671f5da39d20e46074c1dca503c3e214ff201749",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f63",
+          "face_fingerprint": "9fb583bc469fd6bfdfd7672cd5eca4f924bafb56b32ce2a76fa134d6dc32e3ca",
+          "surface_type": "plane",
+          "area": 66.18313297189079,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f63",
+            "entity_handle": "39C",
+            "face_id": "f63",
+            "face_fingerprint": "9fb583bc469fd6bfdfd7672cd5eca4f924bafb56b32ce2a76fa134d6dc32e3ca",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f61",
+          "face_fingerprint": "5d899e1b3770ae7cb2e7e968de0f118441564c8df5f707e28d9293f7c3bff0cb",
+          "surface_type": "plane",
+          "area": 66.18313297189083,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f61",
+            "entity_handle": "39C",
+            "face_id": "f61",
+            "face_fingerprint": "5d899e1b3770ae7cb2e7e968de0f118441564c8df5f707e28d9293f7c3bff0cb",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f83",
+          "face_fingerprint": "d6d4a39c595e16aecf277c822e5c9d7d13c9e37af0ccec74ec9ac2edc798e3e0",
+          "surface_type": "plane",
+          "area": 66.1831329718909,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f83",
+            "entity_handle": "39C",
+            "face_id": "f83",
+            "face_fingerprint": "d6d4a39c595e16aecf277c822e5c9d7d13c9e37af0ccec74ec9ac2edc798e3e0",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f58",
+          "face_fingerprint": "4bc12603506708ff1fe3d86a548fcfc0367629240a998ed2af9ac2b506b4cf0d",
+          "surface_type": "plane",
+          "area": 66.18313297189093,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f58",
+            "entity_handle": "39C",
+            "face_id": "f58",
+            "face_fingerprint": "4bc12603506708ff1fe3d86a548fcfc0367629240a998ed2af9ac2b506b4cf0d",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f60",
+          "face_fingerprint": "8d0a2ba17f4f43b8881f0cbdf3543a22fdb2303ea2083d9f4b44b3990f30eb4d",
+          "surface_type": "plane",
+          "area": 66.1831329718909,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f60",
+            "entity_handle": "39C",
+            "face_id": "f60",
+            "face_fingerprint": "8d0a2ba17f4f43b8881f0cbdf3543a22fdb2303ea2083d9f4b44b3990f30eb4d",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f66",
+          "face_fingerprint": "db47e27ead783874ae94222679de4ccc8bf7cb58b5b3a826c9724c2b072ff22c",
+          "surface_type": "plane",
+          "area": 66.18313297189081,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f66",
+            "entity_handle": "39C",
+            "face_id": "f66",
+            "face_fingerprint": "db47e27ead783874ae94222679de4ccc8bf7cb58b5b3a826c9724c2b072ff22c",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "low",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_reconstruct_verified_profile_01",
+          "intent": "Reconstruct the a004 verified 24-tooth R4.255 roller-seat and straight-flank profile after native CHAMFEREDGE proved unstable",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile",
+          "feature_id": "sprocket_tooth_profile",
+          "editable_parameters": {
+            "tooth_count": 24,
+            "pitch_diameter_mm": 96.93,
+            "roller_seat_radius_mm": 4.255,
+            "root_radius_mm": 44.21,
+            "tip_radius_mm": 51.5,
+            "flank_type": "straight",
+            "reverted_operation_ids": [
+              "a005_roller_seat_01",
+              "a006_curved_flank_01"
+            ]
+          },
+          "parent_operation_ids": [
+            "a004_tooth_arcs_01"
+          ]
+        },
+        {
+          "operation_id": "a008_preserve_core_01",
+          "intent": "Recreate unchanged a004 hub, bore, keyway, and radial tap-drill around the isolated localized chamfer fallback",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "boolean_reconstruct",
+          "feature_id": null,
+          "editable_parameters": {
+            "hub_diameter_mm": 60,
+            "total_axial_length_mm": 28,
+            "rear_projection_mm": 20.79,
+            "bore_diameter_mm": 30,
+            "keyway_width_mm": 8,
+            "keyway_top_radius_mm": 18.3,
+            "tap_drill_diameter_mm": 5,
+            "tap_drill_axial_position_mm": -12.79
+          },
+          "parent_operation_ids": [
+            "a008_localized_chamfer_fallback_01",
+            "a004_preserved_core_01"
+          ]
+        },
+        {
+          "operation_id": "a008_localized_chamfer_fallback_01",
+          "intent": "Apply localized bilateral tip-rim chamfer envelopes over the drawing-stated 1.65 mm axial depth; reduce radial cap removal to 1.45 mm to address the a004 volume deficit while avoiding the regressed full-perimeter loft",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "intersect",
+          "feature_id": "tooth_side_chamfers",
+          "editable_parameters": {
+            "overall_width_mm": 7.21,
+            "chamfer_axial_depth_mm": 1.65,
+            "chamfer_radial_cap_mm": 1.45,
+            "end_envelope_radius_mm": 50.05,
+            "central_land_mm": 3.91,
+            "replaces_failed_operation_id": "a008_native_chamfer_01"
+          },
+          "parent_operation_ids": [
+            "a008_reconstruct_verified_profile_01",
+            "a004_restore_chamfer_01"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 210,
+      "sample_fraction": 0.0105,
+      "estimated_area": 242.786922,
+      "estimated_area_fraction": 0.0105,
+      "centroid": [
+        -0.010121,
+        30.284448,
+        31.008939
+      ],
+      "centroid_bbox_position": [
+        0.1291,
+        0.7962,
+        0.8033
+      ],
+      "bbox": {
+        "min": [
+          -3.616359,
+          9.041307,
+          9.023879
+        ],
+        "max": [
+          3.593642,
+          46.984816,
+          46.953965
+        ]
+      },
+      "mean_distance_normalized": 0.00731,
+      "p95_distance_normalized": 0.00823,
+      "max_distance_normalized": 0.008257,
+      "mean_normal_offset_normalized": 0.007065,
+      "mean_normal_disagreement": 0.076677,
+      "dominant_source_normal": [
+        0.0329,
+        0.6635,
+        0.7475
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.811277,
+          10.606218,
+          44.183768
+        ],
+        [
+          2.762941,
+          25.943201,
+          39.354115
+        ],
+        [
+          3.593642,
+          38.860506,
+          25.190234
+        ],
+        [
+          1.218781,
+          44.365779,
+          10.503399
+        ],
+        [
+          -2.234508,
+          45.116732,
+          15.532988
+        ],
+        [
+          -2.195665,
+          34.103007,
+          31.287851
+        ],
+        [
+          -0.114285,
+          24.712165,
+          39.011852
+        ],
+        [
+          3.593642,
+          9.420383,
+          45.764127
+        ],
+        [
+          -2.751545,
+          10.38852,
+          44.569137
+        ]
+      ],
+      "region_id": "excess-03",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "39C",
+          "face_id": "f81",
+          "face_fingerprint": "e5dc8fb60dace327c2cea311e1ec368189098b99202a9f4bd22d0bef40804b85",
+          "surface_type": "plane",
+          "area": 4266.79951775252,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f81",
+            "entity_handle": "39C",
+            "face_id": "f81",
+            "face_fingerprint": "e5dc8fb60dace327c2cea311e1ec368189098b99202a9f4bd22d0bef40804b85",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f106",
+          "face_fingerprint": "52110a29ea35efa52f513f181a3067b70452ecdb2035d92dfb697ef48ef5d93b",
+          "surface_type": "plane",
+          "area": 66.18313297189083,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f106",
+            "entity_handle": "39C",
+            "face_id": "f106",
+            "face_fingerprint": "52110a29ea35efa52f513f181a3067b70452ecdb2035d92dfb697ef48ef5d93b",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f104",
+          "face_fingerprint": "cf8c55121b923b4d08e8f45c85f4d282cd44bac60349a3ad5a9c8f9fb7f0c94f",
+          "surface_type": "plane",
+          "area": 66.18313297189086,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f104",
+            "entity_handle": "39C",
+            "face_id": "f104",
+            "face_fingerprint": "cf8c55121b923b4d08e8f45c85f4d282cd44bac60349a3ad5a9c8f9fb7f0c94f",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f99",
+          "face_fingerprint": "2697ac1e280001d5b0714c9b030822cbb7ae351c71968c2ebeb1c46d624ed074",
+          "surface_type": "plane",
+          "area": 66.18313297189076,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f99",
+            "entity_handle": "39C",
+            "face_id": "f99",
+            "face_fingerprint": "2697ac1e280001d5b0714c9b030822cbb7ae351c71968c2ebeb1c46d624ed074",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f98",
+          "face_fingerprint": "b3f29a2e32ddedbbd4eef48305b48a0e6be4f6610789921aef138db8d69256ae",
+          "surface_type": "plane",
+          "area": 66.18313297189091,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f98",
+            "entity_handle": "39C",
+            "face_id": "f98",
+            "face_fingerprint": "b3f29a2e32ddedbbd4eef48305b48a0e6be4f6610789921aef138db8d69256ae",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f102",
+          "face_fingerprint": "a1560ab6186fc098dc7b4f4c5997a7fcaac6b77f9af391fdc5f15cffefc72f89",
+          "surface_type": "plane",
+          "area": 66.18313297189084,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f102",
+            "entity_handle": "39C",
+            "face_id": "f102",
+            "face_fingerprint": "a1560ab6186fc098dc7b4f4c5997a7fcaac6b77f9af391fdc5f15cffefc72f89",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "low",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_reconstruct_verified_profile_01",
+          "intent": "Reconstruct the a004 verified 24-tooth R4.255 roller-seat and straight-flank profile after native CHAMFEREDGE proved unstable",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile",
+          "feature_id": "sprocket_tooth_profile",
+          "editable_parameters": {
+            "tooth_count": 24,
+            "pitch_diameter_mm": 96.93,
+            "roller_seat_radius_mm": 4.255,
+            "root_radius_mm": 44.21,
+            "tip_radius_mm": 51.5,
+            "flank_type": "straight",
+            "reverted_operation_ids": [
+              "a005_roller_seat_01",
+              "a006_curved_flank_01"
+            ]
+          },
+          "parent_operation_ids": [
+            "a004_tooth_arcs_01"
+          ]
+        },
+        {
+          "operation_id": "a008_preserve_core_01",
+          "intent": "Recreate unchanged a004 hub, bore, keyway, and radial tap-drill around the isolated localized chamfer fallback",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "boolean_reconstruct",
+          "feature_id": null,
+          "editable_parameters": {
+            "hub_diameter_mm": 60,
+            "total_axial_length_mm": 28,
+            "rear_projection_mm": 20.79,
+            "bore_diameter_mm": 30,
+            "keyway_width_mm": 8,
+            "keyway_top_radius_mm": 18.3,
+            "tap_drill_diameter_mm": 5,
+            "tap_drill_axial_position_mm": -12.79
+          },
+          "parent_operation_ids": [
+            "a008_localized_chamfer_fallback_01",
+            "a004_preserved_core_01"
+          ]
+        },
+        {
+          "operation_id": "a008_localized_chamfer_fallback_01",
+          "intent": "Apply localized bilateral tip-rim chamfer envelopes over the drawing-stated 1.65 mm axial depth; reduce radial cap removal to 1.45 mm to address the a004 volume deficit while avoiding the regressed full-perimeter loft",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "intersect",
+          "feature_id": "tooth_side_chamfers",
+          "editable_parameters": {
+            "overall_width_mm": 7.21,
+            "chamfer_axial_depth_mm": 1.65,
+            "chamfer_radial_cap_mm": 1.45,
+            "end_envelope_radius_mm": 50.05,
+            "central_land_mm": 3.91,
+            "replaces_failed_operation_id": "a008_native_chamfer_01"
+          },
+          "parent_operation_ids": [
+            "a008_reconstruct_verified_profile_01",
+            "a004_restore_chamfer_01"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 199,
+      "sample_fraction": 0.00995,
+      "estimated_area": 230.069512,
+      "estimated_area_fraction": 0.00995,
+      "centroid": [
+        0.177912,
+        -31.364615,
+        30.141278
+      ],
+      "centroid_bbox_position": [
+        0.1358,
+        0.1932,
+        0.7948
+      ],
+      "bbox": {
+        "min": [
+          -3.616359,
+          -47.017168,
+          9.005601
+        ],
+        "max": [
+          3.593642,
+          -8.998425,
+          47.029876
+        ]
+      },
+      "mean_distance_normalized": 0.007437,
+      "p95_distance_normalized": 0.008252,
+      "max_distance_normalized": 0.008257,
+      "mean_normal_offset_normalized": 0.007228,
+      "mean_normal_disagreement": 0.056975,
+      "dominant_source_normal": [
+        -0.0164,
+        -0.7067,
+        0.7073
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.876372,
+          -44.901924,
+          10.200523
+        ],
+        [
+          3.593642,
+          -38.917742,
+          24.867486
+        ],
+        [
+          1.296527,
+          -33.836617,
+          31.285352
+        ],
+        [
+          0.226474,
+          -21.430162,
+          40.903448
+        ],
+        [
+          -0.746408,
+          -9.06172,
+          46.917831
+        ],
+        [
+          -0.123933,
+          -20.883739,
+          43.022021
+        ],
+        [
+          -0.091852,
+          -35.703557,
+          31.302867
+        ],
+        [
+          -2.608714,
+          -44.936473,
+          15.227427
+        ],
+        [
+          -0.360256,
+          -44.28162,
+          14.117368
+        ]
+      ],
+      "region_id": "excess-04",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "39C",
+          "face_id": "f70",
+          "face_fingerprint": "ec3101e3b77be780b75683e58c13cef62d51f1e67a526770c44bae6ab2bdd955",
+          "surface_type": "plane",
+          "area": 66.18313297189081,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f70",
+            "entity_handle": "39C",
+            "face_id": "f70",
+            "face_fingerprint": "ec3101e3b77be780b75683e58c13cef62d51f1e67a526770c44bae6ab2bdd955",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f76",
+          "face_fingerprint": "39ad1e297cab915d160764aa23935fbd6c99b8d034aa773e98a3b85ace68169a",
+          "surface_type": "plane",
+          "area": 66.18313297189091,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f76",
+            "entity_handle": "39C",
+            "face_id": "f76",
+            "face_fingerprint": "39ad1e297cab915d160764aa23935fbd6c99b8d034aa773e98a3b85ace68169a",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f73",
+          "face_fingerprint": "2ec963ae3a22e86edbf437d345d3dceb46ad84521ef91fc33014f8835a911126",
+          "surface_type": "plane",
+          "area": 66.18313297189108,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f73",
+            "entity_handle": "39C",
+            "face_id": "f73",
+            "face_fingerprint": "2ec963ae3a22e86edbf437d345d3dceb46ad84521ef91fc33014f8835a911126",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 2,
+          "exact_query_fraction": 0.222222,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f81",
+          "face_fingerprint": "e5dc8fb60dace327c2cea311e1ec368189098b99202a9f4bd22d0bef40804b85",
+          "surface_type": "plane",
+          "area": 4266.79951775252,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f81",
+            "entity_handle": "39C",
+            "face_id": "f81",
+            "face_fingerprint": "e5dc8fb60dace327c2cea311e1ec368189098b99202a9f4bd22d0bef40804b85",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f69",
+          "face_fingerprint": "21ade4667c6bfb7b4dee1c31d4fff97dff8d92ac49baee686a156a17e70339cf",
+          "surface_type": "plane",
+          "area": 66.18313297189084,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f69",
+            "entity_handle": "39C",
+            "face_id": "f69",
+            "face_fingerprint": "21ade4667c6bfb7b4dee1c31d4fff97dff8d92ac49baee686a156a17e70339cf",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f78",
+          "face_fingerprint": "84bb106a0c146844956a06322bb0b745a37bc3b80cf3325488cb4318a60981a0",
+          "surface_type": "plane",
+          "area": 66.18313297189086,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f78",
+            "entity_handle": "39C",
+            "face_id": "f78",
+            "face_fingerprint": "84bb106a0c146844956a06322bb0b745a37bc3b80cf3325488cb4318a60981a0",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "low",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_reconstruct_verified_profile_01",
+          "intent": "Reconstruct the a004 verified 24-tooth R4.255 roller-seat and straight-flank profile after native CHAMFEREDGE proved unstable",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile",
+          "feature_id": "sprocket_tooth_profile",
+          "editable_parameters": {
+            "tooth_count": 24,
+            "pitch_diameter_mm": 96.93,
+            "roller_seat_radius_mm": 4.255,
+            "root_radius_mm": 44.21,
+            "tip_radius_mm": 51.5,
+            "flank_type": "straight",
+            "reverted_operation_ids": [
+              "a005_roller_seat_01",
+              "a006_curved_flank_01"
+            ]
+          },
+          "parent_operation_ids": [
+            "a004_tooth_arcs_01"
+          ]
+        },
+        {
+          "operation_id": "a008_preserve_core_01",
+          "intent": "Recreate unchanged a004 hub, bore, keyway, and radial tap-drill around the isolated localized chamfer fallback",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "boolean_reconstruct",
+          "feature_id": null,
+          "editable_parameters": {
+            "hub_diameter_mm": 60,
+            "total_axial_length_mm": 28,
+            "rear_projection_mm": 20.79,
+            "bore_diameter_mm": 30,
+            "keyway_width_mm": 8,
+            "keyway_top_radius_mm": 18.3,
+            "tap_drill_diameter_mm": 5,
+            "tap_drill_axial_position_mm": -12.79
+          },
+          "parent_operation_ids": [
+            "a008_localized_chamfer_fallback_01",
+            "a004_preserved_core_01"
+          ]
+        },
+        {
+          "operation_id": "a008_localized_chamfer_fallback_01",
+          "intent": "Apply localized bilateral tip-rim chamfer envelopes over the drawing-stated 1.65 mm axial depth; reduce radial cap removal to 1.45 mm to address the a004 volume deficit while avoiding the regressed full-perimeter loft",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "intersect",
+          "feature_id": "tooth_side_chamfers",
+          "editable_parameters": {
+            "overall_width_mm": 7.21,
+            "chamfer_axial_depth_mm": 1.65,
+            "chamfer_radial_cap_mm": 1.45,
+            "end_envelope_radius_mm": 50.05,
+            "central_land_mm": 3.91,
+            "replaces_failed_operation_id": "a008_native_chamfer_01"
+          },
+          "parent_operation_ids": [
+            "a008_reconstruct_verified_profile_01",
+            "a004_restore_chamfer_01"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 54,
+      "sample_fraction": 0.0027,
+      "estimated_area": 62.430923,
+      "estimated_area_fraction": 0.0027,
+      "centroid": [
+        0.069084,
+        -46.776083,
+        0.603625
+      ],
+      "centroid_bbox_position": [
+        0.132,
+        0.0425,
+        0.5059
+      ],
+      "bbox": {
+        "min": [
+          -3.616359,
+          -47.788737,
+          -3.497304
+        ],
+        "max": [
+          3.593642,
+          -45.455215,
+          3.51222
+        ]
+      },
+      "mean_distance_normalized": 0.007275,
+      "p95_distance_normalized": 0.008246,
+      "max_distance_normalized": 0.008257,
+      "mean_normal_offset_normalized": 0.007182,
+      "mean_normal_disagreement": 0.077318,
+      "dominant_source_normal": [
+        -0.0,
+        -0.9735,
+        -0.2289
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -0.806654,
+          -46.480221,
+          -2.228024
+        ],
+        [
+          -3.010676,
+          -47.470408,
+          -3.199806
+        ],
+        [
+          0.06704,
+          -46.383992,
+          2.133584
+        ],
+        [
+          0.250196,
+          -46.787174,
+          2.529273
+        ],
+        [
+          2.134943,
+          -45.911772,
+          -1.670141
+        ],
+        [
+          2.444654,
+          -47.540598,
+          -3.268691
+        ],
+        [
+          -1.375194,
+          -45.720409,
+          1.482335
+        ],
+        [
+          -2.898791,
+          -45.711709,
+          1.473797
+        ],
+        [
+          -3.184711,
+          -46.166684,
+          1.920316
+        ]
+      ],
+      "region_id": "excess-05",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "39C",
+          "face_id": "f68",
+          "face_fingerprint": "94b68b675d227a512b2e55ae41411e25799e76f20d1fbf43a51c2d406b696c8a",
+          "surface_type": "plane",
+          "area": 66.18313297189093,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f68",
+            "entity_handle": "39C",
+            "face_id": "f68",
+            "face_fingerprint": "94b68b675d227a512b2e55ae41411e25799e76f20d1fbf43a51c2d406b696c8a",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 5,
+          "exact_query_fraction": 0.555556,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f67",
+          "face_fingerprint": "5056dedf2a4c507d9ff3b64229795090c5632fc1b707861601d522eab123187d",
+          "surface_type": "plane",
+          "area": 66.18313297189106,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f67",
+            "entity_handle": "39C",
+            "face_id": "f67",
+            "face_fingerprint": "5056dedf2a4c507d9ff3b64229795090c5632fc1b707861601d522eab123187d",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_reconstruct_verified_profile_01",
+          "intent": "Reconstruct the a004 verified 24-tooth R4.255 roller-seat and straight-flank profile after native CHAMFEREDGE proved unstable",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile",
+          "feature_id": "sprocket_tooth_profile",
+          "editable_parameters": {
+            "tooth_count": 24,
+            "pitch_diameter_mm": 96.93,
+            "roller_seat_radius_mm": 4.255,
+            "root_radius_mm": 44.21,
+            "tip_radius_mm": 51.5,
+            "flank_type": "straight",
+            "reverted_operation_ids": [
+              "a005_roller_seat_01",
+              "a006_curved_flank_01"
+            ]
+          },
+          "parent_operation_ids": [
+            "a004_tooth_arcs_01"
+          ]
+        },
+        {
+          "operation_id": "a008_preserve_core_01",
+          "intent": "Recreate unchanged a004 hub, bore, keyway, and radial tap-drill around the isolated localized chamfer fallback",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "boolean_reconstruct",
+          "feature_id": null,
+          "editable_parameters": {
+            "hub_diameter_mm": 60,
+            "total_axial_length_mm": 28,
+            "rear_projection_mm": 20.79,
+            "bore_diameter_mm": 30,
+            "keyway_width_mm": 8,
+            "keyway_top_radius_mm": 18.3,
+            "tap_drill_diameter_mm": 5,
+            "tap_drill_axial_position_mm": -12.79
+          },
+          "parent_operation_ids": [
+            "a008_localized_chamfer_fallback_01",
+            "a004_preserved_core_01"
+          ]
+        },
+        {
+          "operation_id": "a008_localized_chamfer_fallback_01",
+          "intent": "Apply localized bilateral tip-rim chamfer envelopes over the drawing-stated 1.65 mm axial depth; reduce radial cap removal to 1.45 mm to address the a004 volume deficit while avoiding the regressed full-perimeter loft",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "intersect",
+          "feature_id": "tooth_side_chamfers",
+          "editable_parameters": {
+            "overall_width_mm": 7.21,
+            "chamfer_axial_depth_mm": 1.65,
+            "chamfer_radial_cap_mm": 1.45,
+            "end_envelope_radius_mm": 50.05,
+            "central_land_mm": 3.91,
+            "replaces_failed_operation_id": "a008_native_chamfer_01"
+          },
+          "parent_operation_ids": [
+            "a008_reconstruct_verified_profile_01",
+            "a004_restore_chamfer_01"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 50,
+      "sample_fraction": 0.0025,
+      "estimated_area": 57.80641,
+      "estimated_area_fraction": 0.0025,
+      "centroid": [
+        0.099753,
+        -0.258796,
+        46.588812
+      ],
+      "centroid_bbox_position": [
+        0.133,
+        0.4975,
+        0.9557
+      ],
+      "bbox": {
+        "min": [
+          -3.616359,
+          -3.531935,
+          45.423973
+        ],
+        "max": [
+          3.593642,
+          3.382086,
+          47.808828
+        ]
+      },
+      "mean_distance_normalized": 0.007313,
+      "p95_distance_normalized": 0.008243,
+      "max_distance_normalized": 0.008257,
+      "mean_normal_offset_normalized": 0.007055,
+      "mean_normal_disagreement": 0.084413,
+      "dominant_source_normal": [
+        0.0304,
+        0.0217,
+        0.9993
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -2.793277,
+          -1.198292,
+          45.430986
+        ],
+        [
+          -0.605509,
+          -2.560244,
+          46.818734
+        ],
+        [
+          1.121396,
+          1.363521,
+          45.599344
+        ],
+        [
+          0.47305,
+          2.57769,
+          46.836509
+        ],
+        [
+          2.9425,
+          -3.33651,
+          47.609702
+        ],
+        [
+          3.228877,
+          -2.159564,
+          46.410465
+        ],
+        [
+          3.593642,
+          -2.91579,
+          46.920025
+        ],
+        [
+          -3.585999,
+          2.790289,
+          47.053135
+        ],
+        [
+          -3.523481,
+          1.921187,
+          46.167572
+        ]
+      ],
+      "region_id": "excess-06",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "39C",
+          "face_id": "f82",
+          "face_fingerprint": "aa3bce02f5be0459591aaffa56b46ba4b0b0ef3d85e201088e0054a627cd5551",
+          "surface_type": "plane",
+          "area": 66.18313297189074,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f82",
+            "entity_handle": "39C",
+            "face_id": "f82",
+            "face_fingerprint": "aa3bce02f5be0459591aaffa56b46ba4b0b0ef3d85e201088e0054a627cd5551",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f79",
+          "face_fingerprint": "1987caa3346fa78955f7dd7712a3537ec6a0dc745a2dc1bbc30ff961dafc4816",
+          "surface_type": "plane",
+          "area": 66.18313297189108,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f79",
+            "entity_handle": "39C",
+            "face_id": "f79",
+            "face_fingerprint": "1987caa3346fa78955f7dd7712a3537ec6a0dc745a2dc1bbc30ff961dafc4816",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f81",
+          "face_fingerprint": "e5dc8fb60dace327c2cea311e1ec368189098b99202a9f4bd22d0bef40804b85",
+          "surface_type": "plane",
+          "area": 4266.79951775252,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f81",
+            "entity_handle": "39C",
+            "face_id": "f81",
+            "face_fingerprint": "e5dc8fb60dace327c2cea311e1ec368189098b99202a9f4bd22d0bef40804b85",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_reconstruct_verified_profile_01",
+          "intent": "Reconstruct the a004 verified 24-tooth R4.255 roller-seat and straight-flank profile after native CHAMFEREDGE proved unstable",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile",
+          "feature_id": "sprocket_tooth_profile",
+          "editable_parameters": {
+            "tooth_count": 24,
+            "pitch_diameter_mm": 96.93,
+            "roller_seat_radius_mm": 4.255,
+            "root_radius_mm": 44.21,
+            "tip_radius_mm": 51.5,
+            "flank_type": "straight",
+            "reverted_operation_ids": [
+              "a005_roller_seat_01",
+              "a006_curved_flank_01"
+            ]
+          },
+          "parent_operation_ids": [
+            "a004_tooth_arcs_01"
+          ]
+        },
+        {
+          "operation_id": "a008_preserve_core_01",
+          "intent": "Recreate unchanged a004 hub, bore, keyway, and radial tap-drill around the isolated localized chamfer fallback",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "boolean_reconstruct",
+          "feature_id": null,
+          "editable_parameters": {
+            "hub_diameter_mm": 60,
+            "total_axial_length_mm": 28,
+            "rear_projection_mm": 20.79,
+            "bore_diameter_mm": 30,
+            "keyway_width_mm": 8,
+            "keyway_top_radius_mm": 18.3,
+            "tap_drill_diameter_mm": 5,
+            "tap_drill_axial_position_mm": -12.79
+          },
+          "parent_operation_ids": [
+            "a008_localized_chamfer_fallback_01",
+            "a004_preserved_core_01"
+          ]
+        },
+        {
+          "operation_id": "a008_localized_chamfer_fallback_01",
+          "intent": "Apply localized bilateral tip-rim chamfer envelopes over the drawing-stated 1.65 mm axial depth; reduce radial cap removal to 1.45 mm to address the a004 volume deficit while avoiding the regressed full-perimeter loft",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "intersect",
+          "feature_id": "tooth_side_chamfers",
+          "editable_parameters": {
+            "overall_width_mm": 7.21,
+            "chamfer_axial_depth_mm": 1.65,
+            "chamfer_radial_cap_mm": 1.45,
+            "end_envelope_radius_mm": 50.05,
+            "central_land_mm": 3.91,
+            "replaces_failed_operation_id": "a008_native_chamfer_01"
+          },
+          "parent_operation_ids": [
+            "a008_reconstruct_verified_profile_01",
+            "a004_restore_chamfer_01"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 48,
+      "sample_fraction": 0.0024,
+      "estimated_area": 55.494154,
+      "estimated_area_fraction": 0.0024,
+      "centroid": [
+        0.168999,
+        46.582342,
+        0.232195
+      ],
+      "centroid_bbox_position": [
+        0.1355,
+        0.9556,
+        0.5023
+      ],
+      "bbox": {
+        "min": [
+          -3.473516,
+          45.468725,
+          -3.382401
+        ],
+        "max": [
+          3.593642,
+          47.690275,
+          3.443671
+        ]
+      },
+      "mean_distance_normalized": 0.007463,
+      "p95_distance_normalized": 0.008223,
+      "max_distance_normalized": 0.008256,
+      "mean_normal_offset_normalized": 0.006976,
+      "mean_normal_disagreement": 0.041241,
+      "dominant_source_normal": [
+        0.0945,
+        0.9932,
+        -0.0675
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -2.718571,
+          46.717744,
+          -2.461132
+        ],
+        [
+          -2.172777,
+          46.765487,
+          -2.507987
+        ],
+        [
+          1.199441,
+          46.353882,
+          2.104033
+        ],
+        [
+          1.331032,
+          47.690275,
+          3.415586
+        ],
+        [
+          2.264006,
+          46.892371,
+          2.632513
+        ],
+        [
+          3.048795,
+          47.586584,
+          -3.313821
+        ],
+        [
+          1.278444,
+          46.020481,
+          -1.776829
+        ],
+        [
+          -0.98323,
+          45.761045,
+          1.522216
+        ],
+        [
+          -2.598014,
+          45.755909,
+          1.517175
+        ]
+      ],
+      "region_id": "excess-07",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "39C",
+          "face_id": "f97",
+          "face_fingerprint": "1d79eb60f463db6c6af51574c3204fb77953c333e5f0626891954e2764f4e53a",
+          "surface_type": "plane",
+          "area": 66.18313297189086,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f97",
+            "entity_handle": "39C",
+            "face_id": "f97",
+            "face_fingerprint": "1d79eb60f463db6c6af51574c3204fb77953c333e5f0626891954e2764f4e53a",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 5,
+          "exact_query_fraction": 0.555556,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f96",
+          "face_fingerprint": "6c20ef76c145afd08c24d2fa7de63d875314dab2e7d6fbc7351ba39f96f34dbf",
+          "surface_type": "plane",
+          "area": 66.18313297189084,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f96",
+            "entity_handle": "39C",
+            "face_id": "f96",
+            "face_fingerprint": "6c20ef76c145afd08c24d2fa7de63d875314dab2e7d6fbc7351ba39f96f34dbf",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 4,
+          "exact_query_fraction": 0.444444,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "medium",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_reconstruct_verified_profile_01",
+          "intent": "Reconstruct the a004 verified 24-tooth R4.255 roller-seat and straight-flank profile after native CHAMFEREDGE proved unstable",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile",
+          "feature_id": "sprocket_tooth_profile",
+          "editable_parameters": {
+            "tooth_count": 24,
+            "pitch_diameter_mm": 96.93,
+            "roller_seat_radius_mm": 4.255,
+            "root_radius_mm": 44.21,
+            "tip_radius_mm": 51.5,
+            "flank_type": "straight",
+            "reverted_operation_ids": [
+              "a005_roller_seat_01",
+              "a006_curved_flank_01"
+            ]
+          },
+          "parent_operation_ids": [
+            "a004_tooth_arcs_01"
+          ]
+        },
+        {
+          "operation_id": "a008_preserve_core_01",
+          "intent": "Recreate unchanged a004 hub, bore, keyway, and radial tap-drill around the isolated localized chamfer fallback",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "boolean_reconstruct",
+          "feature_id": null,
+          "editable_parameters": {
+            "hub_diameter_mm": 60,
+            "total_axial_length_mm": 28,
+            "rear_projection_mm": 20.79,
+            "bore_diameter_mm": 30,
+            "keyway_width_mm": 8,
+            "keyway_top_radius_mm": 18.3,
+            "tap_drill_diameter_mm": 5,
+            "tap_drill_axial_position_mm": -12.79
+          },
+          "parent_operation_ids": [
+            "a008_localized_chamfer_fallback_01",
+            "a004_preserved_core_01"
+          ]
+        },
+        {
+          "operation_id": "a008_localized_chamfer_fallback_01",
+          "intent": "Apply localized bilateral tip-rim chamfer envelopes over the drawing-stated 1.65 mm axial depth; reduce radial cap removal to 1.45 mm to address the a004 volume deficit while avoiding the regressed full-perimeter loft",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "intersect",
+          "feature_id": "tooth_side_chamfers",
+          "editable_parameters": {
+            "overall_width_mm": 7.21,
+            "chamfer_axial_depth_mm": 1.65,
+            "chamfer_radial_cap_mm": 1.45,
+            "end_envelope_radius_mm": 50.05,
+            "central_land_mm": 3.91,
+            "replaces_failed_operation_id": "a008_native_chamfer_01"
+          },
+          "parent_operation_ids": [
+            "a008_reconstruct_verified_profile_01",
+            "a004_restore_chamfer_01"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "candidate_to_ground_truth",
+      "error_type": "candidate_excess_or_displaced_surface",
+      "sample_count": 39,
+      "sample_fraction": 0.00195,
+      "estimated_area": 45.089,
+      "estimated_area_fraction": 0.00195,
+      "centroid": [
+        -0.318381,
+        -0.353095,
+        -46.600109
+      ],
+      "centroid_bbox_position": [
+        0.1181,
+        0.4965,
+        0.0442
+      ],
+      "bbox": {
+        "min": [
+          -3.616359,
+          -3.488107,
+          -47.859232
+        ],
+        "max": [
+          3.593642,
+          3.581404,
+          -45.464796
+        ]
+      },
+      "mean_distance_normalized": 0.007332,
+      "p95_distance_normalized": 0.008227,
+      "max_distance_normalized": 0.008255,
+      "mean_normal_offset_normalized": 0.007207,
+      "mean_normal_disagreement": 0.051208,
+      "dominant_source_normal": [
+        0.0,
+        0.1364,
+        -0.9907
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -2.719821,
+          -3.090063,
+          -47.358586
+        ],
+        [
+          -1.963612,
+          -2.074381,
+          -46.323667
+        ],
+        [
+          -2.805854,
+          -3.488107,
+          -47.764169
+        ],
+        [
+          0.153006,
+          -3.363035,
+          -47.636728
+        ],
+        [
+          1.806928,
+          -2.597566,
+          -46.856762
+        ],
+        [
+          2.672689,
+          -2.602214,
+          -46.861497
+        ],
+        [
+          -1.126286,
+          2.943333,
+          -47.209076
+        ],
+        [
+          -1.669182,
+          1.98139,
+          -46.228915
+        ],
+        [
+          -1.064138,
+          3.246671,
+          -47.518159
+        ]
+      ],
+      "region_id": "excess-08",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "39C",
+          "face_id": "f84",
+          "face_fingerprint": "4ea4772b9328392b6a74528f1272df0cb09346e37eeaa2f17acfd1c593b2fa0b",
+          "surface_type": "plane",
+          "area": 66.18313297189093,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f84",
+            "entity_handle": "39C",
+            "face_id": "f84",
+            "face_fingerprint": "4ea4772b9328392b6a74528f1272df0cb09346e37eeaa2f17acfd1c593b2fa0b",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 6,
+          "exact_query_fraction": 0.666667,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f85",
+          "face_fingerprint": "61575078feeeeb58e246c1b033456773d30e66e1df3099b1465cfeea45ccc51f",
+          "surface_type": "plane",
+          "area": 66.18313297189088,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f85",
+            "entity_handle": "39C",
+            "face_id": "f85",
+            "face_fingerprint": "61575078feeeeb58e246c1b033456773d30e66e1df3099b1465cfeea45ccc51f",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 3,
+          "exact_query_fraction": 0.333333,
+          "minimum_trimmed_face_distance_normalized": 0.0,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "high",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_reconstruct_verified_profile_01",
+          "intent": "Reconstruct the a004 verified 24-tooth R4.255 roller-seat and straight-flank profile after native CHAMFEREDGE proved unstable",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile",
+          "feature_id": "sprocket_tooth_profile",
+          "editable_parameters": {
+            "tooth_count": 24,
+            "pitch_diameter_mm": 96.93,
+            "roller_seat_radius_mm": 4.255,
+            "root_radius_mm": 44.21,
+            "tip_radius_mm": 51.5,
+            "flank_type": "straight",
+            "reverted_operation_ids": [
+              "a005_roller_seat_01",
+              "a006_curved_flank_01"
+            ]
+          },
+          "parent_operation_ids": [
+            "a004_tooth_arcs_01"
+          ]
+        },
+        {
+          "operation_id": "a008_preserve_core_01",
+          "intent": "Recreate unchanged a004 hub, bore, keyway, and radial tap-drill around the isolated localized chamfer fallback",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "boolean_reconstruct",
+          "feature_id": null,
+          "editable_parameters": {
+            "hub_diameter_mm": 60,
+            "total_axial_length_mm": 28,
+            "rear_projection_mm": 20.79,
+            "bore_diameter_mm": 30,
+            "keyway_width_mm": 8,
+            "keyway_top_radius_mm": 18.3,
+            "tap_drill_diameter_mm": 5,
+            "tap_drill_axial_position_mm": -12.79
+          },
+          "parent_operation_ids": [
+            "a008_localized_chamfer_fallback_01",
+            "a004_preserved_core_01"
+          ]
+        },
+        {
+          "operation_id": "a008_localized_chamfer_fallback_01",
+          "intent": "Apply localized bilateral tip-rim chamfer envelopes over the drawing-stated 1.65 mm axial depth; reduce radial cap removal to 1.45 mm to address the a004 volume deficit while avoiding the regressed full-perimeter loft",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "intersect",
+          "feature_id": "tooth_side_chamfers",
+          "editable_parameters": {
+            "overall_width_mm": 7.21,
+            "chamfer_axial_depth_mm": 1.65,
+            "chamfer_radial_cap_mm": 1.45,
+            "end_envelope_radius_mm": 50.05,
+            "central_land_mm": 3.91,
+            "replaces_failed_operation_id": "a008_native_chamfer_01"
+          },
+          "parent_operation_ids": [
+            "a008_reconstruct_verified_profile_01",
+            "a004_restore_chamfer_01"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    },
+    {
+      "direction": "ground_truth_to_candidate",
+      "error_type": "candidate_missing_or_displaced_surface",
+      "sample_count": 881,
+      "sample_fraction": 0.04405,
+      "estimated_area": 986.580575,
+      "estimated_area_fraction": 0.04405,
+      "centroid": [
+        -0.010525,
+        0.805243,
+        0.098017
+      ],
+      "centroid_bbox_position": [
+        0.1291,
+        0.5079,
+        0.501
+      ],
+      "bbox": {
+        "min": [
+          -2.728693,
+          -47.233824,
+          -47.281681
+        ],
+        "max": [
+          2.706309,
+          47.227246,
+          47.301583
+        ]
+      },
+      "mean_distance_normalized": 0.007379,
+      "p95_distance_normalized": 0.008254,
+      "max_distance_normalized": 0.008261,
+      "mean_normal_offset_normalized": -0.007379,
+      "mean_normal_disagreement": 0.092513,
+      "dominant_source_normal": [
+        -0.0004,
+        -0.3957,
+        0.9184
+      ],
+      "confidence": "medium",
+      "source_surface_query_points": [
+        [
+          -1.538097,
+          -44.264549,
+          -16.055813
+        ],
+        [
+          0.621554,
+          8.195733,
+          46.468923
+        ],
+        [
+          2.38723,
+          37.806163,
+          -24.308589
+        ],
+        [
+          1.968566,
+          -30.112036,
+          -33.829175
+        ],
+        [
+          -0.767161,
+          -9.236715,
+          -44.260236
+        ],
+        [
+          0.895455,
+          43.650311,
+          -9.843768
+        ],
+        [
+          -0.494769,
+          19.997226,
+          41.896695
+        ],
+        [
+          -0.471486,
+          -30.364176,
+          36.274992
+        ],
+        [
+          -2.064399,
+          -42.095594,
+          -19.979566
+        ]
+      ],
+      "source_brep_faces": [
+        {
+          "face_id": "face-3395dd0edcbe",
+          "sample_fraction": 0.036322,
+          "surface_type": "cylinder",
+          "radius": 4.326275
+        },
+        {
+          "face_id": "face-b029bcf911c3",
+          "sample_fraction": 0.032917,
+          "surface_type": "cylinder",
+          "radius": 4.326275
+        },
+        {
+          "face_id": "face-58f35204996c",
+          "sample_fraction": 0.031782,
+          "surface_type": "cylinder",
+          "radius": 4.326275
+        },
+        {
+          "face_id": "face-c0e2e1270ff2",
+          "sample_fraction": 0.027242,
+          "surface_type": "cylinder",
+          "radius": 4.326275
+        },
+        {
+          "face_id": "face-4e006775c8c8",
+          "sample_fraction": 0.023837,
+          "surface_type": "cylinder",
+          "radius": 4.326275
+        }
+      ],
+      "region_id": "missing-01",
+      "candidate_topology_faces": [
+        {
+          "entity_handle": "39C",
+          "face_id": "f95",
+          "face_fingerprint": "6743fa1efda1f53e2df4c0f558f058dbeb810323c860e806410987a08a159d5d",
+          "surface_type": "plane",
+          "area": 66.18313297189084,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f95",
+            "entity_handle": "39C",
+            "face_id": "f95",
+            "face_fingerprint": "6743fa1efda1f53e2df4c0f558f058dbeb810323c860e806410987a08a159d5d",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006289,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f74",
+          "face_fingerprint": "428b2cde715e9222bc510aab079043fb85638d6c953f8903008e005a3844dec2",
+          "surface_type": "plane",
+          "area": 66.18313297189084,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f74",
+            "entity_handle": "39C",
+            "face_id": "f74",
+            "face_fingerprint": "428b2cde715e9222bc510aab079043fb85638d6c953f8903008e005a3844dec2",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.00641,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f106",
+          "face_fingerprint": "52110a29ea35efa52f513f181a3067b70452ecdb2035d92dfb697ef48ef5d93b",
+          "surface_type": "plane",
+          "area": 66.18313297189083,
+          "aligned_bounds": {
+            "min": [
+              17.173643,
+              -44.33731210066735,
+              -8.355830219760286
+            ],
+            "max": [
+              24.383643,
+              -39.61702101601755,
+              -6.392487534867541e-07
+            ]
+          },
+          "bbox_distance_normalized": 0.098229,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "39C:f106",
+            "entity_handle": "39C",
+            "face_id": "f106",
+            "face_fingerprint": "52110a29ea35efa52f513f181a3067b70452ecdb2035d92dfb697ef48ef5d93b",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006619,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f65",
+          "face_fingerprint": "5bd9ae5fafcba8a05c59b5b8671f5da39d20e46074c1dca503c3e214ff201749",
+          "surface_type": "plane",
+          "area": 66.18313297189079,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f65",
+            "entity_handle": "39C",
+            "face_id": "f65",
+            "face_fingerprint": "5bd9ae5fafcba8a05c59b5b8671f5da39d20e46074c1dca503c3e214ff201749",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.006787,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f92",
+          "face_fingerprint": "7bac3b29b70df87ca0b77e4f79f9f9eb52a659c8e9c2168e1d12c0a360e9636c",
+          "surface_type": "plane",
+          "area": 66.18313297189084,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f92",
+            "entity_handle": "39C",
+            "face_id": "f92",
+            "face_fingerprint": "7bac3b29b70df87ca0b77e4f79f9f9eb52a659c8e9c2168e1d12c0a360e9636c",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.007153,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f64",
+          "face_fingerprint": "9f275340014943f343c2b5f1f329177b134335c91124a6b43f56d376c60e9423",
+          "surface_type": "plane",
+          "area": 66.18313297189071,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f64",
+            "entity_handle": "39C",
+            "face_id": "f64",
+            "face_fingerprint": "9f275340014943f343c2b5f1f329177b134335c91124a6b43f56d376c60e9423",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.007515,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f105",
+          "face_fingerprint": "aa0888379e7e979ddfdb13288f7ffa26496c3a3f110dbdb407e17f0def28034e",
+          "surface_type": "plane",
+          "area": 66.18313297189088,
+          "aligned_bounds": {
+            "min": [
+              17.173643,
+              -31.351214233197872,
+              -12.772427898689962
+            ],
+            "max": [
+              24.383643,
+              -28.954411,
+              -3.4796150756687325
+            ]
+          },
+          "bbox_distance_normalized": 0.098229,
+          "bbox_overlap": 0.0,
+          "boolean_lineage": {
+            "node_id": "39C:f105",
+            "entity_handle": "39C",
+            "face_id": "f105",
+            "face_fingerprint": "aa0888379e7e979ddfdb13288f7ffa26496c3a3f110dbdb407e17f0def28034e",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.007737,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        },
+        {
+          "entity_handle": "39C",
+          "face_id": "f83",
+          "face_fingerprint": "d6d4a39c595e16aecf277c822e5c9d7d13c9e37af0ccec74ec9ac2edc798e3e0",
+          "surface_type": "plane",
+          "area": 66.1831329718909,
+          "aligned_bounds": null,
+          "bbox_distance_normalized": null,
+          "bbox_overlap": null,
+          "boolean_lineage": {
+            "node_id": "39C:f83",
+            "entity_handle": "39C",
+            "face_id": "f83",
+            "face_fingerprint": "d6d4a39c595e16aecf277c822e5c9d7d13c9e37af0ccec74ec9ac2edc798e3e0",
+            "status": "created_or_modified",
+            "parent_face_candidates": [],
+            "candidate_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a008_preserve_core_01",
+              "a008_localized_chamfer_fallback_01"
+            ],
+            "evidence": [
+              "topology_snapshot_delta",
+              "captured_mcp_job"
+            ],
+            "confidence": "low",
+            "origin_mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          "exact_query_hits": 1,
+          "exact_query_fraction": 0.111111,
+          "minimum_trimmed_face_distance_normalized": 0.007841,
+          "query_methods": [
+            "trimmed_surface"
+          ]
+        }
+      ],
+      "topology_mapping_confidence": "low",
+      "engineering_feature_candidates": [],
+      "responsible_operation_candidates": [
+        {
+          "operation_id": "a008_reconstruct_verified_profile_01",
+          "intent": "Reconstruct the a004 verified 24-tooth R4.255 roller-seat and straight-flank profile after native CHAMFEREDGE proved unstable",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "replace_profile",
+          "feature_id": "sprocket_tooth_profile",
+          "editable_parameters": {
+            "tooth_count": 24,
+            "pitch_diameter_mm": 96.93,
+            "roller_seat_radius_mm": 4.255,
+            "root_radius_mm": 44.21,
+            "tip_radius_mm": 51.5,
+            "flank_type": "straight",
+            "reverted_operation_ids": [
+              "a005_roller_seat_01",
+              "a006_curved_flank_01"
+            ]
+          },
+          "parent_operation_ids": [
+            "a004_tooth_arcs_01"
+          ]
+        },
+        {
+          "operation_id": "a008_preserve_core_01",
+          "intent": "Recreate unchanged a004 hub, bore, keyway, and radial tap-drill around the isolated localized chamfer fallback",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "boolean_reconstruct",
+          "feature_id": null,
+          "editable_parameters": {
+            "hub_diameter_mm": 60,
+            "total_axial_length_mm": 28,
+            "rear_projection_mm": 20.79,
+            "bore_diameter_mm": 30,
+            "keyway_width_mm": 8,
+            "keyway_top_radius_mm": 18.3,
+            "tap_drill_diameter_mm": 5,
+            "tap_drill_axial_position_mm": -12.79
+          },
+          "parent_operation_ids": [
+            "a008_localized_chamfer_fallback_01",
+            "a004_preserved_core_01"
+          ]
+        },
+        {
+          "operation_id": "a008_localized_chamfer_fallback_01",
+          "intent": "Apply localized bilateral tip-rim chamfer envelopes over the drawing-stated 1.65 mm axial depth; reduce radial cap removal to 1.45 mm to address the a004 volume deficit while avoiding the regressed full-perimeter loft",
+          "evidence": [
+            "boolean_face_lineage",
+            "topology_snapshot_delta",
+            "captured_mcp_job"
+          ],
+          "confidence": "medium",
+          "operation_type": "intersect",
+          "feature_id": "tooth_side_chamfers",
+          "editable_parameters": {
+            "overall_width_mm": 7.21,
+            "chamfer_axial_depth_mm": 1.65,
+            "chamfer_radial_cap_mm": 1.45,
+            "end_envelope_radius_mm": 50.05,
+            "central_land_mm": 3.91,
+            "replaces_failed_operation_id": "a008_native_chamfer_01"
+          },
+          "parent_operation_ids": [
+            "a008_reconstruct_verified_profile_01",
+            "a004_restore_chamfer_01"
+          ]
+        }
+      ],
+      "exact_face_query": {
+        "query_count": 9,
+        "mapped": true,
+        "method": "trimmed_brep_surface_and_boundary_distance"
+      }
+    }
+  ],
+  "native_topology": {
+    "protocol": "evocad-native-feature-localization-v1",
+    "entity_count": 1,
+    "face_count": 106,
+    "adjacency_count": 306,
+    "feature_candidate_count": 52,
+    "export_errors": [],
+    "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+    "boolean_lineage": {
+      "schema_version": "1.0",
+      "protocol": "evocad-boolean-face-lineage-v2",
+      "snapshot_comparison": {
+        "parent_face_count": 130,
+        "current_face_count": 106,
+        "inherited_face_count": 2,
+        "created_or_modified_face_count": 104,
+        "deleted_or_modified_parent_face_count": 128,
+        "captured_job_count": 1,
+        "lineage_mode": "multi_job_fingerprint_chain"
+      },
+      "operation_graph": {
+        "nodes": [
+          {
+            "operation_id": "a008_reconstruct_verified_profile_01",
+            "intent": "Reconstruct the a004 verified 24-tooth R4.255 roller-seat and straight-flank profile after native CHAMFEREDGE proved unstable",
+            "operation_type": "replace_profile",
+            "feature_id": "sprocket_tooth_profile",
+            "parameters": {
+              "tooth_count": 24,
+              "pitch_diameter_mm": 96.93,
+              "roller_seat_radius_mm": 4.255,
+              "root_radius_mm": 44.21,
+              "tip_radius_mm": 51.5,
+              "flank_type": "straight",
+              "reverted_operation_ids": [
+                "a005_roller_seat_01",
+                "a006_curved_flank_01"
+              ]
+            },
+            "parent_operation_ids": [
+              "a004_tooth_arcs_01"
+            ],
+            "mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          {
+            "operation_id": "a008_native_chamfer_01",
+            "intent": "Apply native symmetric 1.65 mm chamfers to the two axial outer tooth-profile edge loops at z=0 and z=7.21, replacing the a004 conical radial-cap approximation",
+            "operation_type": "chamfer_edge",
+            "feature_id": "tooth_side_chamfers",
+            "parameters": {
+              "overall_width_mm": 7.21,
+              "chamfer_distance_1_mm": 1.65,
+              "chamfer_distance_2_mm": 1.65,
+              "rear_face_z_mm": 0,
+              "front_face_z_mm": 7.21,
+              "validation": "audited_pre_post_brep_lineage"
+            },
+            "parent_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a004_restore_chamfer_01"
+            ],
+            "mcp_job_id": null
+          },
+          {
+            "operation_id": "a008_preserve_core_01",
+            "intent": "Recreate unchanged a004 hub, bore, keyway, and radial tap-drill around the isolated localized chamfer fallback",
+            "operation_type": "boolean_reconstruct",
+            "feature_id": null,
+            "parameters": {
+              "hub_diameter_mm": 60,
+              "total_axial_length_mm": 28,
+              "rear_projection_mm": 20.79,
+              "bore_diameter_mm": 30,
+              "keyway_width_mm": 8,
+              "keyway_top_radius_mm": 18.3,
+              "tap_drill_diameter_mm": 5,
+              "tap_drill_axial_position_mm": -12.79
+            },
+            "parent_operation_ids": [
+              "a008_localized_chamfer_fallback_01",
+              "a004_preserved_core_01"
+            ],
+            "mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          },
+          {
+            "operation_id": "a008_localized_chamfer_fallback_01",
+            "intent": "Apply localized bilateral tip-rim chamfer envelopes over the drawing-stated 1.65 mm axial depth; reduce radial cap removal to 1.45 mm to address the a004 volume deficit while avoiding the regressed full-perimeter loft",
+            "operation_type": "intersect",
+            "feature_id": "tooth_side_chamfers",
+            "parameters": {
+              "overall_width_mm": 7.21,
+              "chamfer_axial_depth_mm": 1.65,
+              "chamfer_radial_cap_mm": 1.45,
+              "end_envelope_radius_mm": 50.05,
+              "central_land_mm": 3.91,
+              "replaces_failed_operation_id": "a008_native_chamfer_01"
+            },
+            "parent_operation_ids": [
+              "a008_reconstruct_verified_profile_01",
+              "a004_restore_chamfer_01"
+            ],
+            "mcp_job_id": "890c1448ed16477e8c8d3d03c558be57"
+          }
+        ],
+        "edges": [
+          {
+            "source": "a004_tooth_arcs_01",
+            "target": "a008_reconstruct_verified_profile_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a008_reconstruct_verified_profile_01",
+            "target": "a008_native_chamfer_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a004_restore_chamfer_01",
+            "target": "a008_native_chamfer_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a008_localized_chamfer_fallback_01",
+            "target": "a008_preserve_core_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a004_preserved_core_01",
+            "target": "a008_preserve_core_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a008_reconstruct_verified_profile_01",
+            "target": "a008_localized_chamfer_fallback_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a004_restore_chamfer_01",
+            "target": "a008_localized_chamfer_fallback_01",
+            "relation": "declared_parent"
+          }
+        ]
+      },
+      "deleted_parent_face_examples": [
+        {
+          "node_id": "352:f1",
+          "entity_handle": "352",
+          "face_id": "f1",
+          "face_fingerprint": "0072da200a7a9767fdc0c54a58d2124c09bb56f3910a0292acd2ea0a65997b8f"
+        },
+        {
+          "node_id": "352:f2",
+          "entity_handle": "352",
+          "face_id": "f2",
+          "face_fingerprint": "cbba839c74ec6000ea541e45277fec337e8a509c2de215d31a5bde9cb16e0cc7"
+        },
+        {
+          "node_id": "352:f3",
+          "entity_handle": "352",
+          "face_id": "f3",
+          "face_fingerprint": "c553007d8f515abbcc163f9319a29610f04586129f61bc1a55a8e10286012d08"
+        },
+        {
+          "node_id": "352:f4",
+          "entity_handle": "352",
+          "face_id": "f4",
+          "face_fingerprint": "78853f193fecf0eaf10363bceb0648da6f8fc0730c09628f701ab8d5d67d4425"
+        },
+        {
+          "node_id": "352:f5",
+          "entity_handle": "352",
+          "face_id": "f5",
+          "face_fingerprint": "1cc54c3cf1904d11c30f292118771f0f6c850574c1aac2da0c01ca83b835c516"
+        },
+        {
+          "node_id": "352:f6",
+          "entity_handle": "352",
+          "face_id": "f6",
+          "face_fingerprint": "e4fa9f5980d6744ab6f5af47ef99e7bbac4942226ab3a1a67bca759a530ef8e1"
+        },
+        {
+          "node_id": "352:f7",
+          "entity_handle": "352",
+          "face_id": "f7",
+          "face_fingerprint": "57ff9e2ded8f82c7f9423e836ebd97f1bc37278b6a6428df5c331dc76a128e50"
+        },
+        {
+          "node_id": "352:f10",
+          "entity_handle": "352",
+          "face_id": "f10",
+          "face_fingerprint": "9f9d376fd5a108cb2c30c6e13db1d5057ae9d00aa27d6e3737e6ccb31479be88"
+        },
+        {
+          "node_id": "352:f11",
+          "entity_handle": "352",
+          "face_id": "f11",
+          "face_fingerprint": "55a69718e873e49bda54725f5bc9cb2b46f49d6c3d2431fba97b4ace4b2642fd"
+        },
+        {
+          "node_id": "352:f12",
+          "entity_handle": "352",
+          "face_id": "f12",
+          "face_fingerprint": "ddd8a12605e522a1209220339c64f15f7beae9d2048b347d3fdf7b9d36c21146"
+        },
+        {
+          "node_id": "352:f13",
+          "entity_handle": "352",
+          "face_id": "f13",
+          "face_fingerprint": "8018c0241774b3f49a776b2ee23219cf80562047f17ff529afeb8354ba4fdcf5"
+        },
+        {
+          "node_id": "352:f14",
+          "entity_handle": "352",
+          "face_id": "f14",
+          "face_fingerprint": "6705c1a492db8c3145cbb1faf5061eab35d00052d495a07844101b03676ced47"
+        },
+        {
+          "node_id": "352:f15",
+          "entity_handle": "352",
+          "face_id": "f15",
+          "face_fingerprint": "1c8b2e954cf214f852d3d990b82ce8ea985b35986b713abc170471e8722f4e72"
+        },
+        {
+          "node_id": "352:f16",
+          "entity_handle": "352",
+          "face_id": "f16",
+          "face_fingerprint": "5b268bdb48bf720a6b65046a1ce1ee88776839b521a1f01c0f79387a69fe21b0"
+        },
+        {
+          "node_id": "352:f17",
+          "entity_handle": "352",
+          "face_id": "f17",
+          "face_fingerprint": "dec5c240e239655e4eda1dd691cda88b1303d8c40d87d38efbe245028a5b8bce"
+        },
+        {
+          "node_id": "352:f18",
+          "entity_handle": "352",
+          "face_id": "f18",
+          "face_fingerprint": "ecd63abd41dba8d28e0bc98240fc6d9a7cbe95497057f96b4a965a7025e37cb8"
+        },
+        {
+          "node_id": "352:f19",
+          "entity_handle": "352",
+          "face_id": "f19",
+          "face_fingerprint": "a0977fc39dc25d1d843eddb721efb4d39f70b91c49ffa7fae5a1262e8e2042a2"
+        },
+        {
+          "node_id": "352:f20",
+          "entity_handle": "352",
+          "face_id": "f20",
+          "face_fingerprint": "a86390ca5e1b6a85256650c217576e3f19856353dd26fea78ec80e2092f1160e"
+        },
+        {
+          "node_id": "352:f21",
+          "entity_handle": "352",
+          "face_id": "f21",
+          "face_fingerprint": "8c5598ac354ef425112da0dfb793ad36af55cf43f2dff091524704f824448694"
+        },
+        {
+          "node_id": "352:f22",
+          "entity_handle": "352",
+          "face_id": "f22",
+          "face_fingerprint": "c43be57bff5d72f3ba1b5ee78074954d47937fffe560b9f618d35a9a55e72b11"
+        },
+        {
+          "node_id": "352:f23",
+          "entity_handle": "352",
+          "face_id": "f23",
+          "face_fingerprint": "ced24ed787e0ccc8311ff145f7d5af0c2c16960a8e98ba6ec41d9b77dc5aeec8"
+        },
+        {
+          "node_id": "352:f24",
+          "entity_handle": "352",
+          "face_id": "f24",
+          "face_fingerprint": "85208d9e1e7eb8ef2b78a00b09e906da2a574eeaf7ebbb6085ab6fc8c62ad203"
+        },
+        {
+          "node_id": "352:f25",
+          "entity_handle": "352",
+          "face_id": "f25",
+          "face_fingerprint": "03cc3a0150ed311f046d2a89e5dd8d4e50398b20269eacbdaf4094a789a9dfb9"
+        },
+        {
+          "node_id": "352:f26",
+          "entity_handle": "352",
+          "face_id": "f26",
+          "face_fingerprint": "ba8b464e9148569834200430cdded97fb877609e476404c6cf231e5ef73ecde3"
+        },
+        {
+          "node_id": "352:f27",
+          "entity_handle": "352",
+          "face_id": "f27",
+          "face_fingerprint": "9d09ff4f9c5db416debf12ead2ea3ed94f25552d742cfc71c22a4cb4d1a105dc"
+        },
+        {
+          "node_id": "352:f28",
+          "entity_handle": "352",
+          "face_id": "f28",
+          "face_fingerprint": "e8d2c2af0c25a54efc3d8314e01d7acef3b1ff09ecb6c59b515d37ddcc4b31c8"
+        },
+        {
+          "node_id": "352:f29",
+          "entity_handle": "352",
+          "face_id": "f29",
+          "face_fingerprint": "2d9bc93a44906ee34f3f00c21ce7896819df2f4479551c3c4bc16395f3e3f854"
+        },
+        {
+          "node_id": "352:f30",
+          "entity_handle": "352",
+          "face_id": "f30",
+          "face_fingerprint": "7fdb2104d3627d554c55463b12264e22bf5b1d72e3f31d2e0458207dda7c7c0d"
+        },
+        {
+          "node_id": "352:f31",
+          "entity_handle": "352",
+          "face_id": "f31",
+          "face_fingerprint": "0ca8e3857cd4ab494eeee3e86a377796b1f30aa599e218582ac053e758ae48a0"
+        },
+        {
+          "node_id": "352:f32",
+          "entity_handle": "352",
+          "face_id": "f32",
+          "face_fingerprint": "a1b261b1332b1ee7adc3f7624769cfddd95c2e8e80df1eec037517d3eb64a5d5"
+        },
+        {
+          "node_id": "352:f33",
+          "entity_handle": "352",
+          "face_id": "f33",
+          "face_fingerprint": "e44bdaf8cf2c2b6a0ec872ef2abcf5d01e525cb1e7c40bba171be010c532d644"
+        },
+        {
+          "node_id": "352:f34",
+          "entity_handle": "352",
+          "face_id": "f34",
+          "face_fingerprint": "b3d404c7098e49d41b4e985975953b4c097e54c2c5c017dd51cf2f4c9b614340"
+        }
+      ],
+      "interpretation": "Stable fingerprints prove inheritance. Snapshot-delta faces identify the operation group that changed topology; multiple operations in one job remain causally ambiguous."
+    },
+    "exact_face_query_count": 81
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [
+      {
+        "point": [
+          -1.412045,
+          -21.32131,
+          -41.325482
+        ],
+        "distance_normalized": 0.008257,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          2.923496,
+          2.226009,
+          -46.478167
+        ],
+        "distance_normalized": 0.008257,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          2.060515,
+          -14.118075,
+          -44.282036
+        ],
+        "distance_normalized": 0.008256,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          -3.079631,
+          46.464858,
+          2.212946
+        ],
+        "distance_normalized": 0.008255,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -3.476834,
+          2.245257,
+          -46.497779
+        ],
+        "distance_normalized": 0.008253,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          2.97369,
+          -14.195238,
+          44.327557
+        ],
+        "distance_normalized": 0.008253,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          2.394015,
+          45.538595,
+          -9.840864
+        ],
+        "distance_normalized": 0.008248,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          0.958159,
+          -41.455328,
+          -21.28782
+        ],
+        "distance_normalized": 0.008247,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          2.08591,
+          46.388612,
+          2.138118
+        ],
+        "distance_normalized": 0.008246,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -1.167023,
+          -9.941611,
+          -45.360251
+        ],
+        "distance_normalized": 0.008242,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          -0.011811,
+          46.566901,
+          -2.313092
+        ],
+        "distance_normalized": 0.008239,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -1.237151,
+          2.123567,
+          -46.373785
+        ],
+        "distance_normalized": 0.008236,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          -1.819645,
+          41.222932,
+          -21.34776
+        ],
+        "distance_normalized": 0.008236,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.563925,
+          -2.345546,
+          46.599969
+        ],
+        "distance_normalized": 0.008224,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -1.395374,
+          9.990183,
+          45.274271
+        ],
+        "distance_normalized": 0.008209,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          2.660194,
+          -2.382667,
+          46.637793
+        ],
+        "distance_normalized": 0.008199,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          0.321818,
+          -39.199509,
+          -25.387132
+        ],
+        "distance_normalized": 0.008198,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -3.191375,
+          -14.399333,
+          44.447959
+        ],
+        "distance_normalized": 0.00818,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          0.657831,
+          46.682873,
+          2.426909
+        ],
+        "distance_normalized": 0.008162,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          0.377123,
+          31.288122,
+          -34.131842
+        ],
+        "distance_normalized": 0.008161,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.246428,
+          -34.731134,
+          -31.293742
+        ],
+        "distance_normalized": 0.008158,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          2.755012,
+          34.748003,
+          31.293902
+        ],
+        "distance_normalized": 0.008144,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          2.486056,
+          -21.398927,
+          -41.024548
+        ],
+        "distance_normalized": 0.008128,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          3.151573,
+          10.05278,
+          45.163461
+        ],
+        "distance_normalized": 0.008126,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          2.095916,
+          34.068124,
+          31.287524
+        ],
+        "distance_normalized": 0.008115,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.971175,
+          45.147128,
+          -10.062008
+        ],
+        "distance_normalized": 0.008114,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -0.397769,
+          -31.287194,
+          -34.033104
+        ],
+        "distance_normalized": 0.008088,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          2.081339,
+          1.939494,
+          46.186227
+        ],
+        "distance_normalized": 0.008083,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -1.5811,
+          39.245054,
+          -25.55093
+        ],
+        "distance_normalized": 0.008078,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          1.461192,
+          2.517602,
+          -46.775283
+        ],
+        "distance_normalized": 0.008062,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          -1.352228,
+          -10.094048,
+          -45.090408
+        ],
+        "distance_normalized": 0.008058,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          -0.455708,
+          -10.094972,
+          -45.088773
+        ],
+        "distance_normalized": 0.008057,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          0.854502,
+          45.838712,
+          -9.671325
+        ],
+        "distance_normalized": 0.008056,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -3.338932,
+          -33.974478,
+          31.286646
+        ],
+        "distance_normalized": 0.008035,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          -0.491028,
+          2.544412,
+          -46.8026
+        ],
+        "distance_normalized": 0.008027,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          1.845039,
+          14.597294,
+          44.564741
+        ],
+        "distance_normalized": 0.008,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          2.950685,
+          -33.934225,
+          -31.286266
+        ],
+        "distance_normalized": 0.007992,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -3.610223,
+          -34.939482,
+          31.295698
+        ],
+        "distance_normalized": 0.007988,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          -2.046663,
+          33.924809,
+          -31.286178
+        ],
+        "distance_normalized": 0.007984,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -1.864747,
+          31.2861,
+          33.916276
+        ],
+        "distance_normalized": 0.007974,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -2.124039,
+          46.100277,
+          1.855142
+        ],
+        "distance_normalized": 0.007967,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -1.008361,
+          9.617381,
+          45.934202
+        ],
+        "distance_normalized": 0.007956,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          1.034442,
+          33.901127,
+          -31.285956
+        ],
+        "distance_normalized": 0.007955,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          1.899864,
+          25.678951,
+          -39.280642
+        ],
+        "distance_normalized": 0.007953,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.171616,
+          -14.64602,
+          44.593486
+        ],
+        "distance_normalized": 0.007947,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          2.617067,
+          -40.833387,
+          -21.448231
+        ],
+        "distance_normalized": 0.007942,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.358901,
+          44.037106,
+          -13.702885
+        ],
+        "distance_normalized": 0.007939,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          1.491102,
+          24.617914,
+          38.985648
+        ],
+        "distance_normalized": 0.007916,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          1.604211,
+          -21.455687,
+          -40.804478
+        ],
+        "distance_normalized": 0.00791,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -2.028294,
+          46.903646,
+          2.643578
+        ],
+        "distance_normalized": 0.007898,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          3.588656,
+          46.898102,
+          2.638138
+        ],
+        "distance_normalized": 0.007897,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -2.911402,
+          25.747156,
+          39.299609
+        ],
+        "distance_normalized": 0.007885,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          2.911141,
+          9.580296,
+          45.999849
+        ],
+        "distance_normalized": 0.007879,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          1.001859,
+          24.569478,
+          -38.972177
+        ],
+        "distance_normalized": 0.007856,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          2.392222,
+          -31.285149,
+          -33.815148
+        ],
+        "distance_normalized": 0.007849,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          3.164346,
+          44.655965,
+          -14.751931
+        ],
+        "distance_normalized": 0.007832,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -1.818295,
+          14.751943,
+          44.655973
+        ],
+        "distance_normalized": 0.007827,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          2.570347,
+          43.992053,
+          -13.626515
+        ],
+        "distance_normalized": 0.007825,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -0.592902,
+          -39.322864,
+          -25.830806
+        ],
+        "distance_normalized": 0.007807,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -3.033767,
+          33.770899,
+          -31.284734
+        ],
+        "distance_normalized": 0.007792,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          1.163659,
+          -40.713153,
+          -21.479242
+        ],
+        "distance_normalized": 0.007785,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -1.591701,
+          24.506971,
+          -38.954798
+        ],
+        "distance_normalized": 0.007768,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -1.316986,
+          13.581961,
+          43.96577
+        ],
+        "distance_normalized": 0.007751,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          0.638195,
+          2.748834,
+          -47.010894
+        ],
+        "distance_normalized": 0.007746,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          2.258811,
+          47.016385,
+          2.754222
+        ],
+        "distance_normalized": 0.007739,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -2.119216,
+          -14.842982,
+          44.709678
+        ],
+        "distance_normalized": 0.007718,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -2.114597,
+          21.118743,
+          42.110886
+        ],
+        "distance_normalized": 0.007717,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -2.925346,
+          9.500086,
+          46.141836
+        ],
+        "distance_normalized": 0.007716,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -3.218088,
+          24.444628,
+          38.937469
+        ],
+        "distance_normalized": 0.007667,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -1.988856,
+          -26.014865,
+          39.374041
+        ],
+        "distance_normalized": 0.007597,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          0.473497,
+          2.842322,
+          47.106153
+        ],
+        "distance_normalized": 0.007595,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          2.543216,
+          13.481155,
+          43.906302
+        ],
+        "distance_normalized": 0.007568,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          3.15621,
+          -31.28337,
+          33.625464
+        ],
+        "distance_normalized": 0.007564,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          -1.294246,
+          21.08174,
+          -42.25435
+        ],
+        "distance_normalized": 0.007545,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          2.323907,
+          26.077942,
+          39.391577
+        ],
+        "distance_normalized": 0.007518,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -1.49146,
+          -24.35144,
+          38.911561
+        ],
+        "distance_normalized": 0.007508,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          -2.760789,
+          24.313386,
+          38.90098
+        ],
+        "distance_normalized": 0.007438,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          3.593642,
+          38.949325,
+          -24.93061
+        ],
+        "distance_normalized": 0.007372,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          0.625603,
+          31.301025,
+          -35.507243
+        ],
+        "distance_normalized": 0.007362,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.111535,
+          -38.888789,
+          -24.269549
+        ],
+        "distance_normalized": 0.00735,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          3.085544,
+          35.517564,
+          31.301122
+        ],
+        "distance_normalized": 0.007344,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -2.666591,
+          -9.34579,
+          -46.41497
+        ],
+        "distance_normalized": 0.007337,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          -3.148577,
+          -31.281984,
+          33.47774
+        ],
+        "distance_normalized": 0.007288,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          -0.383103,
+          44.89525,
+          -15.157549
+        ],
+        "distance_normalized": 0.007276,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          3.377418,
+          21.559669,
+          -40.401335
+        ],
+        "distance_normalized": 0.007226,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          1.213411,
+          21.562545,
+          40.390189
+        ],
+        "distance_normalized": 0.007199,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.682543,
+          -26.363656,
+          -39.471011
+        ],
+        "distance_normalized": 0.00713,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -2.854735,
+          24.155795,
+          38.857165
+        ],
+        "distance_normalized": 0.007109,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          1.078449,
+          24.153012,
+          38.856392
+        ],
+        "distance_normalized": 0.007105,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -3.521422,
+          -21.576985,
+          -40.334186
+        ],
+        "distance_normalized": 0.007074,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          3.086001,
+          46.590794,
+          -9.246467
+        ],
+        "distance_normalized": 0.007062,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          3.303395,
+          -15.290181,
+          44.973493
+        ],
+        "distance_normalized": 0.007057,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -1.197553,
+          -20.986375,
+          42.624084
+        ],
+        "distance_normalized": 0.007044,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          3.593642,
+          -9.416237,
+          46.079506
+        ],
+        "distance_normalized": 0.007038,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          2.887066,
+          45.704295,
+          1.466521
+        ],
+        "distance_normalized": 0.007033,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          2.727185,
+          31.303324,
+          -35.752303
+        ],
+        "distance_normalized": 0.007033,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          3.120971,
+          -10.415718,
+          44.520992
+        ],
+        "distance_normalized": 0.007016,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -0.895873,
+          26.450765,
+          39.495232
+        ],
+        "distance_normalized": 0.006999,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.79752,
+          -15.333533,
+          44.999067
+        ],
+        "distance_normalized": 0.006989,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          0.414975,
+          -3.170471,
+          47.440519
+        ],
+        "distance_normalized": 0.006977,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -2.917985,
+          -20.971896,
+          -42.680219
+        ],
+        "distance_normalized": 0.006961,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          3.549853,
+          47.458691,
+          -3.188305
+        ],
+        "distance_normalized": 0.006952,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -0.693835,
+          -9.204572,
+          46.664957
+        ],
+        "distance_normalized": 0.006943,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -1.613841,
+          -20.968427,
+          42.69367
+        ],
+        "distance_normalized": 0.00694,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          3.284747,
+          20.96544,
+          42.705264
+        ],
+        "distance_normalized": 0.006919,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -1.320912,
+          21.596406,
+          40.258905
+        ],
+        "distance_normalized": 0.006904,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -2.962479,
+          -35.837784,
+          31.304126
+        ],
+        "distance_normalized": 0.0069,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          0.944228,
+          3.208757,
+          47.479529
+        ],
+        "distance_normalized": 0.006897,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -3.090993,
+          3.223674,
+          -47.494727
+        ],
+        "distance_normalized": 0.00686,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          3.559515,
+          24.049001,
+          -38.82747
+        ],
+        "distance_normalized": 0.006854,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -3.616359,
+          25.919382,
+          -39.206965
+        ],
+        "distance_normalized": 0.006847,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          2.506431,
+          -3.231623,
+          47.502829
+        ],
+        "distance_normalized": 0.006847,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          1.098399,
+          -21.603081,
+          40.233013
+        ],
+        "distance_normalized": 0.006841,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          -2.838073,
+          33.266197,
+          -31.279999
+        ],
+        "distance_normalized": 0.006829,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          2.625197,
+          15.425146,
+          45.053113
+        ],
+        "distance_normalized": 0.006827,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          0.952048,
+          21.607206,
+          -40.217027
+        ],
+        "distance_normalized": 0.006801,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -1.823535,
+          -13.157035,
+          -43.715094
+        ],
+        "distance_normalized": 0.006793,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          -0.423083,
+          26.585767,
+          39.532767
+        ],
+        "distance_normalized": 0.006791,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.504024,
+          -33.24799,
+          -31.279829
+        ],
+        "distance_normalized": 0.006786,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          3.408871,
+          10.466674,
+          44.430788
+        ],
+        "distance_normalized": 0.006774,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -1.279446,
+          -15.458247,
+          45.072639
+        ],
+        "distance_normalized": 0.00677,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          2.345935,
+          31.305065,
+          35.93787
+        ],
+        "distance_normalized": 0.006754,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          0.738368,
+          -20.936548,
+          -42.817269
+        ],
+        "distance_normalized": 0.006749,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -3.274845,
+          31.305137,
+          -35.945575
+        ],
+        "distance_normalized": 0.006743,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -3.107493,
+          -3.293187,
+          47.565558
+        ],
+        "distance_normalized": 0.006706,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -0.599813,
+          31.305418,
+          -35.975578
+        ],
+        "distance_normalized": 0.006693,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -0.035235,
+          -1.355168,
+          -45.590833
+        ],
+        "distance_normalized": 0.006657,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          -0.396095,
+          -36.001556,
+          -31.305659
+        ],
+        "distance_normalized": 0.006652,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          3.30481,
+          45.582226,
+          -1.346721
+        ],
+        "distance_normalized": 0.006624,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -3.263735,
+          10.507153,
+          44.359132
+        ],
+        "distance_normalized": 0.006571,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          0.298562,
+          -3.356918,
+          47.630497
+        ],
+        "distance_normalized": 0.006567,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          1.230683,
+          -31.278841,
+          -33.142665
+        ],
+        "distance_normalized": 0.006521,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -1.546095,
+          -36.084325,
+          -31.306436
+        ],
+        "distance_normalized": 0.006513,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          1.060114,
+          1.310967,
+          45.545795
+        ],
+        "distance_normalized": 0.006497,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          1.105411,
+          -36.103396,
+          -31.306614
+        ],
+        "distance_normalized": 0.006485,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.3437,
+          47.6721,
+          3.397749
+        ],
+        "distance_normalized": 0.00647,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          3.119155,
+          -3.400053,
+          47.674448
+        ],
+        "distance_normalized": 0.006458,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          -3.088907,
+          -36.116798,
+          -31.30674
+        ],
+        "distance_normalized": 0.006455,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          -0.016059,
+          26.79475,
+          39.59087
+        ],
+        "distance_normalized": 0.006441,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          3.360062,
+          47.685727,
+          -3.411122
+        ],
+        "distance_normalized": 0.00644,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          -2.070351,
+          -20.887239,
+          43.00845
+        ],
+        "distance_normalized": 0.006423,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          0.280528,
+          -9.038544,
+          46.958857
+        ],
+        "distance_normalized": 0.006408,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          3.593642,
+          44.484073,
+          -14.874532
+        ],
+        "distance_normalized": 0.006404,
+        "region_id": "excess-07"
+      },
+      {
+        "point": [
+          1.179742,
+          39.599228,
+          -26.824809
+        ],
+        "distance_normalized": 0.00639,
+        "region_id": "excess-01"
+      },
+      {
+        "point": [
+          -2.857584,
+          -15.679133,
+          -45.202946
+        ],
+        "distance_normalized": 0.006349,
+        "region_id": "excess-08"
+      },
+      {
+        "point": [
+          0.904458,
+          -23.8408,
+          -38.769584
+        ],
+        "distance_normalized": 0.006308,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          2.41492,
+          -23.836244,
+          38.768322
+        ],
+        "distance_normalized": 0.006293,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          3.593642,
+          9.147246,
+          46.502577
+        ],
+        "distance_normalized": 0.00627,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          3.593642,
+          -34.118441,
+          31.007223
+        ],
+        "distance_normalized": 0.00625,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          -0.892791,
+          26.923168,
+          39.626574
+        ],
+        "distance_normalized": 0.006213,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -3.180397,
+          -20.852324,
+          -43.143819
+        ],
+        "distance_normalized": 0.006179,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.464521,
+          -39.6409,
+          26.974706
+        ],
+        "distance_normalized": 0.006115,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          3.189276,
+          -36.322046,
+          -31.308665
+        ],
+        "distance_normalized": 0.006098,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          0.581539,
+          31.308752,
+          36.330904
+        ],
+        "distance_normalized": 0.006089,
+        "region_id": "excess-03"
+      },
+      {
+        "point": [
+          -0.269386,
+          8.939133,
+          47.134832
+        ],
+        "distance_normalized": 0.006052,
+        "region_id": "excess-06"
+      },
+      {
+        "point": [
+          0.170418,
+          -32.96651,
+          -31.277188
+        ],
+        "distance_normalized": 0.006039,
+        "region_id": "excess-02"
+      },
+      {
+        "point": [
+          2.790151,
+          -21.679017,
+          39.938593
+        ],
+        "distance_normalized": 0.006039,
+        "region_id": "excess-04"
+      },
+      {
+        "point": [
+          1.98114,
+          -27.030006,
+          39.656279
+        ],
+        "distance_normalized": 0.006016,
+        "region_id": "excess-04"
+      }
+    ],
+    "ground_truth_to_candidate": [
+      {
+        "point": [
+          -0.71644,
+          -34.439412,
+          -30.074637
+        ],
+        "distance_normalized": 0.008258,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.108864,
+          25.470165,
+          -37.960228
+        ],
+        "distance_normalized": 0.008258,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.574963,
+          -45.637775,
+          3.105306
+        ],
+        "distance_normalized": 0.008258,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.426641,
+          -30.074995,
+          34.464667
+        ],
+        "distance_normalized": 0.008258,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.22083,
+          -41.053023,
+          20.135611
+        ],
+        "distance_normalized": 0.008257,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.442197,
+          -34.414403,
+          -30.074592
+        ],
+        "distance_normalized": 0.008257,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.268864,
+          41.003476,
+          -20.148525
+        ],
+        "distance_normalized": 0.008257,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.441965,
+          45.676933,
+          3.143312
+        ],
+        "distance_normalized": 0.008256,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.100896,
+          41.062239,
+          -20.133541
+        ],
+        "distance_normalized": 0.008255,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.626786,
+          34.467398,
+          30.07539
+        ],
+        "distance_normalized": 0.008255,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.504294,
+          37.943323,
+          -25.407502
+        ],
+        "distance_normalized": 0.008255,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.632257,
+          3.152733,
+          45.686855
+        ],
+        "distance_normalized": 0.008254,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.15571,
+          43.212,
+          -14.696128
+        ],
+        "distance_normalized": 0.008252,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.049495,
+          -20.107861,
+          -41.165075
+        ],
+        "distance_normalized": 0.00825,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.230355,
+          -34.547319,
+          30.077124
+        ],
+        "distance_normalized": 0.008248,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.863192,
+          -34.553929,
+          30.077277
+        ],
+        "distance_normalized": 0.008248,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.519711,
+          -38.006124,
+          25.626657
+        ],
+        "distance_normalized": 0.008242,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.72052,
+          -38.006041,
+          -25.626008
+        ],
+        "distance_normalized": 0.008242,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.832218,
+          -20.095323,
+          -41.22309
+        ],
+        "distance_normalized": 0.008234,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.207672,
+          8.73571,
+          45.030301
+        ],
+        "distance_normalized": 0.008231,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.027754,
+          44.700074,
+          8.922526
+        ],
+        "distance_normalized": 0.008229,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.214584,
+          -25.689219,
+          -38.026337
+        ],
+        "distance_normalized": 0.008224,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.297523,
+          34.234927,
+          -30.078045
+        ],
+        "distance_normalized": 0.008222,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.993942,
+          -34.214529,
+          30.078195
+        ],
+        "distance_normalized": 0.00822,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.386682,
+          15.000365,
+          -43.398728
+        ],
+        "distance_normalized": 0.008209,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.334815,
+          45.813624,
+          -3.266986
+        ],
+        "distance_normalized": 0.008205,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.633983,
+          37.901649,
+          25.229374
+        ],
+        "distance_normalized": 0.008203,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.577359,
+          20.076546,
+          41.315482
+        ],
+        "distance_normalized": 0.008201,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.230884,
+          -25.748062,
+          -38.046346
+        ],
+        "distance_normalized": 0.0082,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.259458,
+          34.710141,
+          30.085978
+        ],
+        "distance_normalized": 0.008199,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.265682,
+          -34.745467,
+          -30.088147
+        ],
+        "distance_normalized": 0.008186,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.327942,
+          -34.126466,
+          30.082926
+        ],
+        "distance_normalized": 0.008182,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.797261,
+          -20.06758,
+          -41.361853
+        ],
+        "distance_normalized": 0.008181,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.668118,
+          -3.307512,
+          45.861011
+        ],
+        "distance_normalized": 0.008176,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.501746,
+          37.8872,
+          -25.161681
+        ],
+        "distance_normalized": 0.008175,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.886716,
+          -41.381081,
+          20.064051
+        ],
+        "distance_normalized": 0.008172,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.047367,
+          25.13808,
+          37.882893
+        ],
+        "distance_normalized": 0.00816,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.500546,
+          45.88945,
+          3.331391
+        ],
+        "distance_normalized": 0.008156,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.42567,
+          -43.466286,
+          15.098863
+        ],
+        "distance_normalized": 0.008154,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.864822,
+          -8.649111,
+          -45.210696
+        ],
+        "distance_normalized": 0.00814,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.885454,
+          -37.876555,
+          -25.102846
+        ],
+        "distance_normalized": 0.008137,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.74437,
+          -45.248469,
+          -8.632366
+        ],
+        "distance_normalized": 0.008113,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.017126,
+          -38.099793,
+          -25.892228
+        ],
+        "distance_normalized": 0.008113,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.397807,
+          -9.067998,
+          44.482412
+        ],
+        "distance_normalized": 0.008096,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.942176,
+          8.621139,
+          -45.274912
+        ],
+        "distance_normalized": 0.008091,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.227325,
+          8.618832,
+          45.279652
+        ],
+        "distance_normalized": 0.008089,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.962318,
+          -25.936444,
+          -38.117245
+        ],
+        "distance_normalized": 0.008079,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.092321,
+          -8.61167,
+          -45.296155
+        ],
+        "distance_normalized": 0.008076,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.180009,
+          -8.605347,
+          45.310723
+        ],
+        "distance_normalized": 0.008065,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.663236,
+          -30.109464,
+          -34.951983
+        ],
+        "distance_normalized": 0.008055,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.667158,
+          -24.977259,
+          37.855097
+        ],
+        "distance_normalized": 0.008049,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.540255,
+          41.570514,
+          20.034916
+        ],
+        "distance_normalized": 0.008042,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.014577,
+          -8.587475,
+          45.353304
+        ],
+        "distance_normalized": 0.008028,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.789567,
+          43.579735,
+          -15.250949
+        ],
+        "distance_normalized": 0.008015,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.821144,
+          46.048101,
+          -3.456556
+        ],
+        "distance_normalized": 0.008008,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.058016,
+          46.050516,
+          3.458359
+        ],
+        "distance_normalized": 0.008006,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.022243,
+          20.314202,
+          -40.510175
+        ],
+        "distance_normalized": 0.008004,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.417858,
+          -30.082764,
+          34.128017
+        ],
+        "distance_normalized": 0.007983,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.972624,
+          -20.026397,
+          41.642493
+        ],
+        "distance_normalized": 0.007976,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.560772,
+          -20.325598,
+          -40.48276
+        ],
+        "distance_normalized": 0.007975,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.654406,
+          9.156396,
+          -44.362892
+        ],
+        "distance_normalized": 0.007973,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.316161,
+          14.242954,
+          -42.99354
+        ],
+        "distance_normalized": 0.007966,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.245789,
+          -35.066314,
+          -30.125913
+        ],
+        "distance_normalized": 0.00795,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.314431,
+          2.605767,
+          -45.196252
+        ],
+        "distance_normalized": 0.007937,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.740573,
+          -40.442966,
+          -20.341987
+        ],
+        "distance_normalized": 0.007935,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.462024,
+          33.800336,
+          -30.116382
+        ],
+        "distance_normalized": 0.007934,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.932447,
+          -41.691429,
+          20.020618
+        ],
+        "distance_normalized": 0.007931,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.719849,
+          -46.126754,
+          3.515147
+        ],
+        "distance_normalized": 0.007918,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.620567,
+          35.126406,
+          30.134822
+        ],
+        "distance_normalized": 0.007894,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.015355,
+          2.567691,
+          -45.168348
+        ],
+        "distance_normalized": 0.007885,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.279717,
+          -26.156245,
+          -38.210346
+        ],
+        "distance_normalized": 0.00787,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.645819,
+          45.157009,
+          2.552124
+        ],
+        "distance_normalized": 0.007863,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.075511,
+          -40.366834,
+          20.375174
+        ],
+        "distance_normalized": 0.007846,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.878321,
+          35.178636,
+          -30.14252
+        ],
+        "distance_normalized": 0.007845,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.087308,
+          45.54467,
+          8.512097
+        ],
+        "distance_normalized": 0.007835,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.42161,
+          -37.826808,
+          24.749562
+        ],
+        "distance_normalized": 0.00782,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.012566,
+          45.568334,
+          8.50279
+        ],
+        "distance_normalized": 0.007811,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.786953,
+          43.717552,
+          15.425099
+        ],
+        "distance_normalized": 0.00781,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.853285,
+          46.225348,
+          3.587885
+        ],
+        "distance_normalized": 0.007802,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.12863,
+          45.120542,
+          2.502481
+        ],
+        "distance_normalized": 0.007796,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.394944,
+          -24.726157,
+          37.824805
+        ],
+        "distance_normalized": 0.007791,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.86341,
+          -46.255495,
+          -3.610907
+        ],
+        "distance_normalized": 0.00777,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.176242,
+          -30.142766,
+          -33.63378
+        ],
+        "distance_normalized": 0.007745,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.007738,
+          -41.896238,
+          -19.997622
+        ],
+        "distance_normalized": 0.007735,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.42544,
+          3.642988,
+          -46.300221
+        ],
+        "distance_normalized": 0.007713,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.212074,
+          26.32293,
+          38.283677
+        ],
+        "distance_normalized": 0.007693,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.485378,
+          -2.953735,
+          -45.488585
+        ],
+        "distance_normalized": 0.007679,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.381036,
+          8.451286,
+          -45.699771
+        ],
+        "distance_normalized": 0.007676,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.122997,
+          -14.003388,
+          42.902593
+        ],
+        "distance_normalized": 0.007671,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.652195,
+          38.292667,
+          -26.343023
+        ],
+        "distance_normalized": 0.007671,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.079729,
+          -42.89923,
+          -13.993713
+        ],
+        "distance_normalized": 0.007658,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.749375,
+          -45.725109,
+          8.441858
+        ],
+        "distance_normalized": 0.007648,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.651557,
+          45.042409,
+          -2.388075
+        ],
+        "distance_normalized": 0.007614,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.303262,
+          13.960048,
+          42.887804
+        ],
+        "distance_normalized": 0.007608,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.968811,
+          -3.70497,
+          -46.387716
+        ],
+        "distance_normalized": 0.007597,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.915051,
+          -19.983764,
+          -42.040199
+        ],
+        "distance_normalized": 0.007582,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.771373,
+          46.403394,
+          -3.716491
+        ],
+        "distance_normalized": 0.007578,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.078468,
+          42.88115,
+          13.939801
+        ],
+        "distance_normalized": 0.007577,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.513501,
+          -40.354664,
+          -20.380927
+        ],
+        "distance_normalized": 0.007488,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.296104,
+          45.89509,
+          8.381166
+        ],
+        "distance_normalized": 0.007439,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.521821,
+          -34.341714,
+          30.075112
+        ],
+        "distance_normalized": 0.007432,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.335191,
+          46.509205,
+          3.788571
+        ],
+        "distance_normalized": 0.007424,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.998467,
+          -43.94645,
+          15.700061
+        ],
+        "distance_normalized": 0.00742,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.018957,
+          19.970585,
+          42.20787
+        ],
+        "distance_normalized": 0.007384,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.251255,
+          -3.816083,
+          46.549038
+        ],
+        "distance_normalized": 0.007368,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.941334,
+          2.251027,
+          -44.955286
+        ],
+        "distance_normalized": 0.007364,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.656274,
+          24.423676,
+          -37.806727
+        ],
+        "distance_normalized": 0.007359,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.223017,
+          -15.753493,
+          43.992847
+        ],
+        "distance_normalized": 0.007333,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.038837,
+          -46.587192,
+          -3.842171
+        ],
+        "distance_normalized": 0.007313,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.300761,
+          -30.204327,
+          -33.34771
+        ],
+        "distance_normalized": 0.007308,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.211304,
+          2.21921,
+          -44.936715
+        ],
+        "distance_normalized": 0.007298,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.25315,
+          -3.865307,
+          46.622156
+        ],
+        "distance_normalized": 0.007259,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.312415,
+          42.821741,
+          13.740755
+        ],
+        "distance_normalized": 0.007238,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.241946,
+          43.946582,
+          9.518682
+        ],
+        "distance_normalized": 0.007221,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.20271,
+          -19.961766,
+          -42.339043
+        ],
+        "distance_normalized": 0.00722,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.017148,
+          42.381087,
+          19.959341
+        ],
+        "distance_normalized": 0.007164,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.126131,
+          -42.809104,
+          -13.694068
+        ],
+        "distance_normalized": 0.007151,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.368404,
+          37.805913,
+          -24.300504
+        ],
+        "distance_normalized": 0.00714,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.171458,
+          2.138902,
+          44.889773
+        ],
+        "distance_normalized": 0.007132,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.543426,
+          42.90816,
+          14.018185
+        ],
+        "distance_normalized": 0.007131,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.567089,
+          -30.074839,
+          -34.418304
+        ],
+        "distance_normalized": 0.007124,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.610091,
+          -24.287154,
+          37.805834
+        ],
+        "distance_normalized": 0.007116,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.391793,
+          -30.23551,
+          -33.230274
+        ],
+        "distance_normalized": 0.007089,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.850129,
+          44.875305,
+          2.114288
+        ],
+        "distance_normalized": 0.007082,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.789927,
+          -15.906228,
+          -44.126699
+        ],
+        "distance_normalized": 0.007077,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.474517,
+          20.608028,
+          -39.917437
+        ],
+        "distance_normalized": 0.007077,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.579913,
+          38.512504,
+          26.796689
+        ],
+        "distance_normalized": 0.007058,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.992186,
+          -15.916207,
+          -44.136538
+        ],
+        "distance_normalized": 0.007054,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.843323,
+          26.811805,
+          -38.520382
+        ],
+        "distance_normalized": 0.007034,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.89536,
+          -20.624172,
+          39.891371
+        ],
+        "distance_normalized": 0.007015,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.966275,
+          -44.164622,
+          -15.947494
+        ],
+        "distance_normalized": 0.006998,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.587127,
+          -42.508919,
+          -19.952566
+        ],
+        "distance_normalized": 0.006992,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.473977,
+          3.977269,
+          -46.793591
+        ],
+        "distance_normalized": 0.006986,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.972387,
+          -33.168743,
+          30.253214
+        ],
+        "distance_normalized": 0.006965,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.824704,
+          42.560514,
+          -19.950422
+        ],
+        "distance_normalized": 0.006919,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.129415,
+          4.013741,
+          46.84981
+        ],
+        "distance_normalized": 0.006896,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.601526,
+          20.182377,
+          40.886515
+        ],
+        "distance_normalized": 0.00689,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.670476,
+          -44.217889,
+          -16.005042
+        ],
+        "distance_normalized": 0.006885,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.592954,
+          16.006303,
+          -44.219031
+        ],
+        "distance_normalized": 0.006883,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.333392,
+          8.24291,
+          -46.310676
+        ],
+        "distance_normalized": 0.006868,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.07959,
+          -19.948013,
+          -42.633394
+        ],
+        "distance_normalized": 0.006811,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.150863,
+          -1.995319,
+          44.811109
+        ],
+        "distance_normalized": 0.00681,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.615472,
+          30.166546,
+          33.512002
+        ],
+        "distance_normalized": 0.006796,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.844878,
+          26.963229,
+          38.599563
+        ],
+        "distance_normalized": 0.006791,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.330523,
+          13.497195,
+          42.762225
+        ],
+        "distance_normalized": 0.006746,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.655062,
+          -24.096116,
+          37.811497
+        ],
+        "distance_normalized": 0.006732,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.622129,
+          -30.317563,
+          36.082591
+        ],
+        "distance_normalized": 0.006714,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.705604,
+          -9.710567,
+          -43.764892
+        ],
+        "distance_normalized": 0.006694,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.698189,
+          1.939463,
+          -44.782634
+        ],
+        "distance_normalized": 0.006675,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.102398,
+          42.76923,
+          19.944068
+        ],
+        "distance_normalized": 0.006607,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.305639,
+          -8.1934,
+          -46.479697
+        ],
+        "distance_normalized": 0.006596,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.341707,
+          -44.355326,
+          16.151219
+        ],
+        "distance_normalized": 0.006585,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.957152,
+          -44.356505,
+          -16.152954
+        ],
+        "distance_normalized": 0.006585,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.128688,
+          20.745778,
+          -39.70158
+        ],
+        "distance_normalized": 0.006538,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.061992,
+          -4.139875,
+          47.054741
+        ],
+        "distance_normalized": 0.006532,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.204856,
+          38.695331,
+          27.138905
+        ],
+        "distance_normalized": 0.006484,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.682833,
+          -9.790019,
+          -43.695754
+        ],
+        "distance_normalized": 0.006455,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.118633,
+          -30.357446,
+          -36.249166
+        ],
+        "distance_normalized": 0.006454,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.870022,
+          -9.799461,
+          43.687118
+        ],
+        "distance_normalized": 0.006428,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.104564,
+          -42.883611,
+          19.941867
+        ],
+        "distance_normalized": 0.006427,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.6715,
+          30.33023,
+          -32.936758
+        ],
+        "distance_normalized": 0.006415,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.468181,
+          30.332306,
+          -32.929724
+        ],
+        "distance_normalized": 0.006413,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.721518,
+          37.821798,
+          23.957587
+        ],
+        "distance_normalized": 0.006412,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.055704,
+          -37.821628,
+          23.95551
+        ],
+        "distance_normalized": 0.00641,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.650421,
+          44.435198,
+          16.234087
+        ],
+        "distance_normalized": 0.006404,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.338837,
+          -36.28643,
+          -30.367011
+        ],
+        "distance_normalized": 0.006391,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.285135,
+          -30.367814,
+          36.286717
+        ],
+        "distance_normalized": 0.006386,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.852738,
+          30.368131,
+          -36.289382
+        ],
+        "distance_normalized": 0.006384,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.565032,
+          36.312072,
+          -30.374121
+        ],
+        "distance_normalized": 0.006344,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.448183,
+          8.144346,
+          -46.650433
+        ],
+        "distance_normalized": 0.006316,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.313496,
+          44.476224,
+          16.275273
+        ],
+        "distance_normalized": 0.006306,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.325853,
+          -37.82774,
+          -23.89298
+        ],
+        "distance_normalized": 0.006256,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.594453,
+          -20.814441,
+          -39.60378
+        ],
+        "distance_normalized": 0.006252,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.676133,
+          33.471525,
+          30.175618
+        ],
+        "distance_normalized": 0.00623,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.682845,
+          -42.720268,
+          13.275566
+        ],
+        "distance_normalized": 0.006227,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -0.917949,
+          -20.826845,
+          -39.586754
+        ],
+        "distance_normalized": 0.006199,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          1.656905,
+          -23.863042,
+          37.830254
+        ],
+        "distance_normalized": 0.006185,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.598728,
+          4.244741,
+          -47.234905
+        ],
+        "distance_normalized": 0.006184,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.122719,
+          30.398904,
+          -36.405422
+        ],
+        "distance_normalized": 0.006182,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -1.4601,
+          9.882088,
+          43.61967
+        ],
+        "distance_normalized": 0.006165,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.377449,
+          -43.079327,
+          -19.94132
+        ],
+        "distance_normalized": 0.006099,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          -2.718786,
+          -8.561771,
+          45.418522
+        ],
+        "distance_normalized": 0.006094,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          0.162203,
+          43.599894,
+          -9.906081
+        ],
+        "distance_normalized": 0.006089,
+        "region_id": "missing-01"
+      },
+      {
+        "point": [
+          2.701899,
+          2.474407,
+          -45.100606
+        ],
+        "distance_normalized": 0.006055,
+        "region_id": "missing-01"
+      }
+    ]
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

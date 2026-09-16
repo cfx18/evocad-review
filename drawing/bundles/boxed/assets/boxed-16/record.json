@@ -1,0 +1,245 @@
+{
+  "target_id": "3f9363b4eeeae455722eb171",
+  "sample_id": "boxed-16",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": 212
+  },
+  "learner_answer": {
+    "answer": 272
+  },
+  "task_manifest": {
+    "task_id": "boxed-16",
+    "task_type": "dimension_attachment",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true,
+    "protocol": "boxed-minimal-v1"
+  },
+  "task": {
+    "task_id": "boxed-16",
+    "query": "框内标注的长度是多少毫米？",
+    "answer_format": {
+      "answer": "number"
+    }
+  },
+  "source": {
+    "source_id": "web-1936-01",
+    "origin": "public_web_drawing",
+    "article_url": "https://xifengboke.com/post/1936.html",
+    "sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+    "dimensions": [
+      919,
+      586
+    ],
+    "rights": {
+      "status": "permission_required",
+      "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+      "training_eligible": false,
+      "redistribution_eligible": false
+    }
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "框内标注的长度是多少毫米？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            568,
+            451,
+            872,
+            476
+          ]
+        }
+      ],
+      "unit": "mm",
+      "answer_evidence": "右上视图最下方的水平尺寸标为212，两端箭头对应左右轴端引出的尺寸界线。",
+      "expected_answer": 212,
+      "answer_kind": "number",
+      "accepted_answers": [],
+      "bad_pattern_tags": [],
+      "confidence": 0.96,
+      "ambiguity_notes": "原图分辨率较低；模型拟定的框位与读数待人工复核。",
+      "derivation": {
+        "expression": "overall_span",
+        "inputs": [
+          {
+            "symbol": "overall_span",
+            "value": 212,
+            "drawing_evidence": "框内最下方水平尺寸线的标注数值为212。"
+          }
+        ]
+      }
+    },
+    "blind_audit": {
+      "answer": 212,
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "框内水平尺寸线标注为212。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": false,
+    "score": 0.0,
+    "elapsed_seconds": 85.98,
+    "observations": 5,
+    "findings": 1,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": 212
+    },
+    "absolute_tolerance": 0.1,
+    "label_status": "model_proposed_not_gt",
+    "accepted_answers": {
+      "answer": []
+    },
+    "alias_policy": "engineering-line-terms-v1"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:10:41.466Z",
+      "payload": {
+        "observation_id": "8fbf49f7d50e48deb53cd1c0d5b70457",
+        "intent": "Inspect the technical drawing, find the boxed dimension annotation and read the length value in millimeters.",
+        "source_sha256": "4e498d12e73bf530eb3126ab459a68a3de93ce72225403f6b52e827c92d6cbda",
+        "sha256": "4e498d12e73bf530eb3126ab459a68a3de93ce72225403f6b52e827c92d6cbda",
+        "crop": null,
+        "dimensions": [
+          919,
+          586
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:10:55.683Z",
+      "payload": {
+        "observation_id": "4e9600e345eb4b2c8f775f0828411365",
+        "intent": "Zoom into the boxed (red rectangle) dimension at the bottom of the right-side view to read the exact value.",
+        "source_sha256": "4e498d12e73bf530eb3126ab459a68a3de93ce72225403f6b52e827c92d6cbda",
+        "sha256": "c5fa0b8c8e9a3e1d8ce3a897314e8017495c58e7dead9f5f6d57d884faaa07d5",
+        "crop": [
+          540,
+          240,
+          840,
+          300
+        ],
+        "dimensions": [
+          300,
+          60
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:11:05.134Z",
+      "payload": {
+        "observation_id": "6f8a4f37b51f4f66932fd074e3369de9",
+        "intent": "Zoom in more tightly on the boxed dimension value text to read the digits clearly.",
+        "source_sha256": "4e498d12e73bf530eb3126ab459a68a3de93ce72225403f6b52e827c92d6cbda",
+        "sha256": "6dab86a415342366bf1698ea923ed46be978ab81816757b0ad974f017ec61dea",
+        "crop": [
+          650,
+          245,
+          760,
+          290
+        ],
+        "dimensions": [
+          110,
+          45
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:11:17.251Z",
+      "payload": {
+        "observation_id": "f9423e7771474fd0b1a6b41b177f7df4",
+        "intent": "Read the digits inside the red boxed dimension line at the bottom of the right view.",
+        "source_sha256": "4e498d12e73bf530eb3126ab459a68a3de93ce72225403f6b52e827c92d6cbda",
+        "sha256": "3ab87e93357265a0737dacbe41b8a8c2beda5c1752d1512ae38bdde0ba4c331b",
+        "crop": [
+          640,
+          255,
+          780,
+          300
+        ],
+        "dimensions": [
+          140,
+          45
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T12:11:31.581Z",
+      "payload": {
+        "observation_id": "26522cf18b3344408899e3808d03739b",
+        "intent": "Confirm the middle digit of the boxed dimension value (272 vs 212).",
+        "source_sha256": "4e498d12e73bf530eb3126ab459a68a3de93ce72225403f6b52e827c92d6cbda",
+        "sha256": "805d2946c57d5f5585ac6515aceb6e65e7f32841ab6f1046ddb0f0449ad0be23",
+        "crop": [
+          655,
+          260,
+          725,
+          292
+        ],
+        "dimensions": [
+          70,
+          32
+        ],
+        "image": "receipts/005.png"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T12:11:43.339Z",
+      "payload": {
+        "observation_id": "26522cf18b3344408899e3808d03739b",
+        "public_conclusion": "The red-boxed dimension line at the bottom of the right-side view is annotated with the value 272 (mm)."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/boxed-16/input-01.png"
+  ],
+  "asset_base": "assets/boxed-16",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/boxed-16/record.json"
+    }
+  ]
+}

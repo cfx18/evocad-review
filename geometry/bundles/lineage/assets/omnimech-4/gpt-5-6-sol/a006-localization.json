@@ -1,0 +1,304 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.0,
+  "region_count": 0,
+  "regions": [],
+  "native_topology": {
+    "protocol": "evocad-native-feature-localization-v1",
+    "entity_count": 1,
+    "face_count": 130,
+    "adjacency_count": 378,
+    "feature_candidate_count": 124,
+    "export_errors": [],
+    "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+    "boolean_lineage": {
+      "schema_version": "1.0",
+      "protocol": "evocad-boolean-face-lineage-v2",
+      "snapshot_comparison": {
+        "parent_face_count": 130,
+        "current_face_count": 130,
+        "inherited_face_count": 8,
+        "created_or_modified_face_count": 122,
+        "deleted_or_modified_parent_face_count": 122,
+        "captured_job_count": 1,
+        "lineage_mode": "multi_job_fingerprint_chain"
+      },
+      "operation_graph": {
+        "nodes": [
+          {
+            "operation_id": "a006_curved_flank_01",
+            "intent": "From the a004 best checkpoint, retain R4.255 roller seats and replace only straight tooth flanks with symmetric R12.7 arcs tangent to the seats and passing through the fixed R51.50 tips",
+            "operation_type": "replace_profile",
+            "feature_id": "sprocket_tooth_flanks",
+            "parameters": {
+              "tooth_count": 24,
+              "pitch_diameter_mm": 96.93,
+              "roller_seat_radius_mm": 4.255,
+              "root_radius_mm": 44.21,
+              "flank_radius_mm": 12.7,
+              "tip_radius_mm": 51.5,
+              "reverted_operation_id": "a005_roller_seat_01"
+            },
+            "parent_operation_ids": [
+              "a004_tooth_arcs_01"
+            ],
+            "mcp_job_id": "a791130566a3453099c3f221fefb9f61"
+          },
+          {
+            "operation_id": "a006_preserve_verified_01",
+            "intent": "Recreate unchanged a004 chamfer, hub, bore, keyway, and radial tap-drill geometry around the isolated curved-flank hypothesis",
+            "operation_type": "boolean_reconstruct",
+            "feature_id": null,
+            "parameters": {
+              "tooth_width_mm": 7.21,
+              "chamfer_axial_depth_mm": 1.65,
+              "hub_diameter_mm": 60,
+              "total_axial_length_mm": 28,
+              "bore_diameter_mm": 30,
+              "keyway_width_mm": 8,
+              "keyway_top_radius_mm": 18.3,
+              "tap_drill_diameter_mm": 5,
+              "tap_drill_offset_mm": 8
+            },
+            "parent_operation_ids": [
+              "a006_curved_flank_01",
+              "a004_restore_chamfer_01",
+              "a004_preserved_core_01"
+            ],
+            "mcp_job_id": "a791130566a3453099c3f221fefb9f61"
+          }
+        ],
+        "edges": [
+          {
+            "source": "a004_tooth_arcs_01",
+            "target": "a006_curved_flank_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a006_curved_flank_01",
+            "target": "a006_preserve_verified_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a004_restore_chamfer_01",
+            "target": "a006_preserve_verified_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "a004_preserved_core_01",
+            "target": "a006_preserve_verified_01",
+            "relation": "declared_parent"
+          }
+        ]
+      },
+      "deleted_parent_face_examples": [
+        {
+          "node_id": "352:f6",
+          "entity_handle": "352",
+          "face_id": "f6",
+          "face_fingerprint": "e4fa9f5980d6744ab6f5af47ef99e7bbac4942226ab3a1a67bca759a530ef8e1"
+        },
+        {
+          "node_id": "352:f10",
+          "entity_handle": "352",
+          "face_id": "f10",
+          "face_fingerprint": "9f9d376fd5a108cb2c30c6e13db1d5057ae9d00aa27d6e3737e6ccb31479be88"
+        },
+        {
+          "node_id": "352:f11",
+          "entity_handle": "352",
+          "face_id": "f11",
+          "face_fingerprint": "55a69718e873e49bda54725f5bc9cb2b46f49d6c3d2431fba97b4ace4b2642fd"
+        },
+        {
+          "node_id": "352:f12",
+          "entity_handle": "352",
+          "face_id": "f12",
+          "face_fingerprint": "ddd8a12605e522a1209220339c64f15f7beae9d2048b347d3fdf7b9d36c21146"
+        },
+        {
+          "node_id": "352:f13",
+          "entity_handle": "352",
+          "face_id": "f13",
+          "face_fingerprint": "8018c0241774b3f49a776b2ee23219cf80562047f17ff529afeb8354ba4fdcf5"
+        },
+        {
+          "node_id": "352:f14",
+          "entity_handle": "352",
+          "face_id": "f14",
+          "face_fingerprint": "6705c1a492db8c3145cbb1faf5061eab35d00052d495a07844101b03676ced47"
+        },
+        {
+          "node_id": "352:f15",
+          "entity_handle": "352",
+          "face_id": "f15",
+          "face_fingerprint": "1c8b2e954cf214f852d3d990b82ce8ea985b35986b713abc170471e8722f4e72"
+        },
+        {
+          "node_id": "352:f16",
+          "entity_handle": "352",
+          "face_id": "f16",
+          "face_fingerprint": "5b268bdb48bf720a6b65046a1ce1ee88776839b521a1f01c0f79387a69fe21b0"
+        },
+        {
+          "node_id": "352:f17",
+          "entity_handle": "352",
+          "face_id": "f17",
+          "face_fingerprint": "dec5c240e239655e4eda1dd691cda88b1303d8c40d87d38efbe245028a5b8bce"
+        },
+        {
+          "node_id": "352:f18",
+          "entity_handle": "352",
+          "face_id": "f18",
+          "face_fingerprint": "ecd63abd41dba8d28e0bc98240fc6d9a7cbe95497057f96b4a965a7025e37cb8"
+        },
+        {
+          "node_id": "352:f19",
+          "entity_handle": "352",
+          "face_id": "f19",
+          "face_fingerprint": "a0977fc39dc25d1d843eddb721efb4d39f70b91c49ffa7fae5a1262e8e2042a2"
+        },
+        {
+          "node_id": "352:f20",
+          "entity_handle": "352",
+          "face_id": "f20",
+          "face_fingerprint": "a86390ca5e1b6a85256650c217576e3f19856353dd26fea78ec80e2092f1160e"
+        },
+        {
+          "node_id": "352:f21",
+          "entity_handle": "352",
+          "face_id": "f21",
+          "face_fingerprint": "8c5598ac354ef425112da0dfb793ad36af55cf43f2dff091524704f824448694"
+        },
+        {
+          "node_id": "352:f22",
+          "entity_handle": "352",
+          "face_id": "f22",
+          "face_fingerprint": "c43be57bff5d72f3ba1b5ee78074954d47937fffe560b9f618d35a9a55e72b11"
+        },
+        {
+          "node_id": "352:f23",
+          "entity_handle": "352",
+          "face_id": "f23",
+          "face_fingerprint": "ced24ed787e0ccc8311ff145f7d5af0c2c16960a8e98ba6ec41d9b77dc5aeec8"
+        },
+        {
+          "node_id": "352:f24",
+          "entity_handle": "352",
+          "face_id": "f24",
+          "face_fingerprint": "85208d9e1e7eb8ef2b78a00b09e906da2a574eeaf7ebbb6085ab6fc8c62ad203"
+        },
+        {
+          "node_id": "352:f25",
+          "entity_handle": "352",
+          "face_id": "f25",
+          "face_fingerprint": "03cc3a0150ed311f046d2a89e5dd8d4e50398b20269eacbdaf4094a789a9dfb9"
+        },
+        {
+          "node_id": "352:f26",
+          "entity_handle": "352",
+          "face_id": "f26",
+          "face_fingerprint": "ba8b464e9148569834200430cdded97fb877609e476404c6cf231e5ef73ecde3"
+        },
+        {
+          "node_id": "352:f27",
+          "entity_handle": "352",
+          "face_id": "f27",
+          "face_fingerprint": "9d09ff4f9c5db416debf12ead2ea3ed94f25552d742cfc71c22a4cb4d1a105dc"
+        },
+        {
+          "node_id": "352:f28",
+          "entity_handle": "352",
+          "face_id": "f28",
+          "face_fingerprint": "e8d2c2af0c25a54efc3d8314e01d7acef3b1ff09ecb6c59b515d37ddcc4b31c8"
+        },
+        {
+          "node_id": "352:f29",
+          "entity_handle": "352",
+          "face_id": "f29",
+          "face_fingerprint": "2d9bc93a44906ee34f3f00c21ce7896819df2f4479551c3c4bc16395f3e3f854"
+        },
+        {
+          "node_id": "352:f30",
+          "entity_handle": "352",
+          "face_id": "f30",
+          "face_fingerprint": "7fdb2104d3627d554c55463b12264e22bf5b1d72e3f31d2e0458207dda7c7c0d"
+        },
+        {
+          "node_id": "352:f31",
+          "entity_handle": "352",
+          "face_id": "f31",
+          "face_fingerprint": "0ca8e3857cd4ab494eeee3e86a377796b1f30aa599e218582ac053e758ae48a0"
+        },
+        {
+          "node_id": "352:f32",
+          "entity_handle": "352",
+          "face_id": "f32",
+          "face_fingerprint": "a1b261b1332b1ee7adc3f7624769cfddd95c2e8e80df1eec037517d3eb64a5d5"
+        },
+        {
+          "node_id": "352:f33",
+          "entity_handle": "352",
+          "face_id": "f33",
+          "face_fingerprint": "e44bdaf8cf2c2b6a0ec872ef2abcf5d01e525cb1e7c40bba171be010c532d644"
+        },
+        {
+          "node_id": "352:f34",
+          "entity_handle": "352",
+          "face_id": "f34",
+          "face_fingerprint": "b3d404c7098e49d41b4e985975953b4c097e54c2c5c017dd51cf2f4c9b614340"
+        },
+        {
+          "node_id": "352:f35",
+          "entity_handle": "352",
+          "face_id": "f35",
+          "face_fingerprint": "55bd8561c296f82924778500f8f7a95ce6ba9e69a55a65276a1f7c35d3db943b"
+        },
+        {
+          "node_id": "352:f36",
+          "entity_handle": "352",
+          "face_id": "f36",
+          "face_fingerprint": "db67b0e20f13a81fa66e65c5b3d957ca84dc916430e9033ee48b4325647156fe"
+        },
+        {
+          "node_id": "352:f37",
+          "entity_handle": "352",
+          "face_id": "f37",
+          "face_fingerprint": "6937ea7c1e6d63fb11ac5b1ed48f30313d7a2b9574d69fc8f28d477702e43e91"
+        },
+        {
+          "node_id": "352:f38",
+          "entity_handle": "352",
+          "face_id": "f38",
+          "face_fingerprint": "064e8f7f91f0f0eaf4ed55b3989d5f2878ab0edc148f67dbd5dc2319268624a7"
+        },
+        {
+          "node_id": "352:f39",
+          "entity_handle": "352",
+          "face_id": "f39",
+          "face_fingerprint": "c34219c7cf277289991fcbb1cd9650be4ca1873d8a9e550855f853913dbe4aeb"
+        },
+        {
+          "node_id": "352:f40",
+          "entity_handle": "352",
+          "face_id": "f40",
+          "face_fingerprint": "530655db85247a9e5a0f4fde0bacefcd4a99fcba779e68506d63708355bfa5a4"
+        }
+      ],
+      "interpretation": "Stable fingerprints prove inheritance. Snapshot-delta faces identify the operation group that changed topology; multiple operations in one job remain causally ambiguous."
+    }
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [],
+    "ground_truth_to_candidate": []
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

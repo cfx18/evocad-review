@@ -1,0 +1,2156 @@
+{
+  "schema_version": "1.0",
+  "review_ui_version": "1.0",
+  "campaign": {
+    "campaign_id": "human-mirror-astra-omnimech2-20260914",
+    "campaign_manifest_sha256": "7e9d5bbedce29bccd8bdfd1c104f437e7543577c9aa8c4deba5aec6ed6592030",
+    "declared_manifest_sha256": null,
+    "source_manifest_sha256": "01672e0fc8abbfebecfe352a4e4a88ee93a383b849d5b8213a6b08acc6c8c280",
+    "protocol": "evocad-geometry-v2",
+    "agent_loop_protocol": "human-guided-posthoc-mirror-v1",
+    "benchmark_split": null,
+    "execution": {
+      "created_at": "2026-09-14T15:09:38.866Z",
+      "eligible_for_original_agent_score": false,
+      "type": "human-requested-gt-assisted-posthoc-mirror",
+      "parent_run_id": "direct-codex-astra-ultra-omnimech2-https-20260914-gpt-6-astra-ultra",
+      "source_hashes": {
+        "private-reference-25df738c29f978e7": "31bf9f7c5de9dfec19486bab66f2f4f34b3ce960d734b542b1b8942f1ac59688",
+        "private-reference-67486e89dc09dc95": "0382c7bbb6865ade6f6ad0a9398902fd1b1d12f8a3279ace3ce96eae266e9452",
+        "private-reference-a0d96786b732d1a2": "beec5dbcffa47608dd0082b0185b46b127c67b3e37be5868c6d01e95df299889",
+        "private-reference-f4e919ade7fde3f8": "f59b28116c94c79944f7ae81e443704fd9c7cb1d37c30f9c99bcee24977b7f2c"
+      },
+      "mesh_diagnostic_sha256": "3d2fc35f379bbc7ec576335d4786818b869fda42d5d107bf5e4d41328154cf22",
+      "transform": {
+        "frame": "original-DWG-WCS",
+        "plane": "y=32",
+        "map": "(x,y,z) -> (x,64-y,z)"
+      },
+      "changes": "Reflect the complete solid. No feature edits, rescaling or threshold changes.",
+      "agent_model_calls": 0,
+      "source_integrity_verified": true
+    }
+  },
+  "models": [
+    "gpt-6-astra",
+    "astra-human-mirror-y"
+  ],
+  "render_geometry": true,
+  "feature_backfill": null,
+  "runs": [
+    {
+      "target_id": "194f1ce5ef09ea13e892",
+      "run_id": "direct-codex-astra-ultra-omnimech2-https-20260914-gpt-6-astra-ultra",
+      "sample_id": "omnimech:2",
+      "sample_key": "omnimech / 2",
+      "dataset": "omnimech",
+      "category": "automation_equipment",
+      "task": "Reconstruct the dimensioned mechanical part as one editable 3D CAD solid.",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "status": "failed",
+      "score": 91.69,
+      "passed": false,
+      "selected_attempt_id": "a001",
+      "stop_reason": "agent_stop",
+      "agent_requested_continue": false,
+      "selected_evidence_sha256": "37e88ace2ec9d7be61ade0861c2194413c0eb0af180a054b541e804b7f1fe177",
+      "candidate_sha256": "31bf9f7c5de9dfec19486bab66f2f4f34b3ce960d734b542b1b8942f1ac59688",
+      "ground_truth_sha256": "beec5dbcffa47608dd0082b0185b46b127c67b3e37be5868c6d01e95df299889",
+      "integrity": {
+        "ok": true,
+        "checked_files": 41,
+        "events": 27,
+        "errors": []
+      },
+      "input_images": [
+        "assets/omnimech-2/gpt-6-astra/input-01.png"
+      ],
+      "input_evidence": [
+        {
+          "path": "assets/omnimech-2/gpt-6-astra/input-01.png",
+          "sha256": "fef27d4171b22c08156d694224383ccae3dae7e5fc998ee880f7613c7692bef6",
+          "bytes": 238071
+        }
+      ],
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "a001",
+          "score": 91.69,
+          "passed": false,
+          "elapsed_seconds": 929.209,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": "stop",
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": null,
+          "decision_recovered": null,
+          "images": {
+            "candidate": "assets/omnimech-2/gpt-6-astra/a001-candidate.png",
+            "overlay": "assets/omnimech-2/gpt-6-astra/a001-overlay.png",
+            "ground_truth": "assets/omnimech-2/gpt-6-astra/ground-truth.png"
+          },
+          "geometry": {
+            "candidate": "assets/omnimech-2/gpt-6-astra/a001-candidate.stl",
+            "ground_truth": "assets/omnimech-2/gpt-6-astra/ground-truth.stl",
+            "localization": "assets/omnimech-2/gpt-6-astra/a001-localization.json",
+            "topology": "assets/omnimech-2/gpt-6-astra/a001-topology.json",
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": {
+            "schema_version": "1.0",
+            "protocol": "evocad-surface-localization-v1",
+            "coordinate_frame": "aligned-ground-truth-world",
+            "uses_evaluator_ground_truth": true,
+            "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+            "distance_threshold_normalized": 0.006,
+            "cluster_radius_normalized": 0.025,
+            "surface_samples_per_direction": 20000,
+            "localized_sample_fraction": 0.20745,
+            "region_count": 4,
+            "regions": [
+              {
+                "direction": "candidate_to_ground_truth",
+                "error_type": "candidate_excess_or_displaced_surface",
+                "sample_count": 4115,
+                "sample_fraction": 0.20575,
+                "estimated_area": 2229.102663,
+                "estimated_area_fraction": 0.20575,
+                "centroid": [
+                  -93.99438,
+                  -28.031611,
+                  10.258509
+                ],
+                "centroid_bbox_position": [
+                  0.5092,
+                  0.4498,
+                  0.5547
+                ],
+                "bbox": {
+                  "min": [
+                    -105.378438,
+                    -56.817767,
+                    -2.0
+                  ],
+                  "max": [
+                    -82.888479,
+                    7.182232,
+                    20.1
+                  ]
+                },
+                "mean_distance_normalized": 0.015941,
+                "p95_distance_normalized": 0.018701,
+                "max_distance_normalized": 0.031135,
+                "mean_normal_offset_normalized": 0.001409,
+                "mean_normal_disagreement": 0.295015,
+                "dominant_source_normal": [
+                  0.3702,
+                  -0.0599,
+                  0.927
+                ],
+                "confidence": "high",
+                "source_surface_query_points": [
+                  [
+                    -104.911694,
+                    -26.817767,
+                    15.22973
+                  ],
+                  [
+                    -96.63848,
+                    -16.897761,
+                    11.483837
+                  ],
+                  [
+                    -90.63848,
+                    -18.739044,
+                    4.2117
+                  ],
+                  [
+                    -96.676173,
+                    -26.788729,
+                    1.699344
+                  ],
+                  [
+                    -97.122739,
+                    -32.803186,
+                    3.811364
+                  ],
+                  [
+                    -83.900651,
+                    -51.663105,
+                    17.029584
+                  ],
+                  [
+                    -90.63848,
+                    -21.442994,
+                    6.995282
+                  ],
+                  [
+                    -99.459731,
+                    -26.817767,
+                    18.048566
+                  ],
+                  [
+                    -105.301097,
+                    -26.817767,
+                    17.692795
+                  ]
+                ],
+                "region_id": "excess-01",
+                "counterpart_region_ids": [
+                  "missing-01"
+                ]
+              },
+              {
+                "direction": "candidate_to_ground_truth",
+                "error_type": "candidate_excess_or_displaced_surface",
+                "sample_count": 57,
+                "sample_fraction": 0.00285,
+                "estimated_area": 30.876999,
+                "estimated_area_fraction": 0.00285,
+                "centroid": [
+                  -94.155069,
+                  6.496399,
+                  1.381978
+                ],
+                "centroid_bbox_position": [
+                  0.5054,
+                  0.9893,
+                  0.153
+                ],
+                "bbox": {
+                  "min": [
+                    -96.121774,
+                    5.682232,
+                    -2.0
+                  ],
+                  "max": [
+                    -92.13848,
+                    7.182232,
+                    5.6
+                  ]
+                },
+                "mean_distance_normalized": 0.012079,
+                "p95_distance_normalized": 0.017512,
+                "max_distance_normalized": 0.018569,
+                "mean_normal_offset_normalized": 0.002447,
+                "mean_normal_disagreement": 0.982456,
+                "dominant_source_normal": [
+                  -0.2747,
+                  0.9615,
+                  0.0
+                ],
+                "confidence": "high",
+                "source_surface_query_points": [
+                  [
+                    -95.149101,
+                    7.182232,
+                    -0.796671
+                  ],
+                  [
+                    -95.13848,
+                    7.058622,
+                    -1.330967
+                  ],
+                  [
+                    -92.494459,
+                    5.682232,
+                    1.122839
+                  ],
+                  [
+                    -92.13848,
+                    6.602464,
+                    4.328617
+                  ],
+                  [
+                    -92.13848,
+                    5.836862,
+                    2.31957
+                  ],
+                  [
+                    -96.004209,
+                    6.931098,
+                    5.6
+                  ],
+                  [
+                    -95.13848,
+                    6.915705,
+                    2.194422
+                  ],
+                  [
+                    -93.091516,
+                    5.682232,
+                    -1.253722
+                  ],
+                  [
+                    -95.672081,
+                    7.182232,
+                    0.48988
+                  ]
+                ],
+                "region_id": "excess-02",
+                "counterpart_region_ids": [
+                  "missing-02"
+                ]
+              },
+              {
+                "direction": "ground_truth_to_candidate",
+                "error_type": "candidate_missing_or_displaced_surface",
+                "sample_count": 4067,
+                "sample_fraction": 0.20335,
+                "estimated_area": 2204.314263,
+                "estimated_area_fraction": 0.20335,
+                "centroid": [
+                  -94.940422,
+                  -28.474845,
+                  10.56102
+                ],
+                "centroid_bbox_position": [
+                  0.4872,
+                  0.4429,
+                  0.5684
+                ],
+                "bbox": {
+                  "min": [
+                    -105.888478,
+                    -56.817767,
+                    -2.0
+                  ],
+                  "max": [
+                    -83.399127,
+                    7.182233,
+                    20.1
+                  ]
+                },
+                "mean_distance_normalized": 0.015989,
+                "p95_distance_normalized": 0.018701,
+                "max_distance_normalized": 0.030635,
+                "mean_normal_offset_normalized": 8.5e-05,
+                "mean_normal_disagreement": 0.332944,
+                "dominant_source_normal": [
+                  0.4938,
+                  -0.0904,
+                  0.8649
+                ],
+                "confidence": "high",
+                "source_surface_query_points": [
+                  [
+                    -104.553657,
+                    -52.669148,
+                    13.534581
+                  ],
+                  [
+                    -98.090288,
+                    -23.127596,
+                    8.0
+                  ],
+                  [
+                    -92.138478,
+                    -50.407821,
+                    6.390013
+                  ],
+                  [
+                    -97.968644,
+                    -40.822847,
+                    8.0
+                  ],
+                  [
+                    -92.138478,
+                    -13.491504,
+                    1.259027
+                  ],
+                  [
+                    -86.491612,
+                    -50.618985,
+                    15.366591
+                  ],
+                  [
+                    -92.138478,
+                    -28.274012,
+                    5.632575
+                  ],
+                  [
+                    -100.888478,
+                    1.587068,
+                    15.185483
+                  ],
+                  [
+                    -104.69152,
+                    -52.490574,
+                    14.431041
+                  ]
+                ],
+                "source_brep_faces": [
+                  {
+                    "face_id": "face-5858234b23bc",
+                    "sample_fraction": 0.207524,
+                    "surface_type": "plane"
+                  },
+                  {
+                    "face_id": "face-16671a16ac1d",
+                    "sample_fraction": 0.205065,
+                    "surface_type": "plane"
+                  },
+                  {
+                    "face_id": "face-9efd2d7f214f",
+                    "sample_fraction": 0.166216,
+                    "surface_type": "plane"
+                  },
+                  {
+                    "face_id": "face-f49a3d2d8b95",
+                    "sample_fraction": 0.072781,
+                    "surface_type": "plane"
+                  },
+                  {
+                    "face_id": "face-2708aa23943d",
+                    "sample_fraction": 0.067863,
+                    "surface_type": "plane"
+                  }
+                ],
+                "region_id": "missing-01",
+                "counterpart_region_ids": [
+                  "excess-01"
+                ]
+              },
+              {
+                "direction": "ground_truth_to_candidate",
+                "error_type": "candidate_missing_or_displaced_surface",
+                "sample_count": 59,
+                "sample_fraction": 0.00295,
+                "estimated_area": 31.978004,
+                "estimated_area_fraction": 0.00295,
+                "centroid": [
+                  -94.840737,
+                  6.468613,
+                  1.544115
+                ],
+                "centroid_bbox_position": [
+                  0.4895,
+                  0.9888,
+                  0.1604
+                ],
+                "bbox": {
+                  "min": [
+                    -96.638478,
+                    5.682233,
+                    -2.0
+                  ],
+                  "max": [
+                    -92.752497,
+                    7.182233,
+                    5.6
+                  ]
+                },
+                "mean_distance_normalized": 0.012821,
+                "p95_distance_normalized": 0.017744,
+                "max_distance_normalized": 0.018275,
+                "mean_normal_offset_normalized": -0.000106,
+                "mean_normal_disagreement": 0.949153,
+                "dominant_source_normal": [
+                  0.1104,
+                  0.9932,
+                  -0.0368
+                ],
+                "confidence": "high",
+                "source_surface_query_points": [
+                  [
+                    -96.638478,
+                    5.948577,
+                    -1.312407
+                  ],
+                  [
+                    -92.765998,
+                    7.182233,
+                    1.832618
+                  ],
+                  [
+                    -93.638478,
+                    6.997936,
+                    2.201949
+                  ],
+                  [
+                    -92.989017,
+                    7.182233,
+                    5.112058
+                  ],
+                  [
+                    -96.404775,
+                    5.682233,
+                    2.334025
+                  ],
+                  [
+                    -95.865353,
+                    5.682233,
+                    3.616874
+                  ],
+                  [
+                    -92.999529,
+                    6.461888,
+                    -2.0
+                  ],
+                  [
+                    -96.638478,
+                    6.604683,
+                    0.499305
+                  ],
+                  [
+                    -96.425044,
+                    5.682233,
+                    0.836467
+                  ]
+                ],
+                "source_brep_faces": [
+                  {
+                    "face_id": "face-75033e35befb",
+                    "sample_fraction": 0.271186,
+                    "surface_type": "plane"
+                  },
+                  {
+                    "face_id": "face-24b92c50ea35",
+                    "sample_fraction": 0.237288,
+                    "surface_type": "plane"
+                  },
+                  {
+                    "face_id": "face-8516386b5656",
+                    "sample_fraction": 0.220339,
+                    "surface_type": "plane"
+                  },
+                  {
+                    "face_id": "face-0331304b23bf",
+                    "sample_fraction": 0.220339,
+                    "surface_type": "plane"
+                  },
+                  {
+                    "face_id": "face-6142e64706e0",
+                    "sample_fraction": 0.033898,
+                    "surface_type": "plane"
+                  }
+                ],
+                "region_id": "missing-02",
+                "counterpart_region_ids": [
+                  "excess-02"
+                ]
+              }
+            ],
+            "visualization_surface_samples_per_direction": 4000,
+            "region_summary_source": "geometry-verdict.json"
+          },
+          "localization_error": null,
+          "verdict": {
+            "schema_version": "1.0",
+            "protocol": "evocad-geometry-v2",
+            "sample_id": "omnimech:2",
+            "passed": false,
+            "quality_tier": "failed",
+            "score": 91.69,
+            "coverage": 100.0,
+            "checks": {
+              "candidate_watertight": true,
+              "voxel_iou": false,
+              "normalized_chamfer": false,
+              "bbox_relative_error": true,
+              "volume_relative_error": true
+            },
+            "acceptable_checks": {
+              "candidate_watertight": true,
+              "voxel_iou": false,
+              "normalized_chamfer": true,
+              "bbox_relative_error": true,
+              "volume_relative_error": true
+            },
+            "metrics": {
+              "voxel_iou": 0.890819,
+              "chamfer_distance": 0.573685,
+              "normalized_chamfer": 0.007152,
+              "bbox_relative_error": 0.0,
+              "volume_relative_error": 0.000483,
+              "surface_area_relative_error": 0.00055
+            },
+            "mismatch": {
+              "candidate_to_ground_truth": {
+                "p50_normalized": 0.0,
+                "p95_normalized": 0.018701,
+                "max_normalized": 0.031135,
+                "worst_point_bbox_position": [
+                  0.7069,
+                  0.5079,
+                  1.0
+                ]
+              },
+              "ground_truth_to_candidate": {
+                "p50_normalized": 0.0,
+                "p95_normalized": 0.018701,
+                "max_normalized": 0.030635,
+                "worst_point_bbox_position": [
+                  0.7083,
+                  0.5181,
+                  0.7285
+                ]
+              },
+              "localization": {
+                "schema_version": "1.0",
+                "protocol": "evocad-surface-localization-v1",
+                "coordinate_frame": "aligned-ground-truth-world",
+                "uses_evaluator_ground_truth": true,
+                "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+                "distance_threshold_normalized": 0.006,
+                "cluster_radius_normalized": 0.025,
+                "surface_samples_per_direction": 20000,
+                "localized_sample_fraction": 0.20745,
+                "region_count": 4,
+                "regions": [
+                  {
+                    "direction": "candidate_to_ground_truth",
+                    "error_type": "candidate_excess_or_displaced_surface",
+                    "sample_count": 4115,
+                    "sample_fraction": 0.20575,
+                    "estimated_area": 2229.102663,
+                    "estimated_area_fraction": 0.20575,
+                    "centroid": [
+                      -93.99438,
+                      -28.031611,
+                      10.258509
+                    ],
+                    "centroid_bbox_position": [
+                      0.5092,
+                      0.4498,
+                      0.5547
+                    ],
+                    "bbox": {
+                      "min": [
+                        -105.378438,
+                        -56.817767,
+                        -2.0
+                      ],
+                      "max": [
+                        -82.888479,
+                        7.182232,
+                        20.1
+                      ]
+                    },
+                    "mean_distance_normalized": 0.015941,
+                    "p95_distance_normalized": 0.018701,
+                    "max_distance_normalized": 0.031135,
+                    "mean_normal_offset_normalized": 0.001409,
+                    "mean_normal_disagreement": 0.295015,
+                    "dominant_source_normal": [
+                      0.3702,
+                      -0.0599,
+                      0.927
+                    ],
+                    "confidence": "high",
+                    "source_surface_query_points": [
+                      [
+                        -104.911694,
+                        -26.817767,
+                        15.22973
+                      ],
+                      [
+                        -96.63848,
+                        -16.897761,
+                        11.483837
+                      ],
+                      [
+                        -90.63848,
+                        -18.739044,
+                        4.2117
+                      ],
+                      [
+                        -96.676173,
+                        -26.788729,
+                        1.699344
+                      ],
+                      [
+                        -97.122739,
+                        -32.803186,
+                        3.811364
+                      ],
+                      [
+                        -83.900651,
+                        -51.663105,
+                        17.029584
+                      ],
+                      [
+                        -90.63848,
+                        -21.442994,
+                        6.995282
+                      ],
+                      [
+                        -99.459731,
+                        -26.817767,
+                        18.048566
+                      ],
+                      [
+                        -105.301097,
+                        -26.817767,
+                        17.692795
+                      ]
+                    ],
+                    "region_id": "excess-01",
+                    "counterpart_region_ids": [
+                      "missing-01"
+                    ]
+                  },
+                  {
+                    "direction": "candidate_to_ground_truth",
+                    "error_type": "candidate_excess_or_displaced_surface",
+                    "sample_count": 57,
+                    "sample_fraction": 0.00285,
+                    "estimated_area": 30.876999,
+                    "estimated_area_fraction": 0.00285,
+                    "centroid": [
+                      -94.155069,
+                      6.496399,
+                      1.381978
+                    ],
+                    "centroid_bbox_position": [
+                      0.5054,
+                      0.9893,
+                      0.153
+                    ],
+                    "bbox": {
+                      "min": [
+                        -96.121774,
+                        5.682232,
+                        -2.0
+                      ],
+                      "max": [
+                        -92.13848,
+                        7.182232,
+                        5.6
+                      ]
+                    },
+                    "mean_distance_normalized": 0.012079,
+                    "p95_distance_normalized": 0.017512,
+                    "max_distance_normalized": 0.018569,
+                    "mean_normal_offset_normalized": 0.002447,
+                    "mean_normal_disagreement": 0.982456,
+                    "dominant_source_normal": [
+                      -0.2747,
+                      0.9615,
+                      0.0
+                    ],
+                    "confidence": "high",
+                    "source_surface_query_points": [
+                      [
+                        -95.149101,
+                        7.182232,
+                        -0.796671
+                      ],
+                      [
+                        -95.13848,
+                        7.058622,
+                        -1.330967
+                      ],
+                      [
+                        -92.494459,
+                        5.682232,
+                        1.122839
+                      ],
+                      [
+                        -92.13848,
+                        6.602464,
+                        4.328617
+                      ],
+                      [
+                        -92.13848,
+                        5.836862,
+                        2.31957
+                      ],
+                      [
+                        -96.004209,
+                        6.931098,
+                        5.6
+                      ],
+                      [
+                        -95.13848,
+                        6.915705,
+                        2.194422
+                      ],
+                      [
+                        -93.091516,
+                        5.682232,
+                        -1.253722
+                      ],
+                      [
+                        -95.672081,
+                        7.182232,
+                        0.48988
+                      ]
+                    ],
+                    "region_id": "excess-02",
+                    "counterpart_region_ids": [
+                      "missing-02"
+                    ]
+                  },
+                  {
+                    "direction": "ground_truth_to_candidate",
+                    "error_type": "candidate_missing_or_displaced_surface",
+                    "sample_count": 4067,
+                    "sample_fraction": 0.20335,
+                    "estimated_area": 2204.314263,
+                    "estimated_area_fraction": 0.20335,
+                    "centroid": [
+                      -94.940422,
+                      -28.474845,
+                      10.56102
+                    ],
+                    "centroid_bbox_position": [
+                      0.4872,
+                      0.4429,
+                      0.5684
+                    ],
+                    "bbox": {
+                      "min": [
+                        -105.888478,
+                        -56.817767,
+                        -2.0
+                      ],
+                      "max": [
+                        -83.399127,
+                        7.182233,
+                        20.1
+                      ]
+                    },
+                    "mean_distance_normalized": 0.015989,
+                    "p95_distance_normalized": 0.018701,
+                    "max_distance_normalized": 0.030635,
+                    "mean_normal_offset_normalized": 8.5e-05,
+                    "mean_normal_disagreement": 0.332944,
+                    "dominant_source_normal": [
+                      0.4938,
+                      -0.0904,
+                      0.8649
+                    ],
+                    "confidence": "high",
+                    "source_surface_query_points": [
+                      [
+                        -104.553657,
+                        -52.669148,
+                        13.534581
+                      ],
+                      [
+                        -98.090288,
+                        -23.127596,
+                        8.0
+                      ],
+                      [
+                        -92.138478,
+                        -50.407821,
+                        6.390013
+                      ],
+                      [
+                        -97.968644,
+                        -40.822847,
+                        8.0
+                      ],
+                      [
+                        -92.138478,
+                        -13.491504,
+                        1.259027
+                      ],
+                      [
+                        -86.491612,
+                        -50.618985,
+                        15.366591
+                      ],
+                      [
+                        -92.138478,
+                        -28.274012,
+                        5.632575
+                      ],
+                      [
+                        -100.888478,
+                        1.587068,
+                        15.185483
+                      ],
+                      [
+                        -104.69152,
+                        -52.490574,
+                        14.431041
+                      ]
+                    ],
+                    "source_brep_faces": [
+                      {
+                        "face_id": "face-5858234b23bc",
+                        "sample_fraction": 0.207524,
+                        "surface_type": "plane"
+                      },
+                      {
+                        "face_id": "face-16671a16ac1d",
+                        "sample_fraction": 0.205065,
+                        "surface_type": "plane"
+                      },
+                      {
+                        "face_id": "face-9efd2d7f214f",
+                        "sample_fraction": 0.166216,
+                        "surface_type": "plane"
+                      },
+                      {
+                        "face_id": "face-f49a3d2d8b95",
+                        "sample_fraction": 0.072781,
+                        "surface_type": "plane"
+                      },
+                      {
+                        "face_id": "face-2708aa23943d",
+                        "sample_fraction": 0.067863,
+                        "surface_type": "plane"
+                      }
+                    ],
+                    "region_id": "missing-01",
+                    "counterpart_region_ids": [
+                      "excess-01"
+                    ]
+                  },
+                  {
+                    "direction": "ground_truth_to_candidate",
+                    "error_type": "candidate_missing_or_displaced_surface",
+                    "sample_count": 59,
+                    "sample_fraction": 0.00295,
+                    "estimated_area": 31.978004,
+                    "estimated_area_fraction": 0.00295,
+                    "centroid": [
+                      -94.840737,
+                      6.468613,
+                      1.544115
+                    ],
+                    "centroid_bbox_position": [
+                      0.4895,
+                      0.9888,
+                      0.1604
+                    ],
+                    "bbox": {
+                      "min": [
+                        -96.638478,
+                        5.682233,
+                        -2.0
+                      ],
+                      "max": [
+                        -92.752497,
+                        7.182233,
+                        5.6
+                      ]
+                    },
+                    "mean_distance_normalized": 0.012821,
+                    "p95_distance_normalized": 0.017744,
+                    "max_distance_normalized": 0.018275,
+                    "mean_normal_offset_normalized": -0.000106,
+                    "mean_normal_disagreement": 0.949153,
+                    "dominant_source_normal": [
+                      0.1104,
+                      0.9932,
+                      -0.0368
+                    ],
+                    "confidence": "high",
+                    "source_surface_query_points": [
+                      [
+                        -96.638478,
+                        5.948577,
+                        -1.312407
+                      ],
+                      [
+                        -92.765998,
+                        7.182233,
+                        1.832618
+                      ],
+                      [
+                        -93.638478,
+                        6.997936,
+                        2.201949
+                      ],
+                      [
+                        -92.989017,
+                        7.182233,
+                        5.112058
+                      ],
+                      [
+                        -96.404775,
+                        5.682233,
+                        2.334025
+                      ],
+                      [
+                        -95.865353,
+                        5.682233,
+                        3.616874
+                      ],
+                      [
+                        -92.999529,
+                        6.461888,
+                        -2.0
+                      ],
+                      [
+                        -96.638478,
+                        6.604683,
+                        0.499305
+                      ],
+                      [
+                        -96.425044,
+                        5.682233,
+                        0.836467
+                      ]
+                    ],
+                    "source_brep_faces": [
+                      {
+                        "face_id": "face-75033e35befb",
+                        "sample_fraction": 0.271186,
+                        "surface_type": "plane"
+                      },
+                      {
+                        "face_id": "face-24b92c50ea35",
+                        "sample_fraction": 0.237288,
+                        "surface_type": "plane"
+                      },
+                      {
+                        "face_id": "face-8516386b5656",
+                        "sample_fraction": 0.220339,
+                        "surface_type": "plane"
+                      },
+                      {
+                        "face_id": "face-0331304b23bf",
+                        "sample_fraction": 0.220339,
+                        "surface_type": "plane"
+                      },
+                      {
+                        "face_id": "face-6142e64706e0",
+                        "sample_fraction": 0.033898,
+                        "surface_type": "plane"
+                      }
+                    ],
+                    "region_id": "missing-02",
+                    "counterpart_region_ids": [
+                      "excess-02"
+                    ]
+                  }
+                ]
+              }
+            },
+            "candidate_geometry": {
+              "vertices": 1666,
+              "triangles": 3372,
+              "watertight": true,
+              "volume": 25782.254231,
+              "surface_area": 10834.034815,
+              "extents": [
+                42.999999,
+                63.999999,
+                22.099999
+              ]
+            },
+            "ground_truth_geometry": {
+              "vertices": 6876,
+              "triangles": 13808,
+              "watertight": false,
+              "volume": 25769.814542,
+              "surface_area": 10840.001292,
+              "extents": [
+                43.0,
+                64.0,
+                22.1
+              ]
+            },
+            "thresholds": {
+              "voxel_iou_min": 0.99,
+              "normalized_chamfer_max": 0.006,
+              "bbox_relative_error_max": 0.002,
+              "volume_relative_error_max": 0.005,
+              "candidate_watertight": true
+            },
+            "acceptable_thresholds": {
+              "voxel_iou_min": 0.95,
+              "normalized_chamfer_max": 0.01,
+              "bbox_relative_error_max": 0.01,
+              "volume_relative_error_max": 0.02,
+              "candidate_watertight": true
+            },
+            "alignment": {
+              "type": "right-handed-axis-permutation-plus-translation",
+              "rotation": [
+                [
+                  -1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "candidate_center": [
+                21.5,
+                32.0,
+                11.050001
+              ],
+              "ground_truth_center": [
+                -94.388478,
+                -24.817767,
+                9.05
+              ],
+              "scale_allowed": false
+            },
+            "rubrics": [
+              {
+                "id": "watertight",
+                "status": "passed",
+                "actual": true,
+                "expected": true
+              },
+              {
+                "id": "voxel_iou",
+                "status": "failed",
+                "actual": 0.890819,
+                "minimum": 0.99
+              },
+              {
+                "id": "normalized_chamfer",
+                "status": "failed",
+                "actual": 0.007152,
+                "maximum": 0.006
+              },
+              {
+                "id": "bbox_relative_error",
+                "status": "passed",
+                "actual": 0.0,
+                "maximum": 0.002
+              },
+              {
+                "id": "volume_relative_error",
+                "status": "passed",
+                "actual": 0.000483,
+                "maximum": 0.005
+              }
+            ],
+            "eqc": {
+              "eqc": 91.69,
+              "success": false,
+              "coverage": 100.0
+            }
+          },
+          "evidence": {
+            "candidate": {
+              "sha256": "4783c2331ba56c5e4842eb693daff27569834c75fed2c4a40974bf63bcea744c",
+              "bytes": 168684
+            },
+            "verdict": {
+              "sha256": "f59b28116c94c79944f7ae81e443704fd9c7cb1d37c30f9c99bcee24977b7f2c",
+              "bytes": 15037
+            },
+            "reflection": null,
+            "feedback_packet": null,
+            "codex_events": {
+              "sha256": "cddd697a821b3b72f6cf3512542d09589c06686314295e671fd607094f62636e",
+              "bytes": 97327
+            },
+            "reflection_events": null,
+            "reflection_stderr": null,
+            "mcp_audit": {
+              "sha256": "6618ec130ea8c88f2e7c2958bd46e0fcb3febb5181e3c91f02c6c2eb49abbd4a",
+              "bytes": 34578
+            },
+            "render_images": {
+              "candidate": {
+                "sha256": "c8b774cd6cf8faa6dab4d0fb44dcc6412fdb46ab09a92d90884a86d56eb6ea51",
+                "bytes": 15028
+              },
+              "overlay": {
+                "sha256": "e2ba26596d4d90d9e402f8909399da81b251f3b3ee65bd3672fefa324fa28ee6",
+                "bytes": 21574
+              },
+              "ground_truth": {
+                "sha256": "8ce10da08514a486b8b1d8c0c2001a097862986c2d5f9ac3975ee1369029208b",
+                "bytes": 16942
+              }
+            },
+            "geometry_assets": {
+              "candidate": {
+                "sha256": "76e608d2c513a69e41db5232e7c7e211489e901669092d31d651fe1267a18be6",
+                "bytes": 168684
+              },
+              "ground_truth": {
+                "sha256": "5bc99e9d308f46145ea17cad533fd3568769918d16200b375674c8f86d34e4c6",
+                "bytes": 690484
+              },
+              "localization": {
+                "sha256": "24a11bf2074da6a0686072dec1f31209ac35cccd716b1279658abdde3679ed4c",
+                "bytes": 123290
+              },
+              "topology": {
+                "sha256": "48c28de6d5ac912673637d75923f6fac91419418b5d7a8190e657ec32e50ee00",
+                "bytes": 107597
+              },
+              "face_query": null
+            }
+          },
+          "evidence_sha256": "37e88ace2ec9d7be61ade0861c2194413c0eb0af180a054b541e804b7f1fe177",
+          "reflection": null,
+          "feedback_packet": null,
+          "public_events": [
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "I’ll use the AutoCAD modeling skill to interpret the drawing, build the part in isolated Core Console jobs, and check the solid before saving the final DWG.\n"
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath '[private value removed]\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath 'task.json'; Get-ChildItem -LiteralPath 'input_files' -File | Select-Object Name,Length\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_set_run_context",
+              "server": "autocad",
+              "arguments": {
+                "sample_id": "omnimech:2",
+                "run_id": "direct-codex-astra-ultra-omnimech2-https-20260914-gpt-6-astra-ultra",
+                "attempt_id": "a001"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command 'Get-Command python | Select-Object -ExpandProperty Source'",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"@'\nfrom PIL import Image\nim=Image.open(r'input_files/input-01.png')\nim.crop((300,680,710,960)).resize((1230,840)).save('source-end-view.png')\nim.crop((360,175,695,590)).resize((804,996)).save('source-plan-view.png')\nim.crop((900,175,1255,600)).resize((852,1020)).save('source-section.png')\n'@ | python -\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The drawing shows a 23 × 64 mm body with four mounting ears, a recessed channel, a through-window, and holes on three faces. I’m checking the end and section views to resolve the channel depths and shallow cross-shaped recess.\n"
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "output_path": "[private value removed]",
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"OSMODE\" 0)\n(setvar \"FILEDIA\" 0)\n(setvar \"INSUNITS\" 4)\n(setvar \"MEASUREMENT\" 1)\n(setvar \"DELOBJ\" 1)\n(setvar \"ISOLINES\" 6)\n(command \"_.UCS\" \"_World\")\n(defun mkbox (x0 y0 z0 x1 y1 z1) (command \"_.BOX\" (list x0 y0 z0) (list x1 y1 z0) (- z1 z0)) (entlast))\n(setq blank (mkbox 0.0 0.0 0.0 23.0 64.0 22.1))\n(setq blanks (ssadd blank))\n(foreach xx '(-10.0 23.0) (foreach yy '(9.0 54.0) (ssadd (mkbox xx yy 1.0 (+ xx 10.0) (+ yy 10.0) 7.0) blanks)))\n(command \"_.UNION\" blanks \"\")\n(setq body (entlast))\n(defun boxcut (x0 y0 z0 x1 y1 z1) (setq cutter (mkbox x0 y0 z0 x1 y1 z1)) (command \"_.SUBTRACT\" body \"\" cutter \"\") (setq body (entlast)))\n(boxcut 5.0 -1.0 16.1 16.5 65.0 23.1)\n(boxcut 7.75 17.5 -1.0 13.75 65.0 10.0)\n(boxcut 7.75 17.5 9.9 13.75 28.5 23.1)\n(boxcut 16.5 29.0 16.1 24.0 34.0 23.1)\n(boxcut 9.25 -1.0 -1.0 12.25 1.5 23.1)\n(boxcut -1.0 -1.0 7.6 24.0 1.5 10.6)\n(command \"_.VPOINT\" (list -1.0 -1.5 1.2))\n(command \"_.ZOOM\" \"_Extents\")\n(princ (strcat \"\\nBODY_HANDLE=\" (cdr (assoc 5 (entget body)))))\n(princ (strcat \"\\nSOLID_COUNT=\" (itoa (sslength (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\")))))))\n(princ)\n)",
+                "timeout": 180,
+                "operation_manifest": [
+                  {
+                    "operation_id": "body-and-prismatic-features",
+                    "operation_type": "constructive_solid_geometry",
+                    "intent": "Build 23 x 64 x 22.1 body, four 10 x 10 x 6 ears, front channel, rear channel, window, right rail break and shallow cross-shaped end recess from source drawing",
+                    "parameters": {
+                      "body_mm": [
+                        23,
+                        64,
+                        22.1
+                      ],
+                      "overall_width_mm": 43,
+                      "front_channel_width_mm": 11.5,
+                      "front_channel_depth_mm": 6,
+                      "rear_channel_width_mm": 6,
+                      "rear_channel_depth_mm": 10,
+                      "window_length_mm": 11,
+                      "end_recess_depth_mm": 1.5
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "bbe3ba4c478042f78e628a9c9be6c130"
+              },
+              "error": null
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The section views are consistent: the rear channel is 10 mm deep, the front channel is 6 mm deep, and the cross-shaped recess is confined to the first 1.5 mm of the end. The body job succeeded. I’ll add the bores, then check the solid’s topology, volume, and appearance against the drawing.\n"
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"OSMODE\" 0)\n(setvar \"FILEDIA\" 0)\n(command \"_.UCS\" \"_World\")\n(setq body (ssname (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))) 0))\n(defun bore (p0 p1 radius) (command \"_.CYLINDER\" p0 radius \"_Axis\" p1) (setq cutter (entlast)) (command \"_.SUBTRACT\" body \"\" cutter \"\") (setq body (entlast)))\n(foreach xx '(-5.0 28.0) (foreach yy '(14.0 59.0) (bore (list xx yy 0.0) (list xx yy 8.0) 2.75)))\n(foreach xx '(2.25 19.75) (foreach yy '(9.0 59.0) (bore (list xx yy 23.1) (list xx yy 14.1) 1.25)))\n(foreach xx '(3.5 19.5) (foreach zz '(5.6 13.1) (bore (list xx -1.0 zz) (list xx 8.0 zz) 1.25)))\n(bore (list -1.0 34.5 5.1) (list 24.0 34.5 5.1) 1.5)\n(bore (list -1.0 38.5 5.1) (list 9.25 38.5 5.1) 1.65)\n(bore (list 24.0 38.5 5.1) (list 13.75 38.5 5.1) 1.65)\n(bore (list 10.75 40.5 9.9) (list 10.75 40.5 12.0) 2.4)\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" body \"_eXit\" \"_eXit\")\n(command \"_.MASSPROP\" body \"\" \"_Yes\" \"[private value removed]\")\n(command \"_.VPOINT\" (list -1.0 -1.5 1.2))\n(command \"_.ZOOM\" \"_Extents\")\n(setq fp (open \"[private value removed]\" \"w\"))\n(write-line (strcat \"Model-space 3DSOLID count: \" (itoa (sslength (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\")))))) fp)\n(write-line (strcat \"All model-space entities: \" (itoa (sslength (ssget \"_X\" '((410 . \"Model\")))))) fp)\n(write-line (strcat \"Solid handle: \" (cdr (assoc 5 (entget body)))) fp)\n(write-line \"Units: millimeters. Bores use smooth specified pilot/drill diameters; no helical threads.\" fp)\n(close fp)\n(princ)\n)",
+                "timeout": 180,
+                "operation_manifest": [
+                  {
+                    "operation_id": "drilled-features",
+                    "operation_type": "subtract",
+                    "intent": "Four diameter5.5 mounting through bores, four front and four end M3 diameter2.5 pilot bores depth8, opposed diameter3 H7 wall holes and M4 diameter3.3 pilot wall holes, diameter4.8 depth2 recess from rear groove floor",
+                    "parameters": {
+                      "mount_bores": 4,
+                      "front_pilot_bores": 4,
+                      "end_pilot_bores": 4,
+                      "side_reamed_bores": 2,
+                      "side_tapped_pilot_bores": 2,
+                      "rear_recess_diameter_mm": 4.8,
+                      "rear_recess_depth_mm": 2
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "0a2f4b6b197e414a8c1ed9af48376f06"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "failed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-ChildItem -LiteralPath . -File | Select-Object Name,Length; Get-Content -LiteralPath 'stage02-checks.txt'; Get-Content -LiteralPath 'stage02-mass-properties.txt'\"",
+              "exit_code": 1
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Content -LiteralPath 'stage02-mass-properties.txt.mpr'; @'\nimport importlib.util\nfor module in ['trimesh','matplotlib','numpy','PIL']:\n print(module, bool(importlib.util.find_spec(module)))\n'@ | python -\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "188d71f2f51b446c9c5a1c41110146af"
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120,
+                "capture_boolean_lineage": false,
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"FILEDIA\" 0)\n(setvar \"FACETRES\" 10.0)\n(setvar \"ISOLINES\" 8)\n(setq body (ssname (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))) 0))\n(command \"_.STLOUT\" body \"\" \"_Yes\" \"[private value removed]\")\n(command \"_.VPOINT\" (list 1.0 1.5 1.2))\n(command \"_.ZOOM\" \"_Extents\")\n(princ)\n)"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"@'\nimport json\nfrom collections import Counter\np=json.load(open('stage02-topology.json',encoding='utf-8-sig'))\nprint('Root keys:',list(p))\nprint(json.dumps(p,ensure_ascii=False)[:16000])\n'@ | python -\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "52a6ee570498488cafad067c8801d3f1"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"@'\nimport json\nfrom collections import Counter\np=json.load(open('stage02-topology.json',encoding='utf-8-sig'))\ne=p['entities'][0]\nprint('Entity keys:', list(e))\nprint('Entity summaries:',{k:v for k,v in e.items() if k not in ['edges','faces','vertices']})\nprint('Face types:', Counter(f.get('surface',{}).get('type') for f in e['faces']))\nfor f in e['faces'][:7]:\n print(json.dumps(f,ensure_ascii=False)[:1800])\nimport trimesh\nm=trimesh.load_mesh('stage03-preview.stl')\nprint('STL bounds:',m.bounds.tolist(),'volume:',m.volume,'watertight:',m.is_watertight,'components:',len(m.split()),'faces:',len(m.faces))\n'@ | python -\"",
+              "exit_code": 0
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"@'\nimport json\nimport numpy as np\nimport trimesh\nimport matplotlib\nmatplotlib.use('Agg')\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d.art3d import Poly3DCollection\nm=trimesh.load_mesh('stage03-preview.stl')\nfig=plt.figure(figsize=(13,10),facecolor='white')\nviews=[('Front and right side',42,55),('Rear channel',-38,55),('End with cross recess',0,-90),('Front face',90,-90)]\nfor i,(title,elev,azim) in enumerate(views,1):\n ax=fig.add_subplot(2,2,i,projection='3d')\n light=np.array([-.25,.4,1.]) if elev>=0 else np.array([-.25,.4,-1.])\n light/=np.linalg.norm(light)\n intensity=.50+.46*np.clip(m.face_normals@light,0,1)\n colors=np.column_stack([intensity*.80,intensity*.86,intensity*.94,np.ones(len(intensity))])\n coll=Poly3DCollection(m.triangles,facecolors=colors,edgecolors='none',zsort='average')\n ax.add_collection3d(coll)\n ax.set_xlim(0,43);ax.set_ylim(0,64);ax.set_zlim(0,22.1)\n ax.set_box_aspect((43,64,22.1));ax.set_proj_type('ortho')\n ax.view_init(elev=elev,azim=azim);ax.set_axis_off();ax.set_title(title,pad=-5)\nfig.subplots_adjust(left=0,right=1,bottom=0,top=.96,wspace=-.10,hspace=-.1)\nfig.savefig('stage03-inspection.png',dpi=160)\np=json.load(open('stage02-topology.json',encoding='utf-8-sig'))\ne=p['entities'][0]\nradii={}\nfor f in e['faces']:\n s=f['surface']\n if s['type']=='cylinder':\n  d=round(s['radius']*2,4);radii[d]=radii.get(d,0)+1\nreport={'native_entity_count':len(p['entities']),'native_entity_type':e['type'],'native_bounds_mm':e['bounds'],'native_volume_mm3':e['mass_properties']['volume'],'cylindrical_faces_by_diameter_mm':radii,'native_export_errors':p['errors'],'preview_mesh_watertight':bool(m.is_watertight),'preview_mesh_components':len(m.split()),'preview_mesh_note':'AutoCAD STL export translates the tessellation to the positive octant; DWG bounds remain unchanged.'}\njson.dump(report,open('stage03-verification.json','w'),indent=2)\nprint(json.dumps(report,indent=2))\n'@ | python -\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The solid has the expected 43 × 64 × 22.1 mm envelope and all 17 cylindrical bore faces. Its native volume is 25,779.08 mm³, consistent with the independent calculation. The preview mesh is closed and connected; I’m completing the visual check before saving the final DWG.\n"
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"@'\nimport numpy as np\nimport trimesh\nfrom PIL import Image,ImageDraw\nm=trimesh.load_mesh('stage03-preview.stl')\nv=m.vertices-m.bounds.mean(axis=0)\nsharp=m.face_adjacency_edges[m.face_adjacency_angles>np.deg2rad(15)]\ndef render(kind,size=(950,1050)):\n w,h=size\n if kind=='front':\n  n=np.array([0.,0.,1.]);r=np.array([1.,0.,0.]);u=np.array([0.,-1.,0.])\n elif kind=='end':\n  n=np.array([0.,-1.,0.]);r=np.array([1.,0.,0.]);u=np.array([0.,0.,-1.])\n else:\n  n=np.array([.35,.70,.72 if kind=='iso' else -.72]);n/=np.linalg.norm(n)\n  r=np.array([n[1],-n[0],0.]);r/=np.linalg.norm(r)\n  u=np.cross(r,n)\n p=np.column_stack([v@r,v@u,v@n])\n scale=min((w-100)/np.ptp(p[:,0]),(h-140)/np.ptp(p[:,1]))\n p[:,0]=p[:,0]*scale+w/2;p[:,1]=-p[:,1]*scale+h/2+10\n zbuf=np.full((h,w),-np.inf);out=np.full((h,w,3),255,dtype=np.uint8)\n light=n+u*.55-r*.25;light/=np.linalg.norm(light)\n shade=.55+.40*np.maximum(0,m.face_normals@light)\n for fi,inds in enumerate(m.faces):\n  q=p[inds]; xmin=max(0,int(np.floor(q[:,0].min())));xmax=min(w-1,int(np.ceil(q[:,0].max())))\n  ymin=max(0,int(np.floor(q[:,1].min())));ymax=min(h-1,int(np.ceil(q[:,1].max())))\n  if xmin>xmax or ymin>ymax:continue\n  x,y=np.meshgrid(np.arange(xmin,xmax+1)+.5,np.arange(ymin,ymax+1)+.5)\n  a,b,c=q;den=(b[1]-c[1])*(a[0]-c[0])+(c[0]-b[0])*(a[1]-c[1])\n  if abs(den)<1e-9:continue\n  aa=((b[1]-c[1])*(x-c[0])+(c[0]-b[0])*(y-c[1]))/den\n  bb=((c[1]-a[1])*(x-c[0])+(a[0]-c[0])*(y-c[1]))/den\n  cc=1-aa-bb;z=aa*a[2]+bb*b[2]+cc*c[2]\n  zb=zbuf[ymin:ymax+1,xmin:xmax+1]\n  mask=(aa>=-1e-8)&(bb>=-1e-8)&(cc>=-1e-8)&(z>zb)\n  zb[mask]=z[mask]\n  out[ymin:ymax+1,xmin:xmax+1][mask]=(np.array([210,222,237])*shade[fi]).astype(np.uint8)\n for edge in sharp:\n  a,b=p[edge];num=max(2,int(np.linalg.norm(b[:2]-a[:2])*2));t=np.linspace(0,1,num)\n  q=a[None,:]+(b-a)[None,:]*t[:,None]\n  for ox,oy in [(0,0),(1,0),(0,1)]:\n   xx=np.floor(q[:,0]).astype(int)+ox;yy=np.floor(q[:,1]).astype(int)+oy\n   good=(xx>=0)&(xx<w)&(yy>=0)&(yy<h)\n   xx=xx[good];yy=yy[good];zz=q[good,2]\n   vis=zz>=zbuf[yy,xx]-.075\n   out[yy[vis],xx[vis]]=[46,54,64]\n return Image.fromarray(out)\ncanvas=Image.new('RGB',(1900,2100),'white')\nfor i,(kind,label) in enumerate([('iso','Front / right'),('rear','Rear channel'),('end','End recess'),('front','Front view')]):\n im=render(kind);ImageDraw.Draw(im).text((35,25),label,fill=(30,30,30),font_size=27)\n canvas.paste(im,((i%2)*950,(i//2)*1050))\ncanvas.save('stage03-visual-check.png')\nprint('Saved rasterized visual check.')\n'@ | python -\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "capture_boolean_lineage": true,
+                "timeout": 120,
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"FILEDIA\" 0)\n(setvar \"OSMODE\" 0)\n(setvar \"INSUNITS\" 4)\n(setvar \"MEASUREMENT\" 1)\n(setvar \"DISPSILH\" 1)\n(setvar \"ISOLINES\" 4)\n(command \"_.UCS\" \"_World\")\n(command \"_.AUDIT\" \"_Yes\")\n(setq ss (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(setq body (ssname ss 0))\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" body \"_eXit\" \"_eXit\")\n(command \"_.VSCURRENT\" \"_Conceptual\")\n(command \"_.VPOINT\" (list 0.35 0.70 0.72))\n(command \"_.ZOOM\" \"_Extents\")\n(command \"_.MASSPROP\" body \"\" \"_Yes\" \"[private value removed]\")\n(setq fp (open \"[private value removed]\" \"w\"))\n(write-line (strcat \"Native model-space 3DSOLIDs: \" (itoa (sslength ss))) fp)\n(write-line (strcat \"Total model-space entities: \" (itoa (sslength (ssget \"_X\" '((410 . \"Model\")))))) fp)\n(write-line \"Drawing units: millimeters.\" fp)\n(write-line \"Native AUDIT and SOLIDEDIT body check executed before final save.\" fp)\n(write-line \"Source-based envelope: 43 x 64 x 22.1 mm.\" fp)\n(write-line \"Native volume from B-Rep: 25779.0806 cubic millimeters.\" fp)\n(write-line \"Native cylindrical faces: 4 x dia5.5, 8 x dia2.5, 2 x dia3.0, 2 x dia3.3, 1 x dia4.8.\" fp)\n(write-line \"Native topology export: no errors. Inspection mesh: closed, connected single component.\" fp)\n(write-line \"Drawing front, end, section and isometric features visually reconciled.\" fp)\n(write-line \"Assumptions: use basic dimension values; tapped holes represented by smooth pilot bores; flat blind-drill bottoms; no unspecified edge chamfers.\" fp)\n(close fp)\n(princ)\n)"
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "c6710ba71def42b683b66cdadfff5dc5"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Item -LiteralPath 'candidate.a001.dwg' | Select-Object FullName,Length; Get-Content -LiteralPath 'candidate.a001-checks.txt'; @'\nfrom pathlib import Path\np=Path('candidate.a001.mpr')\nprint(p.read_text(encoding='gb18030')[:450])\n'@ | python -\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "The visual check matches the drawing. Core Console crashed during the final save after the display-style change; the checked intermediate DWG is intact. I’ll save from that intermediate using the simpler display settings and verify that the job succeeds.\n"
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "capture_boolean_lineage": false,
+                "timeout": 120,
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"FILEDIA\" 0)\n(setvar \"INSUNITS\" 4)\n(setq ss (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(setq fp (open \"[private value removed]\" \"w\"))\n(write-line (strcat \"Native 3DSOLIDs in model space: \" (itoa (sslength ss))) fp)\n(write-line (strcat \"Total entities in model space: \" (itoa (sslength (ssget \"_X\" '((410 . \"Model\")))))) fp)\n(write-line \"Final source: validated stage03-inspected.a001.dwg, unchanged geometry.\" fp)\n(close fp)\n(princ)\n)"
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_core_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "cfcfff1e1b0947e7903b9fecef38777d"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"Get-Item -LiteralPath 'candidate.a001.dwg' | Select-Object Name,Length; Get-Content -LiteralPath 'candidate.a001-final-save-check.txt'\"",
+              "exit_code": 0
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_start",
+              "server": "autocad",
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "type": "mcp_tool_call",
+              "status": "completed",
+              "phase": "action",
+              "tool": "autocad_topology_status",
+              "server": "autocad",
+              "arguments": {
+                "job_id": "32974a0027e9406999f3da5bb9e77c11"
+              },
+              "error": null
+            },
+            {
+              "type": "command_execution",
+              "status": "completed",
+              "phase": "action",
+              "command": "\"[private value removed]\" -Command \"@'\nimport json\nfrom pathlib import Path\na=json.loads(Path('stage02-topology.json').read_text(encoding='utf-8-sig'))\nb=json.loads(Path('candidate.a001-topology.json').read_text(encoding='utf-8-sig'))\ne=b['entities'][0]\nprint('Final native entity count:',len(b['entities']))\nprint('Final native entity type:',e['type'])\nprint('Unchanged native geometry fingerprint:',a['entities'][0]['fingerprint']==e['fingerprint'])\nprint('Final volume:',e['mass_properties']['volume'])\nprint('Final bounds:',e['bounds'])\nprint('Export errors:',b['errors'])\n'@ | python -\"",
+              "exit_code": 0
+            },
+            {
+              "type": "agent_message",
+              "status": "completed",
+              "phase": "action",
+              "text": "Saved [candidate.a001.dwg]([private value removed] Final Core Console job succeeded.\n\nVerified one editable model-space 3DSOLID, 43 × 64 × 22.1 mm bounds, bore geometry, volume, and visual agreement. Final DWG reopened with no topology export errors. Intermediate DWGs are preserved.\n\nRemaining uncertainty: threads use smooth pilot bores with flat bottoms; unspecified edge breaks are omitted."
+            }
+          ],
+          "mcp_events": [
+            {
+              "event_id": "e1971ff5977241ea9bca28f7a013a4bc",
+              "timestamp": "2026-09-14T13:58:51Z",
+              "tool": "autocad_set_run_context",
+              "status": "pass",
+              "duration_ms": 0.041,
+              "arguments": {
+                "sample_id": "omnimech:2",
+                "run_id": "direct-codex-astra-ultra-omnimech2-https-20260914-gpt-6-astra-ultra",
+                "attempt_id": "a001"
+              },
+              "error": null
+            },
+            {
+              "event_id": "353e8ccf4aa9457ea3c8a7f36735bbc9",
+              "timestamp": "2026-09-14T14:02:49Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 3.725,
+              "arguments": {
+                "output_path": "[private value removed]",
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"OSMODE\" 0)\n(setvar \"FILEDIA\" 0)\n(setvar \"INSUNITS\" 4)\n(setvar \"MEASUREMENT\" 1)\n(setvar \"DELOBJ\" 1)\n(setvar \"ISOLINES\" 6)\n(command \"_.UCS\" \"_World\")\n(defun mkbox (x0 y0 z0 x1 y1 z1) (command \"_.BOX\" (list x0 y0 z0) (list x1 y1 z0) (- z1 z0)) (entlast))\n(setq blank (mkbox 0.0 0.0 0.0 23.0 64.0 22.1))\n(setq blanks (ssadd blank))\n(foreach xx '(-10.0 23.0) (foreach yy '(9.0 54.0) (ssadd (mkbox xx yy 1.0 (+ xx 10.0) (+ yy 10.0) 7.0) blanks)))\n(command \"_.UNION\" blanks \"\")\n(setq body (entlast))\n(defun boxcut (x0 y0 z0 x1 y1 z1) (setq cutter (mkbox x0 y0 z0 x1 y1 z1)) (command \"_.SUBTRACT\" body \"\" cutter \"\") (setq body (entlast)))\n(boxcut 5.0 -1.0 16.1 16.5 65.0 23.1)\n(boxcut 7.75 17.5 -1.0 13.75 65.0 10.0)\n(boxcut 7.75 17.5 9.9 13.75 28.5 23.1)\n(boxcut 16.5 29.0 16.1 24.0 34.0 23.1)\n(boxcut 9.25 -1.0 -1.0 12.25 1.5 23.1)\n(boxcut -1.0 -1.0 7.6 24.0 1.5 10.6)\n(command \"_.VPOINT\" (list -1.0 -1.5 1.2))\n(command \"_.ZOOM\" \"_Extents\")\n(princ (strcat \"\\nBODY_HANDLE=\" (cdr (assoc 5 (entget body)))))\n(princ (strcat \"\\nSOLID_COUNT=\" (itoa (sslength (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\")))))))\n(princ)\n)",
+                "timeout": 180,
+                "operation_manifest": [
+                  {
+                    "operation_id": "body-and-prismatic-features",
+                    "operation_type": "constructive_solid_geometry",
+                    "intent": "Build 23 x 64 x 22.1 body, four 10 x 10 x 6 ears, front channel, rear channel, window, right rail break and shallow cross-shaped end recess from source drawing",
+                    "parameters": {
+                      "body_mm": [
+                        23,
+                        64,
+                        22.1
+                      ],
+                      "overall_width_mm": 43,
+                      "front_channel_width_mm": 11.5,
+                      "front_channel_depth_mm": 6,
+                      "rear_channel_width_mm": 6,
+                      "rear_channel_depth_mm": 10,
+                      "window_length_mm": 11,
+                      "end_recess_depth_mm": 1.5
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "254fad3ebfd848209a799721477b9f3b",
+              "timestamp": "2026-09-14T14:03:08Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.063,
+              "arguments": {
+                "job_id": "bbe3ba4c478042f78e628a9c9be6c130"
+              },
+              "error": null
+            },
+            {
+              "event_id": "368d9e7f7ab344a1b6e60cd590a88f84",
+              "timestamp": "2026-09-14T14:04:27Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 3.289,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"OSMODE\" 0)\n(setvar \"FILEDIA\" 0)\n(command \"_.UCS\" \"_World\")\n(setq body (ssname (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))) 0))\n(defun bore (p0 p1 radius) (command \"_.CYLINDER\" p0 radius \"_Axis\" p1) (setq cutter (entlast)) (command \"_.SUBTRACT\" body \"\" cutter \"\") (setq body (entlast)))\n(foreach xx '(-5.0 28.0) (foreach yy '(14.0 59.0) (bore (list xx yy 0.0) (list xx yy 8.0) 2.75)))\n(foreach xx '(2.25 19.75) (foreach yy '(9.0 59.0) (bore (list xx yy 23.1) (list xx yy 14.1) 1.25)))\n(foreach xx '(3.5 19.5) (foreach zz '(5.6 13.1) (bore (list xx -1.0 zz) (list xx 8.0 zz) 1.25)))\n(bore (list -1.0 34.5 5.1) (list 24.0 34.5 5.1) 1.5)\n(bore (list -1.0 38.5 5.1) (list 9.25 38.5 5.1) 1.65)\n(bore (list 24.0 38.5 5.1) (list 13.75 38.5 5.1) 1.65)\n(bore (list 10.75 40.5 9.9) (list 10.75 40.5 12.0) 2.4)\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" body \"_eXit\" \"_eXit\")\n(command \"_.MASSPROP\" body \"\" \"_Yes\" \"[private value removed]\")\n(command \"_.VPOINT\" (list -1.0 -1.5 1.2))\n(command \"_.ZOOM\" \"_Extents\")\n(setq fp (open \"[private value removed]\" \"w\"))\n(write-line (strcat \"Model-space 3DSOLID count: \" (itoa (sslength (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\")))))) fp)\n(write-line (strcat \"All model-space entities: \" (itoa (sslength (ssget \"_X\" '((410 . \"Model\")))))) fp)\n(write-line (strcat \"Solid handle: \" (cdr (assoc 5 (entget body)))) fp)\n(write-line \"Units: millimeters. Bores use smooth specified pilot/drill diameters; no helical threads.\" fp)\n(close fp)\n(princ)\n)",
+                "timeout": 180,
+                "operation_manifest": [
+                  {
+                    "operation_id": "drilled-features",
+                    "operation_type": "subtract",
+                    "intent": "Four diameter5.5 mounting through bores, four front and four end M3 diameter2.5 pilot bores depth8, opposed diameter3 H7 wall holes and M4 diameter3.3 pilot wall holes, diameter4.8 depth2 recess from rear groove floor",
+                    "parameters": {
+                      "mount_bores": 4,
+                      "front_pilot_bores": 4,
+                      "end_pilot_bores": 4,
+                      "side_reamed_bores": 2,
+                      "side_tapped_pilot_bores": 2,
+                      "rear_recess_diameter_mm": 4.8,
+                      "rear_recess_depth_mm": 2
+                    }
+                  }
+                ]
+              },
+              "error": null
+            },
+            {
+              "event_id": "9af10d4d2c0a460aa9d0f5ce165ad049",
+              "timestamp": "2026-09-14T14:04:44Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.071,
+              "arguments": {
+                "job_id": "0a2f4b6b197e414a8c1ed9af48376f06"
+              },
+              "error": null
+            },
+            {
+              "event_id": "8df016f0f2d8478496b2e8d2653b8d74",
+              "timestamp": "2026-09-14T14:05:08Z",
+              "tool": "autocad_topology_start",
+              "status": "pass",
+              "duration_ms": 1.92,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "event_id": "ab0acb6cf74a4175a385dbbdb6bd9900",
+              "timestamp": "2026-09-14T14:05:53Z",
+              "tool": "autocad_topology_status",
+              "status": "pass",
+              "duration_ms": 0.054,
+              "arguments": {
+                "job_id": "188d71f2f51b446c9c5a1c41110146af"
+              },
+              "error": null
+            },
+            {
+              "event_id": "0e4992162aee41ebb2ac9ac8bd7d005b",
+              "timestamp": "2026-09-14T14:06:00Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.774,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120,
+                "capture_boolean_lineage": false,
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"FILEDIA\" 0)\n(setvar \"FACETRES\" 10.0)\n(setvar \"ISOLINES\" 8)\n(setq body (ssname (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))) 0))\n(command \"_.STLOUT\" body \"\" \"_Yes\" \"[private value removed]\")\n(command \"_.VPOINT\" (list 1.0 1.5 1.2))\n(command \"_.ZOOM\" \"_Extents\")\n(princ)\n)"
+              },
+              "error": null
+            },
+            {
+              "event_id": "304b9153793146d697327b2aadb3c794",
+              "timestamp": "2026-09-14T14:06:29Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.048,
+              "arguments": {
+                "job_id": "52a6ee570498488cafad067c8801d3f1"
+              },
+              "error": null
+            },
+            {
+              "event_id": "773ab10bf1bd4b298aa2865c5c15adef",
+              "timestamp": "2026-09-14T14:10:49Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 2.922,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "capture_boolean_lineage": true,
+                "timeout": 120,
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"FILEDIA\" 0)\n(setvar \"OSMODE\" 0)\n(setvar \"INSUNITS\" 4)\n(setvar \"MEASUREMENT\" 1)\n(setvar \"DISPSILH\" 1)\n(setvar \"ISOLINES\" 4)\n(command \"_.UCS\" \"_World\")\n(command \"_.AUDIT\" \"_Yes\")\n(setq ss (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(setq body (ssname ss 0))\n(command \"_.SOLIDEDIT\" \"_Body\" \"_Check\" body \"_eXit\" \"_eXit\")\n(command \"_.VSCURRENT\" \"_Conceptual\")\n(command \"_.VPOINT\" (list 0.35 0.70 0.72))\n(command \"_.ZOOM\" \"_Extents\")\n(command \"_.MASSPROP\" body \"\" \"_Yes\" \"[private value removed]\")\n(setq fp (open \"[private value removed]\" \"w\"))\n(write-line (strcat \"Native model-space 3DSOLIDs: \" (itoa (sslength ss))) fp)\n(write-line (strcat \"Total model-space entities: \" (itoa (sslength (ssget \"_X\" '((410 . \"Model\")))))) fp)\n(write-line \"Drawing units: millimeters.\" fp)\n(write-line \"Native AUDIT and SOLIDEDIT body check executed before final save.\" fp)\n(write-line \"Source-based envelope: 43 x 64 x 22.1 mm.\" fp)\n(write-line \"Native volume from B-Rep: 25779.0806 cubic millimeters.\" fp)\n(write-line \"Native cylindrical faces: 4 x dia5.5, 8 x dia2.5, 2 x dia3.0, 2 x dia3.3, 1 x dia4.8.\" fp)\n(write-line \"Native topology export: no errors. Inspection mesh: closed, connected single component.\" fp)\n(write-line \"Drawing front, end, section and isometric features visually reconciled.\" fp)\n(write-line \"Assumptions: use basic dimension values; tapped holes represented by smooth pilot bores; flat blind-drill bottoms; no unspecified edge chamfers.\" fp)\n(close fp)\n(princ)\n)"
+              },
+              "error": null
+            },
+            {
+              "event_id": "8a00480550a447cc87af1dc2c52e4b3e",
+              "timestamp": "2026-09-14T14:11:10Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.057,
+              "arguments": {
+                "job_id": "c6710ba71def42b683b66cdadfff5dc5"
+              },
+              "error": null
+            },
+            {
+              "event_id": "14922bba12bc48eb881b5ffe184aaadb",
+              "timestamp": "2026-09-14T14:11:52Z",
+              "tool": "autocad_core_start",
+              "status": "pass",
+              "duration_ms": 3.007,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "capture_boolean_lineage": false,
+                "timeout": 120,
+                "lisp": "(progn\n(setvar \"CMDECHO\" 0)\n(setvar \"FILEDIA\" 0)\n(setvar \"INSUNITS\" 4)\n(setq ss (ssget \"_X\" '((0 . \"3DSOLID\") (410 . \"Model\"))))\n(setq fp (open \"[private value removed]\" \"w\"))\n(write-line (strcat \"Native 3DSOLIDs in model space: \" (itoa (sslength ss))) fp)\n(write-line (strcat \"Total entities in model space: \" (itoa (sslength (ssget \"_X\" '((410 . \"Model\")))))) fp)\n(write-line \"Final source: validated stage03-inspected.a001.dwg, unchanged geometry.\" fp)\n(close fp)\n(princ)\n)"
+              },
+              "error": null
+            },
+            {
+              "event_id": "236b204de3fe4f43bc10b7e8f9f6e9de",
+              "timestamp": "2026-09-14T14:12:10Z",
+              "tool": "autocad_core_status",
+              "status": "pass",
+              "duration_ms": 0.047,
+              "arguments": {
+                "job_id": "cfcfff1e1b0947e7903b9fecef38777d"
+              },
+              "error": null
+            },
+            {
+              "event_id": "33ac30d4c2b84a5abc87a1c43d74cf7a",
+              "timestamp": "2026-09-14T14:12:37Z",
+              "tool": "autocad_topology_start",
+              "status": "pass",
+              "duration_ms": 2.04,
+              "arguments": {
+                "input_path": "[private value removed]",
+                "output_path": "[private value removed]",
+                "timeout": 120
+              },
+              "error": null
+            },
+            {
+              "event_id": "244c34a9b6784e07ac554842ab108028",
+              "timestamp": "2026-09-14T14:12:56Z",
+              "tool": "autocad_topology_status",
+              "status": "pass",
+              "duration_ms": 0.053,
+              "arguments": {
+                "job_id": "32974a0027e9406999f3da5bb9e77c11"
+              },
+              "error": null
+            }
+          ],
+          "derived_feature_backfill": {
+            "applied": false,
+            "record_sha256": null
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "75216b421befb36ffaac",
+      "run_id": "human-mirror-astra-omnimech2-20260914",
+      "sample_id": "omnimech:2",
+      "sample_key": "omnimech / 2",
+      "dataset": "omnimech",
+      "category": "automation_equipment",
+      "task": "Human-requested post-hoc mirror diagnostic of Astra's original output. Reconstruct the dimensioned mechanical part as one editable 3D CAD solid.",
+      "model": "astra-human-mirror-y",
+      "reasoning_effort": null,
+      "status": "passed",
+      "score": 100.0,
+      "passed": true,
+      "selected_attempt_id": "a001",
+      "stop_reason": "human-requested-diagnostic-complete",
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": "a42d24047ff0d6e7adec8f5e50f1c81ecf2805a7b267e4058257d746b0297f80",
+      "candidate_sha256": "f9d2d78d2931fb8d56575dc64536bf1b97029f6754e8cfb9561ba94cbdc40eb5",
+      "ground_truth_sha256": "beec5dbcffa47608dd0082b0185b46b127c67b3e37be5868c6d01e95df299889",
+      "integrity": {
+        "ok": true,
+        "checked_files": 22,
+        "events": 20,
+        "errors": []
+      },
+      "input_images": [
+        "assets/omnimech-2/astra-human-mirror-y/input-01.png"
+      ],
+      "input_evidence": [
+        {
+          "path": "assets/omnimech-2/astra-human-mirror-y/input-01.png",
+          "sha256": "fef27d4171b22c08156d694224383ccae3dae7e5fc998ee880f7613c7692bef6",
+          "bytes": 238071
+        }
+      ],
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "a001",
+          "score": 100.0,
+          "passed": true,
+          "elapsed_seconds": 54.204,
+          "selected": true,
+          "timed_out": null,
+          "agent_decision": null,
+          "decision_reason": "Human identified a mirror relation; no new agent call.",
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": null,
+          "decision_recovered": null,
+          "images": {
+            "candidate": "assets/omnimech-2/astra-human-mirror-y/a001-candidate.png",
+            "overlay": "assets/omnimech-2/astra-human-mirror-y/a001-overlay.png",
+            "ground_truth": "assets/omnimech-2/astra-human-mirror-y/ground-truth.png"
+          },
+          "geometry": {
+            "candidate": "assets/omnimech-2/astra-human-mirror-y/a001-candidate.stl",
+            "ground_truth": "assets/omnimech-2/astra-human-mirror-y/ground-truth.stl",
+            "localization": "assets/omnimech-2/astra-human-mirror-y/a001-localization.json",
+            "topology": "assets/omnimech-2/astra-human-mirror-y/a001-topology.json",
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": {
+            "schema_version": "1.0",
+            "protocol": "evocad-surface-localization-v1",
+            "coordinate_frame": "aligned-ground-truth-world",
+            "uses_evaluator_ground_truth": true,
+            "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+            "distance_threshold_normalized": 0.006,
+            "cluster_radius_normalized": 0.025,
+            "surface_samples_per_direction": 20000,
+            "localized_sample_fraction": 0.0,
+            "region_count": 0,
+            "regions": [],
+            "native_topology": {
+              "protocol": "evocad-native-feature-localization-v1",
+              "entity_count": 1,
+              "face_count": 75,
+              "adjacency_count": 177,
+              "feature_candidate_count": 17,
+              "export_errors": [],
+              "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+              "boolean_lineage": {
+                "schema_version": "1.0",
+                "protocol": "evocad-boolean-face-lineage-v2",
+                "snapshot_comparison": {
+                  "parent_face_count": 0,
+                  "current_face_count": 75,
+                  "inherited_face_count": 0,
+                  "created_or_modified_face_count": 75,
+                  "deleted_or_modified_parent_face_count": 0,
+                  "captured_job_count": 0,
+                  "lineage_mode": "single_snapshot_delta"
+                },
+                "operation_graph": {
+                  "nodes": [],
+                  "edges": []
+                },
+                "deleted_parent_face_examples": [],
+                "interpretation": "Stable fingerprints prove inheritance. Snapshot-delta faces identify the operation group that changed topology; multiple operations in one job remain causally ambiguous."
+              }
+            },
+            "visualization_surface_samples_per_direction": 4000,
+            "region_summary_source": "geometry-verdict.json"
+          },
+          "localization_error": null,
+          "verdict": {
+            "schema_version": "1.0",
+            "protocol": "evocad-geometry-v2",
+            "sample_id": "omnimech:2",
+            "passed": true,
+            "quality_tier": "strict",
+            "score": 100.0,
+            "coverage": 100.0,
+            "checks": {
+              "candidate_watertight": true,
+              "voxel_iou": true,
+              "normalized_chamfer": true,
+              "bbox_relative_error": true,
+              "volume_relative_error": true
+            },
+            "acceptable_checks": {
+              "candidate_watertight": true,
+              "voxel_iou": true,
+              "normalized_chamfer": true,
+              "bbox_relative_error": true,
+              "volume_relative_error": true
+            },
+            "metrics": {
+              "voxel_iou": 1.0,
+              "chamfer_distance": 0.364616,
+              "normalized_chamfer": 0.004546,
+              "bbox_relative_error": 0.0,
+              "volume_relative_error": 0.000483,
+              "surface_area_relative_error": 0.00055
+            },
+            "mismatch": {
+              "candidate_to_ground_truth": {
+                "p50_normalized": 0.0,
+                "p95_normalized": 3.4e-05,
+                "max_normalized": 0.007346,
+                "worst_point_bbox_position": [
+                  0.6936,
+                  0.077,
+                  0.638
+                ]
+              },
+              "ground_truth_to_candidate": {
+                "p50_normalized": 0.0,
+                "p95_normalized": 3.4e-05,
+                "max_normalized": 0.008742,
+                "worst_point_bbox_position": [
+                  0.6909,
+                  0.077,
+                  0.6063
+                ]
+              },
+              "localization": {
+                "schema_version": "1.0",
+                "protocol": "evocad-surface-localization-v1",
+                "coordinate_frame": "aligned-ground-truth-world",
+                "uses_evaluator_ground_truth": true,
+                "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+                "distance_threshold_normalized": 0.006,
+                "cluster_radius_normalized": 0.025,
+                "surface_samples_per_direction": 20000,
+                "localized_sample_fraction": 0.0,
+                "region_count": 0,
+                "regions": [],
+                "native_topology": {
+                  "protocol": "evocad-native-feature-localization-v1",
+                  "entity_count": 1,
+                  "face_count": 75,
+                  "adjacency_count": 177,
+                  "feature_candidate_count": 17,
+                  "export_errors": [],
+                  "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+                  "boolean_lineage": {
+                    "schema_version": "1.0",
+                    "protocol": "evocad-boolean-face-lineage-v2",
+                    "snapshot_comparison": {
+                      "parent_face_count": 0,
+                      "current_face_count": 75,
+                      "inherited_face_count": 0,
+                      "created_or_modified_face_count": 75,
+                      "deleted_or_modified_parent_face_count": 0,
+                      "captured_job_count": 0,
+                      "lineage_mode": "single_snapshot_delta"
+                    },
+                    "operation_graph": {
+                      "nodes": [],
+                      "edges": []
+                    },
+                    "deleted_parent_face_examples": [],
+                    "interpretation": "Stable fingerprints prove inheritance. Snapshot-delta faces identify the operation group that changed topology; multiple operations in one job remain causally ambiguous."
+                  }
+                }
+              }
+            },
+            "candidate_geometry": {
+              "vertices": 1666,
+              "triangles": 3372,
+              "watertight": true,
+              "volume": 25782.254096,
+              "surface_area": 10834.034793,
+              "extents": [
+                42.999999,
+                63.999999,
+                22.099999
+              ]
+            },
+            "ground_truth_geometry": {
+              "vertices": 6876,
+              "triangles": 13808,
+              "watertight": false,
+              "volume": 25769.814542,
+              "surface_area": 10840.001292,
+              "extents": [
+                43.0,
+                64.0,
+                22.1
+              ]
+            },
+            "thresholds": {
+              "voxel_iou_min": 0.99,
+              "normalized_chamfer_max": 0.006,
+              "bbox_relative_error_max": 0.002,
+              "volume_relative_error_max": 0.005,
+              "candidate_watertight": true
+            },
+            "acceptable_thresholds": {
+              "voxel_iou_min": 0.95,
+              "normalized_chamfer_max": 0.01,
+              "bbox_relative_error_max": 0.01,
+              "volume_relative_error_max": 0.02,
+              "candidate_watertight": true
+            },
+            "alignment": {
+              "type": "right-handed-axis-permutation-plus-translation",
+              "rotation": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "candidate_center": [
+                21.5,
+                32.0,
+                11.050001
+              ],
+              "ground_truth_center": [
+                -94.388478,
+                -24.817767,
+                9.05
+              ],
+              "scale_allowed": false
+            },
+            "rubrics": [
+              {
+                "id": "watertight",
+                "status": "passed",
+                "actual": true,
+                "expected": true
+              },
+              {
+                "id": "voxel_iou",
+                "status": "passed",
+                "actual": 1.0,
+                "minimum": 0.99
+              },
+              {
+                "id": "normalized_chamfer",
+                "status": "passed",
+                "actual": 0.004546,
+                "maximum": 0.006
+              },
+              {
+                "id": "bbox_relative_error",
+                "status": "passed",
+                "actual": 0.0,
+                "maximum": 0.002
+              },
+              {
+                "id": "volume_relative_error",
+                "status": "passed",
+                "actual": 0.000483,
+                "maximum": 0.005
+              }
+            ],
+            "eqc": {
+              "eqc": 100.0,
+              "success": true,
+              "coverage": 100.0
+            }
+          },
+          "evidence": {
+            "candidate": {
+              "sha256": "dfd4f4ba2479f363e507263e84bc560922420c7ebe42ae10f0998851d214c3fb",
+              "bytes": 168684
+            },
+            "verdict": {
+              "sha256": "87be7401fb66b09de24ef9f7ae813cd265186e9ff63ba8a87a6c3654912b1f8e",
+              "bytes": 5265
+            },
+            "reflection": null,
+            "feedback_packet": null,
+            "codex_events": null,
+            "reflection_events": null,
+            "reflection_stderr": null,
+            "mcp_audit": null,
+            "render_images": {
+              "candidate": {
+                "sha256": "f21043cd1b16aaaa81708889fd5632fa87f4f64429297ee0adf6dd9dcb80396a",
+                "bytes": 16387
+              },
+              "overlay": {
+                "sha256": "ac02382c390f590174bd38696c3ca8621eeb099ad0759d67549b38727118af3e",
+                "bytes": 19067
+              },
+              "ground_truth": {
+                "sha256": "8ce10da08514a486b8b1d8c0c2001a097862986c2d5f9ac3975ee1369029208b",
+                "bytes": 16942
+              }
+            },
+            "geometry_assets": {
+              "candidate": {
+                "sha256": "656dcdff2ed465bfa34cf37f74216276f0a31f28ee9cea002f8e36b5a6b06434",
+                "bytes": 168684
+              },
+              "ground_truth": {
+                "sha256": "5bc99e9d308f46145ea17cad533fd3568769918d16200b375674c8f86d34e4c6",
+                "bytes": 690484
+              },
+              "localization": {
+                "sha256": "ace27bab6986b7957253f754702b11af0e71cdca4a3e317df45bef65e0d3bccd",
+                "bytes": 1565
+              },
+              "topology": {
+                "sha256": "2659053518bcd02fdaf051deb459bd29560a98fe12bac1d84aa9c59f6d097a14",
+                "bytes": 121280
+              },
+              "face_query": null
+            }
+          },
+          "evidence_sha256": "a42d24047ff0d6e7adec8f5e50f1c81ecf2805a7b267e4058257d746b0297f80",
+          "reflection": null,
+          "feedback_packet": null,
+          "public_events": [],
+          "mcp_events": [],
+          "derived_feature_backfill": {
+            "applied": false,
+            "record_sha256": null
+          }
+        }
+      ]
+    }
+  ],
+  "public_export_notice": "Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded.",
+  "source_bundle_sha256": "5af869d026270b96bb56ecf529b41f147c30d62b97ef2222216e1a04f5367332",
+  "bundle_sha256": "6f89b4cf4208649c94c1544bd035cfa398b64c4a1959a5fb81654e3d5a8bb7a2"
+}

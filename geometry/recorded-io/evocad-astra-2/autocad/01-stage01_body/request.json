@@ -1,0 +1,76 @@
+{
+  "input_path": "[private value removed] 2024\\R24.3\\chs\\Template\\acadiso.dwt",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 913,
+  "operation_manifest": [
+    {
+      "operation_id": "body_box",
+      "operation_type": "primitive_box",
+      "feature_id": "main_body",
+      "intent": "Create exact rectangular 23 by64 by22.1 main body",
+      "parameters": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          23,
+          64,
+          22.1
+        ]
+      }
+    },
+    {
+      "operation_id": "ear_boxes",
+      "operation_type": "primitive_box_pattern",
+      "feature_id": "mounting_ears",
+      "intent": "Create four10 by10 by6 mounting ears at rear depth1",
+      "parameters": {
+        "origins": [
+          [
+            -10,
+            0,
+            1
+          ],
+          [
+            23,
+            0,
+            1
+          ],
+          [
+            -10,
+            45,
+            1
+          ],
+          [
+            23,
+            45,
+            1
+          ]
+        ],
+        "size": [
+          10,
+          10,
+          6
+        ]
+      }
+    },
+    {
+      "operation_id": "body_union",
+      "operation_type": "boolean_union",
+      "feature_id": "body_with_ears",
+      "intent": "Unite body and four mounting ears into one native solid",
+      "parameters": {
+        "expected_solid_count": 1,
+        "expected_volume": 34931.2
+      },
+      "parent_operation_ids": [
+        "body_box",
+        "ear_boxes"
+      ]
+    }
+  ],
+  "capture_boolean_lineage": true
+}

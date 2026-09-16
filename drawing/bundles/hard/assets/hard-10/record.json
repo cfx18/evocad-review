@@ -1,0 +1,217 @@
+{
+  "target_id": "6cf094278c7a3c51d69bbc7b",
+  "sample_id": "hard-10",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "实体"
+  },
+  "learner_answer": {
+    "answer": "实体表面"
+  },
+  "task_manifest": {
+    "task_id": "hard-10",
+    "task_type": "section_reasoning",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true,
+    "protocol": "boxed-minimal-v1"
+  },
+  "task": {
+    "task_id": "hard-10",
+    "query": "框内所见区域是实体表面还是空腔？",
+    "answer_format": {
+      "answer": "short text"
+    }
+  },
+  "source": {
+    "source_id": "pdf-178",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 178,
+    "sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "框内所见区域是实体表面还是空腔？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            561,
+            658,
+            568,
+            666
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "框在C—C右侧Ø10孔轮廓与R11外轮廓之间，避开孔口、中心线和引线。A—A表明C—C经过管颈侧槽，槽下方存在连续材料形成槽底。因此C—C右侧这块未画剖面线的可见区域，是切平面下方槽底的投影；真正的孔腔由内侧Ø10圆限定。仅凭空白判为空腔，会把未剖到的实体表面与通孔混淆。",
+      "expected_answer": "实体",
+      "answer_kind": "text",
+      "accepted_answers": [
+        "实体表面",
+        "实心材料",
+        "solid"
+      ],
+      "bad_pattern_tags": [
+        "absence_of_hatching_assumed_void",
+        "projected_slot_floor_confused_with_hole",
+        "cut_plane_material_confused_with_visible_surface"
+      ],
+      "confidence": 0.88,
+      "ambiguity_notes": "问题限定为图中所见区域；不询问剖切平面在该位置是否有材料。槽底投影的对应关系需人工复核。",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "实体表面",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.94,
+      "evidence": "C—C框处位于φ10孔外、R11轮廓内；对应A—A侧槽的槽底，是未被剖切的可见表面。",
+      "ambiguity_notes": "",
+      "evidence_scope": "cross_view",
+      "difficulty_evidence": "需结合A—A的侧槽及其底面确定框内区域；仅见空白、没有剖面线不能判为空腔。"
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 387.5,
+    "observations": 4,
+    "findings": 0,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "实体"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt",
+    "accepted_answers": {
+      "answer": [
+        "solid",
+        "实体表面",
+        "实心材料"
+      ]
+    },
+    "alias_policy": "engineering-line-terms-v1"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:52:20.943Z",
+      "payload": {
+        "observation_id": "ba89d75fb479489d95c7f1e388307c05",
+        "intent": "Inspect the boxed region and determine whether it depicts a solid surface or a cavity.",
+        "source_sha256": "3b91b5717f0c8b926e15d05bed85e32e65a86176c2599f3e9d9bb7e4eadd31e5",
+        "sha256": "3b91b5717f0c8b926e15d05bed85e32e65a86176c2599f3e9d9bb7e4eadd31e5",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:52:49.431Z",
+      "payload": {
+        "observation_id": "4d340053ec49480494de629588ea993f",
+        "intent": "Zoom into the small red-boxed area in the C-C detail to see whether it is hatched solid material or an unhatched hole/cavity.",
+        "source_sha256": "3b91b5717f0c8b926e15d05bed85e32e65a86176c2599f3e9d9bb7e4eadd31e5",
+        "sha256": "28eadf84d350b45e10b3e4b947eac54eb438b0813eb7b193d6bc276c93aef5e7",
+        "crop": [
+          1680,
+          1100,
+          2020,
+          1340
+        ],
+        "dimensions": [
+          340,
+          240
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:53:50.254Z",
+      "payload": {
+        "observation_id": "01fe3d02c0594a4d92d5705b3a74b386",
+        "intent": "Inspect the C-C sectional detail and the red-boxed point; check hatching vs blank to classify solid surface or cavity.",
+        "source_sha256": "3b91b5717f0c8b926e15d05bed85e32e65a86176c2599f3e9d9bb7e4eadd31e5",
+        "sha256": "ebd573ff483d3af470cda722cb976bbf441a99588f9cf4e07521512e66982d1c",
+        "crop": [
+          1120,
+          1040,
+          1580,
+          1370
+        ],
+        "dimensions": [
+          460,
+          330
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T13:54:22.723Z",
+      "payload": {
+        "observation_id": "e9205454d4e54521adce71ae4774e582",
+        "intent": "Zoom further on the red box and surrounding hatch lines to decide whether the marked area is cut solid material or an empty cavity/hole.",
+        "source_sha256": "3b91b5717f0c8b926e15d05bed85e32e65a86176c2599f3e9d9bb7e4eadd31e5",
+        "sha256": "b04bfb98da4ba4def0d404529f2a670c6966444e347e92e95515a8b6d9c180f9",
+        "crop": [
+          1360,
+          1120,
+          1530,
+          1280
+        ],
+        "dimensions": [
+          170,
+          160
+        ],
+        "image": "receipts/004.png"
+      }
+    }
+  ],
+  "input_images": [
+    "assets/hard-10/input-01.png"
+  ],
+  "asset_base": "assets/hard-10",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/hard-10/record.json"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "input_path": "[private value removed]",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 807,
+  "operation_manifest": [
+    {
+      "operation_id": "floor_recess_cut",
+      "operation_type": "boolean_subtract",
+      "feature_id": "rear_channel_floor_recess",
+      "intent": "Cut4.8 diameter blind recess2 deep in rear channel floor",
+      "parameters": {
+        "entry": [
+          10.75,
+          23.5,
+          10
+        ],
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "diameter": 4.8,
+        "depth": 2,
+        "end_z": 12,
+        "expected_volume": 25779.080613361337
+      },
+      "parent_operation_ids": [
+        "side_m4_right"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    }
+  ],
+  "capture_boolean_lineage": true
+}

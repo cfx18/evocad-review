@@ -1,0 +1,259 @@
+{
+  "target_id": "072dbdededc38a6190d20982",
+  "sample_id": "drawing-10",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "fork_transverse_holes"
+  },
+  "learner_answer": {
+    "answer": "fork_transverse_holes"
+  },
+  "task_manifest": {
+    "task_id": "drawing-10",
+    "task_type": "cross_view",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true
+  },
+  "task": {
+    "task_id": "drawing-10",
+    "query": "对照区域B俯视图和区域C轴测图，区域A右上视图中φ6引线所指的圆，对应哪一项实体特征？",
+    "answer_format": {
+      "answer": "one option value"
+    },
+    "options": [
+      {
+        "value": "base_mounting_holes",
+        "label": "底座四角的竖向安装孔"
+      },
+      {
+        "value": "central_vertical_bore",
+        "label": "俯视图中央的竖向圆孔"
+      },
+      {
+        "value": "fork_transverse_holes",
+        "label": "叉口两侧立耳上的小横孔"
+      },
+      {
+        "value": "underside_arc_groove",
+        "label": "底座下表面的横向圆弧槽"
+      }
+    ],
+    "unit": "none",
+    "absolute_tolerance": 0
+  },
+  "source": {
+    "source_id": "web-2679-01",
+    "origin": "public_web_drawing",
+    "article_url": "https://xifengboke.com/post/2679.html",
+    "sha256": "5985018b095635dd755d04b34e0be97e9d5badc8a524ad662fa3afeb00530df6",
+    "dimensions": [
+      2480,
+      3507
+    ],
+    "rights": {
+      "status": "permission_required",
+      "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+      "training_eligible": false,
+      "redistribution_eligible": false
+    }
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "对照区域B俯视图和区域C轴测图，区域A右上视图中φ6引线所指的圆，对应哪一项实体特征？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            625,
+            159,
+            894,
+            336
+          ]
+        },
+        {
+          "label": "B",
+          "bbox": [
+            177,
+            423,
+            596,
+            676
+          ]
+        },
+        {
+          "label": "C",
+          "bbox": [
+            574,
+            598,
+            952,
+            839
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "右上视图的φ6圆位于立耳上部，轴测图对应位置可见两立耳的小横孔；俯视图四角孔标为4×φ10，中央孔标为φ20。",
+      "expected_answer": "fork_transverse_holes",
+      "answer_kind": "choice",
+      "bad_pattern_tags": [
+        "hole_axis_confusion",
+        "cross_view_feature_mismatch",
+        "nearby_diameter_substitution"
+      ],
+      "confidence": 0.99,
+      "ambiguity_notes": "",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "fork_transverse_holes",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "φ6圆位于右上视图的立耳上部，与轴测图中叉口两侧立耳的小横孔对应。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 101.61,
+    "observations": 4,
+    "findings": 3,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "fork_transverse_holes"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:23:32.975Z",
+      "payload": {
+        "observation_id": "4192d250e2054ceb910e41ab09d4fc71",
+        "intent": "Inspect the overall CAD drawing layout to understand the views and annotations",
+        "source_sha256": "5985018b095635dd755d04b34e0be97e9d5badc8a524ad662fa3afeb00530df6",
+        "sha256": "db69eea9db1a28ac866db02f326633fcb0c9c5f89d3c878a687bcd5e05e95a42",
+        "crop": null,
+        "dimensions": [
+          2480,
+          3507
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:23:34.229Z",
+      "payload": {
+        "observation_id": "b19425070f964e81b5de2cda260d3b83",
+        "intent": "Inspect region A view, especially the upper-right view with the φ6 leader line pointing to a circle",
+        "source_sha256": "3dc9fb91853bcbaf0be9f1cf8761b33d30de1608c58e0d37e2127b1d0a301720",
+        "sha256": "3dc9fb91853bcbaf0be9f1cf8761b33d30de1608c58e0d37e2127b1d0a301720",
+        "crop": null,
+        "dimensions": [
+          668,
+          622
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:23:46.882Z",
+      "payload": {
+        "observation_id": "29b848838b6d44c099a3efe185555072",
+        "intent": "Inspect region B top view to see hole layout and features",
+        "source_sha256": "96eb1eed4d310bf057dec0dea273c00c4229a1d5621ed49be8e9619b959b9b66",
+        "sha256": "96eb1eed4d310bf057dec0dea273c00c4229a1d5621ed49be8e9619b959b9b66",
+        "crop": null,
+        "dimensions": [
+          1041,
+          888
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T11:23:47.084Z",
+      "payload": {
+        "observation_id": "3468c9f8e40b4a15b8211ca467c7c581",
+        "intent": "Inspect region C isometric view to see 3D features including holes on the fork ears",
+        "source_sha256": "4a450e7bda6c2707c0c2c1663eef625099148b2747d5c40a0718495ec547667c",
+        "sha256": "4a450e7bda6c2707c0c2c1663eef625099148b2747d5c40a0718495ec547667c",
+        "crop": null,
+        "dimensions": [
+          938,
+          846
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:24:33.920Z",
+      "payload": {
+        "observation_id": "b19425070f964e81b5de2cda260d3b83",
+        "public_conclusion": "Region A (side view): the φ6 leader points to a circle with centerlines located inside the upper rectangular upright block (the fork ear seen from the side), with its center dimensioned 8 mm below the top edge — a horizontal hole through the ear."
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:24:33.928Z",
+      "payload": {
+        "observation_id": "29b848838b6d44c099a3efe185555072",
+        "public_conclusion": "Region B (top view): base has 4 × φ10 through holes at the corners, central φ20 bore in the R23 boss, and a 6 mm wide slot on each side between the central boss and the side ears — no φ6 vertical hole exists."
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T11:24:33.936Z",
+      "payload": {
+        "observation_id": "3468c9f8e40b4a15b8211ca467c7c581",
+        "public_conclusion": "Region C (isometric): the two upright fork ears each carry a small coaxial horizontal (transverse) through-hole; the base corners have larger vertical mounting holes, and the central boss has a vertical bore. The φ6 circle in region A matches the transverse holes in the fork ears."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/drawing-10/input-01.png",
+    "assets/drawing-10/input-02.png",
+    "assets/drawing-10/input-03.png",
+    "assets/drawing-10/input-04.png"
+  ],
+  "asset_base": "assets/drawing-10",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/drawing-10/record.json"
+    }
+  ]
+}

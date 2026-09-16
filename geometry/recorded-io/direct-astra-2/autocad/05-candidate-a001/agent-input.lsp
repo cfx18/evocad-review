@@ -1,0 +1,12 @@
+(progn
+(setvar "CMDECHO" 0)
+(setvar "FILEDIA" 0)
+(setvar "INSUNITS" 4)
+(setq ss (ssget "_X" '((0 . "3DSOLID") (410 . "Model"))))
+(setq fp (open "[private value removed]" "w"))
+(write-line (strcat "Native 3DSOLIDs in model space: " (itoa (sslength ss))) fp)
+(write-line (strcat "Total entities in model space: " (itoa (sslength (ssget "_X" '((410 . "Model")))))) fp)
+(write-line "Final source: validated stage03-inspected.a001.dwg, unchanged geometry." fp)
+(close fp)
+(princ)
+)

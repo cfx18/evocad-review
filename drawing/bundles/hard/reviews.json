@@ -1,0 +1,43 @@
+{
+  "records": [
+    {
+      "review_id": "989e3c8f7862479da53eae7f57ea01d7",
+      "supersedes_review_id": null,
+      "created_at": "2026-09-16T15:08:44.080Z",
+      "verifier_decision": "partially_agree",
+      "recommended_action": "override_fail",
+      "notes": "用户在当前会话对 hard-15 的明确判断：“明显是实体。” 由助手代录，仅确认本题框选区域为实体，KIMI 回答“空腔”错误；不代表用户批准其他题目的标注、同义词核对或评分器。原始自动结果仍保留为未评分，建议人工覆盖为失败。",
+      "strict_pass_assessment": "uncertain",
+      "selected_attempt_assessment": "not_applicable",
+      "ratings": {
+        "reflection_quality": null,
+        "evidence_sufficiency": null,
+        "geometry_fidelity": null,
+        "verifier_validity": null
+      },
+      "issue_types": [
+        "agent_reasoning"
+      ],
+      "findings": [
+        {
+          "category": "agent_reasoning",
+          "severity": "major",
+          "location": "hard-15 框选区域",
+          "observation": "用户确认框内为实体；KIMI 回答为空腔。",
+          "recommendation": "将本题记录为人工确认答错；保留原始自动判分。"
+        }
+      ],
+      "binding": {
+        "target_id": "f9be260d93513a6cdc8cf076",
+        "attempt_id": "kimi-01"
+      },
+      "reviewer": {
+        "id": "评审人 1"
+      }
+    }
+  ],
+  "integrity": {
+    "ok": true,
+    "scope": "source_verified_before_redaction"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "input_path": "[private value removed]",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 869,
+  "operation_manifest": [
+    {
+      "operation_id": "end_m3_00",
+      "operation_type": "boolean_subtract",
+      "feature_id": "end_tapped_hole_00",
+      "intent": "CreateM3 tap-drill bore2.5 diameter8 deep from upper longitudinal end",
+      "parameters": {
+        "entry": [
+          3.5,
+          64,
+          5.6
+        ],
+        "axis": [
+          0,
+          -1,
+          0
+        ],
+        "drill_diameter": 2.5,
+        "drill_depth": 8,
+        "thread": "M3-6H",
+        "thread_depth": 6,
+        "x_pitch": 16,
+        "z_pitch": 7.5,
+        "thread_representation": "nominal tap drill",
+        "drill_bottom": "flat; tip angle unspecified"
+      },
+      "parent_operation_ids": [
+        "front_m3_11"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    },
+    {
+      "operation_id": "end_m3_01",
+      "operation_type": "boolean_subtract",
+      "feature_id": "end_tapped_hole_01",
+      "intent": "CreateM3 tap-drill bore2.5 diameter8 deep from upper longitudinal end",
+      "parameters": {
+        "entry": [
+          3.5,
+          64,
+          13.1
+        ],
+        "axis": [
+          0,
+          -1,
+          0
+        ],
+        "drill_diameter": 2.5,
+        "drill_depth": 8,
+        "thread": "M3-6H",
+        "thread_depth": 6,
+        "x_pitch": 16,
+        "z_pitch": 7.5,
+        "thread_representation": "nominal tap drill",
+        "drill_bottom": "flat; tip angle unspecified"
+      },
+      "parent_operation_ids": [
+        "end_m3_00"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    },
+    {
+      "operation_id": "end_m3_10",
+      "operation_type": "boolean_subtract",
+      "feature_id": "end_tapped_hole_10",
+      "intent": "CreateM3 tap-drill bore2.5 diameter8 deep from upper longitudinal end",
+      "parameters": {
+        "entry": [
+          19.5,
+          64,
+          5.6
+        ],
+        "axis": [
+          0,
+          -1,
+          0
+        ],
+        "drill_diameter": 2.5,
+        "drill_depth": 8,
+        "thread": "M3-6H",
+        "thread_depth": 6,
+        "x_pitch": 16,
+        "z_pitch": 7.5,
+        "thread_representation": "nominal tap drill",
+        "drill_bottom": "flat; tip angle unspecified"
+      },
+      "parent_operation_ids": [
+        "end_m3_01"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    },
+    {
+      "operation_id": "end_m3_11",
+      "operation_type": "boolean_subtract",
+      "feature_id": "end_tapped_hole_11",
+      "intent": "CreateM3 tap-drill bore2.5 diameter8 deep from upper longitudinal end",
+      "parameters": {
+        "entry": [
+          19.5,
+          64,
+          13.1
+        ],
+        "axis": [
+          0,
+          -1,
+          0
+        ],
+        "drill_diameter": 2.5,
+        "drill_depth": 8,
+        "thread": "M3-6H",
+        "thread_depth": 6,
+        "x_pitch": 16,
+        "z_pitch": 7.5,
+        "thread_representation": "nominal tap drill",
+        "drill_bottom": "flat; tip angle unspecified"
+      },
+      "parent_operation_ids": [
+        "end_m3_10"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    }
+  ],
+  "capture_boolean_lineage": true
+}

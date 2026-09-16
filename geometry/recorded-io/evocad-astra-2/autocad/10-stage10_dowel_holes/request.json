@@ -1,0 +1,38 @@
+{
+  "input_path": "[private value removed]",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 814,
+  "operation_manifest": [
+    {
+      "operation_id": "side_dowel_cut",
+      "operation_type": "boolean_subtract",
+      "feature_id": "opposed_dowel_holes",
+      "intent": "Drill3 H7 through both side walls into rear channel",
+      "parameters": {
+        "axis": [
+          1,
+          0,
+          0
+        ],
+        "center_y": 29.5,
+        "center_z": 5.1,
+        "diameter": 3,
+        "tolerance": "H7 +0.01/0",
+        "wall_count": 2,
+        "wall_thicknesses": [
+          7.75,
+          9.25
+        ],
+        "expected_volume": 25960.672522720462
+      },
+      "parent_operation_ids": [
+        "end_m3_11"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    }
+  ],
+  "capture_boolean_lineage": true
+}

@@ -1,0 +1,39 @@
+{
+  "input_path": "[private value removed]",
+  "output_path": "[private value removed]",
+  "timeout_seconds": 120.0,
+  "lisp_length": 806,
+  "operation_manifest": [
+    {
+      "operation_id": "window_cut",
+      "operation_type": "boolean_subtract",
+      "feature_id": "through_window",
+      "intent": "Open6 by11 rectangular window through channel floor",
+      "parameters": {
+        "x": [
+          7.75,
+          13.75
+        ],
+        "y": [
+          35.5,
+          46.5
+        ],
+        "z": [
+          10,
+          16.1
+        ],
+        "width": 6,
+        "length": 11,
+        "expected_volume_before": 27725.2,
+        "expected_volume_after": 27322.6
+      },
+      "parent_operation_ids": [
+        "rear_channel_cut"
+      ],
+      "target_entity_handles": [
+        "2BE"
+      ]
+    }
+  ],
+  "capture_boolean_lineage": true
+}

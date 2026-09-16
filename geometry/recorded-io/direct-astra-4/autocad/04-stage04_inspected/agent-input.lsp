@@ -1,0 +1,6 @@
+(setvar "CMDECHO" 1)
+(setvar "FACETRES" 10)
+(setq solids (ssget "_X" '((0 . "3DSOLID"))))
+(command "_.STLOUT" solids "" "_Yes" "[private value removed]")
+(command "_.AUDIT" "_Yes")
+(princ "\nINSPECTION_EXPORT_COMPLETE\n")

@@ -1,0 +1,734 @@
+{
+  "schema_version": "1.0",
+  "protocol": "evocad-surface-localization-v1",
+  "coordinate_frame": "aligned-ground-truth-world",
+  "uses_evaluator_ground_truth": true,
+  "interpretation": "Directional sampled-surface evidence. Regions localize discrepancies but do not by themselves identify CAD feature semantics or the responsible modeling operation.",
+  "distance_threshold_normalized": 0.006,
+  "cluster_radius_normalized": 0.025,
+  "surface_samples_per_direction": 20000,
+  "localized_sample_fraction": 0.0,
+  "region_count": 0,
+  "regions": [],
+  "native_topology": {
+    "protocol": "evocad-native-feature-localization-v1",
+    "entity_count": 1,
+    "face_count": 75,
+    "adjacency_count": 177,
+    "feature_candidate_count": 17,
+    "export_errors": [],
+    "interpretation": "Face and operation links are ranked diagnostic evidence, not guaranteed feature-history recovery.",
+    "boolean_lineage": {
+      "schema_version": "1.0",
+      "protocol": "evocad-boolean-face-lineage-v2",
+      "snapshot_comparison": {
+        "parent_face_count": 75,
+        "current_face_count": 75,
+        "inherited_face_count": 75,
+        "created_or_modified_face_count": 0,
+        "deleted_or_modified_parent_face_count": 0,
+        "captured_job_count": 10,
+        "lineage_mode": "multi_job_fingerprint_chain"
+      },
+      "operation_graph": {
+        "nodes": [
+          {
+            "operation_id": "window_cut",
+            "intent": "Open6 by11 rectangular window through channel floor",
+            "operation_type": "boolean_subtract",
+            "feature_id": "through_window",
+            "parameters": {
+              "x": [
+                7.75,
+                13.75
+              ],
+              "y": [
+                35.5,
+                46.5
+              ],
+              "z": [
+                10,
+                16.1
+              ],
+              "width": 6,
+              "length": 11,
+              "expected_volume_before": 27725.2,
+              "expected_volume_after": 27322.6
+            },
+            "parent_operation_ids": [
+              "rear_channel_cut"
+            ],
+            "mcp_job_id": "edcd0b76252e42bcb8e0279b8fc481cc"
+          },
+          {
+            "operation_id": "rail_gap_cut",
+            "intent": "Remove5 long section of right raised rail29 from upper end",
+            "operation_type": "boolean_subtract",
+            "feature_id": "right_rail_gap",
+            "parameters": {
+              "x": [
+                16.5,
+                23
+              ],
+              "y": [
+                30,
+                35
+              ],
+              "z": [
+                16.1,
+                22.1
+              ],
+              "length": 5,
+              "top_offset": 29,
+              "expected_volume": 27127.6
+            },
+            "parent_operation_ids": [
+              "window_cut"
+            ],
+            "mcp_job_id": "fc7e226a0f5e46ee9d31f266815c0f1d"
+          },
+          {
+            "operation_id": "end_vertical_slot",
+            "intent": "Cut3 wide vertical groove in upper end face to1.5 depth",
+            "operation_type": "boolean_subtract",
+            "feature_id": "vertical_end_groove",
+            "parameters": {
+              "x": [
+                9.25,
+                12.25
+              ],
+              "y": [
+                62.5,
+                64
+              ],
+              "z": [
+                0,
+                16.1
+              ],
+              "width": 3,
+              "depth": 1.5
+            },
+            "parent_operation_ids": [
+              "rail_gap_cut"
+            ],
+            "mcp_job_id": "460d7b5a1243414b9f82a61e0711ea9c"
+          },
+          {
+            "operation_id": "end_cross_cut",
+            "intent": "Cut3 wide horizontal end groove centered9.1 from rear to1.5 depth",
+            "operation_type": "boolean_subtract",
+            "feature_id": "horizontal_end_groove",
+            "parameters": {
+              "x": [
+                0,
+                23
+              ],
+              "y": [
+                62.5,
+                64
+              ],
+              "z": [
+                7.6,
+                10.6
+              ],
+              "width": 3,
+              "depth": 1.5,
+              "expected_volume": 26965.15
+            },
+            "parent_operation_ids": [
+              "end_vertical_slot"
+            ],
+            "mcp_job_id": "460d7b5a1243414b9f82a61e0711ea9c"
+          },
+          {
+            "operation_id": "mount_hole_00",
+            "intent": "Drill5.5 diameter completely through mounting ear",
+            "operation_type": "boolean_subtract",
+            "feature_id": "ear_hole_00",
+            "parameters": {
+              "center": [
+                -5,
+                5
+              ],
+              "axis": [
+                0,
+                0,
+                1
+              ],
+              "diameter": 5.5,
+              "material_z": [
+                1,
+                7
+              ]
+            },
+            "parent_operation_ids": [
+              "end_cross_cut"
+            ],
+            "mcp_job_id": "688a0b80d739450bae8c809180d66382"
+          },
+          {
+            "operation_id": "mount_hole_01",
+            "intent": "Drill5.5 diameter completely through mounting ear",
+            "operation_type": "boolean_subtract",
+            "feature_id": "ear_hole_01",
+            "parameters": {
+              "center": [
+                -5,
+                50
+              ],
+              "axis": [
+                0,
+                0,
+                1
+              ],
+              "diameter": 5.5,
+              "material_z": [
+                1,
+                7
+              ]
+            },
+            "parent_operation_ids": [
+              "mount_hole_00"
+            ],
+            "mcp_job_id": "688a0b80d739450bae8c809180d66382"
+          },
+          {
+            "operation_id": "mount_hole_10",
+            "intent": "Drill5.5 diameter completely through mounting ear",
+            "operation_type": "boolean_subtract",
+            "feature_id": "ear_hole_10",
+            "parameters": {
+              "center": [
+                28,
+                5
+              ],
+              "axis": [
+                0,
+                0,
+                1
+              ],
+              "diameter": 5.5,
+              "material_z": [
+                1,
+                7
+              ]
+            },
+            "parent_operation_ids": [
+              "mount_hole_01"
+            ],
+            "mcp_job_id": "688a0b80d739450bae8c809180d66382"
+          },
+          {
+            "operation_id": "mount_hole_11",
+            "intent": "Drill5.5 diameter completely through mounting ear",
+            "operation_type": "boolean_subtract",
+            "feature_id": "ear_hole_11",
+            "parameters": {
+              "center": [
+                28,
+                50
+              ],
+              "axis": [
+                0,
+                0,
+                1
+              ],
+              "diameter": 5.5,
+              "material_z": [
+                1,
+                7
+              ]
+            },
+            "parent_operation_ids": [
+              "mount_hole_10"
+            ],
+            "mcp_job_id": "688a0b80d739450bae8c809180d66382"
+          },
+          {
+            "operation_id": "front_m3_00",
+            "intent": "CreateM3 tap-drill bore2.5 diameter8 deep from front rail face",
+            "operation_type": "boolean_subtract",
+            "feature_id": "front_tapped_hole_00",
+            "parameters": {
+              "entry": [
+                2.25,
+                5,
+                22.1
+              ],
+              "axis": [
+                0,
+                0,
+                -1
+              ],
+              "drill_diameter": 2.5,
+              "drill_depth": 8,
+              "thread": "M3-6H",
+              "thread_depth": 6,
+              "thread_representation": "nominal tap drill",
+              "drill_bottom": "flat; tip angle unspecified"
+            },
+            "parent_operation_ids": [
+              "mount_hole_11"
+            ],
+            "mcp_job_id": "88afd49dec2f4f7497d9798af463a526"
+          },
+          {
+            "operation_id": "front_m3_01",
+            "intent": "CreateM3 tap-drill bore2.5 diameter8 deep from front rail face",
+            "operation_type": "boolean_subtract",
+            "feature_id": "front_tapped_hole_01",
+            "parameters": {
+              "entry": [
+                2.25,
+                55,
+                22.1
+              ],
+              "axis": [
+                0,
+                0,
+                -1
+              ],
+              "drill_diameter": 2.5,
+              "drill_depth": 8,
+              "thread": "M3-6H",
+              "thread_depth": 6,
+              "thread_representation": "nominal tap drill",
+              "drill_bottom": "flat; tip angle unspecified"
+            },
+            "parent_operation_ids": [
+              "front_m3_00"
+            ],
+            "mcp_job_id": "88afd49dec2f4f7497d9798af463a526"
+          },
+          {
+            "operation_id": "front_m3_10",
+            "intent": "CreateM3 tap-drill bore2.5 diameter8 deep from front rail face",
+            "operation_type": "boolean_subtract",
+            "feature_id": "front_tapped_hole_10",
+            "parameters": {
+              "entry": [
+                19.75,
+                5,
+                22.1
+              ],
+              "axis": [
+                0,
+                0,
+                -1
+              ],
+              "drill_diameter": 2.5,
+              "drill_depth": 8,
+              "thread": "M3-6H",
+              "thread_depth": 6,
+              "thread_representation": "nominal tap drill",
+              "drill_bottom": "flat; tip angle unspecified"
+            },
+            "parent_operation_ids": [
+              "front_m3_01"
+            ],
+            "mcp_job_id": "88afd49dec2f4f7497d9798af463a526"
+          },
+          {
+            "operation_id": "front_m3_11",
+            "intent": "CreateM3 tap-drill bore2.5 diameter8 deep from front rail face",
+            "operation_type": "boolean_subtract",
+            "feature_id": "front_tapped_hole_11",
+            "parameters": {
+              "entry": [
+                19.75,
+                55,
+                22.1
+              ],
+              "axis": [
+                0,
+                0,
+                -1
+              ],
+              "drill_diameter": 2.5,
+              "drill_depth": 8,
+              "thread": "M3-6H",
+              "thread_depth": 6,
+              "thread_representation": "nominal tap drill",
+              "drill_bottom": "flat; tip angle unspecified"
+            },
+            "parent_operation_ids": [
+              "front_m3_10"
+            ],
+            "mcp_job_id": "88afd49dec2f4f7497d9798af463a526"
+          },
+          {
+            "operation_id": "end_m3_00",
+            "intent": "CreateM3 tap-drill bore2.5 diameter8 deep from upper longitudinal end",
+            "operation_type": "boolean_subtract",
+            "feature_id": "end_tapped_hole_00",
+            "parameters": {
+              "entry": [
+                3.5,
+                64,
+                5.6
+              ],
+              "axis": [
+                0,
+                -1,
+                0
+              ],
+              "drill_diameter": 2.5,
+              "drill_depth": 8,
+              "thread": "M3-6H",
+              "thread_depth": 6,
+              "x_pitch": 16,
+              "z_pitch": 7.5,
+              "thread_representation": "nominal tap drill",
+              "drill_bottom": "flat; tip angle unspecified"
+            },
+            "parent_operation_ids": [
+              "front_m3_11"
+            ],
+            "mcp_job_id": "fb36ee9f52bf41078251af27e57302c4"
+          },
+          {
+            "operation_id": "end_m3_01",
+            "intent": "CreateM3 tap-drill bore2.5 diameter8 deep from upper longitudinal end",
+            "operation_type": "boolean_subtract",
+            "feature_id": "end_tapped_hole_01",
+            "parameters": {
+              "entry": [
+                3.5,
+                64,
+                13.1
+              ],
+              "axis": [
+                0,
+                -1,
+                0
+              ],
+              "drill_diameter": 2.5,
+              "drill_depth": 8,
+              "thread": "M3-6H",
+              "thread_depth": 6,
+              "x_pitch": 16,
+              "z_pitch": 7.5,
+              "thread_representation": "nominal tap drill",
+              "drill_bottom": "flat; tip angle unspecified"
+            },
+            "parent_operation_ids": [
+              "end_m3_00"
+            ],
+            "mcp_job_id": "fb36ee9f52bf41078251af27e57302c4"
+          },
+          {
+            "operation_id": "end_m3_10",
+            "intent": "CreateM3 tap-drill bore2.5 diameter8 deep from upper longitudinal end",
+            "operation_type": "boolean_subtract",
+            "feature_id": "end_tapped_hole_10",
+            "parameters": {
+              "entry": [
+                19.5,
+                64,
+                5.6
+              ],
+              "axis": [
+                0,
+                -1,
+                0
+              ],
+              "drill_diameter": 2.5,
+              "drill_depth": 8,
+              "thread": "M3-6H",
+              "thread_depth": 6,
+              "x_pitch": 16,
+              "z_pitch": 7.5,
+              "thread_representation": "nominal tap drill",
+              "drill_bottom": "flat; tip angle unspecified"
+            },
+            "parent_operation_ids": [
+              "end_m3_01"
+            ],
+            "mcp_job_id": "fb36ee9f52bf41078251af27e57302c4"
+          },
+          {
+            "operation_id": "end_m3_11",
+            "intent": "CreateM3 tap-drill bore2.5 diameter8 deep from upper longitudinal end",
+            "operation_type": "boolean_subtract",
+            "feature_id": "end_tapped_hole_11",
+            "parameters": {
+              "entry": [
+                19.5,
+                64,
+                13.1
+              ],
+              "axis": [
+                0,
+                -1,
+                0
+              ],
+              "drill_diameter": 2.5,
+              "drill_depth": 8,
+              "thread": "M3-6H",
+              "thread_depth": 6,
+              "x_pitch": 16,
+              "z_pitch": 7.5,
+              "thread_representation": "nominal tap drill",
+              "drill_bottom": "flat; tip angle unspecified"
+            },
+            "parent_operation_ids": [
+              "end_m3_10"
+            ],
+            "mcp_job_id": "fb36ee9f52bf41078251af27e57302c4"
+          },
+          {
+            "operation_id": "side_dowel_cut",
+            "intent": "Drill3 H7 through both side walls into rear channel",
+            "operation_type": "boolean_subtract",
+            "feature_id": "opposed_dowel_holes",
+            "parameters": {
+              "axis": [
+                1,
+                0,
+                0
+              ],
+              "center_y": 29.5,
+              "center_z": 5.1,
+              "diameter": 3,
+              "tolerance": "H7 +0.01/0",
+              "wall_count": 2,
+              "wall_thicknesses": [
+                7.75,
+                9.25
+              ],
+              "expected_volume": 25960.672522720462
+            },
+            "parent_operation_ids": [
+              "end_m3_11"
+            ],
+            "mcp_job_id": "d1e334ce8667407391b753ed01a1e534"
+          },
+          {
+            "operation_id": "side_m4_left",
+            "intent": "Create opposingM4 tap drill from left face into rear channel",
+            "operation_type": "boolean_subtract",
+            "feature_id": "left_side_tapped_hole",
+            "parameters": {
+              "entry": [
+                0,
+                25.5,
+                5.1
+              ],
+              "axis": [
+                1,
+                0,
+                0
+              ],
+              "drill_diameter": 3.3,
+              "drill_depth": 9.25,
+              "thread": "M4-6H",
+              "thread_depth": 8,
+              "thread_representation": "nominal tap drill"
+            },
+            "parent_operation_ids": [
+              "side_dowel_cut"
+            ],
+            "mcp_job_id": "cf07201605354e4f994757ee69c1410a"
+          },
+          {
+            "operation_id": "side_m4_right",
+            "intent": "Create opposingM4 tap drill from right face into rear channel",
+            "operation_type": "boolean_subtract",
+            "feature_id": "right_side_tapped_hole",
+            "parameters": {
+              "entry": [
+                23,
+                25.5,
+                5.1
+              ],
+              "axis": [
+                -1,
+                0,
+                0
+              ],
+              "drill_diameter": 3.3,
+              "drill_depth": 9.25,
+              "thread": "M4-6H",
+              "thread_depth": 8,
+              "thread_representation": "nominal tap drill",
+              "expected_volume": 25815.27176073069
+            },
+            "parent_operation_ids": [
+              "side_m4_left"
+            ],
+            "mcp_job_id": "cf07201605354e4f994757ee69c1410a"
+          },
+          {
+            "operation_id": "floor_recess_cut",
+            "intent": "Cut4.8 diameter blind recess2 deep in rear channel floor",
+            "operation_type": "boolean_subtract",
+            "feature_id": "rear_channel_floor_recess",
+            "parameters": {
+              "entry": [
+                10.75,
+                23.5,
+                10
+              ],
+              "axis": [
+                0,
+                0,
+                1
+              ],
+              "diameter": 4.8,
+              "depth": 2,
+              "end_z": 12,
+              "expected_volume": 25779.080613361337
+            },
+            "parent_operation_ids": [
+              "side_m4_right"
+            ],
+            "mcp_job_id": "5848c7aab84a47148dfec890866c0064"
+          },
+          {
+            "operation_id": "final_native_validation",
+            "intent": "Validate native ShapeManager solid, audit drawing, confirm exactly one3DSOLID in model space and save final candidate",
+            "operation_type": "native_solid_validation",
+            "feature_id": "complete_part",
+            "parameters": {
+              "expected_entity_count": 1,
+              "expected_entity_type": "3DSOLID",
+              "expected_bounds": {
+                "min": [
+                  -10,
+                  0,
+                  0
+                ],
+                "max": [
+                  33,
+                  64,
+                  22.1
+                ]
+              },
+              "expected_volume": 25779.080613361337,
+              "units": "mm"
+            },
+            "parent_operation_ids": [
+              "floor_recess_cut"
+            ],
+            "mcp_job_id": "aa3ce94d9e654218a264e332f6d76a8e"
+          }
+        ],
+        "edges": [
+          {
+            "source": "rear_channel_cut",
+            "target": "window_cut",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "window_cut",
+            "target": "rail_gap_cut",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "rail_gap_cut",
+            "target": "end_vertical_slot",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "end_vertical_slot",
+            "target": "end_cross_cut",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "end_cross_cut",
+            "target": "mount_hole_00",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "mount_hole_00",
+            "target": "mount_hole_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "mount_hole_01",
+            "target": "mount_hole_10",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "mount_hole_10",
+            "target": "mount_hole_11",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "mount_hole_11",
+            "target": "front_m3_00",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "front_m3_00",
+            "target": "front_m3_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "front_m3_01",
+            "target": "front_m3_10",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "front_m3_10",
+            "target": "front_m3_11",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "front_m3_11",
+            "target": "end_m3_00",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "end_m3_00",
+            "target": "end_m3_01",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "end_m3_01",
+            "target": "end_m3_10",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "end_m3_10",
+            "target": "end_m3_11",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "end_m3_11",
+            "target": "side_dowel_cut",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "side_dowel_cut",
+            "target": "side_m4_left",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "side_m4_left",
+            "target": "side_m4_right",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "side_m4_right",
+            "target": "floor_recess_cut",
+            "relation": "declared_parent"
+          },
+          {
+            "source": "floor_recess_cut",
+            "target": "final_native_validation",
+            "relation": "declared_parent"
+          }
+        ]
+      },
+      "deleted_parent_face_examples": [],
+      "interpretation": "Stable fingerprints prove inheritance. Snapshot-delta faces identify the operation group that changed topology; multiple operations in one job remain causally ambiguous."
+    }
+  },
+  "visualization": {
+    "candidate_to_ground_truth": [],
+    "ground_truth_to_candidate": []
+  },
+  "visualization_surface_samples_per_direction": 4000,
+  "region_summary_source": "geometry-verdict.json"
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN" data-mode="public">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EvoCAD | 图纸评审</title><link rel="stylesheet" href="styles.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js"}}</script>
+  <script src="vendor/lucide/lucide.min.js" defer></script>
+</head>
+<body>
+  <header class="app-header"><a class="brand" href="index.html">EvoCAD <span>图纸评审</span></a><span id="snapshotLabel" class="snapshot"></span><span id="totals"></span><a id="resultsLink" class="results-link" href="results.html" hidden><i data-lucide="chart-no-axes-combined"></i>读图结果总览</a><a class="model-link" href="../geometry/">建模实验 <i data-lucide="arrow-up-right"></i></a></header>
+  <div class="workspace">
+    <aside class="tasks"><div class="task-filter"><label for="family">题目列表</label><select id="family"><option value="all">全部类型</option></select></div><nav id="tasks" aria-label="题目列表"></nav><div class="sidebar-footer" id="reviewCount"></div></aside>
+    <main>
+      <p id="emptyTasks" class="empty-state" hidden>此批次暂无可展示题目。</p>
+      <div class="question-heading"><div class="question-copy"><div class="eyebrow"><span id="taskName"></span><span id="familyName"></span><span class="badge" id="reviewBadge"></span></div><h1 id="query"></h1></div><div class="question-actions"><span id="position"></span><button id="previousTask" class="icon-button" title="上一题" aria-label="上一题"><i data-lucide="chevron-left"></i></button><button id="nextTask" class="icon-button" title="下一题" aria-label="下一题"><i data-lucide="chevron-right"></i></button><button id="openReview" class="review-command"><i data-lucide="clipboard-pen"></i><span>记录评审</span></button></div></div>
+      <nav class="tabs" aria-label="内容"><button data-tab="input" class="active">题目与答案</button><button data-tab="trajectory">看图记录 <span id="observationCount"></span></button><button data-tab="gold" hidden>几何对照</button><button data-tab="details">核验与来源</button></nav>
+      <section id="input" class="panel">
+        <ul id="questionOptions" hidden></ul>
+        <div class="question-workspace">
+          <div class="drawing-column">
+            <div class="drawing-toolbar"><div class="segmented" aria-label="图纸范围"><button id="focusDrawing" aria-pressed="false">框选局部</button><button id="fitDrawing" aria-pressed="true">完整图纸</button></div><div class="drawing-tools"><button id="zoomOut" class="icon-button" title="缩小" aria-label="缩小"><i data-lucide="minus"></i></button><output id="zoomLevel">100%</output><button id="zoomIn" class="icon-button" title="放大" aria-label="放大"><i data-lucide="plus"></i></button><a id="originalImage" class="icon-button" title="打开原图" aria-label="打开原图" target="_blank" rel="noopener"><i data-lucide="external-link"></i></a></div></div>
+            <div id="images"><div id="imageViewport" tabindex="0" aria-label="图纸，可拖动和缩放"><img id="mainDrawing" alt="当前题目的原始输入图纸" draggable="false"><div id="drawingLoading" role="status">正在加载图纸</div></div></div>
+            <div id="imageChoices" class="image-choices" hidden></div><div class="drawing-caption"><span id="imageCaption"></span><span id="imageSize"></span></div>
+          </div>
+          <aside class="answer-panel" aria-label="答案对比">
+            <div class="answer-section"><div class="answer-heading"><span id="referenceLabel">Astra 候选答案</span><span id="referenceStatus" class="status neutral">待人工复核</span></div><div id="referenceValue" class="answer-value"></div><p id="labelCaution" class="muted">模型标注，不是权威 GT。</p></div>
+            <div class="answer-section"><div class="answer-heading"><span>KIMI 回答</span><span id="learnerStatus" class="status neutral"></span></div><div id="learnerValue" class="answer-value"></div><p id="learnerNote" class="muted"></p></div>
+            <div class="answer-section evidence-section"><h2>图纸依据</h2><p id="answerEvidence"></p><details id="blindDetails"><summary>独立盲审</summary><p id="blindEvidence"></p></details></div>
+            <div class="answer-footer" id="answerStats"></div>
+          </aside>
+        </div>
+      </section>
+      <section id="trajectory" class="panel" hidden><div class="section-heading"><h2>逐次看图记录</h2><p id="trajectoryNotice" class="muted"></p></div><div id="events"></div><details class="technical"><summary>原始事件</summary><pre id="rawEvents"></pre></details></section>
+      <section id="gold" class="panel" hidden><div class="geometry-toolbar"><h2>几何对照</h2><label>对照模型<select id="geometryChoice"></select></label></div><div id="geometryGrid"><div class="geometry-column"><h3>参考模型</h3><div id="truthViewer" class="viewport"><canvas hidden></canvas><img class="geometry-fallback" hidden alt=""><button class="reset-view" title="重置视角" aria-label="重置视角"><i data-lucide="rotate-ccw"></i></button><span class="viewer-status"></span></div></div><div class="geometry-column secondary"><h3 id="candidateName">候选模型</h3><div id="candidateViewer" class="viewport"><canvas hidden></canvas><img class="geometry-fallback" hidden alt=""><button class="reset-view" title="重置视角" aria-label="重置视角"><i data-lucide="rotate-ccw"></i></button><span class="viewer-status"></span></div></div><div class="geometry-column secondary"><h3>叠加对比</h3><div id="overlayViewer" class="viewport"><canvas hidden></canvas><img class="geometry-fallback" hidden alt=""><button class="reset-view" title="重置视角" aria-label="重置视角"><i data-lucide="rotate-ccw"></i></button><span class="viewer-status"></span></div></div></div><p id="geometryNote" class="muted"></p></section>
+      <section id="details" class="panel detail-panel" hidden><h2>核验概况</h2><div id="checkSummary"></div><details class="technical"><summary>评分规则与提交格式</summary><pre id="verifier"></pre><pre id="format"></pre></details><details id="modelAnnotation" class="technical"><summary>完整标注与答案</summary><pre id="annotation"></pre><pre id="answer"></pre><pre id="learnerAnswer"></pre></details><details class="technical"><summary>负例检查</summary><div id="negativeChecks"></div></details><h2>数据来源</h2><p id="sourceNotice" class="muted"></p><div id="downloads"></div><details class="technical"><summary>来源元数据</summary><pre id="provenance"></pre></details></section>
+    </main>
+  </div>
+  <dialog id="reviewDrawer" aria-labelledby="reviewTitle"><div class="drawer-heading"><div><h2 id="reviewTitle">人工评审</h2><p id="reviewTaskName" class="muted"></p></div><button id="closeReview" class="icon-button" title="关闭评审" aria-label="关闭评审"><i data-lucide="x"></i></button></div><form id="reviewForm"><label>评审人<input id="reviewer" required maxlength="120" autocomplete="name"></label><label>结论<select id="decision" required><option value="">请选择</option><option value="approve">接受题目与标注</option><option value="revise">需要修改</option><option value="exclude">排除本题</option><option value="uncertain">需要专家确认</option></select></label><fieldset><legend>质量评分</legend><label>图纸信息是否充分<select id="inputRating" required></select></label><label>参考答案是否可靠<select id="goldRating" required></select></label><label>评分规则是否合理<select id="verifierRating" required></select></label></fieldset><label>问题归属<select id="issue"><option value="none">未发现问题</option><option value="input_ambiguity">图纸或题意不清</option><option value="ground_truth_error">参考答案有误</option><option value="verifier_metric">评分逻辑有误</option><option value="verifier_threshold">评分容差不合理</option><option value="alignment_error">坐标约定不一致</option><option value="export_error">图纸或导出有误</option></select></label><label>评审意见<textarea id="notes" rows="4" maxlength="12000"></textarea></label><button class="primary" type="submit"><i data-lucide="save"></i>保存评审记录</button><p id="saveStatus" role="status"></p></form><h2>历史评审</h2><div id="history"></div><p id="integrity" class="muted"></p></dialog>
+  <div id="error" role="alert" hidden></div><script type="module" src="app.js"></script>
+</body>
+</html>

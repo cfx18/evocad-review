@@ -1,0 +1,3648 @@
+{
+  "schema_version": "public-drawing-review-v1",
+  "source_bundle_sha256": "1dad69adbf64eb37e4794035ca476121d02532e8d2b01dcde6c9c4e5ebb3da73",
+  "summary": {
+    "completed": 16
+  },
+  "runs": [
+    {
+      "target_id": "17e440765222c33e47988ec1",
+      "sample_id": "boxed-01",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "虚线"
+      },
+      "learner_answer": null,
+      "task_manifest": {
+        "task_id": "boxed-01",
+        "task_type": "line_role",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-01",
+        "query": "框内是什么线？",
+        "answer_format": {
+          "answer": "short text"
+        }
+      },
+      "source": {
+        "source_id": "pdf-035",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 35,
+        "sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内是什么线？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                279,
+                309,
+                285,
+                364
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "框内为上方轴颈内部钻孔左侧孔壁的短划线段，表示未剖开时不可见的孔壁轮廓；相邻轴线和外轮廓不在框内。",
+          "expected_answer": "虚线",
+          "answer_kind": "text",
+          "accepted_answers": [
+            "虚线",
+            "不可见轮廓线",
+            "hidden line"
+          ],
+          "bad_pattern_tags": [],
+          "confidence": 0.95,
+          "ambiguity_notes": "模型拟定标签，线段框位置需人工复核。",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "细虚线",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.96,
+          "evidence": "框内为间断的孔壁不可见轮廓线。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "timeout",
+        "passed": null,
+        "elapsed_seconds": 600.42,
+        "observations": 13,
+        "findings": 0,
+        "timeout_seconds": 600,
+        "timed_out": true,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "虚线"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": [
+            "hidden edge",
+            "hidden edge(细虚线)",
+            "hidden edge(虚线)",
+            "hidden line",
+            "hidden line(细虚线)",
+            "hidden line(虚线)",
+            "不可见轮廓线",
+            "不可见轮廓线(细虚线)",
+            "不可见轮廓线(虚线)",
+            "细虚线",
+            "细虚线(细虚线)",
+            "细虚线(虚线)",
+            "虚线",
+            "虚线(细虚线)",
+            "虚线(虚线)"
+          ]
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:18:23.991Z",
+          "payload": {
+            "observation_id": "e11927583f884d8f890d8ac2fd720729",
+            "intent": "Inspect the image to identify what kind of line is inside the box (框).",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:18:42.390Z",
+          "payload": {
+            "observation_id": "539575abcc0843dfa2cfd6e60e8c900d",
+            "intent": "Zoom into the red boxed region on the upper journal of the cross shaft to identify what kind of line is drawn inside the box.",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "e96f1dc287f3079cd9c1d23e51a006be7623e901ca9abf372a412966258befba",
+            "crop": [
+              650,
+              520,
+              820,
+              720
+            ],
+            "dimensions": [
+              170,
+              200
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:18:56.233Z",
+          "payload": {
+            "observation_id": "01dbe2ba09504f92bd07d702ce1da484",
+            "intent": "Zoom in further on the red rectangle to see the exact line type inside it (solid, dashed, dash-dot center line, etc.).",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "25b15296aa165e942f29ca2484a9b45ec2322128b25281e1f624ebff9be9c2ac",
+            "crop": [
+              690,
+              540,
+              770,
+              700
+            ],
+            "dimensions": [
+              80,
+              160
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:19:17.259Z",
+          "payload": {
+            "observation_id": "e4a406b51d6746feba70ed4e7ee1c4c4",
+            "intent": "Tight crop of the red box contents: determine whether the enclosed vertical line is a dashed hidden line (虚线) or a dash-dot center line (点画线).",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "9797b85d335957b2157aeb2192ba4cc94dcc5afcf29d8e2263ff80fe03f4f0f3",
+            "crop": [
+              692,
+              545,
+              745,
+              675
+            ],
+            "dimensions": [
+              53,
+              130
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:19:45.824Z",
+          "payload": {
+            "observation_id": "75221836945d4ebcaf19ab24f39f59f3",
+            "intent": "Maximum-magnification crop of the two vertical lines inside the red box to classify each line type precisely.",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "6190f94dcbda5ed2f86fb5bae19a40db045a9e77f844f911397d11d81c4499a3",
+            "crop": [
+              700,
+              548,
+              742,
+              672
+            ],
+            "dimensions": [
+              42,
+              124
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:21:47.001Z",
+          "payload": {
+            "observation_id": "d1da21d4b7a9463aaf33a0ad028d1028",
+            "intent": "Isolate the left internal line of the red box to confirm its dash pattern.",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "bcd5873f7af99cb97340bdadc4846982785fa821b64a17b0ba6a5fa761c9fe0c",
+            "crop": [
+              702,
+              548,
+              712,
+              670
+            ],
+            "dimensions": [
+              10,
+              122
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:21:47.199Z",
+          "payload": {
+            "observation_id": "1115dacda244414e8bf913df6875aae1",
+            "intent": "Isolate the right internal line of the red box to confirm whether it is a dash-dot center line or a dashed line.",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "33cf6a57d2c9631f65af0ee81d4bc8207f2d0819d23cd99685739eb7b0d9fb82",
+            "crop": [
+              711,
+              548,
+              723,
+              670
+            ],
+            "dimensions": [
+              12,
+              122
+            ],
+            "image": "receipts/007.png"
+          }
+        },
+        {
+          "sequence": 9,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:22:30.317Z",
+          "payload": {
+            "observation_id": "37396dbe7799474ab4de553bdc0a70b6",
+            "intent": "View both internal lines plus red box edges together to settle positions and dash patterns of each line inside the box.",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "2edb4c6caca07473440eee76f76c5812f96836bfd6b6b848af35f22298295128",
+            "crop": [
+              698,
+              543,
+              732,
+              674
+            ],
+            "dimensions": [
+              34,
+              131
+            ],
+            "image": "receipts/008.png"
+          }
+        },
+        {
+          "sequence": 10,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:24:02.821Z",
+          "payload": {
+            "observation_id": "b760288d56d646248f30bf519ebadea1",
+            "intent": "Wider view of the red-box area and the lines immediately to its right, to understand the line group (hole walls + center line) inside/around the box.",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "cd8fc95cf1d25be5b20fe0146d47c0a8a60e88571d4a8c62eef30acbc96cacec",
+            "crop": [
+              700,
+              540,
+              760,
+              680
+            ],
+            "dimensions": [
+              60,
+              140
+            ],
+            "image": "receipts/009.png"
+          }
+        },
+        {
+          "sequence": 11,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:24:46.473Z",
+          "payload": {
+            "observation_id": "8d213d71beaa4cb4a73635bc455b135d",
+            "intent": "View the whole top journal of the cross shaft to understand the geometry: journal outline, central axis, oil hole hidden lines, and where the red box sits relative to them.",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "6d9c375e2fcaabd58c7204a936b5b3b2d70e501114f3463b71f88113e7eeaeb5",
+            "crop": [
+              640,
+              380,
+              860,
+              760
+            ],
+            "dimensions": [
+              220,
+              380
+            ],
+            "image": "receipts/010.png"
+          }
+        },
+        {
+          "sequence": 12,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:26:39.026Z",
+          "payload": {
+            "observation_id": "2604368e8d8a481a8b0e36547bd86b93",
+            "intent": "Inspect the sectional view's upper journal to understand the internal hole feature that corresponds to the boxed lines in the front view.",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "aa580bd7b469c7afe60e03bf8b20b143f3daf329484a20829a9991c57329fbf1",
+            "crop": [
+              1560,
+              330,
+              2000,
+              760
+            ],
+            "dimensions": [
+              440,
+              430
+            ],
+            "image": "receipts/011.png"
+          }
+        },
+        {
+          "sequence": 13,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:28:08.990Z",
+          "payload": {
+            "observation_id": "c695f58ab1204b909b222cacc7e2c996",
+            "intent": "Isolate only the right internal line of the red box to verify its pattern (dash-dot center line vs dashed line).",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "1d9e027d6903934aefdc91ad793ef3f5ab00bbe93bcf7d458215b0891efd5667",
+            "crop": [
+              713,
+              550,
+              720,
+              668
+            ],
+            "dimensions": [
+              7,
+              118
+            ],
+            "image": "receipts/012.png"
+          }
+        },
+        {
+          "sequence": 14,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:28:09.138Z",
+          "payload": {
+            "observation_id": "060fad4a828b4eaca9e5eef1c068f60b",
+            "intent": "Isolate only the left internal line of the red box to verify its pattern (dashed hidden line).",
+            "source_sha256": "7961a0852b038ab10211fdb2a2aa90cbae91d7834012ec935f4f91a141021def",
+            "sha256": "658c70c5b442ec4ccadeb5cac4881915e1d480a0eb2c0d8a4bb929e776cc442a",
+            "crop": [
+              705,
+              550,
+              712,
+              668
+            ],
+            "dimensions": [
+              7,
+              118
+            ],
+            "image": "receipts/013.png"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-01/input-01.png"
+      ],
+      "asset_base": "assets/boxed-01",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-01/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "bd26b3d60010489f06e5842c",
+      "sample_id": "boxed-02",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": 12
+      },
+      "learner_answer": {
+        "answer": 12
+      },
+      "task_manifest": {
+        "task_id": "boxed-02",
+        "task_type": "dimension_attachment",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-02",
+        "query": "框内标注的半径是多少毫米？",
+        "answer_format": {
+          "answer": "number"
+        }
+      },
+      "source": {
+        "source_id": "pdf-035",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 35,
+        "sha256": "b810a99cfc0996951b88643d7366a2d72443cb6b1a259cfb93608e0856b8f100",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内标注的半径是多少毫米？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                325,
+                347,
+                373,
+                404
+              ]
+            }
+          ],
+          "unit": "mm",
+          "answer_evidence": "框内R12引线的箭头指向上方轴颈与中心座之间右侧的过渡圆角，R表示半径。",
+          "expected_answer": 12,
+          "answer_kind": "number",
+          "accepted_answers": [],
+          "bad_pattern_tags": [],
+          "confidence": 0.99,
+          "ambiguity_notes": "模型拟定标签，需人工复核。",
+          "derivation": {
+            "expression": "R",
+            "inputs": [
+              {
+                "symbol": "R",
+                "value": 12,
+                "drawing_evidence": "框内圆角引线标注为R12。"
+              }
+            ]
+          }
+        },
+        "blind_audit": {
+          "answer": 12,
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "框内半径标注为R12。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 63.31,
+        "observations": 1,
+        "findings": 1,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": 12
+        },
+        "absolute_tolerance": 0.05,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": []
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:28:26.039Z",
+          "payload": {
+            "observation_id": "77a4caf22d97401d963461fd7723915c",
+            "intent": "Inspect the engineering drawing to find the radius value marked inside the box (框内标注的半径). Read any boxed radius dimension in millimeters.",
+            "source_sha256": "730eb2e85dc64d8d0dc1fcebc31fb8737dd5f9972aec4d4392f08501c5419514",
+            "sha256": "730eb2e85dc64d8d0dc1fcebc31fb8737dd5f9972aec4d4392f08501c5419514",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:28:43.005Z",
+          "payload": {
+            "observation_id": "77a4caf22d97401d963461fd7723915c",
+            "public_conclusion": "The red box on the drawing highlights the radius annotation \"R12\" (a leader points to the fillet at the center of the cross shaft), so the boxed radius is 12 mm."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-02/input-01.png"
+      ],
+      "asset_base": "assets/boxed-02",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-02/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "f2ef4d47248f40838462f9aa",
+      "sample_id": "boxed-03",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "可见轮廓线"
+      },
+      "learner_answer": {
+        "answer": "粗实线（可见轮廓线）"
+      },
+      "task_manifest": {
+        "task_id": "boxed-03",
+        "task_type": "line_role",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-03",
+        "query": "框内是什么线？",
+        "answer_format": {
+          "answer": "short text"
+        }
+      },
+      "source": {
+        "source_id": "pdf-065",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 65,
+        "sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内是什么线？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                628,
+                158,
+                675,
+                178
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "框内仅有手轮最外圆上部偏左的一段粗实线圆弧，表示轮缘的可见外轮廓；内圈圆弧与中心线均在框外。",
+          "expected_answer": "可见轮廓线",
+          "answer_kind": "text",
+          "accepted_answers": [
+            "可见轮廓线",
+            "粗实线",
+            "visible outline"
+          ],
+          "bad_pattern_tags": [],
+          "confidence": 0.99,
+          "ambiguity_notes": "模型拟定标签，需人工复核。",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "粗实线",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "框内为手轮外圆的连续粗轮廓线。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "answer_review_required",
+        "passed": null,
+        "score": null,
+        "elapsed_seconds": 65.47,
+        "observations": 2,
+        "findings": 1,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "review_reason": "Unlisted free-text answer; lexical mismatch is not a verified semantic error.",
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "可见轮廓线"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": [
+            "visible edge",
+            "visible edge(粗实线)",
+            "visible outline",
+            "visible outline(粗实线)",
+            "可见轮廓线",
+            "可见轮廓线(粗实线)",
+            "可见边线",
+            "可见边线(粗实线)",
+            "粗实线",
+            "粗实线(粗实线)"
+          ]
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:29:24.892Z",
+          "payload": {
+            "observation_id": "8baa753229954745bfdf2130a0b757a2",
+            "intent": "查看整张图片，找出框内的线",
+            "source_sha256": "f823b6f96bc43a4841d3fd6efcde4ff9774c8e21c618905499619563b57b70e3",
+            "sha256": "f823b6f96bc43a4841d3fd6efcde4ff9774c8e21c618905499619563b57b70e3",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:29:42.654Z",
+          "payload": {
+            "observation_id": "f54bc6f48c6843439f0155e281437127",
+            "intent": "放大查看红框内的线段细节",
+            "source_sha256": "f823b6f96bc43a4841d3fd6efcde4ff9774c8e21c618905499619563b57b70e3",
+            "sha256": "2bce0c0132012fe7c7ff463eb7d7c35f9bb82e50370459a845920530bedd5533",
+            "crop": [
+              1550,
+              250,
+              1850,
+              420
+            ],
+            "dimensions": [
+              300,
+              170
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:29:58.548Z",
+          "payload": {
+            "observation_id": "f54bc6f48c6843439f0155e281437127",
+            "public_conclusion": "红框内是一段手轮轮缘外轮廓的圆弧，以连续粗实线绘制，属于可见轮廓线。"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-03/input-01.png"
+      ],
+      "asset_base": "assets/boxed-03",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-03/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "6e50b2ba1eea6be294975bc8",
+      "sample_id": "boxed-04",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": 28
+      },
+      "learner_answer": {
+        "answer": 24
+      },
+      "task_manifest": {
+        "task_id": "boxed-04",
+        "task_type": "dimension_chain",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-04",
+        "query": "框示上下两端之间的距离是多少毫米？",
+        "answer_format": {
+          "answer": "number"
+        }
+      },
+      "source": {
+        "source_id": "pdf-065",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 65,
+        "sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框示上下两端之间的距离是多少毫米？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                282,
+                164,
+                291,
+                224
+              ]
+            }
+          ],
+          "unit": "mm",
+          "answer_evidence": "框跨上端轮缘剖面的径向两端。上端对应外径φ320，下端对应φ264的尺寸界线；φ254对应的另一处轮廓位于框下方。",
+          "expected_answer": 28,
+          "answer_kind": "number",
+          "accepted_answers": [],
+          "bad_pattern_tags": [],
+          "confidence": 0.93,
+          "ambiguity_notes": "框需保留φ264所对应的内端，且不纳入下方φ254对应轮廓；模型拟定标签，需人工复核。",
+          "derivation": {
+            "expression": "(D_outer - D_inner) / 2",
+            "inputs": [
+              {
+                "symbol": "D_outer",
+                "value": 320,
+                "drawing_evidence": "φ320尺寸的两端连接轮缘最上端与最下端。"
+              },
+              {
+                "symbol": "D_inner",
+                "value": 264,
+                "drawing_evidence": "φ264上端尺寸界线连接框内上方轮缘剖面的内端。"
+              }
+            ]
+          }
+        },
+        "blind_audit": {
+          "answer": 28,
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.92,
+          "evidence": "框示轮缘截面上下轮廓对应φ320与φ264，距离为(320−264)/2=28。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": false,
+        "score": 0.0,
+        "elapsed_seconds": 442.34,
+        "observations": 6,
+        "findings": 0,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": 28
+        },
+        "absolute_tolerance": 0.05,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": []
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:30:35.905Z",
+          "payload": {
+            "observation_id": "a94ca7bd6712469bad1d80d130d48ce4",
+            "intent": "View the full engineering drawing to identify the boxed feature and the dimension between its upper and lower ends in millimeters.",
+            "source_sha256": "8ceaec02d322c94167ac545c046a7ff9f6927482d04f76780e32dab2da071b2a",
+            "sha256": "8ceaec02d322c94167ac545c046a7ff9f6927482d04f76780e32dab2da071b2a",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:31:56.661Z",
+          "payload": {
+            "observation_id": "91d30d1d6ea14da28dc96e8aa97f2560",
+            "intent": "Inspect the red boxed rim cross-section at the top of the left sectional view and any adjacent dimension lines.",
+            "source_sha256": "8ceaec02d322c94167ac545c046a7ff9f6927482d04f76780e32dab2da071b2a",
+            "sha256": "7c37649d5080740b5cb3656eb9449b645ccd3306435e6423c4a00645ad516ede",
+            "crop": [
+              650,
+              250,
+              850,
+              470
+            ],
+            "dimensions": [
+              200,
+              220
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:31:56.818Z",
+          "payload": {
+            "observation_id": "8baef074c8da4efc9d3ffd0868c08fe4",
+            "intent": "Inspect the A-A cross-section detail and read its vertical and horizontal dimensions.",
+            "source_sha256": "8ceaec02d322c94167ac545c046a7ff9f6927482d04f76780e32dab2da071b2a",
+            "sha256": "389d6d3477b44fa8e47f032468503c6de812f446e7f7418a557474292d9fe809",
+            "crop": [
+              1010,
+              240,
+              1280,
+              470
+            ],
+            "dimensions": [
+              270,
+              230
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:32:47.305Z",
+          "payload": {
+            "observation_id": "97747e73ca4d44d797f52d7df90d786a",
+            "intent": "Inspect the left sectional view and vertical diameter dimensions to determine which surfaces bound the boxed top rim feature.",
+            "source_sha256": "8ceaec02d322c94167ac545c046a7ff9f6927482d04f76780e32dab2da071b2a",
+            "sha256": "3819982ec33f92288f4b5db93aa63fb0a09e946b644d2b54f65ab43f6e71a819",
+            "crop": [
+              560,
+              260,
+              1040,
+              1420
+            ],
+            "dimensions": [
+              480,
+              1160
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:34:52.158Z",
+          "payload": {
+            "observation_id": "7e8d1e43b8834d0dbd991aba007a7d9f",
+            "intent": "Tightly inspect the red boxed cross-section to estimate which dimension its vertical extent matches.",
+            "source_sha256": "8ceaec02d322c94167ac545c046a7ff9f6927482d04f76780e32dab2da071b2a",
+            "sha256": "436fa20ae6377f0582855efc05bb8d2d541dc34bca19313d32562ec06988396a",
+            "crop": [
+              690,
+              285,
+              800,
+              420
+            ],
+            "dimensions": [
+              110,
+              135
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:34:52.284Z",
+          "payload": {
+            "observation_id": "6824283c95214627918fddd42cfadd1a",
+            "intent": "Tightly inspect the A-A removed section dimensions and orientation arrow.",
+            "source_sha256": "8ceaec02d322c94167ac545c046a7ff9f6927482d04f76780e32dab2da071b2a",
+            "sha256": "30ba5b661a8a01dcc731aac81f72adaa601af65de6688bba423023d5f87132e3",
+            "crop": [
+              1040,
+              290,
+              1230,
+              450
+            ],
+            "dimensions": [
+              190,
+              160
+            ],
+            "image": "receipts/006.png"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-04/input-01.png"
+      ],
+      "asset_base": "assets/boxed-04",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-04/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "5bd2db3f57aa175e4317bb93",
+      "sample_id": "boxed-05",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "尺寸界线"
+      },
+      "learner_answer": {
+        "answer": "尺寸界线（细实线）"
+      },
+      "task_manifest": {
+        "task_id": "boxed-05",
+        "task_type": "line_role",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-05",
+        "query": "框内是什么线？",
+        "answer_format": {
+          "answer": "short text"
+        }
+      },
+      "source": {
+        "source_id": "pdf-120",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 120,
+        "sha256": "a0a3f638ab1f6fd1aad23cfcbb9bc2db759aaad8a142e1de0b4a03dbe33ef7f9",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内是什么线？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                750,
+                199,
+                755,
+                248
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "框内细实线从安装板右侧轮廓向上延伸，与90尺寸线的右端相接；框内线段位于尺寸箭头与实体轮廓之间。",
+          "expected_answer": "尺寸界线",
+          "answer_kind": "text",
+          "accepted_answers": [
+            "尺寸界线",
+            "尺寸延长线",
+            "extension line"
+          ],
+          "bad_pattern_tags": [],
+          "confidence": 0.99,
+          "ambiguity_notes": "模型拟定标签，需人工复核。",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "尺寸界线（细实线）",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "框内竖直细线为90毫米尺寸右端的尺寸界线。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 103.98,
+        "observations": 3,
+        "findings": 1,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "尺寸界线"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": [
+            "extension line",
+            "extension line(细实线)",
+            "尺寸延伸线",
+            "尺寸延伸线(细实线)",
+            "尺寸延长线",
+            "尺寸延长线(细实线)",
+            "尺寸界线",
+            "尺寸界线(细实线)"
+          ]
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:37:52.500Z",
+          "payload": {
+            "observation_id": "d8a918ed8f4940acace712a07c63b4e7",
+            "intent": "查看图片中框内的线条类型",
+            "source_sha256": "6716c33baeb44aff1f41248d92d08eed1027b2794bd910c8f7b2914d04160a7e",
+            "sha256": "6716c33baeb44aff1f41248d92d08eed1027b2794bd910c8f7b2914d04160a7e",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:38:07.920Z",
+          "payload": {
+            "observation_id": "531b89b93622406b8f7c8855464cfcd7",
+            "intent": "放大查看红框标记处的线条细节",
+            "source_sha256": "6716c33baeb44aff1f41248d92d08eed1027b2794bd910c8f7b2914d04160a7e",
+            "sha256": "52f8b1273732b06e58debfdd55cba9c46dc45a0d9d6f71e5283a34b67afd72b9",
+            "crop": [
+              1830,
+              240,
+              2010,
+              520
+            ],
+            "dimensions": [
+              180,
+              280
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:38:35.323Z",
+          "payload": {
+            "observation_id": "9fd8eb8f5b9445e6b7dff5c1e6073006",
+            "intent": "查看A视图整体，确定红框竖线与零件轮廓、尺寸界线的关系",
+            "source_sha256": "6716c33baeb44aff1f41248d92d08eed1027b2794bd910c8f7b2914d04160a7e",
+            "sha256": "d83db738426edd2bb769a6f2e1b882954dab59e81582824bcd1d7660881d2b1c",
+            "crop": [
+              1400,
+              180,
+              2100,
+              760
+            ],
+            "dimensions": [
+              700,
+              580
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:39:05.364Z",
+          "payload": {
+            "observation_id": "9fd8eb8f5b9445e6b7dff5c1e6073006",
+            "public_conclusion": "红框内是A视图中尺寸90右端引出的竖直细实线，连接零件右上角轮廓与尺寸线，属于尺寸界线（细实线绘制）。"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-05/input-01.png"
+      ],
+      "asset_base": "assets/boxed-05",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-05/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "3b3280cd8130dee04420c94b",
+      "sample_id": "boxed-06",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": 20
+      },
+      "learner_answer": {
+        "answer": 20
+      },
+      "task_manifest": {
+        "task_id": "boxed-06",
+        "task_type": "dimension_chain",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-06",
+        "query": "框内槽两端圆弧的圆心距是多少毫米？",
+        "answer_format": {
+          "answer": "number"
+        }
+      },
+      "source": {
+        "source_id": "pdf-120",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 120,
+        "sha256": "a0a3f638ab1f6fd1aad23cfcbb9bc2db759aaad8a142e1de0b4a03dbe33ef7f9",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内槽两端圆弧的圆心距是多少毫米？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                584,
+                329,
+                615,
+                417
+              ]
+            }
+          ],
+          "unit": "mm",
+          "answer_evidence": "框内左侧长圆槽的总长标为28、槽宽标为8。上下端均为半圆，圆心处有短横向中心标记。",
+          "expected_answer": 20,
+          "answer_kind": "number",
+          "accepted_answers": [],
+          "bad_pattern_tags": [],
+          "confidence": 0.99,
+          "ambiguity_notes": "模型拟定标签，需人工复核。",
+          "derivation": {
+            "expression": "L - W",
+            "inputs": [
+              {
+                "symbol": "L",
+                "value": 28,
+                "drawing_evidence": "槽左侧28尺寸的箭头对应长圆槽的最上端和最下端。"
+              },
+              {
+                "symbol": "W",
+                "value": 8,
+                "drawing_evidence": "槽下方8尺寸连接两条直边，等于端部半圆的直径。"
+              }
+            ]
+          }
+        },
+        "blind_audit": {
+          "answer": 20,
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "槽总长28、宽8，两端圆弧圆心距为28−8=20。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 160.08,
+        "observations": 6,
+        "findings": 1,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": 20
+        },
+        "absolute_tolerance": 0.05,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": []
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:39:39.726Z",
+          "payload": {
+            "observation_id": "0758d526f1f64942bde678d1888fe71e",
+            "intent": "Inspect the engineering drawing to find the dimension of the slot inside the box/frame, specifically the center distance between the two end arcs of the slot.",
+            "source_sha256": "5b6a2e41e72c053f1b867896f8a7d983a0d7513edb2478253c082b751be0633b",
+            "sha256": "5b6a2e41e72c053f1b867896f8a7d983a0d7513edb2478253c082b751be0633b",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:40:01.786Z",
+          "payload": {
+            "observation_id": "ddd3d4dc736749738884e63de3d3b090",
+            "intent": "Zoom into the red-boxed slot in view A to read its dimensions (28 length, 8 width) and confirm the center distance between the two end arcs.",
+            "source_sha256": "5b6a2e41e72c053f1b867896f8a7d983a0d7513edb2478253c082b751be0633b",
+            "sha256": "53717044d8c795c220238047b496bef4467e9a0370604b6db19bbc2dd43a2068",
+            "crop": [
+              1350,
+              430,
+              1650,
+              700
+            ],
+            "dimensions": [
+              300,
+              270
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:40:13.085Z",
+          "payload": {
+            "observation_id": "f2c7d2f6711b41a58a215de83b004028",
+            "intent": "View the full slot in the red box including the 28 and 8 dimensions to determine arc center distance.",
+            "source_sha256": "5b6a2e41e72c053f1b867896f8a7d983a0d7513edb2478253c082b751be0633b",
+            "sha256": "177eb2ac2d17af249e130d9c0426e905409a8fccb507f6744b48e0201f5f5837",
+            "crop": [
+              1380,
+              450,
+              1620,
+              680
+            ],
+            "dimensions": [
+              240,
+              230
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:40:28.715Z",
+          "payload": {
+            "observation_id": "754f5d3516324d52adb09047351286c1",
+            "intent": "View the red-boxed slot region in original pixel coordinates to read the slot dimensions 28 and 8.",
+            "source_sha256": "5b6a2e41e72c053f1b867896f8a7d983a0d7513edb2478253c082b751be0633b",
+            "sha256": "fea033607369363eeb334a32c7b2adf9f21ff340cf9373c8bc694ca5a56cfe63",
+            "crop": [
+              1420,
+              560,
+              1650,
+              800
+            ],
+            "dimensions": [
+              230,
+              240
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:40:48.650Z",
+          "payload": {
+            "observation_id": "f1c69a5962c54eeb9488382c17bf0596",
+            "intent": "Verify the 28 dimension extent relative to the slot (overall length) and the 8 width dimension below the slot.",
+            "source_sha256": "5b6a2e41e72c053f1b867896f8a7d983a0d7513edb2478253c082b751be0633b",
+            "sha256": "3026aea2a14b0f7e4e1a8fa3d73fe0e401862e8182b2b48cac8c632f398d05e5",
+            "crop": [
+              1330,
+              540,
+              1660,
+              830
+            ],
+            "dimensions": [
+              330,
+              290
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:41:22.478Z",
+          "payload": {
+            "observation_id": "0b18bcc2b0aa4734acda2adc66a57541",
+            "intent": "Closely examine where the 28 dimension's extension lines attach to the slot geometry (top tangent and bottom tangent vs arc centers).",
+            "source_sha256": "5b6a2e41e72c053f1b867896f8a7d983a0d7513edb2478253c082b751be0633b",
+            "sha256": "67dd2f2551f24c785328db3e2652edf789cdd4f9c2fe2f5fc01af19187803b5c",
+            "crop": [
+              1360,
+              560,
+              1620,
+              790
+            ],
+            "dimensions": [
+              260,
+              230
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:41:44.148Z",
+          "payload": {
+            "observation_id": "0b18bcc2b0aa4734acda2adc66a57541",
+            "public_conclusion": "The red-boxed slot in view A is dimensioned with overall length 28 mm (extension lines tangent to the top and bottom semicircular ends) and width 8 mm (equal to the diameter of the end semicircles, radius 4 mm). Therefore the center distance between the two end arcs = 28 − 8 = 20 mm."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-06/input-01.png"
+      ],
+      "asset_base": "assets/boxed-06",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-06/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "4aed1023355197b6de0b66e0",
+      "sample_id": "boxed-07",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": 6
+      },
+      "learner_answer": {
+        "answer": 6
+      },
+      "task_manifest": {
+        "task_id": "boxed-07",
+        "task_type": "dimension_attachment",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-07",
+        "query": "框内标注的直径是多少毫米？",
+        "answer_format": {
+          "answer": "number"
+        }
+      },
+      "source": {
+        "source_id": "web-2679-01",
+        "origin": "public_web_drawing",
+        "article_url": "https://xifengboke.com/post/2679.html",
+        "sha256": "5985018b095635dd755d04b34e0be97e9d5badc8a524ad662fa3afeb00530df6",
+        "dimensions": [
+          2480,
+          3507
+        ],
+        "rights": {
+          "status": "permission_required",
+          "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+          "training_eligible": false,
+          "redistribution_eligible": false
+        }
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内标注的直径是多少毫米？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                727,
+                167,
+                850,
+                237
+              ]
+            }
+          ],
+          "unit": "mm",
+          "answer_evidence": "框内φ6标注的斜向尺寸线穿过小圆孔，两端箭头对应孔的圆周；旁边的8为孔中心位置尺寸，位于框外。",
+          "expected_answer": 6,
+          "answer_kind": "number",
+          "accepted_answers": [],
+          "bad_pattern_tags": [],
+          "confidence": 0.99,
+          "ambiguity_notes": "模型拟定标签，需人工复核。",
+          "derivation": {
+            "expression": "d",
+            "inputs": [
+              {
+                "symbol": "d",
+                "value": 6,
+                "drawing_evidence": "小圆孔的直径标注为φ6。"
+              }
+            ]
+          }
+        },
+        "blind_audit": {
+          "answer": 6,
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "框内唯一的直径标注为φ6。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 82.03,
+        "observations": 2,
+        "findings": 1,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": 6
+        },
+        "absolute_tolerance": 0.05,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": []
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:42:21.851Z",
+          "payload": {
+            "observation_id": "65ebced23b9c47839edb7c683414f689",
+            "intent": "Inspect the full engineering drawing to find the dimension annotation inside a box (boxed diameter), reading its value in millimeters.",
+            "source_sha256": "f4b766ce57bcdd6e9423b6cff8e302d040e959df7b7d599f42f19c4adf64ac44",
+            "sha256": "f4b766ce57bcdd6e9423b6cff8e302d040e959df7b7d599f42f19c4adf64ac44",
+            "crop": null,
+            "dimensions": [
+              2480,
+              3507
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:42:53.532Z",
+          "payload": {
+            "observation_id": "8bd930574b0243f48ea6367b3fd4546a",
+            "intent": "Zoom into the red-boxed area in the upper-right view to read the diameter value precisely.",
+            "source_sha256": "f4b766ce57bcdd6e9423b6cff8e302d040e959df7b7d599f42f19c4adf64ac44",
+            "sha256": "3197fd22550bdf42100bda17f7a8700abf05962b5428543f68ae9da84d977a20",
+            "crop": [
+              1750,
+              520,
+              2180,
+              760
+            ],
+            "dimensions": [
+              430,
+              240
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:43:13.174Z",
+          "payload": {
+            "observation_id": "8bd930574b0243f48ea6367b3fd4546a",
+            "public_conclusion": "The red box in the upper-right side view encloses a diameter callout with a leader pointing to a small circular hole; the text clearly reads \"∅6\", i.e., diameter 6 mm."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-07/input-01.png"
+      ],
+      "asset_base": "assets/boxed-07",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-07/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "caf505d2e3abeef51a38a4a5",
+      "sample_id": "boxed-08",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": 24
+      },
+      "learner_answer": null,
+      "task_manifest": {
+        "task_id": "boxed-08",
+        "task_type": "dimension_chain",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-08",
+        "query": "框内竖直边的长度是多少毫米？",
+        "answer_format": {
+          "answer": "number"
+        }
+      },
+      "source": {
+        "source_id": "web-2679-01",
+        "origin": "public_web_drawing",
+        "article_url": "https://xifengboke.com/post/2679.html",
+        "sha256": "5985018b095635dd755d04b34e0be97e9d5badc8a524ad662fa3afeb00530df6",
+        "dimensions": [
+          2480,
+          3507
+        ],
+        "rights": {
+          "status": "permission_required",
+          "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+          "training_eligible": false,
+          "redistribution_eligible": false
+        }
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内竖直边的长度是多少毫米？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                452,
+                236,
+                462,
+                309
+              ]
+            }
+          ],
+          "unit": "mm",
+          "answer_evidence": "框内竖直边上端为右侧台阶肩面，下端为底板上表面。总高48、顶部至肩面16、底板厚8分别确定这两个端点的高度。",
+          "expected_answer": 24,
+          "answer_kind": "number",
+          "accepted_answers": [],
+          "bad_pattern_tags": [],
+          "confidence": 0.98,
+          "ambiguity_notes": "框内斜肋在竖直边中途相接，所求为肩面到底板上表面的完整竖直边；模型拟定标签，需人工复核。",
+          "derivation": {
+            "expression": "H - h - t",
+            "inputs": [
+              {
+                "symbol": "H",
+                "value": 48,
+                "drawing_evidence": "左侧48尺寸连接顶部与底板底面。"
+              },
+              {
+                "symbol": "h",
+                "value": 16,
+                "drawing_evidence": "16尺寸连接顶部与台阶肩面。"
+              },
+              {
+                "symbol": "t",
+                "value": 8,
+                "drawing_evidence": "左下方8尺寸连接底板上表面与底面。"
+              }
+            ]
+          }
+        },
+        "blind_audit": {
+          "answer": 24,
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.98,
+          "evidence": "竖边从台阶面延至底座上表面，长度为48−16−8=24。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "timeout",
+        "passed": null,
+        "elapsed_seconds": 600.38,
+        "observations": 5,
+        "findings": 0,
+        "timeout_seconds": 600,
+        "timed_out": true,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": 24
+        },
+        "absolute_tolerance": 0.05,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": []
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:43:42.398Z",
+          "payload": {
+            "observation_id": "b3e8f50276a84b78953e8f23152886ea",
+            "intent": "查看图纸，找出框内竖直边的长度标注（毫米）",
+            "source_sha256": "40939e1d25e0846e1cb0603cb4f912f3ff3d3ec1ee40fb1cb3443d61ae0900ee",
+            "sha256": "40939e1d25e0846e1cb0603cb4f912f3ff3d3ec1ee40fb1cb3443d61ae0900ee",
+            "crop": null,
+            "dimensions": [
+              2480,
+              3507
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:44:00.389Z",
+          "payload": {
+            "observation_id": "d553248201264c21af4fa0e4b86eab4b",
+            "intent": "放大主视图中红框标注的竖直边区域，查看其尺寸",
+            "source_sha256": "40939e1d25e0846e1cb0603cb4f912f3ff3d3ec1ee40fb1cb3443d61ae0900ee",
+            "sha256": "bfa9b817df6ecaa82eca68c390a907e04d82df0bd42214da41a92e8bfd30d462",
+            "crop": [
+              900,
+              700,
+              1500,
+              1250
+            ],
+            "dimensions": [
+              600,
+              550
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:44:34.931Z",
+          "payload": {
+            "observation_id": "9ed0b9076f4e4c7e8c75805230a6d93f",
+            "intent": "查看主视图全部尺寸标注，理解红框竖直边的高度",
+            "source_sha256": "40939e1d25e0846e1cb0603cb4f912f3ff3d3ec1ee40fb1cb3443d61ae0900ee",
+            "sha256": "e7b5f3bcd5859250147c14f626cb0d88efece2f897798b505babf21bb5777fbb",
+            "crop": [
+              330,
+              430,
+              1420,
+              1360
+            ],
+            "dimensions": [
+              1090,
+              930
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:46:49.598Z",
+          "payload": {
+            "observation_id": "6ba9eaced3824b19a698f5e246c455dc",
+            "intent": "放大红框竖直边及其上下端连接的台阶与尺寸3的区域，确定竖直边上下端位置",
+            "source_sha256": "40939e1d25e0846e1cb0603cb4f912f3ff3d3ec1ee40fb1cb3443d61ae0900ee",
+            "sha256": "8bd475d16004a5b198d306aa8945587a819a5ccfc50349de566d3eb65984afa1",
+            "crop": [
+              1000,
+              800,
+              1450,
+              1350
+            ],
+            "dimensions": [
+              450,
+              550
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:52:28.343Z",
+          "payload": {
+            "observation_id": "eb8e1561dfe444198b2f1b03ec1403dd",
+            "intent": "精确查看红框竖直边的上下端点位置及相邻台阶线",
+            "source_sha256": "40939e1d25e0846e1cb0603cb4f912f3ff3d3ec1ee40fb1cb3443d61ae0900ee",
+            "sha256": "a5a25a45ca9273faca097d126f5ad0969f71677ef83a85b32890353eb0f0fb28",
+            "crop": [
+              1080,
+              820,
+              1300,
+              1180
+            ],
+            "dimensions": [
+              220,
+              360
+            ],
+            "image": "receipts/005.png"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-08/input-01.png"
+      ],
+      "asset_base": "assets/boxed-08",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-08/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "53b58c46b01f99564ec5afc3",
+      "sample_id": "boxed-09",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "可见轮廓线"
+      },
+      "learner_answer": {
+        "answer": "粗实线"
+      },
+      "task_manifest": {
+        "task_id": "boxed-09",
+        "task_type": "line_role",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-09",
+        "query": "框内是什么线？",
+        "answer_format": {
+          "answer": "short text"
+        }
+      },
+      "source": {
+        "source_id": "pdf-162",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 162,
+        "sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内是什么线？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                319,
+                862,
+                500,
+                869
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "框内是下方长圆形底座的下侧外轮廓直线段，连续粗实线表示可见边界，框内没有尺寸线或剖面线。",
+          "expected_answer": "可见轮廓线",
+          "answer_kind": "text",
+          "accepted_answers": [
+            "可见轮廓线",
+            "可见边线",
+            "visible outline"
+          ],
+          "bad_pattern_tags": [],
+          "confidence": 0.98,
+          "ambiguity_notes": "模型拟定，框位与标签待人工复核。",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "可见轮廓线（粗实线）",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "框内为E—E视图底部外轮廓的连续粗实线。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 207.27,
+        "observations": 6,
+        "findings": 1,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "可见轮廓线"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": [
+            "visible edge",
+            "visible edge(粗实线)",
+            "visible outline",
+            "visible outline(粗实线)",
+            "可见轮廓线",
+            "可见轮廓线(粗实线)",
+            "可见边线",
+            "可见边线(粗实线)",
+            "粗实线",
+            "粗实线(粗实线)"
+          ]
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:53:52.658Z",
+          "payload": {
+            "observation_id": "b6916761ac42418abf0cde9e1b4eb39f",
+            "intent": "查看整张工程图，找到框（方框/标注框）内的线，判断其线型（粗实线、细实线、虚线、点画线、波浪线等）",
+            "source_sha256": "1d63b54a562d77da5b70c2d28364810ed5b98af5d52a0ebce6368cb712ff3038",
+            "sha256": "1d63b54a562d77da5b70c2d28364810ed5b98af5d52a0ebce6368cb712ff3038",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:54:14.110Z",
+          "payload": {
+            "observation_id": "3c43cd323dd743aba3ba9e8b472280f8",
+            "intent": "放大查看 E-E 视图底部红框内的那条线，判断线型（粗实线/细实线/虚线/点画线/波浪线）",
+            "source_sha256": "1d63b54a562d77da5b70c2d28364810ed5b98af5d52a0ebce6368cb712ff3038",
+            "sha256": "489b40863699a8304b9be8474c04ac408fcaca8cf1d1255024c4857a80a4c5c3",
+            "crop": [
+              700,
+              1450,
+              1400,
+              1700
+            ],
+            "dimensions": [
+              700,
+              250
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:54:27.335Z",
+          "payload": {
+            "observation_id": "5b73f51f64a748e09e7b584130291113",
+            "intent": "对比红框内线条与周围轮廓线、尺寸线的粗细，确认框内是粗实线还是细实线",
+            "source_sha256": "1d63b54a562d77da5b70c2d28364810ed5b98af5d52a0ebce6368cb712ff3038",
+            "sha256": "60ca887e1312e1f8e53da71be46b7614eb333143569f6390c46eceb95db39dd2",
+            "crop": [
+              680,
+              1300,
+              1450,
+              1750
+            ],
+            "dimensions": [
+              770,
+              450
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:54:45.545Z",
+          "payload": {
+            "observation_id": "14e821edc9cc4d6386a8336c8d43e185",
+            "intent": "高倍放大红框左端，测量框内线条像素粗细，并与粗实线轮廓、细实线尺寸线对比",
+            "source_sha256": "1d63b54a562d77da5b70c2d28364810ed5b98af5d52a0ebce6368cb712ff3038",
+            "sha256": "576b148a2031c024d40e880649d11266a498c3e2190c41f0fc0d06b25c54b83f",
+            "crop": [
+              700,
+              1500,
+              1000,
+              1650
+            ],
+            "dimensions": [
+              300,
+              150
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:55:21.978Z",
+          "payload": {
+            "observation_id": "51bf60e7d9aa4eae8b09ae654c0e7dbc",
+            "intent": "同一区域同时包含 E-E 视图上边缘线与红框下边缘线，精确对比两者粗细以判定线型",
+            "source_sha256": "1d63b54a562d77da5b70c2d28364810ed5b98af5d52a0ebce6368cb712ff3038",
+            "sha256": "7464a8fd22623ef0efb014fb4fb8110981f7618df63bf41d0d0d7844b0e94d39",
+            "crop": [
+              1100,
+              1290,
+              1400,
+              1640
+            ],
+            "dimensions": [
+              300,
+              350
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:55:47.923Z",
+          "payload": {
+            "observation_id": "3cec0b56aafd45f5bd20478f11ceb991",
+            "intent": "高倍放大：对比尺寸线（细实线）、粗实线轮廓与红框线的像素宽度",
+            "source_sha256": "1d63b54a562d77da5b70c2d28364810ed5b98af5d52a0ebce6368cb712ff3038",
+            "sha256": "94ec5803380d78cd62001a1147a4bc3f1ec0caaf6d406656326f083844fb070d",
+            "crop": [
+              1150,
+              1330,
+              1350,
+              1620
+            ],
+            "dimensions": [
+              200,
+              290
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:56:33.557Z",
+          "payload": {
+            "observation_id": "3cec0b56aafd45f5bd20478f11ceb991",
+            "public_conclusion": "红框位于 E-E 视图底边，框内是一条连续无间断的水平实线，线宽约 4–5 px，与同图粗实线轮廓（约 5 px）相当，明显粗于细实线/中心线（约 1–2 px），无点划或波浪特征，故为可见轮廓线——粗实线。"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-09/input-01.png"
+      ],
+      "asset_base": "assets/boxed-09",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-09/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "a152533f5e340b01c638e261",
+      "sample_id": "boxed-10",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "空腔"
+      },
+      "learner_answer": {
+        "answer": "空腔"
+      },
+      "task_manifest": {
+        "task_id": "boxed-10",
+        "task_type": "section_reasoning",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-10",
+        "query": "框内是实体还是空腔？",
+        "answer_format": {
+          "answer": "short text"
+        }
+      },
+      "source": {
+        "source_id": "pdf-162",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 162,
+        "sha256": "ca7f79acf2045f7043a85bb2bfe4bf6bb0e8057c899c294a894d70de21807405",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内是实体还是空腔？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                835,
+                220,
+                853,
+                251
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "框位于右上方 D—D 剖面的矩形内孔中，处于带剖面线的四周壁体以内，内部不画剖面线。",
+          "expected_answer": "空腔",
+          "answer_kind": "text",
+          "accepted_answers": [
+            "空腔",
+            "内部空腔",
+            "void"
+          ],
+          "bad_pattern_tags": [],
+          "confidence": 0.99,
+          "ambiguity_notes": "模型拟定，框位与标签待人工复核。",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "空腔",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "框内位于D—D剖面内孔中，周围实体有剖面线。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 86.36,
+        "observations": 2,
+        "findings": 1,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "空腔"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": [
+            "void",
+            "内部空腔",
+            "空腔"
+          ]
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:57:16.443Z",
+          "payload": {
+            "observation_id": "955ace0acf244b7ea185835db6d0332e",
+            "intent": "查看整张工程图，判断框内区域是实体还是空腔",
+            "source_sha256": "4cda3dd53de1333eab5335ec001cd3eccae88db71af821f546911a417ac9d916",
+            "sha256": "4cda3dd53de1333eab5335ec001cd3eccae88db71af821f546911a417ac9d916",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:57:42.272Z",
+          "payload": {
+            "observation_id": "12462149ea96487cad939fba88f39c56",
+            "intent": "放大查看 D-D 剖视图中红框区域：判断红框处是剖面线（实体）还是空白（空腔）",
+            "source_sha256": "4cda3dd53de1333eab5335ec001cd3eccae88db71af821f546911a417ac9d916",
+            "sha256": "35c50b47bcad29258384db5714ca777a139306aecb0b6d549e0bd379377ddf7d",
+            "crop": [
+              2000,
+              220,
+              2360,
+              560
+            ],
+            "dimensions": [
+              360,
+              340
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T11:57:59.138Z",
+          "payload": {
+            "observation_id": "12462149ea96487cad939fba88f39c56",
+            "public_conclusion": "D-D 剖视图中，红框位于矩形空白（无剖面线）区域内，四周被带剖面线的实体材料包围，按剖视图规则该空白区域为空腔。"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-10/input-01.png"
+      ],
+      "asset_base": "assets/boxed-10",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-10/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "a17119b4c925a3947fcd6c25",
+      "sample_id": "boxed-11",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": 11
+      },
+      "learner_answer": {
+        "answer": 11
+      },
+      "task_manifest": {
+        "task_id": "boxed-11",
+        "task_type": "dimension_attachment",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-11",
+        "query": "框内标注的半径是多少毫米？",
+        "answer_format": {
+          "answer": "number"
+        }
+      },
+      "source": {
+        "source_id": "pdf-178",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 178,
+        "sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内标注的半径是多少毫米？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                558,
+                589,
+                600,
+                644
+              ]
+            }
+          ],
+          "unit": "mm",
+          "answer_evidence": "框内 R11 的引线箭头指向 C—C 剖面右侧圆弧的外轮廓，R 后的数值为半径。",
+          "expected_answer": 11,
+          "answer_kind": "number",
+          "accepted_answers": [],
+          "bad_pattern_tags": [],
+          "confidence": 0.98,
+          "ambiguity_notes": "模型拟定，框位与标签待人工复核。",
+          "derivation": {
+            "expression": "radius",
+            "inputs": [
+              {
+                "symbol": "radius",
+                "value": 11,
+                "drawing_evidence": "框内圆弧半径标注为 R11。"
+              }
+            ]
+          }
+        },
+        "blind_audit": {
+          "answer": 11,
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 1,
+          "evidence": "框内半径标注为R11。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 49.03,
+        "observations": 1,
+        "findings": 0,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": 11
+        },
+        "absolute_tolerance": 0.1,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": []
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:58:38.973Z",
+          "payload": {
+            "observation_id": "5001c47c3824478992d0cb681d1dd4da",
+            "intent": "Inspect the entire engineering drawing to find the boxed annotation and read the radius value in millimeters.",
+            "source_sha256": "0cf0bc0eaa933427f981f8a32f66ba9a2476b05022ba853c04c6c6742e0ed496",
+            "sha256": "0cf0bc0eaa933427f981f8a32f66ba9a2476b05022ba853c04c6c6742e0ed496",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-11/input-01.png"
+      ],
+      "asset_base": "assets/boxed-11",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-11/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "34593c1dc79f4a8fbbc6fdd0",
+      "sample_id": "boxed-12",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": 36
+      },
+      "learner_answer": {
+        "answer": 36
+      },
+      "task_manifest": {
+        "task_id": "boxed-12",
+        "task_type": "dimension_chain",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-12",
+        "query": "框示最上端至最下端的距离是多少毫米？",
+        "answer_format": {
+          "answer": "number"
+        }
+      },
+      "source": {
+        "source_id": "pdf-178",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 178,
+        "sha256": "d29781bea2d6b8e0489aeb9bef19862ec320e0d4ecd2f368a00b01a9bf2ec223",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框示最上端至最下端的距离是多少毫米？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                737,
+                198,
+                757,
+                350
+              ]
+            }
+          ],
+          "unit": "mm",
+          "answer_evidence": "框内两段竖向尺寸共用中间界线：顶部平面至侧向开口上边界标为26，开口上下边界之间标为10。",
+          "expected_answer": 36,
+          "answer_kind": "number",
+          "accepted_answers": [],
+          "bad_pattern_tags": [],
+          "confidence": 0.97,
+          "ambiguity_notes": "模型拟定；框选连续尺寸链的最上、最下箭头端点，待人工复核。",
+          "derivation": {
+            "expression": "upper_drop + opening_height",
+            "inputs": [
+              {
+                "symbol": "upper_drop",
+                "value": 26,
+                "drawing_evidence": "右上剖视图右侧，顶部平面至侧向开口上边界的竖向尺寸为26。"
+              },
+              {
+                "symbol": "opening_height",
+                "value": 10,
+                "drawing_evidence": "紧接其下的竖向尺寸10连接侧向开口的上下边界。"
+              }
+            ]
+          }
+        },
+        "blind_audit": {
+          "answer": 36,
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "框内上下相接的两段尺寸为26和10，总距离为36毫米。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 174.58,
+        "observations": 3,
+        "findings": 0,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": 36
+        },
+        "absolute_tolerance": 0.1,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": []
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T11:59:30.903Z",
+          "payload": {
+            "observation_id": "1858cf82dcea4bbaa994cb26450681a7",
+            "intent": "Inspect the engineering drawing to find the boxed dimension and determine the distance from the uppermost to lowermost end in millimeters.",
+            "source_sha256": "ab19a8118542925fa4d7f2040a5a769a1e116b84a9f7796e2f2b31cdbe1ebd8d",
+            "sha256": "ab19a8118542925fa4d7f2040a5a769a1e116b84a9f7796e2f2b31cdbe1ebd8d",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:00:05.796Z",
+          "payload": {
+            "observation_id": "027d0db831994ff0b2d9b78d540b4ca4",
+            "intent": "Zoom in on the red boxed vertical dimensions in the A-A section to read the values and extension lines.",
+            "source_sha256": "ab19a8118542925fa4d7f2040a5a769a1e116b84a9f7796e2f2b31cdbe1ebd8d",
+            "sha256": "2ea1e2df81bc7bafd3f98f06401fb16606295ea1de0e896b54ce69ded77157c0",
+            "crop": [
+              1780,
+              240,
+              2040,
+              760
+            ],
+            "dimensions": [
+              260,
+              520
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:00:47.971Z",
+          "payload": {
+            "observation_id": "0f5c922ef69b4d8cabd235eaeb6e7de6",
+            "intent": "View the A-A sectional view around the boxed dimensions and adjacent extension lines to understand which features the 26 and 10 dimensions connect.",
+            "source_sha256": "ab19a8118542925fa4d7f2040a5a769a1e116b84a9f7796e2f2b31cdbe1ebd8d",
+            "sha256": "2f1b8a3be41bf0f0dcbd198c3056b7a57ede13e227df68b1510addc53c06bdef",
+            "crop": [
+              1600,
+              250,
+              2260,
+              900
+            ],
+            "dimensions": [
+              660,
+              650
+            ],
+            "image": "receipts/003.png"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-12/input-01.png"
+      ],
+      "asset_base": "assets/boxed-12",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-12/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "e54f6fceb2af809095ba2b25",
+      "sample_id": "boxed-13",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "中心线"
+      },
+      "learner_answer": {
+        "answer": "细点画线（中心线/轴线）"
+      },
+      "task_manifest": {
+        "task_id": "boxed-13",
+        "task_type": "line_role",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-13",
+        "query": "框内是什么线？",
+        "answer_format": {
+          "answer": "short text"
+        }
+      },
+      "source": {
+        "source_id": "pdf-202",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 202,
+        "sha256": "964f48e97ada053bfa92004c8270356f5dfdedc095310bc4b1bccadafffa1913",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内是什么线？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                305,
+                227,
+                414,
+                236
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "框内横向细点画线位于顶尖内部，沿回转件轴心延伸，与上、下实体轮廓分离。",
+          "expected_answer": "中心线",
+          "answer_kind": "text",
+          "accepted_answers": [
+            "中心线",
+            "轴线",
+            "centerline"
+          ],
+          "bad_pattern_tags": [],
+          "confidence": 0.95,
+          "ambiguity_notes": "模型拟定，需人工复核框位及点画线图样的完整性。",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "轴线（细点画线）",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "框内水平细点画线穿过顶尖中心。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "answer_review_required",
+        "passed": null,
+        "score": null,
+        "elapsed_seconds": 102.5,
+        "observations": 3,
+        "findings": 1,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "review_reason": "Unlisted free-text answer; lexical mismatch is not a verified semantic error.",
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "中心线"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": [
+            "centerline",
+            "centerline(细点划线)",
+            "centerline(细点画线)",
+            "centre line",
+            "centre line(细点划线)",
+            "centre line(细点画线)",
+            "中心线",
+            "中心线(细点划线)",
+            "中心线(细点画线)",
+            "细点划线",
+            "细点划线(细点划线)",
+            "细点划线(细点画线)",
+            "细点画线",
+            "细点画线(细点划线)",
+            "细点画线(细点画线)",
+            "轴线",
+            "轴线(细点划线)",
+            "轴线(细点画线)"
+          ]
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:02:25.957Z",
+          "payload": {
+            "observation_id": "731beb75098944129d68aca0fea1d56d",
+            "intent": "查看整个图片，找出框内的线是什么类型（直线、曲线、折线、波浪线等）",
+            "source_sha256": "a1eeac65aa680aa7af88b3adb545f42922ee1bcdbf797958d1ae9c1aecbb6478",
+            "sha256": "a1eeac65aa680aa7af88b3adb545f42922ee1bcdbf797958d1ae9c1aecbb6478",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:02:43.820Z",
+          "payload": {
+            "observation_id": "9793b452edc94c2f98fc0a794d1a1764",
+            "intent": "放大查看红框内部的线，判断是粗实线、细实线、虚线、点画线（中心线）还是波浪线等",
+            "source_sha256": "a1eeac65aa680aa7af88b3adb545f42922ee1bcdbf797958d1ae9c1aecbb6478",
+            "sha256": "e7e4d27d2a5a53f636da22081ff834caba7748bf317427538a6009e262be0495",
+            "crop": [
+              740,
+              400,
+              1140,
+              470
+            ],
+            "dimensions": [
+              400,
+              70
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:03:09.526Z",
+          "payload": {
+            "observation_id": "84a288de5c3643e4aa6592b60f7f6157",
+            "intent": "进一步放大红框内那条水平线的线型细节，看它是连续实线、虚线（等长短线）还是点画线（长短线交替的中心线）",
+            "source_sha256": "a1eeac65aa680aa7af88b3adb545f42922ee1bcdbf797958d1ae9c1aecbb6478",
+            "sha256": "860f4d184459bfa246840ccd93a1a536a5e6e45e9e6137ae95b05aa1e92cdefa",
+            "crop": [
+              770,
+              415,
+              1130,
+              455
+            ],
+            "dimensions": [
+              360,
+              40
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T12:03:29.672Z",
+          "payload": {
+            "observation_id": "84a288de5c3643e4aa6592b60f7f6157",
+            "public_conclusion": "红框内是一条沿顶尖轴线方向的水平线，线型为长画与短画（点）交替的细点画线，即中心线/轴线，不是连续实线也不是等长虚线。"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-13/input-01.png"
+      ],
+      "asset_base": "assets/boxed-13",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-13/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "33ab6060c0401db0e7b86a24",
+      "sample_id": "boxed-14",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "实体"
+      },
+      "learner_answer": {
+        "answer": "实体"
+      },
+      "task_manifest": {
+        "task_id": "boxed-14",
+        "task_type": "section_reasoning",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-14",
+        "query": "框内是实体还是空腔？",
+        "answer_format": {
+          "answer": "short text"
+        }
+      },
+      "source": {
+        "source_id": "pdf-202",
+        "origin": "user_supplied_pdf",
+        "pdf_page_1based": 202,
+        "sha256": "964f48e97ada053bfa92004c8270356f5dfdedc095310bc4b1bccadafffa1913",
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "rights": "user_supplied_private_research_only"
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内是实体还是空腔？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                718,
+                497,
+                739,
+                526
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "框位于 A—A 剖面右下方底座内部，区域中有连续分布的斜剖面线，并与右侧支承壁的剖切材料相连。",
+          "expected_answer": "实体",
+          "answer_kind": "text",
+          "accepted_answers": [
+            "实体",
+            "实心区域",
+            "solid material"
+          ],
+          "bad_pattern_tags": [],
+          "confidence": 0.99,
+          "ambiguity_notes": "模型拟定，框位与标签待人工复核。",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "实体",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "框内区域绘有连续排列的斜剖面线。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 97.59,
+        "observations": 2,
+        "findings": 1,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "实体"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": [
+            "solid material",
+            "实体",
+            "实心区域"
+          ]
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:04:06.490Z",
+          "payload": {
+            "observation_id": "7be48c876f0f47ceb375419b7cada1b9",
+            "intent": "判断框内区域是实体还是空腔；查看工程图/剖面线/标注",
+            "source_sha256": "0677b12a0f42ab901e05f2fa2dae0f568ad51c547d6038b2433735c331f1cc5d",
+            "sha256": "0677b12a0f42ab901e05f2fa2dae0f568ad51c547d6038b2433735c331f1cc5d",
+            "crop": null,
+            "dimensions": [
+              2560,
+              1812
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:04:34.205Z",
+          "payload": {
+            "observation_id": "32f0789c3ca648ee9c3f914dbf8ee9d6",
+            "intent": "放大红框区域，看框内是否有剖面线（实体）还是空白（空腔）",
+            "source_sha256": "0677b12a0f42ab901e05f2fa2dae0f568ad51c547d6038b2433735c331f1cc5d",
+            "sha256": "d73ac018e077711021f43d2cdfc7b0609abbd99d2da13cca11e69e03b2b959da",
+            "crop": [
+              1680,
+              780,
+              2020,
+              1060
+            ],
+            "dimensions": [
+              340,
+              280
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T12:05:06.167Z",
+          "payload": {
+            "observation_id": "32f0789c3ca648ee9c3f914dbf8ee9d6",
+            "public_conclusion": "红框位于 A-A 剖面右下支座处，框内有连续剖面线，表示剖切到的实体材料；未见空白空腔边界。"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-14/input-01.png"
+      ],
+      "asset_base": "assets/boxed-14",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-14/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "c25560c280af7dae970dabd9",
+      "sample_id": "boxed-15",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": "尺寸界线"
+      },
+      "learner_answer": {
+        "answer": "尺寸界线（细实线）"
+      },
+      "task_manifest": {
+        "task_id": "boxed-15",
+        "task_type": "line_role",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-15",
+        "query": "框内是什么线？",
+        "answer_format": {
+          "answer": "short text"
+        }
+      },
+      "source": {
+        "source_id": "web-1936-01",
+        "origin": "public_web_drawing",
+        "article_url": "https://xifengboke.com/post/1936.html",
+        "sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+        "dimensions": [
+          919,
+          586
+        ],
+        "rights": {
+          "status": "permission_required",
+          "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+          "training_eligible": false,
+          "redistribution_eligible": false
+        }
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内是什么线？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                568,
+                282,
+                576,
+                417
+              ]
+            }
+          ],
+          "unit": "none",
+          "answer_evidence": "框内竖向细实线从右上视图左侧轴端向下延伸，在下方与212尺寸线的左端相接，用于限定测量端点。",
+          "expected_answer": "尺寸界线",
+          "answer_kind": "text",
+          "accepted_answers": [
+            "尺寸界线",
+            "尺寸延伸线",
+            "extension line"
+          ],
+          "bad_pattern_tags": [],
+          "confidence": 0.94,
+          "ambiguity_notes": "原图分辨率较低；模型拟定的框位与标签待人工复核。",
+          "derivation": {
+            "expression": "",
+            "inputs": []
+          }
+        },
+        "blind_audit": {
+          "answer": "尺寸界线（细实线）",
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.97,
+          "evidence": "框内竖直细实线从轴端向下延伸，作为212尺寸的左侧界线。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": true,
+        "score": 1.0,
+        "elapsed_seconds": 303.2,
+        "observations": 8,
+        "findings": 1,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": "尺寸界线"
+        },
+        "absolute_tolerance": 0,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": [
+            "extension line",
+            "extension line(细实线)",
+            "尺寸延伸线",
+            "尺寸延伸线(细实线)",
+            "尺寸延长线",
+            "尺寸延长线(细实线)",
+            "尺寸界线",
+            "尺寸界线(细实线)"
+          ]
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:05:44.939Z",
+          "payload": {
+            "observation_id": "00ba77a235374a2988ca335ab7b83b4c",
+            "intent": "查看整张图片，找到框（box）并识别框内是什么线",
+            "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+            "sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+            "crop": null,
+            "dimensions": [
+              919,
+              586
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:06:04.344Z",
+          "payload": {
+            "observation_id": "e0cf26434daf42bc8f6c4e3d99c1e9e7",
+            "intent": "放大查看红框区域，识别框内标注的线是什么线（轮廓线、中心线、轴线等）",
+            "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+            "sha256": "a5f5f7d0359fe1927c0bf76a77bdf9af9609a5ea764240544bd49447333cba30",
+            "crop": [
+              490,
+              150,
+              700,
+              300
+            ],
+            "dimensions": [
+              210,
+              150
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:06:26.612Z",
+          "payload": {
+            "observation_id": "48c2101ed55541bb9ce70d5f4c7b210a",
+            "intent": "进一步放大红框内的竖线，判断是粗实线（可见轮廓线）还是中心线/轴线（点画线）",
+            "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+            "sha256": "98387505fe1628334097cd2305c65689539469e552635716b460e9aa48a39ae6",
+            "crop": [
+              500,
+              160,
+              580,
+              270
+            ],
+            "dimensions": [
+              80,
+              110
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:06:47.586Z",
+          "payload": {
+            "observation_id": "e560eb120beb496ea3b09d135ca362f9",
+            "intent": "查看红框与右侧视图、尺寸线的关系，判断框内竖线的性质（轮廓线/尺寸界线/中心线）",
+            "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+            "sha256": "b692966b8758defc00c4da34af6584d95dda03b3af7ccce11001de449eb2091e",
+            "crop": [
+              470,
+              120,
+              860,
+              320
+            ],
+            "dimensions": [
+              390,
+              200
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:07:18.431Z",
+          "payload": {
+            "observation_id": "6ec006addb514acb99281c2e446a4d75",
+            "intent": "紧密放大红框及其右侧轴端，确认框内竖线是轴端面的轮廓线还是独立的线型",
+            "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+            "sha256": "5ae96c0142a4b300338c2a4013f0699b8e8ee831d621f0b8dd041899685e868c",
+            "crop": [
+              505,
+              170,
+              620,
+              260
+            ],
+            "dimensions": [
+              115,
+              90
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:07:33.163Z",
+          "payload": {
+            "observation_id": "eb2ddad241044f8c86e9030bc1466b3f",
+            "intent": "查看红框竖线与轴左端面的连接关系，确认该竖线是轴端外轮廓线（粗实线）",
+            "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+            "sha256": "9f6232e3423aca546ede674abf01e56a31e6e5ce3cf52c20cc21d75d56977c31",
+            "crop": [
+              510,
+              175,
+              640,
+              255
+            ],
+            "dimensions": [
+              130,
+              80
+            ],
+            "image": "receipts/006.png"
+          }
+        },
+        {
+          "sequence": 8,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:08:27.513Z",
+          "payload": {
+            "observation_id": "15f5bf6bc54f4309b1656ff665776d04",
+            "intent": "查看红框竖线下方是否延伸至212尺寸线，判断它是尺寸界线还是零件轮廓线",
+            "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+            "sha256": "370e0a343a4b3ff68b30a0cc1fe0351ca3f5cf4644b3d57b5b070e35560cddf9",
+            "crop": [
+              505,
+              180,
+              600,
+              300
+            ],
+            "dimensions": [
+              95,
+              120
+            ],
+            "image": "receipts/007.png"
+          }
+        },
+        {
+          "sequence": 9,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:09:17.923Z",
+          "payload": {
+            "observation_id": "7d31fba1c22a457d922bfac37d3a8e06",
+            "intent": "查看红框竖线上方与轴左端面的关系，确认该竖线从轴端面引出作为212尺寸的界线",
+            "source_sha256": "7409b74666e7ba7454ee4de34e99e62ce91aafb8ed5fd3b101f0141010833de0",
+            "sha256": "051b1b07d088b646097b5f91a7495983899a2b38fb0b92d2d17968ea700103d5",
+            "crop": [
+              505,
+              100,
+              620,
+              210
+            ],
+            "dimensions": [
+              115,
+              110
+            ],
+            "image": "receipts/008.png"
+          }
+        },
+        {
+          "sequence": 10,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T12:10:15.609Z",
+          "payload": {
+            "observation_id": "15f5bf6bc54f4309b1656ff665776d04",
+            "public_conclusion": "红框内的竖线位于减速器侧视图左侧自由空间，上接输入轴左端面、向下延伸并与总长度尺寸212的尺寸线箭头相接，是尺寸212的尺寸界线（细实线），而非零件轮廓线或中心线。"
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-15/input-01.png"
+      ],
+      "asset_base": "assets/boxed-15",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-15/record.json"
+        }
+      ]
+    },
+    {
+      "target_id": "3f9363b4eeeae455722eb171",
+      "sample_id": "boxed-16",
+      "model": "kimi-k3",
+      "dataset": "real-drawing-qa",
+      "selected_attempt_id": "kimi-01",
+      "reference_answer": {
+        "answer": 212
+      },
+      "learner_answer": {
+        "answer": 272
+      },
+      "task_manifest": {
+        "task_id": "boxed-16",
+        "task_type": "dimension_attachment",
+        "label_status": "model_proposed_not_gt",
+        "diagnostic_eligible": true,
+        "protocol": "boxed-minimal-v1"
+      },
+      "task": {
+        "task_id": "boxed-16",
+        "query": "框内标注的长度是多少毫米？",
+        "answer_format": {
+          "answer": "number"
+        }
+      },
+      "source": {
+        "source_id": "web-1936-01",
+        "origin": "public_web_drawing",
+        "article_url": "https://xifengboke.com/post/1936.html",
+        "sha256": "7fb7970e61be43941b65c93e029e780b66a0dca4ba1ff68da6edebb1fd894cc2",
+        "dimensions": [
+          919,
+          586
+        ],
+        "rights": {
+          "status": "permission_required",
+          "notice": "Site states: learning/testing only, no commercial use, delete in 24 hours, original authors retain copyright. Not an open training-data license.",
+          "training_eligible": false,
+          "redistribution_eligible": false
+        }
+      },
+      "annotation": {
+        "author_model": "gpt-6-astra",
+        "effort": "xhigh",
+        "blind_agreement": true,
+        "human_accepted": false,
+        "author": {
+          "query": "框内标注的长度是多少毫米？",
+          "regions": [
+            {
+              "label": "A",
+              "bbox": [
+                568,
+                451,
+                872,
+                476
+              ]
+            }
+          ],
+          "unit": "mm",
+          "answer_evidence": "右上视图最下方的水平尺寸标为212，两端箭头对应左右轴端引出的尺寸界线。",
+          "expected_answer": 212,
+          "answer_kind": "number",
+          "accepted_answers": [],
+          "bad_pattern_tags": [],
+          "confidence": 0.96,
+          "ambiguity_notes": "原图分辨率较低；模型拟定的框位与读数待人工复核。",
+          "derivation": {
+            "expression": "overall_span",
+            "inputs": [
+              {
+                "symbol": "overall_span",
+                "value": 212,
+                "drawing_evidence": "框内最下方水平尺寸线的标注数值为212。"
+              }
+            ]
+          }
+        },
+        "blind_audit": {
+          "answer": 212,
+          "answerable": true,
+          "requires_image": true,
+          "confidence": 0.99,
+          "evidence": "框内水平尺寸线标注为212。",
+          "ambiguity_notes": ""
+        }
+      },
+      "learner": {
+        "model": "kimi-k3",
+        "harness": "native-kimi-code-public-mcp-only",
+        "status": "graded",
+        "passed": false,
+        "score": 0.0,
+        "elapsed_seconds": 85.98,
+        "observations": 5,
+        "findings": 1,
+        "timeout_seconds": 600,
+        "timed_out": false,
+        "label_status": "model_proposed_not_gt",
+        "score_semantics": "agreement_with_model_proposed_label"
+      },
+      "verifier": {
+        "kind": "json_fields",
+        "expected": {
+          "answer": 212
+        },
+        "absolute_tolerance": 0.1,
+        "label_status": "model_proposed_not_gt",
+        "accepted_answers": {
+          "answer": []
+        },
+        "alias_policy": "engineering-line-terms-v1"
+      },
+      "events": [
+        {
+          "sequence": 2,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:10:41.466Z",
+          "payload": {
+            "observation_id": "8fbf49f7d50e48deb53cd1c0d5b70457",
+            "intent": "Inspect the technical drawing, find the boxed dimension annotation and read the length value in millimeters.",
+            "source_sha256": "4e498d12e73bf530eb3126ab459a68a3de93ce72225403f6b52e827c92d6cbda",
+            "sha256": "4e498d12e73bf530eb3126ab459a68a3de93ce72225403f6b52e827c92d6cbda",
+            "crop": null,
+            "dimensions": [
+              919,
+              586
+            ],
+            "image": "receipts/001.png"
+          }
+        },
+        {
+          "sequence": 3,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:10:55.683Z",
+          "payload": {
+            "observation_id": "4e9600e345eb4b2c8f775f0828411365",
+            "intent": "Zoom into the boxed (red rectangle) dimension at the bottom of the right-side view to read the exact value.",
+            "source_sha256": "4e498d12e73bf530eb3126ab459a68a3de93ce72225403f6b52e827c92d6cbda",
+            "sha256": "c5fa0b8c8e9a3e1d8ce3a897314e8017495c58e7dead9f5f6d57d884faaa07d5",
+            "crop": [
+              540,
+              240,
+              840,
+              300
+            ],
+            "dimensions": [
+              300,
+              60
+            ],
+            "image": "receipts/002.png"
+          }
+        },
+        {
+          "sequence": 4,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:11:05.134Z",
+          "payload": {
+            "observation_id": "6f8a4f37b51f4f66932fd074e3369de9",
+            "intent": "Zoom in more tightly on the boxed dimension value text to read the digits clearly.",
+            "source_sha256": "4e498d12e73bf530eb3126ab459a68a3de93ce72225403f6b52e827c92d6cbda",
+            "sha256": "6dab86a415342366bf1698ea923ed46be978ab81816757b0ad974f017ec61dea",
+            "crop": [
+              650,
+              245,
+              760,
+              290
+            ],
+            "dimensions": [
+              110,
+              45
+            ],
+            "image": "receipts/003.png"
+          }
+        },
+        {
+          "sequence": 5,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:11:17.251Z",
+          "payload": {
+            "observation_id": "f9423e7771474fd0b1a6b41b177f7df4",
+            "intent": "Read the digits inside the red boxed dimension line at the bottom of the right view.",
+            "source_sha256": "4e498d12e73bf530eb3126ab459a68a3de93ce72225403f6b52e827c92d6cbda",
+            "sha256": "3ab87e93357265a0737dacbe41b8a8c2beda5c1752d1512ae38bdde0ba4c331b",
+            "crop": [
+              640,
+              255,
+              780,
+              300
+            ],
+            "dimensions": [
+              140,
+              45
+            ],
+            "image": "receipts/004.png"
+          }
+        },
+        {
+          "sequence": 6,
+          "event_type": "observation_returned",
+          "occurred_at": "2026-09-16T12:11:31.581Z",
+          "payload": {
+            "observation_id": "26522cf18b3344408899e3808d03739b",
+            "intent": "Confirm the middle digit of the boxed dimension value (272 vs 212).",
+            "source_sha256": "4e498d12e73bf530eb3126ab459a68a3de93ce72225403f6b52e827c92d6cbda",
+            "sha256": "805d2946c57d5f5585ac6515aceb6e65e7f32841ab6f1046ddb0f0449ad0be23",
+            "crop": [
+              655,
+              260,
+              725,
+              292
+            ],
+            "dimensions": [
+              70,
+              32
+            ],
+            "image": "receipts/005.png"
+          }
+        },
+        {
+          "sequence": 7,
+          "event_type": "observation_conclusion",
+          "occurred_at": "2026-09-16T12:11:43.339Z",
+          "payload": {
+            "observation_id": "26522cf18b3344408899e3808d03739b",
+            "public_conclusion": "The red-boxed dimension line at the bottom of the right-side view is annotated with the value 272 (mm)."
+          }
+        }
+      ],
+      "input_images": [
+        "assets/boxed-16/input-01.png"
+      ],
+      "asset_base": "assets/boxed-16",
+      "geometry_options": {},
+      "acceptance": {
+        "negative_checks": []
+      },
+      "download_links": [
+        {
+          "label": "公开题目记录",
+          "path": "assets/boxed-16/record.json"
+        }
+      ]
+    }
+  ]
+}

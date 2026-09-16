@@ -1,0 +1,418 @@
+{
+  "default_id": "features",
+  "bundles": [
+    {
+      "id": "evocad-kimi-2",
+      "label": "OmniMech 2 - Kimi K3 (feedback loop)",
+      "harness": "EvoCAD",
+      "bundle_sha256": "d3eb91b7319d678f5e844e697fcbaba89c5be562f070a3dfb7232386dfed7c7c",
+      "source_bundle_sha256": "e104a6f77747d18cf9b4d3a79896558c9091cee7c132f80de371896588c4a413",
+      "run_count": 1
+    },
+    {
+      "id": "direct-kimi-2",
+      "label": "OmniMech 2 - Kimi K3",
+      "harness": "Kimi Code",
+      "bundle_sha256": "8f0130147a91e339123617ae1193003a28ba87e1086f2a5063138cb5b33fbda2",
+      "source_bundle_sha256": "0db12471af2c8299813fb49604a60f9e52b5091e18fb533b324af3609793d889",
+      "run_count": 1
+    },
+    {
+      "id": "direct-kimi-4",
+      "label": "OmniMech 4 - Kimi K3",
+      "harness": "Kimi Code",
+      "bundle_sha256": "6395e2abe14b4210dde5b537bc4d0a718a6b3479f4129baed980744d14d17da4",
+      "source_bundle_sha256": "ee8ca63018de9c72bdaa10b5348a2b5342a213119f2be67b7387ed89314a2bb4",
+      "run_count": 1
+    },
+    {
+      "id": "direct-kimi-10",
+      "label": "OmniMech 10 - Kimi K3 (time budget)",
+      "harness": "Kimi Code",
+      "bundle_sha256": "8ac71eba215d2ba8c07c7e95b11d09e892ec900c7865ac7ba0836f84ecf3f968",
+      "source_bundle_sha256": "5ec0e71bba340771a2d72376626f906cf1518c5b607af289405bfd3af754b5ab",
+      "run_count": 1
+    },
+    {
+      "id": "cadgenbench-astra-111",
+      "label": "CADGenBench 111 - Astra Ultra",
+      "harness": "Codex",
+      "bundle_sha256": "ca5d256abfd259750fe53324542c4fed29d32d8bc1e7809eb1fe849ddb18eb71",
+      "source_bundle_sha256": "8603e4c89f5a4b4e40bddf9d1aec5869166bb0892054f2959bde56b11125bfb2",
+      "run_count": 1,
+      "recorded_io": {
+        "summary": {
+          "campaign": "cadgenbench-111-codex-astra-ultra-autocad-20260916",
+          "sample_id": "cadgenbench:111",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "ultra",
+          "score": null,
+          "passed": null,
+          "condition": "native-codex",
+          "elapsed_seconds": 2113.689,
+          "counts": {
+            "cli_events": 156,
+            "mcp_audit_calls": 31,
+            "native_jobs": 15
+          },
+          "limitations": [
+            "GT is private; official accuracy has not been evaluated.",
+            "Local artifact checks and inferred dimensions do not prove GT agreement.",
+            "SAT to STEP conversion is postrun format translation, not agent remodeling.",
+            "Recorded prompts, public messages, calls and returns are available; hidden model reasoning is not.",
+            "Reconstructed from the persisted terminal run state and CLI events; launcher inventory TypeError occurred after model completion. No model/CAD rerun.",
+            "Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded."
+          ]
+        },
+        "note": "Official GT accuracy pending. One native Codex conversation, AutoCAD construction, no GT feedback. Self-checks are not an accuracy score. Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded.",
+        "base_url": "./recorded-io/cadgenbench-astra-111/"
+      }
+    },
+    {
+      "id": "evocad-astra-2",
+      "label": "OmniMech 2 - Astra Ultra",
+      "harness": "EvoCAD",
+      "bundle_sha256": "f02a3feef583fafd22f9c68e386798909e83fa755b664611fa0e2c39c0be96a5",
+      "source_bundle_sha256": "05dfd8b34b9325a41a3cfb75487281455a5a4282046bf00ff3b9aa64fec263e1",
+      "run_count": 1,
+      "recorded_io": {
+        "summary": {
+          "campaign": "evocad-astra-ultra-omnimech2-https-20260915",
+          "sample_id": "omnimech:2",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "ultra",
+          "score": 100.0,
+          "passed": true,
+          "selected_attempt_id": "a001",
+          "phases": [
+            {
+              "name": "a001/interrupted/i001",
+              "directory": "raw/campaign/omnimech-2/gpt-6-astra/attempts/a001/action-interruptions/i001"
+            },
+            {
+              "name": "a001/action",
+              "directory": "raw/campaign/omnimech-2/gpt-6-astra/attempts/a001"
+            },
+            {
+              "name": "a001/decision/t01",
+              "directory": "raw/campaign/omnimech-2/gpt-6-astra/attempts/a001/decision-turns/t01"
+            }
+          ],
+          "counts": {
+            "cli_events": 109,
+            "agent_message": 8,
+            "command_execution": 18,
+            "mcp_tool_call": 28,
+            "mcp_audit_calls": 28,
+            "native_jobs": 13,
+            "timeline_records": 113
+          },
+          "mcp_tools": {
+            "autocad_set_run_context": 2,
+            "autocad_core_start": 13,
+            "autocad_core_status": 13
+          },
+          "warnings": [],
+          "scope": "All locally captured trial I/O, not a model-service HTTP dump or private reasoning trace",
+          "ordering": "Phase order and original stream line order; CLI events do not carry wall-clock timestamps",
+          "deduplication": "Decision-turn streams are canonical; copied reflection events remain in raw files only",
+          "limitations": [
+            "No model-service hidden prompts, private reasoning, or exact serialized HTTP requests",
+            "Images are original input files, not the service's internal visual token representation",
+            "Any output truncation already present in source logs cannot be reconstructed",
+            "Interrupted calls may have a start event without a recorded result",
+            "Tool schemas are available in frozen source snapshots, not a captured tools/list transcript",
+            "Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded."
+          ]
+        },
+        "note": "First candidate passed before score feedback; no repair round. One supervisor interruption/resume. UI elapsed 705 s covers the resumed attempt only; initial launch to completion was 1594.5 s. Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded.",
+        "base_url": "./recorded-io/evocad-astra-2/"
+      }
+    },
+    {
+      "id": "features",
+      "label": "V2 - Feature review (30)",
+      "harness": "EvoCAD",
+      "bundle_sha256": "ecc2698eed261898f94b19b25fef9036bd30a0cc0ed3a727241b1817a15cf4d9",
+      "source_bundle_sha256": "7f65b1c4b53df7982c083e30bf453461855d2ab7b11863d4734ac8652dc21ff8",
+      "run_count": 30
+    },
+    {
+      "id": "feedback",
+      "label": "V3 - Human feedback (2)",
+      "harness": "EvoCAD",
+      "bundle_sha256": "d6c4c0587fd597561b0e500a93167c7c64c333ba333c09c15eaca5a97b748389",
+      "source_bundle_sha256": "cf3e06c6196e584f53c9982cef5f9e0ed45b8c9d2d62479b9360e61b0588ca5d",
+      "run_count": 2
+    },
+    {
+      "id": "main",
+      "label": "V2 - Original reviews (30)",
+      "harness": "EvoCAD",
+      "bundle_sha256": "d2482c0c9a8f6eccf0b2129860e23e723a02e0010276d1414605759889d4a15e",
+      "source_bundle_sha256": "b119237fff25bf2fc712aa7a6e3638eaeb4dad1cd27be484312f630641b2765c",
+      "run_count": 30
+    },
+    {
+      "id": "lineage",
+      "label": "V2 - Lineage pilot (2)",
+      "harness": "EvoCAD",
+      "bundle_sha256": "89bf7ba43c74fbe1cbdacc9d1ffd4241359ca652e1900a8cccb02994f2ab8d52",
+      "source_bundle_sha256": "1d1f4ac273860c385a3591497597582cbe98a0ab1ba87fddfe2a5a6bcf62700a",
+      "run_count": 2
+    },
+    {
+      "id": "recovery",
+      "label": "V2 - Recovery (1)",
+      "harness": "EvoCAD",
+      "bundle_sha256": "880856ac7b9a05e3d871b3349085eae02fb0b63f2052c9bd1cb9a482af203ef5",
+      "source_bundle_sha256": "c341c7c157475a22c98d47da3a5b5255c320b8753641556cc778a73bbab4db5e",
+      "run_count": 1
+    },
+    {
+      "id": "direct",
+      "label": "OmniMech 2 - Sol Ultra",
+      "harness": "Codex",
+      "bundle_sha256": "a0e67fcbc3f2e6cffd48581bd3a167489938f95fbf7b59ad3b58fea1670e8138",
+      "source_bundle_sha256": "fbec4558136bd58646cf35a46f23c0ea254d89a1d8e2cfc4ea90c26fb2191e05",
+      "run_count": 1
+    },
+    {
+      "id": "direct-astra-2",
+      "label": "OmniMech 2 - Astra Ultra",
+      "harness": "Codex",
+      "bundle_sha256": "6cf41e478a86cdb9dac41233c8547989a49375dccb207d5456efc772c56b92ce",
+      "source_bundle_sha256": "47e79b8535eacc2a57c328fae3f73e3b50ce6383c247085e0d2a6bdf15bdb8f4",
+      "run_count": 1,
+      "recorded_io": {
+        "summary": {
+          "campaign": "direct-codex-astra-ultra-omnimech2-https-20260914",
+          "sample_id": "omnimech:2",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "ultra",
+          "score": 91.69,
+          "passed": false,
+          "selected_attempt_id": "a001",
+          "phases": [
+            {
+              "name": "a001/action",
+              "directory": "raw/campaign/omnimech-2/gpt-6-astra/attempts/a001"
+            }
+          ],
+          "counts": {
+            "cli_events": 65,
+            "agent_message": 6,
+            "command_execution": 13,
+            "mcp_tool_call": 15,
+            "mcp_audit_calls": 15,
+            "native_jobs": 5,
+            "timeline_records": 67
+          },
+          "mcp_tools": {
+            "autocad_set_run_context": 1,
+            "autocad_core_start": 5,
+            "autocad_core_status": 5,
+            "autocad_topology_start": 2,
+            "autocad_topology_status": 2
+          },
+          "warnings": [],
+          "condition": "native-codex",
+          "source_result_rows": 1,
+          "selected_run_id": "direct-codex-astra-ultra-omnimech2-https-20260914-gpt-6-astra-ultra",
+          "elapsed_seconds": 929.209,
+          "scope": "All locally captured trial I/O, not a model-service HTTP dump or private reasoning trace",
+          "ordering": "Phase order and original stream line order; CLI events do not carry wall-clock timestamps",
+          "deduplication": "Decision-turn streams are canonical; copied reflection events remain in raw files only",
+          "limitations": [
+            "No model-service hidden prompts, private reasoning, or exact serialized HTTP requests",
+            "Images are original input files, not the service's internal visual token representation",
+            "Any output truncation already present in source logs cannot be reconstructed",
+            "Interrupted calls may have a start event without a recorded result",
+            "Tool schemas are available in frozen source snapshots, not a captured tools/list transcript",
+            "Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded."
+          ]
+        },
+        "note": "Native Codex single-conversation run; no verifier score feedback during modeling. The later human mirror is a separate diagnostic, not a replacement for this 91.69 result. Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded.",
+        "base_url": "./recorded-io/direct-astra-2/"
+      }
+    },
+    {
+      "id": "direct-sol-10",
+      "label": "OmniMech 10 - Sol Ultra",
+      "harness": "Codex",
+      "bundle_sha256": "1f2036958000aa26c2dceb9f77ebee727c77bb045702a2afc32f4e88a9be4265",
+      "source_bundle_sha256": "9cd0fd2a67068151a974c6b27e390d83d389450d808ef2dcfa06fd83bd628247",
+      "run_count": 1
+    },
+    {
+      "id": "direct-astra-10",
+      "label": "OmniMech 10 - Astra Ultra",
+      "harness": "Codex",
+      "bundle_sha256": "d0a5bb452d06309b5197dbfc8c9119fd3bc9e0866390029a48a33c7837e70b4e",
+      "source_bundle_sha256": "d85851df212a85a7f16273c13f67511cd6b8b84d34b31618903559213e70a943",
+      "run_count": 1,
+      "recorded_io": {
+        "summary": {
+          "campaign": "direct-codex-astra-ultra-omnimech10-https-20260914",
+          "sample_id": "omnimech:10",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "ultra",
+          "score": 100.0,
+          "passed": true,
+          "selected_attempt_id": "a001",
+          "phases": [
+            {
+              "name": "a001/action",
+              "directory": "raw/campaign/omnimech-10/gpt-6-astra/attempts/a001"
+            }
+          ],
+          "counts": {
+            "cli_events": 53,
+            "agent_message": 6,
+            "command_execution": 11,
+            "mcp_tool_call": 11,
+            "mcp_audit_calls": 11,
+            "native_jobs": 4,
+            "timeline_records": 55
+          },
+          "mcp_tools": {
+            "autocad_set_run_context": 1,
+            "autocad_core_start": 4,
+            "autocad_core_status": 4,
+            "autocad_topology_start": 1,
+            "autocad_topology_status": 1
+          },
+          "warnings": [],
+          "condition": "native-codex",
+          "source_result_rows": 1,
+          "selected_run_id": "direct-codex-astra-ultra-omnimech10-https-20260914-gpt-6-astra-ultra",
+          "elapsed_seconds": 705.037,
+          "scope": "All locally captured trial I/O, not a model-service HTTP dump or private reasoning trace",
+          "ordering": "Phase order and original stream line order; CLI events do not carry wall-clock timestamps",
+          "deduplication": "Decision-turn streams are canonical; copied reflection events remain in raw files only",
+          "limitations": [
+            "No model-service hidden prompts, private reasoning, or exact serialized HTTP requests",
+            "Images are original input files, not the service's internal visual token representation",
+            "Any output truncation already present in source logs cannot be reconstructed",
+            "Interrupted calls may have a start event without a recorded result",
+            "Tool schemas are available in frozen source snapshots, not a captured tools/list transcript",
+            "Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded."
+          ]
+        },
+        "note": "Native Codex single-conversation run. Score computed after modeling; no in-run GT metric feedback. Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded.",
+        "base_url": "./recorded-io/direct-astra-10/"
+      }
+    },
+    {
+      "id": "direct-astra-4",
+      "label": "OmniMech 4 - Astra Ultra",
+      "harness": "Codex",
+      "bundle_sha256": "86491006a4002adf539e0b1784d2b59d95c4935eb6ec0da5dcfc5973cc9fb121",
+      "source_bundle_sha256": "e06e9bf944cbf7814c950114c3c87efd6bb2d845ae82ad439268c0b9391ed1f5",
+      "run_count": 1,
+      "recorded_io": {
+        "summary": {
+          "campaign": "direct-codex-astra-ultra-omnimech4-https-20260914",
+          "sample_id": "omnimech:4",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "ultra",
+          "score": 100.0,
+          "passed": true,
+          "selected_attempt_id": "a001",
+          "phases": [
+            {
+              "name": "a001/action",
+              "directory": "raw/campaign/omnimech-4/gpt-6-astra/attempts/a001"
+            }
+          ],
+          "counts": {
+            "cli_events": 65,
+            "agent_message": 6,
+            "command_execution": 15,
+            "mcp_tool_call": 13,
+            "mcp_audit_calls": 13,
+            "native_jobs": 5,
+            "timeline_records": 67
+          },
+          "mcp_tools": {
+            "autocad_set_run_context": 1,
+            "autocad_core_start": 5,
+            "autocad_core_status": 5,
+            "autocad_topology_start": 1,
+            "autocad_topology_status": 1
+          },
+          "warnings": [],
+          "condition": "native-codex",
+          "source_result_rows": 1,
+          "selected_run_id": "direct-codex-astra-ultra-omnimech4-https-20260914-gpt-6-astra-ultra",
+          "elapsed_seconds": 914.472,
+          "scope": "All locally captured trial I/O, not a model-service HTTP dump or private reasoning trace",
+          "ordering": "Phase order and original stream line order; CLI events do not carry wall-clock timestamps",
+          "deduplication": "Decision-turn streams are canonical; copied reflection events remain in raw files only",
+          "limitations": [
+            "No model-service hidden prompts, private reasoning, or exact serialized HTTP requests",
+            "Images are original input files, not the service's internal visual token representation",
+            "Any output truncation already present in source logs cannot be reconstructed",
+            "Interrupted calls may have a start event without a recorded result",
+            "Tool schemas are available in frozen source snapshots, not a captured tools/list transcript",
+            "Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded."
+          ]
+        },
+        "note": "Native Codex run. A post-evaluation topology-export incident is preserved in raw/campaign; the scored DWG was restored byte-for-byte and verified. Metrics were not replaced. Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded.",
+        "base_url": "./recorded-io/direct-astra-4/"
+      }
+    },
+    {
+      "id": "mirror-astra-2",
+      "label": "OmniMech 2 - Astra + human mirror",
+      "harness": "Diagnostics",
+      "bundle_sha256": "6f89b4cf4208649c94c1544bd035cfa398b64c4a1959a5fb81654e3d5a8bb7a2",
+      "source_bundle_sha256": "5af869d026270b96bb56ecf529b41f147c30d62b97ef2222216e1a04f5367332",
+      "run_count": 2,
+      "recorded_io": {
+        "summary": {
+          "campaign": "human-mirror-astra-omnimech2-20260914",
+          "sample_id": "omnimech:2",
+          "model": "astra-human-mirror-y",
+          "reasoning_effort": null,
+          "score": 100.0,
+          "passed": true,
+          "selected_attempt_id": "a001",
+          "phases": [],
+          "counts": {
+            "mcp_audit_calls": 0,
+            "native_jobs": 1,
+            "timeline_records": 3
+          },
+          "mcp_tools": {},
+          "warnings": [],
+          "condition": "human-diagnostic",
+          "source_result_rows": 2,
+          "selected_run_id": "human-mirror-astra-omnimech2-20260914",
+          "elapsed_seconds": 54.204,
+          "scope": "All locally captured trial I/O, not a model-service HTTP dump or private reasoning trace",
+          "ordering": "Phase order and original stream line order; CLI events do not carry wall-clock timestamps",
+          "deduplication": "Decision-turn streams are canonical; copied reflection events remain in raw files only",
+          "limitations": [
+            "No model-service hidden prompts, private reasoning, or exact serialized HTTP requests",
+            "Images are original input files, not the service's internal visual token representation",
+            "Any output truncation already present in source logs cannot be reconstructed",
+            "Interrupted calls may have a start event without a recorded result",
+            "Tool schemas are available in frozen source snapshots, not a captured tools/list transcript",
+            "Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded."
+          ]
+        },
+        "note": "Human-requested whole-solid reflection across y=32. Zero new Astra model calls. The 100 score is a posthoc diagnostic, not an autonomous Agent pass. Public redacted excerpt; original source hashes retained for provenance, not a claim of byte-identical logs. Private reasoning, credentials, environment files and raw provider logs are excluded.",
+        "base_url": "./recorded-io/mirror-astra-2/"
+      }
+    }
+  ],
+  "visibility": "public",
+  "supplemental_pages": [
+    "kimi-vision-direct-10.html",
+    "kimi-vision-direct-2.html",
+    "kimi-vision-direct-4.html",
+    "kimi-vision-evocad-2.html",
+    "kimi-vision.html"
+  ]
+}

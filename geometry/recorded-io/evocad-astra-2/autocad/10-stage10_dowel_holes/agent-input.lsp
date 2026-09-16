@@ -1,0 +1,10 @@
+(setvar "CMDECHO" 0) (setvar "OSMODE" 0) (setvar "DELOBJ" 1) (setvar "INSUNITS" 4) (setvar "SOLIDHIST" 0) (command "_.UCS" "_World")
+(defun ck (tag / ss) (setq ss (ssget "_X" '((0 . "3DSOLID")(410 . "Model")))) (if (or (null ss) (/= (sslength ss) 1)) (progn (princ (strcat "\nFAIL_SOLID_COUNT:" tag)) (exit))) (princ (strcat "\nPASS_3DSOLID:" tag " HANDLE=" (cdr (assoc 5 (entget (ssname ss 0)))))) (command "_.MASSPROP" ss "" "_No") (ssname ss 0))
+(defun bx (a b h) (command "_.BOX" "_non" a "_non" b h) (entlast))
+(defun cyl (a r b) (command "_.CYLINDER" "_non" a r "_Axis" "_non" b) (entlast))
+(defun sub1 (body cutter tag) (command "_.SUBTRACT" body "" cutter "") (ck tag))
+
+(setq body (ck "input_end_M3"))
+(setq cutter (cyl '(-1 29.5 5.1) 1.5 '(24 29.5 5.1)))
+(sub1 body cutter "opposed_dowel_holes")
+(princ)

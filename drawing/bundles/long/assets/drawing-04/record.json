@@ -1,0 +1,287 @@
+{
+  "target_id": "76392c1c462731f09259f064",
+  "sample_id": "drawing-04",
+  "model": "kimi-k3",
+  "dataset": "real-drawing-qa",
+  "selected_attempt_id": "kimi-01",
+  "reference_answer": {
+    "answer": "cutting_plane_indication"
+  },
+  "learner_answer": {
+    "answer": "cutting_plane_indication"
+  },
+  "task_manifest": {
+    "task_id": "drawing-04",
+    "task_type": "line_role",
+    "label_status": "model_proposed_not_gt",
+    "diagnostic_eligible": true
+  },
+  "task": {
+    "task_id": "drawing-04",
+    "query": "区域A左侧视图上端，左边字母A正上方有一小段向右下倾斜的粗线。结合区域B的A—A图，这一小段粗线属于哪一种线？",
+    "answer_format": {
+      "answer": "one option value"
+    },
+    "options": [
+      {
+        "value": "visible_edge",
+        "label": "零件的可见轮廓线"
+      },
+      {
+        "value": "hidden_edge",
+        "label": "被遮挡结构的不可见轮廓线"
+      },
+      {
+        "value": "cutting_plane_indication",
+        "label": "表示截取位置的剖切位置线"
+      },
+      {
+        "value": "section_hatching",
+        "label": "表示剖到材料的剖面线"
+      },
+      {
+        "value": "extension_line",
+        "label": "尺寸界线"
+      }
+    ],
+    "unit": "none",
+    "absolute_tolerance": 0
+  },
+  "source": {
+    "source_id": "pdf-065",
+    "origin": "user_supplied_pdf",
+    "pdf_page_1based": 65,
+    "sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+    "dimensions": [
+      2560,
+      1812
+    ],
+    "rights": "user_supplied_private_research_only"
+  },
+  "annotation": {
+    "author_model": "gpt-6-astra",
+    "effort": "xhigh",
+    "blind_agreement": true,
+    "human_accepted": false,
+    "author": {
+      "query": "区域A左侧视图上端，左边字母A正上方有一小段向右下倾斜的粗线。结合区域B的A—A图，这一小段粗线属于哪一种线？",
+      "regions": [
+        {
+          "label": "A",
+          "bbox": [
+            249,
+            161,
+            325,
+            266
+          ]
+        },
+        {
+          "label": "B",
+          "bbox": [
+            397,
+            120,
+            499,
+            257
+          ]
+        }
+      ],
+      "unit": "none",
+      "answer_evidence": "指定短粗线与轮辐另一侧的同向短粗线共同标示A处截取位置，字母A与旁列A—A移出断面对应。",
+      "expected_answer": "cutting_plane_indication",
+      "answer_kind": "choice",
+      "bad_pattern_tags": [
+        "cutting_plane_as_visible_edge",
+        "section_label_ignored"
+      ],
+      "confidence": 0.99,
+      "ambiguity_notes": "",
+      "derivation": {
+        "expression": "",
+        "inputs": []
+      }
+    },
+    "blind_audit": {
+      "answer": "cutting_plane_indication",
+      "answerable": true,
+      "requires_image": true,
+      "confidence": 0.99,
+      "evidence": "短粗斜线与字母A配合标明截取位置，对应单独绘出的A—A断面。",
+      "ambiguity_notes": ""
+    }
+  },
+  "learner": {
+    "model": "kimi-k3",
+    "harness": "native-kimi-code-public-mcp-only",
+    "status": "graded",
+    "passed": true,
+    "score": 1.0,
+    "elapsed_seconds": 168.2,
+    "observations": 6,
+    "findings": 2,
+    "timeout_seconds": 600,
+    "timed_out": false,
+    "label_status": "model_proposed_not_gt",
+    "score_semantics": "agreement_with_model_proposed_label"
+  },
+  "verifier": {
+    "kind": "json_fields",
+    "expected": {
+      "answer": "cutting_plane_indication"
+    },
+    "absolute_tolerance": 0,
+    "label_status": "model_proposed_not_gt"
+  },
+  "events": [
+    {
+      "sequence": 2,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:54:26.492Z",
+      "payload": {
+        "observation_id": "b9ff537d51e04adca8cb04c19e7a4286",
+        "intent": "Inspect the left-side view in region A, especially the upper end near the left letter A and the short thick line slanting down to the right directly above it.",
+        "source_sha256": "130afd34a8f3ce216521d180d8317a589135ed54d739b767990dd99b3086e6b7",
+        "sha256": "130afd34a8f3ce216521d180d8317a589135ed54d739b767990dd99b3086e6b7",
+        "crop": null,
+        "dimensions": [
+          195,
+          191
+        ],
+        "image": "receipts/001.png"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:54:26.692Z",
+      "payload": {
+        "observation_id": "a001810e08c24ecc91c036db79f78d94",
+        "intent": "Inspect the A-A sectional/detail drawing in region B to determine what the short slanting thick line above the left A in region A represents.",
+        "source_sha256": "709f8d621e727b3acc1c948854e8dcbb052fbdbc74b0a93022e96c703c0b8438",
+        "sha256": "709f8d621e727b3acc1c948854e8dcbb052fbdbc74b0a93022e96c703c0b8438",
+        "crop": null,
+        "dimensions": [
+          262,
+          249
+        ],
+        "image": "receipts/002.png"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:54:26.928Z",
+      "payload": {
+        "observation_id": "59be1cf681464eb28c03b773dc5ad1c8",
+        "intent": "Inspect overall drawing context around regions A and B and the A-A cutting plane labels.",
+        "source_sha256": "c4f0d8c15bda744a811702d36275a99102416a8e030acb58129dff0ba3c171c3",
+        "sha256": "68ffc77e9a4e0853e660e99f64d12755aa0e7d216c3eefe11ae476b168fe4ecf",
+        "crop": null,
+        "dimensions": [
+          2560,
+          1812
+        ],
+        "image": "receipts/003.png"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:55:32.560Z",
+      "payload": {
+        "observation_id": "ed3a2509bf05452dbf2d5f0ed1723963",
+        "intent": "Zoom on the left letter A and the short thick segment directly above it to see whether it is a cutting-plane marker, arrow, edge, hatching, or extension line.",
+        "source_sha256": "130afd34a8f3ce216521d180d8317a589135ed54d739b767990dd99b3086e6b7",
+        "sha256": "ac767f206924e8e24348539a1397ff73ff9cb8f3214331082f9cb2d0d2c3f75b",
+        "crop": [
+          0,
+          90,
+          65,
+          155
+        ],
+        "dimensions": [
+          65,
+          65
+        ],
+        "image": "receipts/004.png"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:55:32.706Z",
+      "payload": {
+        "observation_id": "63c3580062354ff3b772e64b370168d3",
+        "intent": "Zoom on the right letter A and nearby short thick segment for comparison with the left A marker.",
+        "source_sha256": "130afd34a8f3ce216521d180d8317a589135ed54d739b767990dd99b3086e6b7",
+        "sha256": "2408291f49af183f5ee7bd7c7cd58571709bbe58035bfe4d26096fb6048d05ca",
+        "crop": [
+          150,
+          115,
+          195,
+          180
+        ],
+        "dimensions": [
+          45,
+          65
+        ],
+        "image": "receipts/005.png"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_type": "observation_returned",
+      "occurred_at": "2026-09-16T10:55:32.807Z",
+      "payload": {
+        "observation_id": "5daf572159fa462f9be77aab828de399",
+        "intent": "Inspect the A-A label and arrow in region B to confirm the section designation and viewing direction.",
+        "source_sha256": "709f8d621e727b3acc1c948854e8dcbb052fbdbc74b0a93022e96c703c0b8438",
+        "sha256": "0751ff5c0eb8de8caa60d6f6316a10fb44a8343b7a76e152b1acd333c9884411",
+        "crop": [
+          0,
+          0,
+          140,
+          65
+        ],
+        "dimensions": [
+          140,
+          65
+        ],
+        "image": "receipts/006.png"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T10:56:31.041Z",
+      "payload": {
+        "observation_id": "ed3a2509bf05452dbf2d5f0ed1723963",
+        "public_conclusion": "The mark directly above the left letter A is an isolated short thick slanted segment outside the part outline, matching the similar marker by the opposite letter A rather than hatching or a dimension extension line."
+      }
+    },
+    {
+      "sequence": 9,
+      "event_type": "observation_conclusion",
+      "occurred_at": "2026-09-16T10:56:31.049Z",
+      "payload": {
+        "observation_id": "5daf572159fa462f9be77aab828de399",
+        "public_conclusion": "Region B is explicitly labeled “A—A” with a section-view rotation arrow, so the paired A markers in region A denote where the A-A section is taken."
+      }
+    }
+  ],
+  "input_images": [
+    "assets/drawing-04/input-01.png",
+    "assets/drawing-04/input-02.png",
+    "assets/drawing-04/input-03.png"
+  ],
+  "asset_base": "assets/drawing-04",
+  "geometry_options": {},
+  "acceptance": {
+    "negative_checks": []
+  },
+  "download_links": [
+    {
+      "label": "公开题目记录",
+      "path": "assets/drawing-04/record.json"
+    }
+  ]
+}
