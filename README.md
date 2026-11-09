@@ -27,3 +27,13 @@ environment configuration and raw provider logs are excluded.
 Third-party drawings retain their original rights. Publication does not grant a
 new redistribution license. Candidate annotations are not expert-certified
 ground truth.
+
+DeepSeek reference geometry update: 18 source-pinned reference meshes now
+appear beside the archived candidates. References follow the actual historical
+evaluation versions, including repaired geometry where the receipt identifies
+it. Photo-scored references are visual context, not newly computed 3D scores.
+Only verified shared coordinate frames enable overlay; no new fit or scoring
+is performed. The published historical references are disclosed review data,
+not an unexposed future blind-test edition. Per-case notices bind source and
+license information. All earlier candidate assets, scores and statements stay
+unchanged.

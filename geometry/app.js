@@ -438,6 +438,15 @@ function setImage(id, source, emptyText) {
   else image.removeAttribute("src");
 }
 
+function comparisonAlignment(attempt) {
+  if (!attempt.comparison_view && !attempt.evaluation_scope) return undefined;
+  const alignment = attempt.comparison_view?.alignment;
+  const geometry = attempt.geometry || {};
+  if (alignment === "fixed_frame" && geometry.ground_truth && geometry.candidate) return alignment;
+  if (alignment === "historical_alignment" && geometry.ground_truth && geometry.overlay_candidate) return alignment;
+  return "unavailable";
+}
+
 async function mountGeometryViewers(attempt) {
   const generation = ++geometryLoadGeneration;
   geometryViewers?.dispose();
@@ -449,7 +458,7 @@ async function mountGeometryViewers(attempt) {
     container.querySelector(".viewer-status").textContent = "Loading geometry";
   }
   try {
-    geometryModulePromise ||= import("./geometry-viewer.js?v=8");
+    geometryModulePromise ||= import("./geometry-viewer.js?v=9");
     const { createSynchronizedGeometryViewers } = await geometryModulePromise;
     if (generation !== geometryLoadGeneration) return;
     geometryViewers = createSynchronizedGeometryViewers({
@@ -457,6 +466,7 @@ async function mountGeometryViewers(attempt) {
         truth: $("truthViewer"), candidate: $("candidateViewer"), overlay: $("overlayViewer"),
       },
       geometry: Object.fromEntries(Object.entries(attempt.geometry || {}).map(([key, path]) => [key, assetUrl(path)])),
+      alignment: comparisonAlignment(attempt),
     });
     updateRegionControls();
     if (state.selectedRegion) geometryViewers?.focusRegion?.(state.selectedRegion);
@@ -486,6 +496,10 @@ function updateRegionControls() {
 
 function renderEvidence(run, attempt) {
   const scope = attempt.evaluation_scope;
+  const alignment = comparisonAlignment(attempt);
+  const referenceAvailable = Boolean(attempt.images?.ground_truth || attempt.geometry?.ground_truth);
+  const referenceMissing = "本页未提供参考几何；历史测量见 Verifier";
+  const overlayMissing = "本页未提供历史评分对齐证据";
   const inputs = (run.input_images || []).filter(Boolean);
   const hideInput = !inputs.length && Boolean(scope || run.task_prompt?.trim());
   $("inputEvidence").hidden = hideInput;
@@ -493,18 +507,31 @@ function renderEvidence(run, attempt) {
   $("inputSwitcher").hidden = inputs.length < 2;
   $("inputSwitcher").innerHTML = inputs.map((_, index) => `<button class="${index === state.inputIndex ? "active" : ""}" data-input="${index}">${index + 1}</button>`).join("");
   document.querySelectorAll("[data-input]").forEach((button) => button.addEventListener("click", () => { state.inputIndex = Number(button.dataset.input); renderEvidence(run, attempt); }));
-  setImage("truthImage", assetUrl(attempt.images?.ground_truth), scope ? "GT未公开；历史测量见Verifier" : "Ground-truth render unavailable");
+  setImage("truthImage", assetUrl(attempt.images?.ground_truth), alignment ? referenceMissing : "Ground-truth render unavailable");
   const candidatePreview = evidenceFiles(attempt.candidate_images)[0]?.url.href;
   setImage("candidateImage", assetUrl(attempt.images?.candidate) || candidatePreview, "Candidate render unavailable");
-  setImage("overlayImage", assetUrl(attempt.images?.overlay), scope ? "GT未公开；历史测量见Verifier" : "Overlay unavailable");
+  setImage("overlayImage", alignment === "unavailable" ? "" : assetUrl(attempt.images?.overlay), alignment ? overlayMissing : "Overlay unavailable");
   mountGeometryViewers(attempt);
   $("candidateCaption").textContent = attempt.attempt_id;
-  $("truthCaption").textContent = scope && !attempt.images?.ground_truth && !attempt.geometry?.ground_truth
-    ? "GT未公开；历史测量见Verifier" : `SHA ${shortHash(run.ground_truth_sha256)}`;
+  $("truthTitle").textContent = alignment ? "参考几何" : "Evaluator ground truth";
+  $("truthSubtitle").textContent = alignment ? attempt.reference_geometry?.label || "公开参考" : "hidden from agent";
+  $("overlayTitle").textContent = alignment ? "参考与候选叠合" : "Aligned overlay";
+  $("overlaySubtitle").textContent = alignment ? "蓝色参考 / 橙色候选" : "blue truth / orange candidate";
+  $("truthCaption").textContent = alignment && !referenceAvailable ? referenceMissing
+    : alignment && run.ground_truth_sha256 ? `来源 SHA ${shortHash(run.ground_truth_sha256)}`
+    : alignment ? "" : `SHA ${shortHash(run.ground_truth_sha256)}`;
   $("candidateState").textContent = `SHA ${shortHash(attempt.evidence?.candidate?.sha256)}`;
-  $("overlayState").textContent = scope && !attempt.images?.overlay && !attempt.geometry?.ground_truth
-    ? "GT未公开；历史测量见Verifier"
-    : !attempt.geometry?.ground_truth ? "GT geometry unavailable; alignment not evaluated" : attempt.render_error ? `Render error: ${attempt.render_error}` : "Axis-permutation and translation alignment; no scale";
+  if (alignment) {
+    const relation = attempt.reference_geometry?.scoring_relation;
+    const fixedBasis = relation === "observation_source_geometry_not_direct_3d_grade" ? "按历史观察坐标叠合"
+      : relation?.startsWith("actual_historical_photo_") ? "按历史图像评测的固定坐标叠合" : "按历史评分使用的固定坐标叠合";
+    const basis = alignment === "fixed_frame" ? fixedBasis
+      : alignment === "historical_alignment" ? "按历史评分记录的对齐叠合" : overlayMissing;
+    $("overlayState").textContent = [basis, attempt.comparison_view?.note].filter(Boolean).join("。 ");
+  } else {
+    $("overlayState").textContent = !attempt.geometry?.ground_truth ? "GT geometry unavailable; alignment not evaluated"
+      : attempt.render_error ? `Render error: ${attempt.render_error}` : "Axis-permutation and translation alignment; no scale";
+  }
   const localization = attempt.localization || (attempt.verdict?.mismatch || {}).localization || {};
   const regions = localization.regions || [];
   const focusAvailable = Boolean(attempt.geometry?.localization && (attempt.geometry?.ground_truth || attempt.geometry?.candidate));

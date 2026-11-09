@@ -45,7 +45,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "227e0e3a1dcd003aeb4ed54e3894c0c819afcfe4f71f784ff3329fb6f3ae7e1f",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "dfa88d6d4eeca9ee4493a7178df3a46cf2c380496e9b5452a8cd80471069f27a",
       "integrity": null,
       "input_images": [],
       "input_evidence": {
@@ -83,7 +83,7 @@
           },
           "geometry": {
             "candidate": "assets/T01/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/T01/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -157,6 +157,18 @@
               "label": "3D 网格来源与署名",
               "sha256": "c1f8da7e279b3835f9f15001f1d30e2a4a7e4b5ce882059ad19f5b4b36dac07f",
               "kind": "notice"
+            },
+            {
+              "path": "assets/T01/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "3c2b0c6550b4a3952f8c5f7328ac97b3bbc59751b83883ad655010e6cbdfea04",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/T01/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "01a4cfeed2f5cc92a39a6464d9c7918439b790eb36feb1eeb3767e490fb4274d",
+              "kind": "notice"
             }
           ],
           "code_files": [
@@ -227,6 +239,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "历史评分在原任务坐标系比较，未旋转、平移、缩放或拟合。此网格仅用于展示。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "dfa88d6d4eeca9ee4493a7178df3a46cf2c380496e9b5452a8cd80471069f27a",
+            "sha256": "3c2b0c6550b4a3952f8c5f7328ac97b3bbc59751b83883ad655010e6cbdfea04",
+            "source_role": "curator_reference_geometry",
+            "label": "评测参考 · 实际评分 STEP",
+            "role": "postrun_reference_visualization",
+            "triangles": 56862,
+            "bounds": [
+              [
+                -25.999767303466797,
+                -25.999767303466797,
+                0.0
+              ],
+              [
+                25.999767303466797,
+                25.999767303466797,
+                20.0
+              ]
+            ],
+            "evaluation_receipt_sha256": "19feb86b8673c7ddccd78b54005fa2eadf10ac710ff52d850a4118865117894c",
+            "scoring_relation": "actual_historical_common_3d_geometry"
           }
         }
       ]
@@ -253,7 +291,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "d123f2f911c1de7b93e147635ba474abf609d0e56617312b43de4c098053d54e",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "6f9b483d4c86967107a63785573080ef7ff7bd8977801045758db7d5b98260c3",
       "integrity": null,
       "input_images": [],
       "input_evidence": {
@@ -291,7 +329,7 @@
           },
           "geometry": {
             "candidate": "assets/T02/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/T02/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -365,6 +403,18 @@
               "label": "3D 网格来源与署名",
               "sha256": "2cdc8de5d09a2f2270834039690bbb94eb2a74731eb6ca2d6063f146e7c051da",
               "kind": "notice"
+            },
+            {
+              "path": "assets/T02/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "29da36fb7c76430a3f7a8967c9cb7e7f5a6b1b0368c878612f0f904b4d1e3fec",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/T02/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "7e843949f1bb3760e4017153804597251126d1ab4573cc1c36269a746a78cc0f",
+              "kind": "notice"
             }
           ],
           "code_files": [
@@ -435,6 +485,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "历史评分在原任务坐标系比较，未旋转、平移、缩放或拟合。此网格仅用于展示。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "6f9b483d4c86967107a63785573080ef7ff7bd8977801045758db7d5b98260c3",
+            "sha256": "29da36fb7c76430a3f7a8967c9cb7e7f5a6b1b0368c878612f0f904b4d1e3fec",
+            "source_role": "curator_reference_geometry",
+            "label": "评测参考 · 实际评分 STEP",
+            "role": "postrun_reference_visualization",
+            "triangles": 14849,
+            "bounds": [
+              [
+                -25.240177154541016,
+                -25.240177154541016,
+                -1.0658141036401503e-14
+              ],
+              [
+                25.240177154541016,
+                25.240177154541016,
+                8.465776443481445
+              ]
+            ],
+            "evaluation_receipt_sha256": "51a7ed3b37ef0094050654f28d910368bb614474c426b728b317c4ed2ae38162",
+            "scoring_relation": "actual_historical_common_3d_geometry"
           }
         }
       ]
@@ -461,7 +537,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "bcab735109f2246964ccb9927efe4193c576fbb21f9b9bce99f03fb0a41696e1",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "cc97d503e9ce823c21b59fcf73a396d99947797fdf18a6a90f590876f000dd6f",
       "integrity": null,
       "input_images": [],
       "input_evidence": {
@@ -499,7 +575,7 @@
           },
           "geometry": {
             "candidate": "assets/T03/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/T03/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -573,6 +649,18 @@
               "label": "3D 网格来源与署名",
               "sha256": "4264cb6494988208cc5d1420155ea703a22405140e90ad61982cb2398739227e",
               "kind": "notice"
+            },
+            {
+              "path": "assets/T03/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "605025c4e4d5abd81f756c271224dbda04d82b90bf738332672571ea5097bfb8",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/T03/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "6f3dce8c12c321fa781133466f94f87856b81d5af10fb9dc3f46230cee16e146",
+              "kind": "notice"
             }
           ],
           "code_files": [
@@ -643,6 +731,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "历史评分在原任务坐标系比较，未旋转、平移、缩放或拟合。此网格仅用于展示。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "cc97d503e9ce823c21b59fcf73a396d99947797fdf18a6a90f590876f000dd6f",
+            "sha256": "605025c4e4d5abd81f756c271224dbda04d82b90bf738332672571ea5097bfb8",
+            "source_role": "pilot_independent_reference",
+            "label": "评测参考 · 历史修复版",
+            "role": "postrun_reference_visualization",
+            "triangles": 428,
+            "bounds": [
+              [
+                0.0,
+                -14.5,
+                0.0
+              ],
+              [
+                100.0,
+                2.0,
+                20.0
+              ]
+            ],
+            "evaluation_receipt_sha256": "5a9e42e55e18dcb443ff46780ee1173c2edb43918753d6ca9b99f5adc1d5ba1c",
+            "scoring_relation": "actual_historical_common_3d_geometry"
           }
         }
       ]
@@ -669,7 +783,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "527628211b811ee651baf37370321f0052d44f313aff9763ee35627cfa289b11",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "e255888b5c7f16241b4ec5678b596b5f57b3c8daa391a0813d3087de5262c467",
       "integrity": null,
       "input_images": [],
       "input_evidence": {
@@ -707,7 +821,7 @@
           },
           "geometry": {
             "candidate": "assets/T04/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/T04/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -781,6 +895,18 @@
               "label": "3D 网格来源与署名",
               "sha256": "2b192c81d31e633d5a9796da15e4e32b0e4eeb39a8a6b2252670c55bee8ce2f1",
               "kind": "notice"
+            },
+            {
+              "path": "assets/T04/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "e24e94426cb404487fce3f528ebbd65ec602074b4da4d8920e79813f0d4df2da",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/T04/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "444bb4752badcf1d188b50dc261ae7d8774385ab9f4a1edb38e8e39e47df47f4",
+              "kind": "notice"
             }
           ],
           "code_files": [
@@ -851,6 +977,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "历史评分在原任务坐标系比较，未旋转、平移、缩放或拟合。此网格仅用于展示。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "e255888b5c7f16241b4ec5678b596b5f57b3c8daa391a0813d3087de5262c467",
+            "sha256": "e24e94426cb404487fce3f528ebbd65ec602074b4da4d8920e79813f0d4df2da",
+            "source_role": "curator_reference_geometry",
+            "label": "评测参考 · 实际评分 STEP",
+            "role": "postrun_reference_visualization",
+            "triangles": 9228,
+            "bounds": [
+              [
+                -10.392304420471191,
+                -9.0,
+                -6.0
+              ],
+              [
+                10.392304420471191,
+                9.0,
+                25.0
+              ]
+            ],
+            "evaluation_receipt_sha256": "c467484cf330e9bb53015b0cd51e201b74b930d0efadedf77077d2d0a19b94ec",
+            "scoring_relation": "actual_historical_common_3d_geometry"
           }
         }
       ]
@@ -877,7 +1029,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "166f534b061debb01a799e5ed7ddb7a0de3082df0d603f41652757b5396c94bd",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "46edef2e0b2b53cd1e1326bdb036e19f0148e87cdccdd003af0c1a284579a794",
       "integrity": null,
       "input_images": [],
       "input_evidence": {
@@ -915,7 +1067,7 @@
           },
           "geometry": {
             "candidate": "assets/T05/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/T05/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -989,6 +1141,18 @@
               "label": "3D 网格来源与署名",
               "sha256": "dd02fad52b093c2872c3126b3e049ac51eeb8eba496ec74b5ec25e9112189eba",
               "kind": "notice"
+            },
+            {
+              "path": "assets/T05/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "f1744793db5c3b19293e536a10127658b8dafb56234c8d729e39cb3a481b2cc4",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/T05/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "9800b6667dd44b8bc6fd3de12a8efca9792055e489246069eae2000ed17f11c7",
+              "kind": "notice"
             }
           ],
           "code_files": [
@@ -1059,6 +1223,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "历史评分在原任务坐标系比较，未旋转、平移、缩放或拟合。此网格仅用于展示。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "46edef2e0b2b53cd1e1326bdb036e19f0148e87cdccdd003af0c1a284579a794",
+            "sha256": "f1744793db5c3b19293e536a10127658b8dafb56234c8d729e39cb3a481b2cc4",
+            "source_role": "curator_reference_geometry",
+            "label": "评测参考 · 实际评分 STEP",
+            "role": "postrun_reference_visualization",
+            "triangles": 7560,
+            "bounds": [
+              [
+                -66.79055786132812,
+                -66.79055786132812,
+                -1.5
+              ],
+              [
+                66.79055786132812,
+                66.79055786132812,
+                1.5
+              ]
+            ],
+            "evaluation_receipt_sha256": "6d85b06650cd13b1542ad74388fd04c3add7ab2d41614ff9dc93a4824043f9d3",
+            "scoring_relation": "actual_historical_common_3d_geometry"
           }
         }
       ]
@@ -1085,7 +1275,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "b9c5137eb27849c99c51833f966f23f4d7b095229f1f66d24abb4749d0bc2629",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "688f853fc966676cc627e1b7b9592d73f00a5b495562f3ed50a2d035c85cc442",
       "integrity": null,
       "input_images": [],
       "input_evidence": {
@@ -1123,7 +1313,7 @@
           },
           "geometry": {
             "candidate": "assets/T06/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/T06/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -1197,6 +1387,18 @@
               "label": "3D 网格来源与署名",
               "sha256": "1d2e6060f35022465d5283274aa5ce5fdb2eeb748782e448a948ed4474add6ca",
               "kind": "notice"
+            },
+            {
+              "path": "assets/T06/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "b19a415e5bfc2a9c5b698423b9894e81a06b502905c504f490cffc8580e2cd7e",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/T06/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "3e2cee7757ce40e58c94eb8534f3252ca2c7012efeb89fc742541ac5de3a2db1",
+              "kind": "notice"
             }
           ],
           "code_files": [
@@ -1267,6 +1469,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "历史评分在原任务坐标系比较，未旋转、平移、缩放或拟合。此网格仅用于展示。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "688f853fc966676cc627e1b7b9592d73f00a5b495562f3ed50a2d035c85cc442",
+            "sha256": "b19a415e5bfc2a9c5b698423b9894e81a06b502905c504f490cffc8580e2cd7e",
+            "source_role": "curator_reference_geometry",
+            "label": "评测参考 · 实际评分 STEP",
+            "role": "postrun_reference_visualization",
+            "triangles": 3690,
+            "bounds": [
+              [
+                -60.0,
+                -20.0,
+                0.0
+              ],
+              [
+                60.0,
+                20.0,
+                13.0
+              ]
+            ],
+            "evaluation_receipt_sha256": "37f3df2e2d12423b8061a75951c293ce5f059528422d63abdf4f710b5e50b263",
+            "scoring_relation": "actual_historical_common_3d_geometry"
           }
         }
       ]
@@ -1293,7 +1521,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "fff9f4602f06c30b336d71ca51400b91ee7704b7d525e54eb56dc8888a0ef1eb",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "961b7bf7943c71dc421e56bea212ef7968752ac0658ad26e1b6246b3cb4499dc",
       "integrity": null,
       "input_images": [],
       "input_evidence": {
@@ -1331,7 +1559,7 @@
           },
           "geometry": {
             "candidate": "assets/T07/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/T07/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -1405,6 +1633,18 @@
               "label": "3D 网格来源与署名",
               "sha256": "0b157f31bd64b53d0398a2792a927c4d88186b008c0b2665425c1df29484dd26",
               "kind": "notice"
+            },
+            {
+              "path": "assets/T07/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "16a813ee8ba50ed72f506a8d5417cc1dc213264fc3e48e96e0411bae3faeec6a",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/T07/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "9745f86c4712ae23326456bebb3c7a75dbfd8456cac9e0241297ce2a057a2a77",
+              "kind": "notice"
             }
           ],
           "code_files": [
@@ -1475,6 +1715,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "历史评分在原任务坐标系比较，未旋转、平移、缩放或拟合。此网格仅用于展示。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "961b7bf7943c71dc421e56bea212ef7968752ac0658ad26e1b6246b3cb4499dc",
+            "sha256": "16a813ee8ba50ed72f506a8d5417cc1dc213264fc3e48e96e0411bae3faeec6a",
+            "source_role": "pilot_independent_reference",
+            "label": "评测参考 · 历史修复版",
+            "role": "postrun_reference_visualization",
+            "triangles": 4808,
+            "bounds": [
+              [
+                -83.46408081054688,
+                -140.56402587890625,
+                -72.60045623779297
+              ],
+              [
+                159.9999542236328,
+                140.56402587890625,
+                72.58784484863281
+              ]
+            ],
+            "evaluation_receipt_sha256": "01032df5ebaabaefff5d5ed1fc5c8a8114f3b44e3990fb572b3b16939fca7434",
+            "scoring_relation": "actual_historical_common_3d_geometry"
           }
         }
       ]
@@ -1501,7 +1767,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "5a1a328f5f315ffd259edee79e527753b1731358350e0a53a09a83392691c83b",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "28e3342971b2c5ec6e568182925aac71b421bd1a57a80ac1b28453ae31817df1",
       "integrity": null,
       "input_images": [],
       "input_evidence": {
@@ -1539,7 +1805,7 @@
           },
           "geometry": {
             "candidate": "assets/T08/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/T08/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -1612,6 +1878,18 @@
               "path": "assets/T08/MESH-NOTICE.txt",
               "label": "3D 网格来源与署名",
               "sha256": "fb05fcba208d51c232734189c161b1e7a5700a16857aec63fbeb14cb06d7102e",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/T08/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "836c40408e36c0806213adb6787c13656d7734a8512aeaf90992650a22aef521",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/T08/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "5ce37d86a71eb1487e42b4a2684339250fa3b40c28236b6a4fefe90534dbb9a2",
               "kind": "notice"
             }
           ],
@@ -1689,6 +1967,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "历史评分在原任务坐标系比较，未旋转、平移、缩放或拟合。此网格仅用于展示。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "28e3342971b2c5ec6e568182925aac71b421bd1a57a80ac1b28453ae31817df1",
+            "sha256": "836c40408e36c0806213adb6787c13656d7734a8512aeaf90992650a22aef521",
+            "source_role": "curator_reference_geometry",
+            "label": "评测参考 · 实际评分 STEP",
+            "role": "postrun_reference_visualization",
+            "triangles": 1188,
+            "bounds": [
+              [
+                -71.05121612548828,
+                0.0,
+                5.0
+              ],
+              [
+                142.10243225097656,
+                142.0,
+                73.97811889648438
+              ]
+            ],
+            "evaluation_receipt_sha256": "9a883c9ac6b745009cb46b9e3b075c82c9df69b0a35fcc2af5ad06f15bd60620",
+            "scoring_relation": "actual_historical_common_3d_geometry"
           }
         }
       ]
@@ -1715,7 +2019,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "5ef5e1324a5a3de11ea7440dbc248512db23da6b405b7d62848f45a130ceb394",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "4aa19b8815a32bdf38dc7715ef7e6a1bf57217a646aea9d9507456513fdd017e",
       "integrity": null,
       "input_images": [],
       "input_evidence": {
@@ -1753,7 +2057,7 @@
           },
           "geometry": {
             "candidate": "assets/T09/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/T09/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -1827,6 +2131,18 @@
               "label": "3D 网格来源与署名",
               "sha256": "54dafb0fcbd18d46b7b92c7f4c2bbef840cc72cfa5fbd119607bdd8815ebc07f",
               "kind": "notice"
+            },
+            {
+              "path": "assets/T09/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "8a829f62de657564808d20ecdb34790af3a6ee52665ec632d35cbd02f50fc310",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/T09/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "aa16c6c5376fb425f2341308e4133b3641eafc1e10ada599131d22b3e67b55ba",
+              "kind": "notice"
             }
           ],
           "code_files": [
@@ -1897,6 +2213,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "历史评分在原任务坐标系比较，未旋转、平移、缩放或拟合。此网格仅用于展示。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "4aa19b8815a32bdf38dc7715ef7e6a1bf57217a646aea9d9507456513fdd017e",
+            "sha256": "8a829f62de657564808d20ecdb34790af3a6ee52665ec632d35cbd02f50fc310",
+            "source_role": "curator_reference_geometry",
+            "label": "评测参考 · 实际评分 STEP",
+            "role": "postrun_reference_visualization",
+            "triangles": 1488,
+            "bounds": [
+              [
+                -59.97365188598633,
+                -60.0,
+                -63.0
+              ],
+              [
+                60.0,
+                59.97365188598633,
+                73.0
+              ]
+            ],
+            "evaluation_receipt_sha256": "41094a164905d04202f2da4627ab76ae4a0ceb424500971d49ddd7eba31ffaae",
+            "scoring_relation": "actual_historical_common_3d_geometry"
           }
         }
       ]
@@ -1923,7 +2265,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "28accd81963186a8bc27878d6d077b1570836d2b3f5a544cb372a3a4e98625df",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "87c1def2707842ff5bbaaa9d739d4962f1a124256152a2e04050657d4ce20098",
       "integrity": null,
       "input_images": [],
       "input_evidence": {
@@ -1961,7 +2303,7 @@
           },
           "geometry": {
             "candidate": "assets/T10/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/T10/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -2035,6 +2377,18 @@
               "label": "3D 网格来源与署名",
               "sha256": "57e36adee23dfc5f11f5ab3dfdffe91ff4bdd2ea78e4e81aca27a89d060b59f7",
               "kind": "notice"
+            },
+            {
+              "path": "assets/T10/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "26040735c9890912eee9bc8791ac4aac7f3e7468aa4673818533c1e5d4b8a678",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/T10/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "d2d16a010e169b3fb743f42fcbc651cb346227c0b1d9b45c1041feca246d9bbf",
+              "kind": "notice"
             }
           ],
           "code_files": [
@@ -2105,6 +2459,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "历史评分在原任务坐标系比较，未旋转、平移、缩放或拟合。此网格仅用于展示。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "87c1def2707842ff5bbaaa9d739d4962f1a124256152a2e04050657d4ce20098",
+            "sha256": "26040735c9890912eee9bc8791ac4aac7f3e7468aa4673818533c1e5d4b8a678",
+            "source_role": "curator_reference_geometry_v2",
+            "label": "评测参考 · 修复版 v2",
+            "role": "postrun_reference_visualization",
+            "triangles": 12296,
+            "bounds": [
+              [
+                -50.0,
+                -75.0,
+                -4.440892098500626e-16
+              ],
+              [
+                50.0,
+                75.0,
+                50.0
+              ]
+            ],
+            "evaluation_receipt_sha256": "47b253c5dd2137a89dde7e2afc3cf10e51734fc0c934cb527f14ed85a7c19e60",
+            "scoring_relation": "actual_historical_common_3d_geometry"
           }
         }
       ]
@@ -2114,5 +2494,6 @@
   "source_bundle_sha256": null,
   "source_archive_sha256": "3af3d3aced5832b12c9ed94a4b78fcba5a8119f4aad5b2442956f403644739e4",
   "presentation_source_bundle_sha256": "d7dff3da7fa7fecbe9bff75dadd4298ae2b4ec282c04568fbe726f0d961a6035",
-  "bundle_sha256": "435e37abc76717548fa452d4b713c41e23eca75ae8d8b71f042bf1d7039b363a"
+  "reference_source_bundle_sha256": "435e37abc76717548fa452d4b713c41e23eca75ae8d8b71f042bf1d7039b363a",
+  "bundle_sha256": "38805e000ed028d3dd0fd3aaf73b7a00fc5af528977d1a98a2a25475af4b643c"
 }

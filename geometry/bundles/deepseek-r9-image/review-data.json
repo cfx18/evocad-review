@@ -45,7 +45,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "19072eba98aa28e676a17ed5cea875d3cb5f4ed6a5a11728497ed16d5b95e98d",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "630a743d841285cdf9d94b1ad30b45c99b13e2d92bb7726e7f50b811844d9675",
       "integrity": null,
       "input_images": [
         "assets/I01/input-01.png",
@@ -111,7 +111,7 @@
           },
           "geometry": {
             "candidate": "assets/I01/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/I01/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -175,6 +175,18 @@
               "path": "assets/I01/MESH-NOTICE.txt",
               "label": "3D 网格来源与署名",
               "sha256": "9095e44ce8350e787385a697482a08babf7622b34c8d77eb64cefa5c0b00ef59",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I01/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "7fb1c730a5af408cbf6e6b26fed3fae50ceec105ff56071a5be8e56320654255",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I01/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "e1b3f8419ee6bad474a1d744d9c1682dfefe316bae2126fbfd94a60a872b65f2",
               "kind": "notice"
             }
           ],
@@ -243,6 +255,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "参考与候选使用同一固定相机标定坐标，未拟合。此网格用于展示，不重算历史分数。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "630a743d841285cdf9d94b1ad30b45c99b13e2d92bb7726e7f50b811844d9675",
+            "sha256": "7fb1c730a5af408cbf6e6b26fed3fae50ceec105ff56071a5be8e56320654255",
+            "source_role": "hidden_CAD_derived_mesh_not_STEP",
+            "label": "评测参考 · 固定标定原始 PLY",
+            "role": "postrun_reference_visualization",
+            "triangles": 84260,
+            "bounds": [
+              [
+                -17.495800018310547,
+                -17.495800018310547,
+                -30.600000381469727
+              ],
+              [
+                17.495800018310547,
+                17.495800018310547,
+                30.600000381469727
+              ]
+            ],
+            "evaluation_receipt_sha256": "e843baa0580060fa659e577f8236f6a3ef39f623cdf75cf54a551d3f4e463248",
+            "scoring_relation": "actual_historical_photo_80_20_geometry"
           }
         }
       ]
@@ -269,7 +307,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "0828988358bdf08059a510433ee7c2e27e3fac491a2750e09c813043d44d8efe",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "bc08c26acebb0cf6623c54444cf5c2bcbd93d81444dcdbe502769e9e149a8943",
       "integrity": null,
       "input_images": [
         "assets/I02/input-01.png",
@@ -335,7 +373,7 @@
           },
           "geometry": {
             "candidate": "assets/I02/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/I02/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -399,6 +437,18 @@
               "path": "assets/I02/MESH-NOTICE.txt",
               "label": "3D 网格来源与署名",
               "sha256": "67d7592407842b78cddb574874182b7a1d56600bac2b9e601251ad4c735c198e",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I02/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "a2032fefde60e01b7a2e3af6c63a1dc80ae269e9e4a18def91b5a89a1eb08afe",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I02/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "f440a33d724785b5b9e179b1184a98d9fe6e640c0f8f83497f060f8c284c7f74",
               "kind": "notice"
             }
           ],
@@ -467,6 +517,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "参考与候选使用同一固定相机标定坐标，未拟合。此网格用于展示，不重算历史分数。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "bc08c26acebb0cf6623c54444cf5c2bcbd93d81444dcdbe502769e9e149a8943",
+            "sha256": "a2032fefde60e01b7a2e3af6c63a1dc80ae269e9e4a18def91b5a89a1eb08afe",
+            "source_role": "hidden_CAD_derived_mesh_not_STEP",
+            "label": "评测参考 · 固定标定原始 PLY",
+            "role": "postrun_reference_visualization",
+            "triangles": 22812,
+            "bounds": [
+              [
+                -93.03929901123047,
+                -52.667198181152344,
+                -30.007299423217773
+              ],
+              [
+                93.03929901123047,
+                52.667198181152344,
+                30.007299423217773
+              ]
+            ],
+            "evaluation_receipt_sha256": "f14ad5eac0d543619b856ec5f7565f4f50a936a3c288fd78ee3a3d8350992c5e",
+            "scoring_relation": "actual_historical_photo_80_20_geometry"
           }
         }
       ]
@@ -493,7 +569,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "006dc518a873e21e69a5f60a04944a3abbc1889288f16e0358dcff44564922af",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "ba2560a7221e71485672f7886539ecbbfdd5b712df4e53041d8957221072ad42",
       "integrity": null,
       "input_images": [
         "assets/I03/input-01.png",
@@ -559,7 +635,7 @@
           },
           "geometry": {
             "candidate": "assets/I03/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/I03/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -623,6 +699,18 @@
               "path": "assets/I03/MESH-NOTICE.txt",
               "label": "3D 网格来源与署名",
               "sha256": "e0693b8bfc97c9bc322b44b6e12236a01da3efd0d2e6d624f6359245747f8aa6",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I03/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "4eac3e00047a597568dd4c18a8d4b85be88be0b31f3ecfcab393b0b35efcc45e",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I03/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "a38229c68de9d17690d2fed9fe6402ddc78ea7315b14cce7e78802865a473e97",
               "kind": "notice"
             }
           ],
@@ -691,6 +779,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "参考与候选使用同一固定相机标定坐标，未拟合。此网格用于展示，不重算历史分数。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "ba2560a7221e71485672f7886539ecbbfdd5b712df4e53041d8957221072ad42",
+            "sha256": "4eac3e00047a597568dd4c18a8d4b85be88be0b31f3ecfcab393b0b35efcc45e",
+            "source_role": "hidden_CAD_derived_mesh_not_STEP",
+            "label": "评测参考 · 固定标定原始 PLY",
+            "role": "postrun_reference_visualization",
+            "triangles": 18434,
+            "bounds": [
+              [
+                -40.329898834228516,
+                -21.003599166870117,
+                -31.751300811767578
+              ],
+              [
+                40.329898834228516,
+                21.003599166870117,
+                31.751300811767578
+              ]
+            ],
+            "evaluation_receipt_sha256": "3725d88c9f007d1c40c9e35d2782f1aa45706eac9ed553a056c34c2567314bef",
+            "scoring_relation": "actual_historical_photo_80_20_geometry"
           }
         }
       ]
@@ -717,7 +831,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "40628590b954fb13320ed6a5efd3147d84d7f4f453b41feda9916a7540301f53",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "39dee96298a44a5148cbe608f67843b613d1f62738f5f3586ed44adfdf48971e",
       "integrity": null,
       "input_images": [
         "assets/I04/input-01.png",
@@ -783,7 +897,7 @@
           },
           "geometry": {
             "candidate": "assets/I04/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/I04/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -847,6 +961,18 @@
               "path": "assets/I04/MESH-NOTICE.txt",
               "label": "3D 网格来源与署名",
               "sha256": "0c0d5d5e2946f94ac157e0b4f2cdedfc268c2ab15b192b288758e7fdbf859b20",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I04/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "68050cba50c4128c8ffe6fc014ef5fb7b89fbc5104ac81fefc1b75a0e317c39a",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I04/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "897386df483784617f6788f1bd16f4611011d84f149d2f78091c855d8d54e77c",
               "kind": "notice"
             }
           ],
@@ -915,6 +1041,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "参考与候选使用同一固定相机标定坐标，未拟合。此网格用于展示，不重算历史分数。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "39dee96298a44a5148cbe608f67843b613d1f62738f5f3586ed44adfdf48971e",
+            "sha256": "68050cba50c4128c8ffe6fc014ef5fb7b89fbc5104ac81fefc1b75a0e317c39a",
+            "source_role": "hidden_CAD_derived_mesh_not_STEP",
+            "label": "评测参考 · 固定标定原始 PLY",
+            "role": "postrun_reference_visualization",
+            "triangles": 44154,
+            "bounds": [
+              [
+                -39.16559982299805,
+                -28.813499450683594,
+                -28.299999237060547
+              ],
+              [
+                39.16559982299805,
+                28.813499450683594,
+                28.299999237060547
+              ]
+            ],
+            "evaluation_receipt_sha256": "9e1ac8bbfd2af54bcf83c138543305564603d4139009b010d501a900eba99f69",
+            "scoring_relation": "actual_historical_photo_80_20_geometry"
           }
         }
       ]
@@ -941,7 +1093,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "6d616d359be7e7d70f20e8b323b643cb521f3fc1b31b3745004fe7a0e699b728",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "c1cddeec2c10fb5131d312a4655c37b88bc9b51ffdc330bb500b6bab1cf20257",
       "integrity": null,
       "input_images": [
         "assets/I05/input-01.png",
@@ -1007,7 +1159,7 @@
           },
           "geometry": {
             "candidate": "assets/I05/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/I05/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -1071,6 +1223,18 @@
               "path": "assets/I05/MESH-NOTICE.txt",
               "label": "3D 网格来源与署名",
               "sha256": "46e846ee48c0681326ca8dba98408d03f030b6a2f89628379a7834f67d768ae4",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I05/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "b9e448947cdc8980ce0ecf0209b63c3d0056151fcb71a888a34f8961e832613c",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I05/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "e75986154f97da60473c5d892e45e98f59ce479549429af48cc6c8564b54ee09",
               "kind": "notice"
             }
           ],
@@ -1139,6 +1303,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "参考与候选使用同一固定相机标定坐标，未拟合。此网格用于展示，不重算历史分数。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "c1cddeec2c10fb5131d312a4655c37b88bc9b51ffdc330bb500b6bab1cf20257",
+            "sha256": "b9e448947cdc8980ce0ecf0209b63c3d0056151fcb71a888a34f8961e832613c",
+            "source_role": "hidden_CAD_derived_mesh_not_STEP",
+            "label": "评测参考 · 固定标定原始 PLY",
+            "role": "postrun_reference_visualization",
+            "triangles": 36210,
+            "bounds": [
+              [
+                -49.36050033569336,
+                -49.36940002441406,
+                -31.886899948120117
+              ],
+              [
+                49.36050033569336,
+                49.36940002441406,
+                31.886899948120117
+              ]
+            ],
+            "evaluation_receipt_sha256": "20f79ed517772b5a8d064ebb6090149c4fe9fa65b0725bce32adaa470797ccb6",
+            "scoring_relation": "actual_historical_photo_80_20_geometry"
           }
         }
       ]
@@ -1165,7 +1355,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "6f85da5fda8eb391c14abe00d641efd0ca1d6dc4c2eaeb121ecffd7edf789723",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "7c4b7cdf0a4c990d4e886deac3dfe2bf71706b19918afbe034c847e2b4d14b00",
       "integrity": null,
       "input_images": [
         "assets/I06/input-01.png",
@@ -1231,7 +1421,7 @@
           },
           "geometry": {
             "candidate": "assets/I06/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/I06/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -1296,6 +1486,18 @@
               "label": "3D 网格来源与署名",
               "sha256": "4a32acdd4823282738c85f79ff83b456f979ee75a71d7d61527214616f268da4",
               "kind": "notice"
+            },
+            {
+              "path": "assets/I06/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "4b8c99dc9ae4f0cf102f1e70d319b97a2d2c18a32687311847b01d9e1acd6dbb",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I06/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "3746cfaaf5ff0dd2f6948438e3f90038e02a2a45925c9559e0985d860aadb2be",
+              "kind": "notice"
             }
           ],
           "code_files": [],
@@ -1356,6 +1558,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "参考与候选使用同一固定相机标定坐标，未拟合。历史可见轮廓/深度组件已测量，体积综合分数未验证。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "7c4b7cdf0a4c990d4e886deac3dfe2bf71706b19918afbe034c847e2b4d14b00",
+            "sha256": "4b8c99dc9ae4f0cf102f1e70d319b97a2d2c18a32687311847b01d9e1acd6dbb",
+            "source_role": "hidden_CAD_derived_mesh_not_STEP",
+            "label": "评测参考 · 固定标定原始 PLY",
+            "role": "postrun_reference_visualization",
+            "triangles": 20508,
+            "bounds": [
+              [
+                -38.45000076293945,
+                -39.48910140991211,
+                -21.5
+              ],
+              [
+                38.45000076293945,
+                39.48910140991211,
+                21.5
+              ]
+            ],
+            "evaluation_receipt_sha256": "bfd45fed976fe885553d7fec7f07cf8ef25467ce54366eb8da732bdea628d680",
+            "scoring_relation": "actual_historical_photo_component_geometry_primary_aggregate_unverified"
           }
         }
       ]
@@ -1382,7 +1610,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "c88094697b5e0625c2182be4b78f01abdb261a6f2724215037b27a308dfa3187",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "18b1ade78ff39b5311fc7842f0fcdec0aeb9d6c4bc52d27fe15ca65577f5ba70",
       "integrity": null,
       "input_images": [
         "assets/I07/input-01.png",
@@ -1448,7 +1676,7 @@
           },
           "geometry": {
             "candidate": "assets/I07/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/I07/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -1512,6 +1740,18 @@
               "path": "assets/I07/MESH-NOTICE.txt",
               "label": "3D 网格来源与署名",
               "sha256": "a238e513b020a21ce0a271dcb3efc2038227afc937908a370f84f67db93b4cc9",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I07/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "62344ca832c350bbc84b84237c3e76e8cdc934595c2a53629c6ab9c93e04c466",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I07/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "433279c6eb5cfb78f1b75118ac9d25ede600b44ddd4146ff789fdf2f022011a5",
               "kind": "notice"
             }
           ],
@@ -1580,6 +1820,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "参考与候选使用同一固定相机标定坐标，未拟合。此网格用于展示，不重算历史分数。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "18b1ade78ff39b5311fc7842f0fcdec0aeb9d6c4bc52d27fe15ca65577f5ba70",
+            "sha256": "62344ca832c350bbc84b84237c3e76e8cdc934595c2a53629c6ab9c93e04c466",
+            "source_role": "hidden_CAD_derived_mesh_not_STEP",
+            "label": "评测参考 · 固定标定原始 PLY",
+            "role": "postrun_reference_visualization",
+            "triangles": 21946,
+            "bounds": [
+              [
+                -21.497699737548828,
+                -21.49850082397461,
+                -40.29999923706055
+              ],
+              [
+                21.497699737548828,
+                21.49850082397461,
+                40.29999923706055
+              ]
+            ],
+            "evaluation_receipt_sha256": "596979a153f37b649b8fc14ef193c07b73765db6527a9695c304e28db1777542",
+            "scoring_relation": "actual_historical_photo_80_20_geometry"
           }
         }
       ]
@@ -2003,5 +2269,6 @@
   "source_bundle_sha256": null,
   "source_archive_sha256": "3af3d3aced5832b12c9ed94a4b78fcba5a8119f4aad5b2442956f403644739e4",
   "presentation_source_bundle_sha256": "37280483e8c7c3e9a8a6e2004cab22a2589070646be3663d702af803592ba24a",
-  "bundle_sha256": "0805344e4579fb06cbd661871c564ccbe30880eb1baba9a0d19cbf4b9a20a1e0"
+  "reference_source_bundle_sha256": "0805344e4579fb06cbd661871c564ccbe30880eb1baba9a0d19cbf4b9a20a1e0",
+  "bundle_sha256": "1e04300a615a075f09b99a4d2bea4694305def4a03727162b015396d9a03fc12"
 }

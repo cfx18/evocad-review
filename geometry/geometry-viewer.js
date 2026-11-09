@@ -137,8 +137,9 @@ class GeometryViewport {
 }
 
 class SynchronizedGeometryViewers {
-  constructor(containers, geometry) {
+  constructor(containers, geometry, alignment) {
     this.geometryPaths = geometry;
+    this.alignment = alignment;
     this.frustumHeight = 1;
     this.globalFrustumHeight = 1;
     this.center = new THREE.Vector3();
@@ -204,19 +205,29 @@ class SynchronizedGeometryViewers {
   async load() {
     Object.values(this.viewports).forEach((viewport) => viewport.showFallback("Loading geometry"));
     try {
-      const [truth, candidate, localization] = await Promise.all([
+      const historical = this.alignment === "historical_alignment";
+      const overlayTruthPath = historical && this.geometryPaths.overlay_ground_truth;
+      const overlayCandidatePath = historical && this.geometryPaths.overlay_candidate;
+      const [truth, candidate, localization, alternateTruth, alternateCandidate] = await Promise.all([
         this.loadGeometry(this.geometryPaths.ground_truth),
         this.loadGeometry(this.geometryPaths.candidate),
         this.loadLocalization(this.geometryPaths.localization),
+        this.loadGeometry(overlayTruthPath).catch(() => null),
+        this.loadGeometry(overlayCandidatePath).catch(() => null),
       ]);
+      const meshes = [truth, candidate, alternateTruth, alternateCandidate];
       if (this.disposed) {
-        truth?.dispose();
-        candidate?.dispose();
+        meshes.forEach((mesh) => mesh?.dispose());
         return;
       }
+      const fixed = this.alignment == null || this.alignment === "fixed_frame";
+      const overlayTruth = historical ? (overlayTruthPath ? alternateTruth : truth) : fixed ? truth : null;
+      const overlayCandidate = historical ? alternateCandidate : fixed ? candidate : null;
+      const overlayReady = Boolean(overlayTruth && overlayCandidate);
       const bounds = new THREE.Box3();
-      if (truth?.boundingBox) bounds.union(truth.boundingBox);
-      if (candidate?.boundingBox) bounds.union(candidate.boundingBox);
+      for (const mesh of [truth, candidate, ...(overlayReady ? [overlayTruth, overlayCandidate] : [])]) {
+        if (mesh?.boundingBox) bounds.union(mesh.boundingBox);
+      }
       if (bounds.isEmpty()) throw new Error("No interactive geometry is available");
       bounds.getCenter(this.center);
       const size = bounds.getSize(new THREE.Vector3());
@@ -227,25 +238,24 @@ class SynchronizedGeometryViewers {
       if (truth) {
         this.viewports.truth.addGeometry(truth, COLORS.truth);
         this.viewports.truth.showInteractive();
-        if (candidate) {
-          this.viewports.overlay.addGeometry(truth, COLORS.truth, 0.48);
-          this.viewports.overlay.showInteractive();
-        }
       } else {
         this.viewports.truth.showFallback("Ground-truth geometry unavailable");
       }
       if (candidate) {
         this.viewports.candidate.addGeometry(candidate, COLORS.candidate);
         this.viewports.candidate.showInteractive();
-        if (truth) {
-          this.viewports.overlay.addGeometry(candidate, COLORS.candidate, 0.66);
-          this.viewports.overlay.showInteractive();
-        }
       } else {
         this.viewports.candidate.showFallback("Candidate geometry unavailable");
-        if (!truth) this.viewports.overlay.showFallback("Overlay geometry unavailable");
       }
-      if (!truth || !candidate) this.viewports.overlay.showFallback("Overlay requires both ground truth and candidate");
+      if (overlayReady) {
+        this.viewports.overlay.addGeometry(overlayTruth, COLORS.truth, 0.48);
+        this.viewports.overlay.addGeometry(overlayCandidate, COLORS.candidate, 0.66);
+        this.viewports.overlay.showInteractive();
+      } else if (!fixed && !historical) {
+        this.viewports.overlay.showFallback("本页未提供历史评分对齐证据");
+      } else {
+        this.viewports.overlay.showFallback("Overlay requires both ground truth and candidate");
+      }
       const visualization = localization?.visualization || {};
       const missing = visualization.ground_truth_to_candidate || [];
       const excess = visualization.candidate_to_ground_truth || [];
@@ -261,8 +271,7 @@ class SynchronizedGeometryViewers {
         (isMissing ? this.viewports.truth : this.viewports.candidate).addRegionBox(region, color);
         this.viewports.overlay.addRegionBox(region, color);
       }
-      truth?.dispose();
-      candidate?.dispose();
+      meshes.forEach((mesh) => mesh?.dispose());
       this.reset();
       if (this.pendingRegionId) this.focusRegion(this.pendingRegionId);
     } catch (error) {
@@ -343,9 +352,9 @@ class SynchronizedGeometryViewers {
   }
 }
 
-export function createSynchronizedGeometryViewers({ containers, geometry }) {
+export function createSynchronizedGeometryViewers({ containers, geometry, alignment }) {
   try {
-    return new SynchronizedGeometryViewers(containers, geometry);
+    return new SynchronizedGeometryViewers(containers, geometry, alignment);
   } catch (error) {
     Object.values(containers).filter(Boolean).forEach((container) => {
       const canvas = container.querySelector("canvas");

@@ -1186,7 +1186,7 @@
       "agent_requested_continue": null,
       "selected_evidence_sha256": null,
       "candidate_sha256": "94908b4dbe8052f01020e2c80a967251630df3d2a00f1267bc5664fd327bf39c",
-      "ground_truth_sha256": null,
+      "ground_truth_sha256": "512767e8d87dc0d32b3722f9986b78451099e274c1a3bc317b2bfeffca3a83bc",
       "integrity": null,
       "input_images": [],
       "input_evidence": null,
@@ -1217,7 +1217,7 @@
           },
           "geometry": {
             "candidate": "assets/A09/candidate.stl",
-            "ground_truth": null,
+            "ground_truth": "assets/A09/reference.stl",
             "localization": null,
             "topology": null,
             "face_query": null
@@ -1278,6 +1278,18 @@
               "path": "assets/A09/MESH-NOTICE.txt",
               "label": "3D 网格来源与署名",
               "sha256": "a25c9ea2e36c3e2b4e2b946d7719cbaa6deb9e17a7471d5a8098129c05447d1e",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/A09/reference.stl",
+              "label": "下载参考几何 STL",
+              "sha256": "ff62e1177fcdd60ee6acb14d7cf5a6a1170185f00b1cdfa1b8ab4a794cfea6ed",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/A09/REFERENCE-NOTICE.txt",
+              "label": "参考几何来源与署名",
+              "sha256": "fa9cfaccc7b88c3782f80e289bd0737933e59de37248433bdb3f59eb6648d698",
               "kind": "notice"
             }
           ],
@@ -1372,6 +1384,32 @@
             ],
             "role": "postrun_candidate_visualization",
             "alignment": "original candidate frame; no GT alignment"
+          },
+          "comparison_view": {
+            "alignment": "fixed_frame",
+            "note": "参考以冻结姿态和公开零件重建于原观察坐标。候选用提交的观察变换。历史仅比较观察图，不存在 3D 几何评分。"
+          },
+          "reference_geometry": {
+            "source_geometry_sha256": "512767e8d87dc0d32b3722f9986b78451099e274c1a3bc317b2bfeffca3a83bc",
+            "sha256": "ff62e1177fcdd60ee6acb14d7cf5a6a1170185f00b1cdfa1b8ab4a794cfea6ed",
+            "source_role": "hidden_static_gt_poses",
+            "label": "评测参考 · 冻结观察构型",
+            "role": "postrun_reference_visualization",
+            "triangles": 23429,
+            "bounds": [
+              [
+                -261.0075988769531,
+                -551.5392456054688,
+                364.26800537109375
+              ],
+              [
+                -157.5913848876953,
+                124.4154281616211,
+                931.3226928710938
+              ]
+            ],
+            "evaluation_receipt_sha256": "5dedb620dde4ef6047bb284e8a4493f68e3e2dec395698f8fd506846239705c8",
+            "scoring_relation": "observation_source_geometry_not_direct_3d_grade"
           }
         }
       ]
@@ -1540,5 +1578,6 @@
   "source_bundle_sha256": null,
   "source_archive_sha256": "3af3d3aced5832b12c9ed94a4b78fcba5a8119f4aad5b2442956f403644739e4",
   "presentation_source_bundle_sha256": "37f99af964df31fcd92b681600659084c8e2cf0b91babb7e0f7193fa8ef05418",
-  "bundle_sha256": "040d0f34d6e86f84dc61978bd97101a96b87a434eacc6c9978720780f2a088bb"
+  "reference_source_bundle_sha256": "040d0f34d6e86f84dc61978bd97101a96b87a434eacc6c9978720780f2a088bb",
+  "bundle_sha256": "c1444be5ad891d3b17ec4b3ef7addf4458045acd92498431e635a25b2385bdff"
 }
