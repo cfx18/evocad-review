@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EvoCAD Geometry Review</title>
-  <link rel="stylesheet" href="styles.css?v=13">
+  <link rel="stylesheet" href="styles.css?v=14">
   <link rel="stylesheet" href="benchmark-metrics.css">
 </head>
 <body>
@@ -65,7 +65,8 @@
       </nav>
 
       <section class="tab-panel active" id="evidencePanel">
-        <div class="reference-evidence">
+        <details class="extra-evidence" id="taskPrompt" hidden><summary id="taskPromptLabel">任务说明</summary><pre id="taskPromptText"></pre></details>
+        <div class="reference-evidence" id="inputEvidence">
           <figure><figcaption>Agent input <span>input visible during modeling</span></figcaption><button class="image-button reference-image" data-image="input" type="button" disabled><img id="inputImage" alt="Agent input image"></button><div class="image-switcher" id="inputSwitcher"></div></figure>
         </div>
         <div class="geometry-grid">
@@ -73,6 +74,9 @@
           <figure><figcaption>Candidate <span id="candidateCaption"></span></figcaption><div class="geometry-viewer" id="candidateViewer"><canvas aria-label="Interactive candidate geometry"></canvas><img id="candidateImage" class="geometry-fallback" alt="Candidate geometry render"><div class="viewer-status" role="status"></div><button class="reset-view" type="button" title="Reset synchronized view" aria-label="Reset synchronized view">Reset</button></div><div class="image-caption" id="candidateState"></div></figure>
           <figure><figcaption>Aligned overlay <span>blue truth / orange candidate</span></figcaption><div class="geometry-viewer" id="overlayViewer"><canvas aria-label="Interactive aligned geometry overlay"></canvas><img id="overlayImage" class="geometry-fallback" alt="Aligned candidate and ground truth overlay"><div class="viewer-status" role="status"></div><button class="reset-view" type="button" title="Reset synchronized view" aria-label="Reset synchronized view">Reset</button></div><div class="image-caption" id="overlayState"></div></figure>
         </div>
+        <section class="extra-evidence" id="candidateGallery" hidden aria-label="候选产物视图"></section>
+        <section class="extra-evidence" id="attemptArtifacts" hidden aria-label="候选产物文件"></section>
+        <section class="extra-evidence" id="attemptCode" hidden aria-label="建模源文件"></section>
         <section class="localization-panel">
           <header><div><h2>Localized surface mismatch</h2><p id="localizationHint"></p></div><div class="localization-legend"><span class="missing-swatch"></span>Missing or displaced<span class="excess-swatch"></span>Excess or displaced</div></header>
           <div class="localization-regions" id="localizationRegions"></div>
@@ -80,6 +84,7 @@
       </section>
 
       <section class="tab-panel" id="verifierPanel">
+        <section class="extra-evidence" id="evaluationScope" hidden aria-label="评测口径"></section>
         <div id="benchmarkComparison"></div>
         <div class="verifier-layout">
           <div><h2>Protocol checks</h2><div class="check-list" id="checkList"></div></div>
@@ -89,11 +94,12 @@
       </section>
 
       <section class="tab-panel" id="reflectionPanel">
-        <div class="reflection-note">Only recorded agent messages and submitted reflection are shown. Hidden chain-of-thought is not part of the review evidence.</div>
+        <div class="reflection-note" id="reflectionNote">Only recorded agent messages and submitted reflection are shown. Hidden chain-of-thought is not part of the review evidence.</div>
+        <section class="extra-evidence" id="modelFinalResponse" hidden><h2>模型保存的最终回复</h2><pre id="modelFinalResponseText"></pre></section>
         <div class="iteration-decision" id="iterationDecision"></div>
         <details class="feedback-packet"><summary>Exact feedback packet delivered to agent</summary><pre id="feedbackPacket"></pre></details>
         <div class="reflection-grid" id="reflectionContent"></div>
-        <h2>Public action and feedback trace</h2>
+        <h2 id="publicEventsHeading">Public action and feedback trace</h2>
         <div class="timeline" id="publicEvents"></div>
       </section>
 
@@ -154,6 +160,6 @@
   </dialog>
   <script src="vendor/lucide/lucide.min.js"></script>
   <script src="benchmark-metrics.js"></script>
-  <script src="app.js?v=13"></script>
+  <script src="app.js?v=14"></script>
 </body>
 </html>

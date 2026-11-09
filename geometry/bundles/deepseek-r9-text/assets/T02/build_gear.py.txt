@@ -1,0 +1,830 @@
+"""Rebuild the specified 24-tooth spiral bevel gear as a STEP B-Rep.
+
+Conventions:
+  * Units are millimetres.
+  * The pitch-cone apex is the origin.
+  * The gear axis is +Z.
+  * The mathematical spherical profile is defined on a unit sphere and then
+    scaled by rho, as specified in public/task.json.
+
+Only the public task parameters are used.  The tooth flanks are ruled/lofted
+B-Rep surfaces through the prescribed spherical involutes; no tessellation is
+used for the tooth surfaces.
+"""
+
+from __future__ import annotations
+
+import json
+import math
+import sys
+import time
+from pathlib import Path
+
+POSTTRAIN_SITE_PACKAGES = Path(
+    '<local dependency path omitted>'
+)
+if str(POSTTRAIN_SITE_PACKAGES) not in sys.path:
+    sys.path.insert(0, str(POSTTRAIN_SITE_PACKAGES))
+
+import cadquery as cq
+from OCP.BRep import BRep_Builder, BRep_Tool
+from OCP.BRepAdaptor import BRepAdaptor_Surface
+from OCP.BRepBuilderAPI import (
+    BRepBuilderAPI_MakeEdge,
+    BRepBuilderAPI_MakeFace,
+    BRepBuilderAPI_MakeSolid,
+    BRepBuilderAPI_MakeVertex,
+    BRepBuilderAPI_MakeWire,
+    BRepBuilderAPI_Sewing,
+)
+from OCP.BRepCheck import BRepCheck_Analyzer
+from OCP.BRepClass3d import BRepClass3d_SolidClassifier
+from OCP.BRepExtrema import BRepExtrema_DistShapeShape
+from OCP.BRepFill import BRepFill_Filling
+from OCP.BRepOffsetAPI import BRepOffsetAPI_ThruSections
+from OCP.BRepPrimAPI import BRepPrimAPI_MakeRevol
+from OCP.GeomAbs import GeomAbs_C0, GeomAbs_Cylinder
+from OCP.GeomAPI import GeomAPI_Interpolate
+from OCP.GC import GC_MakeArcOfCircle, GC_MakeSegment
+from OCP.gp import gp_Ax1, gp_Dir, gp_Pnt
+from OCP.IFSelect import IFSelect_RetDone
+from OCP.Interface import Interface_Static
+from OCP.STEPControl import (
+    STEPControl_AsIs,
+    STEPControl_Reader,
+    STEPControl_Writer,
+)
+from OCP.ShapeFix import ShapeFix_Solid
+from OCP.TColgp import TColgp_HArray1OfPnt
+from OCP.TopAbs import (
+    TopAbs_EDGE,
+    TopAbs_FACE,
+    TopAbs_IN,
+    TopAbs_ON,
+    TopAbs_OUT,
+    TopAbs_SHELL,
+    TopAbs_SOLID,
+)
+from OCP.TopExp import TopExp_Explorer
+from OCP.TopoDS import TopoDS, TopoDS_Compound
+
+
+# Task parameters.
+MODULE = 2.0
+TOOTH_COUNT = 24
+PRESSURE_ANGLE = math.radians(20.0)
+PITCH_CONE_HALF_ANGLE = math.pi / 4.0
+FACE_WIDTH = 8.0
+SPIRAL_ANGLE = math.radians(15.0)
+AXLE_HOLE_DIAMETER = 8.0
+PITCH_RADIUS = MODULE * TOOTH_COUNT / 2.0
+
+# Derived parameters from the task specification.
+CONE_DISTANCE = PITCH_RADIUS / math.sin(PITCH_CONE_HALF_ANGLE)
+BASE_CONE_HALF_ANGLE = math.asin(
+    math.cos(PRESSURE_ANGLE) * math.sin(PITCH_CONE_HALF_ANGLE)
+)
+TIP_CONE_HALF_ANGLE = PITCH_CONE_HALF_ANGLE + math.atan(
+    MODULE / CONE_DISTANCE
+)
+ROOT_CONE_HALF_ANGLE = PITCH_CONE_HALF_ANGLE - math.atan(
+    1.25 * MODULE / CONE_DISTANCE
+)
+INNER_CONE_DISTANCE = CONE_DISTANCE - FACE_WIDTH
+
+SPIRAL_TWIST = 2.0 * math.asin(
+    (CONE_DISTANCE / PITCH_RADIUS)
+    * math.sin(
+        math.atan(
+            FACE_WIDTH
+            * math.tan(SPIRAL_ANGLE)
+            / (2.0 * CONE_DISTANCE - FACE_WIDTH)
+        )
+    )
+)
+
+# The root closure is deliberately kept within one tooth pitch.  It is a
+# support/root detail, and the task permits implementations different from the
+# hidden reference in this non-working region.
+ROOT_CLOSURE_DROP = math.radians(2.5)
+ROOT_CLOSURE_ANGLE = BASE_CONE_HALF_ANGLE - ROOT_CLOSURE_DROP
+
+# Web and bore.  The spherical outside of the web coincides with the inner
+# end of the toothed annulus (rho = G-w), so it cannot cover working flanks.
+WEB_GAMMA_LOW = ROOT_CLOSURE_ANGLE - math.radians(2.0)
+WEB_GAMMA_HIGH = TIP_CONE_HALF_ANGLE + math.radians(2.0)
+# A 0.005 mm radial overlap guarantees a robust boolean union without moving
+# the measurable working surfaces beyond the task's 0.05 mm modeling band.
+WEB_SPHERE_RADIUS = INNER_CONE_DISTANCE + 0.005
+BORE_RADIUS = AXLE_HOLE_DIAMETER / 2.0
+HUB_RADIUS = 8.0
+HUB_BOTTOM_Z = 3.0
+HUB_TOP_Z = 21.0
+
+# B-Rep sampling controls.  These values give substantially tighter accuracy
+# than the 0.05 mm acceptance tolerance.
+RADIAL_SECTIONS = 33
+FLANK_SAMPLES = 33
+TIP_SAMPLES = 33
+ROOT_ARC_SAMPLES = 33
+ROOT_CONNECTOR_SAMPLES = 9
+MODELING_TOLERANCE = 2.0e-6
+SEWING_TOLERANCE = 2.0e-5
+
+
+def clamp_unit(value: float) -> float:
+    return max(-1.0, min(1.0, value))
+
+
+def spherical_involute(gamma: float) -> float:
+    """I(gamma) from the task specification."""
+    first = math.acos(
+        clamp_unit(math.cos(gamma) / math.cos(BASE_CONE_HALF_ANGLE))
+    ) / math.sin(BASE_CONE_HALF_ANGLE)
+    second = math.acos(
+        clamp_unit(
+            math.tan(BASE_CONE_HALF_ANGLE) / math.tan(gamma)
+        )
+    )
+    return first - second
+
+
+PITCH_INVOLUTE = spherical_involute(PITCH_CONE_HALF_ANGLE)
+PROFILE_CENTER_PHASE = math.pi / (2.0 * TOOTH_COUNT) + PITCH_INVOLUTE
+
+
+def left_azimuth(gamma: float) -> float:
+    # A global phase shift of -PROFILE_CENTER_PHASE centers tooth zero on the
+    # +Y meridian.  The task explicitly permits an overall phase difference.
+    return spherical_involute(gamma) - PROFILE_CENTER_PHASE
+
+
+def right_azimuth(gamma: float) -> float:
+    return (
+        math.pi / TOOTH_COUNT
+        + 2.0 * PITCH_INVOLUTE
+        - spherical_involute(gamma)
+        - PROFILE_CENTER_PHASE
+    )
+
+
+def spiral_rotation(rho: float) -> float:
+    return (CONE_DISTANCE - rho) * SPIRAL_TWIST / FACE_WIDTH
+
+
+def spherical_point(
+    rho: float, gamma: float, azimuth: float, rotation: float = 0.0
+) -> gp_Pnt:
+    angle = azimuth + rotation
+    return gp_Pnt(
+        rho * math.sin(gamma) * math.sin(angle),
+        rho * math.sin(gamma) * math.cos(angle),
+        rho * math.cos(gamma),
+    )
+
+
+def interpolated_edge(points: list[gp_Pnt]):
+    """Create one smooth 3-D B-spline edge through the supplied points."""
+    points_array = TColgp_HArray1OfPnt(1, len(points))
+    for index, point in enumerate(points, start=1):
+        points_array.SetValue(index, point)
+
+    interpolation = GeomAPI_Interpolate(
+        points_array, False, MODELING_TOLERANCE
+    )
+    interpolation.Perform()
+    if not interpolation.IsDone():
+        raise RuntimeError("3-D B-spline interpolation failed")
+
+    edge_builder = BRepBuilderAPI_MakeEdge(interpolation.Curve())
+    if not edge_builder.IsDone():
+        raise RuntimeError("B-Rep edge construction failed")
+    return edge_builder.Edge()
+
+
+def tooth_section(rho: float):
+    """Closed 3-D section of one tooth on the sphere of radius rho."""
+    rotation = spiral_rotation(rho)
+
+    gammas = [
+        BASE_CONE_HALF_ANGLE
+        + (TIP_CONE_HALF_ANGLE - BASE_CONE_HALF_ANGLE)
+        * index
+        / (FLANK_SAMPLES - 1)
+        for index in range(FLANK_SAMPLES)
+    ]
+
+    left_base = left_azimuth(BASE_CONE_HALF_ANGLE)
+    right_base = right_azimuth(BASE_CONE_HALF_ANGLE)
+    left_tip = left_azimuth(TIP_CONE_HALF_ANGLE)
+    right_tip = right_azimuth(TIP_CONE_HALF_ANGLE)
+
+    left_flank = [
+        spherical_point(
+            rho, gamma, left_azimuth(gamma), rotation
+        )
+        for gamma in gammas
+    ]
+    tip_arc = [
+        spherical_point(
+            rho,
+            TIP_CONE_HALF_ANGLE,
+            left_tip
+            + (right_tip - left_tip) * index / (TIP_SAMPLES - 1),
+            rotation,
+        )
+        for index in range(TIP_SAMPLES)
+    ]
+    right_flank = [
+        spherical_point(
+            rho, gamma, right_azimuth(gamma), rotation
+        )
+        for gamma in reversed(gammas)
+    ]
+
+    right_root_connector = [
+        spherical_point(
+            rho,
+            ROOT_CLOSURE_ANGLE
+            + (BASE_CONE_HALF_ANGLE - ROOT_CLOSURE_ANGLE)
+            * index
+            / (ROOT_CONNECTOR_SAMPLES - 1),
+            right_base,
+            rotation,
+        )
+        for index in range(ROOT_CONNECTOR_SAMPLES)
+    ]
+    root_arc = [
+        spherical_point(
+            rho,
+            ROOT_CLOSURE_ANGLE,
+            right_base
+            + (left_base - right_base)
+            * index
+            / (ROOT_ARC_SAMPLES - 1),
+            rotation,
+        )
+        for index in range(ROOT_ARC_SAMPLES)
+    ]
+    left_root_connector = [
+        spherical_point(
+            rho,
+            BASE_CONE_HALF_ANGLE
+            + (ROOT_CLOSURE_ANGLE - BASE_CONE_HALF_ANGLE)
+            * index
+            / (ROOT_CONNECTOR_SAMPLES - 1),
+            left_base,
+            rotation,
+        )
+        for index in range(ROOT_CONNECTOR_SAMPLES)
+    ]
+
+    wire_builder = BRepBuilderAPI_MakeWire()
+    for curve_points in (
+        left_flank,
+        tip_arc,
+        right_flank,
+        right_root_connector,
+        root_arc,
+        left_root_connector,
+    ):
+        wire_builder.Add(interpolated_edge(curve_points))
+    wire_builder.Build()
+    if not wire_builder.IsDone():
+        raise RuntimeError("Closed tooth-section wire construction failed")
+    return wire_builder.Wire()
+
+
+def filled_end_cap(section_wire):
+    """Create a smooth B-Rep face bounded by a non-planar section wire."""
+    filling = BRepFill_Filling()
+    edge_explorer = TopExp_Explorer(section_wire, TopAbs_EDGE)
+    edge_count = 0
+    while edge_explorer.More():
+        filling.Add(TopoDS.Edge_s(edge_explorer.Current()), GeomAbs_C0)
+        edge_count += 1
+        edge_explorer.Next()
+    if edge_count == 0:
+        raise RuntimeError("Cannot fill a tooth section without boundary edges")
+
+    filling.Build()
+    if not filling.IsDone():
+        raise RuntimeError("Tooth end-cap filling failed")
+    if filling.G0Error() > 1.0e-4:
+        raise RuntimeError(
+            f"Tooth end-cap G0 error is too large: {filling.G0Error():.3e}"
+        )
+    return filling.Face()
+
+
+def make_one_tooth():
+    """Create one closed, valid tooth solid."""
+    start_time = time.monotonic()
+    sections = [
+        tooth_section(
+            CONE_DISTANCE
+            - FACE_WIDTH * index / (RADIAL_SECTIONS - 1)
+        )
+        for index in range(RADIAL_SECTIONS)
+    ]
+
+    side_loft = BRepOffsetAPI_ThruSections(
+        False, False, MODELING_TOLERANCE
+    )
+    side_loft.CheckCompatibility(False)
+    side_loft.SetSmoothing(False)
+    side_loft.SetMaxDegree(5)
+    for section in sections:
+        side_loft.AddWire(section)
+    side_loft.Build()
+    if not side_loft.IsDone():
+        raise RuntimeError("Tooth side-surface loft failed")
+
+    sewing = BRepBuilderAPI_Sewing(
+        SEWING_TOLERANCE, True, True, False, True
+    )
+    face_explorer = TopExp_Explorer(side_loft.Shape(), TopAbs_FACE)
+    while face_explorer.More():
+        sewing.Add(face_explorer.Current())
+        face_explorer.Next()
+    sewing.Add(filled_end_cap(sections[0]))
+    sewing.Add(filled_end_cap(sections[-1]))
+    sewing.Perform()
+
+    sewn_shape = sewing.SewedShape()
+    if sewn_shape.ShapeType() != TopAbs_SHELL:
+        raise RuntimeError(
+            f"Expected a sewn shell, got {sewn_shape.ShapeType()}"
+        )
+    sewn_shell = TopoDS.Shell_s(sewn_shape)
+    if not BRep_Tool.IsClosed_s(sewn_shell):
+        raise RuntimeError("Sewn tooth shell is not closed")
+
+    solid_builder = BRepBuilderAPI_MakeSolid(sewn_shell)
+    if not solid_builder.IsDone():
+        raise RuntimeError("Tooth shell could not be converted to a solid")
+    solid = solid_builder.Solid()
+
+    solid_fixer = ShapeFix_Solid(solid)
+    solid_fixer.SetPrecision(1.0e-6)
+    solid_fixer.SetMinTolerance(1.0e-7)
+    solid_fixer.SetMaxTolerance(1.0e-3)
+    solid_fixer.Perform()
+    solid = solid_fixer.Solid()
+
+    if not BRepCheck_Analyzer(solid).IsValid():
+        raise RuntimeError("One-tooth B-Rep failed OCCT validity checking")
+    assert_count(solid, TopAbs_SOLID, 1, "one-tooth solid")
+
+    print(
+        f"One tooth B-Rep built in {time.monotonic() - start_time:.2f} s "
+        f"({RADIAL_SECTIONS} radial sections)"
+    )
+    return solid
+
+
+def assert_count(shape, shape_type, expected: int, label: str) -> None:
+    explorer = TopExp_Explorer(shape, shape_type)
+    count = 0
+    while explorer.More():
+        count += 1
+        explorer.Next()
+    if count != expected:
+        raise RuntimeError(f"{label}: expected {expected}, found {count}")
+
+
+def rotate_z(shape, angle: float):
+    return shape.rotate(
+        (0.0, 0.0, 0.0),
+        (0.0, 0.0, 1.0),
+        math.degrees(angle),
+    )
+
+
+def make_web():
+    """Revolved wedge wholly inside the tooth's inner spherical envelope."""
+    radius = WEB_SPHERE_RADIUS
+    apex = gp_Pnt(0.0, 0.0, 0.0)
+    low_point = gp_Pnt(
+        radius * math.sin(WEB_GAMMA_LOW),
+        0.0,
+        radius * math.cos(WEB_GAMMA_LOW),
+    )
+    mid_gamma = 0.5 * (WEB_GAMMA_LOW + WEB_GAMMA_HIGH)
+    mid_point = gp_Pnt(
+        radius * math.sin(mid_gamma),
+        0.0,
+        radius * math.cos(mid_gamma),
+    )
+    high_point = gp_Pnt(
+        radius * math.sin(WEB_GAMMA_HIGH),
+        0.0,
+        radius * math.cos(WEB_GAMMA_HIGH),
+    )
+
+    lower_edge = BRepBuilderAPI_MakeEdge(
+        GC_MakeSegment(apex, low_point).Value()
+    ).Edge()
+    outer_arc = BRepBuilderAPI_MakeEdge(
+        GC_MakeArcOfCircle(low_point, mid_point, high_point).Value()
+    ).Edge()
+    upper_edge = BRepBuilderAPI_MakeEdge(
+        GC_MakeSegment(high_point, apex).Value()
+    ).Edge()
+
+    wire_builder = BRepBuilderAPI_MakeWire()
+    for edge in (lower_edge, outer_arc, upper_edge):
+        wire_builder.Add(edge)
+    wire_builder.Build()
+    if not wire_builder.IsDone():
+        raise RuntimeError("Web meridian wire construction failed")
+
+    face_builder = BRepBuilderAPI_MakeFace(wire_builder.Wire(), True)
+    if not face_builder.IsDone():
+        raise RuntimeError("Web meridian face construction failed")
+
+    revolution = BRepPrimAPI_MakeRevol(
+        face_builder.Face(),
+        gp_Ax1(apex, gp_Dir(0.0, 0.0, 1.0)),
+        2.0 * math.pi,
+        True,
+    )
+    revolution.Build()
+    if not revolution.IsDone():
+        raise RuntimeError("Web revolution failed")
+    if not BRepCheck_Analyzer(revolution.Shape()).IsValid():
+        raise RuntimeError("Web B-Rep failed OCCT validity checking")
+    return revolution.Shape()
+
+
+def build_gear():
+    start_time = time.monotonic()
+    tooth = cq.Shape.cast(make_one_tooth())
+    teeth = [
+        rotate_z(tooth, 2.0 * math.pi * index / TOOTH_COUNT)
+        for index in range(TOOTH_COUNT)
+    ]
+
+    # A compact revolved backing web, wholly inside rho <= G-w.
+    web = cq.Shape.cast(make_web())
+    hub = cq.Solid.makeCylinder(
+        HUB_RADIUS,
+        HUB_TOP_Z - HUB_BOTTOM_Z,
+        (0.0, 0.0, HUB_BOTTOM_Z),
+        (0.0, 0.0, 1.0),
+    )
+
+    print(f"Fusing {TOOTH_COUNT} teeth, web, and hub...")
+    fused = hub.fuse(web, *teeth, tol=2.0e-5)
+    print(f"Fusion completed in {time.monotonic() - start_time:.2f} s")
+
+    through_hole = cq.Solid.makeCylinder(
+        BORE_RADIUS,
+        100.0,
+        (0.0, 0.0, -20.0),
+        (0.0, 0.0, 1.0),
+    )
+    gear = fused.cut(through_hole, tol=2.0e-5)
+    gear = gear.clean()
+
+    if not BRepCheck_Analyzer(gear.wrapped).IsValid():
+        raise RuntimeError("Final gear failed OCCT validity checking")
+    assert_count(gear.wrapped, TopAbs_SOLID, 1, "final gear solid")
+
+    total_time = time.monotonic() - start_time
+    print(
+        f"Gear built: volume={gear.Volume():.6f} mm^3, "
+        f"faces={len(gear.Faces())}, edges={len(gear.Edges())}, "
+        f"elapsed={total_time:.2f} s"
+    )
+    return gear, tooth
+
+
+def face_compound(shape):
+    compound = TopoDS_Compound()
+    builder = BRep_Builder()
+    builder.MakeCompound(compound)
+    face_explorer = TopExp_Explorer(shape, TopAbs_FACE)
+    face_count = 0
+    while face_explorer.More():
+        builder.Add(compound, face_explorer.Current())
+        face_count += 1
+        face_explorer.Next()
+    if face_count == 0:
+        raise RuntimeError("Cannot make a boundary-face compound")
+    return compound
+
+
+def point_distance(point: gp_Pnt, boundary_shape) -> float:
+    vertex = BRepBuilderAPI_MakeVertex(point).Vertex()
+    distance = BRepExtrema_DistShapeShape(vertex, boundary_shape)
+    distance.Perform()
+    if not distance.IsDone():
+        raise RuntimeError("Point-to-B-Rep distance evaluation failed")
+    return distance.Value()
+
+
+def verify_working_flanks(tooth_shape) -> dict[str, float]:
+    """Sample the specified involute and tip surfaces on the actual B-Rep."""
+    maximum_flank_error = 0.0
+    maximum_tip_error = 0.0
+    boundary = face_compound(tooth_shape)
+
+    rho_values = [
+        INNER_CONE_DISTANCE
+        + 0.01
+        + (FACE_WIDTH - 0.01) * index / 12.0
+        for index in range(12)
+    ]
+    gamma_values = [
+        BASE_CONE_HALF_ANGLE
+        + (TIP_CONE_HALF_ANGLE - BASE_CONE_HALF_ANGLE) * index / 8.0
+        for index in range(9)
+    ]
+
+    for rho in rho_values:
+        rotation = spiral_rotation(rho)
+        for gamma in gamma_values:
+            for azimuth in (
+                left_azimuth(gamma),
+                right_azimuth(gamma),
+            ):
+                actual = point_distance(
+                    spherical_point(rho, gamma, azimuth, rotation),
+                    boundary,
+                )
+                maximum_flank_error = max(maximum_flank_error, actual)
+
+        left_tip = left_azimuth(TIP_CONE_HALF_ANGLE)
+        right_tip = right_azimuth(TIP_CONE_HALF_ANGLE)
+        for index in range(9):
+            azimuth = (
+                left_tip
+                + (right_tip - left_tip) * index / 8.0
+            )
+            actual = point_distance(
+                spherical_point(
+                    rho,
+                    TIP_CONE_HALF_ANGLE,
+                    azimuth,
+                    rotation,
+                ),
+                boundary,
+            )
+            maximum_tip_error = max(maximum_tip_error, actual)
+
+    if maximum_flank_error > 0.005:
+        raise RuntimeError(
+            f"Working-flank sampling error is too large: "
+            f"{maximum_flank_error:.6f} mm"
+        )
+    if maximum_tip_error > 0.005:
+        raise RuntimeError(
+            f"Tip-arc sampling error is too large: "
+            f"{maximum_tip_error:.6f} mm"
+        )
+
+    print(
+        f"Surface checks: max flank error={maximum_flank_error:.6f} mm, "
+        f"max tip error={maximum_tip_error:.6f} mm"
+    )
+    return {
+        "max_working_flank_error_mm": maximum_flank_error,
+        "max_tip_arc_error_mm": maximum_tip_error,
+    }
+
+
+def verify_tooth_count_and_bore(shape) -> dict[str, float | int]:
+    solid_explorer = TopExp_Explorer(shape, TopAbs_SOLID)
+    if not solid_explorer.More():
+        raise RuntimeError("Topology check found no solid")
+    solid = TopoDS.Solid_s(solid_explorer.Current())
+
+    pitch_radius = CONE_DISTANCE * math.sin(PITCH_CONE_HALF_ANGLE)
+    pitch_z = CONE_DISTANCE * math.cos(PITCH_CONE_HALF_ANGLE)
+    tooth_states = []
+    slot_states = []
+    for index in range(TOOTH_COUNT):
+        tooth_angle = 2.0 * math.pi * index / TOOTH_COUNT
+        slot_angle = 2.0 * math.pi * (index + 0.5) / TOOTH_COUNT
+        tooth_point = gp_Pnt(
+            pitch_radius * math.sin(tooth_angle),
+            pitch_radius * math.cos(tooth_angle),
+            pitch_z,
+        )
+        slot_point = gp_Pnt(
+            pitch_radius * math.sin(slot_angle),
+            pitch_radius * math.cos(slot_angle),
+            pitch_z,
+        )
+        tooth_classifier = BRepClass3d_SolidClassifier(
+            solid, tooth_point, 1.0e-7
+        )
+        slot_classifier = BRepClass3d_SolidClassifier(
+            solid, slot_point, 1.0e-7
+        )
+        tooth_states.append(tooth_classifier.State())
+        slot_states.append(slot_classifier.State())
+
+    tooth_solid_count = sum(
+        state in (TopAbs_IN, TopAbs_ON) for state in tooth_states
+    )
+    tooth_slot_count = sum(
+        state in (TopAbs_OUT, TopAbs_ON) for state in slot_states
+    )
+    if tooth_solid_count != TOOTH_COUNT:
+        raise RuntimeError(
+            f"Tooth-count check failed: {tooth_solid_count}/"
+            f"{TOOTH_COUNT} pitch centers are solid"
+        )
+    if tooth_slot_count != TOOTH_COUNT:
+        raise RuntimeError(
+            f"Tooth-spacing check failed: {tooth_slot_count}/"
+            f"{TOOTH_COUNT} slots are open"
+        )
+
+    bore_cylinders = []
+    face_explorer = TopExp_Explorer(shape, TopAbs_FACE)
+    while face_explorer.More():
+        face = TopoDS.Face_s(face_explorer.Current())
+        surface = BRepAdaptor_Surface(face, True)
+        if surface.GetType() == GeomAbs_Cylinder:
+            cylinder = surface.Cylinder()
+            radius = cylinder.Radius()
+            axis = cylinder.Axis()
+            if abs(radius - BORE_RADIUS) < 1.0e-5:
+                bore_cylinders.append((face, radius, axis))
+        face_explorer.Next()
+    if not bore_cylinders:
+        raise RuntimeError("No cylindrical diameter-8 bore face was found")
+
+    bore_face, bore_radius, bore_axis = bore_cylinders[0]
+    axis_x = bore_axis.Location().X()
+    axis_y = bore_axis.Location().Y()
+    axis_z = abs(bore_axis.Direction().Z())
+    if max(abs(axis_x), abs(axis_y)) > 1.0e-6 or axis_z < 1.0 - 1.0e-7:
+        raise RuntimeError("Diameter-8 bore is not coaxial with +Z")
+
+    from OCP.Bnd import Bnd_Box
+    from OCP.BRepBndLib import BRepBndLib
+
+    bore_box = Bnd_Box()
+    BRepBndLib.Add_s(bore_face, bore_box, 1.0e-7)
+    bore_bounds = bore_box.Get()
+    bore_length = bore_bounds[5] - bore_bounds[2]
+    if bore_length <= 0.1:
+        raise RuntimeError("Diameter-8 bore face has no usable through depth")
+
+    # Probe the hub wall on both sides of the expected cylindrical surface.
+    # The axis itself must be empty through the full hub height.
+    probe_z_values = [
+        HUB_BOTTOM_Z + 0.25,
+        HUB_BOTTOM_Z + 4.5,
+        0.5 * (HUB_BOTTOM_Z + HUB_TOP_Z),
+        HUB_TOP_Z - 4.5,
+        HUB_TOP_Z - 0.25,
+    ]
+    for probe_z in probe_z_values:
+        axis_probe = BRepClass3d_SolidClassifier(
+            solid, gp_Pnt(0.0, 0.0, probe_z), 1.0e-7
+        )
+        wall_probe = BRepClass3d_SolidClassifier(
+            solid,
+            gp_Pnt(BORE_RADIUS + 1.0, 0.0, probe_z),
+            1.0e-7,
+        )
+        if axis_probe.State() != TopAbs_OUT:
+            raise RuntimeError(
+                f"Bore axis is obstructed at z={probe_z:.6f} mm"
+            )
+        if wall_probe.State() not in (TopAbs_IN, TopAbs_ON):
+            raise RuntimeError(
+                f"Hub wall is missing at z={probe_z:.6f} mm"
+            )
+
+    print(
+        f"Topology checks: {tooth_solid_count} teeth, "
+        f"{tooth_slot_count} open slots, bore Ø{2.0 * bore_radius:.6f} mm "
+        f"through {bore_length:.6f} mm"
+    )
+    return {
+        "detected_tooth_count": tooth_solid_count,
+        "open_slot_count": tooth_slot_count,
+        "bore_radius_mm": bore_radius,
+        "bore_length_mm": bore_length,
+    }
+
+
+def write_step(shape, path: Path) -> None:
+    Interface_Static.SetCVal_s("write.step.unit", "MM")
+    Interface_Static.SetCVal_s("write.step.schema", "AP214IS")
+    writer = STEPControl_Writer()
+    transfer_status = writer.Transfer(shape.wrapped, STEPControl_AsIs)
+    if transfer_status != IFSelect_RetDone:
+        raise RuntimeError(
+            f"STEP transfer failed with status {transfer_status}"
+        )
+    write_status = writer.Write(str(path))
+    if write_status != IFSelect_RetDone:
+        raise RuntimeError(
+            f"STEP writing failed with status {write_status}"
+        )
+
+
+def read_step_shape(path: Path):
+    reader = STEPControl_Reader()
+    status = reader.ReadFile(str(path))
+    if status != IFSelect_RetDone:
+        raise RuntimeError(f"STEP readback failed with status {status}")
+    if not reader.TransferRoots():
+        raise RuntimeError("STEP readback transferred no roots")
+    shape = reader.OneShape()
+    if shape.IsNull():
+        raise RuntimeError("STEP readback returned a null shape")
+    return shape
+
+
+def main() -> None:
+    workspace = Path(__file__).resolve().parent
+    output_path = workspace / "candidate.step"
+    result_path = workspace / "build_result.json"
+
+    gear, tooth = build_gear()
+    surface_metrics = verify_working_flanks(tooth.wrapped)
+    write_step(gear, output_path)
+    if not output_path.exists() or output_path.stat().st_size == 0:
+        raise RuntimeError("candidate.step was not created")
+
+    readback = read_step_shape(output_path)
+    readback_valid = BRepCheck_Analyzer(readback).IsValid()
+    if not readback_valid:
+        raise RuntimeError("Exported STEP failed readback validity checking")
+    assert_count(readback, TopAbs_SOLID, 1, "exported STEP solid")
+    readback_metrics = verify_working_flanks(readback)
+    topology_metrics = verify_tooth_count_and_bore(readback)
+
+    result = {
+        "task_id": "text-02",
+        "units": "mm",
+        "coordinate_frame": {
+            "origin": "pitch-cone apex",
+            "axis": "+Z",
+        },
+        "parameters": {
+            "module_mm": MODULE,
+            "tooth_count": TOOTH_COUNT,
+            "pressure_angle_deg": 20.0,
+            "pitch_cone_half_angle_deg": 45.0,
+            "face_width_mm": FACE_WIDTH,
+            "spiral_angle_deg": 15.0,
+            "axle_hole_diameter_mm": AXLE_HOLE_DIAMETER,
+            "cone_distance_mm": CONE_DISTANCE,
+            "base_cone_half_angle_deg": math.degrees(
+                BASE_CONE_HALF_ANGLE
+            ),
+            "tip_cone_half_angle_deg": math.degrees(
+                TIP_CONE_HALF_ANGLE
+            ),
+            "root_cone_half_angle_deg": math.degrees(
+                ROOT_CONE_HALF_ANGLE
+            ),
+            "spiral_twist_rad": SPIRAL_TWIST,
+            "spiral_twist_deg": math.degrees(SPIRAL_TWIST),
+        },
+        "validation": {
+            "step_exists": True,
+            "step_size_bytes": output_path.stat().st_size,
+            "solid_count": 1,
+            "valid_brep": bool(
+                BRepCheck_Analyzer(gear.wrapped).IsValid()
+            ),
+            "step_readback_valid": readback_valid,
+            "volume_mm3": gear.Volume(),
+            "face_count": len(gear.Faces()),
+            "edge_count": len(gear.Edges()),
+            "step_readback_volume_mm3": cq.Shape.cast(readback).Volume(),
+            "source_max_working_flank_error_mm": surface_metrics[
+                "max_working_flank_error_mm"
+            ],
+            "source_max_tip_arc_error_mm": surface_metrics[
+                "max_tip_arc_error_mm"
+            ],
+            "exported_max_working_flank_error_mm": readback_metrics[
+                "max_working_flank_error_mm"
+            ],
+            "exported_max_tip_arc_error_mm": readback_metrics[
+                "max_tip_arc_error_mm"
+            ],
+            **topology_metrics,
+        },
+    }
+    result_path.write_text(
+        json.dumps(result, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    print(f"Wrote {output_path} ({output_path.stat().st_size} bytes)")
+    print(f"Wrote {result_path}")
+
+
+if __name__ == "__main__":
+    main()

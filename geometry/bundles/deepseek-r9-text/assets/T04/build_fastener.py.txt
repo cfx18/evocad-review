@@ -1,0 +1,290 @@
+#!/usr/bin/env python3
+"""Build the text-04 left-hand hollow threaded fastener.
+
+All dimensions are in millimetres.  The global Z axis is the fastener axis.
+The script intentionally uses only CadQuery/OCP from the supplied geometry
+environment and writes candidate.step beside this source file.
+"""
+
+from __future__ import annotations
+
+import json
+import math
+import sys
+from pathlib import Path
+
+GEOMETRY_SITE_PACKAGES = Path(
+    '<local dependency path omitted>'
+)
+if GEOMETRY_SITE_PACKAGES.is_dir():
+    sys.path.insert(0, str(GEOMETRY_SITE_PACKAGES))
+
+import cadquery as cq
+from cadquery import Vector
+
+
+# Thread definition
+PITCH = 1.75
+NOMINAL_DIAMETER = 12.0
+MAJOR_RADIUS = NOMINAL_DIAMETER / 2.0
+THREAD_HEIGHT = (5.0 / 8.0) * (math.sqrt(3.0) / 2.0) * PITCH
+ROOT_RADIUS = MAJOR_RADIUS - THREAD_HEIGHT
+CREST_WIDTH = PITCH / 8.0
+ROOT_WIDTH = 3.0 * PITCH / 4.0
+FLANK_SLOPE = 1.0 / math.sqrt(3.0)  # tan(30 deg)
+
+# Other fastener dimensions
+THREAD_Z_MIN = 0.0
+THREAD_Z_MAX = 25.0
+HEAD_Z_MIN = -6.0
+HEAD_Z_MAX = 0.0
+HEAD_ACROSS_FLATS = 18.0
+HEAD_CIRCUMRADIUS = HEAD_ACROSS_FLATS / math.sqrt(3.0)
+HOLE_DIAMETER = 4.0
+
+# The runout reaches full thread depth in this fraction of one revolution.
+RUNOUT_TURNS = 0.25
+PROFILE_INSIDE_OVERLAP = 0.05
+BOOL_TOLERANCE = 1.0e-5
+
+
+def _profile_delta(crest_radius: float) -> float:
+    """Half-width of the trapezoid at the supplied crest radius."""
+    height = crest_radius - ROOT_RADIUS
+    return ROOT_WIDTH / 2.0 - height * FLANK_SLOPE
+
+
+def _global_profile(
+    theta: float, center_z: float, crest_radius: float
+) -> list[Vector]:
+    """Return one trapezoidal thread section in its meridional plane."""
+    half_crest = _profile_delta(crest_radius)
+    local_points = (
+        (ROOT_RADIUS - PROFILE_INSIDE_OVERLAP, -ROOT_WIDTH / 2.0),
+        (ROOT_RADIUS, -ROOT_WIDTH / 2.0),
+        (crest_radius, -half_crest),
+        (crest_radius, half_crest),
+        (ROOT_RADIUS, ROOT_WIDTH / 2.0),
+        (ROOT_RADIUS - PROFILE_INSIDE_OVERLAP, ROOT_WIDTH / 2.0),
+    )
+    c = math.cos(theta)
+    s = math.sin(theta)
+    return [
+        Vector(radius * c, radius * s, center_z + axial)
+        for radius, axial in local_points
+    ]
+
+
+def _loft_thread_interval(
+    start_turns: float, end_turns: float, sections_per_turn: int
+) -> cq.Solid:
+    """Make a continuous left-hand thread interval from exact axial profiles."""
+    sections = []
+    section_count = max(
+        1, int(round((end_turns - start_turns) * sections_per_turn))
+    )
+    for index in range(section_count + 1):
+        turns = start_turns + (end_turns - start_turns) * index / section_count
+        theta = -2.0 * math.pi * turns  # Negative rotation: left-hand thread.
+        center_z = THREAD_Z_MIN + PITCH * turns
+        ramp = min(1.0, turns / RUNOUT_TURNS)
+        # A 0.02 mm initial tooth avoids a singular zero-height loft section.
+        crest_radius = ROOT_RADIUS + max(0.02, THREAD_HEIGHT * ramp)
+        sections.append(
+            cq.Wire.makePolygon(
+                _global_profile(theta, center_z, crest_radius),
+                close=True,
+            )
+        )
+    return cq.Solid.makeLoft(sections, ruled=False)
+
+
+def _build_runout() -> cq.Solid:
+    """Build the first quarter-turn, with tooth height ramping to full."""
+    return _loft_thread_interval(0.0, RUNOUT_TURNS, 128)
+
+
+def _build_thread_segments() -> list[cq.Solid]:
+    """Build full-depth portions as exact one-turn helical lofts."""
+    # Full depth begins after the quarter-turn runout.  Sixteen overlapping
+    # turns ensure that the Z=25 planar trim cuts complete teeth.
+    return [
+        _loft_thread_interval(
+            RUNOUT_TURNS + turn_index,
+            RUNOUT_TURNS + turn_index + 1.0,
+            32,
+        )
+        for turn_index in range(16)
+    ]
+
+
+def _build_hex_head() -> cq.Solid:
+    # Vertices at 0, 60, ... degrees put one opposite vertex pair on X.
+    vertices = [
+        Vector(
+            HEAD_CIRCUMRADIUS * math.cos(index * math.pi / 3.0),
+            HEAD_CIRCUMRADIUS * math.sin(index * math.pi / 3.0),
+            HEAD_Z_MIN,
+        )
+        for index in range(6)
+    ]
+    wire = cq.Wire.makePolygon(vertices, close=True)
+    face = cq.Face.makeFromWires(wire)
+    return cq.Solid.extrudeLinear(
+        face, Vector(0, 0, HEAD_Z_MAX - HEAD_Z_MIN)
+    )
+
+
+def build_fastener() -> cq.Solid:
+    # The root cylinder extends into the head so that all thread pieces are
+    # joined through a volumetric overlap rather than a tangent-only contact.
+    body = cq.Solid.makeCylinder(
+        ROOT_RADIUS,
+        THREAD_Z_MAX - HEAD_Z_MIN,
+        Vector(0, 0, HEAD_Z_MIN),
+        Vector(0, 0, 1),
+    )
+
+    result = body.fuse(_build_runout(), tol=BOOL_TOLERANCE)
+    for segment in _build_thread_segments():
+        result = result.fuse(segment, tol=BOOL_TOLERANCE)
+
+    result = result.fuse(_build_hex_head(), tol=BOOL_TOLERANCE)
+
+    # Squarely remove all threaded material above Z=25.
+    upper_trim = cq.Solid.makeBox(
+        40.0,
+        40.0,
+        20.0,
+        Vector(-20.0, -20.0, THREAD_Z_MAX),
+    )
+    result = result.cut(upper_trim, tol=BOOL_TOLERANCE)
+
+    # One straight through-hole, through both threaded body and hex head.
+    hole = cq.Solid.makeCylinder(
+        HOLE_DIAMETER / 2.0,
+        THREAD_Z_MAX - HEAD_Z_MIN + 2.0,
+        Vector(0, 0, HEAD_Z_MIN - 1.0),
+        Vector(0, 0, 1),
+    )
+    result = result.cut(hole, tol=BOOL_TOLERANCE)
+
+    solids = result.Solids()
+    if len(solids) != 1:
+        raise RuntimeError(f"Expected one solid, found {len(solids)}")
+    solid = solids[0].clean()
+    if not solid.isValid():
+        raise RuntimeError("Final B-rep failed CadQuery/OCP validity check")
+    return solid
+
+
+def main() -> None:
+    output_dir = Path(__file__).resolve().parent
+    step_path = output_dir / "candidate.step"
+    stl_path = output_dir / "candidate.stl"
+    report_path = output_dir / "validation.json"
+
+    fastener = build_fastener()
+    bounds = fastener.BoundingBox()
+
+    # Exact envelope checks with a small OCC tolerancing allowance.
+    expected = {
+        "xmin": -HEAD_CIRCUMRADIUS,
+        "xmax": HEAD_CIRCUMRADIUS,
+        "ymin": -HEAD_ACROSS_FLATS / 2.0,
+        "ymax": HEAD_ACROSS_FLATS / 2.0,
+        "zmin": HEAD_Z_MIN,
+        "zmax": THREAD_Z_MAX,
+    }
+    actual = {
+        "xmin": bounds.xmin,
+        "xmax": bounds.xmax,
+        "ymin": bounds.ymin,
+        "ymax": bounds.ymax,
+        "zmin": bounds.zmin,
+        "zmax": bounds.zmax,
+    }
+    for key, value in expected.items():
+        if abs(actual[key] - value) > 2.0e-5:
+            raise RuntimeError(
+                f"Envelope mismatch for {key}: {actual[key]} vs {value}"
+            )
+
+    cq.exporters.export(
+        fastener,
+        str(step_path),
+        exportType="STEP",
+        opt={
+            "write_pcurves": True,
+            "precision_mode": 0,
+        },
+    )
+    cq.exporters.export(
+        fastener,
+        str(stl_path),
+        exportType="STL",
+        tolerance=0.015,
+        angularTolerance=0.08,
+    )
+
+    # Verify that the file exists, is readable, declares millimetres, and
+    # round-trips as the same single valid solid.
+    step_text = step_path.read_text(encoding="utf-8", errors="replace")
+    if "SI_UNIT(.MILLI.,.METRE.)" not in step_text:
+        raise RuntimeError("STEP file does not declare millimetre length units")
+    round_trip = cq.importers.importStep(str(step_path))
+    round_trip_solids = round_trip.solids().vals()
+    if len(round_trip_solids) != 1 or not round_trip_solids[0].isValid():
+        raise RuntimeError("STEP round-trip did not produce one valid solid")
+    if abs(round_trip_solids[0].Volume() - fastener.Volume()) > 1.0e-4:
+        raise RuntimeError("STEP round-trip volume does not match the source solid")
+
+    report = {
+        "task": "text-04",
+        "units": "mm",
+        "candidate": step_path.name,
+        "rebuild_source": Path(__file__).name,
+        "valid_brep": fastener.isValid(),
+        "solid_count": len(fastener.Solids()),
+        "face_count": len(fastener.Faces()),
+        "volume_mm3": fastener.Volume(),
+        "bounding_box_mm": actual,
+        "thread": {
+            "hand": "left",
+            "nominal_diameter": NOMINAL_DIAMETER,
+            "pitch": PITCH,
+            "starts": 1,
+            "profile_angle_deg": 60.0,
+            "z_min": THREAD_Z_MIN,
+            "z_max": THREAD_Z_MAX,
+            "crest_width": CREST_WIDTH,
+            "root_width": ROOT_WIDTH,
+            "height": THREAD_HEIGHT,
+            "root_radius": ROOT_RADIUS,
+            "runout_turns": RUNOUT_TURNS,
+            "end_trim": "planar Z=25",
+        },
+        "head": {
+            "z_min": HEAD_Z_MIN,
+            "z_max": HEAD_Z_MAX,
+            "across_flats": HEAD_ACROSS_FLATS,
+            "vertex_pair_axis": "X",
+        },
+        "central_hole_diameter": HOLE_DIAMETER,
+        "step_readback": {
+            "readable": True,
+            "length_unit": "millimetre",
+            "valid_brep": round_trip_solids[0].isValid(),
+            "solid_count": len(round_trip_solids),
+            "volume_mm3": round_trip_solids[0].Volume(),
+        },
+    }
+    report_path.write_text(
+        json.dumps(report, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    print(json.dumps(report, indent=2, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

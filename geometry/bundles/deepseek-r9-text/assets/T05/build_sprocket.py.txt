@@ -1,0 +1,176 @@
+"""Build the 32-tooth roller-chain sprocket described by public/task.json.
+
+All dimensions are in millimetres.  The model is centred on the XY plane and
+has bilateral symmetry about Z=0.
+"""
+
+from __future__ import annotations
+
+import math
+import sys
+from pathlib import Path
+
+try:
+    import cadquery as cq
+except ModuleNotFoundError:
+    # The task's read-only geometry environment is not always on sys.path.
+    sys.path.insert(
+        0, '<local dependency path omitted>'
+    )
+    import cadquery as cq
+
+
+# Required chain and sprocket parameters.
+TOOTH_COUNT = 32
+PITCH = 12.7
+ROLLER_DIAMETER = 7.9375
+RADIAL_CLEARANCE = 0.05
+THICKNESS = 3.0
+
+# Required hub and bolt-hole parameters.
+CENTER_HOLE_DIAMETER = 10.0
+BOLT_HOLE_DIAMETER = 5.0
+BOLT_CIRCLE_DIAMETER = 44.0
+BOLT_COUNT = 4
+FIRST_BOLT_ANGLE_DEG = 0.0
+
+
+def build_sprocket() -> cq.Workplane:
+    """Create the sprocket as a single solid in the task coordinate frame."""
+    pitch_radius = PITCH / (2.0 * math.sin(math.pi / TOOTH_COUNT))
+    roller_seat_radius = ROLLER_DIAMETER / 2.0 + RADIAL_CLEARANCE
+
+    # ANSI/ISO-style approximate outside radius for a roller-chain sprocket.
+    # The task leaves the tooth-tip trim unspecified; this value leaves the
+    # requested roller seats open while retaining substantial tooth tips.
+    outside_radius = (
+        PITCH
+        * (
+            0.6
+            + math.cos(math.pi / TOOTH_COUNT)
+            / math.sin(math.pi / TOOTH_COUNT)
+        )
+        / 2.0
+    )
+
+    # The tooth space uses a circular seat centred on each specified pitch
+    # point.  The seat's inward semicircle blends tangentially into radial
+    # flanks which open to the outside, so a roller enters without undercuts.
+    pitch_angle = 2.0 * math.pi / TOOTH_COUNT
+    seat_tangent_angle = math.atan2(roller_seat_radius, pitch_radius)
+    seat_end_radius = math.hypot(pitch_radius, roller_seat_radius)
+
+    def polar(radius: float, angle: float) -> tuple[float, float]:
+        return (radius * math.cos(angle), radius * math.sin(angle))
+
+    def tooth_space_profile() -> cq.Workplane:
+        theta = 0.0
+        angle_minus = theta - seat_tangent_angle
+        angle_plus = theta + seat_tangent_angle
+
+        first_seat_end = polar(seat_end_radius, angle_minus)
+        profile = cq.Workplane("XY").moveTo(*first_seat_end)
+
+        for i in range(TOOTH_COUNT):
+            theta = i * pitch_angle
+            angle_minus = theta - seat_tangent_angle
+            angle_plus = theta + seat_tangent_angle
+            next_angle_minus = (i + 1) * pitch_angle - seat_tangent_angle
+
+            # Concave circular roller seat: E- -> root -> E+.
+            profile = profile.threePointArc(
+                polar(pitch_radius - roller_seat_radius, theta),
+                polar(seat_end_radius, angle_plus),
+            )
+            # Outward tooth flank, rounded tip, and matching inward flank.
+            profile = profile.lineTo(*polar(outside_radius, angle_plus))
+            profile = profile.threePointArc(
+                polar(outside_radius, theta + pitch_angle / 2.0),
+                polar(outside_radius, next_angle_minus),
+            )
+            profile = profile.lineTo(
+                *polar(seat_end_radius, next_angle_minus)
+            )
+
+        # The final point coincides with the first because the contour wraps
+        # once around the sprocket.
+        profile = profile.close()
+        return profile
+
+    # Build from Z=-1.5 to Z=+1.5.
+    body = (
+        tooth_space_profile()
+        .extrude(THICKNESS)
+        .translate((0.0, 0.0, -THICKNESS / 2.0))
+    )
+
+    # Through centre hole.
+    body = body.cut(
+        cq.Workplane("XY")
+        .circle(CENTER_HOLE_DIAMETER / 2.0)
+        .extrude(THICKNESS + 2.0)
+        .translate((0.0, 0.0, -(THICKNESS + 2.0) / 2.0))
+    )
+
+    # Four equally spaced bolt holes; the first is on +X.
+    bolt_radius = BOLT_CIRCLE_DIAMETER / 2.0
+    bolt_centres = [
+        (
+            bolt_radius
+            * math.cos(
+                math.radians(
+                    FIRST_BOLT_ANGLE_DEG + i * 360.0 / BOLT_COUNT
+                )
+            ),
+            bolt_radius
+            * math.sin(
+                math.radians(
+                    FIRST_BOLT_ANGLE_DEG + i * 360.0 / BOLT_COUNT
+                )
+            ),
+        )
+        for i in range(BOLT_COUNT)
+    ]
+    body = body.cut(
+        cq.Workplane("XY")
+        .pushPoints(bolt_centres)
+        .circle(BOLT_HOLE_DIAMETER / 2.0)
+        .extrude(THICKNESS + 2.0)
+        .translate((0.0, 0.0, -(THICKNESS + 2.0) / 2.0))
+    )
+
+    body = body.clean()
+
+    # Fail fast if a future edit produces disconnected or non-axis-aligned CAD.
+    assert body.val().isValid(), "CadQuery produced an invalid solid"
+    solids = body.solids().vals()
+    assert len(solids) == 1, f"Expected one solid, found {len(solids)}"
+    bbox = body.val().BoundingBox()
+    assert math.isclose(bbox.zmin, -THICKNESS / 2.0, abs_tol=1e-6)
+    assert math.isclose(bbox.zmax, THICKNESS / 2.0, abs_tol=1e-6)
+    return body
+
+
+def main() -> None:
+    output_dir = Path(__file__).resolve().parent
+    body = build_sprocket()
+    cq.exporters.export(
+        body,
+        str(output_dir / "candidate.step"),
+        exportType="STEP",
+    )
+
+    bbox = body.val().BoundingBox()
+    print(f"STEP: {output_dir / 'candidate.step'}")
+    print(f"Solids: {len(body.solids().vals())}")
+    print(f"Volume: {body.val().Volume():.6f} mm^3")
+    print(
+        "Bounding box: "
+        f"X [{bbox.xmin:.6f}, {bbox.xmax:.6f}], "
+        f"Y [{bbox.ymin:.6f}, {bbox.ymax:.6f}], "
+        f"Z [{bbox.zmin:.6f}, {bbox.zmax:.6f}] mm"
+    )
+
+
+if __name__ == "__main__":
+    main()

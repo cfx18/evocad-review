@@ -10,6 +10,7 @@ let geometryModulePromise = null;
 let geometryLoadGeneration = 0;
 let bundleLoadGeneration = 0;
 let bundleAbortController = null;
+let attemptFilesController = new AbortController();
 
 const ISSUE_LABELS = {
   agent_geometry: "Agent geometry", agent_reasoning: "Agent reasoning", input_ambiguity: "Input ambiguity",
@@ -203,7 +204,7 @@ function setNavigationBusy() {
   }
 }
 
-async function loadBundle(id, model) {
+async function loadBundle(id, model, sample = null) {
   if (state.saving) { renderNavigation(); return; }
   rememberDraft();
   const generation = ++bundleLoadGeneration;
@@ -239,18 +240,20 @@ async function loadBundle(id, model) {
       persistNavigation();
     }
     setOptions($("datasetFilter"), [...new Set(runs.map((run) => run.dataset))].sort(), "全部数据集");
+    const scoped = runs.some((run) => run.attempts.some((attempt) => attempt.evaluation_scope));
+    const outcomeLabels = scoped ? { passed: "整题严格通过", failed: "整题未通过", unscored: "整题未确认" }
+      : { passed: "严格通过", failed: "未通过", unscored: "未评分" };
+    for (const option of $("outcomeFilter").options) {
+      if (outcomeLabels[option.value]) option.textContent = outcomeLabels[option.value];
+    }
     $("outcomeFilter").value = "all"; $("reviewFilter").value = "all";
     renderNavigation(); renderHeader(); resetReviewForm();
     const saved = state.selections[navigationKey(entry?.harness, selectedModel, id)];
-    const run = runs.find((item) => item.target_id === saved?.target) || runs[0];
+    const requested = sample && (runs.find((item) => item.sample_key === sample) || runs.find((item) => item.sample_id === sample));
+    const run = requested || runs.find((item) => item.target_id === saved?.target) || runs[0];
     if (run) selectRun(run.target_id, run.target_id === saved?.target ? saved.attempt : null);
     else renderRunList();
-    if (id && selectedModel) {
-      const url = new URL(location.href);
-      url.searchParams.set("view", id);
-      url.searchParams.set("model", selectedModel);
-      history.replaceState(null, "", url);
-    }
+    syncSelectionUrl();
     $("navigationStatus").textContent = "";
     document.documentElement.dataset.appState = "ready";
   } catch (error) {
@@ -265,6 +268,16 @@ async function loadBundle(id, model) {
 
 function currentRun() { return state.runs.find((run) => run.target_id === state.selectedTarget); }
 function currentAttempt() { return currentRun()?.attempts.find((attempt) => attempt.attempt_id === state.selectedAttempt); }
+function syncSelectionUrl() {
+  if (!state.bundleId || !state.model) return;
+  const url = new URL(location.href);
+  url.searchParams.set("view", state.bundleId);
+  url.searchParams.set("model", state.model);
+  const sample = currentRun()?.sample_key;
+  if (sample) url.searchParams.set("sample", sample);
+  else url.searchParams.delete("sample");
+  if (url.href !== location.href) history.replaceState(null, "", url);
+}
 function modelReviewRecords() {
   const targetIds = new Set(state.runs.map((run) => run.target_id));
   return (state.reviews?.records || []).filter((record) => targetIds.has(record.binding.target_id));
@@ -313,9 +326,12 @@ function renderRunList() {
 }
 
 function metric(label, value, tone = "") { return `<div class="metric"><span>${escapeHtml(label)}</span><strong class="${tone}">${escapeHtml(value)}</strong></div>`; }
+function scopeResult(value) { return value === true ? "通过" : value === false ? "未通过" : "未确认"; }
+function scopeTone(value) { return value === true ? "good" : value === false ? "bad" : ""; }
 
 function showNoRun(message) {
   ++geometryLoadGeneration;
+  attemptFilesController.abort();
   geometryViewers?.dispose(); geometryViewers = null;
   $("datasetLabel").textContent = "";
   $("taskTitle").textContent = message;
@@ -339,6 +355,7 @@ function selectRun(targetId, attemptId = null) {
   resetReviewForm();
   restoreDraft();
   rememberSelection();
+  syncSelectionUrl();
   renderRun();
   renderRunList();
 }
@@ -361,23 +378,34 @@ function renderRun() {
   if (!run || !attempt) { showNoRun("此算例没有可用的尝试记录"); return; }
   $("runDetails").hidden = false;
   $("reviewPanel").hidden = false;
+  const scope = attempt.evaluation_scope;
   $("datasetLabel").textContent = `${run.dataset}${run.category ? ` / ${run.category}` : ""}`;
   $("taskTitle").textContent = run.task;
-  $("modelLabel").textContent = `${run.model} · ${run.reasoning_effort || "default"}`;
+  $("modelLabel").textContent = scope && run.reasoning_effort
+    ? `${run.model} · ${run.reasoning_effort} requested`
+    : `${run.model} · ${run.reasoning_effort || "default"}`;
   $("targetId").textContent = run.target_id;
-  $("metrics").innerHTML = [
+  $("metrics").innerHTML = (scope ? [
+    metric(scope.label || "测量", scope.display ?? fmt(run.score)),
+    metric("评测状态", scope.measurement_status || "未确认"),
+    metric("组件检查", scopeResult(scope.component_passed), scopeTone(scope.component_passed)),
+    metric("整题验收", scopeResult(scope.whole_task_passed), scopeTone(scope.whole_task_passed)),
+    metric("执行状态", scope.execution_status || run.status || "未确认"),
+    metric("尝试记录", run.attempts.length),
+  ] : [
     metric("Selected score", fmt(run.score), run.passed == null ? "" : run.passed ? "good" : "bad"),
     metric("Attempt score", fmt(attempt.score), attempt.passed == null ? "" : attempt.passed ? "good" : "bad"),
     metric("Strict label", attempt.passed == null ? "UNSCORED" : attempt.passed ? "PASS" : "FAIL", attempt.passed == null ? "" : attempt.passed ? "good" : "bad"),
     metric("Attempts", run.attempts.length),
     metric("Elapsed", `${fmt(attempt.elapsed_seconds, 1)} s`),
     metric("Ledger", run.integrity?.ok ? "VERIFIED" : "CHECK", run.integrity?.ok ? "good" : "bad"),
-  ].join("");
+  ]).join("");
   const annotation = run.data_quality_annotation;
   $("annotationBanner").hidden = !annotation;
   if (annotation) $("annotationBanner").innerHTML = `<strong>Data-quality annotation: ${escapeHtml(annotation.status)}</strong><span>${escapeHtml((annotation.issue_types || []).join(" · "))}</span><p>${escapeHtml(annotation.recommended_use || "")}</p>`;
   renderAttempts(run);
   renderEvidence(run, attempt);
+  renderAttemptExtras(run, attempt);
   renderVerifier(attempt);
   renderReflection(attempt);
   renderMcp(attempt);
@@ -386,7 +414,7 @@ function renderRun() {
 
 function renderAttempts(run) {
   $("attemptButtons").innerHTML = run.attempts.map((attempt) => `<button class="attempt-button ${attempt.attempt_id === state.selectedAttempt ? "active" : ""} ${attempt.passed == null ? "" : attempt.passed ? "passed" : "failed"}" data-attempt="${escapeHtml(attempt.attempt_id)}">
-    <span>${escapeHtml(attempt.attempt_id)}</span><strong>${fmt(attempt.score, 1)}</strong><small>${attempt.safety_stop_reason ? `safety: ${escapeHtml(attempt.safety_stop_reason)}` : attempt.agent_decision ? `agent: ${escapeHtml(attempt.agent_decision)}` : attempt.selected ? "selected" : attempt.timed_out ? "timeout" : attempt.passed ? "pass" : "no decision"}</small>
+    <span title="${escapeHtml(attempt.attempt_id)}">${escapeHtml(attempt.attempt_id)}</span><strong>${fmt(attempt.score, 1)}</strong><small>${attempt.safety_stop_reason ? `safety: ${escapeHtml(attempt.safety_stop_reason)}` : attempt.agent_decision ? `agent: ${escapeHtml(attempt.agent_decision)}` : attempt.selected ? "selected" : attempt.timed_out ? "timeout" : attempt.passed ? "pass" : "no decision"}</small>
   </button>`).join("");
   document.querySelectorAll(".attempt-button").forEach((button) => button.addEventListener("click", () => selectAttempt(button.dataset.attempt)));
 }
@@ -457,19 +485,26 @@ function updateRegionControls() {
 }
 
 function renderEvidence(run, attempt) {
+  const scope = attempt.evaluation_scope;
   const inputs = (run.input_images || []).filter(Boolean);
-  setImage("inputImage", assetUrl(inputs[state.inputIndex]), "Input image unavailable");
+  const hideInput = !inputs.length && Boolean(scope || run.task_prompt?.trim());
+  $("inputEvidence").hidden = hideInput;
+  setImage("inputImage", assetUrl(inputs[state.inputIndex]), hideInput ? "" : "Input image unavailable");
   $("inputSwitcher").hidden = inputs.length < 2;
   $("inputSwitcher").innerHTML = inputs.map((_, index) => `<button class="${index === state.inputIndex ? "active" : ""}" data-input="${index}">${index + 1}</button>`).join("");
   document.querySelectorAll("[data-input]").forEach((button) => button.addEventListener("click", () => { state.inputIndex = Number(button.dataset.input); renderEvidence(run, attempt); }));
-  setImage("truthImage", assetUrl(attempt.images?.ground_truth), "Ground-truth render unavailable");
-  setImage("candidateImage", assetUrl(attempt.images?.candidate), "Candidate render unavailable");
-  setImage("overlayImage", assetUrl(attempt.images?.overlay), "Overlay unavailable");
+  setImage("truthImage", assetUrl(attempt.images?.ground_truth), scope ? "GT未公开；历史测量见Verifier" : "Ground-truth render unavailable");
+  const candidatePreview = evidenceFiles(attempt.candidate_images)[0]?.url.href;
+  setImage("candidateImage", assetUrl(attempt.images?.candidate) || candidatePreview, "Candidate render unavailable");
+  setImage("overlayImage", assetUrl(attempt.images?.overlay), scope ? "GT未公开；历史测量见Verifier" : "Overlay unavailable");
   mountGeometryViewers(attempt);
   $("candidateCaption").textContent = attempt.attempt_id;
-  $("truthCaption").textContent = `SHA ${shortHash(run.ground_truth_sha256)}`;
+  $("truthCaption").textContent = scope && !attempt.images?.ground_truth && !attempt.geometry?.ground_truth
+    ? "GT未公开；历史测量见Verifier" : `SHA ${shortHash(run.ground_truth_sha256)}`;
   $("candidateState").textContent = `SHA ${shortHash(attempt.evidence?.candidate?.sha256)}`;
-  $("overlayState").textContent = !attempt.geometry?.ground_truth ? "GT geometry unavailable; alignment not evaluated" : attempt.render_error ? `Render error: ${attempt.render_error}` : "Axis-permutation and translation alignment; no scale";
+  $("overlayState").textContent = scope && !attempt.images?.overlay && !attempt.geometry?.ground_truth
+    ? "GT未公开；历史测量见Verifier"
+    : !attempt.geometry?.ground_truth ? "GT geometry unavailable; alignment not evaluated" : attempt.render_error ? `Render error: ${attempt.render_error}` : "Axis-permutation and translation alignment; no scale";
   const localization = attempt.localization || (attempt.verdict?.mismatch || {}).localization || {};
   const regions = localization.regions || [];
   const focusAvailable = Boolean(attempt.geometry?.localization && (attempt.geometry?.ground_truth || attempt.geometry?.candidate));
@@ -488,12 +523,145 @@ function renderEvidence(run, attempt) {
     const operations = (region.responsible_operation_candidates || []).slice(0, 2).map((operation) => operation.operation_id).join(" + ");
     const candidateLabel = region.direction === "ground_truth_to_candidate" ? "Candidate nearest boundary" : "Candidate face";
     return `<${regionTag}${focusAvailable ? ' type="button" disabled' : ''} class="localization-region ${region.direction === "ground_truth_to_candidate" ? "missing" : "excess"} ${state.selectedRegion === region.region_id ? "selected" : ""}" data-region="${escapeHtml(region.region_id)}"><strong>${escapeHtml(region.region_id)}</strong><span>${label}</span><code>p95 ${fmt(region.p95_distance_normalized, 4)}</code><small>bbox position [${escapeHtml(position)}]</small>${faces ? `<small>Truth B-Rep ${escapeHtml(faces)}</small>` : ""}${nativeFaces ? `<small>${candidateLabel} ${escapeHtml(nativeFaces)} · ${escapeHtml(region.topology_mapping_confidence || "unknown")} confidence</small>` : ""}${features ? `<small>Feature ${escapeHtml(features)}</small>` : ""}${operations ? `<small>Operation ${escapeHtml(operations)}</small>` : ""}</${regionTag}>`;
-  }).join("") : `<div class="empty">${attempt.passed == null ? "GT comparison not evaluated; mismatch localization is unavailable." : attempt.localization_error ? `Localization unavailable: ${escapeHtml(attempt.localization_error)}` : "No surface regions exceed the localization threshold."}</div>`;
+  }).join("") : `<div class="empty">${scope ? "本页未提供局部误差定位证据。" : attempt.passed == null ? "GT comparison not evaluated; mismatch localization is unavailable." : attempt.localization_error ? `Localization unavailable: ${escapeHtml(attempt.localization_error)}` : "No surface regions exceed the localization threshold."}</div>`;
   document.querySelectorAll("button.localization-region").forEach((button) => button.addEventListener("click", () => {
     state.selectedRegion = button.dataset.region;
     document.querySelectorAll(".localization-region").forEach((item) => item.classList.toggle("selected", item === button));
     geometryViewers?.focusRegion?.(button.dataset.region);
   }));
+}
+
+function evidenceNode(tag, text, className) {
+  const node = document.createElement(tag);
+  if (text != null) node.textContent = text;
+  if (className) node.className = className;
+  return node;
+}
+
+function evidenceFiles(entries) {
+  if (!Array.isArray(entries)) return [];
+  const base = new URL(bundleBase(), document.baseURI);
+  return entries.flatMap((entry) => {
+    const file = typeof entry === "string" ? { path: entry } : entry;
+    if (typeof file?.path !== "string" || !file.path.trim()) return [];
+    try {
+      const url = new URL(file.path, base);
+      return url.origin === base.origin && url.pathname.startsWith(base.pathname) && ["https:", "http:"].includes(url.protocol)
+        ? [{ ...file, url }] : [];
+    } catch { return []; }
+  });
+}
+
+function openEvidenceImage(button) {
+  const image = button.querySelector("img");
+  if (button.disabled || !image?.getAttribute("src") || image.hidden) return;
+  $("dialogImage").src = image.src;
+  $("dialogImage").alt = image.alt;
+  $("imageDialog").showModal();
+}
+
+function renderCandidateGallery(entries) {
+  const parent = $("candidateGallery");
+  const files = evidenceFiles(entries);
+  parent.hidden = !files.length;
+  parent.replaceChildren();
+  if (!files.length) return;
+  const gallery = evidenceNode("div", null, "evidence-gallery");
+  for (const [index, file] of files.entries()) {
+    const label = file.label || `候选视图 ${index + 1}`;
+    const figure = evidenceNode("figure");
+    const button = evidenceNode("button", null, "image-button");
+    button.type = "button";
+    button.disabled = true;
+    button.setAttribute("aria-label", `放大：${label}`);
+    const image = evidenceNode("img");
+    image.alt = label;
+    image.loading = "lazy";
+    image.addEventListener("load", () => { button.disabled = false; });
+    image.addEventListener("error", () => { button.replaceWith(evidenceNode("p", "图像文件暂不可读取。", "empty")); });
+    button.addEventListener("click", () => openEvidenceImage(button));
+    image.src = file.url.href;
+    button.append(image);
+    figure.append(button, evidenceNode("figcaption", label));
+    gallery.append(figure);
+  }
+  parent.append(evidenceNode("h2", "候选产物视图"), gallery);
+}
+
+async function previewEvidenceFile(file, output, signal) {
+  const limit = 512 * 1024;
+  try {
+    const response = await fetch(file.url, { signal, mode: "same-origin" });
+    if (!response.ok || response.headers.get("content-type")?.includes("text/html")) throw new Error("File unavailable");
+    if (Number(response.headers.get("content-length")) > limit) {
+      output.textContent = "文件较大，请下载查看。";
+      return;
+    }
+    const data = await response.text();
+    if (signal.aborted) return;
+    if (data.length > limit) { output.textContent = "文件较大，请下载查看。"; return; }
+    const pre = evidenceNode("pre", data || "文件为空。");
+    pre.tabIndex = 0;
+    output.replaceWith(pre);
+  } catch (error) {
+    if (error.name !== "AbortError" && !signal.aborted) output.textContent = "文件暂不可读取。";
+  }
+}
+
+function previewDisclosure(file, label) {
+  const detail = evidenceNode("details");
+  const output = evidenceNode("p", "正在读取文件…", "empty");
+  const signal = attemptFilesController.signal;
+  detail.append(evidenceNode("summary", label), output);
+  detail.addEventListener("toggle", function loadOnOpen() {
+    if (!detail.open) return;
+    detail.removeEventListener("toggle", loadOnOpen);
+    previewEvidenceFile(file, output, signal);
+  });
+  return detail;
+}
+
+function renderEvidenceFiles(id, title, entries, sourceFiles = false) {
+  const parent = $(id);
+  const files = evidenceFiles(entries);
+  parent.hidden = !files.length;
+  parent.replaceChildren();
+  if (!files.length) return;
+  const list = evidenceNode("ul", null, "evidence-files");
+  for (const file of files) {
+    const label = file.label || file.name || "下载文件";
+    const item = evidenceNode("li", null, "evidence-file");
+    const link = evidenceNode("a", sourceFiles ? `下载 ${label}` : label);
+    link.href = file.url.href;
+    link.download = "";
+    if (sourceFiles || (file.kind === "assembly" && /\.json$/i.test(file.url.pathname))) {
+      item.append(previewDisclosure(file, sourceFiles ? label : "查看装配位姿 JSON"));
+    }
+    item.append(link);
+    if (/^[\da-f]{64}$/i.test(file.sha256 || "")) {
+      const digest = evidenceNode("code", `SHA-256 ${shortHash(file.sha256)}`);
+      digest.title = file.sha256;
+      item.append(digest);
+    }
+    list.append(item);
+  }
+  parent.append(evidenceNode("h2", title), list);
+}
+
+function renderAttemptExtras(run, attempt) {
+  attemptFilesController.abort();
+  attemptFilesController = new AbortController();
+  const prompt = run.task_prompt?.trim();
+  $("taskPrompt").hidden = !prompt;
+  $("taskPrompt").open = false;
+  $("taskPromptLabel").textContent = run.prompt_label || "任务说明";
+  $("taskPromptText").textContent = prompt ? run.task_prompt : "";
+  renderCandidateGallery(attempt.candidate_images);
+  renderEvidenceFiles("attemptArtifacts", "候选产物文件", attempt.artifacts);
+  renderEvidenceFiles("attemptCode", "建模源文件", attempt.code_files, true);
+  const finalResponse = attempt.final_response?.trim();
+  $("modelFinalResponse").hidden = !finalResponse;
+  $("modelFinalResponseText").textContent = finalResponse ? attempt.final_response : "";
 }
 
 function thresholdText(check) {
@@ -504,11 +672,21 @@ function thresholdText(check) {
 
 function renderVerifier(attempt) {
   const verdict = attempt.verdict || {};
+  const scope = attempt.evaluation_scope;
+  const scopePanel = $("evaluationScope");
+  scopePanel.hidden = !scope;
+  const notes = Array.isArray(scope?.notes) ? scope.notes.filter((note) => typeof note === "string" && note.trim()) : [];
+  scopePanel.innerHTML = scope ? `<h2>评测口径</h2><div class="metrics">${[
+    metric(scope.label || "测量", scope.display ?? fmt(attempt.score)),
+    metric("评测状态", scope.measurement_status || "未确认"),
+    metric("组件检查", scopeResult(scope.component_passed), scopeTone(scope.component_passed)),
+    metric("整题验收", scopeResult(scope.whole_task_passed), scopeTone(scope.whole_task_passed)),
+  ].join("")}</div>${notes.length ? `<details class="scope-notes"><summary>记录说明</summary><ul>${notes.map((note) => `<li>${escapeHtml(note)}</li>`).join("")}</ul></details>` : ""}` : "";
   $("benchmarkComparison").innerHTML = renderBenchmarkComparison(attempt.benchmark_comparison);
   $("checkList").innerHTML = (verdict.rubrics || []).map((check) => `<div class="check-row">
     <span class="status-mark ${check.status}"></span><strong>${escapeHtml(check.id.replaceAll("_", " "))}</strong>
     <code>${escapeHtml(String(check.actual))}</code><span>target ${escapeHtml(thresholdText(check))}</span>
-  </div>`).join("") || `<div class="empty">Verifier produced no checks.</div>`;
+  </div>`).join("") || `<div class="empty">${scope ? "本页未提供逐项评分器记录。" : "Verifier produced no checks."}</div>`;
   const candidate = verdict.candidate_geometry || {};
   const truth = verdict.ground_truth_geometry || {};
   const rows = [
@@ -519,7 +697,7 @@ function renderVerifier(attempt) {
     ["Triangles", candidate.triangles ?? "N/A", truth.triangles ?? "N/A"],
   ];
   $("geometryTable").innerHTML = `<div class="geometry-head"><span>Measure</span><span>Candidate</span><span>Truth</span></div>` + rows.map((row) => `<div><span>${escapeHtml(row[0])}</span><code>${escapeHtml(row[1])}</code><code>${escapeHtml(row[2])}</code></div>`).join("");
-  $("protocolBinding").textContent = verdict.protocol || state.data.campaign.protocol;
+  $("protocolBinding").textContent = verdict.protocol || scope?.metric_id || state.data.campaign.protocol;
   $("evidenceHash").textContent = attempt.evidence_sha256;
 }
 
@@ -528,6 +706,11 @@ function listBlock(title, items) {
 }
 
 function renderReflection(attempt) {
+  const archived = (attempt.public_events || []).some((event) => event.type === "archive_evidence");
+  $("reflectionNote").textContent = archived
+    ? "归档摘要反映已公开的执行、产物和评测记录。模型自述、工具调用和归档摘要分别标注。"
+    : "Only recorded agent messages and submitted reflection are shown. Hidden chain-of-thought is not part of the review evidence.";
+  $("publicEventsHeading").textContent = archived ? "公开执行证据与归档摘要" : "Public action and feedback trace";
   const reflection = attempt.reflection || {};
   const decision = attempt.agent_decision || reflection.decision;
   const safety = attempt.safety_stop_reason;
@@ -539,6 +722,11 @@ function renderReflection(attempt) {
   $("reflectionContent").innerHTML = `<section class="owner"><h3>Failure owner</h3><strong>${escapeHtml(reflection.failure_owner || "not recorded")}</strong><span>Confidence ${reflection.confidence == null ? "N/A" : fmt(reflection.confidence, 2)}</span></section>` +
     listBlock("Observed failures", reflection.observed_failures) + listBlock("Root causes", reflection.root_causes) + listBlock("Planned changes", reflection.planned_geometry_changes);
   $("publicEvents").innerHTML = (attempt.public_events || []).map((event, index) => {
+    if (event.type === "archive_evidence") {
+      const details = event.details ?? event.text;
+      const text = typeof details === "string" ? details : details == null ? "" : JSON.stringify(details, null, 2);
+      return `<details ${index < 2 ? "open" : ""}><summary><span>${index + 1}</span><strong>${escapeHtml(event.label || "归档证据")}</strong><i>归档证据</i></summary><pre>${escapeHtml(text)}</pre></details>`;
+    }
     const title = event.type === "agent_message" ? "Agent message" : event.type === "mcp_tool_call" ? `MCP · ${event.tool}` : event.type === "tool_call" ? `Tool · ${event.tool}` : "Command";
     const detail = event.text || event.command || JSON.stringify(event.arguments || {});
     return `<details ${index < 2 ? "open" : ""}><summary><span>${index + 1}</span><strong>${escapeHtml(title)}</strong><i>${escapeHtml(event.phase || "action")}</i><i class="${event.status === "completed" ? "ok" : "warn"}">${escapeHtml(event.status || "")}</i></summary><pre>${escapeHtml(detail)}</pre>${event.error ? `<p class="error-text">${escapeHtml(JSON.stringify(event.error))}</p>` : ""}</details>`;
@@ -547,6 +735,11 @@ function renderReflection(attempt) {
 
 function renderMcp(attempt) {
   const events = attempt.mcp_events || [];
+  if (attempt.evaluation_scope && !events.length) {
+    $("auditSummary").innerHTML = '<span><strong>N/A</strong> calls</span><span><strong>N/A</strong> failed</span><span><strong>N/A</strong> ms observed</span>';
+    $("mcpEvents").innerHTML = '<div class="empty">No MCP audit evidence available.</div>';
+    return;
+  }
   const failed = events.filter((event) => event.status !== "pass").length;
   const totalMs = events.reduce((sum, event) => sum + Number(event.duration_ms || 0), 0);
   $("auditSummary").innerHTML = `<span><strong>${events.length}</strong> calls</span><span><strong>${failed}</strong> failed</span><span><strong>${fmt(totalMs, 0)}</strong> ms observed</span>`;
@@ -733,11 +926,7 @@ function bindControls() {
     const blob = new Blob([records.map((row) => JSON.stringify(row)).join("\n") + "\n"], { type: "application/x-ndjson" });
     const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = `${state.data.campaign.campaign_id}-${state.model}-human-reviews.jsonl`; link.click(); URL.revokeObjectURL(link.href);
   });
-  document.querySelectorAll(".image-button").forEach((button) => button.addEventListener("click", () => {
-    const image = button.querySelector("img");
-    if (button.disabled || !image.getAttribute("src") || image.hidden) return;
-    $("dialogImage").src = image.src; $("imageDialog").showModal();
-  }));
+  document.querySelectorAll(".image-button").forEach((button) => button.addEventListener("click", () => openEvidenceImage(button)));
   $("closeDialog").addEventListener("click", () => $("imageDialog").close());
 }
 
@@ -758,7 +947,7 @@ async function start() {
   const rememberedModel = state.lastModel[navigationKey(entry?.harness)];
   const models = entryModels(entry);
   const model = [requestedModel, rememberedModel, models[0]].find((value) => models.includes(value));
-  await loadBundle(entry?.id || null, model);
+  await loadBundle(entry?.id || null, model, params.get("sample"));
 }
 
 start().catch((error) => {

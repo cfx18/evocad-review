@@ -1,0 +1,506 @@
+#!/usr/bin/env python3
+"""Rebuild the text-09 0..270 degree vacuum-container wall.
+
+Coordinate system and units
+---------------------------
+* Units: millimetres.
+* Container axis: global +Z.
+* Angular start: +X at 0 degrees.
+* Positive angular direction: counter-clockwise about +Z.
+* Retained sector: 0 degrees through 270 degrees, inclusive.
+
+Construction
+------------
+The wall is modelled as three closed, separately revolved solids:
+1. upper spherical-cap head;
+2. straight cylindrical wall over Z=-50..50;
+3. lower spherical-cap head.
+
+Each cap uses the specified inner spherical surface.  Its outer surface is
+the concentric spherical surface at an exact outward normal offset of 3 mm,
+clipped at the head's base plane.  The resulting cap base rings extend beyond
+R60 because the base-plane normal is inclined; this radial step is a direct
+consequence of the specified normal offset and is left unfilleted.  The
+cylinder end annuli are fully contained in the larger head base annuli, so
+the three bodies remain connected without a Boolean union.
+
+Run with the task's read-only geometry environment:
+    python build_container_sector.py
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import math
+from pathlib import Path
+import sys
+
+# The geometry environment is intentionally read-only and supplied by the task.
+GEOMETRY_SITE_PACKAGES = Path('<local dependency path omitted>')
+if GEOMETRY_SITE_PACKAGES.is_dir():
+    sys.path.insert(0, str(GEOMETRY_SITE_PACKAGES))
+
+import cadquery as cq  # noqa: E402
+
+
+ROOT = Path(__file__).resolve().parent
+CANDIDATE_STEP = ROOT / "candidate.step"
+SUBMISSION_JSON = ROOT / "submission.json"
+
+# Task dimensions in millimetres.
+INNER_RADIUS = 60.0 - 3.0  # R57, also the cap base-chord radius (114/2).
+OUTER_RADIUS = 60.0
+WALL_OFFSET = 3.0
+Z_BOTTOM_FLAT = -50.0
+Z_TOP_FLAT = 50.0
+UPPER_INNER_RISE = 20.0
+LOWER_INNER_RISE = 10.0
+SECTOR_START_DEGREES = 0.0
+SECTOR_END_DEGREES = 270.0
+SECTOR_ANGLE_DEGREES = SECTOR_END_DEGREES - SECTOR_START_DEGREES
+
+
+def spherical_cap_parameters(rise: float, base_z: float, opens_upward: bool) -> tuple[float, float]:
+    """Return (inner sphere radius, sphere-center Z) for a chord radius of 57."""
+    radius = (INNER_RADIUS**2 + rise**2) / (2.0 * rise)
+    if opens_upward:
+        center_z = base_z + rise - radius
+    else:
+        center_z = base_z - rise + radius
+    return radius, center_z
+
+
+def circle_radius_at_z(center_z: float, sphere_radius: float, z: float) -> float:
+    """Radius of a circle on a Z-axis-centered sphere at the specified Z."""
+    value = sphere_radius**2 - (z - center_z) ** 2
+    return math.sqrt(max(0.0, value))
+
+
+def upper_head_solid() -> cq.Workplane:
+    inner_radius, center_z = spherical_cap_parameters(UPPER_INNER_RISE, Z_TOP_FLAT, True)
+    outer_radius = inner_radius + WALL_OFFSET
+    inner_apex_z = Z_TOP_FLAT + UPPER_INNER_RISE
+    outer_apex_z = center_z + outer_radius
+    outer_base_radius = circle_radius_at_z(center_z, outer_radius, Z_TOP_FLAT)
+
+    inner_mid_z = 0.5 * (Z_TOP_FLAT + inner_apex_z)
+    outer_mid_z = 0.5 * (Z_TOP_FLAT + outer_apex_z)
+    inner_mid_r = circle_radius_at_z(center_z, inner_radius, inner_mid_z)
+    outer_mid_r = circle_radius_at_z(center_z, outer_radius, outer_mid_z)
+
+    # The XZ workplane uses local X as radial distance and local Y as global Z.
+    return (
+        cq.Workplane("XZ")
+        .moveTo(INNER_RADIUS, Z_TOP_FLAT)
+        .threePointArc(
+            (inner_mid_r, inner_mid_z),
+            (0.0, inner_apex_z),
+        )
+        .lineTo(0.0, outer_apex_z)
+        .threePointArc(
+            (outer_mid_r, outer_mid_z),
+            (outer_base_radius, Z_TOP_FLAT),
+        )
+        .lineTo(INNER_RADIUS, Z_TOP_FLAT)
+        .close()
+        .revolve(SECTOR_ANGLE_DEGREES, (0.0, 0.0), (0.0, 1.0))
+    )
+
+
+def lower_head_solid() -> cq.Workplane:
+    inner_radius, center_z = spherical_cap_parameters(LOWER_INNER_RISE, Z_BOTTOM_FLAT, False)
+    outer_radius = inner_radius + WALL_OFFSET
+    inner_apex_z = Z_BOTTOM_FLAT - LOWER_INNER_RISE
+    outer_apex_z = center_z - outer_radius
+    outer_base_radius = circle_radius_at_z(center_z, outer_radius, Z_BOTTOM_FLAT)
+
+    inner_mid_z = 0.5 * (Z_BOTTOM_FLAT + inner_apex_z)
+    outer_mid_z = 0.5 * (Z_BOTTOM_FLAT + outer_apex_z)
+    inner_mid_r = circle_radius_at_z(center_z, inner_radius, inner_mid_z)
+    outer_mid_r = circle_radius_at_z(center_z, outer_radius, outer_mid_z)
+
+    # The lower profile is the mirror of the connection logic used above.
+    return (
+        cq.Workplane("XZ")
+        .moveTo(INNER_RADIUS, Z_BOTTOM_FLAT)
+        .threePointArc(
+            (inner_mid_r, inner_mid_z),
+            (0.0, inner_apex_z),
+        )
+        .lineTo(0.0, outer_apex_z)
+        .threePointArc(
+            (outer_mid_r, outer_mid_z),
+            (outer_base_radius, Z_BOTTOM_FLAT),
+        )
+        .lineTo(INNER_RADIUS, Z_BOTTOM_FLAT)
+        .close()
+        .revolve(SECTOR_ANGLE_DEGREES, (0.0, 0.0), (0.0, 1.0))
+    )
+
+
+def straight_wall_solid() -> cq.Workplane:
+    return (
+        cq.Workplane("XZ")
+        .moveTo(INNER_RADIUS, Z_BOTTOM_FLAT)
+        .lineTo(OUTER_RADIUS, Z_BOTTOM_FLAT)
+        .lineTo(OUTER_RADIUS, Z_TOP_FLAT)
+        .lineTo(INNER_RADIUS, Z_TOP_FLAT)
+        .close()
+        .revolve(SECTOR_ANGLE_DEGREES, (0.0, 0.0), (0.0, 1.0))
+        .val()
+    )
+
+
+def planar_face_at_z(shape: cq.Shape, z: float) -> cq.Face:
+    matches = []
+    for face in shape.Faces():
+        bounds = face.BoundingBox()
+        if (
+            face.geomType() == "PLANE"
+            and abs(bounds.zmin - z) < 1.0e-7
+            and abs(bounds.zmax - z) < 1.0e-7
+        ):
+            matches.append(face)
+    if len(matches) != 1:
+        raise RuntimeError(f"Expected one planar face at Z={z}, found {len(matches)}")
+    return matches[0]
+
+
+def rounded(value: float, digits: int = 9) -> float:
+    return round(float(value), digits)
+
+
+def validate_local_geometry(
+    upper: cq.Shape,
+    straight: cq.Shape,
+    lower: cq.Shape,
+    compound: cq.Shape,
+) -> dict:
+    bodies = [upper, straight, lower]
+    for name, body in zip(("upper_head", "straight_wall", "lower_head"), bodies):
+        if not body.isValid():
+            raise RuntimeError(f"{name} is not a valid B-rep solid")
+        if len(body.Solids()) != 1:
+            raise RuntimeError(f"{name} does not contain exactly one solid")
+
+    if len(compound.Solids()) != 3:
+        raise RuntimeError("The submitted compound must contain exactly three solids")
+    if not compound.isValid():
+        raise RuntimeError("The three-body compound is not a valid B-rep")
+
+    # Verify that the retained sector includes quadrants I, II and III and
+    # excludes quadrant IV.  Radial positions are inside each body.
+    sector_tests = {
+        "q1_retained": straight.isInside((58.0, 0.0, 0.0)),
+        "q2_retained": straight.isInside((-58.0, 0.0, 0.0)),
+        "q3_retained": straight.isInside((-58.0, 0.0, 0.0)),
+        "q4_removed": not straight.isInside((0.0, -58.0, 0.0)),
+        "upper_base_region_retained": upper.isInside((58.0, 0.0, 51.0)),
+        "upper_apex_retained": upper.isInside((0.0, 0.0, 72.0)),
+        "lower_base_region_retained": lower.isInside((58.0, 0.0, -51.0)),
+        "lower_apex_retained": lower.isInside((0.0, 0.0, -62.0)),
+    }
+    # Use off-axis points for the actual quadrant checks.
+    sector_tests["q1_retained"] = straight.isInside((41.012, 41.012, 0.0))
+    sector_tests["q2_retained"] = straight.isInside((-41.012, 41.012, 0.0))
+    sector_tests["q3_retained"] = straight.isInside((-41.012, -41.012, 0.0))
+    sector_tests["q4_removed"] = not straight.isInside((41.012, -41.012, 0.0))
+    sector_tests["upper_q4_removed"] = not upper.isInside((41.012, -41.012, 51.0))
+    sector_tests["lower_q4_removed"] = not lower.isInside((41.012, -41.012, -51.0))
+    if not all(sector_tests.values()):
+        failed = [key for key, passed in sector_tests.items() if not passed]
+        raise RuntimeError(f"Sector membership checks failed: {failed}")
+
+    upper_inner_radius, upper_center_z = spherical_cap_parameters(
+        UPPER_INNER_RISE, Z_TOP_FLAT, True
+    )
+    lower_inner_radius, lower_center_z = spherical_cap_parameters(
+        LOWER_INNER_RISE, Z_BOTTOM_FLAT, False
+    )
+    upper_outer_base_radius = circle_radius_at_z(
+        upper_center_z, upper_inner_radius + WALL_OFFSET, Z_TOP_FLAT
+    )
+    lower_outer_base_radius = circle_radius_at_z(
+        lower_center_z, lower_inner_radius + WALL_OFFSET, Z_BOTTOM_FLAT
+    )
+
+    # Cylinder end annuli lie wholly inside the larger, exact spherical-shell
+    # base annuli.  Their coplanar overlap is the direct geometric contact.
+    cylinder_contact_area = 0.75 * math.pi * (OUTER_RADIUS**2 - INNER_RADIUS**2)
+    upper_head_base_area = 0.75 * math.pi * (
+        upper_outer_base_radius**2 - INNER_RADIUS**2
+    )
+    lower_head_base_area = 0.75 * math.pi * (
+        lower_outer_base_radius**2 - INNER_RADIUS**2
+    )
+    upper_contact_area = planar_face_at_z(upper, Z_TOP_FLAT).Area()
+    cylinder_top_area = planar_face_at_z(straight, Z_TOP_FLAT).Area()
+    cylinder_bottom_area = planar_face_at_z(straight, Z_BOTTOM_FLAT).Area()
+    lower_contact_area = planar_face_at_z(lower, Z_BOTTOM_FLAT).Area()
+    if abs(upper_contact_area - upper_head_base_area) > 1.0e-7:
+        raise RuntimeError(
+            "The upper-head base annulus does not have the exact offset-sphere area"
+        )
+    if abs(lower_contact_area - lower_head_base_area) > 1.0e-7:
+        raise RuntimeError(
+            "The lower-head base annulus does not have the exact offset-sphere area"
+        )
+    if abs(cylinder_top_area - cylinder_contact_area) > 1.0e-7:
+        raise RuntimeError("The straight-wall top annulus has an unexpected area")
+    if abs(cylinder_bottom_area - cylinder_contact_area) > 1.0e-7:
+        raise RuntimeError("The straight-wall bottom annulus has an unexpected area")
+    if upper_outer_base_radius <= OUTER_RADIUS or lower_outer_base_radius <= OUTER_RADIUS:
+        raise RuntimeError("A head base does not fully contain its cylinder contact ring")
+
+    upper_distance = upper.distance(straight)
+    lower_distance = lower.distance(straight)
+    if upper_distance > 1.0e-7 or lower_distance > 1.0e-7:
+        raise RuntimeError("The three named bodies are not all in contact")
+
+    bounds = compound.BoundingBox()
+    expected_bounds = (
+        -lower_outer_base_radius,
+        lower_outer_base_radius,
+        -lower_outer_base_radius,
+        lower_outer_base_radius,
+        -63.0,
+        73.0,
+    )
+    actual_bounds = (
+        bounds.xmin,
+        bounds.xmax,
+        bounds.ymin,
+        bounds.ymax,
+        bounds.zmin,
+        bounds.zmax,
+    )
+    if any(abs(actual - expected) > 1.0e-6 for actual, expected in zip(actual_bounds, expected_bounds)):
+        raise RuntimeError(f"Unexpected model bounds: {actual_bounds}")
+
+    total_volume = upper.Volume() + straight.Volume() + lower.Volume()
+    if abs(compound.Volume() - total_volume) > 1.0e-6:
+        raise RuntimeError("The compound volume is not the sum of the three bodies")
+
+    return {
+        "sector_tests": sector_tests,
+        "coplanar_overlap_area_mm2": cylinder_contact_area,
+        "base_face_areas_mm2": {
+            "upper_head_bottom": upper_contact_area,
+            "straight_wall_top": cylinder_top_area,
+            "straight_wall_bottom": cylinder_bottom_area,
+            "lower_head_top": lower_contact_area,
+        },
+        "head_outer_base_radii_mm": {
+            "upper": upper_outer_base_radius,
+            "lower": lower_outer_base_radius,
+        },
+        "minimum_shape_distance_mm": {
+            "upper_head_to_straight_wall": upper_distance,
+            "lower_head_to_straight_wall": lower_distance,
+        },
+        "volume_mm3": {
+            "upper_head": upper.Volume(),
+            "straight_wall": straight.Volume(),
+            "lower_head": lower.Volume(),
+            "total": compound.Volume(),
+        },
+        "bounds_mm": {
+            "x": [bounds.xmin, bounds.xmax],
+            "y": [bounds.ymin, bounds.ymax],
+            "z": [bounds.zmin, bounds.zmax],
+        },
+    }
+
+
+def validate_exported_step(
+    step_path: Path,
+    expected_volume: float,
+    expected_bounds: tuple[float, float, float, float, float, float],
+) -> dict:
+    if not step_path.is_file() or step_path.stat().st_size == 0:
+        raise RuntimeError("candidate.step was not written")
+
+    imported = cq.importers.importStep(str(step_path))
+    imported_shape = imported.val()
+    solids = imported_shape.Solids()
+    if len(solids) != 3:
+        raise RuntimeError(f"Re-imported STEP has {len(solids)} solids, expected 3")
+    if not imported_shape.isValid():
+        raise RuntimeError("Re-imported STEP shape is invalid")
+    if abs(imported_shape.Volume() - expected_volume) > 1.0e-5:
+        raise RuntimeError("Re-imported STEP volume changed")
+
+    bounds = imported_shape.BoundingBox()
+    actual_bounds = (
+        bounds.xmin,
+        bounds.xmax,
+        bounds.ymin,
+        bounds.ymax,
+        bounds.zmin,
+        bounds.zmax,
+    )
+    if any(
+        abs(actual - expected) > 1.0e-6
+        for actual, expected in zip(actual_bounds, expected_bounds)
+    ):
+        raise RuntimeError(f"Re-imported bounds changed: {actual_bounds}")
+
+    step_text = step_path.read_text(encoding="utf-8", errors="replace")
+    if "SI_UNIT(.MILLI.,.METRE.)" not in step_text:
+        raise RuntimeError("STEP file does not declare millimetre length units")
+
+    return {
+        "readable": True,
+        "valid_brep": imported_shape.isValid(),
+        "solid_count": len(solids),
+        "volume_mm3": imported_shape.Volume(),
+        "bounds_mm": {
+            "x": [bounds.xmin, bounds.xmax],
+            "y": [bounds.ymin, bounds.ymax],
+            "z": [bounds.zmin, bounds.zmax],
+        },
+        "declares_millimetres": True,
+    }
+
+
+def main() -> None:
+    upper_wp = upper_head_solid()
+    straight_wp = straight_wall_solid()
+    lower_wp = lower_head_solid()
+
+    upper = upper_wp.val()
+    straight = straight_wp
+    lower = lower_wp.val()
+    compound = cq.Compound.makeCompound([upper, straight, lower])
+
+    local_validation = validate_local_geometry(upper, straight, lower, compound)
+    cq.exporters.export(compound, str(CANDIDATE_STEP), exportType="STEP")
+
+    upper_inner_radius, upper_center_z = spherical_cap_parameters(
+        UPPER_INNER_RISE, Z_TOP_FLAT, True
+    )
+    lower_inner_radius, lower_center_z = spherical_cap_parameters(
+        LOWER_INNER_RISE, Z_BOTTOM_FLAT, False
+    )
+    upper_outer_base_radius = circle_radius_at_z(
+        upper_center_z, upper_inner_radius + WALL_OFFSET, Z_TOP_FLAT
+    )
+    lower_outer_base_radius = circle_radius_at_z(
+        lower_center_z, lower_inner_radius + WALL_OFFSET, Z_BOTTOM_FLAT
+    )
+    max_radius = max(upper_outer_base_radius, lower_outer_base_radius)
+    expected_bounds = (-max_radius, max_radius, -max_radius, max_radius, -63.0, 73.0)
+    step_validation = validate_exported_step(
+        CANDIDATE_STEP,
+        compound.Volume(),
+        expected_bounds,
+    )
+
+    report = {
+        "task_id": "text-09",
+        "candidate": CANDIDATE_STEP.name,
+        "source": Path(__file__).name,
+        "units": "mm",
+        "coordinate_frame": {
+            "container_axis": "+Z",
+            "angular_start": "+X at 0 degrees",
+            "positive_angular_direction": "counter-clockwise about +Z",
+            "sector_degrees": [SECTOR_START_DEGREES, SECTOR_END_DEGREES],
+        },
+        "composition": [
+            {
+                "name": "upper_head",
+                "kind": "closed spherical-cap wall sector",
+                "z_range_mm": [Z_TOP_FLAT, 73.0],
+                "contact_with": "straight_wall at Z=50",
+                "inner_cap": {
+                    "base_chord_diameter_mm": 114.0,
+                    "base_z_mm": Z_TOP_FLAT,
+                    "inner_rise_mm": UPPER_INNER_RISE,
+                    "inner_sphere_radius_mm": upper_inner_radius,
+                    "sphere_center_z_mm": upper_center_z,
+                },
+                "outer_wall": {
+                    "normal_outward_offset_mm": WALL_OFFSET,
+                    "outer_sphere_radius_mm": upper_inner_radius + WALL_OFFSET,
+                    "outer_apex_z_mm": upper_center_z + upper_inner_radius + WALL_OFFSET,
+                    "base_outer_radius_mm": upper_outer_base_radius,
+                },
+            },
+            {
+                "name": "straight_wall",
+                "kind": "annular cylinder sector",
+                "z_range_mm": [Z_BOTTOM_FLAT, Z_TOP_FLAT],
+                "inner_radius_mm": INNER_RADIUS,
+                "outer_radius_mm": OUTER_RADIUS,
+                "contact_with": [
+                    "upper_head at Z=50",
+                    "lower_head at Z=-50",
+                ],
+            },
+            {
+                "name": "lower_head",
+                "kind": "closed spherical-cap wall sector",
+                "z_range_mm": [-63.0, Z_BOTTOM_FLAT],
+                "contact_with": "straight_wall at Z=-50",
+                "inner_cap": {
+                    "base_chord_diameter_mm": 114.0,
+                    "base_z_mm": Z_BOTTOM_FLAT,
+                    "inner_rise_mm": LOWER_INNER_RISE,
+                    "inner_sphere_radius_mm": lower_inner_radius,
+                    "sphere_center_z_mm": lower_center_z,
+                },
+                "outer_wall": {
+                    "normal_outward_offset_mm": WALL_OFFSET,
+                    "outer_sphere_radius_mm": lower_inner_radius + WALL_OFFSET,
+                    "outer_apex_z_mm": lower_center_z - lower_inner_radius - WALL_OFFSET,
+                    "base_outer_radius_mm": lower_outer_base_radius,
+                },
+            },
+        ],
+        "interface_policy": {
+            "body_count": 3,
+            "bodies_are_in_contact": True,
+            "internal_union_performed": False,
+            "contact_geometry": "coplanar-overlapping annular faces at Z=+/-50",
+            "head_outer_surface": "exact 3 mm normal offset of the inner sphere",
+            "unspecified_fillets_added": False,
+        },
+        "validation": {
+            "local_brep": local_validation,
+            "step_round_trip": step_validation,
+        },
+        "files": {
+            CANDIDATE_STEP.name: {
+                "bytes": CANDIDATE_STEP.stat().st_size,
+                "sha256": hashlib.sha256(CANDIDATE_STEP.read_bytes()).hexdigest(),
+            },
+            Path(__file__).name: {
+                "bytes": Path(__file__).stat().st_size,
+                "sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+            },
+        },
+    }
+
+    # Round only for readable JSON; all assertions above use full precision.
+    def clean(value):
+        if isinstance(value, dict):
+            return {key: clean(item) for key, item in value.items()}
+        if isinstance(value, list):
+            return [clean(item) for item in value]
+        if isinstance(value, float):
+            return rounded(value)
+        return value
+
+    SUBMISSION_JSON.write_text(
+        json.dumps(clean(report), ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print(f"Wrote {CANDIDATE_STEP}")
+    print(f"Wrote {SUBMISSION_JSON}")
+    print(f"Solids: {len(compound.Solids())}; volume: {compound.Volume():.9f} mm^3")
+
+
+if __name__ == "__main__":
+    main()

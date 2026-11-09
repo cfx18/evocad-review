@@ -1,0 +1,1544 @@
+{
+  "schema_version": "1.0",
+  "review_ui_version": "1.0",
+  "campaign": {
+    "campaign_id": "deepseek-r9-assembly",
+    "campaign_manifest_sha256": "154f199f6ef9aa2f92c6d23c6c12382d47e878abb8bedb73912d3b59ea186990",
+    "declared_manifest_sha256": null,
+    "source_manifest_sha256": "8d09e5edb51b446eabb04a0d5f75e459d3f30ca9d289f0319c52cf5613b9cdf3",
+    "protocol": "evocad-geometry-v2",
+    "agent_loop_protocol": null,
+    "benchmark_split": "v0.1-r9-photo-gt-primary",
+    "execution": {
+      "harness": "Codex",
+      "model": "deepseek-flash",
+      "requested_effort": "max",
+      "effective_effort": null,
+      "kind": "archived_retest_scope"
+    }
+  },
+  "models": [
+    "deepseek-flash"
+  ],
+  "render_geometry": true,
+  "feature_backfill": null,
+  "runs": [
+    {
+      "target_id": "deepseek-r9-A01",
+      "run_id": "deepseek-r9-assembly-01",
+      "sample_id": "assembly-01",
+      "sample_key": "A01",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "assembly",
+      "task": "末端平行夹爪",
+      "task_prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-c528eb1b54bb2a9b",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "724d367c1438b89eec4e72602155800cd5f0cece428ce191a94146834d69b9d7",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "Enactic OpenArm 2.0",
+        "license_as_recorded": "CERN-OHL-S-2.0",
+        "revision": "2.0.0 / eefc9fa"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-c528eb1b54bb2a9b",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1123.843,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": null,
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": null,
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "724d367c1438b89eec4e72602155800cd5f0cece428ce191a94146834d69b9d7"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [],
+          "preview_provenance": null,
+          "artifacts": [
+            {
+              "path": "assets/A01/assembly.json",
+              "sha256": "724d367c1438b89eec4e72602155800cd5f0cece428ce191a94146834d69b9d7",
+              "original_sha256": "724d367c1438b89eec4e72602155800cd5f0cece428ce191a94146834d69b9d7",
+              "kind": "assembly",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "code_files": [],
+          "final_response": "已生成并校验静态装配文件：\n\n- assembly.json\n- submission.json\n- 可重建源码：build_assembly.py\n\n已验证单位、79 个实例数量、BOM 数量匹配、所有变换均为 proper rigid 4×4 矩阵，以及 `observation_from_assembly` 为正交右手刚体变换。",
+          "evaluation_scope": {
+            "metric_id": "observable_component_checks",
+            "label": "可见组件检查",
+            "display": "未通过",
+            "component_passed": false,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。"
+            ],
+            "metric": {
+              "id": "observable_component_checks",
+              "scale": "boolean",
+              "value": false,
+              "views": [
+                {
+                  "iou": 0.8228384658597621,
+                  "boundary_p95_px": 33.55414401469676,
+                  "appearance_mae": 0.17664966142933583,
+                  "worst_local_mae": 0.7595411857476638,
+                  "passed": false
+                },
+                {
+                  "iou": 0.8605907079030147,
+                  "boundary_p95_px": 30.949999999999932,
+                  "appearance_mae": 0.1578575037862053,
+                  "worst_local_mae": 0.7373491399677645,
+                  "passed": false
+                },
+                {
+                  "iou": 0.7890921374006132,
+                  "boundary_p95_px": 41.63890169270572,
+                  "appearance_mae": 0.21543712802538884,
+                  "worst_local_mae": 0.7665465126135702,
+                  "passed": false
+                },
+                {
+                  "iou": 0.8251846824505991,
+                  "boundary_p95_px": 27.43344849368985,
+                  "appearance_mae": 0.17483318316814075,
+                  "worst_local_mae": 0.7289215337196011,
+                  "passed": false
+                }
+              ]
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 156 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、5 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "c528eb1b54bb2a9b55fe591c1652baa4e11d8cf903d39bfe0fc86d17307ea6c6"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-A02",
+      "run_id": "deepseek-r9-assembly-02",
+      "sample_id": "assembly-02",
+      "sample_key": "A02",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "assembly",
+      "task": "肩部 J1–J2 多轴关节",
+      "task_prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "timeout",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-72d0715299376ca1",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "34d14fc7ff4747f13e705eb252167de372f93b588365b86eb97c2437015f98cd",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "Enactic OpenArm 2.0",
+        "license_as_recorded": "CERN-OHL-S-2.0",
+        "revision": "2.0.0 / eefc9fa"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-72d0715299376ca1",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": null,
+          "selected": true,
+          "timed_out": true,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": null,
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": null,
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "34d14fc7ff4747f13e705eb252167de372f93b588365b86eb97c2437015f98cd"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [],
+          "preview_provenance": null,
+          "artifacts": [
+            {
+              "path": "assets/A02/assembly.json",
+              "sha256": "34d14fc7ff4747f13e705eb252167de372f93b588365b86eb97c2437015f98cd",
+              "original_sha256": "34d14fc7ff4747f13e705eb252167de372f93b588365b86eb97c2437015f98cd",
+              "kind": "assembly",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "code_files": [],
+          "final_response": null,
+          "evaluation_scope": {
+            "metric_id": "observable_component_checks",
+            "label": "可见组件检查",
+            "display": "未通过",
+            "component_passed": false,
+            "whole_task_passed": null,
+            "measurement_status": "timeout_artifact_measured",
+            "execution_status": "timeout",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。"
+            ],
+            "metric": {
+              "id": "observable_component_checks",
+              "scale": "boolean",
+              "value": false,
+              "views": [],
+              "diagnostic": "outside_public_enclosure"
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：执行超时。记录有 222 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、0 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：超时产物已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "72d0715299376ca1cdc8e9fb317da643d8d213f3983138233c253bf28a7f6457"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-A03",
+      "run_id": "deepseek-r9-assembly-03",
+      "sample_id": "assembly-03",
+      "sample_key": "A03",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "assembly",
+      "task": "J3-J5 裸露功能关节链静态复位",
+      "task_prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-c7170fdde3551cb1",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "47b8dc0ab96f31f85b474715db481b1f30951980dc58de166d5ae6e79e0d1112",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "Enactic OpenArm 2.0",
+        "license_as_recorded": "CERN-OHL-S-2.0",
+        "revision": "2.0.0 / eefc9fa"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-c7170fdde3551cb1",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1163.844,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": null,
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": null,
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "47b8dc0ab96f31f85b474715db481b1f30951980dc58de166d5ae6e79e0d1112"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [],
+          "preview_provenance": null,
+          "artifacts": [
+            {
+              "path": "assets/A03/assembly.json",
+              "sha256": "47b8dc0ab96f31f85b474715db481b1f30951980dc58de166d5ae6e79e0d1112",
+              "original_sha256": "47b8dc0ab96f31f85b474715db481b1f30951980dc58de166d5ae6e79e0d1112",
+              "kind": "assembly",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "code_files": [],
+          "final_response": "已完成并生成 assembly.json。\n\n校验结果：\n\n- 单位：`mm`\n- 实例数：68，与 BOM 数量完全一致\n- 所有变换矩阵均为正交、行列式为 `+1` 的刚体矩阵\n- `observation_from_assembly` 为单位矩阵，直接使用观察坐标\n- 所有零件最大顶点半径为 `145.001 mm`，位于 `146.580 mm` 装配包络内\n- JSON 已重新读取验证通过\n\n可重建源码保存在 build_assembly.py。",
+          "evaluation_scope": {
+            "metric_id": "observable_component_checks",
+            "label": "可见组件检查",
+            "display": "未通过",
+            "component_passed": false,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。"
+            ],
+            "metric": {
+              "id": "observable_component_checks",
+              "scale": "boolean",
+              "value": false,
+              "views": [
+                {
+                  "iou": 0.6084405072398597,
+                  "boundary_p95_px": 54.037024344425184,
+                  "appearance_mae": 0.29887783020748304,
+                  "worst_local_mae": 0.701299987518071,
+                  "passed": false
+                },
+                {
+                  "iou": 0.6590422988852822,
+                  "boundary_p95_px": 38.16536149896706,
+                  "appearance_mae": 0.2715927669354432,
+                  "worst_local_mae": 0.7549386653800055,
+                  "passed": false
+                },
+                {
+                  "iou": 0.671534687514329,
+                  "boundary_p95_px": 43.60332377281842,
+                  "appearance_mae": 0.2585905046452004,
+                  "worst_local_mae": 0.7745507123719406,
+                  "passed": false
+                },
+                {
+                  "iou": 0.6170026853075317,
+                  "boundary_p95_px": 42.720018726587654,
+                  "appearance_mae": 0.2958125990410708,
+                  "worst_local_mae": 0.7649533699161961,
+                  "passed": false
+                }
+              ]
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 173 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "c7170fdde3551cb1e560feea4e75aa919eca72e5325b5c58970ee70cd4fe6a72"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-A04",
+      "run_id": "deepseek-r9-assembly-04",
+      "sample_id": "assembly-04",
+      "sample_key": "A04",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "assembly",
+      "task": "A/B 双驱动机构",
+      "task_prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-b5f8e9fa502bb49f",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "6bf347910175785d19f581100e4567ce8f43afb78627155bc104dc72a88515ad",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "Voron Trident",
+        "license_as_recorded": "Repository GPL-3.0; third-party component notices require separate check",
+        "revision": "f04f747d4dea06315806f352abf57f767cedf2b4"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-b5f8e9fa502bb49f",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1178.016,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": null,
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": null,
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "6bf347910175785d19f581100e4567ce8f43afb78627155bc104dc72a88515ad"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [],
+          "preview_provenance": null,
+          "artifacts": [
+            {
+              "path": "assets/A04/assembly.json",
+              "sha256": "6bf347910175785d19f581100e4567ce8f43afb78627155bc104dc72a88515ad",
+              "original_sha256": "6bf347910175785d19f581100e4567ce8f43afb78627155bc104dc72a88515ad",
+              "kind": "assembly",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "code_files": [],
+          "final_response": "已完成并保存 assembly.json。\n\n同时保留了可重建源码 solve_assembly.py。已验证：\n\n- BOM 数量精确匹配，共 103 个实例\n- 单位为 mm\n- 所有变换均为合法刚体矩阵\n- `observation_from_assembly` 为单位矩阵\n- 所有零件顶点均位于观察包络内，最大中心距离约 207.26 mm，小于允许的 211.09 mm\n- 文件存在且可正常解析读取",
+          "evaluation_scope": {
+            "metric_id": "observable_component_checks",
+            "label": "可见组件检查",
+            "display": "未通过",
+            "component_passed": false,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。"
+            ],
+            "metric": {
+              "id": "observable_component_checks",
+              "scale": "boolean",
+              "value": false,
+              "views": [
+                {
+                  "iou": 0.5570562293274531,
+                  "boundary_p95_px": 23.857612125831125,
+                  "appearance_mae": 0.33376190452533716,
+                  "worst_local_mae": 0.7720903080130801,
+                  "passed": false
+                },
+                {
+                  "iou": 0.5097858498238005,
+                  "boundary_p95_px": 24.00624458405139,
+                  "appearance_mae": 0.34781377654951207,
+                  "worst_local_mae": 0.690112387563711,
+                  "passed": false
+                },
+                {
+                  "iou": 0.5731038953385585,
+                  "boundary_p95_px": 21.382691620883584,
+                  "appearance_mae": 0.317139032782932,
+                  "worst_local_mae": 0.7378274083058162,
+                  "passed": false
+                },
+                {
+                  "iou": 0.5691769900650068,
+                  "boundary_p95_px": 20.248456731316587,
+                  "appearance_mae": 0.3226353824225931,
+                  "worst_local_mae": 0.7497845190416497,
+                  "passed": false
+                }
+              ]
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 137 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "b5f8e9fa502bb49f7bc2d1aebcdef1fadc06d5d98e147f6598bd1c77b5e2b5e0"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-A05",
+      "run_id": "deepseek-r9-assembly-05",
+      "sample_id": "assembly-05",
+      "sample_key": "A05",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "assembly",
+      "task": "左侧 XY 接头功能子装配静态复位",
+      "task_prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-0adaae79e60ef53a",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "22711a4d2f4fab75c76fb7bbed287fc4b9157437c664223bd8d72af0a71bd0a5",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "Voron Trident",
+        "license_as_recorded": "Repository GPL-3.0; third-party component notices require separate check",
+        "revision": "f04f747d4dea06315806f352abf57f767cedf2b4"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-0adaae79e60ef53a",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1120.656,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": null,
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": null,
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "22711a4d2f4fab75c76fb7bbed287fc4b9157437c664223bd8d72af0a71bd0a5"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [],
+          "preview_provenance": null,
+          "artifacts": [
+            {
+              "path": "assets/A05/assembly.json",
+              "sha256": "22711a4d2f4fab75c76fb7bbed287fc4b9157437c664223bd8d72af0a71bd0a5",
+              "original_sha256": "22711a4d2f4fab75c76fb7bbed287fc4b9157437c664223bd8d72af0a71bd0a5",
+              "kind": "assembly",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "code_files": [],
+          "final_response": "已生成并验证：\n\n- assembly.json\n- rebuild_assembly.py\n\n提交包含全部 40 个零件实例，BOM 数量校验通过；单位为 mm，所有零件变换和 `observation_from_assembly` 均为可行齐次刚体矩阵，观察坐标变换无缩放或反射。",
+          "evaluation_scope": {
+            "metric_id": "observable_component_checks",
+            "label": "可见组件检查",
+            "display": "未通过",
+            "component_passed": false,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。"
+            ],
+            "metric": {
+              "id": "observable_component_checks",
+              "scale": "boolean",
+              "value": false,
+              "views": [
+                {
+                  "iou": 0.7678220236315864,
+                  "boundary_p95_px": 47.877415118113035,
+                  "appearance_mae": 0.21531707072880546,
+                  "worst_local_mae": 0.7767879993842091,
+                  "passed": false
+                },
+                {
+                  "iou": 0.7382167190368043,
+                  "boundary_p95_px": 46.09772228646444,
+                  "appearance_mae": 0.22676218661556236,
+                  "worst_local_mae": 0.7379146725531625,
+                  "passed": false
+                },
+                {
+                  "iou": 0.7698554936627109,
+                  "boundary_p95_px": 31.941190087134295,
+                  "appearance_mae": 0.20638142702499268,
+                  "worst_local_mae": 0.7625656115537646,
+                  "passed": false
+                },
+                {
+                  "iou": 0.7134314957802119,
+                  "boundary_p95_px": 37.459009822888326,
+                  "appearance_mae": 0.24635506553452483,
+                  "worst_local_mae": 0.7589602053892699,
+                  "passed": false
+                }
+              ]
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 161 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "0adaae79e60ef53a835d8e03fece329f08f804bb7176afb36f25c9254f748e7e"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-A06",
+      "run_id": "deepseek-r9-assembly-06",
+      "sample_id": "assembly-06",
+      "sample_key": "A06",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "assembly",
+      "task": "后部 Z 支承机构",
+      "task_prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "provider_error",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-c9643dafd065074a",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": null,
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "Voron Trident",
+        "license_as_recorded": "Repository GPL-3.0; third-party component notices require separate check",
+        "revision": "f04f747d4dea06315806f352abf57f767cedf2b4"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-c9643dafd065074a",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 4.797,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": null,
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": null,
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": null,
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [],
+          "preview_provenance": null,
+          "artifacts": [],
+          "code_files": [],
+          "final_response": null,
+          "evaluation_scope": {
+            "metric_id": null,
+            "label": "测量",
+            "display": "无几何分数",
+            "component_passed": null,
+            "whole_task_passed": null,
+            "measurement_status": "infrastructure_unverified",
+            "execution_status": "provider_error",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。"
+            ],
+            "metric": null
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：服务端错误。记录有 1 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 0 个候选文件、0 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：基础设施待核验。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "c9643dafd065074a11a86020e85b6c78e1e89a3712b7f94eef87edf73ea58fa1"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-A07",
+      "run_id": "deepseek-r9-assembly-07",
+      "sample_id": "assembly-07",
+      "sample_key": "A07",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "assembly",
+      "task": "交叉轴滑台与多组惰轮",
+      "task_prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-eef3dc92102b4d78",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "ee6c7dfb582b3e4d219d0c74cae4687fc455194bbaaafcb50886cda83374a8f6",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "Positron LT",
+        "license_as_recorded": "README says GPLv3 for non-commercial and separate commercial license; nonstandard mixed wording flagged",
+        "revision": "7544ba3688c0364074ddc871afcd22c62dd9a372"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-eef3dc92102b4d78",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1152.61,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": null,
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": null,
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "ee6c7dfb582b3e4d219d0c74cae4687fc455194bbaaafcb50886cda83374a8f6"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [],
+          "preview_provenance": null,
+          "artifacts": [
+            {
+              "path": "assets/A07/assembly.json",
+              "sha256": "ee6c7dfb582b3e4d219d0c74cae4687fc455194bbaaafcb50886cda83374a8f6",
+              "original_sha256": "ee6c7dfb582b3e4d219d0c74cae4687fc455194bbaaafcb50886cda83374a8f6",
+              "kind": "assembly",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "code_files": [],
+          "final_response": "已生成并保存：\n\n- assembly.json\n- submission.json\n\n文件单位为 mm，包含 64 个实例，数量与 BOM 一致；所有实例及公共坐标系变换均为刚体矩阵。JSON 已重新读取验证。",
+          "evaluation_scope": {
+            "metric_id": "observable_component_checks",
+            "label": "可见组件检查",
+            "display": "未通过",
+            "component_passed": false,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。"
+            ],
+            "metric": {
+              "id": "observable_component_checks",
+              "scale": "boolean",
+              "value": false,
+              "views": [],
+              "diagnostic": "outside_public_enclosure"
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 157 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、0 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "eef3dc92102b4d787ae1c821ac1e63a95e1898c85462d0f68182f8b01f64c66f"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-A08",
+      "run_id": "deepseek-r9-assembly-08",
+      "sample_id": "assembly-08",
+      "sample_key": "A08",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "assembly",
+      "task": "折叠热床支架",
+      "task_prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-74087b985f55d6dd",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "2921813dfa4d62ee476f133c6b6b4eeb6f53596506006374cb2cc868398f09e3",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "Positron LT",
+        "license_as_recorded": "README says GPLv3 for non-commercial and separate commercial license; nonstandard mixed wording flagged",
+        "revision": "7544ba3688c0364074ddc871afcd22c62dd9a372"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-74087b985f55d6dd",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1176.032,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": null,
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": null,
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "2921813dfa4d62ee476f133c6b6b4eeb6f53596506006374cb2cc868398f09e3"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [],
+          "preview_provenance": null,
+          "artifacts": [
+            {
+              "path": "assets/A08/assembly.json",
+              "sha256": "2921813dfa4d62ee476f133c6b6b4eeb6f53596506006374cb2cc868398f09e3",
+              "original_sha256": "2921813dfa4d62ee476f133c6b6b4eeb6f53596506006374cb2cc868398f09e3",
+              "kind": "assembly",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "code_files": [],
+          "final_response": "已生成并保存 assembly.json。\n\n校验结果：\n\n- 文件可读取，单位为 `mm`\n- BOM 数量完整：18 个实例，10 种零件\n- `observation_from_assembly` 为单位矩阵\n- 所有零件矩阵均为有限数值、正交且行列式为 `+1`\n- 可重建源码保留于 build_assembly.py",
+          "evaluation_scope": {
+            "metric_id": "observable_component_checks",
+            "label": "可见组件检查",
+            "display": "未通过",
+            "component_passed": false,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。"
+            ],
+            "metric": {
+              "id": "observable_component_checks",
+              "scale": "boolean",
+              "value": false,
+              "views": [],
+              "diagnostic": "outside_public_enclosure"
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 180 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、4 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "74087b985f55d6ddb8809745be3c2162ffa05e77555c44853a470cd50b0fb5c6"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-A09",
+      "run_id": "deepseek-r9-assembly-09",
+      "sample_id": "assembly-09",
+      "sample_key": "A09",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "assembly",
+      "task": "挖掘机 13 件保存姿态静态复位",
+      "task_prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-4a6b68aadf082158",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "94908b4dbe8052f01020e2c80a967251630df3d2a00f1267bc5664fd327bf39c",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "FreeCAD excavator AssemblyExample",
+        "license_as_recorded": "Embedded document License=CC-BY 4.0",
+        "revision": "89e237f0aa02b4c2d7cc37dd8f54a5c5a28f4d5e"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-4a6b68aadf082158",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1159.453,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": "assets/A09/view-01.png",
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": "assets/A09/candidate.stl",
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "94908b4dbe8052f01020e2c80a967251630df3d2a00f1267bc5664fd327bf39c"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [
+            {
+              "path": "assets/A09/view-01.png",
+              "sha256": "036e53d07e00e8b4b3e74b5dad00b5c2b2c90a34c5261607b17a2affab039004",
+              "label": "候选产物 · 视图 1（归档候选的只读渲染）"
+            },
+            {
+              "path": "assets/A09/view-02.png",
+              "sha256": "250b42f9d8b55775924b16bd5f90ec9a0542541e327fcd6241587ff4ffce124a",
+              "label": "候选产物 · 视图 2（归档候选的只读渲染）"
+            }
+          ],
+          "preview_provenance": {
+            "candidate_sha256": "94908b4dbe8052f01020e2c80a967251630df3d2a00f1267bc5664fd327bf39c",
+            "renderer_id": "evocad-candidate-preview-v1; CADQuery 2.6.1/OCP 7.8.1.1.post1/VTK 9.3.1",
+            "provenance": "Post-run read-only candidate rendering with auto-fit camera. Not model output or scoring evidence."
+          },
+          "artifacts": [
+            {
+              "path": "assets/A09/assembly.json",
+              "sha256": "94908b4dbe8052f01020e2c80a967251630df3d2a00f1267bc5664fd327bf39c",
+              "original_sha256": "94908b4dbe8052f01020e2c80a967251630df3d2a00f1267bc5664fd327bf39c",
+              "kind": "assembly",
+              "label": "下载真实装配位姿 JSON"
+            },
+            {
+              "path": "assets/A09/PREVIEW-NOTICE.txt",
+              "sha256": "ff25f17f2b1c6f6a7078258308b98e8b3b5e2eaee523f5ba10a3b23e6bbd4384",
+              "label": "预览来源与署名",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/A09/candidate.stl",
+              "label": "下载候选预览网格 STL",
+              "sha256": "d38835cb8ebf7192154cc4ad68241791ca57a108764af5fb0a8f4456ba1c4975",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/A09/MESH-NOTICE.txt",
+              "label": "3D 网格来源与署名",
+              "sha256": "a25c9ea2e36c3e2b4e2b946d7719cbaa6deb9e17a7471d5a8098129c05447d1e",
+              "kind": "notice"
+            }
+          ],
+          "code_files": [],
+          "final_response": "已生成并验证 assembly.json。\n\n验证结果：\n\n- 包含全部 13 个 BOM 零件，各一次。\n- 单位：mm。\n- `observation_from_assembly` 为合法刚体矩阵。\n- 所有零件位于半径 `444.1763 mm` 的装配包络内；实测最大半径约 `434.95 mm`。\n- 可重建源码：rebuild_assembly.py。",
+          "evaluation_scope": {
+            "metric_id": "observable_component_checks",
+            "label": "可见组件检查",
+            "display": "未通过",
+            "component_passed": false,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。",
+              "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+            ],
+            "metric": {
+              "id": "observable_component_checks",
+              "scale": "boolean",
+              "value": false,
+              "views": [
+                {
+                  "iou": 0.09190049287848799,
+                  "boundary_p95_px": 82.99095533092074,
+                  "appearance_mae": 0.6182691016121437,
+                  "worst_local_mae": 0.788234617231001,
+                  "passed": false
+                },
+                {
+                  "iou": 0.41288154805278926,
+                  "boundary_p95_px": 47.80167361086848,
+                  "appearance_mae": 0.4189751051287708,
+                  "worst_local_mae": 0.7071099465731908,
+                  "passed": false
+                },
+                {
+                  "iou": 0.1009920261191687,
+                  "boundary_p95_px": 118.1773890979155,
+                  "appearance_mae": 0.5860898371159795,
+                  "worst_local_mae": 0.693862097447163,
+                  "passed": false
+                },
+                {
+                  "iou": 0.06744004848065102,
+                  "boundary_p95_px": 135.03406911723678,
+                  "appearance_mae": 0.5752244941125229,
+                  "worst_local_mae": 0.7471952876254814,
+                  "passed": false
+                }
+              ]
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 213 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "4a6b68aadf0821584fa7a80f2ec9f1cc3e23825ce029b3f5282116cd95202abd"
+          },
+          "presentation_geometry": {
+            "source_candidate_sha256": "94908b4dbe8052f01020e2c80a967251630df3d2a00f1267bc5664fd327bf39c",
+            "sha256": "d38835cb8ebf7192154cc4ad68241791ca57a108764af5fb0a8f4456ba1c4975",
+            "triangles": 23429,
+            "bounds": [
+              [
+                -399.4188537597656,
+                -412.9613037109375,
+                300.2233581542969
+              ],
+              [
+                52.74762725830078,
+                -0.6838099956512451,
+                1059.6834716796875
+              ]
+            ],
+            "role": "postrun_candidate_visualization",
+            "alignment": "original candidate frame; no GT alignment"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-A10",
+      "run_id": "deepseek-r9-assembly-10",
+      "sample_id": "assembly-10",
+      "sample_key": "A10",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "assembly",
+      "task": "307 实体匿名散件静态复位（条件题）",
+      "task_prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-a019da76e7ca7136",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "6b3e2aa542b90ac1cbbebeb76c68ccc1311ef600557b5c220ca7d210c254c3cf",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "Aero Hand Open Right",
+        "license_as_recorded": "Design files CC BY-NC-SA 4.0",
+        "revision": "7bb2f23485a7d440960c21046da642de132b7745"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-a019da76e7ca7136",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1182.609,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": null,
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": null,
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "6b3e2aa542b90ac1cbbebeb76c68ccc1311ef600557b5c220ca7d210c254c3cf"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [],
+          "preview_provenance": null,
+          "artifacts": [
+            {
+              "path": "assets/A10/assembly.json",
+              "sha256": "6b3e2aa542b90ac1cbbebeb76c68ccc1311ef600557b5c220ca7d210c254c3cf",
+              "original_sha256": "6b3e2aa542b90ac1cbbebeb76c68ccc1311ef600557b5c220ca7d210c254c3cf",
+              "kind": "assembly",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "code_files": [],
+          "final_response": "已生成并保存：\n\n- 提交文件：assembly.json\n- 可重建源码：solve_assembly.py\n\n已检查：\n\n- 单位为 `mm`\n- `observation_from_assembly` 使用单位矩阵\n- 307 个 BOM 实例完整且无重复\n- 所有变换的行列式中误差均在 `1e-6` 内，且为 `+1`\n- 所有网格顶点均位于装配包络内\n- `assembly.json` 存在、可读取，大小约 146 KB",
+          "evaluation_scope": {
+            "metric_id": "observable_component_checks",
+            "label": "可见组件检查",
+            "display": "未通过",
+            "component_passed": false,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。"
+            ],
+            "metric": {
+              "id": "observable_component_checks",
+              "scale": "boolean",
+              "value": false,
+              "views": [
+                {
+                  "iou": 0.6220670086216304,
+                  "boundary_p95_px": 34.921326186581275,
+                  "appearance_mae": 0.2866266796144162,
+                  "worst_local_mae": 0.7603261800189116,
+                  "passed": false
+                },
+                {
+                  "iou": 0.7194244604316546,
+                  "boundary_p95_px": 22.077120736608663,
+                  "appearance_mae": 0.21671296978361734,
+                  "worst_local_mae": 0.701717409163797,
+                  "passed": false
+                },
+                {
+                  "iou": 0.259055445938852,
+                  "boundary_p95_px": 63.0,
+                  "appearance_mae": 0.5050391504481402,
+                  "worst_local_mae": 0.7579089524140519,
+                  "passed": false
+                },
+                {
+                  "iou": 0.2622494737805436,
+                  "boundary_p95_px": 63.0,
+                  "appearance_mae": 0.5034308056113516,
+                  "worst_local_mae": 0.7633562659024158,
+                  "passed": false
+                }
+              ]
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 136 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "a019da76e7ca7136efad79d22ed47adcd534ec86589277d48c11e447bf6bc58a"
+          }
+        }
+      ]
+    }
+  ],
+  "public_export_notice": "Verified public archive excerpt. One observed execution is recorded per case. Archive summaries are not model reasoning or tool traces. Numeric metrics and component outcomes retain their original scope. Whole-task acceptance is unverified.",
+  "source_bundle_sha256": null,
+  "source_archive_sha256": "3af3d3aced5832b12c9ed94a4b78fcba5a8119f4aad5b2442956f403644739e4",
+  "presentation_source_bundle_sha256": "37f99af964df31fcd92b681600659084c8e2cf0b91babb7e0f7193fa8ef05418",
+  "bundle_sha256": "040d0f34d6e86f84dc61978bd97101a96b87a434eacc6c9978720780f2a088bb"
+}

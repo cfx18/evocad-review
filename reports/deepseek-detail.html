@@ -1,73 +1,8 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="EvoCAD DeepSeek 实验的逐样本输入、建模产物、代码和执行记录。">
-  <title>DeepSeek 实验详情 | EvoCAD Review</title>
-  <link rel="stylesheet" href="deepseek-detail.css">
-  <script src="deepseek-detail.js" defer></script>
-</head>
-<body>
-  <header class="site-header">
-    <nav class="frame site-nav" aria-label="站点导航">
-      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">E</span><span>EvoCAD <small>Review</small></span></a>
-      <a class="summary-link" id="summaryLink" href="deepseek.html">返回 DeepSeek 结果汇总 <span aria-hidden="true">↗</span></a>
-    </nav>
-  </header>
-
-  <main class="frame">
-    <header class="page-heading">
-      <p class="eyebrow">CAD80 r9 · 运行证据</p>
-      <h1>DeepSeek 实验详情</h1>
-      <p>逐样本查看任务说明、建模产物、代码和保存的执行记录。</p>
-    </header>
-
-    <p id="loadStatus" class="notice" role="status">正在读取证据清单…</p>
-    <noscript><p class="notice">详情页需要 JavaScript 来读取证据清单。<a href="deepseek.html">查看静态结果汇总</a></p></noscript>
-
-    <div class="workspace" id="workspace" hidden>
-      <aside class="navigator" aria-label="实验和样本导航">
-        <dl class="scope">
-          <div><dt>Harness</dt><dd id="harnessLabel"></dd></div>
-          <div><dt>Model</dt><dd id="modelLabel"></dd></div>
-        </dl>
-        <label class="experiment-picker" for="experimentSelect">实验</label>
-        <select id="experimentSelect"></select>
-        <nav class="sample-nav" aria-labelledby="sampleHeading">
-          <div class="sample-heading"><h2 id="sampleHeading">样本</h2><span id="sampleCount"></span></div>
-          <ul id="sampleList"></ul>
-        </nav>
-      </aside>
-
-      <article class="sample-detail" aria-labelledby="sampleTitle">
-        <div class="sample-header">
-          <p class="eyebrow" id="sampleId"></p>
-          <h2 id="sampleTitle"></h2>
-          <dl class="status-grid" id="sampleFacts"></dl>
-          <details class="sample-notes" id="sampleNotesDisclosure" hidden>
-            <summary>记录说明</summary>
-            <ul class="note-list" id="sampleNotes"></ul>
-          </details>
-        </div>
-
-        <div class="tabs" role="tablist" aria-label="样本证据">
-          <button type="button" id="tab-input" data-tab="input" role="tab" aria-controls="evidencePanel" aria-selected="true">输入</button>
-          <button type="button" id="tab-artifact" data-tab="artifact" role="tab" aria-controls="evidencePanel" aria-selected="false" tabindex="-1">产物</button>
-          <button type="button" id="tab-code" data-tab="code" role="tab" aria-controls="evidencePanel" aria-selected="false" tabindex="-1">代码</button>
-          <button type="button" id="tab-process" data-tab="process" role="tab" aria-controls="evidencePanel" aria-selected="false" tabindex="-1">过程</button>
-        </div>
-        <section class="evidence" id="evidencePanel" role="tabpanel" aria-labelledby="tab-input" tabindex="0"></section>
-      </article>
-    </div>
-  </main>
-
-  <dialog class="lightbox" id="imageDialog" aria-labelledby="imageCaption">
-    <figure>
-      <img id="expandedImage" alt="">
-      <figcaption id="imageCaption"></figcaption>
-    </figure>
-    <form method="dialog"><button type="submit">关闭大图</button></form>
-  </dialog>
-</body>
-</html>
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EvoCAD Geometry Review</title><p>DeepSeek 实验已并入统一浏览界面。<a id="destination" href="../geometry/?view=deepseek-r9-text&amp;model=deepseek-flash">打开实验</a></p><script>
+const valid=['deepseek-r9-text','deepseek-r9-image','deepseek-r9-assembly'];
+const p=new URLSearchParams(location.search); const requested=p.get('experiment')||location.hash.slice(1);
+const view=valid.includes(requested)?requested:valid[0];
+const target=new URL('../geometry/',location.href); target.searchParams.set('view',view); target.searchParams.set('model','deepseek-flash');
+const sample=p.get('sample'); if(/^[TIA](0[1-9]|10)$/.test(sample||''))target.searchParams.set('sample',sample);
+document.getElementById('destination').href=target.href; location.replace(target.href);
+</script></html>

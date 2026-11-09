@@ -1,0 +1,2007 @@
+{
+  "schema_version": "1.0",
+  "review_ui_version": "1.0",
+  "campaign": {
+    "campaign_id": "deepseek-r9-image",
+    "campaign_manifest_sha256": "154f199f6ef9aa2f92c6d23c6c12382d47e878abb8bedb73912d3b59ea186990",
+    "declared_manifest_sha256": null,
+    "source_manifest_sha256": "8d09e5edb51b446eabb04a0d5f75e459d3f30ca9d289f0319c52cf5613b9cdf3",
+    "protocol": "evocad-geometry-v2",
+    "agent_loop_protocol": null,
+    "benchmark_split": "v0.1-r9-photo-gt-primary",
+    "execution": {
+      "harness": "Codex",
+      "model": "deepseek-flash",
+      "requested_effort": "max",
+      "effective_effort": null,
+      "kind": "archived_retest_scope"
+    }
+  },
+  "models": [
+    "deepseek-flash"
+  ],
+  "render_geometry": true,
+  "feature_backfill": null,
+  "runs": [
+    {
+      "target_id": "deepseek-r9-I01",
+      "run_id": "deepseek-r9-image-01",
+      "sample_id": "image-01",
+      "sample_key": "I01",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "image",
+      "task": "工业零件多视图重建 01",
+      "task_prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": 74.6456531177994,
+      "passed": null,
+      "selected_attempt_id": "archived-1e57865aa01f4c52",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "19072eba98aa28e676a17ed5cea875d3cb5f4ed6a5a11728497ed16d5b95e98d",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [
+        "assets/I01/input-01.png",
+        "assets/I01/input-02.png",
+        "assets/I01/input-03.png",
+        "assets/I01/input-04.png"
+      ],
+      "input_evidence": {
+        "kind": "frozen_public_input_images",
+        "files": [
+          {
+            "path": "assets/I01/input-01.png",
+            "original_sha256": "35887bf136c779b8bf13d12061edf200899ca516bd2737fbdb15ad5f4bc0d40f",
+            "sha256": "35887bf136c779b8bf13d12061edf200899ca516bd2737fbdb15ad5f4bc0d40f"
+          },
+          {
+            "path": "assets/I01/input-02.png",
+            "original_sha256": "c8dbdf1f3c377d570e820095c5feb3ec04c9bd41349bb5312957d68ed159b911",
+            "sha256": "c8dbdf1f3c377d570e820095c5feb3ec04c9bd41349bb5312957d68ed159b911"
+          },
+          {
+            "path": "assets/I01/input-03.png",
+            "original_sha256": "2d24e69800e66491faddfba00c126197957b4c707bffdc0c48fa8844fca144b6",
+            "sha256": "2d24e69800e66491faddfba00c126197957b4c707bffdc0c48fa8844fca144b6"
+          },
+          {
+            "path": "assets/I01/input-04.png",
+            "original_sha256": "4b5c9ce2cdfd5f33500fa894a41d6c36665c0f5e8f656996c3f290108a854a5a",
+            "sha256": "4b5c9ce2cdfd5f33500fa894a41d6c36665c0f5e8f656996c3f290108a854a5a"
+          }
+        ],
+        "attribution": "T-LESS by Tomáš Hodaň, Pavel Haluza, Štěpán Obdržálek, Jiří Matas, Manolis Lourakis and Xenophon Zabulis (WACV 2017); distributed through BOP (Tomáš Hodaň, Frank Michel et al., ECCV 2018).",
+        "source_url": "https://cmp.felk.cvut.cz/t-less/",
+        "distribution_url": "https://bop.felk.cvut.cz/datasets/",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "none"
+      },
+      "source_attribution": {
+        "name": "T-LESS / BOP",
+        "license_as_recorded": "CC BY 4.0",
+        "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-1e57865aa01f4c52",
+          "score": 74.6456531177994,
+          "passed": null,
+          "elapsed_seconds": 1138.546,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": "assets/I01/view-01.png",
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": "assets/I01/candidate.stl",
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "19072eba98aa28e676a17ed5cea875d3cb5f4ed6a5a11728497ed16d5b95e98d"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [
+            {
+              "path": "assets/I01/view-01.png",
+              "sha256": "3d184a941713fe9aae8c5a20e3a263e81b549d7d2afa42c29a4ba92cf99782bf",
+              "label": "候选产物 · 视图 1（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I01/view-02.png",
+              "sha256": "873dbb3a72ae0bf8a4332a5316bb7f1495a5b77cde1409cc79f672e989278064",
+              "label": "候选产物 · 视图 2（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I01/view-03.png",
+              "sha256": "876439daf2ebc7d1b8f8a64f34ba03a135fae40f09138013f3e086ad0cbc4607",
+              "label": "候选产物 · 视图 3（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I01/view-04.png",
+              "sha256": "9edaff08c4a2ce4ce893447ef34bb73764c770e4e390b868fa2e5f1e003ddafe",
+              "label": "候选产物 · 视图 4（历史评分器的候选渲染）"
+            }
+          ],
+          "preview_provenance": {
+            "candidate_sha256": "19072eba98aa28e676a17ed5cea875d3cb5f4ed6a5a11728497ed16d5b95e98d",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          },
+          "artifacts": [
+            {
+              "path": "assets/I01/PREVIEW-NOTICE.txt",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f",
+              "label": "预览来源与署名",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I01/candidate.stl",
+              "label": "下载候选预览网格 STL",
+              "sha256": "67f03bff5bdcbd95f4b6fc9e886dc6ec17fddf6867e5672e97bb328c0bc7023c",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I01/MESH-NOTICE.txt",
+              "label": "3D 网格来源与署名",
+              "sha256": "9095e44ce8350e787385a697482a08babf7622b34c8d77eb64cefa5c0b00ef59",
+              "kind": "notice"
+            }
+          ],
+          "code_files": [],
+          "final_response": null,
+          "evaluation_scope": {
+            "metric_id": "photo_reference_agreement_80_20",
+            "label": "参考相符度 80/20",
+            "display": "74.6457",
+            "component_passed": null,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。",
+              "预览来自候选产物的只读渲染，不改变原始产物或评分。",
+              "输入图为本次归档实验使用的四张原始公开照片，文件字节未改动。"
+            ],
+            "metric": {
+              "id": "photo_reference_agreement_80_20",
+              "value": 74.6456531177994,
+              "scale": "0–100",
+              "status": "scored",
+              "volume_iou": 0.6972141523954009,
+              "silhouette_iou": 0.9434260463083664
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 169 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "1e57865aa01f4c52ee0e90d8b66a4be028035e1c18b9774b503442895117dcb9"
+          },
+          "presentation_geometry": {
+            "source_candidate_sha256": "19072eba98aa28e676a17ed5cea875d3cb5f4ed6a5a11728497ed16d5b95e98d",
+            "sha256": "67f03bff5bdcbd95f4b6fc9e886dc6ec17fddf6867e5672e97bb328c0bc7023c",
+            "triangles": 35472,
+            "bounds": [
+              [
+                -17.495800018310547,
+                -17.49521827697754,
+                -30.600000381469727
+              ],
+              [
+                17.495800018310547,
+                17.493864059448242,
+                30.600000381469727
+              ]
+            ],
+            "role": "postrun_candidate_visualization",
+            "alignment": "original candidate frame; no GT alignment"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-I02",
+      "run_id": "deepseek-r9-image-02",
+      "sample_id": "image-02",
+      "sample_key": "I02",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "image",
+      "task": "工业零件多视图重建 02",
+      "task_prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-9c4ffc07abdb035b",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "0828988358bdf08059a510433ee7c2e27e3fac491a2750e09c813043d44d8efe",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [
+        "assets/I02/input-01.png",
+        "assets/I02/input-02.png",
+        "assets/I02/input-03.png",
+        "assets/I02/input-04.png"
+      ],
+      "input_evidence": {
+        "kind": "frozen_public_input_images",
+        "files": [
+          {
+            "path": "assets/I02/input-01.png",
+            "original_sha256": "3a127296f7857f2621e535fec826d7e386438e3d96d8a19cf3894c95dc7cbce0",
+            "sha256": "3a127296f7857f2621e535fec826d7e386438e3d96d8a19cf3894c95dc7cbce0"
+          },
+          {
+            "path": "assets/I02/input-02.png",
+            "original_sha256": "3e2e354e84f68ae561986ccdcc08811889b9660ac462b2b99eba89f7a7d7ea5c",
+            "sha256": "3e2e354e84f68ae561986ccdcc08811889b9660ac462b2b99eba89f7a7d7ea5c"
+          },
+          {
+            "path": "assets/I02/input-03.png",
+            "original_sha256": "53b3ef204c7373a2c466f78d2dfa7675a10d672b7bce1791c578dad9158fb908",
+            "sha256": "53b3ef204c7373a2c466f78d2dfa7675a10d672b7bce1791c578dad9158fb908"
+          },
+          {
+            "path": "assets/I02/input-04.png",
+            "original_sha256": "dea29d4ed65b72c04328c8089c8c0d9ab283a36d7dcd121990b1e24c0b5a2e71",
+            "sha256": "dea29d4ed65b72c04328c8089c8c0d9ab283a36d7dcd121990b1e24c0b5a2e71"
+          }
+        ],
+        "attribution": "T-LESS by Tomáš Hodaň, Pavel Haluza, Štěpán Obdržálek, Jiří Matas, Manolis Lourakis and Xenophon Zabulis (WACV 2017); distributed through BOP (Tomáš Hodaň, Frank Michel et al., ECCV 2018).",
+        "source_url": "https://cmp.felk.cvut.cz/t-less/",
+        "distribution_url": "https://bop.felk.cvut.cz/datasets/",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "none"
+      },
+      "source_attribution": {
+        "name": "T-LESS / BOP",
+        "license_as_recorded": "CC BY 4.0",
+        "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-9c4ffc07abdb035b",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1108.203,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": "assets/I02/view-01.png",
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": "assets/I02/candidate.stl",
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "0828988358bdf08059a510433ee7c2e27e3fac491a2750e09c813043d44d8efe"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [
+            {
+              "path": "assets/I02/view-01.png",
+              "sha256": "5ad3e9a924351c92c4dbd4ae1ec67b109a47e2e49c3d194083ad57b1caeae2b7",
+              "label": "候选产物 · 视图 1（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I02/view-02.png",
+              "sha256": "ca6db1314730ff6cdb1089a5ebbf6651d8d1c3ba8d9908d81b5e5dbb8d572450",
+              "label": "候选产物 · 视图 2（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I02/view-03.png",
+              "sha256": "0f88a09b226f35ecda06c479264009ecfeb962b70a2b9926bb7d82f65adf69bf",
+              "label": "候选产物 · 视图 3（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I02/view-04.png",
+              "sha256": "019dfe6a5c4fbdd049bea413f7a2eab5fb64d110ed0e860eb4004a4f06d28dc3",
+              "label": "候选产物 · 视图 4（历史评分器的候选渲染）"
+            }
+          ],
+          "preview_provenance": {
+            "candidate_sha256": "0828988358bdf08059a510433ee7c2e27e3fac491a2750e09c813043d44d8efe",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          },
+          "artifacts": [
+            {
+              "path": "assets/I02/PREVIEW-NOTICE.txt",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f",
+              "label": "预览来源与署名",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I02/candidate.stl",
+              "label": "下载候选预览网格 STL",
+              "sha256": "4d3eff4da29bbde5ef138fefd56e6fcb6033bb95186584775349fd72516fe3bd",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I02/MESH-NOTICE.txt",
+              "label": "3D 网格来源与署名",
+              "sha256": "67d7592407842b78cddb574874182b7a1d56600bac2b9e601251ad4c735c198e",
+              "kind": "notice"
+            }
+          ],
+          "code_files": [],
+          "final_response": "已完成并保存：\n\n- candidate.step\n- candidate.py\n- submission.json\n- 四组同相机渲染位于 renders\n\n验证结果：STEP 可作为单一有效实体读取，单位为 mm，包络为 `186.078598 × 105.334396 × 60.014599 mm`，体积约 `879170.764 mm³`。\n\n模型包含四个圆环座、中心触点、模块化外壳、侧面服务开口及底部八颗紧固件。不可见内部线路、精确螺纹、材料和制造公差已按合理假设计算简化。",
+          "evaluation_scope": {
+            "metric_id": "photo_reference_agreement_80_20",
+            "label": "参考相符度 80/20",
+            "display": "无几何分数",
+            "component_passed": null,
+            "whole_task_passed": null,
+            "measurement_status": "resolution_review_required",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。",
+              "预览来自候选产物的只读渲染，不改变原始产物或评分。",
+              "输入图为本次归档实验使用的四张原始公开照片，文件字节未改动。"
+            ],
+            "metric": {
+              "id": "photo_reference_agreement_80_20",
+              "value": null,
+              "scale": "0–100",
+              "status": "resolution_review_required",
+              "volume_iou": 0.6354335188463653,
+              "silhouette_iou": 0.9672290374360322
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 155 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：分辨率待复核。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "9c4ffc07abdb035b5a8717c7e03f3c2f0da7077da9af14bc61934e4304ecb95a"
+          },
+          "presentation_geometry": {
+            "source_candidate_sha256": "0828988358bdf08059a510433ee7c2e27e3fac491a2750e09c813043d44d8efe",
+            "sha256": "4d3eff4da29bbde5ef138fefd56e6fcb6033bb95186584775349fd72516fe3bd",
+            "triangles": 16852,
+            "bounds": [
+              [
+                -93.03929901123047,
+                -52.667198181152344,
+                -30.007299423217773
+              ],
+              [
+                93.03929901123047,
+                52.667198181152344,
+                30.007299423217773
+              ]
+            ],
+            "role": "postrun_candidate_visualization",
+            "alignment": "original candidate frame; no GT alignment"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-I03",
+      "run_id": "deepseek-r9-image-03",
+      "sample_id": "image-03",
+      "sample_key": "I03",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "image",
+      "task": "工业零件多视图重建 03",
+      "task_prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": 50.07758178604762,
+      "passed": null,
+      "selected_attempt_id": "archived-c48e4775297b19d9",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "006dc518a873e21e69a5f60a04944a3abbc1889288f16e0358dcff44564922af",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [
+        "assets/I03/input-01.png",
+        "assets/I03/input-02.png",
+        "assets/I03/input-03.png",
+        "assets/I03/input-04.png"
+      ],
+      "input_evidence": {
+        "kind": "frozen_public_input_images",
+        "files": [
+          {
+            "path": "assets/I03/input-01.png",
+            "original_sha256": "c5dcde3a91aa7ffbd788690ba92c79d461ea8bd00c8080c211f4994c8fe3e78c",
+            "sha256": "c5dcde3a91aa7ffbd788690ba92c79d461ea8bd00c8080c211f4994c8fe3e78c"
+          },
+          {
+            "path": "assets/I03/input-02.png",
+            "original_sha256": "6684d4c3ea7eb101b00638b1da9e36e897cc133304861be0de7aadcd332c1e8f",
+            "sha256": "6684d4c3ea7eb101b00638b1da9e36e897cc133304861be0de7aadcd332c1e8f"
+          },
+          {
+            "path": "assets/I03/input-03.png",
+            "original_sha256": "16c73419585874c9edf6fc6c7c8f4eaa2aaeac8b1323285f776b332ca15130cd",
+            "sha256": "16c73419585874c9edf6fc6c7c8f4eaa2aaeac8b1323285f776b332ca15130cd"
+          },
+          {
+            "path": "assets/I03/input-04.png",
+            "original_sha256": "c3c548ebcb7fc507d0d546ae643d078ff4e150c4f4644416de5571a8b90d262f",
+            "sha256": "c3c548ebcb7fc507d0d546ae643d078ff4e150c4f4644416de5571a8b90d262f"
+          }
+        ],
+        "attribution": "T-LESS by Tomáš Hodaň, Pavel Haluza, Štěpán Obdržálek, Jiří Matas, Manolis Lourakis and Xenophon Zabulis (WACV 2017); distributed through BOP (Tomáš Hodaň, Frank Michel et al., ECCV 2018).",
+        "source_url": "https://cmp.felk.cvut.cz/t-less/",
+        "distribution_url": "https://bop.felk.cvut.cz/datasets/",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "none"
+      },
+      "source_attribution": {
+        "name": "T-LESS / BOP",
+        "license_as_recorded": "CC BY 4.0",
+        "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-c48e4775297b19d9",
+          "score": 50.07758178604762,
+          "passed": null,
+          "elapsed_seconds": 1131.672,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": "assets/I03/view-01.png",
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": "assets/I03/candidate.stl",
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "006dc518a873e21e69a5f60a04944a3abbc1889288f16e0358dcff44564922af"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [
+            {
+              "path": "assets/I03/view-01.png",
+              "sha256": "a98bbb1fb119e6b64bd1c300bb245917c16b30104ec5c155522326adb4d6cf19",
+              "label": "候选产物 · 视图 1（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I03/view-02.png",
+              "sha256": "16d84e1046658334381024a6eff2143a489cfa3a9c2ff462556256eb4e43d5fe",
+              "label": "候选产物 · 视图 2（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I03/view-03.png",
+              "sha256": "f3da1e12aa30f4fc2e055efd30f67c23586a0c91fa521dfe6d6893d743170ddd",
+              "label": "候选产物 · 视图 3（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I03/view-04.png",
+              "sha256": "9e728fd253a62adbe563c1f487fbd73dd75a55650fc9beacec539823e1307a94",
+              "label": "候选产物 · 视图 4（历史评分器的候选渲染）"
+            }
+          ],
+          "preview_provenance": {
+            "candidate_sha256": "006dc518a873e21e69a5f60a04944a3abbc1889288f16e0358dcff44564922af",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          },
+          "artifacts": [
+            {
+              "path": "assets/I03/PREVIEW-NOTICE.txt",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f",
+              "label": "预览来源与署名",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I03/candidate.stl",
+              "label": "下载候选预览网格 STL",
+              "sha256": "46fb7975f44530324c833eded25ee7f8f519f79468727f8e173405dc894612ab",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I03/MESH-NOTICE.txt",
+              "label": "3D 网格来源与署名",
+              "sha256": "e0693b8bfc97c9bc322b44b6e12236a01da3efd0d2e6d624f6359245747f8aa6",
+              "kind": "notice"
+            }
+          ],
+          "code_files": [],
+          "final_response": "已完成 CAD 重建并保存到当前工作区。\n\n- candidate.step\n- candidate.py\n- assumptions.md\n- 四视口渲染目录\n- submission.json\n\nSTEP 已重新导入验证：有效单一实体，体积约 `90931.84 mm³`，边界尺寸为 `80.6598 × 42.0072 × 63.5013 mm`。螺纹以光滑阶梯孔合理简化，照片无法确定的内部电气结构未作虚构。",
+          "evaluation_scope": {
+            "metric_id": "photo_reference_agreement_80_20",
+            "label": "参考相符度 80/20",
+            "display": "50.0776",
+            "component_passed": null,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。",
+              "预览来自候选产物的只读渲染，不改变原始产物或评分。",
+              "输入图为本次归档实验使用的四张原始公开照片，文件字节未改动。"
+            ],
+            "metric": {
+              "id": "photo_reference_agreement_80_20",
+              "value": 50.07758178604762,
+              "scale": "0–100",
+              "status": "scored",
+              "volume_iou": 0.3932023388091166,
+              "silhouette_iou": 0.9310697340659148
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 193 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "c48e4775297b19d9476370bf2c46f9419c87877b77faedfb92c72cf0cd98ab03"
+          },
+          "presentation_geometry": {
+            "source_candidate_sha256": "006dc518a873e21e69a5f60a04944a3abbc1889288f16e0358dcff44564922af",
+            "sha256": "46fb7975f44530324c833eded25ee7f8f519f79468727f8e173405dc894612ab",
+            "triangles": 8154,
+            "bounds": [
+              [
+                -40.329898834228516,
+                -21.003599166870117,
+                -31.75
+              ],
+              [
+                40.329898834228516,
+                21.003599166870117,
+                31.751300811767578
+              ]
+            ],
+            "role": "postrun_candidate_visualization",
+            "alignment": "original candidate frame; no GT alignment"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-I04",
+      "run_id": "deepseek-r9-image-04",
+      "sample_id": "image-04",
+      "sample_key": "I04",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "image",
+      "task": "工业零件多视图重建 04",
+      "task_prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": 59.96493332167909,
+      "passed": null,
+      "selected_attempt_id": "archived-17d960002753ce12",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "40628590b954fb13320ed6a5efd3147d84d7f4f453b41feda9916a7540301f53",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [
+        "assets/I04/input-01.png",
+        "assets/I04/input-02.png",
+        "assets/I04/input-03.png",
+        "assets/I04/input-04.png"
+      ],
+      "input_evidence": {
+        "kind": "frozen_public_input_images",
+        "files": [
+          {
+            "path": "assets/I04/input-01.png",
+            "original_sha256": "97ba2e20de51cadcfbaefe913b4cecbcd10fe8c3a1780777e8d2cb5b694c944d",
+            "sha256": "97ba2e20de51cadcfbaefe913b4cecbcd10fe8c3a1780777e8d2cb5b694c944d"
+          },
+          {
+            "path": "assets/I04/input-02.png",
+            "original_sha256": "966489732a133c0385c9720e88d1568e9ce6d1f10bb83eaf1f887dc6811ff07c",
+            "sha256": "966489732a133c0385c9720e88d1568e9ce6d1f10bb83eaf1f887dc6811ff07c"
+          },
+          {
+            "path": "assets/I04/input-03.png",
+            "original_sha256": "e4540903c8e6c1181e75bd0140fe3ea99f7b21b2c8257e2ae66ad94349df497a",
+            "sha256": "e4540903c8e6c1181e75bd0140fe3ea99f7b21b2c8257e2ae66ad94349df497a"
+          },
+          {
+            "path": "assets/I04/input-04.png",
+            "original_sha256": "dceffe971a7e4349db5dbbeb8ca86db4fbc4667fc847fba950b934f8479b1b56",
+            "sha256": "dceffe971a7e4349db5dbbeb8ca86db4fbc4667fc847fba950b934f8479b1b56"
+          }
+        ],
+        "attribution": "T-LESS by Tomáš Hodaň, Pavel Haluza, Štěpán Obdržálek, Jiří Matas, Manolis Lourakis and Xenophon Zabulis (WACV 2017); distributed through BOP (Tomáš Hodaň, Frank Michel et al., ECCV 2018).",
+        "source_url": "https://cmp.felk.cvut.cz/t-less/",
+        "distribution_url": "https://bop.felk.cvut.cz/datasets/",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "none"
+      },
+      "source_attribution": {
+        "name": "T-LESS / BOP",
+        "license_as_recorded": "CC BY 4.0",
+        "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-17d960002753ce12",
+          "score": 59.96493332167909,
+          "passed": null,
+          "elapsed_seconds": 1125.203,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": "assets/I04/view-01.png",
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": "assets/I04/candidate.stl",
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "40628590b954fb13320ed6a5efd3147d84d7f4f453b41feda9916a7540301f53"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [
+            {
+              "path": "assets/I04/view-01.png",
+              "sha256": "59a340c744120dfd22be676f0cb88dc18aab3ad0e7e71829df773c788f8e9990",
+              "label": "候选产物 · 视图 1（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I04/view-02.png",
+              "sha256": "4c6be0148d7869b556619af853cb01e641e62d434768c843ed7909f96983d1ca",
+              "label": "候选产物 · 视图 2（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I04/view-03.png",
+              "sha256": "cc40a5e9e22839145a5e0a95d80c9a556bf1fc70f0f20f3a1cd83b96ea9b2619",
+              "label": "候选产物 · 视图 3（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I04/view-04.png",
+              "sha256": "76310ebc83164f04fb2a982831aff40640299c4685faf370723c2ab7b4ab7e99",
+              "label": "候选产物 · 视图 4（历史评分器的候选渲染）"
+            }
+          ],
+          "preview_provenance": {
+            "candidate_sha256": "40628590b954fb13320ed6a5efd3147d84d7f4f453b41feda9916a7540301f53",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          },
+          "artifacts": [
+            {
+              "path": "assets/I04/PREVIEW-NOTICE.txt",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f",
+              "label": "预览来源与署名",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I04/candidate.stl",
+              "label": "下载候选预览网格 STL",
+              "sha256": "a088ba636bf753fce103c2959768ff86dffe319e5114b259caddaaa619198913",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I04/MESH-NOTICE.txt",
+              "label": "3D 网格来源与署名",
+              "sha256": "0c0d5d5e2946f94ac157e0b4f2cdedfc268c2ab15b192b288758e7fdbf859b20",
+              "kind": "notice"
+            }
+          ],
+          "code_files": [],
+          "final_response": "已完成并验证交付：\n\n- candidate.step：有效实体，单一 Solid，单位 mm\n- candidate.py：自包含参数化 CadQuery 重建源码\n- submission.json：交付及验证信息\n- 同相机渲染：01、02、03、04\n\n重新导入 STEP 后检查为有效单实体，体积约 **125642.48 mm³**。顶孔按可见内台阶建模为有底盲腔，无法辨认的内部电气路径、螺纹和材料未作推测。",
+          "evaluation_scope": {
+            "metric_id": "photo_reference_agreement_80_20",
+            "label": "参考相符度 80/20",
+            "display": "59.9649",
+            "component_passed": null,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。",
+              "预览来自候选产物的只读渲染，不改变原始产物或评分。",
+              "输入图为本次归档实验使用的四张原始公开照片，文件字节未改动。"
+            ],
+            "metric": {
+              "id": "photo_reference_agreement_80_20",
+              "value": 59.96493332167909,
+              "scale": "0–100",
+              "status": "scored",
+              "volume_iou": 0.5171840925075434,
+              "silhouette_iou": 0.9295102960537811
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 210 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "17d960002753ce1218e675c6cd3789639e44cb1cfff3424f8778ca63927e86e9"
+          },
+          "presentation_geometry": {
+            "source_candidate_sha256": "40628590b954fb13320ed6a5efd3147d84d7f4f453b41feda9916a7540301f53",
+            "sha256": "a088ba636bf753fce103c2959768ff86dffe319e5114b259caddaaa619198913",
+            "triangles": 3148,
+            "bounds": [
+              [
+                -39.16559982299805,
+                -27.399999618530273,
+                -28.299999237060547
+              ],
+              [
+                39.16559982299805,
+                27.899999618530273,
+                28.299999237060547
+              ]
+            ],
+            "role": "postrun_candidate_visualization",
+            "alignment": "original candidate frame; no GT alignment"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-I05",
+      "run_id": "deepseek-r9-image-05",
+      "sample_id": "image-05",
+      "sample_key": "I05",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "image",
+      "task": "工业零件多视图重建 05",
+      "task_prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": 34.97427758000789,
+      "passed": null,
+      "selected_attempt_id": "archived-c90c4d2083ab5ab0",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "6d616d359be7e7d70f20e8b323b643cb521f3fc1b31b3745004fe7a0e699b728",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [
+        "assets/I05/input-01.png",
+        "assets/I05/input-02.png",
+        "assets/I05/input-03.png",
+        "assets/I05/input-04.png"
+      ],
+      "input_evidence": {
+        "kind": "frozen_public_input_images",
+        "files": [
+          {
+            "path": "assets/I05/input-01.png",
+            "original_sha256": "59d39d9e1bd32ac5d140e0033a1f17b04206f6d4c85d958f854a35895f475447",
+            "sha256": "59d39d9e1bd32ac5d140e0033a1f17b04206f6d4c85d958f854a35895f475447"
+          },
+          {
+            "path": "assets/I05/input-02.png",
+            "original_sha256": "da172436ec34edff56af78a5bff8cd52ff54c7a35a10c08ff562a5955df2c134",
+            "sha256": "da172436ec34edff56af78a5bff8cd52ff54c7a35a10c08ff562a5955df2c134"
+          },
+          {
+            "path": "assets/I05/input-03.png",
+            "original_sha256": "d7c330339d51daa582c951c1d5c4bc052cf49f4a606d2cc71eb6c131130da7c1",
+            "sha256": "d7c330339d51daa582c951c1d5c4bc052cf49f4a606d2cc71eb6c131130da7c1"
+          },
+          {
+            "path": "assets/I05/input-04.png",
+            "original_sha256": "f8f5bb504d273b3bf67360e4459985a354744b526282a2cdfb3f11deae0c8138",
+            "sha256": "f8f5bb504d273b3bf67360e4459985a354744b526282a2cdfb3f11deae0c8138"
+          }
+        ],
+        "attribution": "T-LESS by Tomáš Hodaň, Pavel Haluza, Štěpán Obdržálek, Jiří Matas, Manolis Lourakis and Xenophon Zabulis (WACV 2017); distributed through BOP (Tomáš Hodaň, Frank Michel et al., ECCV 2018).",
+        "source_url": "https://cmp.felk.cvut.cz/t-less/",
+        "distribution_url": "https://bop.felk.cvut.cz/datasets/",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "none"
+      },
+      "source_attribution": {
+        "name": "T-LESS / BOP",
+        "license_as_recorded": "CC BY 4.0",
+        "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-c90c4d2083ab5ab0",
+          "score": 34.97427758000789,
+          "passed": null,
+          "elapsed_seconds": 1152.64,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": "assets/I05/view-01.png",
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": "assets/I05/candidate.stl",
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "6d616d359be7e7d70f20e8b323b643cb521f3fc1b31b3745004fe7a0e699b728"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [
+            {
+              "path": "assets/I05/view-01.png",
+              "sha256": "ae5943aee5c4c48e936093ec720b633974eb7328e0a7019154c45409b8c31531",
+              "label": "候选产物 · 视图 1（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I05/view-02.png",
+              "sha256": "ccc5a7f78e5172b851aa7174cbe189d662f583258679e9788adff605553d2f4f",
+              "label": "候选产物 · 视图 2（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I05/view-03.png",
+              "sha256": "8e4a27676b7de2b5cbded24651b860da5fbd62a6bf1930214a35473792cb6587",
+              "label": "候选产物 · 视图 3（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I05/view-04.png",
+              "sha256": "8533fa735683c3c49fd3f8902f8ca9faf7bf7e09eb1c86242f3044ca46b254e0",
+              "label": "候选产物 · 视图 4（历史评分器的候选渲染）"
+            }
+          ],
+          "preview_provenance": {
+            "candidate_sha256": "6d616d359be7e7d70f20e8b323b643cb521f3fc1b31b3745004fe7a0e699b728",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          },
+          "artifacts": [
+            {
+              "path": "assets/I05/PREVIEW-NOTICE.txt",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f",
+              "label": "预览来源与署名",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I05/candidate.stl",
+              "label": "下载候选预览网格 STL",
+              "sha256": "ad93a60868592a9a59b4522619134883e449a908bdbf0030f6c2ebc9004466ea",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I05/MESH-NOTICE.txt",
+              "label": "3D 网格来源与署名",
+              "sha256": "46e846ee48c0681326ca8dba98408d03f030b6a2f89628379a7834f67d768ae4",
+              "kind": "notice"
+            }
+          ],
+          "code_files": [],
+          "final_response": "任务已完成并验证：\n\n- candidate.step：单一有效实体，尺寸 **98.734 × 98.734 × 63.774 mm**\n- candidate.py：自包含 CadQuery 可重建源码\n- render.png：四相机渲染总览\n- submission.json：提交清单\n- README.md：结构与简化假设说明\n\nSTEP 已回读验证，包含 1 个有效实体，体积约 **250070.54 mm³**。中央灯口采用普通孔而非猜测螺纹，隐藏电气路径和内部接触结构作了保守简化。",
+          "evaluation_scope": {
+            "metric_id": "photo_reference_agreement_80_20",
+            "label": "参考相符度 80/20",
+            "display": "34.9743",
+            "component_passed": null,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。",
+              "预览来自候选产物的只读渲染，不改变原始产物或评分。",
+              "输入图为本次归档实验使用的四张原始公开照片，文件字节未改动。"
+            ],
+            "metric": {
+              "id": "photo_reference_agreement_80_20",
+              "value": 34.97427758000789,
+              "scale": "0–100",
+              "status": "scored",
+              "volume_iou": 0.21366989012326454,
+              "silhouette_iou": 0.8940343185073366
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 151 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、3 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "c90c4d2083ab5ab0177cc2f76d980ef2a49117cefb8caa9412344e457730f824"
+          },
+          "presentation_geometry": {
+            "source_candidate_sha256": "6d616d359be7e7d70f20e8b323b643cb521f3fc1b31b3745004fe7a0e699b728",
+            "sha256": "ad93a60868592a9a59b4522619134883e449a908bdbf0030f6c2ebc9004466ea",
+            "triangles": 6598,
+            "bounds": [
+              [
+                -49.36336898803711,
+                -49.36336898803711,
+                -25.773799896240234
+              ],
+              [
+                49.36631393432617,
+                49.36336898803711,
+                38.0
+              ]
+            ],
+            "role": "postrun_candidate_visualization",
+            "alignment": "original candidate frame; no GT alignment"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-I06",
+      "run_id": "deepseek-r9-image-06",
+      "sample_id": "image-06",
+      "sample_key": "I06",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "image",
+      "task": "工业零件多视图重建 06",
+      "task_prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-c5592b420ffb2981",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "6f85da5fda8eb391c14abe00d641efd0ca1d6dc4c2eaeb121ecffd7edf789723",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [
+        "assets/I06/input-01.png",
+        "assets/I06/input-02.png",
+        "assets/I06/input-03.png",
+        "assets/I06/input-04.png"
+      ],
+      "input_evidence": {
+        "kind": "frozen_public_input_images",
+        "files": [
+          {
+            "path": "assets/I06/input-01.png",
+            "original_sha256": "ea6276b6497264041eb46a8e635314eaebe13b828da7f75f064b2bebf49f3ad1",
+            "sha256": "ea6276b6497264041eb46a8e635314eaebe13b828da7f75f064b2bebf49f3ad1"
+          },
+          {
+            "path": "assets/I06/input-02.png",
+            "original_sha256": "f395d5d0b2700648f04004326e76f9a1e3f0e783bcc3f06c25f247f296ff5bcb",
+            "sha256": "f395d5d0b2700648f04004326e76f9a1e3f0e783bcc3f06c25f247f296ff5bcb"
+          },
+          {
+            "path": "assets/I06/input-03.png",
+            "original_sha256": "cd07d7932586f107e0ef653ae054d65741b6cf80ccc68022f6c5b6ec377fac42",
+            "sha256": "cd07d7932586f107e0ef653ae054d65741b6cf80ccc68022f6c5b6ec377fac42"
+          },
+          {
+            "path": "assets/I06/input-04.png",
+            "original_sha256": "4e16998a86683066ad32f41d2b3c30857e40ece6afea89f0380b2202322aa8c3",
+            "sha256": "4e16998a86683066ad32f41d2b3c30857e40ece6afea89f0380b2202322aa8c3"
+          }
+        ],
+        "attribution": "T-LESS by Tomáš Hodaň, Pavel Haluza, Štěpán Obdržálek, Jiří Matas, Manolis Lourakis and Xenophon Zabulis (WACV 2017); distributed through BOP (Tomáš Hodaň, Frank Michel et al., ECCV 2018).",
+        "source_url": "https://cmp.felk.cvut.cz/t-less/",
+        "distribution_url": "https://bop.felk.cvut.cz/datasets/",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "none"
+      },
+      "source_attribution": {
+        "name": "T-LESS / BOP",
+        "license_as_recorded": "CC BY 4.0",
+        "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-c5592b420ffb2981",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1127.953,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": "assets/I06/view-01.png",
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": "assets/I06/candidate.stl",
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "6f85da5fda8eb391c14abe00d641efd0ca1d6dc4c2eaeb121ecffd7edf789723"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [
+            {
+              "path": "assets/I06/view-01.png",
+              "sha256": "5b89c3aae50e917e2c6e474c6026e9e984857dbd393c10ada4983fa76508e187",
+              "label": "候选产物 · 视图 1（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I06/view-02.png",
+              "sha256": "809ab3322341ba47e421f00bb0b3d842d87f3d31e8702a7073d08605c7ab2845",
+              "label": "候选产物 · 视图 2（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I06/view-03.png",
+              "sha256": "804dc63d38c467a783e6fb47bf261d3a10d9d8af2bddc4d3665ed2e3ac5711af",
+              "label": "候选产物 · 视图 3（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I06/view-04.png",
+              "sha256": "71962e4f989ccd2f42f50da2e03d25557948482c0aa22ed8c4e9e065d6e64bec",
+              "label": "候选产物 · 视图 4（历史评分器的候选渲染）"
+            }
+          ],
+          "preview_provenance": {
+            "candidate_sha256": "6f85da5fda8eb391c14abe00d641efd0ca1d6dc4c2eaeb121ecffd7edf789723",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          },
+          "artifacts": [
+            {
+              "path": "assets/I06/PREVIEW-NOTICE.txt",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f",
+              "label": "预览来源与署名",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I06/candidate.stl",
+              "label": "下载候选预览网格 STL",
+              "sha256": "12d504b82d4a2abc13cf336b3ed755e84b4d88b25d563a13e406f0d99877557b",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I06/MESH-NOTICE.txt",
+              "label": "3D 网格来源与署名",
+              "sha256": "4a32acdd4823282738c85f79ff83b456f979ee75a71d7d61527214616f268da4",
+              "kind": "notice"
+            }
+          ],
+          "code_files": [],
+          "final_response": "已完成 CAD 重建并验证：\n\n- candidate.step：单一有效实体，STEP AP214，单位为毫米。\n- candidate.py：自包含的 CadQuery 解析建模源码，不含导入的 STEP 或网格。\n- candidate_render.png：使用四个给定相机的 2×2 渲染图。\n- README.md：尺寸、假设和验证说明。\n- submission.json：提交清单。\n\n验证结果：实体有效且连通，体积约 `113,906.6 mm³`，导入后包围尺寸 `76.900 × 77.069 × 43.000 mm`，四视图平均轮廓 IoU 约 `0.932`。不可见的端面内侧按浅盲腔简化；未推测材料、螺纹或内部电气走线。",
+          "evaluation_scope": {
+            "metric_id": null,
+            "label": "测量",
+            "display": "无几何分数",
+            "component_passed": null,
+            "whole_task_passed": null,
+            "measurement_status": "evaluator_unverified",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。",
+              "预览来自候选产物的只读渲染，不改变原始产物或评分。",
+              "输入图为本次归档实验使用的四张原始公开照片，文件字节未改动。"
+            ],
+            "metric": null
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 156 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：评分器未验证。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "c5592b420ffb2981933706ed4a9ef8275f78361a66267a86debe07f9a9c10712"
+          },
+          "presentation_geometry": {
+            "source_candidate_sha256": "6f85da5fda8eb391c14abe00d641efd0ca1d6dc4c2eaeb121ecffd7edf789723",
+            "sha256": "12d504b82d4a2abc13cf336b3ed755e84b4d88b25d563a13e406f0d99877557b",
+            "triangles": 11924,
+            "bounds": [
+              [
+                -38.45000076293945,
+                -38.06919479370117,
+                -20.59000015258789
+              ],
+              [
+                38.45000076293945,
+                38.97835159301758,
+                22.40999984741211
+              ]
+            ],
+            "role": "postrun_candidate_visualization",
+            "alignment": "original candidate frame; no GT alignment"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-I07",
+      "run_id": "deepseek-r9-image-07",
+      "sample_id": "image-07",
+      "sample_key": "I07",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "image",
+      "task": "工业零件多视图重建 07",
+      "task_prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": 86.10622177440473,
+      "passed": null,
+      "selected_attempt_id": "archived-4d7afa6c2aedaeaa",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "c88094697b5e0625c2182be4b78f01abdb261a6f2724215037b27a308dfa3187",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [
+        "assets/I07/input-01.png",
+        "assets/I07/input-02.png",
+        "assets/I07/input-03.png",
+        "assets/I07/input-04.png"
+      ],
+      "input_evidence": {
+        "kind": "frozen_public_input_images",
+        "files": [
+          {
+            "path": "assets/I07/input-01.png",
+            "original_sha256": "db979500e97996da83e289a1e85baba79be9d822b8f9c182c082a9856c443e15",
+            "sha256": "db979500e97996da83e289a1e85baba79be9d822b8f9c182c082a9856c443e15"
+          },
+          {
+            "path": "assets/I07/input-02.png",
+            "original_sha256": "178b75c2afc96bd75b8506651bcf32169af3442cd3bc681ea8d36aab8779629d",
+            "sha256": "178b75c2afc96bd75b8506651bcf32169af3442cd3bc681ea8d36aab8779629d"
+          },
+          {
+            "path": "assets/I07/input-03.png",
+            "original_sha256": "8fe2f7603561ea194ba6fc19ed00eb1dfa787782153bfb9464fee7a0fada0279",
+            "sha256": "8fe2f7603561ea194ba6fc19ed00eb1dfa787782153bfb9464fee7a0fada0279"
+          },
+          {
+            "path": "assets/I07/input-04.png",
+            "original_sha256": "46772b6006a25848ae4f234270d0aedbebfca390cc14d4c76b7edef3c4016284",
+            "sha256": "46772b6006a25848ae4f234270d0aedbebfca390cc14d4c76b7edef3c4016284"
+          }
+        ],
+        "attribution": "T-LESS by Tomáš Hodaň, Pavel Haluza, Štěpán Obdržálek, Jiří Matas, Manolis Lourakis and Xenophon Zabulis (WACV 2017); distributed through BOP (Tomáš Hodaň, Frank Michel et al., ECCV 2018).",
+        "source_url": "https://cmp.felk.cvut.cz/t-less/",
+        "distribution_url": "https://bop.felk.cvut.cz/datasets/",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "none"
+      },
+      "source_attribution": {
+        "name": "T-LESS / BOP",
+        "license_as_recorded": "CC BY 4.0",
+        "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-4d7afa6c2aedaeaa",
+          "score": 86.10622177440473,
+          "passed": null,
+          "elapsed_seconds": 1128.313,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": "assets/I07/view-01.png",
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": "assets/I07/candidate.stl",
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "c88094697b5e0625c2182be4b78f01abdb261a6f2724215037b27a308dfa3187"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [
+            {
+              "path": "assets/I07/view-01.png",
+              "sha256": "5edfbc2626b195fda305838f38a869d33fb5ce114b9714c51f4cd0e89940de2d",
+              "label": "候选产物 · 视图 1（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I07/view-02.png",
+              "sha256": "993bfcf2fdb5d810e38d886ab87875f5a9ad0ad85054990195d2b5ad952a774f",
+              "label": "候选产物 · 视图 2（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I07/view-03.png",
+              "sha256": "7506f2262e0e76c4fa680ba8936ef2ff10008330a63f9952ed763d8daae1db9b",
+              "label": "候选产物 · 视图 3（历史评分器的候选渲染）"
+            },
+            {
+              "path": "assets/I07/view-04.png",
+              "sha256": "c945e54c45a56359fc7ca2d1bf6bcbf1bbd9523234a3742586c8b3ea86254b9c",
+              "label": "候选产物 · 视图 4（历史评分器的候选渲染）"
+            }
+          ],
+          "preview_provenance": {
+            "candidate_sha256": "c88094697b5e0625c2182be4b78f01abdb261a6f2724215037b27a308dfa3187",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          },
+          "artifacts": [
+            {
+              "path": "assets/I07/PREVIEW-NOTICE.txt",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f",
+              "label": "预览来源与署名",
+              "kind": "notice"
+            },
+            {
+              "path": "assets/I07/candidate.stl",
+              "label": "下载候选预览网格 STL",
+              "sha256": "2237d120ef1f8cfe9055d46b102dd88caa5e80ff715c6b40f4077cd38f5a872a",
+              "kind": "mesh"
+            },
+            {
+              "path": "assets/I07/MESH-NOTICE.txt",
+              "label": "3D 网格来源与署名",
+              "sha256": "a238e513b020a21ce0a271dcb3efc2038227afc937908a370f84f67db93b4cc9",
+              "kind": "notice"
+            }
+          ],
+          "code_files": [],
+          "final_response": "CAD 重建已完成并验证：\n\n- candidate.step：有效单一实体，STEP 回读通过\n- candidate.py：可重建 CadQuery 解析源码\n- candidate-render.png：四机位同相机渲染\n- candidate-vs-photo.png：照片与渲染对照\n- submission.json 和 validation.json：交付及验证记录\n\n模型单位为 mm，包络 `43.0 × 43.0 × 80.6 mm`，实体体积 `76578.58 mm³`，四视角平均轮廓 IoU 为 `0.9431`。已保留开放内腔、杯底圆角、中央触点、可见径向孔、单侧轴向凸台及螺纹包络；螺纹规格与隐藏内部结构按任务要求未作制造规格猜测。",
+          "evaluation_scope": {
+            "metric_id": "photo_reference_agreement_80_20",
+            "label": "参考相符度 80/20",
+            "display": "86.1062",
+            "component_passed": null,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。",
+              "预览来自候选产物的只读渲染，不改变原始产物或评分。",
+              "输入图为本次归档实验使用的四张原始公开照片，文件字节未改动。"
+            ],
+            "metric": {
+              "id": "photo_reference_agreement_80_20",
+              "value": 86.10622177440473,
+              "scale": "0–100",
+              "status": "scored",
+              "volume_iou": 0.8331098151468957,
+              "silhouette_iou": 0.9728718281326529
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 184 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "4d7afa6c2aedaeaa1f9d245a26eeab3acabfa47724273cfb628b839af0b4cdb8"
+          },
+          "presentation_geometry": {
+            "source_candidate_sha256": "c88094697b5e0625c2182be4b78f01abdb261a6f2724215037b27a308dfa3187",
+            "sha256": "2237d120ef1f8cfe9055d46b102dd88caa5e80ff715c6b40f4077cd38f5a872a",
+            "triangles": 9950,
+            "bounds": [
+              [
+                -21.5,
+                -21.490036010742188,
+                -40.29999923706055
+              ],
+              [
+                21.5,
+                21.484575271606445,
+                40.29999923706055
+              ]
+            ],
+            "role": "postrun_candidate_visualization",
+            "alignment": "original candidate frame; no GT alignment"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-I08",
+      "run_id": "deepseek-r9-image-08",
+      "sample_id": "image-08",
+      "sample_key": "I08",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "image",
+      "task": "工业零件多视图重建 08",
+      "task_prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-0f747be98a9c6b65",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "6a5f006864650df5c11715c20693126990e9bab899408c7209e091bf7ffa358e",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "SimJEB / GE GrabCAD challenge",
+        "license_as_recorded": "CAD non-commercial; database ODC-By",
+        "revision": "local hash-bound STEP corpus"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-0f747be98a9c6b65",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1195.406,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": null,
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": null,
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "6a5f006864650df5c11715c20693126990e9bab899408c7209e091bf7ffa358e"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [],
+          "preview_provenance": null,
+          "artifacts": [],
+          "code_files": [],
+          "final_response": "已完成并保存：\n\n- candidate.step\n- build_candidate.py\n- README.md\n- submission.json\n- 四张对应视角渲染位于 `renders/`\n\nSTEP 已独立读取验证：单一有效非空实体，尺寸为 `106.55988 × 180.18531 × 62.50461 mm`。不可观察的内部连接、孔深及底部过渡面假设已在 README 中列明。",
+          "evaluation_scope": {
+            "metric_id": "observable_component_checks",
+            "label": "可见组件检查",
+            "display": "未通过",
+            "component_passed": false,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。"
+            ],
+            "metric": {
+              "id": "observable_component_checks",
+              "scale": "boolean",
+              "value": false,
+              "views": [
+                {
+                  "iou": 0.8516143202284209,
+                  "boundary_p95_px": 26.336546350619543,
+                  "appearance_mae": 0.1466969049213389,
+                  "worst_local_mae": 0.7115348511318288,
+                  "passed": false
+                },
+                {
+                  "iou": 0.819602514013929,
+                  "boundary_p95_px": 37.69606990631944,
+                  "appearance_mae": 0.1689250660536534,
+                  "worst_local_mae": 0.7417145285171844,
+                  "passed": false
+                },
+                {
+                  "iou": 0.8116308134123966,
+                  "boundary_p95_px": 41.10960958218893,
+                  "appearance_mae": 0.17583928667875212,
+                  "worst_local_mae": 0.7153863878908706,
+                  "passed": false
+                },
+                {
+                  "iou": 0.8806765468515831,
+                  "boundary_p95_px": 24.0,
+                  "appearance_mae": 0.13494822140345286,
+                  "worst_local_mae": 0.7333226833850375,
+                  "passed": false
+                }
+              ]
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 190 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "0f747be98a9c6b65f9de108b0989ba59217ba7ca0286a4238b2d5a9ee4714c1b"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-I09",
+      "run_id": "deepseek-r9-image-09",
+      "sample_id": "image-09",
+      "sample_key": "I09",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "image",
+      "task": "工业零件多视图重建 09",
+      "task_prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-34c2d02efbad47ea",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": null,
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "SimJEB / GE GrabCAD challenge",
+        "license_as_recorded": "CAD non-commercial; database ODC-By",
+        "revision": "local hash-bound STEP corpus"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-34c2d02efbad47ea",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1189.265,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": null,
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": null,
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": null,
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [],
+          "preview_provenance": null,
+          "artifacts": [],
+          "code_files": [],
+          "final_response": null,
+          "evaluation_scope": {
+            "metric_id": null,
+            "label": "测量",
+            "display": "无几何分数",
+            "component_passed": null,
+            "whole_task_passed": null,
+            "measurement_status": "delivery_failed",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。"
+            ],
+            "metric": null
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 183 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 0 个候选文件、0 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：产物交付失败。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "34c2d02efbad47ea7915b8ae9b91fb3e458d7782baf866911654d46e594a7c9d"
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "deepseek-r9-I10",
+      "run_id": "deepseek-r9-image-10",
+      "sample_id": "image-10",
+      "sample_key": "I10",
+      "dataset": "v0.1-r9-photo-gt-primary",
+      "category": "image",
+      "task": "工业零件多视图重建 10",
+      "task_prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+      "prompt_label": "任务摘要",
+      "model": "deepseek-flash",
+      "reasoning_effort": "max",
+      "reasoning_effort_kind": "requested",
+      "effective_reasoning_effort": null,
+      "status": "completed",
+      "score": null,
+      "passed": null,
+      "selected_attempt_id": "archived-984f087824d5949d",
+      "stop_reason": null,
+      "agent_requested_continue": null,
+      "selected_evidence_sha256": null,
+      "candidate_sha256": "fa6c6288487d87f768fa9bc0d6998d94d99958f0ed3477b0fc9d0fa2cd175aca",
+      "ground_truth_sha256": null,
+      "integrity": null,
+      "input_images": [],
+      "input_evidence": null,
+      "source_attribution": {
+        "name": "SimJEB / GE GrabCAD challenge",
+        "license_as_recorded": "CAD non-commercial; database ODC-By",
+        "revision": "local hash-bound STEP corpus"
+      },
+      "data_quality_annotation": null,
+      "attempts": [
+        {
+          "attempt_id": "archived-984f087824d5949d",
+          "score": null,
+          "passed": null,
+          "elapsed_seconds": 1168.36,
+          "selected": true,
+          "timed_out": false,
+          "agent_decision": null,
+          "decision_reason": null,
+          "safety_stop_reason": null,
+          "can_improve": null,
+          "decision_attempts": [],
+          "decision_recovered": null,
+          "images": {
+            "candidate": null,
+            "ground_truth": null,
+            "overlay": null
+          },
+          "geometry": {
+            "candidate": null,
+            "ground_truth": null,
+            "localization": null,
+            "topology": null,
+            "face_query": null
+          },
+          "render_error": null,
+          "localization": null,
+          "localization_error": null,
+          "verdict": null,
+          "evidence": {
+            "candidate": {
+              "sha256": "fa6c6288487d87f768fa9bc0d6998d94d99958f0ed3477b0fc9d0fa2cd175aca"
+            },
+            "scope": "archived_candidate_identity"
+          },
+          "evidence_sha256": null,
+          "reflection": null,
+          "feedback_packet": null,
+          "mcp_events": [],
+          "derived_feature_backfill": null,
+          "candidate_images": [],
+          "preview_provenance": null,
+          "artifacts": [],
+          "code_files": [],
+          "final_response": "已完成并提交：\n\n- candidate.step — 已验证可导入、非空，单位 mm\n- build_candidate.py — 参数化可重建源码\n- ASSUMPTIONS.md — 孔深、薄壁厚度及不可观察内部结构假设\n- submission.json\n- 四视角渲染位于 renders\n\n模型包含校准后的非对称薄壁底座、四角安装孔及沉孔、三角加强结构、双吊耳与椭圆孔、带不规则孔阵的拱壳。",
+          "evaluation_scope": {
+            "metric_id": "observable_component_checks",
+            "label": "可见组件检查",
+            "display": "未通过",
+            "component_passed": false,
+            "whole_task_passed": null,
+            "measurement_status": "measured",
+            "execution_status": "completed",
+            "notes": [
+              "任务文字为冻结题面的编辑摘要。",
+              "模型自述与独立评分分别展示。",
+              "整题验收未确认；本页展示候选及历史测量。"
+            ],
+            "metric": {
+              "id": "observable_component_checks",
+              "scale": "boolean",
+              "value": false,
+              "views": [
+                {
+                  "iou": 0.8687975349098823,
+                  "boundary_p95_px": 33.83784863137726,
+                  "appearance_mae": 0.13922439868548248,
+                  "worst_local_mae": 0.700974673757236,
+                  "passed": false
+                },
+                {
+                  "iou": 0.929756973611795,
+                  "boundary_p95_px": 18.855888030978242,
+                  "appearance_mae": 0.11037498807195156,
+                  "worst_local_mae": 0.6782771566322594,
+                  "passed": false
+                },
+                {
+                  "iou": 0.9137450261616067,
+                  "boundary_p95_px": 11.479799112601134,
+                  "appearance_mae": 0.12318316090383884,
+                  "worst_local_mae": 0.7035825029902434,
+                  "passed": false
+                },
+                {
+                  "iou": 0.8741103661681279,
+                  "boundary_p95_px": 21.638735003103655,
+                  "appearance_mae": 0.1408642569590783,
+                  "worst_local_mae": 0.6915394200307795,
+                  "passed": false
+                }
+              ]
+            }
+          },
+          "public_events": [
+            {
+              "type": "archive_evidence",
+              "label": "执行归档",
+              "details": "归档执行状态：已完成执行。记录有 217 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "产物收集",
+              "details": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "archive_evidence",
+              "label": "独立评测",
+              "details": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "source_attempt": {
+            "kind": "verified_archived_execution",
+            "receipt_sha256": "984f087824d5949daa09186bab8224707417738a08d51afdd5aef4399e4e2b32"
+          }
+        }
+      ]
+    }
+  ],
+  "public_export_notice": "Verified public archive excerpt. One observed execution is recorded per case. Archive summaries are not model reasoning or tool traces. Numeric metrics and component outcomes retain their original scope. Whole-task acceptance is unverified.",
+  "source_bundle_sha256": null,
+  "source_archive_sha256": "3af3d3aced5832b12c9ed94a4b78fcba5a8119f4aad5b2442956f403644739e4",
+  "presentation_source_bundle_sha256": "37280483e8c7c3e9a8a6e2004cab22a2589070646be3663d702af803592ba24a",
+  "bundle_sha256": "0805344e4579fb06cbd661871c564ccbe30880eb1baba9a0d19cbf4b9a20a1e0"
+}

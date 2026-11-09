@@ -1,12 +1,37 @@
 {
   "schema_version": "public-review-site-v1",
-  "generated_at": "2026-11-09T06:25:06.911104+00:00",
+  "generated_at": "2026-11-09T06:53:05.179880+00:00",
   "publication_approved": true,
   "geometry": {
-    "experiments": 17,
-    "runs": 78,
+    "experiments": 20,
+    "runs": 108,
     "archives": 6,
-    "trace_pages": 5
+    "trace_pages": 5,
+    "deepseek": {
+      "harness": "Codex",
+      "model": "deepseek-flash",
+      "requested_effort": "max",
+      "native_bundle_ids": [
+        "deepseek-r9-text",
+        "deepseek-r9-image",
+        "deepseek-r9-assembly"
+      ],
+      "detail_counts": {
+        "native_bundles": 3,
+        "rows": 30,
+        "numeric_scores": 15,
+        "boolean_components": 13,
+        "actual_text_queries": 10,
+        "candidate_previews": 50,
+        "code_files": 11,
+        "final_responses": 26,
+        "source_candidate_downloads": 19,
+        "candidate_downloads": 37,
+        "stl_downloads": 18,
+        "input_images": 28
+      },
+      "scope": "r9 local geometry diagnostics; full task acceptance unknown"
+    }
   },
   "files": [
     {
@@ -16,18 +41,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 1522,
-      "sha256": "c539d23d97e2ae78e53122fcf93e91e8e1ef88faefb86064d3cdcba4540cfaf7"
+      "bytes": 1796,
+      "sha256": "37f6a08956607b31d7053a0491f9068fccf2a2d8577ae035a2ee6953acad2438"
     },
     {
       "path": "archive-index.json",
-      "bytes": 6046,
-      "sha256": "cd02cc5a2919ecb7d4e17ea12fe12a25d4f245bb4785a636efbb8a462b3a3937"
+      "bytes": 5711,
+      "sha256": "b4428459c38ce4a2a69cd541657827dd99c7574f4ccf987858693dff671e6a1f"
     },
     {
       "path": "geometry/app.js",
-      "bytes": 49283,
-      "sha256": "577aeb7713867221b4764375ab236201c6c8ec82bbd618286fbb3002406fa3b2"
+      "bytes": 59507,
+      "sha256": "61774a8553a6e3df145307c71d8960451e27d5701d54219a1e4041865634c08c"
     },
     {
       "path": "geometry/astra.css",
@@ -78,6 +103,996 @@
       "path": "geometry/bundles/cadgenbench-astra-111/reviews.json",
       "bytes": 1129,
       "sha256": "00cc37647e6a3801b42e6321c9523a8d408356c2f515c230c731bbd867e88804"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A01/assembly.json",
+      "bytes": 34556,
+      "sha256": "724d367c1438b89eec4e72602155800cd5f0cece428ce191a94146834d69b9d7"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A02/assembly.json",
+      "bytes": 30559,
+      "sha256": "34d14fc7ff4747f13e705eb252167de372f93b588365b86eb97c2437015f98cd"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A03/assembly.json",
+      "bytes": 41768,
+      "sha256": "47b8dc0ab96f31f85b474715db481b1f30951980dc58de166d5ae6e79e0d1112"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A04/assembly.json",
+      "bytes": 45338,
+      "sha256": "6bf347910175785d19f581100e4567ce8f43afb78627155bc104dc72a88515ad"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A05/assembly.json",
+      "bytes": 17368,
+      "sha256": "22711a4d2f4fab75c76fb7bbed287fc4b9157437c664223bd8d72af0a71bd0a5"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A07/assembly.json",
+      "bytes": 38035,
+      "sha256": "ee6c7dfb582b3e4d219d0c74cae4687fc455194bbaaafcb50886cda83374a8f6"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A08/assembly.json",
+      "bytes": 11329,
+      "sha256": "2921813dfa4d62ee476f133c6b6b4eeb6f53596506006374cb2cc868398f09e3"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A09/MESH-NOTICE.txt",
+      "bytes": 1121,
+      "sha256": "a25c9ea2e36c3e2b4e2b946d7719cbaa6deb9e17a7471d5a8098129c05447d1e"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A09/PREVIEW-NOTICE.txt",
+      "bytes": 584,
+      "sha256": "ff25f17f2b1c6f6a7078258308b98e8b3b5e2eaee523f5ba10a3b23e6bbd4384"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A09/assembly.json",
+      "bytes": 7696,
+      "sha256": "94908b4dbe8052f01020e2c80a967251630df3d2a00f1267bc5664fd327bf39c"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A09/candidate.stl",
+      "bytes": 1171534,
+      "sha256": "d38835cb8ebf7192154cc4ad68241791ca57a108764af5fb0a8f4456ba1c4975"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A09/view-01.png",
+      "bytes": 16522,
+      "sha256": "036e53d07e00e8b4b3e74b5dad00b5c2b2c90a34c5261607b17a2affab039004"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A09/view-02.png",
+      "bytes": 13175,
+      "sha256": "250b42f9d8b55775924b16bd5f90ec9a0542541e327fcd6241587ff4ffce124a"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/assets/A10/assembly.json",
+      "bytes": 146542,
+      "sha256": "6b3e2aa542b90ac1cbbebeb76c68ccc1311ef600557b5c220ca7d210c254c3cf"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/review-data.json",
+      "bytes": 61327,
+      "sha256": "d693014e882cbbcedacbc12d354edb10c5b1a87e2a045350cb6d72b3f02c1477"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-assembly/reviews.json",
+      "bytes": 1086,
+      "sha256": "eab597dcf853f7e9b4fd2bf5b104d6e2d7eb54c1ccc8c3a88d16accf8f545b2b"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I01/MESH-NOTICE.txt",
+      "bytes": 947,
+      "sha256": "9095e44ce8350e787385a697482a08babf7622b34c8d77eb64cefa5c0b00ef59"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I01/PREVIEW-NOTICE.txt",
+      "bytes": 528,
+      "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I01/candidate.stl",
+      "bytes": 1773684,
+      "sha256": "67f03bff5bdcbd95f4b6fc9e886dc6ec17fddf6867e5672e97bb328c0bc7023c"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I01/input-01.png",
+      "bytes": 15462,
+      "sha256": "35887bf136c779b8bf13d12061edf200899ca516bd2737fbdb15ad5f4bc0d40f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I01/input-02.png",
+      "bytes": 17753,
+      "sha256": "c8dbdf1f3c377d570e820095c5feb3ec04c9bd41349bb5312957d68ed159b911"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I01/input-03.png",
+      "bytes": 17403,
+      "sha256": "2d24e69800e66491faddfba00c126197957b4c707bffdc0c48fa8844fca144b6"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I01/input-04.png",
+      "bytes": 17614,
+      "sha256": "4b5c9ce2cdfd5f33500fa894a41d6c36665c0f5e8f656996c3f290108a854a5a"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I01/view-01.png",
+      "bytes": 4976,
+      "sha256": "3d184a941713fe9aae8c5a20e3a263e81b549d7d2afa42c29a4ba92cf99782bf"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I01/view-02.png",
+      "bytes": 5824,
+      "sha256": "873dbb3a72ae0bf8a4332a5316bb7f1495a5b77cde1409cc79f672e989278064"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I01/view-03.png",
+      "bytes": 5825,
+      "sha256": "876439daf2ebc7d1b8f8a64f34ba03a135fae40f09138013f3e086ad0cbc4607"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I01/view-04.png",
+      "bytes": 6334,
+      "sha256": "9edaff08c4a2ce4ce893447ef34bb73764c770e4e390b868fa2e5f1e003ddafe"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I02/MESH-NOTICE.txt",
+      "bytes": 947,
+      "sha256": "67d7592407842b78cddb574874182b7a1d56600bac2b9e601251ad4c735c198e"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I02/PREVIEW-NOTICE.txt",
+      "bytes": 528,
+      "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I02/candidate.stl",
+      "bytes": 842684,
+      "sha256": "4d3eff4da29bbde5ef138fefd56e6fcb6033bb95186584775349fd72516fe3bd"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I02/input-01.png",
+      "bytes": 171092,
+      "sha256": "3a127296f7857f2621e535fec826d7e386438e3d96d8a19cf3894c95dc7cbce0"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I02/input-02.png",
+      "bytes": 127082,
+      "sha256": "3e2e354e84f68ae561986ccdcc08811889b9660ac462b2b99eba89f7a7d7ea5c"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I02/input-03.png",
+      "bytes": 80213,
+      "sha256": "53b3ef204c7373a2c466f78d2dfa7675a10d672b7bce1791c578dad9158fb908"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I02/input-04.png",
+      "bytes": 130018,
+      "sha256": "dea29d4ed65b72c04328c8089c8c0d9ab283a36d7dcd121990b1e24c0b5a2e71"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I02/view-01.png",
+      "bytes": 11924,
+      "sha256": "5ad3e9a924351c92c4dbd4ae1ec67b109a47e2e49c3d194083ad57b1caeae2b7"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I02/view-02.png",
+      "bytes": 11951,
+      "sha256": "ca6db1314730ff6cdb1089a5ebbf6651d8d1c3ba8d9908d81b5e5dbb8d572450"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I02/view-03.png",
+      "bytes": 6866,
+      "sha256": "0f88a09b226f35ecda06c479264009ecfeb962b70a2b9926bb7d82f65adf69bf"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I02/view-04.png",
+      "bytes": 8240,
+      "sha256": "019dfe6a5c4fbdd049bea413f7a2eab5fb64d110ed0e860eb4004a4f06d28dc3"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I03/MESH-NOTICE.txt",
+      "bytes": 947,
+      "sha256": "e0693b8bfc97c9bc322b44b6e12236a01da3efd0d2e6d624f6359245747f8aa6"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I03/PREVIEW-NOTICE.txt",
+      "bytes": 528,
+      "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I03/candidate.stl",
+      "bytes": 407784,
+      "sha256": "46fb7975f44530324c833eded25ee7f8f519f79468727f8e173405dc894612ab"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I03/input-01.png",
+      "bytes": 39593,
+      "sha256": "c5dcde3a91aa7ffbd788690ba92c79d461ea8bd00c8080c211f4994c8fe3e78c"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I03/input-02.png",
+      "bytes": 34408,
+      "sha256": "6684d4c3ea7eb101b00638b1da9e36e897cc133304861be0de7aadcd332c1e8f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I03/input-03.png",
+      "bytes": 30243,
+      "sha256": "16c73419585874c9edf6fc6c7c8f4eaa2aaeac8b1323285f776b332ca15130cd"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I03/input-04.png",
+      "bytes": 38608,
+      "sha256": "c3c548ebcb7fc507d0d546ae643d078ff4e150c4f4644416de5571a8b90d262f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I03/view-01.png",
+      "bytes": 3643,
+      "sha256": "a98bbb1fb119e6b64bd1c300bb245917c16b30104ec5c155522326adb4d6cf19"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I03/view-02.png",
+      "bytes": 3735,
+      "sha256": "16d84e1046658334381024a6eff2143a489cfa3a9c2ff462556256eb4e43d5fe"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I03/view-03.png",
+      "bytes": 2550,
+      "sha256": "f3da1e12aa30f4fc2e055efd30f67c23586a0c91fa521dfe6d6893d743170ddd"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I03/view-04.png",
+      "bytes": 3377,
+      "sha256": "9e728fd253a62adbe563c1f487fbd73dd75a55650fc9beacec539823e1307a94"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I04/MESH-NOTICE.txt",
+      "bytes": 947,
+      "sha256": "0c0d5d5e2946f94ac157e0b4f2cdedfc268c2ab15b192b288758e7fdbf859b20"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I04/PREVIEW-NOTICE.txt",
+      "bytes": 528,
+      "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I04/candidate.stl",
+      "bytes": 157484,
+      "sha256": "a088ba636bf753fce103c2959768ff86dffe319e5114b259caddaaa619198913"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I04/input-01.png",
+      "bytes": 38463,
+      "sha256": "97ba2e20de51cadcfbaefe913b4cecbcd10fe8c3a1780777e8d2cb5b694c944d"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I04/input-02.png",
+      "bytes": 38797,
+      "sha256": "966489732a133c0385c9720e88d1568e9ce6d1f10bb83eaf1f887dc6811ff07c"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I04/input-03.png",
+      "bytes": 29127,
+      "sha256": "e4540903c8e6c1181e75bd0140fe3ea99f7b21b2c8257e2ae66ad94349df497a"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I04/input-04.png",
+      "bytes": 36848,
+      "sha256": "dceffe971a7e4349db5dbbeb8ca86db4fbc4667fc847fba950b934f8479b1b56"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I04/view-01.png",
+      "bytes": 4399,
+      "sha256": "59a340c744120dfd22be676f0cb88dc18aab3ad0e7e71829df773c788f8e9990"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I04/view-02.png",
+      "bytes": 5188,
+      "sha256": "4c6be0148d7869b556619af853cb01e641e62d434768c843ed7909f96983d1ca"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I04/view-03.png",
+      "bytes": 2734,
+      "sha256": "cc40a5e9e22839145a5e0a95d80c9a556bf1fc70f0f20f3a1cd83b96ea9b2619"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I04/view-04.png",
+      "bytes": 3780,
+      "sha256": "76310ebc83164f04fb2a982831aff40640299c4685faf370723c2ab7b4ab7e99"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I05/MESH-NOTICE.txt",
+      "bytes": 947,
+      "sha256": "46e846ee48c0681326ca8dba98408d03f030b6a2f89628379a7834f67d768ae4"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I05/PREVIEW-NOTICE.txt",
+      "bytes": 528,
+      "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I05/candidate.stl",
+      "bytes": 329984,
+      "sha256": "ad93a60868592a9a59b4522619134883e449a908bdbf0030f6c2ebc9004466ea"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I05/input-01.png",
+      "bytes": 68134,
+      "sha256": "59d39d9e1bd32ac5d140e0033a1f17b04206f6d4c85d958f854a35895f475447"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I05/input-02.png",
+      "bytes": 46644,
+      "sha256": "da172436ec34edff56af78a5bff8cd52ff54c7a35a10c08ff562a5955df2c134"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I05/input-03.png",
+      "bytes": 34520,
+      "sha256": "d7c330339d51daa582c951c1d5c4bc052cf49f4a606d2cc71eb6c131130da7c1"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I05/input-04.png",
+      "bytes": 53262,
+      "sha256": "f8f5bb504d273b3bf67360e4459985a354744b526282a2cdfb3f11deae0c8138"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I05/view-01.png",
+      "bytes": 12586,
+      "sha256": "ae5943aee5c4c48e936093ec720b633974eb7328e0a7019154c45409b8c31531"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I05/view-02.png",
+      "bytes": 12912,
+      "sha256": "ccc5a7f78e5172b851aa7174cbe189d662f583258679e9788adff605553d2f4f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I05/view-03.png",
+      "bytes": 8700,
+      "sha256": "8e4a27676b7de2b5cbded24651b860da5fbd62a6bf1930214a35473792cb6587"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I05/view-04.png",
+      "bytes": 15777,
+      "sha256": "8533fa735683c3c49fd3f8902f8ca9faf7bf7e09eb1c86242f3044ca46b254e0"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I06/MESH-NOTICE.txt",
+      "bytes": 947,
+      "sha256": "4a32acdd4823282738c85f79ff83b456f979ee75a71d7d61527214616f268da4"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I06/PREVIEW-NOTICE.txt",
+      "bytes": 528,
+      "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I06/candidate.stl",
+      "bytes": 596284,
+      "sha256": "12d504b82d4a2abc13cf336b3ed755e84b4d88b25d563a13e406f0d99877557b"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I06/input-01.png",
+      "bytes": 37979,
+      "sha256": "ea6276b6497264041eb46a8e635314eaebe13b828da7f75f064b2bebf49f3ad1"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I06/input-02.png",
+      "bytes": 33088,
+      "sha256": "f395d5d0b2700648f04004326e76f9a1e3f0e783bcc3f06c25f247f296ff5bcb"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I06/input-03.png",
+      "bytes": 26600,
+      "sha256": "cd07d7932586f107e0ef653ae054d65741b6cf80ccc68022f6c5b6ec377fac42"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I06/input-04.png",
+      "bytes": 35405,
+      "sha256": "4e16998a86683066ad32f41d2b3c30857e40ece6afea89f0380b2202322aa8c3"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I06/view-01.png",
+      "bytes": 10297,
+      "sha256": "5b89c3aae50e917e2c6e474c6026e9e984857dbd393c10ada4983fa76508e187"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I06/view-02.png",
+      "bytes": 8771,
+      "sha256": "809ab3322341ba47e421f00bb0b3d842d87f3d31e8702a7073d08605c7ab2845"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I06/view-03.png",
+      "bytes": 4931,
+      "sha256": "804dc63d38c467a783e6fb47bf261d3a10d9d8af2bddc4d3665ed2e3ac5711af"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I06/view-04.png",
+      "bytes": 10827,
+      "sha256": "71962e4f989ccd2f42f50da2e03d25557948482c0aa22ed8c4e9e065d6e64bec"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I07/MESH-NOTICE.txt",
+      "bytes": 947,
+      "sha256": "a238e513b020a21ce0a271dcb3efc2038227afc937908a370f84f67db93b4cc9"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I07/PREVIEW-NOTICE.txt",
+      "bytes": 528,
+      "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I07/candidate.stl",
+      "bytes": 497584,
+      "sha256": "2237d120ef1f8cfe9055d46b102dd88caa5e80ff715c6b40f4077cd38f5a872a"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I07/input-01.png",
+      "bytes": 22710,
+      "sha256": "db979500e97996da83e289a1e85baba79be9d822b8f9c182c082a9856c443e15"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I07/input-02.png",
+      "bytes": 29056,
+      "sha256": "178b75c2afc96bd75b8506651bcf32169af3442cd3bc681ea8d36aab8779629d"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I07/input-03.png",
+      "bytes": 23431,
+      "sha256": "8fe2f7603561ea194ba6fc19ed00eb1dfa787782153bfb9464fee7a0fada0279"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I07/input-04.png",
+      "bytes": 26229,
+      "sha256": "46772b6006a25848ae4f234270d0aedbebfca390cc14d4c76b7edef3c4016284"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I07/view-01.png",
+      "bytes": 3600,
+      "sha256": "5edfbc2626b195fda305838f38a869d33fb5ce114b9714c51f4cd0e89940de2d"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I07/view-02.png",
+      "bytes": 5846,
+      "sha256": "993bfcf2fdb5d810e38d886ab87875f5a9ad0ad85054990195d2b5ad952a774f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I07/view-03.png",
+      "bytes": 6437,
+      "sha256": "7506f2262e0e76c4fa680ba8936ef2ff10008330a63f9952ed763d8daae1db9b"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/assets/I07/view-04.png",
+      "bytes": 5241,
+      "sha256": "c945e54c45a56359fc7ca2d1bf6bcbf1bbd9523234a3742586c8b3ea86254b9c"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/review-data.json",
+      "bytes": 85705,
+      "sha256": "0efb6b26a285a650e934811ce1723264eaaa95943326e1a6ccd8f3c2fd169302"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-image/reviews.json",
+      "bytes": 1086,
+      "sha256": "49e5acd56ab26be7477a54f971515d370c30bc64f29006e1504b047a94ad959c"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T01/LICENSE.upstream.txt",
+      "bytes": 11558,
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T01/MESH-NOTICE.txt",
+      "bytes": 1181,
+      "sha256": "c1f8da7e279b3835f9f15001f1d30e2a4a7e4b5ce882059ad19f5b4b36dac07f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T01/NOTICE.txt",
+      "bytes": 514,
+      "sha256": "37706902d313800302ab8e9144fdf56cffc3408d265278632bf12210ab585c95"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T01/PREVIEW-NOTICE.txt",
+      "bytes": 344,
+      "sha256": "56b766cf3b2b8a1aa0d2abc5e54c3c7857a9e996da9e30a0339c2f2f6b269967"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T01/build_gear.py.txt",
+      "bytes": 9305,
+      "sha256": "6ea46510e1b9742198e4e20c1707dee28dc0a94e7a3ad7441bc0aa0b407cd73c"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T01/candidate.step",
+      "bytes": 2943472,
+      "sha256": "ecbfd149e1feef91d04ef592ae746a1f8f713ee244ebdef122e001f85d8cec65"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T01/candidate.stl",
+      "bytes": 520784,
+      "sha256": "2a110995b0fbd53d167eb77bfb45d7cb85550dbadab5f0e25c56d2164922bcb1"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T01/task-input.txt",
+      "bytes": 519,
+      "sha256": "919396822b6c2d03808b193625f2239fdb560ae40f48ac77cc815257fef790dc"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T01/view-01.png",
+      "bytes": 39836,
+      "sha256": "44ed287e786c80cf6acb3c79ee70c9884be2f822fb72daa2e68fb7f0ce7f323f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T01/view-02.png",
+      "bytes": 39799,
+      "sha256": "22a13777b7f743b198c759c9e7859d0bcdae9d3f3d74700619cdb5a24277a880"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/LICENSE.upstream.txt",
+      "bytes": 11558,
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/MESH-NOTICE.txt",
+      "bytes": 1183,
+      "sha256": "2cdc8de5d09a2f2270834039690bbb94eb2a74731eb6ca2d6063f146e7c051da"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/NOTICE.txt",
+      "bytes": 515,
+      "sha256": "a7830159b7c6eea0d5fa6f546960858e3bfb75c7d45e4bb9292a87dda464816a"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/PREVIEW-NOTICE.txt",
+      "bytes": 345,
+      "sha256": "0eb2b9bb8d48486f8b87343d5f69941104dafa23a44b91b745053bdc9fe93204"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/build_gear.py.txt",
+      "bytes": 26775,
+      "sha256": "76b98ab80e445ae8f64255065e0937934337d54041c640d6b116cfecad231d1d"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/candidate.step",
+      "bytes": 4448254,
+      "sha256": "b59a3a050603cf9909c75a77e78b2cb00607570a20ae42bee3f50359b5b58db7"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/candidate.stl",
+      "bytes": 399684,
+      "sha256": "5154d8d12487b1a8a463316f726d693bf09d8d60c496d90d6b540f5fcef9e558"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/task-input.txt",
+      "bytes": 1786,
+      "sha256": "98f6ad26c03b6b028ba34f918b2d4c570637d5bbc716a6eb119fd4ea6071e0be"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/view-01.png",
+      "bytes": 33962,
+      "sha256": "128564eef43d238d7c9e3c865e132a9b24e25fb297791d9320c81f0ce44b8f8b"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/view-02.png",
+      "bytes": 34057,
+      "sha256": "b6122302495b74064d99948ce2e938985292979d3526fda59b9fae862f3457cf"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T03/LICENSE.upstream.txt",
+      "bytes": 11558,
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T03/MESH-NOTICE.txt",
+      "bytes": 1181,
+      "sha256": "4264cb6494988208cc5d1420155ea703a22405140e90ad61982cb2398739227e"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T03/NOTICE.txt",
+      "bytes": 514,
+      "sha256": "30cd0514dc8870aea12630afa495ff79044c2d5cc0aee8e87b3ae47a3fdb0c83"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T03/PREVIEW-NOTICE.txt",
+      "bytes": 344,
+      "sha256": "c706d48d8e0f101279283613a1b210efeaecdc0740432ac0601a98bc9829b8ed"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T03/build_rack.py.txt",
+      "bytes": 5824,
+      "sha256": "21734df5069bfe1b3a6a2c96527a1817de5b2baa15e9b9a4b4ade301b2530492"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T03/candidate.step",
+      "bytes": 440336,
+      "sha256": "d4aa068face289b06b14d33834500aa5bf25d3bbb20d38236637a9c5a462b021"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T03/candidate.stl",
+      "bytes": 21484,
+      "sha256": "8222d9010ca61e6c855ac188ac3daabb7a36dfc7d752060e77b077077d254536"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T03/task-input.txt",
+      "bytes": 427,
+      "sha256": "cb921af48b8f48a5b669010ac84697d7da1cc4877082d8ef69158efae1baa05e"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T03/view-01.png",
+      "bytes": 4439,
+      "sha256": "d6aed4caabec96fb5d229cc0ea0d187294cf4a08b3c00b5689bbee72af21d852"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T03/view-02.png",
+      "bytes": 6748,
+      "sha256": "d24cc1354c850c2c9e1fde8b7c1fc246c46d8846e3d601f2efe12e618c57ba1b"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T04/LICENSE.upstream.txt",
+      "bytes": 11560,
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T04/MESH-NOTICE.txt",
+      "bytes": 1195,
+      "sha256": "2b192c81d31e633d5a9796da15e4e32b0e4eeb39a8a6b2252670c55bee8ce2f1"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T04/NOTICE.txt",
+      "bytes": 521,
+      "sha256": "ea9c3e9ee96eaf53bbf4c4db96fcc1f2222d5f55957792fb4cb1b18882560aad"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T04/PREVIEW-NOTICE.txt",
+      "bytes": 351,
+      "sha256": "752275d55454f684e3f5aca3ad362ec0b50e8ba4b154828c27a0b82bf4e7db37"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T04/build_fastener.py.txt",
+      "bytes": 9375,
+      "sha256": "f624f4fbc20deaa8e7e3adaf1688f7136dc01914ddd19a5addc75a731b939c22"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T04/candidate.step",
+      "bytes": 667937,
+      "sha256": "492d503adc621ab250af1fe3d87255acb14c0884a196392b7916ab52540aacd8"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T04/candidate.stl",
+      "bytes": 456384,
+      "sha256": "fdf02870a706684b5c6bfc3f44c64ab1b8de6107f98e1ebd2cf50e3e6d43352d"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T04/task-input.txt",
+      "bytes": 435,
+      "sha256": "68e8e2eea647035f63a0bda834cb01163bdf30d59f80bd17504e1d9d134bcc3d"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T04/view-01.png",
+      "bytes": 36018,
+      "sha256": "7a499baf796b692dffd4aab805134dcab8d1ebd3319f323a4277b989c36c48a6"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T04/view-02.png",
+      "bytes": 36297,
+      "sha256": "8a26af32176cc213881417f6c8e8a13fadcca522fa2a84cbb7b1699de6b9d194"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T05/LICENSE.upstream.txt",
+      "bytes": 11560,
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T05/MESH-NOTICE.txt",
+      "bytes": 1199,
+      "sha256": "dd02fad52b093c2872c3126b3e049ac51eeb8eba496ec74b5ec25e9112189eba"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T05/NOTICE.txt",
+      "bytes": 523,
+      "sha256": "d7c6b3e3daf83527cfa2bc49bce59da940a2c9fc0dab5b08f83e8b428ae4e9d6"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T05/PREVIEW-NOTICE.txt",
+      "bytes": 353,
+      "sha256": "2731da13945180c0c43d4aaddb2ea6e58ed9d66d32cd2afb19435ae89775a61b"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T05/build_sprocket.py.txt",
+      "bytes": 5665,
+      "sha256": "545561be7cf67308f9da0d31b128d62f90990c00ef483753ca23159889836bb7"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T05/candidate.step",
+      "bytes": 572506,
+      "sha256": "2096b5b19ed4361fb572cdae6dd394993d16e71c2e72aa5d80640f210485badc"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T05/candidate.stl",
+      "bytes": 326884,
+      "sha256": "44eed748dfa121f493a3a6a1fc642087f553ffbac1cebb719d98fdbd0336c186"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T05/task-input.txt",
+      "bytes": 440,
+      "sha256": "ffb53fdc5998d0401324f172c406aced50ef26f5b7628ed320c20cab85130eaf"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T05/view-01.png",
+      "bytes": 7942,
+      "sha256": "77b459c273916f03392d9d19e88a7eb382162122b797dbca6d805a5da56d1649"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T05/view-02.png",
+      "bytes": 7841,
+      "sha256": "95ddf00e9b2a147a2a952b47c3e5937bf3b724855915694725d2990df21a2726"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T06/LICENSE.upstream.txt",
+      "bytes": 1089,
+      "sha256": "b8f8918574ee9761c3f8323f22bcbfb8feb81002309ae3ba1a3b440bbdcce945"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T06/MESH-NOTICE.txt",
+      "bytes": 1201,
+      "sha256": "1d2e6060f35022465d5283274aa5ce5fdb2eeb748782e448a948ed4474add6ca"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T06/NOTICE.txt",
+      "bytes": 524,
+      "sha256": "f873ad88c9af6f5e6383b68f1d843a96ca2f699db5adaa364fcec6c90ece815b"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T06/PREVIEW-NOTICE.txt",
+      "bytes": 354,
+      "sha256": "176f4e8f041a81fc9079344a7999148c22446c2d6930a86dcd11e7776cf62ae4"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T06/build_model.py.txt",
+      "bytes": 4461,
+      "sha256": "7155fce6f0cff766729d7896dac9bbb24c427578f59a681a184d7c9fc8e1d74a"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T06/candidate.step",
+      "bytes": 335996,
+      "sha256": "da3a54f752002c1e93b0de0eee60abe98c0a83f424909edf4416b36036d0d2b3"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T06/candidate.stl",
+      "bytes": 186084,
+      "sha256": "1bc7dfd7319cd660bb9c5f72bd1f2302f047fa2bc46cf0f4ccdad3ceb26a67d2"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T06/task-input.txt",
+      "bytes": 472,
+      "sha256": "e64162286ccb9e8a0e3e4371e89f45b0b1d7760072d6a8600deb3c503f2c0252"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T06/view-01.png",
+      "bytes": 10690,
+      "sha256": "19bdaa31754916c1f4f5fde3888d0619c3064738649977344447234d2348db64"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T06/view-02.png",
+      "bytes": 10609,
+      "sha256": "a4c5be7a938a350e3481ac1a5a617c143d7cb73c8c4cee42803ad20e13a0938f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T07/LICENSE.upstream.txt",
+      "bytes": 1106,
+      "sha256": "10f0aaf81e568f64feb903fcf312f7311868550a0fedf5f3aa007fb05f261f35"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T07/MESH-NOTICE.txt",
+      "bytes": 1255,
+      "sha256": "0b157f31bd64b53d0398a2792a927c4d88186b008c0b2665425c1df29484dd26"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T07/NOTICE.txt",
+      "bytes": 551,
+      "sha256": "ff3272e86e6a13042cd07d246f68620fc933fb57820916012d6f45450093f6ae"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T07/PREVIEW-NOTICE.txt",
+      "bytes": 381,
+      "sha256": "45a190cdfd804d186e8f198f1aa35cbeda6637a993db6e6cfb502ea8e6bc2bbd"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T07/build_coils.py.txt",
+      "bytes": 6233,
+      "sha256": "06c5bb654e1cf796ea7f9106b63e579ced1b4c9c7aee895eb0f6f0c56a81fa4d"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T07/candidate.step",
+      "bytes": 4368887,
+      "sha256": "24d504c6b183e8ff42627a6fbfdc41979fbd0deaf2e07fa1e8f9e655d38d1be4"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T07/candidate.stl",
+      "bytes": 231784,
+      "sha256": "affb038988805a418bca323425b76a41314fc691fa3763870158258afffaa1b6"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T07/task-input.txt",
+      "bytes": 1379,
+      "sha256": "169014482b3db01e3f5f826a26a4bd64e8830dc6f297222511dbb04dbca13467"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T07/view-01.png",
+      "bytes": 10788,
+      "sha256": "be7353e71599fd277abc59355001796c3cf3e354a488a25e1d18c715d3eddb3f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T07/view-02.png",
+      "bytes": 10737,
+      "sha256": "648e2f753733aeffcda2476a370148890b7d5eb3c1b114fe79c0fda613b1daa1"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T08/LICENSE.upstream.txt",
+      "bytes": 1106,
+      "sha256": "10f0aaf81e568f64feb903fcf312f7311868550a0fedf5f3aa007fb05f261f35"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T08/MESH-NOTICE.txt",
+      "bytes": 1231,
+      "sha256": "fb05fcba208d51c232734189c161b1e7a5700a16857aec63fbeb14cb06d7102e"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T08/NOTICE.txt",
+      "bytes": 539,
+      "sha256": "28e9023fe4ada13b90417ba601b1424942404d891f16b2bffa8ae7c67d8b24f6"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T08/PREVIEW-NOTICE.txt",
+      "bytes": 369,
+      "sha256": "72a5f89dbb3c2643e1a0f8f503b6af951bfade11e90470d6948069da347ea1d4"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T08/build_model.py.txt",
+      "bytes": 9039,
+      "sha256": "19b6ec280ce7c4ddbce332adf2d71d41e1b7dc6bf864a7ec98383d90f17a500a"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T08/candidate.step",
+      "bytes": 110993,
+      "sha256": "25f3d78e4712d89ff10c1cfb2d5648bb67fade27c3046e15656853c3650b5402"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T08/candidate.stl",
+      "bytes": 63184,
+      "sha256": "dbd10ef151e5a8850e2adae5d9ff0f154225e4c86597a4590d0d6174c4e4acb4"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T08/task-input.txt",
+      "bytes": 443,
+      "sha256": "1485bc9f5218c92099b95df0c8fa6854125111f6e3df34d0eae2370a40581ab9"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T08/verify_candidate.py.txt",
+      "bytes": 2799,
+      "sha256": "cbc81abf54fedbd756d9e5a32274aac9f90972ebc7d6b697253545a07605421e"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T08/view-01.png",
+      "bytes": 21134,
+      "sha256": "9108444f7c9275489b82bb04293cf25f5cf7a0f2e020fce6ec103d67392c399a"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T08/view-02.png",
+      "bytes": 21644,
+      "sha256": "f5b15a114b4d2539e0ea24fbc7b9e2b77a688e8e20e5dd5341c2838e0681f5d8"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T09/LICENSE.upstream.txt",
+      "bytes": 1106,
+      "sha256": "10f0aaf81e568f64feb903fcf312f7311868550a0fedf5f3aa007fb05f261f35"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T09/MESH-NOTICE.txt",
+      "bytes": 1233,
+      "sha256": "54dafb0fcbd18d46b7b92c7f4c2bbef840cc72cfa5fbd119607bdd8815ebc07f"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T09/NOTICE.txt",
+      "bytes": 540,
+      "sha256": "fdd6288d47cd69b63d3ff985c2fc89b6f177a561e76f574826e3c7b8bbac42e2"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T09/PREVIEW-NOTICE.txt",
+      "bytes": 370,
+      "sha256": "2e7293e458d1baef13c672398739819894f01fad786796aaf792725f830f2a6e"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T09/build_container_sector.py.txt",
+      "bytes": 19429,
+      "sha256": "1968aaa2e99ebff3467bf0e522e872c1da3a741e459f904fabf0731be1bcaa60"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T09/candidate.step",
+      "bytes": 48889,
+      "sha256": "db4c4690d21911108c7202c97ae48523e68135005d2da65e742a941bda966195"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T09/candidate.stl",
+      "bytes": 103484,
+      "sha256": "9169f255cc7342c1c103bc4878f140fa2c2e0f3254fb5e17fb29ce3e1e0827e2"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T09/task-input.txt",
+      "bytes": 419,
+      "sha256": "fc929a39774d94c31277654a860bf1e49219d5472a6c2abfbe7354708ce8c243"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T09/view-01.png",
+      "bytes": 16938,
+      "sha256": "46412b871afe32aaac6c592f5ac885cfb6bd20ffd9ccee870804b856c092329c"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T09/view-02.png",
+      "bytes": 15875,
+      "sha256": "f04bd5b3eadb5c368611efce1d7134c9abbfb985100b044b8b70505053896cde"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T10/LICENSE.upstream.txt",
+      "bytes": 1089,
+      "sha256": "b8f8918574ee9761c3f8323f22bcbfb8feb81002309ae3ba1a3b440bbdcce945"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T10/MESH-NOTICE.txt",
+      "bytes": 1221,
+      "sha256": "57e36adee23dfc5f11f5ab3dfdffe91ff4bdd2ea78e4e81aca27a89d060b59f7"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T10/NOTICE.txt",
+      "bytes": 534,
+      "sha256": "7c0a0abff618929ed0dd2a9445bb2d56d3f2d5935d1cdb2be7c501c2676b6429"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T10/PREVIEW-NOTICE.txt",
+      "bytes": 364,
+      "sha256": "3fbe4169dfa08910eb7e0bb1d92aaad244e135dd3dc9acdb3cf5ba2799b842af"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T10/build_candidate.py.txt",
+      "bytes": 11074,
+      "sha256": "7905e08b44e7af923764d126f75a636368eb10aed46ab29efada811584c12e3e"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T10/candidate.step",
+      "bytes": 286415,
+      "sha256": "76813bd12a3bee6970a0ccbe8eb7a97c3c4797b76cb39fca0f48213c280886e8"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T10/candidate.stl",
+      "bytes": 574884,
+      "sha256": "8a33595181506d080ea498d7f127b6e53a503cdb0480462747f63ddd92230ee5"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T10/task-input.txt",
+      "bytes": 1316,
+      "sha256": "7a60c0c0890741976d8f71053809905d03f90e3150763067851a9f46edcf7ea1"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T10/view-01.png",
+      "bytes": 13477,
+      "sha256": "8057dc4361fb6e5916ca6ed0acedd20d1ffda517f10e6bf16d8a3381d2845682"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T10/view-02.png",
+      "bytes": 13502,
+      "sha256": "981983dbc84fc383dd8098cebde71a040233521d484be03eac98eafb0ddcbbea"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/review-data.json",
+      "bytes": 96718,
+      "sha256": "10f75222da22950075231e4d941a30f6c3359ebc519bc7500338864b524d863e"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/reviews.json",
+      "bytes": 1086,
+      "sha256": "d9aea1d16bc5143ba353d139b6290c5f0a342053fa67d3f989e16256877ffacb"
     },
     {
       "path": "geometry/bundles/direct-astra-10/assets/omnimech-10/gpt-6-astra/a001-candidate.png",
@@ -6036,8 +7051,8 @@
     },
     {
       "path": "geometry/catalog.json",
-      "bytes": 22910,
-      "sha256": "5ac88226bbed9f997be0d22fbe725b7f50cfdfdaa47375a93fac90fb8a01adc4"
+      "bytes": 22803,
+      "sha256": "3de0cfcf83322dfc510b43807d91f4d83ba20351ac1a1b6541fdcb70e0aafdf0"
     },
     {
       "path": "geometry/geometry-viewer.js",
@@ -6046,8 +7061,8 @@
     },
     {
       "path": "geometry/index.html",
-      "bytes": 13124,
-      "sha256": "bf4ffe3cf8aebd9a1226e1d729318be251027e2a1af3833d2b6a552b863080ab"
+      "bytes": 13941,
+      "sha256": "b4e745376108dd73c0398d66ea2073eed1305b6408c68954201b73c1e2d21dab"
     },
     {
       "path": "geometry/kimi-vision-direct-10.html",
@@ -8011,8 +9026,8 @@
     },
     {
       "path": "geometry/styles.css",
-      "bytes": 28987,
-      "sha256": "f6032504dbc56131d06996bc7cef13084601539f47300d690b5b22e12eca85f3"
+      "bytes": 30455,
+      "sha256": "1a3f91fc01d46c009caad19ebb5ea43d86182223e991a52c5c1ae2df9b9b591e"
     },
     {
       "path": "geometry/vendor/README.md",
@@ -8061,8 +9076,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 12509,
-      "sha256": "2760f2b215d5306b28c759f1b821b3ea7dbe2421bb7d9ac7a8aaa3f96ebf4ada"
+      "bytes": 12340,
+      "sha256": "8ea98d7c132818843d9abf10970c03cc2be6f37b2e7f87ef28de8ce47a477394"
     },
     {
       "path": "reports/deepseek-assets/A01/assembly.json",
@@ -8796,8 +9811,8 @@
     },
     {
       "path": "reports/deepseek-detail.html",
-      "bytes": 3589,
-      "sha256": "33861f573f82d7d7436634159c37f1c119a086a08264e2321a007f3233cc2788"
+      "bytes": 923,
+      "sha256": "1038d90917c8e736b9ba7bbfd2707d666ba97bde5550006df34c421543eb918e"
     },
     {
       "path": "reports/deepseek-detail.js",
@@ -8816,8 +9831,8 @@
     },
     {
       "path": "reports/deepseek.html",
-      "bytes": 17811,
-      "sha256": "b43633d2a2586c5adead9ecf14bf71da9f66aacd8ae544943fbbb4855d3f8d6e"
+      "bytes": 923,
+      "sha256": "1038d90917c8e736b9ba7bbfd2707d666ba97bde5550006df34c421543eb918e"
     },
     {
       "path": "robots.txt",
@@ -8834,26 +9849,8 @@
     "reviewer identities"
   ],
   "navigation": "Harness > Model > Experiment",
-  "supplemental_reports": {
-    "deepseek": {
-      "experiments": 3,
-      "rows": 30,
-      "model": "deepseek-flash",
-      "requested_effort": "max",
-      "scope": "r9 local geometry diagnostics; full task acceptance unknown",
-      "detail_counts": {
-        "rows": 30,
-        "samples_with_previews": 18,
-        "candidate_previews": 50,
-        "candidate_downloads": 19,
-        "code_files": 11,
-        "final_responses": 26,
-        "assembly_downloads": 9
-      }
-    }
-  },
   "removed_sections": [
     "drawing-understanding"
   ],
-  "parent_commit": "76bbcb6fb289298581f5a7fae3257afd3e144865"
+  "parent_commit": "c12d5c1ec041922327ba68977daa7944d2978758"
 }

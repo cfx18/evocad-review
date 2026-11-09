@@ -2,12 +2,16 @@
 
 Read-only CAD research archive grouped by Harness, Model and experiment.
 
-This release retains 17 historical geometry bundles (78 run records), six Astra
-execution archives and five Kimi trace pages. DeepSeek CAD80 r9 includes 30
-case detail pages across text-to-CAD, image-to-CAD and assembly, with 50
-candidate-only previews across 18 cases, 11 generated source files, 26 saved
-model statements, 10 STEP candidates and 9 assembly-pose JSON candidates.
-Task descriptions are editorial summaries of frozen task inputs. Preview images
+This release contains 20 native geometry bundles (108 run records). The original
+17 bundles (78 records), six Astra execution archives and five Kimi trace pages
+are retained. DeepSeek CAD80 r9 adds three native geometry bundles, each with
+10 records, in the same Harness / Model / Experiment browser as other models.
+It includes 18 interactive candidate meshes, 50 candidate previews, 11 generated
+source files, 26 saved model statements, 10 STEP candidates and 9 assembly-pose
+JSON candidates. Ten frozen text queries and 28 attributed T-LESS input photos
+are included; remaining task descriptions are identified editorial summaries.
+The previous separate DeepSeek HTML routes now redirect to this shared browser.
+Preview images
 are identified as post-run renders or historical evaluator candidate renders;
 they are not model-produced images or new scoring evidence. Source files are
 inert text display copies with local dependency paths redacted, not a packaged

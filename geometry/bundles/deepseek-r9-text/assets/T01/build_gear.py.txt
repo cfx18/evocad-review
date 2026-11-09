@@ -1,0 +1,278 @@
+"""Build the requested 24-tooth double-helical gear.
+
+All dimensions are in millimetres.  The gear is centred on the model Z axis,
+the tooth space is 0 <= z <= 16, and the coaxial boss occupies 16 < z <= 20.
+
+The transverse tooth flanks are sampled circle involutes.  The tooth
+thickness is specified with zero backlash at the pitch circle.  Each half of
+the gear is twisted linearly from an end face to the mid-plane.  Half-gear
+lofts use closely spaced transverse sections, retaining the intended linear
+phase law while producing compact, rebuildable B-spline side surfaces.
+"""
+
+from __future__ import annotations
+
+import json
+import math
+import sys
+from pathlib import Path
+
+try:
+    import cadquery as cq
+except ModuleNotFoundError:
+    # Read-only geometry environment supplied for this task.
+    sys.path.insert(0, '<local dependency path omitted>')
+    import cadquery as cq
+
+
+ROOT = Path(__file__).resolve().parent
+OUTPUT_STEP = ROOT / "candidate.step"
+OUTPUT_REPORT = ROOT / "build_report.json"
+
+# Driving dimensions from the task statement.
+TEETH = 24
+NORMAL_MODULE = 2.0  # retained as source metadata; this is a transverse model
+PRESSURE_ANGLE_DEG = 20.0
+PITCH_RADIUS = 24.0
+TIP_RADIUS = 26.0
+ROOT_RADIUS = 21.5
+GEAR_HEIGHT = 16.0
+BOSS_RADIUS = 10.0
+BOSS_HEIGHT = 4.0
+BORE_RADIUS = 5.0
+
+# The two tooth halves meet at z=8.  Their end phases are both zero.  Using
+# more than one interval per half makes the ruled approximation of the linear
+# rotation sub-0.003 mm in radial sag at the tooth tips.
+TWIST = GEAR_HEIGHT * math.tan(math.radians(30.0)) / PITCH_RADIUS
+SECTION_PITCH = 0.5
+FLANK_SAMPLES = 9
+
+
+def _vec(radius: float, angle: float, z: float) -> cq.Vector:
+    return cq.Vector(
+        radius * math.cos(angle),
+        radius * math.sin(angle),
+        z,
+    )
+
+
+def _arc_edge(radius: float, start: float, end: float, z: float) -> cq.Edge:
+    """Circular arc on a transverse section, ordered CCW from start to end."""
+    middle = 0.5 * (start + end)
+    return cq.Edge.makeThreePointArc(
+        _vec(radius, start, z),
+        _vec(radius, middle, z),
+        _vec(radius, end, z),
+    )
+
+
+def _phase(z: float) -> float:
+    """Symmetric triangular tooth phase, zero at z=0 and z=16."""
+    position = min(max(z, 0.0), GEAR_HEIGHT)
+    return TWIST * (1.0 - abs(position - 0.5 * GEAR_HEIGHT) / (0.5 * GEAR_HEIGHT))
+
+
+def _involute_spline(
+    z: float,
+    tooth_center: float,
+    side: int,
+    base_radius: float,
+    pitch_half_angle: float,
+    pressure_angle: float,
+    from_tip: bool = False,
+) -> cq.Edge:
+    """One involute flank through pressure-angle samples.
+
+    side=-1 is the clockwise flank and side=+1 is the counter-clockwise
+    flank.  The angular half-thickness formula sets the pitch-circle tooth
+    thickness to exactly half the circular pitch (zero backlash).
+    """
+    alpha_tip = math.acos(base_radius / TIP_RADIUS)
+    involute_pitch = math.tan(pressure_angle) - pressure_angle
+    points: list[cq.Vector] = []
+    for index in range(FLANK_SAMPLES):
+        alpha = alpha_tip * index / (FLANK_SAMPLES - 1)
+        radius = base_radius / math.cos(alpha)
+        involute_angle = math.tan(alpha) - alpha
+        half_thickness = pitch_half_angle + involute_pitch - involute_angle
+        points.append(_vec(radius, tooth_center + side * half_thickness, z))
+    if from_tip:
+        points.reverse()
+    return cq.Edge.makeSpline(points)
+
+
+def _section_wire(z: float) -> cq.Wire:
+    """Create one closed transverse gear profile at height z."""
+    base_radius = PITCH_RADIUS * math.cos(math.radians(PRESSURE_ANGLE_DEG))
+    pressure_angle = math.radians(PRESSURE_ANGLE_DEG)
+    pitch_half_angle = math.pi / (2.0 * TEETH)
+    involute_pitch = math.tan(pressure_angle) - pressure_angle
+    alpha_tip = math.acos(base_radius / TIP_RADIUS)
+    base_half_angle = pitch_half_angle + involute_pitch
+    tip_half_angle = (
+        pitch_half_angle
+        + involute_pitch
+        - (math.tan(alpha_tip) - alpha_tip)
+    )
+
+    phase = _phase(z)
+    tooth_pitch = 2.0 * math.pi / TEETH
+    edges: list[cq.Edge] = []
+
+    for tooth in range(TEETH):
+        center = tooth * tooth_pitch + phase
+        left_root_angle = center - base_half_angle
+        right_root_angle = center + base_half_angle
+        left_tip_angle = center - tip_half_angle
+        right_tip_angle = center + tip_half_angle
+
+        # Root-to-base transition.  The supplied root radius lies inside the
+        # base circle.  A radial transition is the allowed equivalent root
+        # connection; no unrequested micro-fillet is introduced.
+        edges.append(
+            cq.Edge.makeLine(
+                _vec(ROOT_RADIUS, left_root_angle, z),
+                _vec(base_radius, left_root_angle, z),
+            )
+        )
+        edges.append(
+            _involute_spline(
+                z,
+                center,
+                -1,
+                base_radius,
+                pitch_half_angle,
+                pressure_angle,
+            )
+        )
+        edges.append(
+            _arc_edge(TIP_RADIUS, left_tip_angle, right_tip_angle, z)
+        )
+        edges.append(
+            _involute_spline(
+                z,
+                center,
+                +1,
+                base_radius,
+                pitch_half_angle,
+                pressure_angle,
+                from_tip=True,
+            )
+        )
+        edges.append(
+            cq.Edge.makeLine(
+                _vec(base_radius, right_root_angle, z),
+                _vec(ROOT_RADIUS, right_root_angle, z),
+            )
+        )
+        next_center = (tooth + 1) * tooth_pitch + phase
+        next_left_root = next_center - base_half_angle
+        edges.append(_arc_edge(ROOT_RADIUS, right_root_angle, next_left_root, z))
+
+    wire = cq.Wire.assembleEdges(edges)
+    if not wire.IsClosed():
+        raise RuntimeError(f"gear section at z={z} is not closed")
+    return wire
+
+
+def _lofted_half(z_start: float, z_end: float) -> cq.Solid:
+    """Loft one helical half, including both of its boundary sections."""
+    sections = int(round((z_end - z_start) / SECTION_PITCH))
+    wires = [
+        _section_wire(z_start + (z_end - z_start) * index / sections)
+        for index in range(sections + 1)
+    ]
+    loft = cq.Solid.makeLoft(wires, ruled=False)
+    if not loft.isValid():
+        raise RuntimeError(
+            f"gear-half loft from z={z_start} to z={z_end} is not a valid B-rep"
+        )
+    return loft
+
+
+def _lofted_gear_body() -> cq.Solid:
+    """Join the two halves at their common, unrotated middle-plane profile."""
+    lower = _lofted_half(0.0, 0.5 * GEAR_HEIGHT)
+    upper = _lofted_half(0.5 * GEAR_HEIGHT, GEAR_HEIGHT)
+    gear = lower.fuse(upper).clean()
+    if not gear.isValid():
+        raise RuntimeError("joined double-helical gear body is not a valid B-rep")
+    return gear
+
+
+def build() -> cq.Shape:
+    gear = _lofted_gear_body()
+
+    # Start the boss slightly inside the gear.  The overlapping core is fully
+    # hidden by the gear, while the exposed boss remains exactly 4 mm high.
+    boss = cq.Solid.makeCylinder(
+        BOSS_RADIUS,
+        BOSS_HEIGHT + 0.5,
+        cq.Vector(0.0, 0.0, GEAR_HEIGHT - 0.5),
+        cq.Vector(0.0, 0.0, 1.0),
+    )
+    solid = gear.fuse(boss).clean()
+
+    bore = cq.Solid.makeCylinder(
+        BORE_RADIUS,
+        GEAR_HEIGHT + BOSS_HEIGHT,
+        cq.Vector(0.0, 0.0, 0.0),
+        cq.Vector(0.0, 0.0, 1.0),
+    )
+    solid = solid.cut(bore).clean()
+    if not solid.isValid():
+        raise RuntimeError("final fused/cut solid is not a valid B-rep")
+    return solid
+
+
+def main() -> None:
+    shape = build()
+    shape.exportStep(str(OUTPUT_STEP))
+    bb = shape.BoundingBox()
+    reference_wire = _section_wire(0.0)
+    reference_area = cq.Face.makeFromWires(reference_wire).Area()
+    expected_volume = (
+        reference_area * GEAR_HEIGHT
+        + math.pi * BOSS_RADIUS**2 * BOSS_HEIGHT
+        - math.pi * BORE_RADIUS**2 * (GEAR_HEIGHT + BOSS_HEIGHT)
+    )
+    report = {
+        "step": OUTPUT_STEP.name,
+        "units": "mm",
+        "teeth": TEETH,
+        "pressure_angle_deg": PRESSURE_ANGLE_DEG,
+        "pitch_radius_mm": PITCH_RADIUS,
+        "tip_radius_mm": TIP_RADIUS,
+        "root_radius_mm": ROOT_RADIUS,
+        "gear_z_range_mm": [0.0, GEAR_HEIGHT],
+        "boss_diameter_mm": 2.0 * BOSS_RADIUS,
+        "boss_z_range_mm": [GEAR_HEIGHT, GEAR_HEIGHT + BOSS_HEIGHT],
+        "bore_diameter_mm": 2.0 * BORE_RADIUS,
+        "midplane_phase_rad": TWIST,
+        "end_phase_rad": [_phase(0.0), _phase(GEAR_HEIGHT)],
+        "reference_profile_closed": reference_wire.IsClosed(),
+        "reference_profile_area_mm2": reference_area,
+        "bounding_box_mm": {
+            "xmin": bb.xmin,
+            "xmax": bb.xmax,
+            "ymin": bb.ymin,
+            "ymax": bb.ymax,
+            "zmin": bb.zmin,
+            "zmax": bb.zmax,
+        },
+        "volume_mm3": shape.Volume(),
+        "analytic_volume_mm3": expected_volume,
+        "volume_error_mm3": shape.Volume() - expected_volume,
+        "solid_count": len(shape.Solids()),
+        "valid": shape.isValid(),
+    }
+    OUTPUT_REPORT.write_text(
+        json.dumps(report, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    print(json.dumps(report, indent=2, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

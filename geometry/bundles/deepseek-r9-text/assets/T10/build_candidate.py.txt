@@ -1,0 +1,334 @@
+"""Build the assembled two-part electronics housing required by task text-10.
+
+Coordinate system:
+  X: 100 mm width direction
+  Y: 150 mm length direction
+  Z: 50 mm assembled height direction
+
+The STEP output contains exactly two solids in their assembled positions:
+  bottom_box: Z = 0..47
+  lid:        Z = 46..50
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+
+GEOMETRY_SITE_PACKAGES = Path('<local dependency path omitted>')
+if GEOMETRY_SITE_PACKAGES.exists():
+    sys.path.insert(0, str(GEOMETRY_SITE_PACKAGES))
+
+import cadquery as cq
+
+
+# Nominal dimensions from the task, all in millimetres.
+WIDTH_X = 100.0
+LENGTH_Y = 150.0
+ASSEMBLED_HEIGHT_Z = 50.0
+WALL = 3.0
+CORNER_R = 10.0
+EDGE_R = 2.0
+
+BOTTOM_TOP_Z = 47.0
+LID_BODY_BOTTOM_Z = 47.0
+LID_BODY_THICKNESS = 3.0
+LID_TOP_Z = 50.0
+LIP_DEPTH = 1.0
+
+BOSS_CENTERS = [
+    (-38.0, -63.0),
+    (-38.0, 63.0),
+    (38.0, -63.0),
+    (38.0, 63.0),
+]
+BOSS_OUTSIDE_D = 10.0
+BOSS_HOLE_D = 4.0
+LID_HOLE_D = 4.0
+LID_COUNTERBORE_D = 8.0
+LID_COUNTERBORE_DEPTH = 1.0
+
+
+def rounded_rect_prism(
+    width: float,
+    length: float,
+    height: float,
+    corner_radius: float,
+    z_bottom: float,
+) -> cq.Workplane:
+    """Return a vertical rounded-rectangle prism with its base at z_bottom."""
+    return (
+        cq.Workplane("XY")
+        .sketch()
+        .rect(width, length)
+        .vertices()
+        .fillet(corner_radius)
+        .finalize()
+        .extrude(height)
+        .translate((0.0, 0.0, z_bottom))
+    )
+
+
+def make_bottom_box() -> cq.Workplane:
+    """Make the open-top bottom housing with four hollow screw bosses."""
+    outer = rounded_rect_prism(
+        WIDTH_X,
+        LENGTH_Y,
+        BOTTOM_TOP_Z,
+        CORNER_R,
+        z_bottom=0.0,
+    )
+
+    # R2 applies to the exposed bottom edge of the assembled outer envelope.
+    # The Z=47 seam edge remains square so the lid lip and cavity boundaries
+    # stay independent and the nominal fit is preserved.
+    outer = outer.faces("<Z").edges().fillet(EDGE_R)
+
+    cavity = rounded_rect_prism(
+        WIDTH_X - 2.0 * WALL,
+        LENGTH_Y - 2.0 * WALL,
+        BOTTOM_TOP_Z - WALL + 1.0,
+        CORNER_R - WALL,
+        z_bottom=WALL,
+    )
+
+    # Overlap the bosses slightly into the floor so the unions are robust.
+    bosses = (
+        cq.Workplane("XY")
+        .pushPoints(BOSS_CENTERS)
+        .circle(BOSS_OUTSIDE_D / 2.0)
+        .extrude(BOTTOM_TOP_Z - (WALL - 1.0))
+        .translate((0.0, 0.0, WALL - 1.0))
+    )
+
+    # The pilot bores are through the bosses and floor. Their axial depth is
+    # not fixed by the task; through bores leave an unambiguous nominal D4 hole.
+    pilot_bores = (
+        cq.Workplane("XY")
+        .pushPoints(BOSS_CENTERS)
+        .circle(BOSS_HOLE_D / 2.0)
+        .extrude(BOTTOM_TOP_Z + 2.0)
+        .translate((0.0, 0.0, -1.0))
+    )
+
+    box = outer.cut(cavity).union(bosses).cut(pilot_bores)
+    return box.clean()
+
+
+def make_lid() -> cq.Workplane:
+    """Make the cover plate, through holes, counterbores, and fit lip."""
+    body = rounded_rect_prism(
+        WIDTH_X,
+        LENGTH_Y,
+        LID_BODY_THICKNESS,
+        CORNER_R,
+        z_bottom=LID_BODY_BOTTOM_Z,
+    )
+    # R2 applies to the exposed top edge of the assembled outer envelope.
+    body = body.faces(">Z").edges().fillet(EDGE_R)
+
+    # The lip is the full nominal bottom-box cavity profile. Its 3 mm wall is
+    # carried inward, so its outside is an exact zero-clearance mating surface.
+    lip_outer = rounded_rect_prism(
+        WIDTH_X - 2.0 * WALL,
+        LENGTH_Y - 2.0 * WALL,
+        LIP_DEPTH + 0.1,
+        CORNER_R - WALL,
+        z_bottom=BOTTOM_TOP_Z - LIP_DEPTH,
+    )
+    lip_inner_cutter = rounded_rect_prism(
+        WIDTH_X - 4.0 * WALL,
+        LENGTH_Y - 4.0 * WALL,
+        LIP_DEPTH + 2.0,
+        CORNER_R - 2.0 * WALL,
+        z_bottom=BOTTOM_TOP_Z - LIP_DEPTH - 1.0,
+    )
+    lip_ring = lip_outer.cut(lip_inner_cutter)
+
+    through_holes = (
+        cq.Workplane("XY")
+        .pushPoints(BOSS_CENTERS)
+        .circle(LID_HOLE_D / 2.0)
+        .extrude(LID_TOP_Z - LID_BODY_BOTTOM_Z + 2.0)
+        .translate((0.0, 0.0, LID_BODY_BOTTOM_Z - 1.0))
+    )
+    counterbores = (
+        cq.Workplane("XY")
+        .pushPoints(BOSS_CENTERS)
+        .circle(LID_COUNTERBORE_D / 2.0)
+        .extrude(LID_COUNTERBORE_DEPTH + 1.0)
+        .translate(
+            (
+                0.0,
+                0.0,
+                LID_TOP_Z - LID_COUNTERBORE_DEPTH,
+            )
+        )
+    )
+
+    lid = body.union(lip_ring).cut(through_holes).cut(counterbores)
+    return lid.clean()
+
+
+def bbox_record(shape: cq.Shape) -> dict[str, list[float] | float]:
+    bb = shape.BoundingBox()
+    return {
+        "x": [round(bb.xmin, 6), round(bb.xmax, 6)],
+        "y": [round(bb.ymin, 6), round(bb.ymax, 6)],
+        "z": [round(bb.zmin, 6), round(bb.zmax, 6)],
+        "volume_mm3": round(shape.Volume(), 6),
+    }
+
+
+def assert_close(actual: float, expected: float, tolerance: float, label: str) -> None:
+    if abs(actual - expected) > tolerance:
+        raise AssertionError(f"{label}: expected {expected}, got {actual}")
+
+
+def as_single_solid(workplane: cq.Workplane, label: str) -> cq.Solid:
+    solids = workplane.val().Solids()
+    if len(solids) != 1:
+        raise AssertionError(f"{label} must be one connected solid, found {len(solids)}")
+    return solids[0]
+
+
+def validate_before_export(box: cq.Shape, lid: cq.Shape) -> dict:
+    box_bb = box.BoundingBox()
+    lid_bb = lid.BoundingBox()
+
+    assert_close(box_bb.xmin, -WIDTH_X / 2.0, 1e-5, "bottom xmin")
+    assert_close(box_bb.xmax, WIDTH_X / 2.0, 1e-5, "bottom xmax")
+    assert_close(box_bb.ymin, -LENGTH_Y / 2.0, 1e-5, "bottom ymin")
+    assert_close(box_bb.ymax, LENGTH_Y / 2.0, 1e-5, "bottom ymax")
+    assert_close(box_bb.zmin, 0.0, 1e-5, "bottom zmin")
+    assert_close(box_bb.zmax, BOTTOM_TOP_Z, 1e-5, "bottom zmax")
+
+    assert_close(lid_bb.xmin, -WIDTH_X / 2.0, 1e-5, "lid xmin")
+    assert_close(lid_bb.xmax, WIDTH_X / 2.0, 1e-5, "lid xmax")
+    assert_close(lid_bb.ymin, -LENGTH_Y / 2.0, 1e-5, "lid ymin")
+    assert_close(lid_bb.ymax, LENGTH_Y / 2.0, 1e-5, "lid ymax")
+    assert_close(lid_bb.zmin, LID_BODY_BOTTOM_Z - LIP_DEPTH, 1e-5, "lid zmin")
+    assert_close(lid_bb.zmax, LID_TOP_Z, 1e-5, "lid zmax")
+
+    # The lip intentionally occupies the open cavity. Check the actual part
+    # intersection instead: a face-only mating contact must have zero volume.
+    overlap = box.intersect(lid)
+    overlap_volume = overlap.Volume()
+    if overlap_volume > 1e-7:
+        raise AssertionError(
+            f"bottom and lid have positive-volume interference: {overlap_volume}"
+        )
+
+    # Lid holes must be open on both top and bottom, including the D4 core.
+    for x, y in BOSS_CENTERS:
+        for z in (47.5, 48.5):
+            if lid.isInside((x, y, z), 1e-7):
+                raise AssertionError(f"lid D4 hole is obstructed at {(x, y, z)}")
+        if lid.isInside((x, y, 49.5), 1e-7):
+            raise AssertionError(f"lid counterbore is obstructed at {(x, y, 49.5)}")
+
+    # The boss bore must remain open through the boss.
+    for x, y in BOSS_CENTERS:
+        if box.isInside((x, y, 20.0), 1e-7):
+            raise AssertionError(f"bottom boss bore is obstructed at {(x, y, 20)}")
+        # A point 3 mm radially from the axis lies in the D10 boss wall.
+        if not box.isInside((x + 3.0, y, 20.0), 1e-7):
+            raise AssertionError(f"bottom boss wall missing at {(x + 3.0, y, 20)}")
+
+    return {
+        "bottom_box": bbox_record(box),
+        "lid": bbox_record(lid),
+        "solid_count_before_export": 2,
+        "part_intersection_volume_mm3": round(overlap_volume, 9),
+        "nominal_lip_clearance_mm": 0.0,
+        "units": "mm",
+    }
+
+
+def validate_exported_step(step_path: Path) -> dict:
+    imported = cq.importers.importStep(str(step_path)).vals()
+    solids = []
+    for obj in imported:
+        if isinstance(obj, cq.Shape) and obj.ShapeType() == "Solid":
+            solids.append(obj)
+        elif isinstance(obj, cq.Compound):
+            solids.extend(obj.Solids())
+    if len(solids) != 2:
+        raise AssertionError(f"candidate.step must contain 2 solids, found {len(solids)}")
+
+    solids.sort(key=lambda s: s.BoundingBox().zmin)
+    bottom, lid = solids
+    records = {
+        "solid_count": len(solids),
+        "bottom_box": bbox_record(bottom),
+        "lid": bbox_record(lid),
+        "is_valid": bool(bottom.isValid() and lid.isValid()),
+    }
+
+    assert_close(records["bottom_box"]["z"][0], 0.0, 1e-5, "STEP bottom zmin")
+    assert_close(records["bottom_box"]["z"][1], 47.0, 1e-5, "STEP bottom zmax")
+    assert_close(records["lid"]["z"][0], 46.0, 1e-5, "STEP lid zmin")
+    assert_close(records["lid"]["z"][1], 50.0, 1e-5, "STEP lid zmax")
+    if not records["is_valid"]:
+        raise AssertionError("STEP contains an invalid solid")
+    return records
+
+
+def main() -> None:
+    output_dir = Path(__file__).resolve().parent
+    step_path = output_dir / "candidate.step"
+    validation_path = output_dir / "validation.json"
+
+    bottom_box = as_single_solid(make_bottom_box(), "bottom box")
+    lid = as_single_solid(make_lid(), "lid")
+
+    if bottom_box.ShapeType() != "Solid" or lid.ShapeType() != "Solid":
+        raise AssertionError("both parts must each be a single solid")
+    if not bottom_box.isValid() or not lid.isValid():
+        raise AssertionError("constructed BRep is invalid")
+
+    source_validation = validate_before_export(bottom_box, lid)
+
+    assembly = cq.Assembly(name="text_10_housing")
+    assembly.add(bottom_box, name="bottom_box", color=cq.Color(0.30, 0.45, 0.65))
+    assembly.add(lid, name="lid", color=cq.Color(0.72, 0.74, 0.78))
+    assembly.save(str(step_path), exportType="STEP")
+
+    step_validation = validate_exported_step(step_path)
+    report = {
+        "candidate": str(step_path),
+        "coordinate_frame": {
+            "X": "100 mm width",
+            "Y": "150 mm length",
+            "Z": "50 mm assembled height",
+        },
+        "source_checks": source_validation,
+        "step_checks": step_validation,
+        "feature_summary": {
+            "outer_profile_mm": [WIDTH_X, LENGTH_Y],
+            "assembled_height_mm": ASSEMBLED_HEIGHT_Z,
+            "wall_mm": WALL,
+            "vertical_corner_radius_mm": CORNER_R,
+            "top_bottom_edge_radius_mm": EDGE_R,
+            "boss_axes_xy_mm": BOSS_CENTERS,
+            "boss_outer_diameter_mm": BOSS_OUTSIDE_D,
+            "boss_bore_diameter_mm": BOSS_HOLE_D,
+            "lid_hole_diameter_mm": LID_HOLE_D,
+            "lid_counterbore_diameter_mm": LID_COUNTERBORE_D,
+            "lid_counterbore_depth_mm": LID_COUNTERBORE_DEPTH,
+            "lip_height_mm": LIP_DEPTH,
+        },
+    }
+    validation_path.write_text(
+        json.dumps(report, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    print(json.dumps(report, indent=2, ensure_ascii=False))
+    print(f"\nWrote {step_path} ({step_path.stat().st_size} bytes)")
+    print(f"Wrote {validation_path}")
+
+
+if __name__ == "__main__":
+    main()

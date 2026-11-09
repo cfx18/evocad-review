@@ -457,6 +457,39 @@
         "astra-human-mirror-y",
         "gpt-6-astra"
       ]
+    },
+    {
+      "id": "deepseek-r9-text",
+      "label": "CAD80 r9 · 文本建模",
+      "harness": "Codex",
+      "models": [
+        "deepseek-flash"
+      ],
+      "bundle_sha256": "435e37abc76717548fa452d4b713c41e23eca75ae8d8b71f042bf1d7039b363a",
+      "source_bundle_sha256": "d7dff3da7fa7fecbe9bff75dadd4298ae2b4ec282c04568fbe726f0d961a6035",
+      "run_count": 10
+    },
+    {
+      "id": "deepseek-r9-image",
+      "label": "CAD80 r9 · 图像建模",
+      "harness": "Codex",
+      "models": [
+        "deepseek-flash"
+      ],
+      "bundle_sha256": "0805344e4579fb06cbd661871c564ccbe30880eb1baba9a0d19cbf4b9a20a1e0",
+      "source_bundle_sha256": "37280483e8c7c3e9a8a6e2004cab22a2589070646be3663d702af803592ba24a",
+      "run_count": 10
+    },
+    {
+      "id": "deepseek-r9-assembly",
+      "label": "CAD80 r9 · 静态装配",
+      "harness": "Codex",
+      "models": [
+        "deepseek-flash"
+      ],
+      "bundle_sha256": "040d0f34d6e86f84dc61978bd97101a96b87a434eacc6c9978720780f2a088bb",
+      "source_bundle_sha256": "37f99af964df31fcd92b681600659084c8e2cf0b91babb7e0f7193fa8ef05418",
+      "run_count": 10
     }
   ],
   "visibility": "public",
@@ -467,27 +500,5 @@
     "kimi-vision-evocad-2.html",
     "kimi-vision.html"
   ],
-  "external_experiments": [
-    {
-      "id": "deepseek-r9-text",
-      "label": "CAD80 r9 · 文本建模",
-      "harness": "Codex",
-      "model": "deepseek-flash",
-      "url": "../reports/deepseek-detail.html?experiment=deepseek-r9-text&sample=T01&tab=artifact"
-    },
-    {
-      "id": "deepseek-r9-image",
-      "label": "CAD80 r9 · 图像建模",
-      "harness": "Codex",
-      "model": "deepseek-flash",
-      "url": "../reports/deepseek-detail.html?experiment=deepseek-r9-image&sample=I01&tab=artifact"
-    },
-    {
-      "id": "deepseek-r9-assembly",
-      "label": "CAD80 r9 · 静态装配",
-      "harness": "Codex",
-      "model": "deepseek-flash",
-      "url": "../reports/deepseek-detail.html?experiment=deepseek-r9-assembly&sample=A01&tab=artifact"
-    }
-  ]
+  "external_experiments": []
 }

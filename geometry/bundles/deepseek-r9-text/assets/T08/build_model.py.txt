@@ -1,0 +1,271 @@
+"""Build the variable-thickness reactor cladding sector from task text-08.
+
+Coordinates and dimensions are in millimetres.  The meridional profile lies in
+the global XZ plane (Y=0), with X=R and Z=Z, and is revolved 0 to +120 degrees
+about the global Z axis.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import math
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parent
+GEOMETRY_SITE_PACKAGES = Path(
+    '<local dependency path omitted>'
+)
+if GEOMETRY_SITE_PACKAGES.exists():
+    sys.path.insert(0, str(GEOMETRY_SITE_PACKAGES))
+
+import cadquery as cq
+import numpy as np
+from OCP.IFSelect import IFSelect_ReturnStatus
+
+
+PI = math.pi
+OUTPUT_STEP = ROOT / "candidate.step"
+VALIDATION_JSON = ROOT / "validation.json"
+
+INNER_OFFSET = 4.0
+SWEEP_DEGREES = 120.0
+SPLINE_TOLERANCE_MM = 1.0e-8
+
+
+def base_curve(theta: float) -> tuple[float, float, float, float, float, float]:
+    """Return R, Z, dR/dtheta, dZ/dtheta, n_R, and n_Z."""
+    phase = theta + 0.35 * math.sin(theta)
+    radius = 100.0 + 30.0 * math.cos(phase)
+    height = 5.0 + 51.0 * math.sin(theta)
+
+    d_radius = -30.0 * math.sin(phase) * (1.0 + 0.35 * math.cos(theta))
+    d_height = 51.0 * math.cos(theta)
+    normal_length = math.hypot(d_radius, d_height)
+
+    normal_radius = d_height / normal_length
+    normal_height = -d_radius / normal_length
+    return (
+        radius,
+        height,
+        d_radius,
+        d_height,
+        normal_radius,
+        normal_height,
+    )
+
+
+def thickness(theta: float) -> float:
+    """Piecewise-linear t(theta), continuous at theta=pi/2."""
+    if theta <= PI / 2.0:
+        return 8.0 + (12.0 / PI) * theta
+    return 20.0 - (12.0 / PI) * theta
+
+
+def profile_point(theta: float, outer: bool) -> tuple[float, float]:
+    """Return an (R, Z) point on the requested normals-offset boundary."""
+    radius, height, _, _, n_radius, n_height = base_curve(theta)
+    offset = INNER_OFFSET + (thickness(theta) if outer else 0.0)
+    return (
+        radius + offset * n_radius,
+        height + offset * n_height,
+    )
+
+
+def vector_3d(rz_point: tuple[float, float]) -> cq.Vector:
+    """Map an R-Z point to (X, Y, Z) = (R, 0, Z)."""
+    radius, height = rz_point
+    return cq.Vector(radius, 0.0, height)
+
+
+def make_offset_spline(
+    theta_start: float,
+    theta_end: float,
+    sample_count: int,
+    outer: bool,
+) -> cq.Edge:
+    """Create a tangent-continuous B-spline approximation within 10 nm."""
+    theta_values = np.linspace(theta_start, theta_end, sample_count)
+    points = [
+        vector_3d(profile_point(float(theta), outer))
+        for theta in theta_values
+    ]
+    return cq.Edge.makeSplineApprox(
+        points,
+        tol=SPLINE_TOLERANCE_MM,
+        minDeg=3,
+        maxDeg=6,
+    )
+
+
+def make_profile_wire() -> tuple[cq.Wire, cq.Edge, cq.Edge, cq.Edge]:
+    """Build the closed meridional cross-section.
+
+    The outer boundary is intentionally split at theta=pi/2.  The specified
+    piecewise-linear thickness has a slope change there, which must remain a
+    sharp edge rather than being smoothed away.
+    """
+    inner_edge = make_offset_spline(0.0, PI, 401, outer=False)
+    outer_left_edge = make_offset_spline(PI / 2.0, PI, 201, outer=True)
+    outer_right_edge = make_offset_spline(0.0, PI / 2.0, 201, outer=True)
+
+    inner_start = vector_3d(profile_point(0.0, outer=False))
+    inner_end = vector_3d(profile_point(PI, outer=False))
+    outer_start = vector_3d(profile_point(0.0, outer=True))
+    outer_end = vector_3d(profile_point(PI, outer=True))
+
+    start_cap = cq.Edge.makeLine(outer_start, inner_start)
+    end_cap = cq.Edge.makeLine(inner_end, outer_end)
+
+    # assembleEdges connects the supplied edges into one closed cycle, fixing
+    # edge traversal direction where needed.
+    profile_wire = cq.Wire.assembleEdges(
+        [inner_edge, end_cap, outer_left_edge, outer_right_edge, start_cap]
+    )
+    return profile_wire, inner_edge, outer_left_edge, outer_right_edge
+
+
+def assert_close(actual: float, expected: float, tolerance: float, label: str) -> None:
+    if abs(actual - expected) > tolerance:
+        raise RuntimeError(f"{label}: expected {expected}, got {actual}")
+
+
+def build() -> cq.Solid:
+    profile_wire, inner_edge, outer_left_edge, outer_right_edge = make_profile_wire()
+
+    if not profile_wire.IsClosed() or not profile_wire.isValid():
+        raise RuntimeError("The meridional profile is not a valid closed wire")
+
+    profile_face = cq.Face.makeFromWires(profile_wire)
+    if not profile_face.isValid():
+        raise RuntimeError("The meridional profile is not a valid planar face")
+
+    # Positive right-hand rotation starts on the +X side of the plane and
+    # advances towards +Y, exactly covering 0 <= azimuth <= 120 degrees.
+    solid = cq.Solid.revolve(
+        profile_wire,
+        [],
+        SWEEP_DEGREES,
+        (0.0, 0.0, 0.0),
+        (0.0, 0.0, 1.0),
+    )
+    if not solid.isValid() or len(solid.Solids()) != 1:
+        raise RuntimeError("Revolution did not produce one valid solid")
+    if len(solid.Faces()) != 7:
+        raise RuntimeError(
+            "Expected 7 faces: inner, two outer segments, two end caps, "
+            "and two azimuthal closure faces"
+        )
+
+    # Check the four endpoint points and the theta=pi/2 thickness jump points.
+    expected_points = {
+        "inner_0": ((134.0, 5.0), profile_point(0.0, False)),
+        "outer_0": ((142.0, 5.0), profile_point(0.0, True)),
+        "inner_pi": ((66.0, 5.0), profile_point(PI, False)),
+        "outer_pi": ((58.0, 5.0), profile_point(PI, True)),
+    }
+    for label, (expected, actual) in expected_points.items():
+        assert_close(actual[0], expected[0], 1.0e-9, f"{label} R")
+        assert_close(actual[1], expected[1], 1.0e-9, f"{label} Z")
+
+    midpoint_radius = 100.0 + 30.0 * math.cos(PI / 2.0 + 0.35)
+    expected_midpoints = (
+        ("inner_mid", (midpoint_radius, 60.0), profile_point(PI / 2.0, False)),
+        ("outer_mid", (midpoint_radius, 74.0), profile_point(PI / 2.0, True)),
+    )
+    for label, expected, actual in expected_midpoints:
+        assert_close(actual[0], expected[0], 1.0e-9, f"{label} R")
+        assert_close(actual[1], expected[1], 1.0e-9, f"{label} Z")
+
+    for label, edge, expected_start, expected_end in (
+        (
+            "inner",
+            inner_edge,
+            vector_3d(profile_point(0.0, False)),
+            vector_3d(profile_point(PI, False)),
+        ),
+        (
+            "outer_left",
+            outer_left_edge,
+            vector_3d(profile_point(PI / 2.0, True)),
+            vector_3d(profile_point(PI, True)),
+        ),
+        (
+            "outer_right",
+            outer_right_edge,
+            vector_3d(profile_point(0.0, True)),
+            vector_3d(profile_point(PI / 2.0, True)),
+        ),
+    ):
+        assert_close(
+            edge.startPoint().sub(expected_start).Length,
+            0.0,
+            1.0e-8,
+            f"{label} spline start connection",
+        )
+        assert_close(
+            edge.endPoint().sub(expected_end).Length,
+            0.0,
+            1.0e-8,
+            f"{label} spline end connection",
+        )
+
+    return solid
+
+
+def export_and_record(solid: cq.Solid) -> None:
+    status = solid.exportStep(
+        str(OUTPUT_STEP),
+        write_pcurves=True,
+        precision_mode=0,
+    )
+    if status != IFSelect_ReturnStatus.IFSelect_RetDone:
+        raise RuntimeError(f"STEP export failed with status {status}")
+
+    step_bytes = OUTPUT_STEP.read_bytes()
+    step_text = step_bytes.decode("utf-8", errors="strict")
+    if "SI_UNIT(.MILLI.,.METRE.)" not in step_text:
+        raise RuntimeError("Exported STEP does not declare millimetres")
+
+    bounding_box = solid.BoundingBox()
+    record = {
+        "task_id": "text-08",
+        "units": "mm",
+        "step_file": OUTPUT_STEP.name,
+        "step_sha256": hashlib.sha256(step_bytes).hexdigest(),
+        "sweep_degrees": SWEEP_DEGREES,
+        "solid_count": len(solid.Solids()),
+        "face_count": len(solid.Faces()),
+        "valid_solid": bool(solid.isValid()),
+        "profile_area_mm2": float(cq.Face.makeFromWires(make_profile_wire()[0]).Area()),
+        "volume_mm3": float(solid.Volume()),
+        "bounding_box_mm": {
+            "x": [float(bounding_box.xmin), float(bounding_box.xmax)],
+            "y": [float(bounding_box.ymin), float(bounding_box.ymax)],
+            "z": [float(bounding_box.zmin), float(bounding_box.zmax)],
+        },
+        "rebuild_command": "python build_model.py",
+        "rebuild_source": "build_model.py",
+    }
+    VALIDATION_JSON.write_text(
+        json.dumps(record, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+    print(
+        json.dumps(
+            {
+                "step": str(OUTPUT_STEP),
+                "bytes": len(step_bytes),
+                "volume_mm3": record["volume_mm3"],
+                "bounding_box_mm": record["bounding_box_mm"],
+            },
+            indent=2,
+        )
+    )
+
+
+if __name__ == "__main__":
+    export_and_record(build())
