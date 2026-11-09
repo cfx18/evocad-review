@@ -205,9 +205,9 @@ class SynchronizedGeometryViewers {
   async load() {
     Object.values(this.viewports).forEach((viewport) => viewport.showFallback("Loading geometry"));
     try {
-      const historical = this.alignment === "historical_alignment";
-      const overlayTruthPath = historical && this.geometryPaths.overlay_ground_truth;
-      const overlayCandidatePath = historical && this.geometryPaths.overlay_candidate;
+      const alternate = this.alignment === "historical_alignment";
+      const overlayTruthPath = alternate && this.geometryPaths.overlay_ground_truth;
+      const overlayCandidatePath = alternate && this.geometryPaths.overlay_candidate;
       const [truth, candidate, localization, alternateTruth, alternateCandidate] = await Promise.all([
         this.loadGeometry(this.geometryPaths.ground_truth),
         this.loadGeometry(this.geometryPaths.candidate),
@@ -220,9 +220,9 @@ class SynchronizedGeometryViewers {
         meshes.forEach((mesh) => mesh?.dispose());
         return;
       }
-      const fixed = this.alignment == null || this.alignment === "fixed_frame";
-      const overlayTruth = historical ? (overlayTruthPath ? alternateTruth : truth) : fixed ? truth : null;
-      const overlayCandidate = historical ? alternateCandidate : fixed ? candidate : null;
+      const fixed = this.alignment == null || this.alignment === "fixed_frame" || this.alignment === "allowed_pose";
+      const overlayTruth = alternate ? (overlayTruthPath ? alternateTruth : truth) : fixed ? truth : null;
+      const overlayCandidate = alternate ? alternateCandidate : fixed ? candidate : null;
       const overlayReady = Boolean(overlayTruth && overlayCandidate);
       const bounds = new THREE.Box3();
       for (const mesh of [truth, candidate, ...(overlayReady ? [overlayTruth, overlayCandidate] : [])]) {
@@ -251,7 +251,9 @@ class SynchronizedGeometryViewers {
         this.viewports.overlay.addGeometry(overlayTruth, COLORS.truth, 0.48);
         this.viewports.overlay.addGeometry(overlayCandidate, COLORS.candidate, 0.66);
         this.viewports.overlay.showInteractive();
-      } else if (!fixed && !historical) {
+      } else if (this.alignment === "allowed_pose") {
+        this.viewports.overlay.showFallback("配准叠合网格暂不可读取");
+      } else if (!fixed && !alternate) {
         this.viewports.overlay.showFallback("本页未提供历史评分对齐证据");
       } else {
         this.viewports.overlay.showFallback("Overlay requires both ground truth and candidate");

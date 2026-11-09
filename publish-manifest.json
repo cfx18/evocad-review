@@ -1,6 +1,6 @@
 {
   "schema_version": "public-review-site-v1",
-  "generated_at": "2026-11-09T07:28:38.441033+00:00",
+  "generated_at": "2026-11-09T07:48:44.639582+00:00",
   "publication_approved": true,
   "geometry": {
     "experiments": 20,
@@ -36,6 +36,12 @@
         "comparison_modes": {
           "fixed_frame": 18
         }
+      },
+      "pose_diagnostics": {
+        "sample": "T02",
+        "target": "literal_analytic_working_flanks",
+        "assets": 4,
+        "historical_score_changed": false
       }
     }
   },
@@ -47,8 +53,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2426,
-      "sha256": "9f10e499b09a1a32acbefd42dbfd4c5db0b94a80811e4d4967b396517150bec3"
+      "bytes": 2821,
+      "sha256": "23a5205b086a6a1163de54b54eec4906f18d68101f9c00ca7279e9b6309846d2"
     },
     {
       "path": "archive-index.json",
@@ -57,8 +63,8 @@
     },
     {
       "path": "geometry/app.js",
-      "bytes": 61332,
-      "sha256": "e1ae161b2e988f89737352c2d74f560dfaaa57a16ce9f5f4b9c128069f14bda2"
+      "bytes": 66721,
+      "sha256": "292e76539ab83a9d18e95f43e9544e7642e2ecc566162bd70ff33185bdc5d7eb"
     },
     {
       "path": "geometry/astra.css",
@@ -756,6 +762,11 @@
       "sha256": "76b98ab80e445ae8f64255065e0937934337d54041c640d6b116cfecad231d1d"
     },
     {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/candidate-to-literal.stl",
+      "bytes": 399684,
+      "sha256": "5b1141db6fed4722d38e6c01a062766b2df9465e8f1eacdb5aa792c42075d96d"
+    },
+    {
       "path": "geometry/bundles/deepseek-r9-text/assets/T02/candidate.step",
       "bytes": 4448254,
       "sha256": "b59a3a050603cf9909c75a77e78b2cb00607570a20ae42bee3f50359b5b58db7"
@@ -764,6 +775,21 @@
       "path": "geometry/bundles/deepseek-r9-text/assets/T02/candidate.stl",
       "bytes": 399684,
       "sha256": "5154d8d12487b1a8a463316f726d693bf09d8d60c496d90d6b540f5fcef9e558"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/literal-pose-NOTICE.txt",
+      "bytes": 418,
+      "sha256": "afa6a3313bbc4513245564a2d4261c09da6ceb2db303dfaf352fb2b30de83eff"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/literal-pose-diagnostics.json",
+      "bytes": 22489,
+      "sha256": "8d257188d90fa9b872e8aab3aa530e091f39c4fecf7043cfce63bd758a7a9446"
+    },
+    {
+      "path": "geometry/bundles/deepseek-r9-text/assets/T02/literal-working-flanks.stl",
+      "bytes": 2073684,
+      "sha256": "223215acaca227f37dd9ca772f2246e37e9abefe3fe7df71e10f42afbc91e036"
     },
     {
       "path": "geometry/bundles/deepseek-r9-text/assets/T02/reference.stl",
@@ -1272,13 +1298,13 @@
     },
     {
       "path": "geometry/bundles/deepseek-r9-text/review-data.json",
-      "bytes": 113910,
-      "sha256": "969872859dbbe1b2cd01a5acf0ebb0107a2e5830d9abd65f609322d9f109eadd"
+      "bytes": 117857,
+      "sha256": "6d31307faa87d3da96c7441cbf1c83b29028996e0eaec372b485bbd8c3da9582"
     },
     {
       "path": "geometry/bundles/deepseek-r9-text/reviews.json",
       "bytes": 1086,
-      "sha256": "f54eff291262a3ae5a1ae1ad86c10aca5042aae34cb481604d78a5e454a1f2cf"
+      "sha256": "a57ce9d82a414cd07350405e3293d109834bd8ce80d365de63bcda81533c6786"
     },
     {
       "path": "geometry/bundles/direct-astra-10/assets/omnimech-10/gpt-6-astra/a001-candidate.png",
@@ -7238,17 +7264,17 @@
     {
       "path": "geometry/catalog.json",
       "bytes": 22803,
-      "sha256": "5867f8874b134c2b891f6a1db2c55084f7a6bab9c3b20119c7bdd599689deaa4"
+      "sha256": "3f66c4e09bbb01d9bc490b454b9e7ff440766ad52b0ca13efd79077507536415"
     },
     {
       "path": "geometry/geometry-viewer.js",
-      "bytes": 15592,
-      "sha256": "a963adda6272c4d21a916ac63a5ab76b66b1251c6cf3f4d6ef934a15dae63261"
+      "bytes": 15759,
+      "sha256": "fb8097458b969cb24128c25188132f45481fd282faf259b28c11939cc7230d0b"
     },
     {
       "path": "geometry/index.html",
-      "bytes": 14047,
-      "sha256": "d63342939cce8d7c393170f282aa6ab044f5ed0ab9c98bbde87214d16c64dfd9"
+      "bytes": 14706,
+      "sha256": "571161f8f82b021385259bc16b4360e3351859c04e8964e0f9ce9541116ffa26"
     },
     {
       "path": "geometry/kimi-vision-direct-10.html",
@@ -9212,8 +9238,8 @@
     },
     {
       "path": "geometry/styles.css",
-      "bytes": 30455,
-      "sha256": "1a3f91fc01d46c009caad19ebb5ea43d86182223e991a52c5c1ae2df9b9b591e"
+      "bytes": 31386,
+      "sha256": "9b9f60360ffd48461b847ad0dc8799c3615ce41e3d5d2f400179eefd037848c9"
     },
     {
       "path": "geometry/vendor/README.md",
@@ -10038,5 +10064,5 @@
   "removed_sections": [
     "drawing-understanding"
   ],
-  "parent_commit": "ec662760957580f7426f373d5528791943a0dbda"
+  "parent_commit": "0c8843198e16214ae4e0ecb2fa412d8652896d09"
 }

@@ -151,6 +151,17 @@ h3 { margin: 0; font-size: 12px; }
 .tab-panel.active { display: block; }
 
 .reference-evidence { margin-bottom: 12px; }
+.pose-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-bottom: 12px; }
+.pose-controls[hidden] { display: none; }
+.pose-controls > div { display: flex; flex-wrap: wrap; gap: 5px; }
+.pose-controls button { padding: 5px 8px; border: 1px solid #a9b9c1; border-radius: 4px; background: #fff; color: var(--ink); font-size: 12px; }
+.pose-controls button[aria-pressed="true"] { border-color: var(--blue); background: var(--blue); color: #fff; }
+.pose-controls p, .pose-diagnostics p { margin: 0; color: var(--muted); font-size: 12px; }
+.pose-diagnostics p + p { margin-top: 5px; }
+.pose-diagnostics dl { display: flex; flex-wrap: wrap; gap: 7px 16px; margin: 8px 0; font-size: 12px; }
+.pose-diagnostics dt { color: var(--muted); }
+.pose-diagnostics dd { margin: 1px 0 0; font-weight: 700; }
+.pose-diagnostics ul { margin: 8px 0 0; padding-left: 19px; color: var(--muted); font-size: 12px; }
 .extra-evidence { margin: 0 0 12px; padding: 10px 12px; border: 1px solid var(--line); background: #fff; }
 .geometry-grid + .extra-evidence, .extra-evidence + .extra-evidence { margin-top: 12px; }
 .extra-evidence[hidden], .reference-evidence[hidden], #runDetails[hidden], .review-panel[hidden] { display: none !important; }

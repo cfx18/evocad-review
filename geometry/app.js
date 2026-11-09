@@ -1,7 +1,7 @@
 const readOnly = document.documentElement.dataset.mode === "public";
 const state = {
   data: null, reviews: null, runs: [], model: null, selectedTarget: null, selectedAttempt: null,
-  selectedRegion: null, inputIndex: 0, reviewStartedAt: Date.now(), filters: { dataset: "all", outcome: "all", review: "all" },
+  selectedRegion: null, inputIndex: 0, registeredPose: false, reviewStartedAt: Date.now(), filters: { dataset: "all", outcome: "all", review: "all" },
   catalog: null, bundleId: null, loading: false, saving: false, formDirty: false,
   lastModel: {}, lastBundle: {}, selections: {}, drafts: {},
 };
@@ -204,7 +204,7 @@ function setNavigationBusy() {
   }
 }
 
-async function loadBundle(id, model, sample = null) {
+async function loadBundle(id, model, sample = null, requestedPose = false) {
   if (state.saving) { renderNavigation(); return; }
   rememberDraft();
   const generation = ++bundleLoadGeneration;
@@ -232,7 +232,7 @@ async function loadBundle(id, model, sample = null) {
     ++geometryLoadGeneration;
     geometryViewers?.dispose(); geometryViewers = null;
     state.data = data; state.reviews = reviews; state.bundleId = id; state.model = selectedModel; state.runs = runs;
-    state.selectedTarget = null; state.selectedAttempt = null; state.formDirty = false;
+    state.selectedTarget = null; state.selectedAttempt = null; state.formDirty = false; state.registeredPose = false;
     state.filters = { dataset: "all", outcome: "all", review: "all" };
     if (entry) {
       state.lastModel[navigationKey(entry.harness)] = selectedModel;
@@ -251,7 +251,7 @@ async function loadBundle(id, model, sample = null) {
     const saved = state.selections[navigationKey(entry?.harness, selectedModel, id)];
     const requested = sample && (runs.find((item) => item.sample_key === sample) || runs.find((item) => item.sample_id === sample));
     const run = requested || runs.find((item) => item.target_id === saved?.target) || runs[0];
-    if (run) selectRun(run.target_id, run.target_id === saved?.target ? saved.attempt : null);
+    if (run) selectRun(run.target_id, run.target_id === saved?.target ? saved.attempt : null, Boolean(requested && requestedPose));
     else renderRunList();
     syncSelectionUrl();
     $("navigationStatus").textContent = "";
@@ -276,6 +276,8 @@ function syncSelectionUrl() {
   const sample = currentRun()?.sample_key;
   if (sample) url.searchParams.set("sample", sample);
   else url.searchParams.delete("sample");
+  if (state.registeredPose) url.searchParams.set("pose", "task");
+  else url.searchParams.delete("pose");
   if (url.href !== location.href) history.replaceState(null, "", url);
 }
 function modelReviewRecords() {
@@ -341,7 +343,7 @@ function showNoRun(message) {
   $("reviewPanel").hidden = true;
 }
 
-function selectRun(targetId, attemptId = null) {
+function selectRun(targetId, attemptId = null, requestedPose = false) {
   const run = state.runs.find((item) => item.target_id === targetId);
   if (!run) return;
   rememberDraft();
@@ -351,6 +353,7 @@ function selectRun(targetId, attemptId = null) {
   state.selectedAttempt = selected?.attempt_id || null;
   state.selectedRegion = null;
   state.inputIndex = 0;
+  state.registeredPose = Boolean(requestedPose && selected && poseAssets(selected, poseEvidence(selected)));
   state.reviewStartedAt = Date.now();
   resetReviewForm();
   restoreDraft();
@@ -365,10 +368,12 @@ function selectAttempt(attemptId) {
   rememberDraft();
   state.selectedAttempt = attemptId;
   state.selectedRegion = null;
+  state.registeredPose = false;
   state.reviewStartedAt = Date.now();
   resetReviewForm();
   restoreDraft();
   rememberSelection();
+  syncSelectionUrl();
   renderRun();
 }
 
@@ -386,7 +391,7 @@ function renderRun() {
     : `${run.model} · ${run.reasoning_effort || "default"}`;
   $("targetId").textContent = run.target_id;
   $("metrics").innerHTML = (scope ? [
-    metric(scope.label || "测量", scope.display ?? fmt(run.score)),
+    metric(measurementLabel(attempt), scope.display ?? fmt(run.score)),
     metric("评测状态", scope.measurement_status || "未确认"),
     metric("组件检查", scopeResult(scope.component_passed), scopeTone(scope.component_passed)),
     metric("整题验收", scopeResult(scope.whole_task_passed), scopeTone(scope.whole_task_passed)),
@@ -447,7 +452,65 @@ function comparisonAlignment(attempt) {
   return "unavailable";
 }
 
-async function mountGeometryViewers(attempt) {
+function poseEvidence(attempt) {
+  const pose = attempt.pose_comparison;
+  return pose?.kind === "allowed_axial_pose" ? pose : null;
+}
+
+function measurementLabel(attempt) {
+  const label = attempt.evaluation_scope?.label || "测量";
+  return poseEvidence(attempt) ? `历史原坐标诊断 · ${label}` : label;
+}
+
+function poseAssets(attempt, pose) {
+  if (!pose || !attempt.geometry?.ground_truth || !attempt.geometry?.candidate) return null;
+  if (!Number.isFinite(pose.transform?.rotation_z_deg) || !Number.isFinite(pose.transform?.translation_z_mm)) return null;
+  const literal = pose.target_semantics === "literal_analytic_working_flanks";
+  if (!literal && pose.target_semantics !== "historical_reference") return null;
+  const [candidate] = evidenceFiles([pose.candidate_path]);
+  const [target] = literal ? evidenceFiles([pose.target_path]) : [];
+  if (!candidate || !/\.stl$/i.test(candidate.url.pathname) || pose.candidate_path === attempt.geometry.candidate
+      || (literal && (!target || !/\.stl$/i.test(target.url.pathname)))) return null;
+  return { literal, candidate: candidate.url.href, target: target?.url.href,
+    candidateImage: evidenceFiles([pose.candidate_image])[0]?.url.href,
+    targetImage: evidenceFiles([pose.target_image])[0]?.url.href,
+    image: evidenceFiles([pose.overlay_image])[0]?.url.href };
+}
+
+function renderPoseControls(pose, assets, active) {
+  $("poseComparisonControls").hidden = !assets;
+  $("poseOriginal").setAttribute("aria-pressed", String(!active));
+  $("poseRegistered").setAttribute("aria-pressed", String(active));
+  $("poseRegistered").textContent = assets?.literal ? "题面齿侧检查" : "题面允许位姿配准";
+  const panel = $("poseDiagnostics");
+  const data = pose?.diagnostics;
+  panel.hidden = !data;
+  panel.replaceChildren();
+  if (!data) return;
+  panel.append(evidenceNode("h2", "工作齿面诊断"));
+  if (data.summary) panel.append(evidenceNode("p", data.summary));
+  if (data.reference_note) panel.append(evidenceNode("p", data.reference_note));
+  if (data.method) panel.append(evidenceNode("p", data.method));
+  const metrics = (Array.isArray(data.metrics) ? data.metrics : []).filter((item) => item?.label && item.value != null);
+  if (metrics.length) {
+    const list = evidenceNode("dl");
+    for (const item of metrics) {
+      const entry = evidenceNode("div");
+      entry.append(evidenceNode("dt", item.label), evidenceNode("dd", [item.value, item.unit].filter((value) => value != null && value !== "").join(" ")));
+      list.append(entry);
+    }
+    panel.append(list);
+  }
+  const notes = (Array.isArray(data.notes) ? data.notes : []).filter((note) => typeof note === "string" && note.trim());
+  if (notes.length) {
+    const list = evidenceNode("ul");
+    list.append(...notes.map((note) => evidenceNode("li", note)));
+    panel.append(list);
+  }
+  panel.append(evidenceNode("p", "此为事后有限采样诊断；整题验收仍未确认。"));
+}
+
+async function mountGeometryViewers(attempt, registered) {
   const generation = ++geometryLoadGeneration;
   geometryViewers?.dispose();
   geometryViewers = null;
@@ -458,15 +521,21 @@ async function mountGeometryViewers(attempt) {
     container.querySelector(".viewer-status").textContent = "Loading geometry";
   }
   try {
-    geometryModulePromise ||= import("./geometry-viewer.js?v=9");
+    geometryModulePromise ||= import("./geometry-viewer.js?v=10");
     const { createSynchronizedGeometryViewers } = await geometryModulePromise;
     if (generation !== geometryLoadGeneration) return;
+    const geometry = Object.fromEntries(Object.entries(attempt.geometry || {}).map(([key, path]) => [key, assetUrl(path)]));
+    if (registered) {
+      geometry.candidate = registered.candidate;
+      if (registered.target) geometry.ground_truth = registered.target;
+      delete geometry.localization;
+    }
     geometryViewers = createSynchronizedGeometryViewers({
       containers: {
         truth: $("truthViewer"), candidate: $("candidateViewer"), overlay: $("overlayViewer"),
       },
-      geometry: Object.fromEntries(Object.entries(attempt.geometry || {}).map(([key, path]) => [key, assetUrl(path)])),
-      alignment: comparisonAlignment(attempt),
+      geometry,
+      alignment: registered ? "allowed_pose" : comparisonAlignment(attempt),
     });
     updateRegionControls();
     if (state.selectedRegion) geometryViewers?.focusRegion?.(state.selectedRegion);
@@ -497,6 +566,10 @@ function updateRegionControls() {
 function renderEvidence(run, attempt) {
   const scope = attempt.evaluation_scope;
   const alignment = comparisonAlignment(attempt);
+  const pose = poseEvidence(attempt);
+  const assets = poseAssets(attempt, pose);
+  const registered = state.registeredPose ? assets : null;
+  renderPoseControls(pose, assets, Boolean(registered));
   const referenceAvailable = Boolean(attempt.images?.ground_truth || attempt.geometry?.ground_truth);
   const referenceMissing = "本页未提供参考几何；历史测量见 Verifier";
   const overlayMissing = "本页未提供历史评分对齐证据";
@@ -507,21 +580,33 @@ function renderEvidence(run, attempt) {
   $("inputSwitcher").hidden = inputs.length < 2;
   $("inputSwitcher").innerHTML = inputs.map((_, index) => `<button class="${index === state.inputIndex ? "active" : ""}" data-input="${index}">${index + 1}</button>`).join("");
   document.querySelectorAll("[data-input]").forEach((button) => button.addEventListener("click", () => { state.inputIndex = Number(button.dataset.input); renderEvidence(run, attempt); }));
-  setImage("truthImage", assetUrl(attempt.images?.ground_truth), alignment ? referenceMissing : "Ground-truth render unavailable");
+  const truthImage = registered?.literal ? registered.targetImage : assetUrl(attempt.images?.ground_truth);
+  setImage("truthImage", truthImage, alignment ? referenceMissing : "Ground-truth render unavailable");
   const candidatePreview = evidenceFiles(attempt.candidate_images)[0]?.url.href;
-  setImage("candidateImage", assetUrl(attempt.images?.candidate) || candidatePreview, "Candidate render unavailable");
-  setImage("overlayImage", alignment === "unavailable" ? "" : assetUrl(attempt.images?.overlay), alignment ? overlayMissing : "Overlay unavailable");
-  mountGeometryViewers(attempt);
-  $("candidateCaption").textContent = attempt.attempt_id;
-  $("truthTitle").textContent = alignment ? "参考几何" : "Evaluator ground truth";
-  $("truthSubtitle").textContent = alignment ? attempt.reference_geometry?.label || "公开参考" : "hidden from agent";
-  $("overlayTitle").textContent = alignment ? "参考与候选叠合" : "Aligned overlay";
-  $("overlaySubtitle").textContent = alignment ? "蓝色参考 / 橙色候选" : "blue truth / orange candidate";
-  $("truthCaption").textContent = alignment && !referenceAvailable ? referenceMissing
+  const candidateImage = registered ? registered.candidateImage : assetUrl(attempt.images?.candidate) || candidatePreview;
+  setImage("candidateImage", candidateImage, "Candidate render unavailable");
+  const overlayImage = registered ? registered.image : alignment === "unavailable" ? "" : assetUrl(attempt.images?.overlay);
+  setImage("overlayImage", overlayImage, alignment ? overlayMissing : "Overlay unavailable");
+  mountGeometryViewers(attempt, registered);
+  $("candidateCaption").textContent = registered ? "按题面允许位姿摆放"
+    : assets ? `原始坐标 · ${attempt.attempt_id}` : attempt.attempt_id;
+  $("truthTitle").textContent = registered?.literal ? "解析工作齿侧" : alignment ? "参考几何" : "Evaluator ground truth";
+  $("truthSubtitle").textContent = registered?.literal ? "非完整实体"
+    : alignment ? attempt.reference_geometry?.label || "公开参考" : "hidden from agent";
+  $("overlayTitle").textContent = registered?.literal ? "题面齿侧与候选"
+    : registered ? "允许位姿配准对比" : alignment ? "参考与候选叠合" : "Aligned overlay";
+  $("overlaySubtitle").textContent = registered?.literal ? "蓝色题面齿侧 / 橙色候选"
+    : alignment ? "蓝色参考 / 橙色候选" : "blue truth / orange candidate";
+  $("truthCaption").textContent = registered?.literal ? "按冻结题面公式构造；未参与历史评分。"
+    : alignment && !referenceAvailable ? referenceMissing
     : alignment && run.ground_truth_sha256 ? `来源 SHA ${shortHash(run.ground_truth_sha256)}`
     : alignment ? "" : `SHA ${shortHash(run.ground_truth_sha256)}`;
-  $("candidateState").textContent = `SHA ${shortHash(attempt.evidence?.candidate?.sha256)}`;
-  if (alignment) {
+  $("candidateState").textContent = registered ? "事后诊断视图；提交文件保持原坐标。"
+    : `SHA ${shortHash(attempt.evidence?.candidate?.sha256)}`;
+  if (registered) {
+    const { rotation_z_deg: angle, translation_z_mm: shift } = pose.transform;
+    $("overlayState").textContent = `事后诊断 · 绕 Z 旋转 ${fmt(angle, 3)}°，沿 Z 平移 ${fmt(shift, 3)} mm。历史分数仍按原坐标。`;
+  } else if (alignment) {
     const relation = attempt.reference_geometry?.scoring_relation;
     const fixedBasis = relation === "observation_source_geometry_not_direct_3d_grade" ? "按历史观察坐标叠合"
       : relation?.startsWith("actual_historical_photo_") ? "按历史图像评测的固定坐标叠合" : "按历史评分使用的固定坐标叠合";
@@ -533,8 +618,8 @@ function renderEvidence(run, attempt) {
       : attempt.render_error ? `Render error: ${attempt.render_error}` : "Axis-permutation and translation alignment; no scale";
   }
   const localization = attempt.localization || (attempt.verdict?.mismatch || {}).localization || {};
-  const regions = localization.regions || [];
-  const focusAvailable = Boolean(attempt.geometry?.localization && (attempt.geometry?.ground_truth || attempt.geometry?.candidate));
+  const regions = registered ? [] : localization.regions || [];
+  const focusAvailable = !registered && Boolean(attempt.geometry?.localization && (attempt.geometry?.ground_truth || attempt.geometry?.candidate));
   const regionTag = focusAvailable ? "button" : "div";
   $("localizationHint").textContent = focusAvailable ? "Click a region to focus the available views." : "Recorded surface evidence";
   $("localizationRegions").innerHTML = regions.length ? regions.map((region) => {
@@ -704,7 +789,7 @@ function renderVerifier(attempt) {
   scopePanel.hidden = !scope;
   const notes = Array.isArray(scope?.notes) ? scope.notes.filter((note) => typeof note === "string" && note.trim()) : [];
   scopePanel.innerHTML = scope ? `<h2>评测口径</h2><div class="metrics">${[
-    metric(scope.label || "测量", scope.display ?? fmt(attempt.score)),
+    metric(measurementLabel(attempt), scope.display ?? fmt(attempt.score)),
     metric("评测状态", scope.measurement_status || "未确认"),
     metric("组件检查", scopeResult(scope.component_passed), scopeTone(scope.component_passed)),
     metric("整题验收", scopeResult(scope.whole_task_passed), scopeTone(scope.whole_task_passed)),
@@ -907,6 +992,15 @@ function renderHeader() {
 
 function bindControls() {
   renderIcons();
+  for (const [id, registered] of [["poseOriginal", false], ["poseRegistered", true]]) {
+    $(id).addEventListener("click", () => {
+      const run = currentRun(), attempt = currentAttempt();
+      if (!attempt || state.registeredPose === registered || !poseAssets(attempt, poseEvidence(attempt))) return;
+      state.registeredPose = registered;
+      syncSelectionUrl();
+      renderEvidence(run, attempt);
+    });
+  }
   new MutationObserver(updateRegionControls).observe($("evidencePanel"), {
     subtree: true, attributes: true, attributeFilter: ["data-viewer-state"],
   });
@@ -974,7 +1068,7 @@ async function start() {
   const rememberedModel = state.lastModel[navigationKey(entry?.harness)];
   const models = entryModels(entry);
   const model = [requestedModel, rememberedModel, models[0]].find((value) => models.includes(value));
-  await loadBundle(entry?.id || null, model, params.get("sample"));
+  await loadBundle(entry?.id || null, model, params.get("sample"), params.get("pose") === "task");
 }
 
 start().catch((error) => {

@@ -37,3 +37,9 @@ is performed. The published historical references are disclosed review data,
 not an unexposed future blind-test edition. Per-case notices bind source and
 license information. All earlier candidate assets, scores and statements stay
 unchanged.
+
+T02 now provides an independent task-formula working-flank diagnostic view.
+Only axial translation and rotation about the axis are permitted. The analytic
+flanks are an open surface, not a replacement whole-solid reference. The old
+reference and candidate coordinates, legacy fixed-frame score and all archived
+evidence remain accessible. Finite geometric samples are not full task acceptance.

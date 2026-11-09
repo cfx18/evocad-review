@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EvoCAD Geometry Review</title>
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=15">
   <link rel="stylesheet" href="benchmark-metrics.css">
 </head>
 <body>
@@ -69,11 +69,19 @@
         <div class="reference-evidence" id="inputEvidence">
           <figure><figcaption>Agent input <span>input visible during modeling</span></figcaption><button class="image-button reference-image" data-image="input" type="button" disabled><img id="inputImage" alt="Agent input image"></button><div class="image-switcher" id="inputSwitcher"></div></figure>
         </div>
+        <div class="pose-controls" id="poseComparisonControls" hidden>
+          <div role="group" aria-label="叠合坐标">
+            <button id="poseOriginal" type="button" aria-pressed="true" aria-controls="overlayViewer">原始坐标</button>
+            <button id="poseRegistered" type="button" aria-pressed="false" aria-controls="overlayViewer">题面允许位姿配准</button>
+          </div>
+          <p>参考、候选和叠合视图会一起切换。历史分数保持原坐标口径。</p>
+        </div>
         <div class="geometry-grid">
           <figure><figcaption><strong id="truthTitle">Evaluator ground truth</strong><span id="truthSubtitle">hidden from agent</span></figcaption><div class="geometry-viewer" id="truthViewer"><canvas aria-label="Interactive ground truth geometry"></canvas><img id="truthImage" class="geometry-fallback" alt="Ground truth geometry render"><div class="viewer-status" role="status"></div><button class="reset-view" type="button" title="Reset synchronized view" aria-label="Reset synchronized view">Reset</button></div><div class="image-caption" id="truthCaption"></div></figure>
           <figure><figcaption>Candidate <span id="candidateCaption"></span></figcaption><div class="geometry-viewer" id="candidateViewer"><canvas aria-label="Interactive candidate geometry"></canvas><img id="candidateImage" class="geometry-fallback" alt="Candidate geometry render"><div class="viewer-status" role="status"></div><button class="reset-view" type="button" title="Reset synchronized view" aria-label="Reset synchronized view">Reset</button></div><div class="image-caption" id="candidateState"></div></figure>
           <figure><figcaption><strong id="overlayTitle">Aligned overlay</strong><span id="overlaySubtitle">blue truth / orange candidate</span></figcaption><div class="geometry-viewer" id="overlayViewer"><canvas aria-label="Interactive aligned geometry overlay"></canvas><img id="overlayImage" class="geometry-fallback" alt="Aligned candidate and ground truth overlay"><div class="viewer-status" role="status"></div><button class="reset-view" type="button" title="Reset synchronized view" aria-label="Reset synchronized view">Reset</button></div><div class="image-caption" id="overlayState"></div></figure>
         </div>
+        <section class="extra-evidence pose-diagnostics" id="poseDiagnostics" hidden aria-label="工作齿面诊断"></section>
         <section class="extra-evidence" id="candidateGallery" hidden aria-label="候选产物视图"></section>
         <section class="extra-evidence" id="attemptArtifacts" hidden aria-label="候选产物文件"></section>
         <section class="extra-evidence" id="attemptCode" hidden aria-label="建模源文件"></section>
@@ -160,6 +168,6 @@
   </dialog>
   <script src="vendor/lucide/lucide.min.js"></script>
   <script src="benchmark-metrics.js"></script>
-  <script src="app.js?v=15"></script>
+  <script src="app.js?v=16"></script>
 </body>
 </html>

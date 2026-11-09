@@ -415,6 +415,30 @@
               "label": "参考几何来源与署名",
               "sha256": "7e843949f1bb3760e4017153804597251126d1ab4573cc1c36269a746a78cc0f",
               "kind": "notice"
+            },
+            {
+              "path": "assets/T02/candidate-to-literal.stl",
+              "sha256": "5b1141db6fed4722d38e6c01a062766b2df9465e8f1eacdb5aa792c42075d96d",
+              "kind": "mesh",
+              "label": "仅允许位姿变换的候选 STL"
+            },
+            {
+              "path": "assets/T02/literal-working-flanks.stl",
+              "sha256": "223215acaca227f37dd9ca772f2246e37e9abefe3fe7df71e10f42afbc91e036",
+              "kind": "mesh",
+              "label": "题面解析工作齿侧 STL"
+            },
+            {
+              "path": "assets/T02/literal-pose-diagnostics.json",
+              "sha256": "8d257188d90fa9b872e8aab3aa530e091f39c4fecf7043cfce63bd758a7a9446",
+              "kind": "diagnostic",
+              "label": "工作齿侧有限采样与变换记录"
+            },
+            {
+              "path": "assets/T02/literal-pose-NOTICE.txt",
+              "sha256": "afa6a3313bbc4513245564a2d4261c09da6ceb2db303dfaf352fb2b30de83eff",
+              "kind": "notice",
+              "label": "齿侧检查来源与范围"
             }
           ],
           "code_files": [
@@ -511,6 +535,58 @@
             ],
             "evaluation_receipt_sha256": "51a7ed3b37ef0094050654f28d910368bb614474c426b728b317c4ed2ae38162",
             "scoring_relation": "actual_historical_common_3d_geometry"
+          },
+          "pose_comparison": {
+            "kind": "allowed_axial_pose",
+            "target_semantics": "literal_analytic_working_flanks",
+            "candidate_path": "assets/T02/candidate-to-literal.stl",
+            "target_path": "assets/T02/literal-working-flanks.stl",
+            "transform": {
+              "rotation_z_deg": -4.951626563791694,
+              "translation_z_mm": -0.008311984166235107
+            },
+            "diagnostics": {
+              "summary": "按题面解析双齿侧检查。允许位姿变换后，候选的独立有限采样均在 0.05 mm 内。",
+              "method": "由冻结球面渐开线、锥距和扭转公式生成双齿侧；只拟合主动 Rz 与轴向 Tz。六组初值在六齿训练集得到同解，用其余十八齿的不同半径/极角网格和精确裁剪 B-Rep 面投影验证。",
+              "metrics": [
+                {
+                  "label": "独立齿侧精确 B-Rep 采样",
+                  "value": "170/170",
+                  "unit": "≤ 0.05 mm"
+                },
+                {
+                  "label": "独立齿侧精确距离 P95",
+                  "value": 0.00859,
+                  "unit": "mm"
+                },
+                {
+                  "label": "独立齿侧精确距离最大",
+                  "value": 0.009168,
+                  "unit": "mm"
+                },
+                {
+                  "label": "工作边界精确距离最大",
+                  "value": 0.010475,
+                  "unit": "mm"
+                },
+                {
+                  "label": "独立齿侧最近面法向偏角 P95",
+                  "value": 1.847,
+                  "unit": "°"
+                },
+                {
+                  "label": "齿侧内外探针符合",
+                  "value": "324/324",
+                  "unit": "对"
+                }
+              ],
+              "notes": [
+                "蓝色是题面解析双齿侧开放面，仅用于本检查。橙色来自保存候选，仅绕 Z 旋转和沿 Z 平移。",
+                "全局原始候选与历史参考仍保留。此处只报告有限局部采样，不给新整题分数，不替代严格公差验收。",
+                "0.05 mm 是题面工作齿侧和齿顶建模容差。本页精确距离结果覆盖已采工作齿侧与工作边界；未穷尽所有齿顶、非工作齿根或实体点。"
+              ],
+              "reference_note": "历史参考生成器把原正 Z 锥体绕 X 翻转 180° 后摆放。仅允许 Rz/Tz 的相同受限拟合下，历史参考齿侧精确距离 P95 为 1.836 mm，未找到题面齿侧匹配。未翻转历史参考；历史固定帧分数保持原样。"
+            }
           }
         }
       ]
@@ -2495,5 +2571,6 @@
   "source_archive_sha256": "3af3d3aced5832b12c9ed94a4b78fcba5a8119f4aad5b2442956f403644739e4",
   "presentation_source_bundle_sha256": "d7dff3da7fa7fecbe9bff75dadd4298ae2b4ec282c04568fbe726f0d961a6035",
   "reference_source_bundle_sha256": "435e37abc76717548fa452d4b713c41e23eca75ae8d8b71f042bf1d7039b363a",
-  "bundle_sha256": "38805e000ed028d3dd0fd3aaf73b7a00fc5af528977d1a98a2a25475af4b643c"
+  "pose_diagnostic_source_bundle_sha256": "38805e000ed028d3dd0fd3aaf73b7a00fc5af528977d1a98a2a25475af4b643c",
+  "bundle_sha256": "bd0946e75696301d9cfbf1caf6588b9931000319beeae8c4f45904dae4774c4e"
 }
