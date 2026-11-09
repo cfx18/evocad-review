@@ -1,0 +1,191 @@
+#!/usr/bin/env python3
+"""Build the finite-length, double-helical rack specified by public/task.json.
+
+Coordinate frame:
+    X: rack length, 0..100 mm
+    Y: rack height; pitch line at 0, tooth tip at +2, root at -2.5
+    Z: rack width, 0..20 mm
+
+The tooth pattern is translated in +X through the first half of the width,
+reaching its maximum offset at Z=10 mm, then translated back to its original
+phase at Z=20 mm.
+"""
+
+from __future__ import annotations
+
+import math
+import sys
+from pathlib import Path
+
+
+GEOMETRY_SITE_PACKAGES = Path(
+    '<local dependency path omitted>'
+)
+if GEOMETRY_SITE_PACKAGES.is_dir():
+    sys.path.insert(0, str(GEOMETRY_SITE_PACKAGES))
+
+import cadquery as cq
+
+
+# Primary dimensions and rack geometry, all in millimetres / degrees.
+LENGTH = 100.0
+WIDTH = 20.0
+MODULE = 2.0
+PRESSURE_ANGLE_DEG = 20.0
+PITCH = 2.0 * math.pi
+PITCH_Y = 0.0
+TIP_Y = 2.0
+ROOT_Y = -2.5
+BACK_Y = -14.5
+PITCH_LINE_TOOTH_THICKNESS = math.pi
+MIDPLANE_Z = 10.0
+HELIX_ANGLE_DEG = 30.0
+
+X_MIN = 0.0
+X_MAX = 100.0
+Z_MIN = 0.0
+Z_MAX = 20.0
+
+
+def land_half_width(y: float) -> float:
+    """Half-width of a straight-flank rack tooth at height y."""
+    return (
+        PITCH_LINE_TOOTH_THICKNESS / 2.0
+        - (y - PITCH_Y) * math.tan(math.radians(PRESSURE_ANGLE_DEG))
+    )
+
+
+def phase_shift(z: float) -> float:
+    """X translation of the tooth pattern as a function of Z."""
+    peak_shift = MIDPLANE_Z * math.tan(math.radians(HELIX_ANGLE_DEG))
+    if 0.0 <= z <= MIDPLANE_Z:
+        return peak_shift * z / MIDPLANE_Z
+    if MIDPLANE_Z <= z <= Z_MAX:
+        return peak_shift * (Z_MAX - z) / (Z_MAX - MIDPLANE_Z)
+    raise ValueError(f"Z={z} is outside the rack width")
+
+
+# Extending the tooth root into the backplate gives the boolean union a reliable
+# volume overlap. The visible root remains at ROOT_Y.
+ROOT_OVERLAP = 0.5
+TOOTH_BOTTOM_Y = ROOT_Y - ROOT_OVERLAP
+
+
+def tooth_wire(center_x: float, bottom_y: float, z: float) -> cq.Wire:
+    """Closed trapezoidal rack-tooth section in a plane of constant Z."""
+    bottom_half_width = land_half_width(bottom_y)
+    tip_half_width = land_half_width(TIP_Y)
+    points = [
+        (center_x - bottom_half_width, bottom_y, z),
+        (center_x + bottom_half_width, bottom_y, z),
+        (center_x + tip_half_width, TIP_Y, z),
+        (center_x - tip_half_width, TIP_Y, z),
+    ]
+    return cq.Wire.makePolygon(points, close=True)
+
+
+def make_tooth(index: int) -> cq.Solid:
+    """Make one tooth as a ruled solid following the prescribed V phase."""
+    center_x = index * PITCH
+    sections = [
+        tooth_wire(center_x + phase_shift(z), TOOTH_BOTTOM_Y, z)
+        for z in (Z_MIN, MIDPLANE_Z, Z_MAX)
+    ]
+    return cq.Solid.makeLoft(sections, ruled=True)
+
+
+def make_rack() -> cq.Solid:
+    backplate_height = ROOT_Y - BACK_Y
+    backplate = cq.Solid.makeBox(
+        LENGTH,
+        backplate_height,
+        WIDTH,
+        cq.Vector(X_MIN, BACK_Y, Z_MIN),
+    )
+
+    # Include every tooth whose swept envelope can reach the requested X range.
+    peak_shift = phase_shift(MIDPLANE_Z)
+    max_half_width = land_half_width(TOOTH_BOTTOM_Y)
+    first_tooth = math.ceil(
+        (X_MIN - peak_shift - max_half_width) / PITCH - 1e-12
+    )
+    last_tooth = math.floor((X_MAX + max_half_width) / PITCH + 1e-12)
+    teeth = [make_tooth(index) for index in range(first_tooth, last_tooth + 1)]
+
+    untrimmed = backplate.fuse(*teeth).clean()
+
+    # Final stock envelope: trims both ends while preserving cut partial teeth.
+    clip_y = BACK_Y - 2.0
+    clip_height = 20.0
+    stock = cq.Solid.makeBox(
+        LENGTH,
+        clip_height,
+        WIDTH,
+        cq.Vector(X_MIN, clip_y, Z_MIN),
+    )
+    trimmed = untrimmed.intersect(stock).clean()
+    solids = trimmed.Solids()
+    if len(solids) != 1:
+        raise RuntimeError(f"Expected one connected solid, found {len(solids)}")
+    return solids[0]
+
+
+def validate(rack: cq.Solid, expected_volume: float | None = None) -> None:
+    if not rack.isValid():
+        raise RuntimeError("OpenCascade reports an invalid solid")
+    if len(rack.Solids()) != 1:
+        raise RuntimeError(f"Expected one solid, found {len(rack.Solids())}")
+    if rack.Volume() <= 0.0:
+        raise RuntimeError("Solid volume must be positive")
+
+    bbox = rack.BoundingBox()
+    tolerance = 1.0e-5
+    expected_bounds = (
+        (bbox.xmin, X_MIN, "xmin"),
+        (bbox.xmax, X_MAX, "xmax"),
+        (bbox.ymin, BACK_Y, "ymin"),
+        (bbox.ymax, TIP_Y, "ymax"),
+        (bbox.zmin, Z_MIN, "zmin"),
+        (bbox.zmax, Z_MAX, "zmax"),
+    )
+    for actual, expected, label in expected_bounds:
+        if abs(actual - expected) > tolerance:
+            raise RuntimeError(
+                f"{label}={actual:.9f} differs from {expected:.9f}"
+            )
+
+    if expected_volume is not None:
+        relative_error = abs(rack.Volume() - expected_volume) / expected_volume
+        if relative_error > 1.0e-9:
+            raise RuntimeError(
+                f"Volume {rack.Volume():.9f} differs from "
+                f"{expected_volume:.9f}"
+            )
+
+
+def main() -> None:
+    workspace = Path(__file__).resolve().parent
+    output = workspace / "candidate.step"
+
+    rack = make_rack()
+    validate(rack)
+    cq.exporters.export(rack, str(output), exportType="STEP")
+
+    restored = cq.importers.importStep(str(output)).val()
+    validate(restored, expected_volume=rack.Volume())
+
+    bbox = restored.BoundingBox()
+    print(f"Wrote {output}")
+    print(f"Solids: {len(restored.Solids())}")
+    print(f"Volume: {restored.Volume():.6f} mm^3")
+    print(
+        "Bounds: "
+        f"X {bbox.xmin:.6f}..{bbox.xmax:.6f}, "
+        f"Y {bbox.ymin:.6f}..{bbox.ymax:.6f}, "
+        f"Z {bbox.zmin:.6f}..{bbox.zmax:.6f} mm"
+    )
+    print(f"Peak phase shift at Z=10: {phase_shift(MIDPLANE_Z):.9f} mm")
+
+
+if __name__ == "__main__":
+    main()

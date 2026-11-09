@@ -1,0 +1,85 @@
+"""Independently re-import and inspect the submitted STEP file."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parent
+GEOMETRY_SITE_PACKAGES = Path(
+    '<local dependency path omitted>'
+)
+if GEOMETRY_SITE_PACKAGES.exists():
+    sys.path.insert(0, str(GEOMETRY_SITE_PACKAGES))
+
+import cadquery as cq
+
+
+STEP_PATH = ROOT / "candidate.step"
+
+
+def verify() -> dict:
+    if not STEP_PATH.is_file():
+        raise RuntimeError(f"Missing submission file: {STEP_PATH}")
+
+    payload = STEP_PATH.read_bytes()
+    text = payload.decode("utf-8", errors="strict")
+    if "ISO-10303-21" not in text:
+        raise RuntimeError("Submission is not a STEP exchange file")
+    if "SI_UNIT(.MILLI.,.METRE.)" not in text:
+        raise RuntimeError("Submission lacks a millimetre length unit")
+
+    model = cq.importers.importStep(str(STEP_PATH))
+    solids = model.solids().vals()
+    if len(solids) != 1:
+        raise RuntimeError(f"Expected one solid after import, found {len(solids)}")
+
+    solid = solids[0]
+    if not solid.isValid():
+        raise RuntimeError("Imported STEP solid fails OCCT validity checks")
+
+    volume = float(solid.Volume())
+    if not (350_000.0 < volume < 352_000.0):
+        raise RuntimeError(f"Unexpected volume after import: {volume} mm^3")
+
+    bounding_box = solid.BoundingBox()
+    if not (4.999 < bounding_box.zmin < 5.001):
+        raise RuntimeError(f"Unexpected minimum Z: {bounding_box.zmin}")
+    if not (73.999 < bounding_box.zmax < 74.001):
+        raise RuntimeError(f"Unexpected maximum Z: {bounding_box.zmax}")
+    if not (bounding_box.ymin > -1.0e-5):
+        raise RuntimeError(f"Unexpected negative-Y material: {bounding_box.ymin}")
+    if not (141.9 < bounding_box.ymax < 143.0):
+        raise RuntimeError(f"Unexpected Y limit: {bounding_box.ymax}")
+
+    result = {
+        "file": str(STEP_PATH),
+        "bytes": len(payload),
+        "sha256": hashlib.sha256(payload).hexdigest(),
+        "solids": len(solids),
+        "faces": len(solid.Faces()),
+        "edges": len(solid.Edges()),
+        "valid": bool(solid.isValid()),
+        "volume_mm3": volume,
+        "area_mm2": float(solid.Area()),
+        "bounding_box_mm": {
+            "x": [float(bounding_box.xmin), float(bounding_box.xmax)],
+            "y": [float(bounding_box.ymin), float(bounding_box.ymax)],
+            "z": [float(bounding_box.zmin), float(bounding_box.zmax)],
+        },
+        "unit_declaration": "SI_UNIT(.MILLI.,.METRE.)",
+        "file_schema": (
+            "AUTOMOTIVE_DESIGN"
+            if "AUTOMOTIVE_DESIGN" in text
+            else "unknown"
+        ),
+    }
+    print(json.dumps(result, indent=2, ensure_ascii=False))
+    return result
+
+
+if __name__ == "__main__":
+    verify()

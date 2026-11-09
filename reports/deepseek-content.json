@@ -1,0 +1,2252 @@
+{
+  "schema": "evocad-deepseek-content-v1",
+  "harness": "Codex",
+  "model": "deepseek-flash",
+  "requested_effort": "max",
+  "experiments": [
+    {
+      "id": "deepseek-r9-text",
+      "label": "CAD80 r9 · 文本建模",
+      "rows": [
+        {
+          "sample": "T01",
+          "title": "带凸台与轴孔的双斜齿轮",
+          "prompt": "依据文本参数构造带凸台与轴孔的双斜齿轮，提交可读取的 STEP。详情中展示归档候选和模型自述。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "Common 3D",
+            "display": "81.66",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/T01/view-01.png",
+              "caption": "候选产物 · 视图 1（归档候选的只读渲染）",
+              "sha256": "44ed287e786c80cf6acb3c79ee70c9884be2f822fb72daa2e68fb7f0ce7f323f"
+            },
+            {
+              "url": "deepseek-assets/T01/view-02.png",
+              "caption": "候选产物 · 视图 2（归档候选的只读渲染）",
+              "sha256": "22a13777b7f743b198c759c9e7859d0bcdae9d3f3d74700619cdb5a24277a880"
+            }
+          ],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/T01/candidate.step",
+              "name": "candidate.step",
+              "sha256": "ecbfd149e1feef91d04ef592ae746a1f8f713ee244ebdef122e001f85d8cec65",
+              "original_sha256": "227e0e3a1dcd003aeb4ed54e3894c0c819afcfe4f71f784ff3329fb6f3ae7e1f",
+              "label": "下载真实 STEP 候选（文件头已脱敏）"
+            }
+          ],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/T01/LICENSE.upstream.txt",
+              "name": "LICENSE.upstream.txt",
+              "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+              "original_sha256": null,
+              "label": "来源许可证"
+            },
+            {
+              "url": "deepseek-assets/T01/NOTICE.txt",
+              "name": "NOTICE.txt",
+              "sha256": "37706902d313800302ab8e9144fdf56cffc3408d265278632bf12210ab585c95",
+              "original_sha256": null,
+              "label": "来源与修改说明"
+            },
+            {
+              "url": "deepseek-assets/T01/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "56b766cf3b2b8a1aa0d2abc5e54c3c7857a9e996da9e30a0339c2f2f6b269967"
+            }
+          ],
+          "code_files": [
+            {
+              "url": "deepseek-assets/T01/build_gear.py.txt",
+              "name": "build_gear.py",
+              "sha256": "6ea46510e1b9742198e4e20c1707dee28dc0a94e7a3ad7441bc0aa0b407cd73c",
+              "original_sha256": "c462b17d16075ceb2abf5c3dddac94ecdf3d495999d711d641d892600a29e15e"
+            }
+          ],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 77 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "meadiode/cq_gears",
+            "license_as_recorded": "Apache-2.0",
+            "revision": "e73874cf17a25447a99b1e7c22a4d5af38560e9c",
+            "url": "https://github.com/meadiode/cq_gears/blob/e73874cf17a25447a99b1e7c22a4d5af38560e9c/cq_gears/spur_gear.py"
+          },
+          "final_response": "已完成并保存：\n\n- candidate.step\n- 可重建源码：build_gear.py\n- 建模报告：build_report.json\n\n复核结果：STEP 单位为 mm，B-rep 有效，包含单一实体与单一封闭壳体；24 个齿在两端相位一致，中面相位为 `0.3849001795 rad`（22.0531558°）；φ10 轴孔贯通 Z=0–20，φ20 凸台位于 Z=16–20。文件 SHA256 为 `227e0e3a1dcd003aeb4ed54e3894c0c819afcfe4f71f784ff3329fb6f3ae7e1f`。",
+          "preview_provenance": {
+            "candidate_sha256": "227e0e3a1dcd003aeb4ed54e3894c0c819afcfe4f71f784ff3329fb6f3ae7e1f",
+            "renderer_id": "evocad-candidate-preview-v1; CADQuery 2.6.1/OCP 7.8.1.1.post1/VTK 9.3.1",
+            "provenance": "Post-run read-only candidate rendering with auto-fit camera. Not model output or scoring evidence."
+          }
+        },
+        {
+          "sample": "T02",
+          "title": "带孔的螺旋锥齿轮",
+          "prompt": "依据文本参数构造带孔的螺旋锥齿轮，提交可读取的 STEP。详情中展示归档候选和模型自述。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "Common 3D",
+            "display": "5.87",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/T02/view-01.png",
+              "caption": "候选产物 · 视图 1（归档候选的只读渲染）",
+              "sha256": "128564eef43d238d7c9e3c865e132a9b24e25fb297791d9320c81f0ce44b8f8b"
+            },
+            {
+              "url": "deepseek-assets/T02/view-02.png",
+              "caption": "候选产物 · 视图 2（归档候选的只读渲染）",
+              "sha256": "b6122302495b74064d99948ce2e938985292979d3526fda59b9fae862f3457cf"
+            }
+          ],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/T02/candidate.step",
+              "name": "candidate.step",
+              "sha256": "b59a3a050603cf9909c75a77e78b2cb00607570a20ae42bee3f50359b5b58db7",
+              "original_sha256": "d123f2f911c1de7b93e147635ba474abf609d0e56617312b43de4c098053d54e",
+              "label": "下载真实 STEP 候选（文件头已脱敏）"
+            }
+          ],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/T02/LICENSE.upstream.txt",
+              "name": "LICENSE.upstream.txt",
+              "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+              "original_sha256": null,
+              "label": "来源许可证"
+            },
+            {
+              "url": "deepseek-assets/T02/NOTICE.txt",
+              "name": "NOTICE.txt",
+              "sha256": "a7830159b7c6eea0d5fa6f546960858e3bfb75c7d45e4bb9292a87dda464816a",
+              "original_sha256": null,
+              "label": "来源与修改说明"
+            },
+            {
+              "url": "deepseek-assets/T02/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "0eb2b9bb8d48486f8b87343d5f69941104dafa23a44b91b745053bdc9fe93204"
+            }
+          ],
+          "code_files": [
+            {
+              "url": "deepseek-assets/T02/build_gear.py.txt",
+              "name": "build_gear.py",
+              "sha256": "76b98ab80e445ae8f64255065e0937934337d54041c640d6b116cfecad231d1d",
+              "original_sha256": "548dd6957ccff081b468c7ae36e98111d1a2f7387010df355c29482ed3812d20"
+            }
+          ],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 176 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "meadiode/cq_gears",
+            "license_as_recorded": "Apache-2.0",
+            "revision": "e73874cf17a25447a99b1e7c22a4d5af38560e9c",
+            "url": "https://github.com/meadiode/cq_gears/blob/e73874cf17a25447a99b1e7c22a4d5af38560e9c/cq_gears/bevel_gear.py"
+          },
+          "final_response": "已完成并生成：\n\n- candidate.step\n- build_gear.py\n- build_result.json\n- submission.json\n\n验证结果：STEP 独立回读有效，单一闭合实体，24 齿，同轴 Ø8 孔壁 18 mm，无三角化齿面。工作齿侧及齿顶与数学规范的最大抽样误差约 `2.6×10⁻⁷ mm`，远小于 `0.05 mm` 公差。文件 SHA-256：`d123f2f911c1de7b93e147635ba474abf609d0e56617312b43de4c098053d54e`。",
+          "preview_provenance": {
+            "candidate_sha256": "d123f2f911c1de7b93e147635ba474abf609d0e56617312b43de4c098053d54e",
+            "renderer_id": "evocad-candidate-preview-v1; CADQuery 2.6.1/OCP 7.8.1.1.post1/VTK 9.3.1",
+            "provenance": "Post-run read-only candidate rendering with auto-fit camera. Not model output or scoring evidence."
+          }
+        },
+        {
+          "sample": "T03",
+          "title": "有限长度人字齿条",
+          "prompt": "依据文本参数构造有限长度人字齿条，提交可读取的 STEP。详情中展示归档候选和模型自述。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "Common 3D",
+            "display": "100",
+            "scale": "0–100"
+          },
+          "component_status": "通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/T03/view-01.png",
+              "caption": "候选产物 · 视图 1（归档候选的只读渲染）",
+              "sha256": "d6aed4caabec96fb5d229cc0ea0d187294cf4a08b3c00b5689bbee72af21d852"
+            },
+            {
+              "url": "deepseek-assets/T03/view-02.png",
+              "caption": "候选产物 · 视图 2（归档候选的只读渲染）",
+              "sha256": "d24cc1354c850c2c9e1fde8b7c1fc246c46d8846e3d601f2efe12e618c57ba1b"
+            }
+          ],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/T03/candidate.step",
+              "name": "candidate.step",
+              "sha256": "d4aa068face289b06b14d33834500aa5bf25d3bbb20d38236637a9c5a462b021",
+              "original_sha256": "bcab735109f2246964ccb9927efe4193c576fbb21f9b9bce99f03fb0a41696e1",
+              "label": "下载真实 STEP 候选（文件头已脱敏）"
+            }
+          ],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/T03/LICENSE.upstream.txt",
+              "name": "LICENSE.upstream.txt",
+              "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+              "original_sha256": null,
+              "label": "来源许可证"
+            },
+            {
+              "url": "deepseek-assets/T03/NOTICE.txt",
+              "name": "NOTICE.txt",
+              "sha256": "30cd0514dc8870aea12630afa495ff79044c2d5cc0aee8e87b3ae47a3fdb0c83",
+              "original_sha256": null,
+              "label": "来源与修改说明"
+            },
+            {
+              "url": "deepseek-assets/T03/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "c706d48d8e0f101279283613a1b210efeaecdc0740432ac0601a98bc9829b8ed"
+            }
+          ],
+          "code_files": [
+            {
+              "url": "deepseek-assets/T03/build_rack.py.txt",
+              "name": "build_rack.py",
+              "sha256": "21734df5069bfe1b3a6a2c96527a1817de5b2baa15e9b9a4b4ade301b2530492",
+              "original_sha256": "b619fa5c8bf9984c5073d15a6540871f366e96a14d856df9f394b7c150467960"
+            }
+          ],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 40 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "meadiode/cq_gears",
+            "license_as_recorded": "Apache-2.0",
+            "revision": "e73874cf17a25447a99b1e7c22a4d5af38560e9c",
+            "url": "https://github.com/meadiode/cq_gears/blob/e73874cf17a25447a99b1e7c22a4d5af38560e9c/cq_gears/rack_gear.py"
+          },
+          "final_response": "已完成有限长度人字齿条建模。\n\n- candidate.step：AP214 STEP，单位 mm\n- build_rack.py：参数化可重建源码\n- preview.png：模型预览\n\n回读检查通过：1 个有效实体、1 个闭合壳，BRepCheck 有效。包络为 `X=0..100`、`Y=-14.5..2`、`Z=0..20` mm，体积约 `28762.662 mm³`，中截面最大相移为 `5.773503 mm`。左右端截断齿均已保留。",
+          "preview_provenance": {
+            "candidate_sha256": "bcab735109f2246964ccb9927efe4193c576fbb21f9b9bce99f03fb0a41696e1",
+            "renderer_id": "evocad-candidate-preview-v1; CADQuery 2.6.1/OCP 7.8.1.1.post1/VTK 9.3.1",
+            "provenance": "Post-run read-only candidate rendering with auto-fit camera. Not model output or scoring evidence."
+          }
+        },
+        {
+          "sample": "T04",
+          "title": "左旋中空螺纹紧固件",
+          "prompt": "依据文本参数构造左旋中空螺纹紧固件，提交可读取的 STEP。详情中展示归档候选和模型自述。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "Common 3D",
+            "display": "93.34",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/T04/view-01.png",
+              "caption": "候选产物 · 视图 1（归档候选的只读渲染）",
+              "sha256": "7a499baf796b692dffd4aab805134dcab8d1ebd3319f323a4277b989c36c48a6"
+            },
+            {
+              "url": "deepseek-assets/T04/view-02.png",
+              "caption": "候选产物 · 视图 2（归档候选的只读渲染）",
+              "sha256": "8a26af32176cc213881417f6c8e8a13fadcca522fa2a84cbb7b1699de6b9d194"
+            }
+          ],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/T04/candidate.step",
+              "name": "candidate.step",
+              "sha256": "492d503adc621ab250af1fe3d87255acb14c0884a196392b7916ab52540aacd8",
+              "original_sha256": "527628211b811ee651baf37370321f0052d44f313aff9763ee35627cfa289b11",
+              "label": "下载真实 STEP 候选（文件头已脱敏）"
+            }
+          ],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/T04/LICENSE.upstream.txt",
+              "name": "LICENSE.upstream.txt",
+              "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+              "original_sha256": null,
+              "label": "来源许可证"
+            },
+            {
+              "url": "deepseek-assets/T04/NOTICE.txt",
+              "name": "NOTICE.txt",
+              "sha256": "ea9c3e9ee96eaf53bbf4c4db96fcc1f2222d5f55957792fb4cb1b18882560aad",
+              "original_sha256": null,
+              "label": "来源与修改说明"
+            },
+            {
+              "url": "deepseek-assets/T04/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "752275d55454f684e3f5aca3ad362ec0b50e8ba4b154828c27a0b82bf4e7db37"
+            }
+          ],
+          "code_files": [
+            {
+              "url": "deepseek-assets/T04/build_fastener.py.txt",
+              "name": "build_fastener.py",
+              "sha256": "f624f4fbc20deaa8e7e3adaf1688f7136dc01914ddd19a5addc75a731b939c22",
+              "original_sha256": "f80a2d13a6acb20734310a0036f8afae4069f759478a5b3e09915bb3ccdef169"
+            }
+          ],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 92 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "gumyr/cq_warehouse",
+            "license_as_recorded": "Apache-2.0",
+            "revision": "daa46507ecc429c0e2dce11d9d5ffd09b12a42af",
+            "url": "https://github.com/gumyr/cq_warehouse/blob/daa46507ecc429c0e2dce11d9d5ffd09b12a42af/src/cq_warehouse/thread.py"
+          },
+          "final_response": "已完成 CAD 任务，主交付文件：candidate.step。\n\n提交前检查结果：\n\n- STEP 可正常回读，单位为 mm，坐标以 Z 为轴。\n- 单一有效实体，包含封闭壳体。\n- 左旋单线螺纹、首端四分之一圈退牙、Z=25 平切、六角头及 Ø4 贯通孔均已建模。\n- 包络约 X=±10.3923 mm、Y=±9 mm、Z=-6..25 mm。\n- 体积约 3648.295 mm³，SHA-256：`527628211b811ee651baf37370321f0052d44f313aff9763ee35627cfa289b11`。\n\n可重建源码：build_fastener.py；校验记录：validation.json。",
+          "preview_provenance": {
+            "candidate_sha256": "527628211b811ee651baf37370321f0052d44f313aff9763ee35627cfa289b11",
+            "renderer_id": "evocad-candidate-preview-v1; CADQuery 2.6.1/OCP 7.8.1.1.post1/VTK 9.3.1",
+            "provenance": "Post-run read-only candidate rendering with auto-fit camera. Not model output or scoring evidence."
+          }
+        },
+        {
+          "sample": "T05",
+          "title": "滚子链轮与偏置螺栓孔阵列",
+          "prompt": "依据文本参数构造滚子链轮与偏置螺栓孔阵列，提交可读取的 STEP。详情中展示归档候选和模型自述。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "Common 3D",
+            "display": "60.65",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/T05/view-01.png",
+              "caption": "候选产物 · 视图 1（归档候选的只读渲染）",
+              "sha256": "77b459c273916f03392d9d19e88a7eb382162122b797dbca6d805a5da56d1649"
+            },
+            {
+              "url": "deepseek-assets/T05/view-02.png",
+              "caption": "候选产物 · 视图 2（归档候选的只读渲染）",
+              "sha256": "95ddf00e9b2a147a2a952b47c3e5937bf3b724855915694725d2990df21a2726"
+            }
+          ],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/T05/candidate.step",
+              "name": "candidate.step",
+              "sha256": "2096b5b19ed4361fb572cdae6dd394993d16e71c2e72aa5d80640f210485badc",
+              "original_sha256": "166f534b061debb01a799e5ed7ddb7a0de3082df0d603f41652757b5396c94bd",
+              "label": "下载真实 STEP 候选（文件头已脱敏）"
+            }
+          ],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/T05/LICENSE.upstream.txt",
+              "name": "LICENSE.upstream.txt",
+              "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+              "original_sha256": null,
+              "label": "来源许可证"
+            },
+            {
+              "url": "deepseek-assets/T05/NOTICE.txt",
+              "name": "NOTICE.txt",
+              "sha256": "d7c6b3e3daf83527cfa2bc49bce59da940a2c9fc0dab5b08f83e8b428ae4e9d6",
+              "original_sha256": null,
+              "label": "来源与修改说明"
+            },
+            {
+              "url": "deepseek-assets/T05/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "2731da13945180c0c43d4aaddb2ea6e58ed9d66d32cd2afb19435ae89775a61b"
+            }
+          ],
+          "code_files": [
+            {
+              "url": "deepseek-assets/T05/build_sprocket.py.txt",
+              "name": "build_sprocket.py",
+              "sha256": "545561be7cf67308f9da0d31b128d62f90990c00ef483753ca23159889836bb7",
+              "original_sha256": "07d254f18f47d1ba408599cb818fa69cab201149dcf46497e5831624c435451c"
+            }
+          ],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 43 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "gumyr/cq_warehouse",
+            "license_as_recorded": "Apache-2.0",
+            "revision": "daa46507ecc429c0e2dce11d9d5ffd09b12a42af",
+            "url": "https://github.com/gumyr/cq_warehouse/blob/daa46507ecc429c0e2dce11d9d5ffd09b12a42af/src/cq_warehouse/sprocket.py"
+          },
+          "final_response": "已完成并保存：\n\n- candidate.step\n- build_sprocket.py\n- 截面预览\n\n提交前回读验证通过：单一有效实体、毫米单位、厚度 3 mm 且关于 Z=0 对称；32 个滚子座半径 4.01875 mm，中心位于半径 64.784587457 mm 圆上；中心孔直径 10 mm；4 个直径 5 mm 螺栓孔位于直径 44 mm 圆上，首孔位于 +X。文件可正常读取，大小 572574 字节。",
+          "preview_provenance": {
+            "candidate_sha256": "166f534b061debb01a799e5ed7ddb7a0de3082df0d603f41652757b5396c94bd",
+            "renderer_id": "evocad-candidate-preview-v1; CADQuery 2.6.1/OCP 7.8.1.1.post1/VTK 9.3.1",
+            "provenance": "Post-run read-only candidate rendering with auto-fit camera. Not model output or scoring evidence."
+          }
+        },
+        {
+          "sample": "T06",
+          "title": "电缆应力释放套树脂半模",
+          "prompt": "依据文本参数构造电缆应力释放套树脂半模，提交可读取的 STEP。详情中展示归档候选和模型自述。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "Common 3D",
+            "display": "100",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/T06/view-01.png",
+              "caption": "候选产物 · 视图 1（归档候选的只读渲染）",
+              "sha256": "19bdaa31754916c1f4f5fde3888d0619c3064738649977344447234d2348db64"
+            },
+            {
+              "url": "deepseek-assets/T06/view-02.png",
+              "caption": "候选产物 · 视图 2（归档候选的只读渲染）",
+              "sha256": "a4c5be7a938a350e3481ac1a5a617c143d7cb73c8c4cee42803ad20e13a0938f"
+            }
+          ],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/T06/candidate.step",
+              "name": "candidate.step",
+              "sha256": "da3a54f752002c1e93b0de0eee60abe98c0a83f424909edf4416b36036d0d2b3",
+              "original_sha256": "b9c5137eb27849c99c51833f966f23f4d7b095229f1f66d24abb4749d0bc2629",
+              "label": "下载真实 STEP 候选（文件头已脱敏）"
+            }
+          ],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/T06/LICENSE.upstream.txt",
+              "name": "LICENSE.upstream.txt",
+              "sha256": "b8f8918574ee9761c3f8323f22bcbfb8feb81002309ae3ba1a3b440bbdcce945",
+              "original_sha256": null,
+              "label": "来源许可证"
+            },
+            {
+              "url": "deepseek-assets/T06/NOTICE.txt",
+              "name": "NOTICE.txt",
+              "sha256": "f873ad88c9af6f5e6383b68f1d843a96ca2f699db5adaa364fcec6c90ece815b",
+              "original_sha256": null,
+              "label": "来源与修改说明"
+            },
+            {
+              "url": "deepseek-assets/T06/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "176f4e8f041a81fc9079344a7999148c22446c2d6930a86dcd11e7776cf62ae4"
+            }
+          ],
+          "code_files": [
+            {
+              "url": "deepseek-assets/T06/build_model.py.txt",
+              "name": "build_model.py",
+              "sha256": "7155fce6f0cff766729d7896dac9bbb24c427578f59a681a184d7c9fc8e1d74a",
+              "original_sha256": "663b61d93130eb831995b4038764906663c3b0f65c95ce91068b09ff9538a5f1"
+            }
+          ],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 48 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "CadQuery/cadquery-contrib",
+            "license_as_recorded": "MIT",
+            "revision": "3543aef35efb8b901150691e49948f0a8f6f7c8a",
+            "url": "https://github.com/CadQuery/cadquery-contrib/blob/3543aef35efb8b901150691e49948f0a8f6f7c8a/examples/Resin_Mold.py"
+          },
+          "final_response": "已完成并保存：\n\n- candidate.step\n- build_model.py\n\n提交前验证：STEP 可正常回读，为单一有效实体；单位为 mm；包围盒为 X −60..60、Y −20..20、Z 0..13；四个 Ø7 安装通孔、三个 Ø6 注入口及型腔连通均已完成。",
+          "preview_provenance": {
+            "candidate_sha256": "b9c5137eb27849c99c51833f966f23f4d7b095229f1f66d24abb4749d0bc2629",
+            "renderer_id": "evocad-candidate-preview-v1; CADQuery 2.6.1/OCP 7.8.1.1.post1/VTK 9.3.1",
+            "provenance": "Post-run read-only candidate rendering with auto-fit camera. Not model output or scoring evidence."
+          }
+        },
+        {
+          "sample": "T07",
+          "title": "三组 Princeton-D 磁场线圈",
+          "prompt": "依据文本参数构造三组 Princeton-D 磁场线圈，提交可读取的 STEP。详情中展示归档候选和模型自述。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "Common 3D",
+            "display": "99.89",
+            "scale": "0–100"
+          },
+          "component_status": "通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/T07/view-01.png",
+              "caption": "候选产物 · 视图 1（归档候选的只读渲染）",
+              "sha256": "be7353e71599fd277abc59355001796c3cf3e354a488a25e1d18c715d3eddb3f"
+            },
+            {
+              "url": "deepseek-assets/T07/view-02.png",
+              "caption": "候选产物 · 视图 2（归档候选的只读渲染）",
+              "sha256": "648e2f753733aeffcda2476a370148890b7d5eb3c1b114fe79c0fda613b1daa1"
+            }
+          ],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/T07/candidate.step",
+              "name": "candidate.step",
+              "sha256": "24d504c6b183e8ff42627a6fbfdc41979fbd0deaf2e07fa1e8f9e655d38d1be4",
+              "original_sha256": "fff9f4602f06c30b336d71ca51400b91ee7704b7d525e54eb56dc8888a0ef1eb",
+              "label": "下载真实 STEP 候选（文件头已脱敏）"
+            }
+          ],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/T07/LICENSE.upstream.txt",
+              "name": "LICENSE.upstream.txt",
+              "sha256": "10f0aaf81e568f64feb903fcf312f7311868550a0fedf5f3aa007fb05f261f35",
+              "original_sha256": null,
+              "label": "来源许可证"
+            },
+            {
+              "url": "deepseek-assets/T07/NOTICE.txt",
+              "name": "NOTICE.txt",
+              "sha256": "ff3272e86e6a13042cd07d246f68620fc933fb57820916012d6f45450093f6ae",
+              "original_sha256": null,
+              "label": "来源与修改说明"
+            },
+            {
+              "url": "deepseek-assets/T07/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "45a190cdfd804d186e8f198f1aa35cbeda6637a993db6e6cfb502ea8e6bc2bbd"
+            }
+          ],
+          "code_files": [
+            {
+              "url": "deepseek-assets/T07/build_coils.py.txt",
+              "name": "build_coils.py",
+              "sha256": "06c5bb654e1cf796ea7f9106b63e579ced1b4c9c7aee895eb0f6f0c56a81fa4d",
+              "original_sha256": "d9e103378c14f5ab29de90306e856110d987a5cb8041d4dfffe4d7c644be2528"
+            }
+          ],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 37 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "fusion-energy/paramak",
+            "license_as_recorded": "MIT",
+            "revision": "8181665301a94324224d1ab16e170eb787b8b104",
+            "url": "https://github.com/fusion-energy/paramak/blob/8181665301a94324224d1ab16e170eb787b8b104/src/paramak/workplanes/toroidal_field_coil_princeton_d.py"
+          },
+          "final_response": "CAD 任务已完成。\n\n- candidate.step：三件独立线圈，单位 mm。\n- build_coils.py：可重建模型源码。\n\n验证结果：STEP 可正常读取，包含 3 个有效且互不相交的封闭实体；积分验证误差约 \\(1.8\\times10^{-15}\\) mm，样条边界最大偏差约 0.00103 mm。最终文件大小 4,368,955 字节，SHA-256 为 `fff9f4602f06c30b336d71ca51400b91ee7704b7d525e54eb56dc8888a0ef1eb`。",
+          "preview_provenance": {
+            "candidate_sha256": "fff9f4602f06c30b336d71ca51400b91ee7704b7d525e54eb56dc8888a0ef1eb",
+            "renderer_id": "evocad-candidate-preview-v1; CADQuery 2.6.1/OCP 7.8.1.1.post1/VTK 9.3.1",
+            "provenance": "Post-run read-only candidate rendering with auto-fit camera. Not model output or scoring evidence."
+          }
+        },
+        {
+          "sample": "T08",
+          "title": "变厚非圆截面反应堆包层扇区",
+          "prompt": "依据文本参数构造变厚非圆截面反应堆包层扇区，提交可读取的 STEP。详情中展示归档候选和模型自述。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "Common 3D",
+            "display": "99.74",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/T08/view-01.png",
+              "caption": "候选产物 · 视图 1（归档候选的只读渲染）",
+              "sha256": "9108444f7c9275489b82bb04293cf25f5cf7a0f2e020fce6ec103d67392c399a"
+            },
+            {
+              "url": "deepseek-assets/T08/view-02.png",
+              "caption": "候选产物 · 视图 2（归档候选的只读渲染）",
+              "sha256": "f5b15a114b4d2539e0ea24fbc7b9e2b77a688e8e20e5dd5341c2838e0681f5d8"
+            }
+          ],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/T08/candidate.step",
+              "name": "candidate.step",
+              "sha256": "25f3d78e4712d89ff10c1cfb2d5648bb67fade27c3046e15656853c3650b5402",
+              "original_sha256": "5a1a328f5f315ffd259edee79e527753b1731358350e0a53a09a83392691c83b",
+              "label": "下载真实 STEP 候选（文件头已脱敏）"
+            }
+          ],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/T08/LICENSE.upstream.txt",
+              "name": "LICENSE.upstream.txt",
+              "sha256": "10f0aaf81e568f64feb903fcf312f7311868550a0fedf5f3aa007fb05f261f35",
+              "original_sha256": null,
+              "label": "来源许可证"
+            },
+            {
+              "url": "deepseek-assets/T08/NOTICE.txt",
+              "name": "NOTICE.txt",
+              "sha256": "28e9023fe4ada13b90417ba601b1424942404d891f16b2bffa8ae7c67d8b24f6",
+              "original_sha256": null,
+              "label": "来源与修改说明"
+            },
+            {
+              "url": "deepseek-assets/T08/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "72a5f89dbb3c2643e1a0f8f503b6af951bfade11e90470d6948069da347ea1d4"
+            }
+          ],
+          "code_files": [
+            {
+              "url": "deepseek-assets/T08/build_model.py.txt",
+              "name": "build_model.py",
+              "sha256": "19b6ec280ce7c4ddbce332adf2d71d41e1b7dc6bf864a7ec98383d90f17a500a",
+              "original_sha256": "76aa75211191486db8d5dbea0ff577e253bebcb28680e1df18ab28369668d6e7"
+            },
+            {
+              "url": "deepseek-assets/T08/verify_candidate.py.txt",
+              "name": "verify_candidate.py",
+              "sha256": "cbc81abf54fedbd756d9e5a32274aac9f90972ebc7d6b697253545a07605421e",
+              "original_sha256": "c95be9385a3799c6065b9a7ac7b2de6edf08b60169951fa0c03931f296ab840a"
+            }
+          ],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 102 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "fusion-energy/paramak",
+            "license_as_recorded": "MIT",
+            "revision": "8181665301a94324224d1ab16e170eb787b8b104",
+            "url": "https://github.com/fusion-energy/paramak/blob/8181665301a94324224d1ab16e170eb787b8b104/src/paramak/workplanes/blanket_from_plasma.py"
+          },
+          "final_response": "已完成并保存：\n\n- 提交文件：candidate.step\n- 可重建源码：build_model.py\n- 验证结果：validation.json\n\n模型采用解析曲线法向偏移，外边界在 `theta=pi/2` 分段以保留厚度插值折点，并绕全局 Z 轴正向旋转 0°–120°。\n\n回读检查通过：单一有效实体、7 个面，单位声明为毫米，体积约 `350785.2 mm³`。STEP SHA-256：`5a1a328f5f315ffd259edee79e527753b1731358350e0a53a09a83392691c83b`。",
+          "preview_provenance": {
+            "candidate_sha256": "5a1a328f5f315ffd259edee79e527753b1731358350e0a53a09a83392691c83b",
+            "renderer_id": "evocad-candidate-preview-v1; CADQuery 2.6.1/OCP 7.8.1.1.post1/VTK 9.3.1",
+            "provenance": "Post-run read-only candidate rendering with auto-fit camera. Not model output or scoring evidence."
+          }
+        },
+        {
+          "sample": "T09",
+          "title": "上下不等球冠的真空容器扇区",
+          "prompt": "依据文本参数构造上下不等球冠的真空容器扇区，提交可读取的 STEP。详情中展示归档候选和模型自述。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "Common 3D",
+            "display": "59.11",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/T09/view-01.png",
+              "caption": "候选产物 · 视图 1（归档候选的只读渲染）",
+              "sha256": "46412b871afe32aaac6c592f5ac885cfb6bd20ffd9ccee870804b856c092329c"
+            },
+            {
+              "url": "deepseek-assets/T09/view-02.png",
+              "caption": "候选产物 · 视图 2（归档候选的只读渲染）",
+              "sha256": "f04bd5b3eadb5c368611efce1d7134c9abbfb985100b044b8b70505053896cde"
+            }
+          ],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/T09/candidate.step",
+              "name": "candidate.step",
+              "sha256": "db4c4690d21911108c7202c97ae48523e68135005d2da65e742a941bda966195",
+              "original_sha256": "5ef5e1324a5a3de11ea7440dbc248512db23da6b405b7d62848f45a130ceb394",
+              "label": "下载真实 STEP 候选（文件头已脱敏）"
+            }
+          ],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/T09/LICENSE.upstream.txt",
+              "name": "LICENSE.upstream.txt",
+              "sha256": "10f0aaf81e568f64feb903fcf312f7311868550a0fedf5f3aa007fb05f261f35",
+              "original_sha256": null,
+              "label": "来源许可证"
+            },
+            {
+              "url": "deepseek-assets/T09/NOTICE.txt",
+              "name": "NOTICE.txt",
+              "sha256": "fdd6288d47cd69b63d3ff985c2fc89b6f177a561e76f574826e3c7b8bbac42e2",
+              "original_sha256": null,
+              "label": "来源与修改说明"
+            },
+            {
+              "url": "deepseek-assets/T09/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "2e7293e458d1baef13c672398739819894f01fad786796aaf792725f830f2a6e"
+            }
+          ],
+          "code_files": [
+            {
+              "url": "deepseek-assets/T09/build_container_sector.py.txt",
+              "name": "build_container_sector.py",
+              "sha256": "1968aaa2e99ebff3467bf0e522e872c1da3a741e459f904fabf0731be1bcaa60",
+              "original_sha256": "2898e505be9aea7ca8afa8f394b2093eaff45bf6e3fd19ff9ea79b7932d78f5f"
+            }
+          ],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 66 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "fusion-energy/paramak",
+            "license_as_recorded": "MIT",
+            "revision": "8181665301a94324224d1ab16e170eb787b8b104",
+            "url": "https://github.com/fusion-energy/paramak/blob/8181665301a94324224d1ab16e170eb787b8b104/src/paramak/workplanes/dished_vacuum_vessel.py"
+          },
+          "final_response": "已完成并保存：\n\n- candidate.step\n- build_container_sector.py\n- submission.json\n\n模型包含上封头、R57/R60 直筒、下封头三个接触实体；角度范围为 `+X` 起绕 `+Z` 逆时针 0–270°，单位 mm。封头外表面为内球面的精确 3 mm 法向偏置，未添加过渡圆角，直筒端环面与封头底面直接重合接触。\n\n最终检查通过：STEP 重新读取有效，包含 3 个实体，单位为毫米，体积约 `138374.766734 mm³`，SHA-256 为 `5ef5e1324a5a3de11ea7440dbc248512db23da6b405b7d62848f45a130ceb394`。",
+          "preview_provenance": {
+            "candidate_sha256": "5ef5e1324a5a3de11ea7440dbc248512db23da6b405b7d62848f45a130ceb394",
+            "renderer_id": "evocad-candidate-preview-v1; CADQuery 2.6.1/OCP 7.8.1.1.post1/VTK 9.3.1",
+            "provenance": "Post-run read-only candidate rendering with auto-fit camera. Not model output or scoring evidence."
+          }
+        },
+        {
+          "sample": "T10",
+          "title": "带止口与螺柱的双件电子壳体",
+          "prompt": "依据文本参数构造带止口与螺柱的双件电子壳体，提交可读取的 STEP。详情中展示归档候选和模型自述。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "Common 3D",
+            "display": "75",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/T10/view-01.png",
+              "caption": "候选产物 · 视图 1（归档候选的只读渲染）",
+              "sha256": "8057dc4361fb6e5916ca6ed0acedd20d1ffda517f10e6bf16d8a3381d2845682"
+            },
+            {
+              "url": "deepseek-assets/T10/view-02.png",
+              "caption": "候选产物 · 视图 2（归档候选的只读渲染）",
+              "sha256": "981983dbc84fc383dd8098cebde71a040233521d484be03eac98eafb0ddcbbea"
+            }
+          ],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/T10/candidate.step",
+              "name": "candidate.step",
+              "sha256": "76813bd12a3bee6970a0ccbe8eb7a97c3c4797b76cb39fca0f48213c280886e8",
+              "original_sha256": "28accd81963186a8bc27878d6d077b1570836d2b3f5a544cb372a3a4e98625df",
+              "label": "下载真实 STEP 候选（文件头已脱敏）"
+            }
+          ],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/T10/LICENSE.upstream.txt",
+              "name": "LICENSE.upstream.txt",
+              "sha256": "b8f8918574ee9761c3f8323f22bcbfb8feb81002309ae3ba1a3b440bbdcce945",
+              "original_sha256": null,
+              "label": "来源许可证"
+            },
+            {
+              "url": "deepseek-assets/T10/NOTICE.txt",
+              "name": "NOTICE.txt",
+              "sha256": "7c0a0abff618929ed0dd2a9445bb2d56d3f2d5935d1cdb2be7c501c2676b6429",
+              "original_sha256": null,
+              "label": "来源与修改说明"
+            },
+            {
+              "url": "deepseek-assets/T10/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "3fbe4169dfa08910eb7e0bb1d92aaad244e135dd3dc9acdb3cf5ba2799b842af"
+            }
+          ],
+          "code_files": [
+            {
+              "url": "deepseek-assets/T10/build_candidate.py.txt",
+              "name": "build_candidate.py",
+              "sha256": "7905e08b44e7af923764d126f75a636368eb10aed46ab29efada811584c12e3e",
+              "original_sha256": "3beb36cf9a706b95e17594281e939b4dadbbb6d29d4ab77ee61dd7f283be1251"
+            }
+          ],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 45 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "CadQuery/cadquery-contrib",
+            "license_as_recorded": "MIT",
+            "revision": "3543aef35efb8b901150691e49948f0a8f6f7c8a",
+            "url": "https://github.com/CadQuery/cadquery-contrib/blob/3543aef35efb8b901150691e49948f0a8f6f7c8a/examples/Parametric_Enclosure.py"
+          },
+          "final_response": "已完成并验证：\n\n- candidate.step：装合姿态，含 2 个独立实体，单位为 mm。\n- build_candidate.py：参数化可重建源码。\n- validation.json：回读 STEP 后的验证结果。\n\n验证结果：底盒 Z=0..47，盖 Z=46..50；总体 X=-50..50、Y=-75..75、装合高度 50；两实体均有效，装合交集体积为 0。四组螺柱及盖孔轴线位于 (±38, ±63)，D4 孔贯穿盖材，顶部 D8×1 沉孔和 R7/R4 止口均由 STEP 实际几何确认。\n\nSTEP SHA-256：`28accd81963186a8bc27878d6d077b1570836d2b3f5a544cb372a3a4e98625df`",
+          "preview_provenance": {
+            "candidate_sha256": "28accd81963186a8bc27878d6d077b1570836d2b3f5a544cb372a3a4e98625df",
+            "renderer_id": "evocad-candidate-preview-v1; CADQuery 2.6.1/OCP 7.8.1.1.post1/VTK 9.3.1",
+            "provenance": "Post-run read-only candidate rendering with auto-fit camera. Not model output or scoring evidence."
+          }
+        }
+      ]
+    },
+    {
+      "id": "deepseek-r9-image",
+      "label": "CAD80 r9 · 图像建模",
+      "rows": [
+        {
+          "sample": "I01",
+          "title": "工业零件多视图重建 01",
+          "prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "参考相符度 80/20",
+            "display": "74.6457",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/I01/view-01.png",
+              "caption": "候选产物 · 视图 1（历史评分器的候选渲染）",
+              "sha256": "3d184a941713fe9aae8c5a20e3a263e81b549d7d2afa42c29a4ba92cf99782bf"
+            },
+            {
+              "url": "deepseek-assets/I01/view-02.png",
+              "caption": "候选产物 · 视图 2（历史评分器的候选渲染）",
+              "sha256": "873dbb3a72ae0bf8a4332a5316bb7f1495a5b77cde1409cc79f672e989278064"
+            },
+            {
+              "url": "deepseek-assets/I01/view-03.png",
+              "caption": "候选产物 · 视图 3（历史评分器的候选渲染）",
+              "sha256": "876439daf2ebc7d1b8f8a64f34ba03a135fae40f09138013f3e086ad0cbc4607"
+            },
+            {
+              "url": "deepseek-assets/I01/view-04.png",
+              "caption": "候选产物 · 视图 4（历史评分器的候选渲染）",
+              "sha256": "9edaff08c4a2ce4ce893447ef34bb73764c770e4e390b868fa2e5f1e003ddafe"
+            }
+          ],
+          "candidate_meshes": [],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/I01/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+            }
+          ],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 169 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "T-LESS / BOP",
+            "license_as_recorded": "CC BY 4.0",
+            "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+          },
+          "preview_provenance": {
+            "candidate_sha256": "19072eba98aa28e676a17ed5cea875d3cb5f4ed6a5a11728497ed16d5b95e98d",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          }
+        },
+        {
+          "sample": "I02",
+          "title": "工业零件多视图重建 02",
+          "prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "分辨率待复核",
+          "metric": {
+            "label": "参考相符度 80/20",
+            "display": "无几何分数",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/I02/view-01.png",
+              "caption": "候选产物 · 视图 1（历史评分器的候选渲染）",
+              "sha256": "5ad3e9a924351c92c4dbd4ae1ec67b109a47e2e49c3d194083ad57b1caeae2b7"
+            },
+            {
+              "url": "deepseek-assets/I02/view-02.png",
+              "caption": "候选产物 · 视图 2（历史评分器的候选渲染）",
+              "sha256": "ca6db1314730ff6cdb1089a5ebbf6651d8d1c3ba8d9908d81b5e5dbb8d572450"
+            },
+            {
+              "url": "deepseek-assets/I02/view-03.png",
+              "caption": "候选产物 · 视图 3（历史评分器的候选渲染）",
+              "sha256": "0f88a09b226f35ecda06c479264009ecfeb962b70a2b9926bb7d82f65adf69bf"
+            },
+            {
+              "url": "deepseek-assets/I02/view-04.png",
+              "caption": "候选产物 · 视图 4（历史评分器的候选渲染）",
+              "sha256": "019dfe6a5c4fbdd049bea413f7a2eab5fb64d110ed0e860eb4004a4f06d28dc3"
+            }
+          ],
+          "candidate_meshes": [],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/I02/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+            }
+          ],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 155 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：分辨率待复核。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "T-LESS / BOP",
+            "license_as_recorded": "CC BY 4.0",
+            "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+          },
+          "final_response": "已完成并保存：\n\n- candidate.step\n- candidate.py\n- submission.json\n- 四组同相机渲染位于 renders\n\n验证结果：STEP 可作为单一有效实体读取，单位为 mm，包络为 `186.078598 × 105.334396 × 60.014599 mm`，体积约 `879170.764 mm³`。\n\n模型包含四个圆环座、中心触点、模块化外壳、侧面服务开口及底部八颗紧固件。不可见内部线路、精确螺纹、材料和制造公差已按合理假设计算简化。",
+          "preview_provenance": {
+            "candidate_sha256": "0828988358bdf08059a510433ee7c2e27e3fac491a2750e09c813043d44d8efe",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          }
+        },
+        {
+          "sample": "I03",
+          "title": "工业零件多视图重建 03",
+          "prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "参考相符度 80/20",
+            "display": "50.0776",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/I03/view-01.png",
+              "caption": "候选产物 · 视图 1（历史评分器的候选渲染）",
+              "sha256": "a98bbb1fb119e6b64bd1c300bb245917c16b30104ec5c155522326adb4d6cf19"
+            },
+            {
+              "url": "deepseek-assets/I03/view-02.png",
+              "caption": "候选产物 · 视图 2（历史评分器的候选渲染）",
+              "sha256": "16d84e1046658334381024a6eff2143a489cfa3a9c2ff462556256eb4e43d5fe"
+            },
+            {
+              "url": "deepseek-assets/I03/view-03.png",
+              "caption": "候选产物 · 视图 3（历史评分器的候选渲染）",
+              "sha256": "f3da1e12aa30f4fc2e055efd30f67c23586a0c91fa521dfe6d6893d743170ddd"
+            },
+            {
+              "url": "deepseek-assets/I03/view-04.png",
+              "caption": "候选产物 · 视图 4（历史评分器的候选渲染）",
+              "sha256": "9e728fd253a62adbe563c1f487fbd73dd75a55650fc9beacec539823e1307a94"
+            }
+          ],
+          "candidate_meshes": [],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/I03/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+            }
+          ],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 193 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "T-LESS / BOP",
+            "license_as_recorded": "CC BY 4.0",
+            "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+          },
+          "final_response": "已完成 CAD 重建并保存到当前工作区。\n\n- candidate.step\n- candidate.py\n- assumptions.md\n- 四视口渲染目录\n- submission.json\n\nSTEP 已重新导入验证：有效单一实体，体积约 `90931.84 mm³`，边界尺寸为 `80.6598 × 42.0072 × 63.5013 mm`。螺纹以光滑阶梯孔合理简化，照片无法确定的内部电气结构未作虚构。",
+          "preview_provenance": {
+            "candidate_sha256": "006dc518a873e21e69a5f60a04944a3abbc1889288f16e0358dcff44564922af",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          }
+        },
+        {
+          "sample": "I04",
+          "title": "工业零件多视图重建 04",
+          "prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "参考相符度 80/20",
+            "display": "59.9649",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/I04/view-01.png",
+              "caption": "候选产物 · 视图 1（历史评分器的候选渲染）",
+              "sha256": "59a340c744120dfd22be676f0cb88dc18aab3ad0e7e71829df773c788f8e9990"
+            },
+            {
+              "url": "deepseek-assets/I04/view-02.png",
+              "caption": "候选产物 · 视图 2（历史评分器的候选渲染）",
+              "sha256": "4c6be0148d7869b556619af853cb01e641e62d434768c843ed7909f96983d1ca"
+            },
+            {
+              "url": "deepseek-assets/I04/view-03.png",
+              "caption": "候选产物 · 视图 3（历史评分器的候选渲染）",
+              "sha256": "cc40a5e9e22839145a5e0a95d80c9a556bf1fc70f0f20f3a1cd83b96ea9b2619"
+            },
+            {
+              "url": "deepseek-assets/I04/view-04.png",
+              "caption": "候选产物 · 视图 4（历史评分器的候选渲染）",
+              "sha256": "76310ebc83164f04fb2a982831aff40640299c4685faf370723c2ab7b4ab7e99"
+            }
+          ],
+          "candidate_meshes": [],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/I04/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+            }
+          ],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 210 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "T-LESS / BOP",
+            "license_as_recorded": "CC BY 4.0",
+            "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+          },
+          "final_response": "已完成并验证交付：\n\n- candidate.step：有效实体，单一 Solid，单位 mm\n- candidate.py：自包含参数化 CadQuery 重建源码\n- submission.json：交付及验证信息\n- 同相机渲染：01、02、03、04\n\n重新导入 STEP 后检查为有效单实体，体积约 **125642.48 mm³**。顶孔按可见内台阶建模为有底盲腔，无法辨认的内部电气路径、螺纹和材料未作推测。",
+          "preview_provenance": {
+            "candidate_sha256": "40628590b954fb13320ed6a5efd3147d84d7f4f453b41feda9916a7540301f53",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          }
+        },
+        {
+          "sample": "I05",
+          "title": "工业零件多视图重建 05",
+          "prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "参考相符度 80/20",
+            "display": "34.9743",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/I05/view-01.png",
+              "caption": "候选产物 · 视图 1（历史评分器的候选渲染）",
+              "sha256": "ae5943aee5c4c48e936093ec720b633974eb7328e0a7019154c45409b8c31531"
+            },
+            {
+              "url": "deepseek-assets/I05/view-02.png",
+              "caption": "候选产物 · 视图 2（历史评分器的候选渲染）",
+              "sha256": "ccc5a7f78e5172b851aa7174cbe189d662f583258679e9788adff605553d2f4f"
+            },
+            {
+              "url": "deepseek-assets/I05/view-03.png",
+              "caption": "候选产物 · 视图 3（历史评分器的候选渲染）",
+              "sha256": "8e4a27676b7de2b5cbded24651b860da5fbd62a6bf1930214a35473792cb6587"
+            },
+            {
+              "url": "deepseek-assets/I05/view-04.png",
+              "caption": "候选产物 · 视图 4（历史评分器的候选渲染）",
+              "sha256": "8533fa735683c3c49fd3f8902f8ca9faf7bf7e09eb1c86242f3044ca46b254e0"
+            }
+          ],
+          "candidate_meshes": [],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/I05/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+            }
+          ],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 151 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、3 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "T-LESS / BOP",
+            "license_as_recorded": "CC BY 4.0",
+            "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+          },
+          "final_response": "任务已完成并验证：\n\n- candidate.step：单一有效实体，尺寸 **98.734 × 98.734 × 63.774 mm**\n- candidate.py：自包含 CadQuery 可重建源码\n- render.png：四相机渲染总览\n- submission.json：提交清单\n- README.md：结构与简化假设说明\n\nSTEP 已回读验证，包含 1 个有效实体，体积约 **250070.54 mm³**。中央灯口采用普通孔而非猜测螺纹，隐藏电气路径和内部接触结构作了保守简化。",
+          "preview_provenance": {
+            "candidate_sha256": "6d616d359be7e7d70f20e8b323b643cb521f3fc1b31b3745004fe7a0e699b728",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          }
+        },
+        {
+          "sample": "I06",
+          "title": "工业零件多视图重建 06",
+          "prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "评分器未验证",
+          "metric": {
+            "label": "测量",
+            "display": "无几何分数",
+            "scale": ""
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/I06/view-01.png",
+              "caption": "候选产物 · 视图 1（历史评分器的候选渲染）",
+              "sha256": "5b89c3aae50e917e2c6e474c6026e9e984857dbd393c10ada4983fa76508e187"
+            },
+            {
+              "url": "deepseek-assets/I06/view-02.png",
+              "caption": "候选产物 · 视图 2（历史评分器的候选渲染）",
+              "sha256": "809ab3322341ba47e421f00bb0b3d842d87f3d31e8702a7073d08605c7ab2845"
+            },
+            {
+              "url": "deepseek-assets/I06/view-03.png",
+              "caption": "候选产物 · 视图 3（历史评分器的候选渲染）",
+              "sha256": "804dc63d38c467a783e6fb47bf261d3a10d9d8af2bddc4d3665ed2e3ac5711af"
+            },
+            {
+              "url": "deepseek-assets/I06/view-04.png",
+              "caption": "候选产物 · 视图 4（历史评分器的候选渲染）",
+              "sha256": "71962e4f989ccd2f42f50da2e03d25557948482c0aa22ed8c4e9e065d6e64bec"
+            }
+          ],
+          "candidate_meshes": [],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/I06/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+            }
+          ],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 156 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：评分器未验证。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "T-LESS / BOP",
+            "license_as_recorded": "CC BY 4.0",
+            "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+          },
+          "final_response": "已完成 CAD 重建并验证：\n\n- candidate.step：单一有效实体，STEP AP214，单位为毫米。\n- candidate.py：自包含的 CadQuery 解析建模源码，不含导入的 STEP 或网格。\n- candidate_render.png：使用四个给定相机的 2×2 渲染图。\n- README.md：尺寸、假设和验证说明。\n- submission.json：提交清单。\n\n验证结果：实体有效且连通，体积约 `113,906.6 mm³`，导入后包围尺寸 `76.900 × 77.069 × 43.000 mm`，四视图平均轮廓 IoU 约 `0.932`。不可见的端面内侧按浅盲腔简化；未推测材料、螺纹或内部电气走线。",
+          "preview_provenance": {
+            "candidate_sha256": "6f85da5fda8eb391c14abe00d641efd0ca1d6dc4c2eaeb121ecffd7edf789723",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          }
+        },
+        {
+          "sample": "I07",
+          "title": "工业零件多视图重建 07",
+          "prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "参考相符度 80/20",
+            "display": "86.1062",
+            "scale": "0–100"
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/I07/view-01.png",
+              "caption": "候选产物 · 视图 1（历史评分器的候选渲染）",
+              "sha256": "5edfbc2626b195fda305838f38a869d33fb5ce114b9714c51f4cd0e89940de2d"
+            },
+            {
+              "url": "deepseek-assets/I07/view-02.png",
+              "caption": "候选产物 · 视图 2（历史评分器的候选渲染）",
+              "sha256": "993bfcf2fdb5d810e38d886ab87875f5a9ad0ad85054990195d2b5ad952a774f"
+            },
+            {
+              "url": "deepseek-assets/I07/view-03.png",
+              "caption": "候选产物 · 视图 3（历史评分器的候选渲染）",
+              "sha256": "7506f2262e0e76c4fa680ba8936ef2ff10008330a63f9952ed763d8daae1db9b"
+            },
+            {
+              "url": "deepseek-assets/I07/view-04.png",
+              "caption": "候选产物 · 视图 4（历史评分器的候选渲染）",
+              "sha256": "c945e54c45a56359fc7ca2d1bf6bcbf1bbd9523234a3742586c8b3ea86254b9c"
+            }
+          ],
+          "candidate_meshes": [],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/I07/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "b6d4287b37052d2dcda3a241c11847fb247e245e8633d1a494fdccae238dbd1f"
+            }
+          ],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 184 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "T-LESS / BOP",
+            "license_as_recorded": "CC BY 4.0",
+            "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1"
+          },
+          "final_response": "CAD 重建已完成并验证：\n\n- candidate.step：有效单一实体，STEP 回读通过\n- candidate.py：可重建 CadQuery 解析源码\n- candidate-render.png：四机位同相机渲染\n- candidate-vs-photo.png：照片与渲染对照\n- submission.json 和 validation.json：交付及验证记录\n\n模型单位为 mm，包络 `43.0 × 43.0 × 80.6 mm`，实体体积 `76578.58 mm³`，四视角平均轮廓 IoU 为 `0.9431`。已保留开放内腔、杯底圆角、中央触点、可见径向孔、单侧轴向凸台及螺纹包络；螺纹规格与隐藏内部结构按任务要求未作制造规格猜测。",
+          "preview_provenance": {
+            "candidate_sha256": "c88094697b5e0625c2182be4b78f01abdb261a6f2724215037b27a308dfa3187",
+            "renderer_id": "archived-gt-view-auxiliary-v2-candidate-channel",
+            "provenance": "Historic evaluator candidate-only render; normalized PNG; not a model image."
+          }
+        },
+        {
+          "sample": "I08",
+          "title": "工业零件多视图重建 08",
+          "prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "可见组件检查",
+            "display": "未通过",
+            "scale": "组件级"
+          },
+          "component_status": "未通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [],
+          "candidate_meshes": [],
+          "artifacts": [],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 190 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。"
+          ],
+          "source": {
+            "name": "SimJEB / GE GrabCAD challenge",
+            "license_as_recorded": "CAD non-commercial; database ODC-By",
+            "revision": "local hash-bound STEP corpus"
+          },
+          "final_response": "已完成并保存：\n\n- candidate.step\n- build_candidate.py\n- README.md\n- submission.json\n- 四张对应视角渲染位于 `renders/`\n\nSTEP 已独立读取验证：单一有效非空实体，尺寸为 `106.55988 × 180.18531 × 62.50461 mm`。不可观察的内部连接、孔深及底部过渡面假设已在 README 中列明。"
+        },
+        {
+          "sample": "I09",
+          "title": "工业零件多视图重建 09",
+          "prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "产物交付失败",
+          "metric": {
+            "label": "测量",
+            "display": "无几何分数",
+            "scale": ""
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [],
+          "candidate_meshes": [],
+          "artifacts": [],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 183 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 0 个候选文件、0 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：产物交付失败。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。"
+          ],
+          "source": {
+            "name": "SimJEB / GE GrabCAD challenge",
+            "license_as_recorded": "CAD non-commercial; database ODC-By",
+            "revision": "local hash-bound STEP corpus"
+          }
+        },
+        {
+          "sample": "I10",
+          "title": "工业零件多视图重建 10",
+          "prompt": "依据公开多视图和给定相机或尺度重建可见 CAD 几何，交付 STEP 和建模材料。可观察口径及参考诊断按对应记录保留。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "可见组件检查",
+            "display": "未通过",
+            "scale": "组件级"
+          },
+          "component_status": "未通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [],
+          "candidate_meshes": [],
+          "artifacts": [],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 217 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。"
+          ],
+          "source": {
+            "name": "SimJEB / GE GrabCAD challenge",
+            "license_as_recorded": "CAD non-commercial; database ODC-By",
+            "revision": "local hash-bound STEP corpus"
+          },
+          "final_response": "已完成并提交：\n\n- candidate.step — 已验证可导入、非空，单位 mm\n- build_candidate.py — 参数化可重建源码\n- ASSUMPTIONS.md — 孔深、薄壁厚度及不可观察内部结构假设\n- submission.json\n- 四视角渲染位于 renders\n\n模型包含校准后的非对称薄壁底座、四角安装孔及沉孔、三角加强结构、双吊耳与椭圆孔、带不规则孔阵的拱壳。"
+        }
+      ]
+    },
+    {
+      "id": "deepseek-r9-assembly",
+      "label": "CAD80 r9 · 静态装配",
+      "rows": [
+        {
+          "sample": "A01",
+          "title": "末端平行夹爪",
+          "prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "可见组件检查",
+            "display": "未通过",
+            "scale": "组件级"
+          },
+          "component_status": "未通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/A01/assembly.json",
+              "name": "assembly.json",
+              "sha256": "724d367c1438b89eec4e72602155800cd5f0cece428ce191a94146834d69b9d7",
+              "original_sha256": "724d367c1438b89eec4e72602155800cd5f0cece428ce191a94146834d69b9d7",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "artifacts": [],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 156 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、5 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。"
+          ],
+          "source": {
+            "name": "Enactic OpenArm 2.0",
+            "license_as_recorded": "CERN-OHL-S-2.0",
+            "revision": "2.0.0 / eefc9fa"
+          },
+          "final_response": "已生成并校验静态装配文件：\n\n- assembly.json\n- submission.json\n- 可重建源码：build_assembly.py\n\n已验证单位、79 个实例数量、BOM 数量匹配、所有变换均为 proper rigid 4×4 矩阵，以及 `observation_from_assembly` 为正交右手刚体变换。"
+        },
+        {
+          "sample": "A02",
+          "title": "肩部 J1–J2 多轴关节",
+          "prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+          "prompt_label": "任务概要",
+          "execution_status": "执行超时",
+          "measurement_status": "超时产物已测量",
+          "metric": {
+            "label": "可见组件检查",
+            "display": "未通过",
+            "scale": "组件级"
+          },
+          "component_status": "未通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/A02/assembly.json",
+              "name": "assembly.json",
+              "sha256": "34d14fc7ff4747f13e705eb252167de372f93b588365b86eb97c2437015f98cd",
+              "original_sha256": "34d14fc7ff4747f13e705eb252167de372f93b588365b86eb97c2437015f98cd",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "artifacts": [],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：执行超时。记录有 222 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、0 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：超时产物已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。"
+          ],
+          "source": {
+            "name": "Enactic OpenArm 2.0",
+            "license_as_recorded": "CERN-OHL-S-2.0",
+            "revision": "2.0.0 / eefc9fa"
+          }
+        },
+        {
+          "sample": "A03",
+          "title": "J3-J5 裸露功能关节链静态复位",
+          "prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "可见组件检查",
+            "display": "未通过",
+            "scale": "组件级"
+          },
+          "component_status": "未通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/A03/assembly.json",
+              "name": "assembly.json",
+              "sha256": "47b8dc0ab96f31f85b474715db481b1f30951980dc58de166d5ae6e79e0d1112",
+              "original_sha256": "47b8dc0ab96f31f85b474715db481b1f30951980dc58de166d5ae6e79e0d1112",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "artifacts": [],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 173 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。"
+          ],
+          "source": {
+            "name": "Enactic OpenArm 2.0",
+            "license_as_recorded": "CERN-OHL-S-2.0",
+            "revision": "2.0.0 / eefc9fa"
+          },
+          "final_response": "已完成并生成 assembly.json。\n\n校验结果：\n\n- 单位：`mm`\n- 实例数：68，与 BOM 数量完全一致\n- 所有变换矩阵均为正交、行列式为 `+1` 的刚体矩阵\n- `observation_from_assembly` 为单位矩阵，直接使用观察坐标\n- 所有零件最大顶点半径为 `145.001 mm`，位于 `146.580 mm` 装配包络内\n- JSON 已重新读取验证通过\n\n可重建源码保存在 build_assembly.py。"
+        },
+        {
+          "sample": "A04",
+          "title": "A/B 双驱动机构",
+          "prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "可见组件检查",
+            "display": "未通过",
+            "scale": "组件级"
+          },
+          "component_status": "未通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/A04/assembly.json",
+              "name": "assembly.json",
+              "sha256": "6bf347910175785d19f581100e4567ce8f43afb78627155bc104dc72a88515ad",
+              "original_sha256": "6bf347910175785d19f581100e4567ce8f43afb78627155bc104dc72a88515ad",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "artifacts": [],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 137 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。"
+          ],
+          "source": {
+            "name": "Voron Trident",
+            "license_as_recorded": "Repository GPL-3.0; third-party component notices require separate check",
+            "revision": "f04f747d4dea06315806f352abf57f767cedf2b4"
+          },
+          "final_response": "已完成并保存 assembly.json。\n\n同时保留了可重建源码 solve_assembly.py。已验证：\n\n- BOM 数量精确匹配，共 103 个实例\n- 单位为 mm\n- 所有变换均为合法刚体矩阵\n- `observation_from_assembly` 为单位矩阵\n- 所有零件顶点均位于观察包络内，最大中心距离约 207.26 mm，小于允许的 211.09 mm\n- 文件存在且可正常解析读取"
+        },
+        {
+          "sample": "A05",
+          "title": "左侧 XY 接头功能子装配静态复位",
+          "prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "可见组件检查",
+            "display": "未通过",
+            "scale": "组件级"
+          },
+          "component_status": "未通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/A05/assembly.json",
+              "name": "assembly.json",
+              "sha256": "22711a4d2f4fab75c76fb7bbed287fc4b9157437c664223bd8d72af0a71bd0a5",
+              "original_sha256": "22711a4d2f4fab75c76fb7bbed287fc4b9157437c664223bd8d72af0a71bd0a5",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "artifacts": [],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 161 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。"
+          ],
+          "source": {
+            "name": "Voron Trident",
+            "license_as_recorded": "Repository GPL-3.0; third-party component notices require separate check",
+            "revision": "f04f747d4dea06315806f352abf57f767cedf2b4"
+          },
+          "final_response": "已生成并验证：\n\n- assembly.json\n- rebuild_assembly.py\n\n提交包含全部 40 个零件实例，BOM 数量校验通过；单位为 mm，所有零件变换和 `observation_from_assembly` 均为可行齐次刚体矩阵，观察坐标变换无缩放或反射。"
+        },
+        {
+          "sample": "A06",
+          "title": "后部 Z 支承机构",
+          "prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+          "prompt_label": "任务概要",
+          "execution_status": "服务端错误",
+          "measurement_status": "基础设施待核验",
+          "metric": {
+            "label": "测量",
+            "display": "无几何分数",
+            "scale": ""
+          },
+          "component_status": "未确认",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [],
+          "candidate_meshes": [],
+          "artifacts": [],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：服务端错误。记录有 1 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 0 个候选文件、0 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：基础设施待核验。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。"
+          ],
+          "source": {
+            "name": "Voron Trident",
+            "license_as_recorded": "Repository GPL-3.0; third-party component notices require separate check",
+            "revision": "f04f747d4dea06315806f352abf57f767cedf2b4"
+          }
+        },
+        {
+          "sample": "A07",
+          "title": "交叉轴滑台与多组惰轮",
+          "prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "可见组件检查",
+            "display": "未通过",
+            "scale": "组件级"
+          },
+          "component_status": "未通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/A07/assembly.json",
+              "name": "assembly.json",
+              "sha256": "ee6c7dfb582b3e4d219d0c74cae4687fc455194bbaaafcb50886cda83374a8f6",
+              "original_sha256": "ee6c7dfb582b3e4d219d0c74cae4687fc455194bbaaafcb50886cda83374a8f6",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "artifacts": [],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 157 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、0 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。"
+          ],
+          "source": {
+            "name": "Positron LT",
+            "license_as_recorded": "README says GPLv3 for non-commercial and separate commercial license; nonstandard mixed wording flagged",
+            "revision": "7544ba3688c0364074ddc871afcd22c62dd9a372"
+          },
+          "final_response": "已生成并保存：\n\n- assembly.json\n- submission.json\n\n文件单位为 mm，包含 64 个实例，数量与 BOM 一致；所有实例及公共坐标系变换均为刚体矩阵。JSON 已重新读取验证。"
+        },
+        {
+          "sample": "A08",
+          "title": "折叠热床支架",
+          "prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "可见组件检查",
+            "display": "未通过",
+            "scale": "组件级"
+          },
+          "component_status": "未通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/A08/assembly.json",
+              "name": "assembly.json",
+              "sha256": "2921813dfa4d62ee476f133c6b6b4eeb6f53596506006374cb2cc868398f09e3",
+              "original_sha256": "2921813dfa4d62ee476f133c6b6b4eeb6f53596506006374cb2cc868398f09e3",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "artifacts": [],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 180 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、4 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。"
+          ],
+          "source": {
+            "name": "Positron LT",
+            "license_as_recorded": "README says GPLv3 for non-commercial and separate commercial license; nonstandard mixed wording flagged",
+            "revision": "7544ba3688c0364074ddc871afcd22c62dd9a372"
+          },
+          "final_response": "已生成并保存 assembly.json。\n\n校验结果：\n\n- 文件可读取，单位为 `mm`\n- BOM 数量完整：18 个实例，10 种零件\n- `observation_from_assembly` 为单位矩阵\n- 所有零件矩阵均为有限数值、正交且行列式为 `+1`\n- 可重建源码保留于 build_assembly.py"
+        },
+        {
+          "sample": "A09",
+          "title": "挖掘机 13 件保存姿态静态复位",
+          "prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "可见组件检查",
+            "display": "未通过",
+            "scale": "组件级"
+          },
+          "component_status": "未通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [
+            {
+              "url": "deepseek-assets/A09/view-01.png",
+              "caption": "候选产物 · 视图 1（归档候选的只读渲染）",
+              "sha256": "036e53d07e00e8b4b3e74b5dad00b5c2b2c90a34c5261607b17a2affab039004"
+            },
+            {
+              "url": "deepseek-assets/A09/view-02.png",
+              "caption": "候选产物 · 视图 2（归档候选的只读渲染）",
+              "sha256": "250b42f9d8b55775924b16bd5f90ec9a0542541e327fcd6241587ff4ffce124a"
+            }
+          ],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/A09/assembly.json",
+              "name": "assembly.json",
+              "sha256": "94908b4dbe8052f01020e2c80a967251630df3d2a00f1267bc5664fd327bf39c",
+              "original_sha256": "94908b4dbe8052f01020e2c80a967251630df3d2a00f1267bc5664fd327bf39c",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "artifacts": [
+            {
+              "url": "deepseek-assets/A09/PREVIEW-NOTICE.txt",
+              "name": "PREVIEW-NOTICE.txt",
+              "label": "预览来源与署名",
+              "sha256": "ff25f17f2b1c6f6a7078258308b98e8b3b5e2eaee523f5ba10a3b23e6bbd4384"
+            }
+          ],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 213 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、2 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。",
+            "预览来自候选产物的只读渲染，不改变原始产物或评分。"
+          ],
+          "source": {
+            "name": "FreeCAD excavator AssemblyExample",
+            "license_as_recorded": "Embedded document License=CC-BY 4.0",
+            "revision": "89e237f0aa02b4c2d7cc37dd8f54a5c5a28f4d5e"
+          },
+          "final_response": "已生成并验证 assembly.json。\n\n验证结果：\n\n- 包含全部 13 个 BOM 零件，各一次。\n- 单位：mm。\n- `observation_from_assembly` 为合法刚体矩阵。\n- 所有零件位于半径 `444.1763 mm` 的装配包络内；实测最大半径约 `434.95 mm`。\n- 可重建源码：rebuild_assembly.py。",
+          "preview_provenance": {
+            "candidate_sha256": "94908b4dbe8052f01020e2c80a967251630df3d2a00f1267bc5664fd327bf39c",
+            "renderer_id": "evocad-candidate-preview-v1; CADQuery 2.6.1/OCP 7.8.1.1.post1/VTK 9.3.1",
+            "provenance": "Post-run read-only candidate rendering with auto-fit camera. Not model output or scoring evidence."
+          }
+        },
+        {
+          "sample": "A10",
+          "title": "307 实体匿名散件静态复位（条件题）",
+          "prompt": "将给定的不可变零件还原为四张目标图所示静态装配。提交逐零件刚体位姿和一次公共观察变换，保持原零件几何和数量。",
+          "prompt_label": "任务概要",
+          "execution_status": "已完成执行",
+          "measurement_status": "已测量",
+          "metric": {
+            "label": "可见组件检查",
+            "display": "未通过",
+            "scale": "组件级"
+          },
+          "component_status": "未通过",
+          "whole_task_status": "未确认",
+          "input_images": [],
+          "candidate_images": [],
+          "candidate_meshes": [
+            {
+              "url": "deepseek-assets/A10/assembly.json",
+              "name": "assembly.json",
+              "sha256": "6b3e2aa542b90ac1cbbebeb76c68ccc1311ef600557b5c220ca7d210c254c3cf",
+              "original_sha256": "6b3e2aa542b90ac1cbbebeb76c68ccc1311ef600557b5c220ca7d210c254c3cf",
+              "label": "下载真实装配位姿 JSON"
+            }
+          ],
+          "artifacts": [],
+          "code_files": [],
+          "events": [
+            {
+              "type": "执行归档",
+              "text": "归档执行状态：已完成执行。记录有 136 次模型服务请求；该数字不是工具调用次数。"
+            },
+            {
+              "type": "产物收集",
+              "text": "归档收集到 1 个候选文件、1 个代码文件。"
+            },
+            {
+              "type": "独立评测",
+              "text": "历史评测状态：已测量。测量口径见上方结果与汇总页。"
+            }
+          ],
+          "notes": [
+            "任务文字为冻结题面的编辑摘要。",
+            "模型自述与独立评分分别展示。",
+            "整题验收未确认；本页展示候选及历史测量。"
+          ],
+          "source": {
+            "name": "Aero Hand Open Right",
+            "license_as_recorded": "Design files CC BY-NC-SA 4.0",
+            "revision": "7bb2f23485a7d440960c21046da642de132b7745"
+          },
+          "final_response": "已生成并保存：\n\n- 提交文件：assembly.json\n- 可重建源码：solve_assembly.py\n\n已检查：\n\n- 单位为 `mm`\n- `observation_from_assembly` 使用单位矩阵\n- 307 个 BOM 实例完整且无重复\n- 所有变换的行列式中误差均在 `1e-6` 内，且为 `+1`\n- 所有网格顶点均位于装配包络内\n- `assembly.json` 存在、可读取，大小约 146 KB"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+"""Rebuild the three Princeton-D coil solids in candidate.step.
+
+Coordinates are in millimetres.  The base coil lies in the global XZ plane
+with R along +X and is extruded symmetrically across that plane in Y.
+"""
+
+from __future__ import annotations
+
+import math
+import sys
+from pathlib import Path
+
+sys.path.insert(0, '<local dependency path omitted>')
+
+import numpy as np
+
+from OCP.BRep import BRep_Builder
+from OCP.BRepBuilderAPI import (
+    BRepBuilderAPI_MakeEdge,
+    BRepBuilderAPI_MakeFace,
+    BRepBuilderAPI_MakeWire,
+    BRepBuilderAPI_Transform,
+)
+from OCP.BRepPrimAPI import BRepPrimAPI_MakePrism
+from OCP.GeomAPI import GeomAPI_Interpolate
+from OCP.Interface import Interface_Static
+from OCP.STEPControl import STEPControl_AsIs, STEPControl_Writer
+from OCP.TColgp import TColgp_HArray1OfPnt
+from OCP.TopoDS import TopoDS_Compound
+from OCP.gp import gp_Ax1, gp_Dir, gp_Pnt, gp_Trsf, gp_Vec
+
+
+OUTPUT = Path(__file__).resolve().parent / "candidate.step"
+
+INNER_LEG_RADIUS = 60.0
+OUTER_LEG_RADIUS = 50.0
+NOSE_RADIUS = 150.0
+NORMAL_THICKNESS = 10.0
+AXIAL_THICKNESS = 8.0
+
+# A smooth piecewise-cubic interpolation follows the integral equation to far
+# below the 0.02 mm allowance.  The integrals themselves use 64-point Gauss
+# quadrature on every parameter interval.
+CURVE_SAMPLES = 721
+GAUSS_ORDER = 64
+INTERPOLATION_TOLERANCE = 1.0e-9
+
+
+def curve_data() -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    theta = np.linspace(0.0, math.pi, CURVE_SAMPLES)
+    r0 = math.sqrt(INNER_LEG_RADIUS * NOSE_RADIUS)
+    k = 0.5 * math.log(NOSE_RADIUS / INNER_LEG_RADIUS)
+
+    inner_r = r0 * np.exp(k * np.cos(theta))
+    inner_z = np.zeros_like(theta)
+
+    abscissae, weights = np.polynomial.legendre.leggauss(GAUSS_ORDER)
+    for index in range(1, CURVE_SAMPLES):
+        a = theta[index - 1]
+        b = theta[index]
+        midpoint = 0.5 * (a + b)
+        half_width = 0.5 * (b - a)
+        u = midpoint + half_width * abscissae
+        integrand = k * r0 * np.exp(k * np.cos(u)) * np.cos(u)
+        increment = half_width * np.dot(weights, integrand)
+        inner_z[index] = inner_z[index - 1] + increment
+
+    outer_r = inner_r + NORMAL_THICKNESS * np.cos(theta)
+    outer_z = inner_z + NORMAL_THICKNESS * np.sin(theta)
+    return inner_r, inner_z, outer_r, outer_z
+
+
+def spline_edge(points: list[tuple[float, float]]) -> object:
+    array = TColgp_HArray1OfPnt(1, len(points))
+    for index, (x, z) in enumerate(points, start=1):
+        array.SetValue(index, gp_Pnt(float(x), 0.0, float(z)))
+
+    interpolator = GeomAPI_Interpolate(array, False, INTERPOLATION_TOLERANCE)
+    interpolator.Perform()
+    if not interpolator.IsDone():
+        raise RuntimeError("B-spline curve interpolation failed")
+    return BRepBuilderAPI_MakeEdge(interpolator.Curve()).Edge()
+
+
+def line_edge(
+    point_a: tuple[float, float], point_b: tuple[float, float]
+) -> object:
+    return BRepBuilderAPI_MakeEdge(
+        gp_Pnt(point_a[0], 0.0, point_a[1]),
+        gp_Pnt(point_b[0], 0.0, point_b[1]),
+    ).Edge()
+
+
+def wire_from_edges(edges: list[object]):
+    builder = BRepBuilderAPI_MakeWire()
+    for edge in edges:
+        builder.Add(edge)
+    if not builder.IsDone():
+        raise RuntimeError(f"Wire construction failed: {builder.Error()}")
+    return builder.Wire()
+
+
+def make_d_profile_solid():
+    inner_r, inner_z, outer_r, outer_z = curve_data()
+
+    outer_upper = list(zip(outer_r, outer_z))
+    outer_lower_cw = list(zip(outer_r[::-1], -outer_z[::-1]))
+    outer_wire = wire_from_edges(
+        [
+            spline_edge(outer_upper),
+            line_edge(
+                (OUTER_LEG_RADIUS, outer_z[-1]),
+                (OUTER_LEG_RADIUS, -outer_z[-1]),
+            ),
+            spline_edge(outer_lower_cw),
+        ]
+    )
+
+    # The hole is traversed clockwise relative to the outer wire.
+    inner_lower_cw = list(zip(inner_r, -inner_z))
+    inner_upper_ccw = list(zip(inner_r[::-1], inner_z[::-1]))
+    inner_wire = wire_from_edges(
+        [
+            spline_edge(inner_lower_cw),
+            line_edge(
+                (INNER_LEG_RADIUS, -inner_z[-1]),
+                (INNER_LEG_RADIUS, inner_z[-1]),
+            ),
+            spline_edge(inner_upper_ccw),
+        ]
+    )
+
+    face_builder = BRepBuilderAPI_MakeFace(outer_wire, True)
+    if not face_builder.IsDone():
+        raise RuntimeError(f"Outer profile face failed: {face_builder.Error()}")
+    face_builder.Add(inner_wire)
+    if not face_builder.IsDone():
+        raise RuntimeError(f"Adding inner profile failed: {face_builder.Error()}")
+
+    prism = BRepPrimAPI_MakePrism(
+        face_builder.Face(), gp_Vec(0.0, AXIAL_THICKNESS, 0.0)
+    )
+    prism.Build()
+    if not prism.IsDone():
+        raise RuntimeError("Symmetric-thickness extrusion failed")
+
+    translation = gp_Trsf()
+    translation.SetTranslation(gp_Vec(0.0, -4.0, 0.0))
+    centered = BRepBuilderAPI_Transform(prism.Shape(), translation, True)
+    if not centered.IsDone():
+        raise RuntimeError("Centering extrusion failed")
+    return centered.Shape()
+
+
+def rotated_copy(shape, azimuth_degrees: float):
+    transform = gp_Trsf()
+    transform.SetRotation(
+        gp_Ax1(gp_Pnt(0.0, 0.0, 0.0), gp_Dir(0.0, 0.0, 1.0)),
+        math.radians(azimuth_degrees),
+    )
+    builder = BRepBuilderAPI_Transform(shape, transform, True)
+    if not builder.IsDone():
+        raise RuntimeError(f"Rotation by {azimuth_degrees} degrees failed")
+    return builder.Shape()
+
+
+def make_compound(shapes: list[object]):
+    compound = TopoDS_Compound()
+    builder = BRep_Builder()
+    builder.MakeCompound(compound)
+    for shape in shapes:
+        builder.Add(compound, shape)
+    return compound
+
+
+def main() -> None:
+    base = make_d_profile_solid()
+    coils = [rotated_copy(base, angle) for angle in (0.0, 120.0, 240.0)]
+    assembly = make_compound(coils)
+
+    Interface_Static.SetCVal_s("write.step.unit", "MM")
+    writer = STEPControl_Writer()
+    if writer.Transfer(assembly, STEPControl_AsIs) != 1:
+        raise RuntimeError("Failed to transfer coil compound to STEP")
+    if writer.Write(str(OUTPUT)) != 1:
+        raise RuntimeError(f"Failed to write {OUTPUT}")
+
+    print(f"Wrote {OUTPUT} ({OUTPUT.stat().st_size} bytes)")
+
+
+if __name__ == "__main__":
+    main()

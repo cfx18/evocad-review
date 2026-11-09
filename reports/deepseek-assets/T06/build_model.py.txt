@@ -1,0 +1,163 @@
+"""Rebuild the cable strain-relief resin half-mold.
+
+All dimensions are millimetres.  The cavity is modeled as a closed profile
+revolved about the global X axis at Y=0, Z=13, rounded before subtraction.
+"""
+
+from __future__ import annotations
+
+import math
+import sys
+from pathlib import Path
+
+GEOMETRY_SITE_PACKAGES = Path(
+    '<local dependency path omitted>'
+)
+if str(GEOMETRY_SITE_PACKAGES) not in sys.path:
+    sys.path.insert(0, str(GEOMETRY_SITE_PACKAGES))
+
+import cadquery as cq
+
+
+ROOT = Path(__file__).resolve().parent
+OUTPUT_STEP = ROOT / "candidate.step"
+
+BLOCK_X = 120.0
+BLOCK_Y = 40.0
+BLOCK_Z = 13.0
+CAVITY_AXIS_Z = 13.0
+
+# (X, radius) profile, closed along the revolved axis.
+CAVITY_PROFILE = (
+    (-60.0, 0.0),
+    (-60.0, 3.0),
+    (-35.0, 3.0),
+    (-25.0, 10.0),
+    (25.0, 10.0),
+    (35.0, 3.0),
+    (60.0, 3.0),
+    (60.0, 0.0),
+)
+CAVITY_FILLET_X = (-35.0, -25.0, 25.0, 35.0)
+CAVITY_FILLET_RADIUS = 18.0
+
+MOUNTING_POSITIONS = (
+    (-53.5, -13.5),
+    (-53.5, 13.5),
+    (53.5, -13.5),
+    (53.5, 13.5),
+)
+MOUNTING_DIAMETER = 7.0
+
+INJECTION_X = (-25.0, 0.0, 25.0)
+INJECTION_DIAMETER = 6.0
+INJECTION_Z = 6.5
+INJECTION_DEPTH = 20.0
+
+
+def make_cavity() -> cq.Workplane:
+    """Create the rounded full revolved cavity in the X-axis coordinate frame."""
+
+    profile = cq.Workplane("XZ").moveTo(*CAVITY_PROFILE[0])
+    for point in CAVITY_PROFILE[1:]:
+        profile = profile.lineTo(*point)
+    cavity = profile.close().revolve(360.0, (0.0, 0.0, 0.0), (1.0, 0.0, 0.0))
+
+    transition_edges = [
+        edge
+        for edge in cavity.edges().vals()
+        if edge.geomType() == "CIRCLE"
+        and any(
+            math.isclose(edge.Center().x, target_x, abs_tol=1e-5)
+            for target_x in CAVITY_FILLET_X
+        )
+    ]
+    if len(transition_edges) != len(CAVITY_FILLET_X):
+        raise RuntimeError(
+            f"Expected {len(CAVITY_FILLET_X)} transition circles, "
+            f"found {len(transition_edges)}"
+        )
+
+    rounded = cavity.newObject(transition_edges).fillet(CAVITY_FILLET_RADIUS)
+    rounded = (
+        cq.Workplane("XY")
+        .add(rounded)
+        .translate((0.0, 0.0, CAVITY_AXIS_Z))
+    )
+    return rounded
+
+
+def build_model() -> cq.Workplane:
+    """Build the finished half-mold after cavity and all hole subtractions."""
+
+    model = cq.Workplane("XY").box(
+        BLOCK_X, BLOCK_Y, BLOCK_Z, centered=(True, True, False)
+    )
+    model = model.cut(make_cavity())
+
+    for x, y in MOUNTING_POSITIONS:
+        cutter = (
+            cq.Workplane("XY")
+            .center(x, y)
+            .circle(MOUNTING_DIAMETER / 2.0)
+            .extrude(BLOCK_Z)
+        )
+        model = model.cut(cutter)
+
+    # Each injection bore starts on Y=-20 and extends in +Y by 20 mm.
+    for x in INJECTION_X:
+        cutter = cq.Workplane("XY").add(
+            cq.Solid.makeCylinder(
+                INJECTION_DIAMETER / 2.0,
+                INJECTION_DEPTH,
+                pnt=cq.Vector(x, -BLOCK_Y / 2.0, INJECTION_Z),
+                dir=cq.Vector(0.0, 1.0, 0.0),
+            )
+        )
+        model = model.cut(cutter)
+
+    return model
+
+
+def validate_and_export(model: cq.Workplane) -> None:
+    shape = model.val()
+    solids = model.solids().vals()
+    if shape.isValid() is not True:
+        raise RuntimeError("Final CAD shape is not valid")
+    if len(solids) != 1:
+        raise RuntimeError(f"Expected one solid, found {len(solids)}")
+
+    bounds = shape.BoundingBox()
+    expected_bounds = (-60.0, -20.0, 0.0, 60.0, 20.0, 13.0)
+    actual_bounds = (
+        bounds.xmin,
+        bounds.ymin,
+        bounds.zmin,
+        bounds.xmax,
+        bounds.ymax,
+        bounds.zmax,
+    )
+    if any(
+        not math.isclose(actual, expected, abs_tol=1e-5)
+        for actual, expected in zip(actual_bounds, expected_bounds)
+    ):
+        raise RuntimeError(
+            f"Unexpected model bounds: {actual_bounds}; "
+            f"expected {expected_bounds}"
+        )
+    if shape.Volume() <= 0.0:
+        raise RuntimeError("Final CAD shape has no positive volume")
+
+    cq.exporters.export(model, str(OUTPUT_STEP), exportType="STEP")
+    print(f"Valid solid exported to {OUTPUT_STEP}")
+    print(f"Volume: {shape.Volume():.6f} mm^3")
+    print(
+        "Bounds: "
+        f"X {bounds.xmin:.6f}..{bounds.xmax:.6f}, "
+        f"Y {bounds.ymin:.6f}..{bounds.ymax:.6f}, "
+        f"Z {bounds.zmin:.6f}..{bounds.zmax:.6f} mm"
+    )
+
+
+if __name__ == "__main__":
+    validate_and_export(build_model())
