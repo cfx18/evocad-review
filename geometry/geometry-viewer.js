@@ -236,16 +236,16 @@ class SynchronizedGeometryViewers {
       this.globalFrustumHeight = this.frustumHeight;
       this.distance = span * 4;
       if (truth) {
-        this.viewports.truth.addGeometry(truth, COLORS.truth);
-        this.viewports.truth.showInteractive();
+        this.viewports.truth?.addGeometry(truth, COLORS.truth);
+        this.viewports.truth?.showInteractive();
       } else {
-        this.viewports.truth.showFallback("Ground-truth geometry unavailable");
+        this.viewports.truth?.showFallback("Ground-truth geometry unavailable");
       }
       if (candidate) {
-        this.viewports.candidate.addGeometry(candidate, COLORS.candidate);
-        this.viewports.candidate.showInteractive();
+        this.viewports.candidate?.addGeometry(candidate, COLORS.candidate);
+        this.viewports.candidate?.showInteractive();
       } else {
-        this.viewports.candidate.showFallback("Candidate geometry unavailable");
+        this.viewports.candidate?.showFallback("Candidate geometry unavailable");
       }
       if (overlayReady) {
         this.viewports.overlay.addGeometry(overlayTruth, COLORS.truth, 0.48);
@@ -262,15 +262,15 @@ class SynchronizedGeometryViewers {
       const missing = visualization.ground_truth_to_candidate || [];
       const excess = visualization.candidate_to_ground_truth || [];
       const pointSize = span * 0.014;
-      this.viewports.truth.addLocalization(missing, COLORS.missing, pointSize);
-      this.viewports.candidate.addLocalization(excess, COLORS.excess, pointSize);
+      this.viewports.truth?.addLocalization(missing, COLORS.missing, pointSize);
+      this.viewports.candidate?.addLocalization(excess, COLORS.excess, pointSize);
       this.viewports.overlay.addLocalization(missing, COLORS.missing, pointSize);
       this.viewports.overlay.addLocalization(excess, COLORS.excess, pointSize);
       for (const region of localization?.regions || []) {
         this.regions.set(region.region_id, region);
         const isMissing = region.direction === "ground_truth_to_candidate";
         const color = isMissing ? COLORS.missing : COLORS.excess;
-        (isMissing ? this.viewports.truth : this.viewports.candidate).addRegionBox(region, color);
+        (isMissing ? this.viewports.truth : this.viewports.candidate)?.addRegionBox(region, color);
         this.viewports.overlay.addRegionBox(region, color);
       }
       meshes.forEach((mesh) => mesh?.dispose());

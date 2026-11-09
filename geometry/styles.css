@@ -151,12 +151,13 @@ h3 { margin: 0; font-size: 12px; }
 .tab-panel.active { display: block; }
 
 .reference-evidence { margin-bottom: 12px; }
-.pose-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-bottom: 12px; }
-.pose-controls[hidden] { display: none; }
-.pose-controls > div { display: flex; flex-wrap: wrap; gap: 5px; }
-.pose-controls button { padding: 5px 8px; border: 1px solid #a9b9c1; border-radius: 4px; background: #fff; color: var(--ink); font-size: 12px; }
-.pose-controls button[aria-pressed="true"] { border-color: var(--blue); background: var(--blue); color: #fff; }
-.pose-controls p, .pose-diagnostics p { margin: 0; color: var(--muted); font-size: 12px; }
+.pose-comparison > p { margin: 6px 0 10px; color: var(--muted); font-size: 12px; }
+.pose-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 255px), 1fr)); gap: 12px; }
+.pose-layout figure { min-width: 0; margin: 0; border: 1px solid var(--line); }
+.pose-layout figure[hidden], .pose-diagnostics[hidden] { display: none; }
+.pose-layout figcaption { padding: 6px 8px; color: var(--muted); font-size: 11px; }
+.pose-layout .geometry-viewer { aspect-ratio: 4 / 3; }
+.pose-diagnostics p { margin: 0; color: var(--muted); font-size: 12px; }
 .pose-diagnostics p + p { margin-top: 5px; }
 .pose-diagnostics dl { display: flex; flex-wrap: wrap; gap: 7px 16px; margin: 8px 0; font-size: 12px; }
 .pose-diagnostics dt { color: var(--muted); }
