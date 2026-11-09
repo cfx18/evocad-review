@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EvoCAD Geometry Review</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=13">
   <link rel="stylesheet" href="benchmark-metrics.css">
 </head>
 <body>
@@ -16,11 +16,12 @@
 
   <main class="workspace">
     <aside class="run-browser">
-      <nav class="review-navigation" aria-label="评审工作区"><a href="?view=features" aria-current="page"><i data-lucide="box" aria-hidden="true"></i>几何评审</a><a id="drawingResultsLink" href="../drawing/index.html"><i data-lucide="chart-no-axes-combined" aria-hidden="true"></i>读图结果</a></nav>
+      <nav class="review-navigation" aria-label="站点导航"><a href="../index.html"><i data-lucide="arrow-left" aria-hidden="true"></i>返回总览</a><span aria-current="page"><i data-lucide="box" aria-hidden="true"></i>几何评审</span></nav>
       <div class="harness-navigation" id="harnessNavigation" hidden>
-        <div class="sidebar-heading"><h2>实验</h2><button class="records-button" id="openRecords" type="button" aria-haspopup="dialog"><i data-lucide="archive" aria-hidden="true"></i>记录归档</button></div>
+        <div class="sidebar-heading"><h2>实验导航</h2><button class="records-button" id="openRecords" type="button" aria-haspopup="dialog"><i data-lucide="archive" aria-hidden="true"></i>记录归档</button></div>
         <label>Harness<select id="harnessFilter" aria-label="Harness"></select></label>
-        <label>当前实验<span class="wrapping-select"><span data-select-value="experimentFilter" aria-hidden="true"></span><i data-lucide="chevron-down" aria-hidden="true"></i><select id="experimentFilter" aria-label="Experiment"></select></span></label>
+        <label>Model<span class="wrapping-select"><span data-select-value="modelFilter" aria-hidden="true"></span><i data-lucide="chevron-down" aria-hidden="true"></i><select id="modelFilter" aria-label="Model"></select></span></label>
+        <label class="experiment-picker">实验<span class="wrapping-select"><span data-select-value="experimentFilter" aria-hidden="true"></span><i data-lucide="chevron-down" aria-hidden="true"></i><select id="experimentFilter" aria-label="Experiment"></select></span></label>
         <nav id="experimentRecords" class="experiment-records" aria-label="当前实验记录" hidden></nav>
       </div>
       <div id="navigationStatus" role="status" aria-live="polite"></div>
@@ -28,14 +29,13 @@
         <summary><i data-lucide="list-filter" aria-hidden="true"></i><span>筛选算例</span><span id="filterCount" class="filter-count" hidden></span><i data-lucide="chevron-down" class="disclosure-chevron" aria-hidden="true"></i></summary>
         <div class="filter-grid">
           <label>数据集<span class="wrapping-select"><span data-select-value="datasetFilter" aria-hidden="true"></span><i data-lucide="chevron-down" aria-hidden="true"></i><select id="datasetFilter" aria-label="Dataset"></select></span></label>
-          <label>模型<span class="wrapping-select"><span data-select-value="modelFilter" aria-hidden="true"></span><i data-lucide="chevron-down" aria-hidden="true"></i><select id="modelFilter" aria-label="Model"></select></span></label>
           <label>验证结果<select id="outcomeFilter"><option value="all">全部结果</option><option value="passed">严格通过</option><option value="failed">未通过</option><option value="unscored">未评分</option></select></label>
           <label>人工评审<select id="reviewFilter"><option value="all">全部记录</option><option value="pending">待评审</option><option value="reviewed">已评审</option><option value="disputed">有争议</option></select></label>
           <button class="reset-filters" id="resetFilters" type="button" disabled><i data-lucide="rotate-ccw" aria-hidden="true"></i>重置筛选</button>
         </div>
       </details>
       <details class="sidebar-disclosure review-audit">
-        <summary><i data-lucide="chart-no-axes-combined" aria-hidden="true"></i><span>评测统计</span><i data-lucide="chevron-down" class="disclosure-chevron" aria-hidden="true"></i></summary>
+        <summary><i data-lucide="chart-no-axes-combined" aria-hidden="true"></i><span>实验整体评测统计</span><i data-lucide="chevron-down" class="disclosure-chevron" aria-hidden="true"></i></summary>
         <div id="reviewAuditMetrics"></div>
       </details>
       <div class="run-list-heading"><h2>算例</h2><span class="run-count" id="runCount"></span></div>
@@ -48,6 +48,7 @@
         <div class="run-identity"><strong id="modelLabel"></strong><code id="targetId"></code></div>
       </header>
 
+      <div id="runDetails" hidden>
       <div class="annotation-banner" id="annotationBanner" hidden></div>
       <div class="metrics" id="metrics"></div>
 
@@ -65,7 +66,7 @@
 
       <section class="tab-panel active" id="evidencePanel">
         <div class="reference-evidence">
-          <figure><figcaption>Agent input <span>complete drawing visible during modeling</span></figcaption><button class="image-button reference-image" data-image="input"><img id="inputImage" alt="Agent input image"></button><div class="image-switcher" id="inputSwitcher"></div></figure>
+          <figure><figcaption>Agent input <span>input visible during modeling</span></figcaption><button class="image-button reference-image" data-image="input" type="button" disabled><img id="inputImage" alt="Agent input image"></button><div class="image-switcher" id="inputSwitcher"></div></figure>
         </div>
         <div class="geometry-grid">
           <figure><figcaption>Evaluator ground truth <span>hidden from agent</span></figcaption><div class="geometry-viewer" id="truthViewer"><canvas aria-label="Interactive ground truth geometry"></canvas><img id="truthImage" class="geometry-fallback" alt="Ground truth geometry render"><div class="viewer-status" role="status"></div><button class="reset-view" type="button" title="Reset synchronized view" aria-label="Reset synchronized view">Reset</button></div><div class="image-caption" id="truthCaption"></div></figure>
@@ -73,7 +74,7 @@
           <figure><figcaption>Aligned overlay <span>blue truth / orange candidate</span></figcaption><div class="geometry-viewer" id="overlayViewer"><canvas aria-label="Interactive aligned geometry overlay"></canvas><img id="overlayImage" class="geometry-fallback" alt="Aligned candidate and ground truth overlay"><div class="viewer-status" role="status"></div><button class="reset-view" type="button" title="Reset synchronized view" aria-label="Reset synchronized view">Reset</button></div><div class="image-caption" id="overlayState"></div></figure>
         </div>
         <section class="localization-panel">
-          <header><div><h2>Localized surface mismatch</h2><p>Click a region to focus all three views.</p></div><div class="localization-legend"><span class="missing-swatch"></span>Missing or displaced<span class="excess-swatch"></span>Excess or displaced</div></header>
+          <header><div><h2>Localized surface mismatch</h2><p id="localizationHint"></p></div><div class="localization-legend"><span class="missing-swatch"></span>Missing or displaced<span class="excess-swatch"></span>Excess or displaced</div></header>
           <div class="localization-regions" id="localizationRegions"></div>
         </section>
       </section>
@@ -100,10 +101,11 @@
         <div class="audit-summary" id="auditSummary"></div>
         <div class="timeline" id="mcpEvents"></div>
       </section>
+      </div>
     </section>
 
-    <aside class="review-panel">
-      <header><div><div class="eyebrow">Human adjudication</div><h2 id="reviewTarget">No target selected</h2></div><button id="exportReviews" class="secondary" type="button">Export</button></header>
+    <aside class="review-panel" id="reviewPanel" hidden>
+      <header><div><div class="eyebrow">Human adjudication</div><h2 id="reviewTarget">No target selected</h2></div><button id="exportReviews" class="secondary" type="button" disabled>Export</button></header>
       <div class="binding-alert" id="reviewBinding"></div>
       <form id="reviewForm">
         <div class="two-col">
@@ -152,6 +154,6 @@
   </dialog>
   <script src="vendor/lucide/lucide.min.js"></script>
   <script src="benchmark-metrics.js"></script>
-  <script src="app.js?v=12"></script>
+  <script src="app.js?v=13"></script>
 </body>
 </html>

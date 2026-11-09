@@ -52,5 +52,8 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color:
 .file-item[aria-current="true"] { background: #e6f2f5; } .file-preview { min-width: 0; }
 #previewName { flex: 1; min-width: 100px; } #fileImage { max-width: 100%; max-height: 65vh; object-fit: contain; }
 [hidden] { display: none !important; }
+.archive-harness h2 { font-size: 16px; margin: 20px 0 6px; }
+.archive-model { border-left: 1px solid #cad8dc; margin-left: 4px; padding-left: 9px; }
+.archive-model h3 { font-size: 12px; color: #526b75; margin: 8px 0 2px; overflow-wrap: anywhere; }
 @media (max-width: 1000px) { .layout { grid-template-columns: 220px minmax(0, 1fr); } main { padding: 20px; } .run-header { flex-direction: column; gap: 10px; } .file-layout { grid-template-columns: 1fr; } #files { max-height: 230px; } }
 @media (max-width: 650px) { .layout { display: block; } aside { padding: 16px; border-right: 0; } #experiments { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .experiment { padding: 12px 8px; } #inventory { margin-bottom: 12px; } main { padding: 18px 14px; } .topbar { padding: 14px; font-size: 12px; } .topbar span { display: block; margin-top: 3px; } .media { grid-template-columns: 1fr; } figure img { max-height: 270px; } .metrics { gap: 18px; } .tabs { gap: 16px; font-size: 13px; } }

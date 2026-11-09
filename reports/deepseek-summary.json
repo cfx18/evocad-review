@@ -1,0 +1,697 @@
+{
+  "schema": "evocad-model-diagnostics-v1",
+  "harness": "Codex",
+  "model": {
+    "id": "deepseek-flash",
+    "display_name": "DeepSeek-V4.1-Flash",
+    "requested_effort": "max",
+    "effective_effort_reported": null,
+    "observed_request_model": "deepseek-flash",
+    "immutable_backend_snapshot_reported": false
+  },
+  "scope": {
+    "dataset_version": "v0.1-r9-photo-gt-primary",
+    "scope_label": "CAD80 r9 local geometry diagnostics",
+    "geometry_positions": 30,
+    "report_accounting_measured": 27,
+    "tracks": [
+      "text",
+      "image",
+      "assembly"
+    ],
+    "historical_r2_included": false,
+    "single_homogeneous_runtime": false
+  },
+  "experiments": [
+    {
+      "id": "deepseek-r9-text",
+      "label": "CAD80 r9 · 文本建模",
+      "summary": {
+        "positions": 10,
+        "status_counts": {
+          "measured": 10
+        },
+        "numeric_metric_summary": {
+          "samples": 10,
+          "mean": 77.526,
+          "minimum": 5.87,
+          "maximum": 100.0
+        }
+      },
+      "rows": [
+        {
+          "sample": "T01",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "common_3d_score",
+            "value": 81.66,
+            "scale": "0–100"
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "T02",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "common_3d_score",
+            "value": 5.87,
+            "scale": "0–100"
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "T03",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "common_3d_score",
+            "value": 100.0,
+            "scale": "0–100"
+          },
+          "component_passed": true,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "T04",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "common_3d_score",
+            "value": 93.34,
+            "scale": "0–100"
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "T05",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "common_3d_score",
+            "value": 60.65,
+            "scale": "0–100"
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "T06",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "common_3d_score",
+            "value": 100.0,
+            "scale": "0–100"
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "T07",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "common_3d_score",
+            "value": 99.89,
+            "scale": "0–100"
+          },
+          "component_passed": true,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "T08",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "common_3d_score",
+            "value": 99.74,
+            "scale": "0–100"
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "T09",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "common_3d_score",
+            "value": 59.11,
+            "scale": "0–100"
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "T10",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "common_3d_score",
+            "value": 75.0,
+            "scale": "0–100"
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        }
+      ]
+    },
+    {
+      "id": "deepseek-r9-image",
+      "label": "CAD80 r9 · 图像建模",
+      "summary": {
+        "positions": 10,
+        "status_counts": {
+          "measured": 7,
+          "resolution_review_required": 1,
+          "evaluator_unverified": 1,
+          "delivery_failed": 1
+        },
+        "numeric_metric_summary": {
+          "samples": 5,
+          "mean": 61.153733515987746,
+          "minimum": 34.97427758000789,
+          "maximum": 86.10622177440473
+        }
+      },
+      "rows": [
+        {
+          "sample": "I01",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "photo_reference_agreement_80_20",
+            "value": 74.6456531177994,
+            "scale": "0–100",
+            "status": "scored",
+            "volume_iou": 0.6972141523954009,
+            "silhouette_iou": 0.9434260463083664
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "I02",
+          "execution_status": "completed",
+          "measurement_status": "resolution_review_required",
+          "metric": {
+            "id": "photo_reference_agreement_80_20",
+            "value": null,
+            "scale": "0–100",
+            "status": "resolution_review_required",
+            "volume_iou": 0.6354335188463653,
+            "silhouette_iou": 0.9672290374360322
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "I03",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "photo_reference_agreement_80_20",
+            "value": 50.07758178604762,
+            "scale": "0–100",
+            "status": "scored",
+            "volume_iou": 0.3932023388091166,
+            "silhouette_iou": 0.9310697340659148
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "I04",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "photo_reference_agreement_80_20",
+            "value": 59.96493332167909,
+            "scale": "0–100",
+            "status": "scored",
+            "volume_iou": 0.5171840925075434,
+            "silhouette_iou": 0.9295102960537811
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "I05",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "photo_reference_agreement_80_20",
+            "value": 34.97427758000789,
+            "scale": "0–100",
+            "status": "scored",
+            "volume_iou": 0.21366989012326454,
+            "silhouette_iou": 0.8940343185073366
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "I06",
+          "execution_status": "completed",
+          "measurement_status": "evaluator_unverified",
+          "metric": null,
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "I07",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "photo_reference_agreement_80_20",
+            "value": 86.10622177440473,
+            "scale": "0–100",
+            "status": "scored",
+            "volume_iou": 0.8331098151468957,
+            "silhouette_iou": 0.9728718281326529
+          },
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "I08",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "observable_component_checks",
+            "scale": "boolean",
+            "value": false,
+            "views": [
+              {
+                "iou": 0.8516143202284209,
+                "boundary_p95_px": 26.336546350619543,
+                "appearance_mae": 0.1466969049213389,
+                "worst_local_mae": 0.7115348511318288,
+                "passed": false
+              },
+              {
+                "iou": 0.819602514013929,
+                "boundary_p95_px": 37.69606990631944,
+                "appearance_mae": 0.1689250660536534,
+                "worst_local_mae": 0.7417145285171844,
+                "passed": false
+              },
+              {
+                "iou": 0.8116308134123966,
+                "boundary_p95_px": 41.10960958218893,
+                "appearance_mae": 0.17583928667875212,
+                "worst_local_mae": 0.7153863878908706,
+                "passed": false
+              },
+              {
+                "iou": 0.8806765468515831,
+                "boundary_p95_px": 24.0,
+                "appearance_mae": 0.13494822140345286,
+                "worst_local_mae": 0.7333226833850375,
+                "passed": false
+              }
+            ]
+          },
+          "component_passed": false,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "I09",
+          "execution_status": "completed",
+          "measurement_status": "delivery_failed",
+          "metric": null,
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "I10",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "observable_component_checks",
+            "scale": "boolean",
+            "value": false,
+            "views": [
+              {
+                "iou": 0.8687975349098823,
+                "boundary_p95_px": 33.83784863137726,
+                "appearance_mae": 0.13922439868548248,
+                "worst_local_mae": 0.700974673757236,
+                "passed": false
+              },
+              {
+                "iou": 0.929756973611795,
+                "boundary_p95_px": 18.855888030978242,
+                "appearance_mae": 0.11037498807195156,
+                "worst_local_mae": 0.6782771566322594,
+                "passed": false
+              },
+              {
+                "iou": 0.9137450261616067,
+                "boundary_p95_px": 11.479799112601134,
+                "appearance_mae": 0.12318316090383884,
+                "worst_local_mae": 0.7035825029902434,
+                "passed": false
+              },
+              {
+                "iou": 0.8741103661681279,
+                "boundary_p95_px": 21.638735003103655,
+                "appearance_mae": 0.1408642569590783,
+                "worst_local_mae": 0.6915394200307795,
+                "passed": false
+              }
+            ]
+          },
+          "component_passed": false,
+          "whole_task_acceptance": null
+        }
+      ]
+    },
+    {
+      "id": "deepseek-r9-assembly",
+      "label": "CAD80 r9 · 静态装配",
+      "summary": {
+        "positions": 10,
+        "status_counts": {
+          "measured": 8,
+          "timeout_artifact_measured": 1,
+          "infrastructure_unverified": 1
+        }
+      },
+      "rows": [
+        {
+          "sample": "A01",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "observable_component_checks",
+            "scale": "boolean",
+            "value": false,
+            "views": [
+              {
+                "iou": 0.8228384658597621,
+                "boundary_p95_px": 33.55414401469676,
+                "appearance_mae": 0.17664966142933583,
+                "worst_local_mae": 0.7595411857476638,
+                "passed": false
+              },
+              {
+                "iou": 0.8605907079030147,
+                "boundary_p95_px": 30.949999999999932,
+                "appearance_mae": 0.1578575037862053,
+                "worst_local_mae": 0.7373491399677645,
+                "passed": false
+              },
+              {
+                "iou": 0.7890921374006132,
+                "boundary_p95_px": 41.63890169270572,
+                "appearance_mae": 0.21543712802538884,
+                "worst_local_mae": 0.7665465126135702,
+                "passed": false
+              },
+              {
+                "iou": 0.8251846824505991,
+                "boundary_p95_px": 27.43344849368985,
+                "appearance_mae": 0.17483318316814075,
+                "worst_local_mae": 0.7289215337196011,
+                "passed": false
+              }
+            ]
+          },
+          "component_passed": false,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "A02",
+          "execution_status": "timeout",
+          "measurement_status": "timeout_artifact_measured",
+          "metric": {
+            "id": "observable_component_checks",
+            "scale": "boolean",
+            "value": false,
+            "views": [],
+            "diagnostic": "outside_public_enclosure"
+          },
+          "component_passed": false,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "A03",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "observable_component_checks",
+            "scale": "boolean",
+            "value": false,
+            "views": [
+              {
+                "iou": 0.6084405072398597,
+                "boundary_p95_px": 54.037024344425184,
+                "appearance_mae": 0.29887783020748304,
+                "worst_local_mae": 0.701299987518071,
+                "passed": false
+              },
+              {
+                "iou": 0.6590422988852822,
+                "boundary_p95_px": 38.16536149896706,
+                "appearance_mae": 0.2715927669354432,
+                "worst_local_mae": 0.7549386653800055,
+                "passed": false
+              },
+              {
+                "iou": 0.671534687514329,
+                "boundary_p95_px": 43.60332377281842,
+                "appearance_mae": 0.2585905046452004,
+                "worst_local_mae": 0.7745507123719406,
+                "passed": false
+              },
+              {
+                "iou": 0.6170026853075317,
+                "boundary_p95_px": 42.720018726587654,
+                "appearance_mae": 0.2958125990410708,
+                "worst_local_mae": 0.7649533699161961,
+                "passed": false
+              }
+            ]
+          },
+          "component_passed": false,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "A04",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "observable_component_checks",
+            "scale": "boolean",
+            "value": false,
+            "views": [
+              {
+                "iou": 0.5570562293274531,
+                "boundary_p95_px": 23.857612125831125,
+                "appearance_mae": 0.33376190452533716,
+                "worst_local_mae": 0.7720903080130801,
+                "passed": false
+              },
+              {
+                "iou": 0.5097858498238005,
+                "boundary_p95_px": 24.00624458405139,
+                "appearance_mae": 0.34781377654951207,
+                "worst_local_mae": 0.690112387563711,
+                "passed": false
+              },
+              {
+                "iou": 0.5731038953385585,
+                "boundary_p95_px": 21.382691620883584,
+                "appearance_mae": 0.317139032782932,
+                "worst_local_mae": 0.7378274083058162,
+                "passed": false
+              },
+              {
+                "iou": 0.5691769900650068,
+                "boundary_p95_px": 20.248456731316587,
+                "appearance_mae": 0.3226353824225931,
+                "worst_local_mae": 0.7497845190416497,
+                "passed": false
+              }
+            ]
+          },
+          "component_passed": false,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "A05",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "observable_component_checks",
+            "scale": "boolean",
+            "value": false,
+            "views": [
+              {
+                "iou": 0.7678220236315864,
+                "boundary_p95_px": 47.877415118113035,
+                "appearance_mae": 0.21531707072880546,
+                "worst_local_mae": 0.7767879993842091,
+                "passed": false
+              },
+              {
+                "iou": 0.7382167190368043,
+                "boundary_p95_px": 46.09772228646444,
+                "appearance_mae": 0.22676218661556236,
+                "worst_local_mae": 0.7379146725531625,
+                "passed": false
+              },
+              {
+                "iou": 0.7698554936627109,
+                "boundary_p95_px": 31.941190087134295,
+                "appearance_mae": 0.20638142702499268,
+                "worst_local_mae": 0.7625656115537646,
+                "passed": false
+              },
+              {
+                "iou": 0.7134314957802119,
+                "boundary_p95_px": 37.459009822888326,
+                "appearance_mae": 0.24635506553452483,
+                "worst_local_mae": 0.7589602053892699,
+                "passed": false
+              }
+            ]
+          },
+          "component_passed": false,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "A06",
+          "execution_status": "provider_error",
+          "measurement_status": "infrastructure_unverified",
+          "metric": null,
+          "component_passed": null,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "A07",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "observable_component_checks",
+            "scale": "boolean",
+            "value": false,
+            "views": [],
+            "diagnostic": "outside_public_enclosure"
+          },
+          "component_passed": false,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "A08",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "observable_component_checks",
+            "scale": "boolean",
+            "value": false,
+            "views": [],
+            "diagnostic": "outside_public_enclosure"
+          },
+          "component_passed": false,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "A09",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "observable_component_checks",
+            "scale": "boolean",
+            "value": false,
+            "views": [
+              {
+                "iou": 0.09190049287848799,
+                "boundary_p95_px": 82.99095533092074,
+                "appearance_mae": 0.6182691016121437,
+                "worst_local_mae": 0.788234617231001,
+                "passed": false
+              },
+              {
+                "iou": 0.41288154805278926,
+                "boundary_p95_px": 47.80167361086848,
+                "appearance_mae": 0.4189751051287708,
+                "worst_local_mae": 0.7071099465731908,
+                "passed": false
+              },
+              {
+                "iou": 0.1009920261191687,
+                "boundary_p95_px": 118.1773890979155,
+                "appearance_mae": 0.5860898371159795,
+                "worst_local_mae": 0.693862097447163,
+                "passed": false
+              },
+              {
+                "iou": 0.06744004848065102,
+                "boundary_p95_px": 135.03406911723678,
+                "appearance_mae": 0.5752244941125229,
+                "worst_local_mae": 0.7471952876254814,
+                "passed": false
+              }
+            ]
+          },
+          "component_passed": false,
+          "whole_task_acceptance": null
+        },
+        {
+          "sample": "A10",
+          "execution_status": "completed",
+          "measurement_status": "measured",
+          "metric": {
+            "id": "observable_component_checks",
+            "scale": "boolean",
+            "value": false,
+            "views": [
+              {
+                "iou": 0.6220670086216304,
+                "boundary_p95_px": 34.921326186581275,
+                "appearance_mae": 0.2866266796144162,
+                "worst_local_mae": 0.7603261800189116,
+                "passed": false
+              },
+              {
+                "iou": 0.7194244604316546,
+                "boundary_p95_px": 22.077120736608663,
+                "appearance_mae": 0.21671296978361734,
+                "worst_local_mae": 0.701717409163797,
+                "passed": false
+              },
+              {
+                "iou": 0.259055445938852,
+                "boundary_p95_px": 63.0,
+                "appearance_mae": 0.5050391504481402,
+                "worst_local_mae": 0.7579089524140519,
+                "passed": false
+              },
+              {
+                "iou": 0.2622494737805436,
+                "boundary_p95_px": 63.0,
+                "appearance_mae": 0.5034308056113516,
+                "worst_local_mae": 0.7633562659024158,
+                "passed": false
+              }
+            ]
+          },
+          "component_passed": false,
+          "whole_task_acceptance": null
+        }
+      ]
+    }
+  ],
+  "method_notes": [
+    "The evaluated artifacts come from audited local runner revisions. Max is the verified requested configuration. Effective backend effort and an immutable backend snapshot were not reported.",
+    "Scores and checks use separate protocols. Photo 80/20 measures reference agreement and can include unobservable material. Observable checks cover implemented visible requirements and leave full task acceptance unknown.",
+    "A timeout artifact can have a component measurement. Unverified runs and delivery failures have no inferred geometry score."
+  ]
+}

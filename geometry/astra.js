@@ -14,9 +14,14 @@ function metric(label, value, tone = "") { return `<div><dt>${escapeHtml(label)}
 function scoreLabel(value) { return value == null ? "N/A" : Number(value).toFixed(2); }
 function scoreTone(passed) { return passed == null ? "" : passed ? "pass" : "fail"; }
 function renderExperiments() {
-  $("experiments").innerHTML = records.entries.map((entry) => {
-    const s = entry.recorded_io.summary;
-    return `<button class="experiment" data-id="${entry.id}" aria-current="${entry.id === records.current?.id}"><strong><span>${escapeHtml(s.sample_id.replace(":", " / "))}</span><span class="score ${scoreTone(s.passed)}">${scoreLabel(s.score)}</span></strong><small>${escapeHtml(entry.harness)}${entry.harness === "Diagnostics" ? " / human mirror" : " / Astra Ultra"}</small></button>`;
+  const harnesses = [...new Set(records.entries.map(entry => entry.harness))];
+  $("experiments").innerHTML = harnesses.map(harness => {
+    const entries = records.entries.filter(entry => entry.harness === harness);
+    const models = [...new Set(entries.map(entry => entry.recorded_io.summary.model))];
+    return `<section class="archive-harness"><h2>${escapeHtml(harness)}</h2>${models.map(model => `<div class="archive-model"><h3>${escapeHtml(model)}</h3>${entries.filter(entry => entry.recorded_io.summary.model === model).map(entry => {
+      const s = entry.recorded_io.summary;
+      return `<button class="experiment" data-id="${entry.id}" aria-current="${entry.id === records.current?.id}"><strong><span>${escapeHtml(s.sample_id.replace(":", " / "))}</span><span class="score ${scoreTone(s.passed)}">${scoreLabel(s.score)}</span></strong><small>${escapeHtml(entry.label)}</small></button>`;
+    }).join("")}</div>`).join("")}</section>`;
   }).join("");
   $("experiments").querySelectorAll("button").forEach((button) => button.addEventListener("click", () => loadRecord(button.dataset.id)));
 }
@@ -42,7 +47,7 @@ async function loadRecord(id) {
     if (!records.run || bundle.bundle_sha256 !== entry.bundle_sha256) throw new Error("Review/export binding mismatch");
     $("condition").textContent = entry.harness === "Diagnostics" ? "HUMAN-ASSISTED DIAGNOSTIC / NOT AN AGENT RUN" : `${entry.harness.toUpperCase()} / GPT-6-ASTRA / ULTRA`;
     $("title").textContent = s.sample_id.replace(":", " / "); $("campaign").textContent = s.campaign;
-    $("reviewLink").href = `${siteBase}?view=${entry.id}`; $("downloadLink").href = fileUrl("archive.zip");
+    $("reviewLink").href = `${siteBase}?view=${encodeURIComponent(entry.id)}&model=${encodeURIComponent(s.model)}`; $("downloadLink").href = fileUrl("archive.zip");
     $("note").textContent = entry.recorded_io.note; $("note").hidden = !entry.recorded_io.note;
     const counts = s.counts;
     $("metrics").innerHTML = metric("Score", scoreLabel(s.score), scoreTone(s.passed)) + metric("Strict", s.passed == null ? "UNSCORED" : s.passed ? "PASS" : "FAIL", scoreTone(s.passed)) + metric("CLI events", counts.cli_events || 0) + metric("MCP calls", counts.mcp_audit_calls || 0) + metric("CAD jobs", counts.native_jobs || 0) + metric("Files", records.files.length + 1);
