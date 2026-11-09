@@ -1,1 +1,88 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EvoCAD Review</title><meta http-equiv="refresh" content="0;url=geometry/"><a href="geometry/">Geometry experiments</a> | <a href="drawing/">Drawing results</a></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EvoCAD 的公开研究浏览台，提供几何实验、工程图理解结果及来源记录。">
+  <title>EvoCAD Review · 公开研究浏览台</title>
+  <style>
+    :root { color-scheme: light; --ink: #142a3a; --muted: #466274; --line: #cfdae0; --paper: #f4f7f8; --accent: #00665d; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.65 system-ui, "Microsoft YaHei", sans-serif; }
+    a { color: var(--accent); text-underline-offset: .25em; }
+    a:focus-visible { outline: 3px solid #00867a; outline-offset: 4px; }
+    .wrap { width: min(1080px, calc(100% - 48px)); margin: auto; }
+    header { border-bottom: 1px solid var(--line); background: #fff; }
+    .bar { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 750; letter-spacing: .015em; }
+    .brand svg { color: var(--accent); }
+    .source { font-size: .9rem; font-weight: 650; }
+    main { padding: 62px 0 42px; }
+    .hero { display: grid; grid-template-columns: 1fr 230px; gap: 42px; align-items: center; margin-bottom: 36px; }
+    .eyebrow { font-weight: 700; font-size: .76rem; letter-spacing: .11em; text-transform: uppercase; color: var(--accent); }
+    h1 { margin: 9px 0 12px; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.15; letter-spacing: -.03em; }
+    .intro { max-width: 610px; margin: 0; color: var(--muted); }
+    .blueprint { display: block; width: 100%; height: auto; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .card { min-height: 222px; display: flex; flex-direction: column; padding: 23px; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); text-decoration: none; }
+    .card:hover { border-color: var(--accent); }
+    .card h2 { margin: 6px 0 5px; font-size: 1.45rem; }
+    .card p { margin: 0 0 14px; color: var(--muted); }
+    .card .open { margin-top: auto; color: var(--accent); font-weight: 720; }
+    .note { margin-top: 25px; padding: 12px 0 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    .note p { margin: 0 0 4px; }
+    @media (max-width: 680px) {
+      .wrap { width: calc(100% - 32px); }
+      main { padding: 36px 0; }
+      .hero { grid-template-columns: 1fr; gap: 0; margin-bottom: 24px; }
+      .blueprint { display: none; }
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: 0; padding: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <span class="brand">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 2.5 24 8.2v11.6L14 25.5 4 19.8V8.2zM4 8.2l10 5.9 10-5.9M14 14v11.5"/></svg>
+        EvoCAD Review
+      </span>
+      <a class="source" href="https://github.com/cfx18/AgenticCAE">项目代码 ↗</a>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="title">
+      <div>
+        <div class="eyebrow">Public research archive · 2026-11-09</div>
+        <h1 id="title">CAD 实验公开浏览台</h1>
+        <p class="intro">查看模型在工程图理解和几何建模中的实际产物，从输入、候选几何与参考对照中复核具体结果。</p>
+      </div>
+      <svg class="blueprint" viewBox="0 0 230 135" fill="none" aria-hidden="true">
+        <path d="M5 112h220M24 130V5m190 125V5M5 23h220" stroke="#cfdae0" stroke-dasharray="4 4"/>
+        <path d="M56 64 111 33l63 35-55 32z" fill="#d9eeea" stroke="#00665d" stroke-width="2"/>
+        <path d="M56 64v18l63 35 55-32V68m-55 32v17M81 65l30-17 34 19-30 17z" stroke="#00665d" stroke-width="2"/>
+        <path d="M47 31h137m-137-5v10m137-10v10M195 62v52m-5-52h10m-10 52h10" stroke="#7094a1"/>
+      </svg>
+    </section>
+    <nav class="cards" aria-label="公开评审栏目">
+      <a class="card" href="geometry/">
+        <span class="eyebrow">17 个实验 · 78 条运行</span>
+        <h2>几何实验</h2>
+        <p>浏览输入图、候选与参考几何、三维视图和历史执行记录。</p>
+        <span class="open">打开几何评审 →</span>
+      </a>
+      <a class="card" href="drawing/index.html">
+        <span class="eyebrow">45 道评分题 · 1 道诊断题</span>
+        <h2>工程图理解</h2>
+        <p>查看分批读图结果、原图与答案对照，以及人工复核记录。</p>
+        <span class="open">打开图纸结果 →</span>
+      </a>
+    </nav>
+    <footer class="note">
+      <p>本页为只读研究快照。各批次的任务、判据和评审说明见对应栏目。</p>
+      <p>第三方图纸保留原有权利。候选标注的相符率按各批次记录的口径解释。</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -4,7 +4,7 @@ import { STLLoader } from "./vendor/three/addons/loaders/STLLoader.js";
 
 const VIEW_DIRECTION = new THREE.Vector3(1, -1.25, 0.85).normalize();
 const COLORS = {
-  truth: 0x4397b8, candidate: 0xdf843d, missing: 0xef4fa6, excess: 0xffd23f,
+  truth: 0x4397b8, candidate: 0xdf843d, baseline: 0x829b91, missing: 0xef4fa6, excess: 0xffd23f,
 };
 let sharedRenderer = null;
 
@@ -54,6 +54,8 @@ class GeometryViewport {
     });
     const mesh = new THREE.Mesh(geometry.clone(), material);
     this.scene.add(mesh);
+    // Outline hashing on large tessellations can stall the browser for minutes.
+    if (geometry.getAttribute("position").count > 600000) return;
     const edges = new THREE.LineSegments(
       new THREE.EdgesGeometry(geometry, 28),
       new THREE.LineBasicMaterial({ color: 0xe7edf0, transparent: true, opacity: 0.32 }),
@@ -105,6 +107,11 @@ class GeometryViewport {
   }
 
   resize() {
+    if (this.manager.geometryPaths.framing === "projected" && this.manager.bounds && !this.canvas.hidden) {
+      this.manager.fitProjection(this);
+      this.manager.syncFrom(this);
+      return;
+    }
     this.updateProjectionBounds();
     this.render();
   }
@@ -137,13 +144,14 @@ class GeometryViewport {
 }
 
 class SynchronizedGeometryViewers {
-  constructor(containers, geometry) {
+  constructor(containers, geometry, focus) {
     this.geometryPaths = geometry;
     this.frustumHeight = 1;
     this.globalFrustumHeight = 1;
     this.center = new THREE.Vector3();
     this.distance = 10;
     this.regions = new Map();
+    if (focus) this.regions.set("manual-repair", focus);
     this.pendingRegionId = null;
     this.syncing = false;
     this.disposed = false;
@@ -204,19 +212,22 @@ class SynchronizedGeometryViewers {
   async load() {
     Object.values(this.viewports).forEach((viewport) => viewport.showFallback("Loading geometry"));
     try {
-      const [truth, candidate, localization] = await Promise.all([
+      const [truth, candidate, localization, baseline] = await Promise.all([
         this.loadGeometry(this.geometryPaths.ground_truth),
         this.loadGeometry(this.geometryPaths.candidate),
         this.loadLocalization(this.geometryPaths.localization),
+        this.viewports.baseline ? this.loadGeometry(this.geometryPaths.baseline) : null,
       ]);
       if (this.disposed) {
         truth?.dispose();
         candidate?.dispose();
+        baseline?.dispose();
         return;
       }
       const bounds = new THREE.Box3();
       if (truth?.boundingBox) bounds.union(truth.boundingBox);
       if (candidate?.boundingBox) bounds.union(candidate.boundingBox);
+      if (baseline?.boundingBox) bounds.union(baseline.boundingBox);
       if (bounds.isEmpty()) throw new Error("No interactive geometry is available");
       bounds.getCenter(this.center);
       const size = bounds.getSize(new THREE.Vector3());
@@ -224,10 +235,18 @@ class SynchronizedGeometryViewers {
       this.frustumHeight = span * 1.45;
       this.globalFrustumHeight = this.frustumHeight;
       this.distance = span * 4;
+      this.bounds = bounds;
+      const overlayCandidate = this.geometryPaths.overlay_source === "baseline" ? baseline : candidate;
+      if (this.viewports.baseline) {
+        if (baseline) {
+          this.viewports.baseline.addGeometry(baseline, COLORS.baseline);
+          this.viewports.baseline.showInteractive();
+        } else this.viewports.baseline.showFallback("Baseline geometry unavailable");
+      }
       if (truth) {
         this.viewports.truth.addGeometry(truth, COLORS.truth);
         this.viewports.truth.showInteractive();
-        if (candidate) {
+        if (overlayCandidate) {
           this.viewports.overlay.addGeometry(truth, COLORS.truth, 0.48);
           this.viewports.overlay.showInteractive();
         }
@@ -237,15 +256,14 @@ class SynchronizedGeometryViewers {
       if (candidate) {
         this.viewports.candidate.addGeometry(candidate, COLORS.candidate);
         this.viewports.candidate.showInteractive();
-        if (truth) {
-          this.viewports.overlay.addGeometry(candidate, COLORS.candidate, 0.66);
-          this.viewports.overlay.showInteractive();
-        }
       } else {
         this.viewports.candidate.showFallback("Candidate geometry unavailable");
         if (!truth) this.viewports.overlay.showFallback("Overlay geometry unavailable");
       }
-      if (!truth || !candidate) this.viewports.overlay.showFallback("Overlay requires both ground truth and candidate");
+      if (truth && overlayCandidate) {
+        this.viewports.overlay.addGeometry(overlayCandidate, this.geometryPaths.overlay_source === "baseline" ? COLORS.baseline : COLORS.candidate, 0.66);
+        this.viewports.overlay.showInteractive();
+      } else this.viewports.overlay.showFallback("Overlay requires both ground truth and candidate");
       const visualization = localization?.visualization || {};
       const missing = visualization.ground_truth_to_candidate || [];
       const excess = visualization.candidate_to_ground_truth || [];
@@ -263,8 +281,10 @@ class SynchronizedGeometryViewers {
       }
       truth?.dispose();
       candidate?.dispose();
+      baseline?.dispose();
+      const pendingRegionId = this.pendingRegionId;
       this.reset();
-      if (this.pendingRegionId) this.focusRegion(this.pendingRegionId);
+      if (pendingRegionId) this.focusRegion(pendingRegionId);
     } catch (error) {
       if (this.disposed) return;
       Object.values(this.viewports).forEach((viewport) => viewport.showFallback(error.message));
@@ -284,7 +304,21 @@ class SynchronizedGeometryViewers {
     source.camera.far = this.distance * 10;
     source.camera.updateProjectionMatrix();
     source.controls.update();
+    if (this.geometryPaths.framing === "projected" && this.bounds) this.fitProjection(source);
     this.syncFrom(source);
+  }
+
+  fitProjection(source) {
+    source.camera.updateMatrixWorld(true);
+    const projected = new THREE.Box3();
+    for (const x of [this.bounds.min.x, this.bounds.max.x])
+      for (const y of [this.bounds.min.y, this.bounds.max.y])
+        for (const z of [this.bounds.min.z, this.bounds.max.z])
+          projected.expandByPoint(new THREE.Vector3(x, y, z).applyMatrix4(source.camera.matrixWorldInverse));
+    const size = projected.getSize(new THREE.Vector3());
+    const aspect = Math.min(...Object.values(this.viewports).map(v => Math.max(1, v.container.clientWidth) / Math.max(1, v.container.clientHeight)));
+    this.frustumHeight = Math.max(size.y, size.x / aspect, 1e-6) * 1.18;
+    this.globalFrustumHeight = this.frustumHeight;
   }
 
   focusRegion(regionId) {
@@ -295,11 +329,12 @@ class SynchronizedGeometryViewers {
     const center = new THREE.Vector3(...region.centroid);
     const lower = new THREE.Vector3(...region.bbox.min);
     const upper = new THREE.Vector3(...region.bbox.max);
-    const regionSpan = Math.max(...upper.clone().sub(lower).toArray(), this.globalFrustumHeight * 0.04);
-    const viewDirection = source.camera.position.clone().sub(source.controls.target).normalize();
+    const manualFocus = regionId === "manual-repair";
+    const regionSpan = Math.max(...upper.clone().sub(lower).toArray(), this.globalFrustumHeight * (manualFocus ? 0.004 : 0.04));
+    const viewDirection = manualFocus ? new THREE.Vector3(-1, 1, 0.65).normalize() : source.camera.position.clone().sub(source.controls.target).normalize();
     this.frustumHeight = Math.min(
       this.globalFrustumHeight,
-      Math.max(regionSpan * 2.8, this.globalFrustumHeight * 0.12),
+      Math.max(regionSpan * 2.8, this.globalFrustumHeight * (manualFocus ? 0.012 : 0.12)),
     );
     source.controls.target.copy(center);
     source.camera.position.copy(center).addScaledVector(viewDirection, this.distance);
@@ -336,6 +371,25 @@ class SynchronizedGeometryViewers {
     this.syncing = false;
   }
 
+  setOverlaySource(source) {
+    const model = source === "baseline" ? this.viewports.baseline : this.viewports.candidate;
+    const truth = this.viewports.truth.scene.children.find(item => item.isMesh);
+    const candidate = model?.scene.children.find(item => item.isMesh);
+    const overlay = this.viewports.overlay;
+    if (!truth || !candidate || this.disposed) return false;
+    for (const item of [...overlay.scene.children]) {
+      if (!item.isMesh && !item.isLineSegments) continue;
+      overlay.scene.remove(item);
+      item.geometry.dispose();
+      item.material.dispose();
+    }
+    overlay.addGeometry(truth.geometry, COLORS.truth, 0.48);
+    overlay.addGeometry(candidate.geometry, source === "baseline" ? COLORS.baseline : COLORS.candidate, 0.66);
+    this.geometryPaths.overlay_source = source;
+    overlay.render();
+    return true;
+  }
+
   dispose() {
     this.disposed = true;
     this.resetBindings.forEach(({ button, handler }) => button?.removeEventListener("click", handler));
@@ -343,9 +397,9 @@ class SynchronizedGeometryViewers {
   }
 }
 
-export function createSynchronizedGeometryViewers({ containers, geometry }) {
+export function createSynchronizedGeometryViewers({ containers, geometry, focus }) {
   try {
-    return new SynchronizedGeometryViewers(containers, geometry);
+    return new SynchronizedGeometryViewers(containers, geometry, focus);
   } catch (error) {
     Object.values(containers).filter(Boolean).forEach((container) => {
       const canvas = container.querySelector("canvas");
